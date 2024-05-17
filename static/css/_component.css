@@ -1,35 +1,35 @@
 @charset "UTF-8";
 /*
- ÆÄÀÏ °³¿ä
+ íŒŒì¼ ê°œìš”
  ---------------------------------------------------------------------
- @ ¸ñÀû : [°¡Ãµ´ë ±æº´¿ø ÇÃ·§Æû] ResetÈ­ ¹× ÃÊ±â ±âº» ½ºÅ¸ÀÏ Á¤ÀÇ.
- @ ÀÛ¼º : GRIDA Publishing Team.
- @ ÃÖÁ¾ : 2023.05.14.00:00
- @ ¸Þ¸ð : -
+ @ ëª©ì  : [ê°€ì²œëŒ€ ê¸¸ë³‘ì› í”Œëž«í¼] Resetí™” ë° ì´ˆê¸° ê¸°ë³¸ ìŠ¤íƒ€ì¼ ì •ì˜.
+ @ ìž‘ì„± : GRIDA Publishing Team.
+ @ ìµœì¢… : 2023.05.14.00:00
+ @ ë©”ëª¨ : -
 */
 
 /*
-[¡Ü] Layout-Row-Col
-[¡Ü] Data-Table
-[¡Ü] TD-ITEM-GROUP (°¡·Î¹èÄ¡ µµ¿ì¹Ì)
-[¡Ü] Pagi
-[¡Ü] Pannel
-[¡Ü] Txt&Tit
-[¡Ü] List
-[¡Ü] Form 
- [¡Ü] Input-Text, Email, Passworld
- [¡Ü] Input-Check
- [¡Ü] Input-Radio
- [¡Ü] Select
+[â—] Layout-Row-Col
+[â—] Data-Table
+[â—] TD-ITEM-GROUP (ê°€ë¡œë°°ì¹˜ ë„ìš°ë¯¸)
+[â—] Pagi
+[â—] Pannel
+[â—] Txt&Tit
+[â—] List
+[â—] Form 
+ [â—] Input-Text, Email, Passworld
+ [â—] Input-Check
+ [â—] Input-Radio
+ [â—] Select
 
-[¡Ü] Badge (Chip)
-[¡Ü] Breadcrumb
-[¡Ü] Icon
-[¡Ü] Buttons, Button group
-[¡Ü] Tab
-[¡Ü] Accordion
-[¡Ü] Popup
-[¡Ü] Toast
+[â—] Badge (Chip)
+[â—] Breadcrumb
+[â—] Icon
+[â—] Buttons, Button group
+[â—] Tab
+[â—] Accordion
+[â—] Popup
+[â—] Toast
 */
 
 /* Layout-Row-Col */
@@ -90,7 +90,7 @@
 .filter-search .data-table td{ padding: 6px 10px 6px 0; }
 .filter-search .data-table td + th{padding-left: 22px;}
 
-.data-table.form-table-test { /* table-layout: fixed; */ table-layout: fixed;/*ºÎ¸ð width ¶Õ´Â Çö»ó¶§¹®¿¡ »èÁ¦.*/ background: #fff;}
+.data-table.form-table-test { /* table-layout: fixed; */ table-layout: fixed;/*ë¶€ëª¨ width ëš«ëŠ” í˜„ìƒë•Œë¬¸ì— ì‚­ì œ.*/ background: #fff;}
 .data-table.form-table-test th,
 .data-table.form-table-test td { /* height: 35px; */border-left: 0; border-right: 0; vertical-align: middle; } 
 .data-table.form-table-test th { background: #f9fafc; /* line-height: 1.38; */}
@@ -128,7 +128,7 @@
 .data-table-wrap-y>table>thead>tr>th { position: sticky;top: 0; z-index: 10; } 
 .data-table-wrap-y>table>tfoot>tr>td { position: sticky;bottom: 0px; z-index: 10; } 
 
-/*data-table-wrap-y·Î Àß ¾ÈµÇ¼­ »õ·Ó°Ô ¸¸µë.*/
+/*data-table-wrap-yë¡œ ìž˜ ì•ˆë˜ì„œ ìƒˆë¡­ê²Œ ë§Œë“¬.*/
 .data-table-wrap-fileUpload { border: 1px solid #e3e3e3; border-top: 1px solid #111; overflow: hidden; } 
 .data-table-wrap-fileUpload .file-thead { border: 0; } 
 .data-table-wrap-fileUpload .file-thead thead th { padding: 0 12px; } 
@@ -428,7 +428,7 @@ input, button, textarea { outline: 0; }
 /* Modal */
 .modal { display: none; /* z-index: 200; */
 /* position: absolute; */
-position: fixed; top: 50%; left: 50%; transform: translate(-50%, -49%); /*ÆûÅ×ÀÌºí º¸´õÅ¾ÀÌ ±úÁö´Â Çö»ó.*/
+position: fixed; top: 50%; left: 50%; transform: translate(-50%, -49%); /*í¼í…Œì´ë¸” ë³´ë”íƒ‘ì´ ê¹¨ì§€ëŠ” í˜„ìƒ.*/
 background: #fff; min-width: 360px; max-height: calc(100vh - 100px); /* overflow-y: auto; */}
 .modal>.inner { overflow: hidden; max-height: calc(100vh - 100px); } 
 .modal .modal-header { border-bottom: 1px solid #e3e3e3; height: 52px; display: flex; justify-content: space-between; align-items: center; padding-left: 16px; padding-right: 16px; } 

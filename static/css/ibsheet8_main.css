@@ -1,19 +1,19 @@
 /* IBSheet8 CSS definition, https://www.ibsheet.com */
 
 /*
-    ÆÄÀÏ °³¿ä
+    íŒŒì¼ ê°œìš”
     ---------------------------------------------------------------------
-    @ ¸ñÀû : [°¡Ãµ´ë ±æº´¿ø ÇÃ·§Æû] import base file
-    @ ÀÛ¼º : GRIDA Publishing Team.
-    @ ÃÖÁ¾ : 2024.05.14.00:00
-    @ ¸Ş¸ğ :  
+    @ ëª©ì  : [ê°€ì²œëŒ€ ê¸¸ë³‘ì› í”Œë«í¼] import base file
+    @ ì‘ì„± : GRIDA Publishing Team.
+    @ ìµœì¢… : 2024.05.14.00:00
+    @ ë©”ëª¨ :  
 */
 
-/*[D] 2023.11.28 ÆùÆ®Á¤ÀÇ »èÁ¦*/
+/*[D] 2023.11.28 í°íŠ¸ì •ì˜ ì‚­ì œ*/
 /* @font-face{font-family:'Noto Sans KR';src:url('./../../fonts/NotoSansCJKkr-Regular.otf') format('truetype')} */
 /* @font-face{font-family:'Noto Sans KR Bold';src:url('./../../fonts/NotoSansCJKkr-Bold.otf') format('truetype')} */
 /* .IBMain{font-family:'Noto Sans CJK kr','Noto Sans KR','Noto Sans','Verdana','Malgun Gothic','Nanum Gothic',sans-serif;font-style:normal;font-weight:normal;font-variant:normal} */
-/*// [D] 2023.11.28 ÆùÆ®Á¤ÀÇ »èÁ¦*/
+/*// [D] 2023.11.28 í°íŠ¸ì •ì˜ ì‚­ì œ*/
 
 .IBMain *{font-family:inherit;font-style:inherit;font-weight:inherit;font-variant:inherit;text-overflow:ellipsis;word-wrap:normal;word-break:normal}
 .IBMain table{margin:auto;}
@@ -1880,43 +1880,43 @@ BODY[class*=BodyPrint]>DIV[class*=PrintPage]>DIV>DIV>DIV[class*=PaddingWrapper]{
 }
 
 /*
-  Á÷Á¢ Ä¿½ºÅÒ
+  ì§ì ‘ ì»¤ìŠ¤í…€
 */
-/*Å×ÀÌºí ¹Ø ¶óÀÎ ¾ø¾Ö±â*/
+/*í…Œì´ë¸” ë°‘ ë¼ì¸ ì—†ì• ê¸°*/
 .IBMainTable {
 	border-bottom: 0;
 }
 
-/*Çì´õ ÆùÆ® ±½±â*/
+/*í—¤ë” í°íŠ¸ êµµê¸°*/
 .IBHeaderText {
 	font-weight: 600;
 }
 
-/*ÀÎµ¦½º TD ¹è°æ»ö º¯°æ*/
+/*ì¸ë±ìŠ¤ TD ë°°ê²½ìƒ‰ ë³€ê²½*/
 .IBIndexText {
 	background: #fff !important;
 }
 
-/*Ã¹¹øÂ° Ä®·³ÀÇ ¿ŞÂÊ ¶óÀÎ, ¸¶Áö¸· Ä®·³ÀÇ ¿À¸¥ÂÊ ¶óÀÎ*/
+/*ì²«ë²ˆì§¸ ì¹¼ëŸ¼ì˜ ì™¼ìª½ ë¼ì¸, ë§ˆì§€ë§‰ ì¹¼ëŸ¼ì˜ ì˜¤ë¥¸ìª½ ë¼ì¸*/
 .IBBodyMid {
 	border-left-color: #ededed;
 	border-right-color: #ededed;
 }
 
-/*TbodyÀÇ ±âº» TDÀÇ ¶óÀÎ»ö*/
+/*Tbodyì˜ ê¸°ë³¸ TDì˜ ë¼ì¸ìƒ‰*/
 .IBCellBase {
 	border-right-color: #ededed;
 	border-bottom-color: #ededed;
 }
 
-/*TheadÀÇ ¶óÀÎ»ö*/
+/*Theadì˜ ë¼ì¸ìƒ‰*/
 .IBHeadMid {
 	border-bottom-color: #ededed;
 	border-left-color: #ededed;
 	border-right-color: #ededed;
 }
 
-/*Ã¼Å©¹Ú½º, ¶óµğ¿À º¯°æ*/
+/*ì²´í¬ë°•ìŠ¤, ë¼ë””ì˜¤ ë³€ê²½*/
 .IBRadio0Left, .IBRadio0Right  {
     background-image: url(../img/icon/ic_radio_16_normal.svg);
 }
@@ -1942,7 +1942,7 @@ BODY[class*=BodyPrint]>DIV[class*=PrintPage]>DIV>DIV>DIV[class*=PaddingWrapper]{
   color: rgba(102,102,102,1);
 }
 
-/*¹öÆ° Ä¿½ºÅÒ*/
+/*ë²„íŠ¼ ì»¤ìŠ¤í…€*/
 .IBDialogButton, u.IBSheetButton {
     background: #fff;
     border: 1px solid #ccc;
@@ -1956,7 +1956,7 @@ BODY[class*=BodyPrint]>DIV[class*=PrintPage]>DIV>DIV>DIV[class*=PaddingWrapper]{
     margin-top: 5px;
 }
 
-/*Çì´õ ¼ÒÆÃ »ï°¢Çü*/
+/*í—¤ë” ì†ŒíŒ… ì‚¼ê°í˜•*/
 .IBSort1Left, .IBSort1Right {
   background-image: url(../img/icon/IBSort1.svg);
 }
@@ -1976,15 +1976,15 @@ BODY[class*=BodyPrint]>DIV[class*=PrintPage]>DIV>DIV>DIV[class*=PaddingWrapper]{
   background-image: url(../img/icon/IBSort6.svg);
 }
 
-/*Çà ±³Â÷ È¦Â¦»ö º¯°æ ¹æÁö*/
+/*í–‰ êµì°¨ í™€ì§ìƒ‰ ë³€ê²½ ë°©ì§€*/
 .IBColorAlternate{background-color:#fff;}
 
-/*Ä¶¸°´õ ¾ÆÀÌÄÜ º¯°æ*/
+/*ìº˜ë¦°ë” ì•„ì´ì½˜ ë³€ê²½*/
 .IBMain .IBDateLeft, .IBMain .IBDatesLeft, .IBMain .IBDateRight, .IBMain .IBDatesRight, .IBMain .IBDateTop, .IBMain .IBDatesTop, .IBMain .IBDateBottom, .IBMain .IBDatesBottom {
   background: url(../img/icon/ic_calendar_black_16.svg) no-repeat 50% 50%;
 }
 
-/*¼¿·ºÆ®(ÄŞº¸) È­»ìÇ¥ ¾ÆÀÌÄÜ º¯°æ*/
+/*ì…€ë ‰íŠ¸(ì½¤ë³´) í™”ì‚´í‘œ ì•„ì´ì½˜ ë³€ê²½*/
 .IBDefaultsLeft, .IBDefaultsRight, .IBDefaultsTop, .IBDefaultsBottom {
   background: url(../img/icon/ic_arrow_down_black_16.svg) no-repeat 50% 50%;
 }

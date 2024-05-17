@@ -1,12 +1,12 @@
 @charset "UTF-8";
 
 /*
-    ÆÄÀÏ °³¿ä
+    íŒŒì¼ ê°œìš”
     ---------------------------------------------------------------------
-    @ ¸ñÀû : [°¡Ãµ´ë ±æº´¿ø ÇÃ·§Æû] ResetÈ­ ¹× ÃÊ±â ±âº» ½ºÅ¸ÀÏ Á¤ÀÇ.
-    @ ÀÛ¼º : GRIDA Publishing Team.
-    @ ÃÖÁ¾ : 2023.05.14.00:00
-    @ ¸Ş¸ğ : -
+    @ ëª©ì  : [ê°€ì²œëŒ€ ê¸¸ë³‘ì› í”Œë«í¼] Resetí™” ë° ì´ˆê¸° ê¸°ë³¸ ìŠ¤íƒ€ì¼ ì •ì˜.
+    @ ì‘ì„± : GRIDA Publishing Team.
+    @ ìµœì¢… : 2023.05.14.00:00
+    @ ë©”ëª¨ : -
 */
 
 html, body, div, span, applet, object, iframe,
@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	min-height: 100vh; /*Ãß°¡*/
+	min-height: 100vh; /*ì¶”ê°€*/
 }
 ol, ul {
 	list-style: none;

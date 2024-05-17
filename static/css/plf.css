@@ -1,18 +1,18 @@
 @import url("ibsheet8_main.css"); /*ibsheet*/
 @import url("datepicker.min.css"); /*datepicker CSS*/
-@import url("_base.css"); /*¸®¼Â ¹× ±âº» ½ºÅ¸ÀÏ*/
-@import url("_font.css"); /*ÆùÆ® Á¤ÀÇ*/
-@import url("_component.css"); /*UI ÄÄÆ÷³ÍÆ®*/
-@import url("_layout.css"); /*°øÅë ¿µ¿ª CSS*/
-@import url("_page.css"); /*ÆäÀÌÁöº° Æ¯¼öÇÏ°Ô Ãß°¡ ¼öÁ¤ ÇÊ¿äÇÒ¶§*/
-@import url("_helper.css"); /*ÇïÆÛ·ù(°£´ÜCSS ¼öÁ¤ Å¬·¡½º ¸ğÀ½Áı)*/
-@import url("_test.css"); /*Å×½ºÆ®½Ã*/
+@import url("_base.css"); /*ë¦¬ì…‹ ë° ê¸°ë³¸ ìŠ¤íƒ€ì¼*/
+@import url("_font.css"); /*í°íŠ¸ ì •ì˜*/
+@import url("_component.css"); /*UI ì»´í¬ë„ŒíŠ¸*/
+@import url("_layout.css"); /*ê³µí†µ ì˜ì—­ CSS*/
+@import url("_page.css"); /*í˜ì´ì§€ë³„ íŠ¹ìˆ˜í•˜ê²Œ ì¶”ê°€ ìˆ˜ì • í•„ìš”í• ë•Œ*/
+@import url("_helper.css"); /*í—¬í¼ë¥˜(ê°„ë‹¨CSS ìˆ˜ì • í´ë˜ìŠ¤ ëª¨ìŒì§‘)*/
+@import url("_test.css"); /*í…ŒìŠ¤íŠ¸ì‹œ*/
 
 /*
-    ÆÄÀÏ °³¿ä
+    íŒŒì¼ ê°œìš”
     ---------------------------------------------------------------------
-    @ ¸ñÀû : [°¡Ãµ´ë ±æº´¿ø ÇÃ·§Æû] import base file
-    @ ÀÛ¼º : GRIDA Publishing Team.
-    @ ÃÖÁ¾ : 2024.05.14.00:00
-    @ ¸Ş¸ğ : ÀÌ°÷¿¡ Á¤ÀÇÇÏÁö ¾Ê½À´Ï´Ù. ±×Àú import¸¦ À§ÇÑ ÆÄÀÏÀÔ´Ï´Ù.
+    @ ëª©ì  : [ê°€ì²œëŒ€ ê¸¸ë³‘ì› í”Œë«í¼] import base file
+    @ ì‘ì„± : GRIDA Publishing Team.
+    @ ìµœì¢… : 2024.05.14.00:00
+    @ ë©”ëª¨ : ì´ê³³ì— ì •ì˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ê·¸ì € importë¥¼ ìœ„í•œ íŒŒì¼ì…ë‹ˆë‹¤.
 */

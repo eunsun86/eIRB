@@ -1,15 +1,15 @@
 @charset "UTF-8";
 /*
- ÆÄÀÏ °³¿ä
+ íŒŒì¼ ê°œìš”
  ---------------------------------------------------------------------
- @ ¸ñÀû : [°¡Ãµ´ë ±æº´¿ø ÇÃ·§Æû] °øÅë ·¹ÀÌ¾Æ¿ô Á¤ÀÇ
-@ ÀÛ¼º : GRIDA Publishing Team.
-@ ÃÖÁ¾ : 2023.05.14.00:00
- @ ¸Ş¸ğ : ¾Õ¿¡¼­ _component, _layoutÀ¸·Î Ä¿¹öµÇÁö ¾Ê´Â °¢ ÆäÀÌÁö¸¶´Ù À¯´ÏÅ©ÇÑ ºÎºĞÀº ÀÌ°÷¿¡¼­ µû·Î Á¤ÀÇÇÑ´Ù.
+ @ ëª©ì  : [ê°€ì²œëŒ€ ê¸¸ë³‘ì› í”Œë«í¼] ê³µí†µ ë ˆì´ì•„ì›ƒ ì •ì˜
+@ ì‘ì„± : GRIDA Publishing Team.
+@ ìµœì¢… : 2023.05.14.00:00
+ @ ë©”ëª¨ : ì•ì—ì„œ _component, _layoutìœ¼ë¡œ ì»¤ë²„ë˜ì§€ ì•ŠëŠ” ê° í˜ì´ì§€ë§ˆë‹¤ ìœ ë‹ˆí¬í•œ ë¶€ë¶„ì€ ì´ê³³ì—ì„œ ë”°ë¡œ ì •ì˜í•œë‹¤.
 */
 
-/*[1000] ¸ŞÀÎÈ­¸é*/
-/*1000. ÁøÇàÇöÈ²ÆÇ*/
+/*[1000] ë©”ì¸í™”ë©´*/
+/*1000. ì§„í–‰í˜„í™©íŒ*/
 .plf-root.startpage { position: relative; top: 0; left: 0; width: 100%; height: 100%; overflow: auto; height: 100vh; min-width: 1180px; } 
 .plf-root.startpage .plf-header { background: rgba(255, 255, 255, 0.2); border-bottom: 0; } 
 .plf-root.startpage .plf-header>.inner { position: relative; width: 1180px; margin: 0 auto; } 
@@ -42,7 +42,7 @@
 .plf-root.startpage .plf-con .plf-main .status-board>ul>li.tot .tit { color: #fff; font-weight: 600; font-size: 22px; } 
 .plf-root.startpage .plf-con .plf-main .status-board>ul>li.tot .data { color: #fff; font-weight: 900; font-size: 44px; } 
 
-/*1100. ·Î±×ÀÎ*/
+/*1100. ë¡œê·¸ì¸*/
 .login-wrap { /* border: 1px dashed red; */
  width: 420px; margin: 133px auto 0 auto; } 
 .btn-login1 { display: block; font-size: 17px; color: #fff; font-weight: 600; background: #0f90ab; height: 56px; line-height: 56px; border-radius: 4px; text-decoration: none; text-align: center; } 
@@ -55,11 +55,11 @@
 .login-form .login-form-left .ip-txt:first-of-type { margin-bottom: 8px; } 
 .login-form .btn-login2 {}
 
-/*1200. ¾à°üµ¿ÀÇ*/
+/*1200. ì•½ê´€ë™ì˜*/
 .agree-wrap { width: 1180px; margin: 0 auto; } 
 .agree-detail { overflow-y: auto; border: 1px solid #e3e3e3; background: #fff; padding: 16px; height: 174px; box-sizing: border-box; font-size: 13px; font-weight: 500; color: #333; line-height: 1.5; margin-bottom: 12px; } 
 
-/*2000. »ç¾÷´Ü¾È³» - »ç¾÷´Ü ¾È³»*/
+/*2000. ì‚¬ì—…ë‹¨ì•ˆë‚´ - ì‚¬ì—…ë‹¨ ì•ˆë‚´*/
 .contents-2000 { display: flex; column-gap: 80px; width: 880px; } 
 .contents-2000>div { flex-grow: 1; flex-shrink: 0; flex-basis: 0; border: 1px solid #3a6c98; } 
 .contents-2000>div .tit { background: #3a6c98; font-size: 15px; font-weight: 500; color: #fff; height: 52px; line-height: 52px; text-align: center; } 
@@ -68,17 +68,17 @@
 .contents-2000>div ul li:last-of-type { margin-bottom: 0; } 
 .contents-2000>div ul li:after { position: absolute; top: 50%; left: 0; transform: translateY(-50%); content: ""; display: block; width: 4px; height: 4px; border-radius: 50%; background: #666; } 
 
-/*2100. »ç¾÷´Ü¾È³» - ILO ¾È³»*/
+/*2100. ì‚¬ì—…ë‹¨ì•ˆë‚´ - ILO ì•ˆë‚´*/
 .ul-2100 { text-align: center; } 
 .ul-2100 li { display: inline-block; position: relative; font-size: 13px; font-weight: 500; color: #999; margin-right: 10px; padding-left: 5px; } 
 .ul-2100 li:last-of-type { margin-right: 0; } 
 .ul-2100 li:after { position: absolute; top: 50%; left: 0; transform: translateY(-50%); content: ""; display: block; width: 2px; height: 2px; border-radius: 50%; background: #666; } 
 
-/*4000.Å°¿öµå°ü¸®*/
+/*4000.í‚¤ì›Œë“œê´€ë¦¬*/
 .nodata-4000 { position: relative; height: 460px; text-align: center; border-top: 1px solid #1d1d1d; } 
 .nodata-4000>.inner { position: absolute; top: 50%; left: 0; width: 100%; } 
 
-/*6002. °øÁö»çÇ× - °Ô½ÃÆÇ »ó¼¼Á¶È¸*/
+/*6002. ê³µì§€ì‚¬í•­ - ê²Œì‹œíŒ ìƒì„¸ì¡°íšŒ*/
 .board-main { font-size: 13px; font-weight: 500; color: #666; line-height: 1.5; padding-top: 15px; padding-bottom: 20px; } 
 .reply-box { } 
 .reply-box .reply-list {
