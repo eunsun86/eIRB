@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="euc-kr" />
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>e-IRB</title>
@@ -19,15 +19,15 @@
     <!--[S] plf-header-->
     <div class="plf-header">
         <div class="left-area">
-            <a class="logo" href=""><img src="../static/img/logo/logo.svg" alt="��õ�� �溴�� e��IRB"></a>
+            <a class="logo" href=""><img src="../static/img/logo/logo.svg" alt="가천대 길병원 e·IRB"></a>
         </div>
         <div class="right-area">
             
             <!--[S] plf-util-->
             <div class="plf-util">
-                <a href="#" title="������������ �̵�">
-                    <span class="user-agency">ooo�Ҽ�</span>
-                    <span class="user-name">ȫ�浿��</span>
+                <a href="#" title="내정보관리로 이동">
+                    <span class="user-agency">ooo소속</span>
+                    <span class="user-name">홍길동님</span>
                 </a>
                 <a href="#" role="button" class="btn btn-logout">Log out</a>
             </div>
@@ -39,13 +39,13 @@
 
     <!--[S] plf-gnb -->
     <div class="plf-gnb">
-        <button type="button" class="btn-menu"><em class="blind">�޴�</em></button>
+        <button type="button" class="btn-menu"><em class="blind">메뉴</em></button>
         <div class="sel auth-sel">
             <select name="" id="" class="">
-                <option value="0">���Ѻ���</option>
-                <option value="1">������</option>
-                <option value="2">��������</option>
-                <option value="3">��������</option>
+                <option value="0">권한변경</option>
+                <option value="1">연구자</option>
+                <option value="2">행정간사</option>
+                <option value="3">심의위원</option>
             </select>
         </div>
     </div>
@@ -58,26 +58,26 @@
         <div class="plf-aside">
             <ul class="depth1">
                 <li>
-                    <h2 class="dpt1-tit">������Ȳ����</h2>
+                    <h2 class="dpt1-tit">심의현황관리</h2>
                     <ul class="depth2">
-                        <li><a href="#">���ǽ�û(PI)</a></li>
-                        <li><a href="#">�ű� ���ǽ�û</a></li>
-                        <li class="selected"><a href="#">�ű� ������û</a></li>
-                        <li><a href="#">�űԿ� ���ǽ�û</a></li>
-                        <li><a href="#">�������� ��Ȳ</a></li>
+                        <li><a href="#">심의신청(PI)</a></li>
+                        <li><a href="#">신규 심의신청</a></li>
+                        <li class="selected"><a href="#">신규 면제신청</a></li>
+                        <li><a href="#">신규외 심의신청</a></li>
+                        <li><a href="#">심의진행 현황</a></li>
                     </ul>
                 </li>
                 <li>
-                    <h2 class="dpt1-tit">��������</h2>
+                    <h2 class="dpt1-tit">과제관리</h2>
                     <ul class="depth2">
-                        <li><a href="#">������Ȳ</a></li>
+                        <li><a href="#">과제현황</a></li>
                     </ul>
                 </li>
                 <li>
                     <h2 class="dpt1-tit">My Page</h2>
                     <ul class="depth2">
-                        <li><a href="#">������ ����</a></li>
-                        <li><a href="#">�̷� �� �����̼� ����</a></li>
+                        <li><a href="#">내정보 관리</a></li>
+                        <li><a href="#">이력 및 교육이수 관리</a></li>
                     </ul>
                 </li>
             </ul>
@@ -91,8 +91,8 @@
             <div class="plf-main">
                 <div class="inner">
                     <div class="inner-con">
-                        <table class="data-table form-table type-dual tlf mb24"> <!--[D20231218] .w500Ŭ���� ����, .tlfŬ���� �߰�-->
-                            <!-- <caption>ǥ ����</caption> -->
+                        <table class="data-table form-table type-dual tlf mb24"> <!--[D20231218] .w500클래스 제거, .tlf클래스 추가-->
+                            <!-- <caption>표 제목</caption> -->
                             <colgroup>
                                 <col width="104px">
                                 <col width="">
@@ -101,10 +101,10 @@
                             </colgroup>
                             <tbody>
                                 <tr>
-                                    <th class="ta-left">��������ȣ</th>
+                                    <th class="ta-left">교직원번호</th>
                                     <td class="ta-left">5001</td>
-                                    <th class="ta-left">����</th>
-                                    <td class="ta-left">���̹�</td>
+                                    <th class="ta-left">성명</th>
+                                    <td class="ta-left">김이박</td>
                                 </tr>																																									
                             </tbody>
                         </table>
@@ -119,21 +119,21 @@
                                 </colgroup>
                                 <thead>
                                     <tr>
-                                        <th class="ta-center" scope="col">����</th>
-                                        <th class="ta-center" scope="col">ISBN��ȣ</th>
-                                        <th class="ta-center" scope="col">�м�����</th>
-                                        <th class="ta-center" scope="col">������</th>
-                                        <th class="ta-center" scope="col">÷������</th>
+                                        <th class="ta-center" scope="col">순번</th>
+                                        <th class="ta-center" scope="col">ISBN번호</th>
+                                        <th class="ta-center" scope="col">학술지명</th>
+                                        <th class="ta-center" scope="col">게재년월</th>
+                                        <th class="ta-center" scope="col">첨부파일</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td class="ta-center">1</td>
                                         <td class="ta-center">978-89-374-9157-3</td>
-                                        <td class="ta-left">����������ȸ������</td>
+                                        <td class="ta-left">전기전자학회논문지</td>
                                         <td class="ta-center">2023-10</td>
                                         <td class="ta-center">
-                                            <button class="btn btn-icon icon-download" type="button">�ٿ�</button>
+                                            <button class="btn btn-icon icon-download" type="button">다운</button>
                                         </td>
                                     </tr>																											
                                 </tbody>
@@ -143,15 +143,15 @@
                 </div>
                 <div class="inner-con">
                     <div class="notice-board">
-                        �Խ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ���
-                        �Խ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ���
-                        �Խ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ���
-                        �Խ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ���
-                        �Խ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ���
-                        �Խ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ���
-                        �Խ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ���
-                        �Խ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ���
-                        �Խ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ��ǰԽ���
+                        게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판
+                        게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판
+                        게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판
+                        게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판
+                        게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판
+                        게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판
+                        게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판
+                        게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판
+                        게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판
                     </div>
                 </div>
             </div>
@@ -170,19 +170,19 @@
 <div id="layer1" class="layer">
 	<div class="layer-content">
 		<div class="layer-header">
-			<strong class="lh-title">layer Ÿ��Ʋ</strong>
+			<strong class="lh-title">layer 타이틀</strong>
 		</div>
 		<div class="layer-body">
-			layer ����
+			layer 내용
 		</div> 
         <div class="layer-footer">
 			<div class="btn-group">
-                <button class="btn" type="button">���</button>
-                <button class="btn btn-lb" type="button">Ȯ��</button>
+                <button class="btn" type="button">취소</button>
+                <button class="btn btn-lb" type="button">확인</button>
             </div>
 		</div>
         
-		<button type="button" class="btn-close-layer" data-dismiss="modal"><span class="blind">�ݱ�</span></button>
+		<button type="button" class="btn-close-layer" data-dismiss="modal"><span class="blind">닫기</span></button>
 	</div>
 </div>
 <!--//[S] layer -->
@@ -191,19 +191,19 @@
 <div id="layer2" class="layer type-s">
 	<div class="layer-content">
 		<div class="layer-header">
-			<strong class="lh-title">layer Ÿ��Ʋ</strong>
+			<strong class="lh-title">layer 타이틀</strong>
 		</div>
 		<div class="layer-body">
-			layer ����
+			layer 내용
 		</div> 
         <div class="layer-footer">
 			<div class="btn-group">
-                <button class="btn" type="button">���</button>
-                <button class="btn btn-lb" type="button">Ȯ��</button>
+                <button class="btn" type="button">취소</button>
+                <button class="btn btn-lb" type="button">확인</button>
             </div>
 		</div>
         
-		<button type="button" class="btn-close-layer" data-dismiss="modal"><span class="blind">�ݱ�</span></button>
+		<button type="button" class="btn-close-layer" data-dismiss="modal"><span class="blind">닫기</span></button>
 	</div>
 </div>
 <!--//[S] layer small-->
