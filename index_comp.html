@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+		<meta charset="euc-kr" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+    <title>IUCP 컴포넌트 index</title>
+  </head>
+  <body>
+
+    <header class="stk-header">
+      <div class="inner">
+        <h1>한밭대 산학협력 플랫폼(IUCP)</h1>
+        <nav>
+          <ul>
+            <li class="">
+              <a href="index_page.html">페이지</a>
+            </li>
+            <li class="active"> <!--[D] active-->
+              <a href="index_comp.html">컴포넌트</a>
+            </li>              
+          </ul>
+        </nav>
+      </div>
+    </header>    
+
+    <div class="stk-main">
+      <ul>
+        <li>
+          <a href="component/layout.html" target="_blank">레이아웃</a>
+        </li>
+        <li>
+          <a href="component/pannel.html" target="_blank">패널</a>
+        </li>        
+        <li>
+          <a href="component/alert.html" target="_blank">알럿트</a>
+        </li>
+        <li>
+          <a href="component/modal.html" target="_blank">모달</a>
+        </li>
+        <li>
+          <a href="component/icon.html" target="_blank">아이콘</a>
+        </li>
+        <li>
+          <a href="component/txt.html" target="_blank">텍스트</a>
+        </li>
+        <li>
+          <a href="component/breadcrumb.html" target="_blank">브레드크럼</a>
+        </li>        
+        <li>
+          <a href="component/button.html" target="_blank">버튼</a>
+        </li>
+        <li>
+          <a href="component/tab.html" target="_blank">탭</a>
+        </li>        
+        <li>
+          <a href="component/input.html" target="_blank">인풋,셀렉트</a>
+        </li>
+        <li>
+          <a href="component/table.html" target="_blank">테이블</a>
+        </li>
+        <li>
+          <a href="component/pagi.html" target="_blank">페이지네이션</a>
+        </li>        
+        <li>
+          <a href="component/badge.html" target="_blank">뱃지(칩)</a>
+        </li>            
+        <li>
+          <a href="component/keyword.html" target="_blank">키워드</a>
+        </li>                                                                            
+        <li>
+          <a href="component/toast.html" target="_blank">토스트</a>
+        </li>                                                                                    
+      </ul>
+    </div>
+
+    
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      body, th, td, input, select, textarea, button {
+          font-family: 'Noto Sans KR', AppleSDGothicNeo-Regular, "Malgun Gothic", "맑은 고딕", dotum, "돋움", sans-serif;
+      }   
+      .stk-header {
+        /* position: fixed;
+        top: 0;
+        left: 0; */
+        height: 64px;
+        width: 100%;
+        /* background: blue; */
+        /* background: #0000b4; */
+        /* background: #11101d; */
+        background: #1a2b81;
+      }
+      .stk-header>.inner {
+        display: flex;
+        align-items: center;
+        column-gap: 25px;
+        box-sizing: border-box;
+        height: 100%;
+        padding: 5px 20px;
+      }
+      .stk-header h1 {
+        color: #fff;
+        font-size: 28px;
+      }
+      .stk-header nav ul {
+        display: flex;
+        column-gap: 5px;
+      }
+      .stk-header nav ul li {
+        list-style: none;
+      }
+      .stk-header nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 0 10px;
+        /* border-radius: 4px; */
+      }
+      .stk-header nav ul li.active a {
+        color: #0000b4;
+        background: yellow;
+        font-weight: 600;
+      }      
+      .stk-main {
+        padding: 20px;
+      }
+      .stk-main ul {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 0;
+        padding-left: 0;
+        gap: 10px 10px;
+      }
+      .stk-main ul li {
+        /* overflow: hidden; */
+        display: block;
+        list-style: none;
+        /* height: 30px; */
+        /* margin-right: 10px; */
+        /* margin-bottom: 10px; */
+      }
+      .stk-main ul li a {
+        display: block;
+        text-decoration: none;
+        font-size: 20px;
+        background: #1a2b81;
+        color: #fff;
+        /* height: 100%; */
+        line-height: 30px;
+        padding: 10px 15px;
+        font-size: 20px;
+      }
+      .stk-main ul li a:hover {
+        /* background: black; */
+        background: orange;
+      }
+
+      .stk-main h2 {
+        font-size: 20px;
+        margin: 0;
+        margin-bottom: 5px;
+      }
+      .stk-main table {
+        border-collapse: collapse;
+        margin-bottom: 25px;
+        font-size: 12px;
+      }
+      .stk-main th {
+        background: #ccc;
+      }
+      .stk-main th, .stk-main td {
+        border: 1px solid #ccc;
+        padding: 4px;
+        text-align: left;
+      }
+      .stk-main td a {
+        text-decoration: none;
+        border: 1px solid #7a7a7a;
+        background: #fff;
+        color: #7a7a7a;
+        padding: 0px 3px;
+      }
+      .stk-main td a.p {
+        background-color: #1a2b81;
+        border: 1px solid #1a2b81;
+        color: #fff;        
+      }
+      .stk-main tr:nth-child(even) {
+        background: #efefef;
+      }
+      .stk-main tr:hover {
+        background: #d1d1d1;
+      }      
+    </style>
+
+  </body>
+</html>
