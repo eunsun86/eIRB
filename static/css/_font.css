@@ -1,12 +1,12 @@
 @charset "UTF-8";
 
 /*
-    ÆÄÀÏ °³¿ä
+    íŒŒì¼ ê°œìš”
     ---------------------------------------------------------------------
-    @ ¸ñÀû : [°¡Ãµ´ë ±æº´¿ø ÇÃ·§Æû] °øÅë ·¹ÀÌ¾Æ¿ô Á¤ÀÇ
-	@ ÀÛ¼º : GRIDA Publishing Team.
-	@ ÃÖÁ¾ : 2023.05.14.00:00
-    @ ¸Ş¸ğ : -
+    @ ëª©ì  : [ê°€ì²œëŒ€ ê¸¸ë³‘ì› í”Œë«í¼] ê³µí†µ ë ˆì´ì•„ì›ƒ ì •ì˜
+	@ ì‘ì„± : GRIDA Publishing Team.
+	@ ìµœì¢… : 2023.05.14.00:00
+    @ ë©”ëª¨ : -
 */
 
 /*
@@ -82,6 +82,6 @@ http://scripts.sil.org/OFL
 }
 
 body, th, td, input, select, textarea, button {
-  font-family: 'Pretendard', AppleSDGothicNeo-Regular, "Malgun Gothic", "¸¼Àº °íµñ", dotum,
-    "µ¸¿ò", sans-serif;
+  font-family: 'Pretendard', AppleSDGothicNeo-Regular, "Malgun Gothic", "ë§‘ì€ ê³ ë”•", dotum,
+    "ë‹ì›€", sans-serif;
 }
