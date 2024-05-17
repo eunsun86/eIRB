@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="euc-kr" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>plf</title>
+		<link rel="stylesheet" href="../static/css/plf.css" />
+
+		<!-- ibsheet css -->
+		<!-- <link rel="stylesheet" href="https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/css/default/main.css"/> -->
+		<!-- <link rel="stylesheet" href="https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/css/compatible/light/main.css"/> -->
+
+		<!--  ibsheet �ʼ� js -->
+		<!--<script src="https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/ibleaders.js"></script>
+		<script src="https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/ibsheet.js"></script>
+		<script src="https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/locale/ko.js"></script> -->
+		
+		<script src="../static/js/ibsheet/ibleaders.js"></script>
+		<script src="../static/js/ibsheet/ibsheet.js"></script>
+		<script src="../static/js/ibsheet/locale/ko.js"></script>
+
+		<!--  ibsheet ����/�߰� js -->
+		<script src="../static/js/ibsheet/plugins/ibsheet-common.js"></script>
+		<script src="../static/js/ibsheet/plugins/ibsheet-dialog.js"></script>
+		<script src="../static/js/ibsheet/plugins/ibsheet-excel.js"></script>		
+
+		<style>
+			td.changeBtnColor u{
+				background-color: red;
+			}
+		</style>
+
+	</head>
+	<body>
+
+		<div class="p15">
+			<input type="button" value="��Ŀ���� ���� Button ������ �ٲ۴�." onClick="fn_change_cellClass()">
+			<div style='height:calc(100% - 20px)'><div id='sheetDiv' style='width:100%;height:100%'></div></div>
+		</div>
+	
+	<script>
+		var ib = ib||{};
+		ib = {
+		//��Ʈ �ʱ�ȭ ����
+		'init':{
+			//������ ���� �κ�
+			"Cfg": {
+				"SearchMode": 2,
+				"HeaderMerge": 3,
+				"MessageWidth": 300
+			},
+			"Def": {
+				"Row": {
+					"CanFormula": true
+				}
+			},
+			//Ʋ���� ���� �÷� ����
+			/*
+			"LeftCols": [
+				{"Type": "Int","Width": 50,"Align": "Center","Name": "SEQ"}
+			],
+			*/
+			//�߾�(����) �÷� ����
+			"Cols": [
+				{"Header": "���ڿ�(Text)","Type": "Text","Name": "TextData","Width": 100,"Align": "Center","CanEdit": 1, Button:"Button", ButtonText:"Ȯ��"},
+				{"Header": "�ٳѱ蹮�ڿ�(Lines)","Type": "Lines","Name": "LinesData","MinWidth": 250,"Align": "Center","CanEdit": 1,"RelWidth": 1},
+				{"Header": "�޺�(Enum)","Type": "Enum","Name": "ComboData","Width": 100,"Align": "Left","Enum": "|���|������|�Ϸ�","EnumKeys": "|01|02|03"},
+				{"Header": "��ư(Button)","Type": "Button","Name": "ISO","Width": 80,"Align": "Left","CanEdit": 0,"Button": "Button"},
+				{"Header": "����(Int)","Type": "Int","Name": "IntData","Width": 80,"Align": "Right","CanEdit": 1},
+				{"Header": "�Ǽ�(Float)","Type": "Float","Name": "FloatData","Width": 80,"Align": "Right","CanEdit": 1},
+				{"Header": "��¥(Date)","Type": "Date","Name": "DateData","Width": 150,"Align": "Center","CanEdit": 1,"EmptyValue": "��¥�� �Է����ּ���"},
+				{"Header": "��Ŀ(Link)","Type": "Link","Name": "LinkData","Width": 60,"CanEdit": 0},
+				{"Header": "�̹���(Img)","Type": "Img","Name": "ImageData","Width": 70,"Align": "Center","CanEdit": 1},
+				{"Header": "�н�����(Pass)","Type": "Pass","Name": "PassData","Width": 80,"Align": "Left","CanEdit": 1},
+				{"Header": "����(Radio)","Type": "Radio","Name": "RadioData","Width": 140,"Align": "Center","CanEdit": 1,"Enum": "|��|��|��","EnumKeys": "|H:1|M:1|L:1"},
+				{"Header": {"Value": "üũ�ڽ�(Bool)","HeaderCheck": 1},"Type": "Bool","Name": "CheckData","Width": 80,"Align": "Center","CanEdit": 1}
+			]
+		},
+		//��Ʈ �̺�Ʈ
+		'event':{
+				onRenderFirstFinish: function(evtParam) {
+					evtParam.sheet.loadSearchData(loadData);
+				}
+		},
+		//��Ʈ��ü ����
+		'create':function () {
+				var options = this.init;
+
+				options.Events = this.event;
+				IBSheet.create({
+					id: 'sheet', // ������ ��Ʈ�� id
+					el: 'sheetDiv', // ��Ʈ�� ������ Dom ��ü �� id
+					options: options // ������ ��Ʈ�� �Ӽ�
+				});
+			},
+		//ȭ�� ���
+		'sampleBtn':function () {
+			}
+		}
+		ib.create();
+
+
+		function fn_change_cellClass(){
+			sheet.setAttribute(sheet.getFocusedRow(), 'TextData', "Class", "changeBtnColor");
+		}
+
+		var loadData = [{"TextData":"�����","ComboData":"01","ISO":"AUD", "ISOButtonColor": "red","Currency":"ȣ�� �޷�","IntData":0,"FloatData":15.25,"DateData":"","PhoneNo":"01075116521","IDNO":"7801221384251","LinkData":"|./confirm.do|Ȯ��|_self ","LinesData":"������ ��ü�� �帮�ų� �������� ��� ���Ҿ������� �ߺγ����� ��ħ�� ���� �Ѷ�, ���γ����� ���� �Ѷ� �ҳ��Ⱑ ���� ���� �ְڽ��ϴ�.","Userformat":"1234567890","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/am.jpg|||||./nt/gripInTran.do|_self","PassData":123456,"RadioData":"H:1","CheckData":1},{"TextData":"����ȣ","ComboData":"02","ISO":"ALL","Currency":"�˹ٴϾ� ��","IntData":0,"FloatData":234,"DateData":"20100120","PhoneNo":"","IDNO":"6807151852148","LinkData":"|./delayCos.do|���|_self ","LinesData":"�ߺ������� �帶������ ������ �ްڰ�, ���������� ������� ������� �����ڸ��� ��ڽ��ϴ�.","Userformat":"1111155555","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/am.jpg|||||","PassData":"75646","RadioData":"M:1","CheckData":0},{"TextData":"����ȣ","ComboData":"01","ISO":"DZD","Currency":"������ �𳪸�","IntData":65,"FloatData":123,"DateData":"20020815","PhoneNo":"025815421","IDNO":"1138206820","LinesData":"�ߺ������� �帶������ ������ �ްڰ�, ���������� ������� ������� �����ڸ��� ��ڽ��ϴ�.�ߺ������ ��ϺϺδ� �帮�� �� ��������, �� �� ���������� �������� ��� ���� �Ѷ� ���󵵿� ���ֵ��� �߽����� �ҳ��Ⱑ ���ڽ��ϴ�.","Userformat":"","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/ca.jpg|||||","PassData":"4564","RadioData":"L:1","CheckData":1},{"TextData":"�ȼ���","ComboData":"02","ISO":"ARS","Currency":"�Ƹ���Ƽ�� ���","IntData":190,"FloatData":0,"DateData":"20110526","PhoneNo":"","IDNO":"6098204963","LinesData":"�Ϻ� �����ػ� ��ġ�� ������� �����ڸ��� �������, ���ֵ��� ���� ��а��� ������ �޴ٰ� ���� ����ڽ��ϴ�.","LinkData":"|./acceptCos.do|Ȯ��|_self ","Userformat":"9898554321","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/ca.jpg|||||","PassData":"123456","RadioData":"L:1","CheckData":1},{"TextData":"�ڸ���","ComboData":"02","ISO":"AWG","Currency":"�Ʒ�� �÷θ�","IntData":1120,"FloatData":115.25,"DateData":"20100922","PhoneNo":"0425741245","IDNO":"","LinesData":"���ػ� ��ġ�� ������� ������ �ްڽ��ϴ�.","Userformat":"","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/fe.jpg|||||","PassData":"75646","RadioData":"M:1","CheckData":0},{"TextData":"��ȣ��","ComboData":"01","ISO":"GBP","Currency":"���� �Ŀ��","IntData":65,"FloatData":154.36,"DateData":"","PhoneNo":"","IDNO":"6405142384211","LinesData":"","Userformat":"","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/ch.jpg|||||","PassData":"4564","RadioData":"H:1","CheckData":0},{"TextData":"�̹���","ComboData":"01","ISO":"BSD","Currency":"���ϸ� �޷�","IntData":0,"FloatData":0,"DateData":"","PhoneNo":"01022116587","IDNO":"7801221384251","LinkData":"|./rejectCos.do|�ݷ�|_self ","LinesData":"������ �帮�� ������ ���󳲵��� ���ֵ��� �� ��ġ�� ������ ���� ���Ŀ��� ��κ� �������� ��ġ������, ���������� ��ϺϺε��ؾ��� ���� ����� �̾����ڽ��ϴ�.","Userformat":"5552221230","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/fe.jpg|||||","PassData":"","RadioData":"H:1","CheckData":1},{"TextData":"��ȣ��","ComboData":"02","ISO":"BHD","Currency":"�ٷ��� �𳪸�","IntData":1120,"FloatData":0,"DateData":"20100922","PhoneNo":"0557256541","IDNO":"8506243051223","LinesData":"������ �帮�� ������ ���ֵ��� �� ���۵Ǿ� ������ ��������, ���Ŀ��� �������� Ȯ��ǰ�����, ��ǳ�� ������ �޴� ���������� �������� �� ���ڽ��ϴ�.","Userformat":"","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/ru.jpg|||||","PassData":"75646","RadioData":"M:1","CheckData":0},{"TextData":"��ȣ��","ComboData":"01","ISO":"BDT","Currency":"��۶󵥽� Ÿī","IntData":65,"FloatData":154.36,"DateData":"","PhoneNo":"","IDNO":"","LinkData":"|./rejectCos.do|�ݷ�|_self ","LinesData":"������ ������ ���� ���, ���Ҿ������� ������ �泲����, ���ֵ����� ���� �Ѷ� �ҳ��Ⱑ ���ڽ��ϴ�.","Userformat":"8949598981","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/ru.jpg|||||","PassData":"4564","RadioData":"L:1","CheckData":1},{"TextData":"���̷�","ComboData":"01","ISO":"BBD","Currency":"�ٺ��̵��� �޷�","IntData":190,"FloatData":15.25,"DateData":"20110526","PhoneNo":"0262642080","IDNO":"2118204825","LinesData":"�ߺϺ������� ���ػ� ��ġ�� ������� �����ڸ��� ��ڰ�, ��û�̳������� �帶������ ������ �޴ٰ� �� 5ȣ ��ǳ ���ٳ������� ������ ���� �ްڽ��ϴ�.","Userformat":"","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/ru.jpg|||||","PassData":"123456","RadioData":"H:1","CheckData":1},{"TextData":"������","ComboData":"02","ISO":"BYR","Currency":"����罺 ���","IntData":1120,"FloatData":115.25,"DateData":"20100922","PhoneNo":"0261254045","IDNO":"","LinesData":"","Userformat":"","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/ko.jpg|||||","PassData":"75646","RadioData":"L:1","CheckData":0},{"TextData":"������","ComboData":"01","ISO":"BZD","Currency":"������ �޷�","IntData":65,"FloatData":154.36,"DateData":"","PhoneNo":"","IDNO":"1298261319","LinesData":"�ߺϺ������� ���ػ� ��ġ�� ������� �����ڸ��� �������, ��û�̳������� �帶������ ������ ���� �ްڽ��ϴ�.","Userformat":"","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/er.jpg|||||","PassData":"4564","RadioData":"H:1","CheckData":0},{"TextData":"������","ComboData":"01","ISO":"BMD","Currency":"���´� �޷�","IntData":190,"FloatData":15.25,"DateData":"20110526","PhoneNo":"022222222","IDNO":"7507142063425","LinesData":"�ߺ������� ���ػ� ��ġ�� ������� �����ڸ��� �������, ���������� �帶������ ������ �ްڽ��ϴ�.","Userformat":"5415554321","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/fe.jpg|||||","PassData":"123456","RadioData":"M:1","CheckData":1}];		
+	</script>
+
+	</body>
+</html>

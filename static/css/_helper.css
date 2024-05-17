@@ -1,0 +1,226 @@
+@charset "euc-kr";
+
+/*
+    파일 개요
+    ---------------------------------------------------------------------
+    @ 목적 : [가천대 길병원 플랫폼] 헬퍼 클래스 정의
+    @ 작성 : GRIDA Publishing Team.
+    @ 최종 : 2023.05.14.00:00
+    @ 메모 : '헬퍼'는 자잘한 스타일을 클래스로 미리 만들어놓은 것이다. 
+*/
+
+/*
+Primary Color
+  한밭다크블루 : #3A6C98 → #769ABA → #EDF6FF
+  한밭라이트블루 : #009AB7 → #4EB9CD → #EBF7FA
+  한밭레드 : #E66564
+  한밭옐로우 : #D7A376
+
+Sub Color
+  한밭네이비 : #1e2446
+  한밭블루 : #056cb9
+*/
+
+/*Primary Color*/
+.fc-db {color: #3A6C98;}
+.fc-lb {color: #009AB7;}
+.fc-r {color: #E66564}
+.fc-y {color: #D7A376;}
+
+/*Sub Color*/
+.fc-n {color: #1e2446;}
+.fc-b {color: #056cb9;}
+
+/*Grayscale*/
+.fc-d1 {color: #d1d1d1;}
+.fc-111 {color: #111;}
+.fc-333 {color: #333;}
+.fc-666 {color: #666;}
+.fc-999 {color: #999;}
+.fc-ccc {color: #ccc;}
+.fc-e3 {color: #e3e3e3;}
+.fc-ed {color: #ededed;}
+.fc-f9fafc {color: #f9fafc;}
+.fc-1d {color: #1d1d1d;} 
+
+.fw-100 {font-weight: 100;}
+.fw-200 {font-weight: 200;}
+.fw-300 {font-weight: 300;}
+.fw-400 {font-weight: 400;}
+.fw-500 {font-weight: 500;}
+.fw-600 {font-weight: 600;}
+.fw-700 {font-weight: 700;}
+.fw-800 {font-weight: 800;}
+.fw-900 {font-weight: 900;}
+
+.fs-0 {font-size: 0px !important;}
+.fs-11 {font-size: 11px !important;}
+.fs-12 {font-size: 12px !important;}
+.fs-13 {font-size: 13px !important;}
+.fs-14 {font-size: 14px !important;}
+.fs-15 {font-size: 15px !important;}
+.fs-16 {font-size: 16px !important;}
+.fs-17 {font-size: 17px !important;}
+.fs-18 {font-size: 18px !important;}
+.fs-19 {font-size: 19px !important;}
+.fs-20 {font-size: 20px !important;}
+.fs-21 {font-size: 21px !important;}
+.fs-22 {font-size: 22px !important;}
+.fs-23 {font-size: 23px !important;}
+.fs-24 {font-size: 24px !important;}
+.fs-25 {font-size: 25px !important;}
+.fs-26 {font-size: 26px !important;}
+.fs-27 {font-size: 27px !important;}
+.fs-28 {font-size: 28px !important;}
+.fs-29 {font-size: 29px !important;}
+.fs-30 {font-size: 30px !important;}
+.fs-31 {font-size: 31px !important;}
+.fs-32 {font-size: 32px !important;}
+
+.underline {text-decoration: underline;}
+.no-underline {text-decoration: none;}
+
+.p10 {padding: 10px !important}
+.p15 {padding: 15px !important}
+.p16 {padding: 16px !important}
+.p20 {padding: 20px !important}
+.p30 {padding: 30px !important}
+.p40 {padding: 40px !important}
+.p50 {padding: 50px !important}
+.p60 {padding: 60px !important}
+.p70 {padding: 70px !important}
+.p80 {padding: 80px !important}
+.p90 {padding: 90px !important}
+.p100 {padding: 100px !important}
+
+.pl10 {padding-left: 10px !important}
+.pl16 {padding-left: 16px !important}
+.pl20 {padding-left: 20px !important}
+.pl30 {padding-left: 30px !important}
+.pl40 {padding-left: 40px !important}
+.pl50 {padding-left: 50px !important}
+.pl60 {padding-left: 60px !important}
+.pl70 {padding-left: 70px !important}
+.pl80 {padding-left: 80px !important}
+.pl90 {padding-left: 90px !important}
+.pl100 {padding-left: 100px !important}
+
+.pr6 {padding-right: 6px !important}
+.pr10 {padding-right: 10px !important}
+.pr20 {padding-right: 20px !important}
+.pr30 {padding-right: 30px !important}
+.pr40 {padding-right: 40px !important}
+.pr50 {padding-right: 50px !important}
+.pr60 {padding-right: 60px !important}
+.pr70 {padding-right: 70px !important}
+.pr80 {padding-right: 80px !important}
+.pr90 {padding-right: 90px !important}
+.pr100 {padding-right: 100px !important}
+
+.pb12 {padding-bottom: 12px !important}
+.pb8 {padding-bottom: 8px !important}
+.pb16 {padding-bottom: 16px !important}
+.pb32 {padding-bottom: 32px !important}
+
+.pt8 {padding-top: 8px !important}
+
+
+.w100p {width: 100% !important}
+.w0 {width: 0 !important;}
+.w10 {width: 10px !important}
+.w20 {width: 20px !important}
+.w30 {width: 30px !important}
+.w40 {width: 40px !important}
+.w50 {width: 50px !important}
+.w60 {width: 60px !important}
+.w68 {width: 68px !important}
+.w70 {width: 70px !important}
+.w76 {width: 76px !important}
+.w80 {width: 80px !important}
+.w90 {width: 90px !important}
+.w100 {width: 100px !important}
+.w120 {width: 120px !important}
+.w140 {width: 140px !important}
+.w150 {width: 150px !important}
+.w165 {width: 165px !important}
+.w220 {width: 220px !important}
+.w300 {width: 300px !important}
+.w310 {width: 310px !important}
+.w320 {width: 310px !important}
+.w420 {width: 420px !important}
+.w500 {width: 500px !important}
+.w620 {width: 620px !important}
+.w820 {width: 820px !important}
+.w880 {width: 880px !important}
+
+
+.h100p {height: 100% !important;}
+.h0 {height: 0 !important;}
+.h165 {height: 165px !important;}
+.h194 {height: 194px !important;}
+.h250 {height: 250px !important;}
+
+.ta-left {text-align: left !important}
+.ta-center {text-align: center !important}
+.ta-right {text-align: right !important}
+
+.mb0 {margin-bottom: 0px !important;}
+.mb1 {margin-bottom: 1px !important;}
+.mb5 {margin-bottom: 5px !important;}
+.mb8 {margin-bottom: 8px !important;}
+.mb10 {margin-bottom: 10px !important;}
+.mb12 {margin-bottom: 12px !important;}
+.mb13 {margin-bottom: 13px !important;}
+.mb14 {margin-bottom: 14px !important;}
+.mb16 {margin-bottom: 16px !important;}
+.mb20 {margin-bottom: 20px !important;}
+.mb24 {margin-bottom: 24px !important;}
+.mb25 {margin-bottom: 25px !important;}
+.mb32 {margin-bottom: 32px !important;}
+.mb33 {margin-bottom: 33px !important;}
+.mb40 {margin-bottom: 40px !important;}
+.mb55 {margin-bottom: 55px !important;}
+.mb60 {margin-bottom: 60px !important;}
+
+.mt0 {margin-top: 0px !important;}
+.mt1 {margin-top: 1px !important;}
+.mt8 {margin-top: 8px !important;}
+.mt31 {margin-top: 31px !important;}
+
+.mr10 {margin-right: 10px !important;}
+.ml10 {margin-left: 10px !important;}
+.ml32 {margin-left: 32px !important;}
+
+.por {position: relative !important;}
+.poa {position: absolute !important;}
+
+.top1 {top: 1px !important;}
+  
+.d-block {display: block !important;}
+.d-inline-block {display: inline-block !important;}
+.d-inline {display: inline !important;}
+
+.bt-ed {border-top: 1px solid #ededed;}
+.bb-e3 {border-bottom: 1px solid #e3e3e3;}
+.bb-56 {border-bottom: 1px solid #565656;}
+.bb-2e {border-bottom: 1px solid #2e2e2e;}
+.br-0 {border-right: 0 !important;}
+
+.br0 {border-radius: 0px;}
+.br2 {border-radius: 2px;}
+
+.ddd {
+  max-width: 100%;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.lh-2-2 {line-height: 2.2 !important;}
+
+.hide {display: none !important;}
+
+.tlf {table-layout:  fixed;}
+
+.mwa {max-width: 100% !important;}

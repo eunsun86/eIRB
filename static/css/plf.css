@@ -1,0 +1,18 @@
+@import url("ibsheet8_main.css"); /*ibsheet*/
+@import url("datepicker.min.css"); /*datepicker CSS*/
+@import url("_base.css"); /*리셋 및 기본 스타일*/
+@import url("_font.css"); /*폰트 정의*/
+@import url("_component.css"); /*UI 컴포넌트*/
+@import url("_layout.css"); /*공통 영역 CSS*/
+@import url("_page.css"); /*페이지별 특수하게 추가 수정 필요할때*/
+@import url("_helper.css"); /*헬퍼류(간단CSS 수정 클래스 모음집)*/
+@import url("_test.css"); /*테스트시*/
+
+/*
+    파일 개요
+    ---------------------------------------------------------------------
+    @ 목적 : [가천대 길병원 플랫폼] import base file
+    @ 작성 : GRIDA Publishing Team.
+    @ 최종 : 2024.05.14.00:00
+    @ 메모 : 이곳에 정의하지 않습니다. 그저 import를 위한 파일입니다.
+*/

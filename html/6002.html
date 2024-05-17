@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="euc-kr" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>plf</title>
+		<script src="../static/js/jquery-3.6.0.min.js"></script>
+		<script src="../static/js/datepicker.min.js"></script>		
+		<script src="../static/js/datepicker.ko-KR.js"></script>		
+		<script src="../static/js/plf_pub.js"></script>
+		<link rel="stylesheet" href="../static/css/plf.css" />
+	</head>
+	<body>
+
+		<!--[S] plf-root-->
+		<div class="plf-root">
+
+			<!--[S] plf-header-->
+			<div class="plf-header">
+				<!--[D] ����, html/00_sub_layout����-->		
+			</div>
+			<!--//[S] plf-header-->
+
+			<!--[S] plf-group-aside-con-->
+			<div class="plf-group-aside-con">
+				
+				<!--[S] plf-aside-->
+				<div class="plf-aside">
+					<p class="tit-d1">�Խ���</p>
+					<ul class="d1">
+						<li class="active"> <!--[D]active-->
+							<!--[D]���������, class="no-sub", onClick="..." -->
+							<button class="no-sub" type="button" onClick="location.href='#'">��������</button>
+						</li>
+						<li>
+							<!--[D]���������, class="no-sub", onClick="..." -->
+							<button class="no-sub" type="button" onClick="location.href='#'">FAQ</button>
+						</li>
+					</ul>
+				</div>
+				<!--//[S] plf-aside-->
+
+				<!--[S] plf-con-->
+				<div class="plf-con">
+
+					<!--[S] plf-main-->
+					<div class="plf-main">
+
+						<div class="breadcrumb">
+							<span class="item">Ȩ</span>
+							<span class="item">�Խ���</span>
+							<span class="item">��������</span>
+						</div>						
+
+						<p class="tit-pagetitle">��������</p>			
+
+						<table class="data-table form-table">
+							<!-- <caption>ǥ ����</caption> -->
+							<colgroup>
+								<col width="120px">
+								<col width="">
+								<col width="120px">
+								<col width="">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>����</th>
+									<td colspan="3">[�����԰ݾȳ�] ������ᰳ��Ȯ��������� ���� ȹ �����뿪</td>
+									<!-- <th></th> -->
+									<!-- <td></td> -->
+								</tr>
+								<tr>
+									<th>�ۼ���</th>
+									<td>ȫ�浿</td>
+									<th>�ۼ���</th>
+									<td>2023.12.31</td>
+								</tr>
+								<tr>
+									<th>÷������</th>
+									<td colspan="3">
+										<div class="td-item-group left gap4">
+											<!--[D]��ü���� �ٿ�ε�-->
+											<div class="td-item pop-down"> <!--[D]active-->
+												<button class="btn btn-big btn-g-outline" type="button">��ü���� �ٿ�ε�</button>
+												<div class="pop-down-body">
+													<ul>
+														<li>
+															<button type="button">Ŭ���� �ܵ��������� �ٷν����.pdf</button>
+														</li>
+														<li>
+															<button type="button">���ϸ� �ʹ���� �����Ͽ� �����ֱ� �����ؾ��մϴ� �����ؾ��մϴ�</button>
+														</li>
+														<li>
+															<button type="button">(��������)Ŭ���弭�񽺺�����.pptx</button>
+														</li>
+														<li>
+															<button type="button">(��������)Ŭ���弭�񽺺�����.pptx</button>
+														</li>
+														<li>
+															<button type="button">(��������)Ŭ���弭�񽺺�����.pptx</button>
+														</li>
+														<li>
+															<button type="button">(��������)Ŭ���弭�񽺺�����.pptx</button>
+														</li>																																																									
+													</ul>
+														<div class="btn-group right pt8 pr6 pb12">
+															<button class="btn btn-big btn-g-outline" type="button">��ü��������</button>
+															<button class="btn btn-big btn-g-outline" type="button">�ݱ�</button>
+														</div>
+												</div>
+											</div>
+											
+											<div class="td-item badge badge-gray">�̹���.png</div>
+											<div class="td-item badge badge-gray">����3.pdf</div>																
+										</div>								
+									</td>
+									<!-- <th></th> -->
+									<!-- <td></td> -->
+								</tr>	
+								<tr>
+									<td class="board-main" colspan="4">
+										<!--��������-->
+										<div class="board-main">
+											���б�����ȭ����������� �������� ��ȸ�� �յ��� ������ ������ ������ ���Ͽ� ������ ���� <br>
+											��������ᰳ��Ȯ����������� ���� ��ȹ�����뿪�� ���ȿ�û���� ���� �����Ͽ��� �����Ͻñ� �ٶ��ϴ�. <br>
+											- �뿪�� : ������ᰳ��Ȯ��������� ���� ��ȹ �����뿪 <br>
+											- �뿪�Ⱓ : ����� ~ 2023. 12. 31. <br>
+											- ���ݾ� : 60�鸸�� �̳�(����õ���� �̳�, �ΰ��� ����) <br>
+											- �����Ⱓ : 2023.8.11.(��) ~ 2023.8.16.(��) (������ : 2023.8.17.(��) ~ 2023.8.28.(��)) <br>
+											�� ÷�ε� ���ȿ�û���� ���ȿ�û ����, ���� �԰� �� ���� ������ȸ ���� �����ϴ� ������ ���� ���, ��� ����ó�� �����ֽñ� �ٶ��ϴ�. <br>
+											<br>
+											���б�����ȭ����������� �������� ��ȸ�� �յ��� ������ ������ ������ ���Ͽ� ������ ���� <br>
+											��������ᰳ��Ȯ����������� ���� ��ȹ�����뿪�� ���ȿ�û���� ���� �����Ͽ��� �����Ͻñ� �ٶ��ϴ�. <br>
+											- �뿪�� : ������ᰳ��Ȯ��������� ���� ��ȹ �����뿪 <br>
+											- �뿪�Ⱓ : ����� ~ 2023. 12. 31. <br>
+											- ���ݾ� : 60�鸸�� �̳�(����õ���� �̳�, �ΰ��� ����) <br>
+											- �����Ⱓ : 2023.8.11.(��) ~ 2023.8.16.(��) (������ : 2023.8.17.(��) ~ 2023.8.28.(��)) <br>
+											�� ÷�ε� ���ȿ�û���� ���ȿ�û ����, ���� �԰� �� ���� ������ȸ ���� �����ϴ� ������ ���� ���, ��� ����ó�� �����ֽñ� �ٶ��ϴ�. <br>										
+										</div>
+										<!--//��������-->
+									</td>
+								</tr>															
+							</tbody>
+						</table>						
+						<div class="bt-ed pt8 mt8 mb24">
+							<div class="btn-group right">
+								<button class="btn btn-big btn-g-outline" type="button">�亯</button>
+								<button class="btn btn-big btn-g-outline" type="button">����</button>
+								<button class="btn btn-big btn-g-outline" type="button">�۾���</button>
+								<button class="btn btn-big btn-g-outline" type="button">���</button>
+							</div>							
+						</div>
+
+						<p class="tit fc-333 fw-600 pb8 fs-15 mb8 bb-2e" >��� 2��</p>
+						<div class="reply-box">
+							<ul class="reply-list">
+								<li class="reply-item">
+										<div class="reply-info">
+											<p class="reply-name">ȫ�浿</p>
+											<p class="reply-dpt">����а�</p>
+											<p class="reply-date">10.30 09:39</p>
+										</div>
+										<div class="reply-txt">
+											��� ������ ǥ���մϴ�. ��� ������ ǥ���մϴ�. ��� ������ ǥ���մϴ�. ��� ������ ǥ���մϴ�.
+										</div>
+										<div class="reply-func">
+											<div class="btn-group">
+												<button class="btn btn-txt btn-txt-b" type="button">����</button>
+												<button class="btn btn-txt btn-txt-g" type="button">����</button>
+											</div> 
+										</div>
+								</li>
+								<li class="reply-item">
+										<div class="reply-info">
+											<p class="reply-name">������</p>
+											<!-- <p class="reply-dpt">����а�</p> -->
+											<p class="reply-date">10.30 09:39</p>
+										</div>
+										<!--[D]����-->
+										<div class="td-item-group left gap4 mb12">
+											<!--[D]��ü���� �ٿ�ε�-->
+											<div class="td-item pop-down"> <!--[D]active-->
+												<button class="btn btn-big btn-g-outline" type="button">��ü���� �ٿ�ε�</button>
+												<div class="pop-down-body">
+													<ul>
+														<li>
+															<button type="button">Ŭ���� �ܵ��������� �ٷν����.pdf</button>
+														</li>
+														<li>
+															<button type="button">���ϸ� �ʹ���� �����Ͽ� �����ֱ� �����ؾ��մϴ� �����ؾ��մϴ�</button>
+														</li>
+														<li>
+															<button type="button">(��������)Ŭ���弭�񽺺�����.pptx</button>
+														</li>
+														<li>
+															<button type="button">(��������)Ŭ���弭�񽺺�����.pptx</button>
+														</li>
+														<li>
+															<button type="button">(��������)Ŭ���弭�񽺺�����.pptx</button>
+														</li>
+														<li>
+															<button type="button">(��������)Ŭ���弭�񽺺�����.pptx</button>
+														</li>																																																									
+													</ul>
+														<div class="btn-group right pt8 pr6 pb12">
+															<button class="btn btn-big btn-g-outline" type="button">��ü��������</button>
+															<button class="btn btn-big btn-g-outline" type="button">�ݱ�</button>
+														</div>
+												</div>
+											</div>
+											
+											<div class="td-item badge badge-gray">�̹���.png</div>
+											<div class="td-item badge badge-gray">����3.pdf</div>																
+										</div>										
+										<!--//[D]����-->
+										<div class="reply-txt">
+											��� ������ ǥ���մϴ�. ��� ������ ǥ���մϴ�. ��� ������ ǥ���մϴ�. ��� ������ ǥ���մϴ�.
+										</div>
+										<div class="reply-func">
+											<div class="btn-group">
+												<button class="btn btn-txt btn-txt-b" type="button">����</button>
+												<button class="btn btn-txt btn-txt-g" type="button">����</button>
+											</div> 
+										</div>
+								</li>
+							</ul>
+							<div class="reply-write ">
+								<div class="ta-group">
+									<textarea class="ta-ip" placeholder="������ �Է��� �� �ֽ��ϴ�."></textarea>
+								</div>
+							</div>
+							<div class="td-item-group">
+								<div class="td-item">
+									<div class="badge badge-gray badge-del">�̹���.png <button type="button">����</button></div>
+									<div class="badge badge-gray badge-del">�ڷ�.pdf <button type="button">����</button></div>
+								</div>
+								<div class="td-item">
+									<button class="btn btn-big btn-g-outline" type="button">����÷��</button>
+									<button class="btn btn-big btn-g-outline" type="button">���ϻ���</button>
+									<button class="btn btn-big btn-g-outline" type="button">�������</button>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<!--//[S] plf-main-->
+
+					<!--[S] plf-footer-->
+					<div class="plf-footer">
+						<ul>
+							<li>
+								<a href="">��������ó����޹�ħ</a>
+							</li>
+							<li>
+								<a href="">�̸��� �����ź�</a>
+							</li>							
+						</ul>
+						<p class="copy">Copyright(c) 2023 Webcash corp. All Rights reserved.</p>
+						
+					</div>					
+					<!--//[S] plf-footer-->
+
+				</div>
+				<!--//[S] plf-con-->
+
+			</div>
+			<!--//[S] plf-group-aside-con-->
+
+		</div>
+		<!--//[S] plf-root-->
+
+	</body>
+</html>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+    <g data-name="그룹 43826">
+        <path data-name="합치기 105" d="M-10974-3896a1 1 0 0 1-1-1v-2.248a.75.75 0 0 1 .75-.752.751.751 0 0 1 .749.752v1.749h9v-1.749a.751.751 0 0 1 .752-.752.751.751 0 0 1 .749.752v2.248a1 1 0 0 1-1 1z" transform="translate(10977 3910)" style="fill:#666"/>
+        <g data-name="그룹 43768">
+            <path data-name="패스 26389" d="m0 3 3-3 3 3" transform="rotate(180 5.5 5)" style="stroke-linejoin:round;fill:none;stroke:#666;stroke-linecap:round;stroke-width:1.5px"/>
+            <path data-name="선 102" transform="rotate(90 2.625 5.375)" style="fill:none;stroke:#666;stroke-linecap:round;stroke-width:1.5px" d="M6 0H0"/>
+        </g>
+    </g>
+</svg>

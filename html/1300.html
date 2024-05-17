@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="euc-kr" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>plf</title>
+		<script src="../static/js/jquery-3.6.0.min.js"></script>
+		<script src="../static/js/plf_pub.js"></script>
+		<link rel="stylesheet" href="../static/css/plf.css" />
+		
+		<!--[TEST�� CSS]-->
+		<style>
+			.modal {
+				position: relative;
+				transform: translate(0, 0);
+				top: auto;
+				left: auto;
+				float: left;
+				margin: 10px;
+			}
+		</style>
+		<!--//[TEST�� CSS]-->		
+	</head>
+	<body>
+
+		<div class="modal w620 active"> <!--[D]active-->
+			<div class="inner">
+				<div class="modal-header">
+					<p class="tit">���Ͼ��ε�</p>
+					<button class="btn-close" type="button">�ݱ�</button>
+				</div>
+				<div class="modal-con">
+
+					<div class="pn mb8">
+						<div class="pn-con p16">		
+							<p class="txt-01 fs-13">���� 1���� �뷮�� 200MB�� �Ѵ� ��� ���ε� �Ͻ� �� �����ϴ�.</p>
+						</div>				
+					</div>
+
+					<div class="btn-group right mb25">
+						<button class="btn btn-big btn-g-outline" type="button">���ϼ���</button>
+						<button class="btn btn-big btn-g-outline" type="button">����</button>
+					</div>					
+
+					<div class="data-table-wrap-fileUpload w100p h250">
+						<!--Thead-->
+						<table class="file-thead data-table">
+							<colgroup>
+								<col width="39px">
+								<col width="">
+								<col width="102px">
+							</colgroup>
+							<thead>
+								<tr>
+									<th class="ta-center" scope="col">
+										<div class="ip-ch-group">
+											<label for="ch-all" class="ip-ch-label no-txt">
+												<input name="ch-all" id="ch-all" class="ip-ch" type="checkbox" value="">
+												<span class="check"></span>
+											</label>
+										</div>
+									</label>
+									</th>
+									<th class="ta-left" scope="col">�����̸�</th>
+									<th class="ta-center" scope="col">�뷮</th>
+								</tr>
+							</thead>
+						</table>
+						<!--//Thead-->
+						<!--Tbody-->
+
+						<!--[D] ���� 0 �϶�-->
+						<div class="file-tbody no-data w100p h194"></div>
+
+						<!--[D] ���� 1�̻� �϶�-->
+						<!--
+						<div class="file-tbody data-table-wrap-y w100p h194">
+							<table class="data-table">
+								<colgroup>
+									<col width="39px">
+									<col width="">
+									<col width="102px">
+								</colgroup>
+								<tbody>
+									<tr class="">
+										<td class="ta-left">
+											<div class="ip-ch-group">
+												<label for="ch-1-1" class="ip-ch-label no-txt">
+													<input name="ch-1" id="ch-1-1" class="ip-ch" type="checkbox" value="">
+													<span class="check"></span>
+												</label>
+											</div>
+										</label>
+										</td>
+										<td class="ta-left">������1.jpeg</td>
+										<td class="ta-right">98.76 KB</td>
+									</tr>
+									<tr class="">
+										<td class="ta-left">
+											<div class="ip-ch-group">
+												<label for="ch-1-2" class="ip-ch-label no-txt">
+													<input name="ch-1" id="ch-1-2" class="ip-ch" type="checkbox" value="">
+													<span class="check"></span>
+												</label>
+											</div>
+										</td>
+										<td class="ta-left">������2.jpeg</td>
+										<td class="ta-right">289.76 KB</td>
+									</tr>
+									<tr class="">
+										<td class="ta-left">
+											<div class="ip-ch-group">
+												<label for="ch-1-3" class="ip-ch-label no-txt">
+													<input name="ch-1" id="ch-1-3" class="ip-ch" type="checkbox" value="">
+													<span class="check"></span>
+												</label>
+											</div>
+										</td>
+										<td class="ta-left">������3.jpeg</td>
+										<td class="ta-right">289.76 KB</td>
+									</tr>
+									<tr class="">
+										<td class="ta-left">
+											<div class="ip-ch-group">
+												<label for="ch-1-4" class="ip-ch-label no-txt">
+													<input name="ch-1" id="ch-1-4" class="ip-ch" type="checkbox" value="">
+													<span class="check"></span>
+												</label>
+											</div>
+										</td>
+										<td class="ta-left">������4.jpeg</td>
+										<td class="ta-right">289.76 KB</td>
+									</tr>
+									<tr class="">
+										<td class="ta-left">
+											<div class="ip-ch-group">
+												<label for="ch-1-5" class="ip-ch-label no-txt">
+													<input name="ch-1" id="ch-1-5" class="ip-ch" type="checkbox" value="">
+													<span class="check"></span>
+												</label>
+											</div>
+										</td>
+										<td class="ta-left">������5.jpeg</td>
+										<td class="ta-right">289.76 KB</td>
+									</tr>
+									<tr class="">
+										<td class="ta-left">
+											<div class="ip-ch-group">
+												<label for="ch-1-6" class="ip-ch-label no-txt">
+													<input name="ch-1" id="ch-1-6" class="ip-ch" type="checkbox" value="">
+													<span class="check"></span>
+												</label>
+											</div>
+										</td>
+										<td class="ta-left">������6.jpeg</td>
+										<td class="ta-right">289.76 KB</td>
+									</tr>
+									<tr class="">
+										<td class="ta-left">
+											<div class="ip-ch-group">
+												<label for="ch-1-7" class="ip-ch-label no-txt">
+													<input name="ch-1" id="ch-1-7" class="ip-ch" type="checkbox" value="">
+													<span class="check"></span>
+												</label>
+											</div>
+										</td>
+										<td class="ta-left">������7.jpeg</td>
+										<td class="ta-right">289.76 KB</td>
+									</tr>
+									<tr class="">
+										<td class="ta-left">
+											<div class="ip-ch-group">
+												<label for="ch-1-8" class="ip-ch-label no-txt">
+													<input name="ch-1" id="ch-1-8" class="ip-ch" type="checkbox" value="">
+													<span class="check"></span>
+												</label>
+											</div>
+										</td>
+										<td class="ta-left">������8.jpeg</td>
+										<td class="ta-right">289.76 KB</td>
+									</tr>
+									<tr class="">
+										<td class="ta-left">
+											<div class="ip-ch-group">
+												<label for="ch-1-9" class="ip-ch-label no-txt">
+													<input name="ch-1" id="ch-1-9" class="ip-ch" type="checkbox" value="">
+													<span class="check"></span>
+												</label>
+											</div>
+										</td>
+										<td class="ta-left">������9.jpeg</td>
+										<td class="ta-right">289.76 KB</td>
+									</tr>																																								
+								</tbody>
+							</table>						
+						</div>
+						-->
+
+						<!--//Tbody-->
+						<!--Tfoot-->
+						<div class="file-tfoot">
+							<p class="txt-01 fs-13 fw-500 fc-333">
+								1��ü, 
+								286.76 KB 
+								÷�ε�
+							</p>
+						</div>
+						<!--//Tfoot-->
+					</div>
+
+					<div class="data-table-wrap-y w100p h250" style="display: none;">
+						<table class="data-table">
+							<!-- <caption>ǥ ����</caption> -->
+							<colgroup>
+								<col width="39px">
+								<col width="">
+								<col width="102px">
+							</colgroup>
+							<thead>
+								<tr>
+									<th class="ta-center" scope="col">
+										<div class="ip-ch-group">
+											<label for="ch-all" class="ip-ch-label no-txt">
+												<input name="ch-all" id="ch-all" class="ip-ch" type="checkbox" value="">
+												<span class="check"></span>
+											</label>
+										</div>
+									</label>
+									</th>
+									<th class="ta-left" scope="col">�����̸�</th>
+									<th class="ta-center" scope="col">�뷮</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="">
+									<td class="ta-left">
+										<div class="ip-ch-group">
+											<label for="ch-1-1" class="ip-ch-label no-txt">
+												<input name="ch-1" id="ch-1-1" class="ip-ch" type="checkbox" value="">
+												<span class="check"></span>
+											</label>
+										</div>
+									</label>
+									</td>
+									<td class="ta-left">������1.jpeg</td>
+									<td class="ta-right">98.76 KB</td>
+								</tr>
+								<tr class="">
+									<td class="ta-left">
+										<div class="ip-ch-group">
+											<label for="ch-1-2" class="ip-ch-label no-txt">
+												<input name="ch-1" id="ch-1-2" class="ip-ch" type="checkbox" value="">
+												<span class="check"></span>
+											</label>
+										</div>
+									</td>
+									<td class="ta-left">������2.jpeg</td>
+									<td class="ta-right">289.76 KB</td>
+								</tr>
+								<tr class="">
+									<td class="ta-left">
+										<div class="ip-ch-group">
+											<label for="ch-1-3" class="ip-ch-label no-txt">
+												<input name="ch-1" id="ch-1-3" class="ip-ch" type="checkbox" value="">
+												<span class="check"></span>
+											</label>
+										</div>
+									</td>
+									<td class="ta-left">������3.jpeg</td>
+									<td class="ta-right">289.76 KB</td>
+								</tr>
+								<tr class="">
+									<td class="ta-left">
+										<div class="ip-ch-group">
+											<label for="ch-1-4" class="ip-ch-label no-txt">
+												<input name="ch-1" id="ch-1-4" class="ip-ch" type="checkbox" value="">
+												<span class="check"></span>
+											</label>
+										</div>
+									</td>
+									<td class="ta-left">������4.jpeg</td>
+									<td class="ta-right">289.76 KB</td>
+								</tr>
+								<tr class="">
+									<td class="ta-left">
+										<div class="ip-ch-group">
+											<label for="ch-1-5" class="ip-ch-label no-txt">
+												<input name="ch-1" id="ch-1-5" class="ip-ch" type="checkbox" value="">
+												<span class="check"></span>
+											</label>
+										</div>
+									</td>
+									<td class="ta-left">������5.jpeg</td>
+									<td class="ta-right">289.76 KB</td>
+								</tr>
+								<tr class="">
+									<td class="ta-left">
+										<div class="ip-ch-group">
+											<label for="ch-1-6" class="ip-ch-label no-txt">
+												<input name="ch-1" id="ch-1-6" class="ip-ch" type="checkbox" value="">
+												<span class="check"></span>
+											</label>
+										</div>
+									</td>
+									<td class="ta-left">������6.jpeg</td>
+									<td class="ta-right">289.76 KB</td>
+								</tr>
+								<tr class="">
+									<td class="ta-left">
+										<div class="ip-ch-group">
+											<label for="ch-1-7" class="ip-ch-label no-txt">
+												<input name="ch-1" id="ch-1-7" class="ip-ch" type="checkbox" value="">
+												<span class="check"></span>
+											</label>
+										</div>
+									</td>
+									<td class="ta-left">������7.jpeg</td>
+									<td class="ta-right">289.76 KB</td>
+								</tr>
+								<tr class="">
+									<td class="ta-left">
+										<div class="ip-ch-group">
+											<label for="ch-1-8" class="ip-ch-label no-txt">
+												<input name="ch-1" id="ch-1-8" class="ip-ch" type="checkbox" value="">
+												<span class="check"></span>
+											</label>
+										</div>
+									</td>
+									<td class="ta-left">������8.jpeg</td>
+									<td class="ta-right">289.76 KB</td>
+								</tr>
+								<tr class="">
+									<td class="ta-left">
+										<div class="ip-ch-group">
+											<label for="ch-1-9" class="ip-ch-label no-txt">
+												<input name="ch-1" id="ch-1-9" class="ip-ch" type="checkbox" value="">
+												<span class="check"></span>
+											</label>
+										</div>
+									</td>
+									<td class="ta-left">������9.jpeg</td>
+									<td class="ta-right">289.76 KB</td>
+								</tr>																																								
+							</tbody>
+							<tfoot>
+								<tr>
+									<td class="ta-left" colspan="3">
+										<p class="txt-01 fc-333 fs-13 fw-500">
+											1��ü, 
+											286.76 KB 
+											÷�ε�
+										</p>
+									</td>
+								</tr>
+							</tfoot>							
+						</table>				
+					</div>					
+
+				</div>
+				<div class="modal-footer">
+					<div class="btn-group right">
+						<button class="btn btn-big btn-g-outline" type="button">���ε�</button>
+						<button class="btn btn-big btn-db" type="button">���ε�</button>
+						<button class="btn btn-big btn-g-outline" type="button">�ݱ�</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal w620 active"> <!--[D]active-->
+			<div class="inner">
+				<div class="modal-header">
+					<p class="tit">���Ͼ��ε�</p>
+					<button class="btn-close" type="button">�ݱ�</button>
+				</div>
+				<div class="modal-con">
+
+					<div class="pn mb8">
+						<div class="pn-con p16">		
+							<p class="txt-01 fs-13">���� 1���� �뷮�� 200MB�� �Ѵ� ��� ���ε� �Ͻ� �� �����ϴ�.</p>
+						</div>				
+					</div>
+
+					<div class="btn-group right mb25">
+						<button class="btn btn-big btn-g-outline" type="button">���ϼ���</button>
+						<button class="btn btn-big btn-g-outline" type="button">����</button>
+					</div>					
+
+					<div class="data-table-wrap-fileUpload w100p h250">
+						<!--Thead-->
+						<table class="file-thead data-table">
+							<colgroup>
+								<col width="39px">
+								<col width="">
+								<col width="102px">
+							</colgroup>
+							<thead>
+								<tr>
+									<th class="ta-center" scope="col">
+										<div class="ip-ch-group">
+											<label for="ch-all" class="ip-ch-label no-txt">
+												<input name="ch-all" id="ch-all" class="ip-ch" type="checkbox" value="">
+												<span class="check"></span>
+											</label>
+										</div>
+									</label>
+									</th>
+									<th class="ta-left" scope="col">�����̸�</th>
+									<th class="ta-center" scope="col">�뷮</th>
+								</tr>
+							</thead>
+						</table>
+						<!--//Thead-->
+						<!--Tbody-->
+
+						<!--[D] ���� 0 �϶�-->
+						<!-- <div class="file-tbody no-data w100p h194"></div> -->
+
+						<!--[D] ���� 1�̻� �϶�-->
+						<div class="file-tbody data-table-wrap-y w100p h194">
+							<table class="data-table">
+								<colgroup>
+									<col width="39px">
+									<col width="">
+									<col width="102px">
+								</colgroup>
+								<tbody>
+									<tr class="">
+										<td class="ta-left">
+											<div class="ip-ch-group">
+												<label for="ch-1-1" class="ip-ch-label no-txt">
+													<input name="ch-1" id="ch-1-1" class="ip-ch" type="checkbox" value="">
+													<span class="check"></span>
+												</label>
+											</div>
+										</label>
+										</td>
+										<td class="ta-left">������1.jpeg</td>
+										<td class="ta-right">98.76 KB</td>
+									</tr>
+									<tr class="">
+										<td class="ta-left">
+											<div class="ip-ch-group">
+												<label for="ch-1-2" class="ip-ch-label no-txt">
+													<input name="ch-1" id="ch-1-2" class="ip-ch" type="checkbox" value="">
+													<span class="check"></span>
+												</label>
+											</div>
+										</td>
+										<td class="ta-left">������2.jpeg</td>
+										<td class="ta-right">289.76 KB</td>
+									</tr>
+									<tr class="">
+										<td class="ta-left">
+											<div class="ip-ch-group">
+												<label for="ch-1-3" class="ip-ch-label no-txt">
+													<input name="ch-1" id="ch-1-3" class="ip-ch" type="checkbox" value="">
+													<span class="check"></span>
+												</label>
+											</div>
+										</td>
+										<td class="ta-left">������3.jpeg</td>
+										<td class="ta-right">289.76 KB</td>
+									</tr>
+									<tr class="">
+										<td class="ta-left">
+											<div class="ip-ch-group">
+												<label for="ch-1-4" class="ip-ch-label no-txt">
+													<input name="ch-1" id="ch-1-4" class="ip-ch" type="checkbox" value="">
+													<span class="check"></span>
+												</label>
+											</div>
+										</td>
+										<td class="ta-left">������4.jpeg</td>
+										<td class="ta-right">289.76 KB</td>
+									</tr>
+									<tr class="">
+										<td class="ta-left">
+											<div class="ip-ch-group">
+												<label for="ch-1-5" class="ip-ch-label no-txt">
+													<input name="ch-1" id="ch-1-5" class="ip-ch" type="checkbox" value="">
+													<span class="check"></span>
+												</label>
+											</div>
+										</td>
+										<td class="ta-left">������5.jpeg</td>
+										<td class="ta-right">289.76 KB</td>
+									</tr>
+									<tr class="">
+										<td class="ta-left">
+											<div class="ip-ch-group">
+												<label for="ch-1-6" class="ip-ch-label no-txt">
+													<input name="ch-1" id="ch-1-6" class="ip-ch" type="checkbox" value="">
+													<span class="check"></span>
+												</label>
+											</div>
+										</td>
+										<td class="ta-left">������6.jpeg</td>
+										<td class="ta-right">289.76 KB</td>
+									</tr>
+									<tr class="">
+										<td class="ta-left">
+											<div class="ip-ch-group">
+												<label for="ch-1-7" class="ip-ch-label no-txt">
+													<input name="ch-1" id="ch-1-7" class="ip-ch" type="checkbox" value="">
+													<span class="check"></span>
+												</label>
+											</div>
+										</td>
+										<td class="ta-left">������7.jpeg</td>
+										<td class="ta-right">289.76 KB</td>
+									</tr>
+									<tr class="">
+										<td class="ta-left">
+											<div class="ip-ch-group">
+												<label for="ch-1-8" class="ip-ch-label no-txt">
+													<input name="ch-1" id="ch-1-8" class="ip-ch" type="checkbox" value="">
+													<span class="check"></span>
+												</label>
+											</div>
+										</td>
+										<td class="ta-left">������8.jpeg</td>
+										<td class="ta-right">289.76 KB</td>
+									</tr>
+									<tr class="">
+										<td class="ta-left">
+											<div class="ip-ch-group">
+												<label for="ch-1-9" class="ip-ch-label no-txt">
+													<input name="ch-1" id="ch-1-9" class="ip-ch" type="checkbox" value="">
+													<span class="check"></span>
+												</label>
+											</div>
+										</td>
+										<td class="ta-left">������9.jpeg</td>
+										<td class="ta-right">289.76 KB</td>
+									</tr>																																								
+								</tbody>
+							</table>						
+						</div>
+						<!--//Tbody-->
+						<!--Tfoot-->
+						<div class="file-tfoot">
+							<p class="txt-01 fs-13 fw-500 fc-333">
+								1��ü, 
+								286.76 KB 
+								÷�ε�
+							</p>
+						</div>
+						<!--//Tfoot-->
+					</div>
+
+					<div class="data-table-wrap-y w100p h250" style="display: none;">
+						<table class="data-table">
+							<!-- <caption>ǥ ����</caption> -->
+							<colgroup>
+								<col width="39px">
+								<col width="">
+								<col width="102px">
+							</colgroup>
+							<thead>
+								<tr>
+									<th class="ta-center" scope="col">
+										<div class="ip-ch-group">
+											<label for="ch-all" class="ip-ch-label no-txt">
+												<input name="ch-all" id="ch-all" class="ip-ch" type="checkbox" value="">
+												<span class="check"></span>
+											</label>
+										</div>
+									</label>
+									</th>
+									<th class="ta-left" scope="col">�����̸�</th>
+									<th class="ta-center" scope="col">�뷮</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="">
+									<td class="ta-left">
+										<div class="ip-ch-group">
+											<label for="ch-1-1" class="ip-ch-label no-txt">
+												<input name="ch-1" id="ch-1-1" class="ip-ch" type="checkbox" value="">
+												<span class="check"></span>
+											</label>
+										</div>
+									</label>
+									</td>
+									<td class="ta-left">������1.jpeg</td>
+									<td class="ta-right">98.76 KB</td>
+								</tr>
+								<tr class="">
+									<td class="ta-left">
+										<div class="ip-ch-group">
+											<label for="ch-1-2" class="ip-ch-label no-txt">
+												<input name="ch-1" id="ch-1-2" class="ip-ch" type="checkbox" value="">
+												<span class="check"></span>
+											</label>
+										</div>
+									</td>
+									<td class="ta-left">������2.jpeg</td>
+									<td class="ta-right">289.76 KB</td>
+								</tr>
+								<tr class="">
+									<td class="ta-left">
+										<div class="ip-ch-group">
+											<label for="ch-1-3" class="ip-ch-label no-txt">
+												<input name="ch-1" id="ch-1-3" class="ip-ch" type="checkbox" value="">
+												<span class="check"></span>
+											</label>
+										</div>
+									</td>
+									<td class="ta-left">������3.jpeg</td>
+									<td class="ta-right">289.76 KB</td>
+								</tr>
+								<tr class="">
+									<td class="ta-left">
+										<div class="ip-ch-group">
+											<label for="ch-1-4" class="ip-ch-label no-txt">
+												<input name="ch-1" id="ch-1-4" class="ip-ch" type="checkbox" value="">
+												<span class="check"></span>
+											</label>
+										</div>
+									</td>
+									<td class="ta-left">������4.jpeg</td>
+									<td class="ta-right">289.76 KB</td>
+								</tr>
+								<tr class="">
+									<td class="ta-left">
+										<div class="ip-ch-group">
+											<label for="ch-1-5" class="ip-ch-label no-txt">
+												<input name="ch-1" id="ch-1-5" class="ip-ch" type="checkbox" value="">
+												<span class="check"></span>
+											</label>
+										</div>
+									</td>
+									<td class="ta-left">������5.jpeg</td>
+									<td class="ta-right">289.76 KB</td>
+								</tr>
+								<tr class="">
+									<td class="ta-left">
+										<div class="ip-ch-group">
+											<label for="ch-1-6" class="ip-ch-label no-txt">
+												<input name="ch-1" id="ch-1-6" class="ip-ch" type="checkbox" value="">
+												<span class="check"></span>
+											</label>
+										</div>
+									</td>
+									<td class="ta-left">������6.jpeg</td>
+									<td class="ta-right">289.76 KB</td>
+								</tr>
+								<tr class="">
+									<td class="ta-left">
+										<div class="ip-ch-group">
+											<label for="ch-1-7" class="ip-ch-label no-txt">
+												<input name="ch-1" id="ch-1-7" class="ip-ch" type="checkbox" value="">
+												<span class="check"></span>
+											</label>
+										</div>
+									</td>
+									<td class="ta-left">������7.jpeg</td>
+									<td class="ta-right">289.76 KB</td>
+								</tr>
+								<tr class="">
+									<td class="ta-left">
+										<div class="ip-ch-group">
+											<label for="ch-1-8" class="ip-ch-label no-txt">
+												<input name="ch-1" id="ch-1-8" class="ip-ch" type="checkbox" value="">
+												<span class="check"></span>
+											</label>
+										</div>
+									</td>
+									<td class="ta-left">������8.jpeg</td>
+									<td class="ta-right">289.76 KB</td>
+								</tr>
+								<tr class="">
+									<td class="ta-left">
+										<div class="ip-ch-group">
+											<label for="ch-1-9" class="ip-ch-label no-txt">
+												<input name="ch-1" id="ch-1-9" class="ip-ch" type="checkbox" value="">
+												<span class="check"></span>
+											</label>
+										</div>
+									</td>
+									<td class="ta-left">������9.jpeg</td>
+									<td class="ta-right">289.76 KB</td>
+								</tr>																																								
+							</tbody>
+							<tfoot>
+								<tr>
+									<td class="ta-left" colspan="3">
+										<p class="txt-01 fc-333 fs-13 fw-500">
+											1��ü, 
+											286.76 KB 
+											÷�ε�
+										</p>
+									</td>
+								</tr>
+							</tfoot>							
+						</table>				
+					</div>					
+
+				</div>
+				<div class="modal-footer">
+					<div class="btn-group right">
+						<button class="btn btn-big btn-g-outline" type="button">���ε�</button>
+						<button class="btn btn-big btn-db" type="button">���ε�</button>
+						<button class="btn btn-big btn-g-outline" type="button">�ݱ�</button>
+					</div>
+				</div>
+			</div>
+		</div>		
+
+		<div class="dim active"></div><!--[D]active-->
+
+	</body>
+</html>

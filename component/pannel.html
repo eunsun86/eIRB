@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="euc-kr" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Pannel</title>
+		<link rel="stylesheet" href="../static/css/plf.css" />
+		<script src="../static/js/jquery-3.6.0.min.js"></script>
+	</head>
+	<body>
+		<div class="p15">
+			<h2 class="deco-h2">Pannel</h2>
+			<h3 class="deco-h3">�ܼ� �׷��� �г�</h3>
+			<div class="pn type-group">
+				<p class="txt-01">�ܼ��� �׷��� ����.</p>
+			</div>
+
+			<br>
+			<br>
+			<h3 class="deco-h3">�⺻ �г�</h3>
+			<div class="pn">
+				<div class="pn-con">
+					<p class="pn-subtit">�гμ� Ÿ��Ʋ</p>
+					<p class="txt-01">����� �г�</p>
+				</div>				
+			</div>
+
+			<br>
+			<br>
+			<h3 class="deco-h3">Ű���� �г�</h3>
+			<div class="pn type-keyword">
+				<div class="pn-con">
+					<p class="txt-01">Ű���� �г�(?)</p>
+				</div>				
+			</div>			
+
+			<br>
+			<br>			
+			<h3 class="deco-h3">������ �ִ� �г�</h3>
+			<div class="pn type-tit">
+				<div class="pn-tit">��� ���� ��������</div>
+				<div class="pn-con">
+					<p class="txt-01">Ÿ��Ʋ�� �Բ�</p>
+				</div>
+			</div>
+
+			<br>
+			<br>					
+			<h3 class="deco-h3">������ �ִ� �г�2 (���������� �ڽ�����)</h3>
+			<div class="pn type-tit2">
+				<div class="pn-tit">��� ���� ��������</div>
+				<div class="pn-con">
+					<p class="txt-01" style="background: pink;">Ÿ��Ʋ�� �Բ�</p>
+				</div>
+			</div>			
+
+			<br>
+			<br>			
+			<h3 class="deco-h3">����, ���� ��ư�� �ִ� �г�(��ũ��Ʈ �۾�)</h3>
+			<script>
+				// ����
+				var acco = function(accoRoot) {
+					var E = {};
+					E.root = $('.' + accoRoot);
+					//E.item = E.root.find('.item');
+					E.ctr = E.root.find('.my-acco-ctr');
+					E.target = E.root.find('.my-acco-con');
+					E.ctr.each(function(n) {
+						var nb = n;
+						var that = $(this);
+						that.on('click', function() {
+							if (!that.parent('.my-acco').hasClass('active')) {
+								that.parent('.my-acco').addClass('active');
+							} else {
+								that.parent('.my-acco').removeClass('active');
+							}
+						})
+					});
+				};
+				// ȣ��
+				$(document).ready(function() {
+					acco('my-acco');
+				});
+			</script>			
+			<div class="pn type-tit type-acco my-acco"> <!--[D]active:������ ����-->
+				<div class="pn-tit">������ ���ų� ��Ĩ�ϴ�.</div>
+				<button class="pn-btn my-acco-ctr" type="button">
+					<span class="txt-fold">����</span>
+					<span class="txt-unfold">��ġ��</span>
+				</button>
+				<div class="pn-con my-acco-con">
+					<p class="txt-01">������ ���ų� ��Ĩ�ϴ�.</p>
+				</div>
+			</div>		
+			<div class="pn type-tit type-acco my-acco active"> <!--[D]active:������ ����-->
+				<div class="pn-tit">������ ���ų� ��Ĩ�ϴ�.2</div>
+				<button class="pn-btn my-acco-ctr" type="button">
+					<span class="txt-fold">����</span>
+					<span class="txt-unfold">��ġ��</span>
+				</button>
+				<div class="pn-con my-acco-con">
+					<p class="txt-01">������ ���ų� ��Ĩ�ϴ�.2</p>
+				</div>
+			</div>				
+
+			<br>
+			<br>			
+			<h3 class="deco-h3">�г� ����</h3>
+			<div class="pn">
+				<div class="pn-con">
+
+					<!--[D]����������Ʈ(layout.html) ���-->
+					<div class="layout">
+						<div class="row">
+							<div class="col col-5 pr20">
+								<p class="txt-01">�����гο��ʺ����гο��ʺ����гο��ʺ����гο��ʺ����гο��ʺ����гο���</p>
+							</div>
+							<div class="col col-5 pl20">
+								<p class="txt-01">�����гο����ʺ����гο����ʺ����гο����ʺ����гο����ʺ����гο����ʺ����гο�����</p>
+							</div>
+						</div>
+					</div>			
+					<!--//[D]����������Ʈ(layout.html) ���-->
+
+				</div>
+			</div>
+
+			<br>
+			<br>			
+			<h3 class="deco-h3">���� �ִ� �г�</h3>
+			<h3 class="deco-h4">���� �ִ� �г� (�Ǹ� �۵�)</h3>
+
+			<script>
+				// ����
+				var tabber = function(tabberRoot) {
+					var E = {};
+					E.root = $('.' + tabberRoot);
+					E.ctr = E.root.find('.tab .item');
+					E.ctr.each(function(n) {
+						var nb = n;
+						var that = $(this);
+						that.on('click', function() {
+							E.ctr.removeClass('active');
+							that.addClass('active');
+						})
+					});
+				};
+				// ȣ��
+				$(document).ready(function() {
+					tabber('my-tab');
+				});
+			</script>			
+			<div class="pn type-tab my-tab">
+				<!--[D]�� ������Ʈ(tab.html) ���-->
+				<div class="tab type1">
+					<button class="item" type="button">���� ����� ��ȸ</button>
+					<button class="item active" type="button">����/�а� �������ȸ</button>
+					<button class="item" type="button">��Ī ���� ���� ��ȸ</button>
+				</div>				
+				<!--//[D]�� ������Ʈ(tab.html) ���-->
+				<div class="pn-con">
+					<p class="pn-subtit">�гμ� Ÿ��Ʋ</p>
+					<p class="txt-01">����� �г�</p>
+				</div>				
+			</div>
+
+			<h3 class="deco-h4">���� �ִ� �г� (�ǰ� �ϴ� ������ ����Ī����)</h3>
+
+			<script>
+				// ����
+				var tabSwitcher = function(tabSwitcherRoot) {
+					var E = {};
+					E.root = $('.' + tabSwitcherRoot);
+					E.ctr = E.root.find('.tab .item');
+					E.target = E.root.find('.pn-con-group .pn-con');
+					E.ctr.each(function(n) {
+						var nb = n;
+						var that = $(this);
+						that.on('click', function() {
+							E.ctr.removeClass('active');
+							that.addClass('active');
+							E.target.removeClass('active');
+							E.target.eq(nb).addClass('active');
+						})
+					});
+				};
+				// ȣ��
+				$(document).ready(function() {
+					tabSwitcher('my-tab-switching');
+				});
+			</script>				
+			<div class="pn type-tab type-switching my-tab-switching">
+				<div class="tab type1">
+					<button class="item" type="button">���� ����� ��ȸ</button>
+					<button class="item active" type="button">����/�а� �������ȸ</button> <!--[D]active-->
+					<button class="item" type="button">��Ī ���� ���� ��ȸ</button>
+				</div>				
+				<div class="pn-con-group">
+					<div class="pn-con">
+						<p class="pn-subtit">�гμ� Ÿ��Ʋ 1</p>
+						<p class="txt-01">����� �г�</p>
+					</div>
+					<div class="pn-con active"> <!--[D]active-->
+						<p class="pn-subtit">�гμ� Ÿ��Ʋ 2</p>
+						<p class="txt-01">����� �г�</p>
+					</div>					
+					<div class="pn-con">
+						<p class="pn-subtit">�гμ� Ÿ��Ʋ 3</p>
+						<p class="txt-01">����� �г�</p>
+					</div>					
+				</div>
+			</div>			
+			
+			<br>
+			<br>			
+			
+
+		</div>
+	</body>
+</html>

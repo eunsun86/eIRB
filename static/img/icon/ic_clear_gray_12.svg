@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+    <circle data-name="타원 41" cx="6" cy="6" r="6" style="fill:#ccc"/>
+    <g data-name="그룹 42390">
+        <path data-name="선 53" transform="translate(4 4)" style="fill:none;stroke:#fff;stroke-linecap:round" d="m0 0 4 4"/>
+        <path data-name="선 54" transform="translate(4 4)" style="fill:none;stroke:#fff;stroke-linecap:round" d="M4 0 0 4"/>
+    </g>
+</svg>

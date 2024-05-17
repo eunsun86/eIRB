@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="euc-kr" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>plf</title>
+		<script src="../static/js/jquery-3.6.0.min.js"></script>
+		<script src="../static/js/datepicker.min.js"></script>		
+		<script src="../static/js/datepicker.ko-KR.js"></script>		
+		<script src="../static/js/plf_pub.js"></script>
+		<link rel="stylesheet" href="../static/css/plf.css" />
+
+		<!-- ibsheet css -->
+		<!-- <link rel="stylesheet" href="https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/css/default/main.css"/> -->
+		<!-- <link rel="stylesheet" href="https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/css/compatible/light/main.css"/> -->
+
+		<!--  ibsheet �ʼ� js -->
+		<script src="../static/js/ibsheet/ibleaders.js"></script>
+		<script src="../static/js/ibsheet/ibsheet.js"></script>
+		<script src="../static/js/ibsheet/locale/ko.js"></script>
+
+		<!--  ibsheet ����/�߰� js -->
+		<script src="../static/js/ibsheet/plugins/ibsheet-common.js"></script>
+		<script src="../static/js/ibsheet/plugins/ibsheet-dialog.js"></script>
+		<script src="../static/js/ibsheet/plugins/ibsheet-excel.js"></script>		
+
+		<style>
+			td.changeBtnColor u{
+				background-color: red;
+			}
+		</style>
+
+	</head>
+	<body>
+
+		<!--[S] plf-root-->
+		<div class="plf-root">
+
+			<!--[S] plf-header-->
+			<div class="plf-header">
+				<div class="left-area">
+					<a class="logo" href=""><img src="../static/img/logo/hanbat_logo.png" alt="�ѹ���б� LINC ����� �������¸�Ī�÷���"></a>
+				</div>
+				<div class="right-area">
+					
+					<!--[S] plf-gnb-->
+					<div class="plf-gnb">
+						<ul>
+							<li class="d1 active"> <!--[D]active-->
+								<a href="">����ܾȳ�</a>
+								<ul class="d2">
+									<li><a href="">����� �ȳ�</a></li>
+									<li class="active"><a href="">ILO �ȳ�</a></li> <!--[D]active-->
+								</ul>
+							</li>
+							<li class="d1">
+								<a href="">�������</a>
+								<ul class="d2">
+									<li><a href="">�����������	</a></li>
+									<li><a href="">���������Ȳ</a></li>
+									<li><a href="">����ȸ����Ȳ</a></li>
+									<li><a href="">���������Ȳ</a></li>
+								</ul>
+							</li>
+							<li class="d1">
+								<a href="">�������</a>
+								<ul class="d2">
+									<li><a href="">Ű�������</a></li>
+									<li><a href="">MY PAGE</a></li>
+									<li><a href="">	����������½�û</a></li>
+									<li><a href="">���������������</a></li>
+									<li><a href="">���������</a></li>
+									<li><a href="">�����������</a></li>
+									<li><a href="">��������Ī</a></li>
+									<li><a href="">��Ī��Ȳ</a></li>
+									<li><a href="">�����������</a></li>
+								</ul>								
+							</li>
+							<li class="d1">
+								<a href="">��������</a>
+								<ul class="d2">
+									<li><a href="">�����������</a></li>
+									<li><a href="">�������������</a></li>
+									<li><a href="">ĸ����������������</a></li>
+									<li><a href="">â���������</a></li>
+									<li><a href="">��Ʈ��ũ�������</a></li>
+									<li><a href="">����������ȸ</a></li>
+								</ul>								
+							</li>
+							<li class="d1">
+								<a href="">�˸��Խ���</a>
+								<ul class="d2">
+									<li><a href="">��������</a></li>
+									<li><a href="">FAQ</a></li>
+								</ul>								
+							</li>
+							<li class="d1">
+								<a href="">Ȩ����������</a>
+								<ul class="d2">
+									<li><a href="">����ڰ���</a></li>
+									<li><a href="">������������</a></li>
+									<li><a href="">����� �α��� ���� �̷� ����</a></li>
+									<li><a href="">����� �ý��� ���� �̷� ����</a></li>
+									<li><a href="">�������� ��ȸ �̷� ����</a></li>
+									<li><a href="">����� �������� Ȱ�� ���� �̷� ����</a></li>
+								</ul>								
+							</li>																												
+						</ul>						
+					</div>
+					<!--//[S] plf-gnb-->
+
+					<!--[S] plf-util-->
+					<div class="plf-util">
+						<ul>
+							<!--[D]�α���/�α׾ƿ� ��1-->
+							<li class="util-login">
+								<a href="">�α���</a>
+							</li>
+							<li class="util-logout">
+								<a href="">�α׾ƿ�</a>
+							</li>							
+							<li class="util-search">
+								<a href="">�˻�</a>
+							</li>							
+						</ul>
+					</div>
+					<!--//[S] plf-util-->					
+
+				</div>
+			</div>
+			<!--//[S] plf-header-->
+
+			<!--[S] plf-group-aside-con-->
+			<div class="plf-group-aside-con">
+				
+				<!--[S] plf-aside-->
+				<div class="plf-aside">
+					<p class="tit-d1">�������</p>
+					<ul class="d1">
+						<li>
+							<button type="button">��������</button>
+							<ul class="d2">
+								<li><a href="">����1</a></li>
+								<li><a href="">����2</a></li>
+							</ul>
+						</li>
+						<li class="active"> <!--[D]active-->
+							<button type="button">��������</button>
+							<ul class="d2">
+								<li><a href="">����1</a></li>
+								<li><a href="">����2</a></li>
+							</ul>
+						</li>
+						<li>
+							<!--[D]���������, class="no-sub", onClick="..." -->
+							<button class="no-sub" type="button" onClick="location.href='https://www.naver.com'">�������(��ũ�̵�)</button>
+						</li>
+					</ul>
+				</div>
+				<!--//[S] plf-aside-->
+
+				<!--[S] plf-con-->
+				<div class="plf-con">
+
+					<!--[S] plf-main-->
+					<div class="plf-main">
+
+						<div id='sheetDiv' style='width:100%;height:100%'></div>
+					
+					<script>
+						var ib = ib||{};
+						ib = {
+						//��Ʈ �ʱ�ȭ ����
+						'init':{
+							//������ ���� �κ�
+							"Cfg": {
+								"SearchMode": 2,
+								"HeaderMerge": 3,
+								"MessageWidth": 300
+							},
+							//�߾�(����) �÷� ����
+							"Cols": [
+								/*1��*/ {
+									"Header": "��ư",
+									"Type": "Button",
+									"Name": "btn",
+									"Width": 100,
+									"Align": "Left",
+									"CanEdit": 1,
+									"Button": "Button"
+								},
+								/*2��*/ {
+									"Header": "����",
+									"Type": "Radio",
+									"Name": "RadioData",
+									"Width": 300,
+									"Align": "Center",
+									"CanEdit": 1,
+									"Enum": "|����|������|������",
+									"EnumKeys": "|H:1|M:1|L:1"
+								},
+								/*3��*/ {
+									"Header": "üũ�ڽ�",
+									"Type": "Bool",
+									"Name": "CheckData2",
+									"Width": 200,
+									"Align": "Center",
+									"CanEdit": 1
+								},														
+								/*4��*/ {
+									"Header": {"Value": "","HeaderCheck": 1, "IconAlign": "Center"},
+									"Type": "Bool",
+									"Name": "CheckData",
+									"Width": 50,
+									"Align": "Center",
+									"CanEdit": 1
+								},								
+								/*5��*/ {
+									"Header": "����Ʈ",
+									"Type": "Enum",
+									"Name": "sel",
+									"Width": 100,
+									"Align": "Center",
+									"CanEdit": 1,
+									"RawSort": 1,
+									"Enum": "|����Ʈ1|����Ʈ2|����Ʈ3",
+									"EnumKeys": "|01A|02A|03A"
+								},								
+							]
+						},
+						//��Ʈ �̺�Ʈ
+						'event':{
+								onRenderFirstFinish: function(evtParam) {
+									evtParam.sheet.loadSearchData(loadData);
+								}
+						},
+						//��Ʈ��ü ����
+						'create':function (){
+								var options = this.init;
+
+								options.Events = this.event;
+								IBSheet.create({
+									id: 'sheet', // ������ ��Ʈ�� id
+									el: 'sheetDiv', // ��Ʈ�� ������ Dom ��ü �� id
+									options: options // ������ ��Ʈ�� �Ӽ�
+								});
+							},
+						}
+						ib.create();
+
+						var loadData = [
+						/*1��*/	
+						{
+							"btn":"���ڹι�ư",
+							 "RadioData":"H:1",
+							 "CheckData":1,
+							 "CheckData2":1,
+							 "sel": "01A"
+						},
+						/*2��*/
+						{
+							"btn":"���ڹι�ư",
+							 "RadioData":"H:1",
+							 "CheckData":1,
+							 "CheckData2":1,
+							 "sel": "02A"
+						},
+						/*3��*/
+						{
+							"btn":"���ڹι�ư",
+							 "RadioData":"H:1",
+							 "CheckData":1,
+							 "CheckData2":1,
+							 "sel": "02A"
+						},
+						/*4��*/
+						{
+							"btn":"���ڹι�ư",
+							 "RadioData":"H:1",
+							 "CheckData":1,
+							 "CheckData2":1,
+							 "sel": "02A"
+						}																			
+						]
+					</script>
+
+					</div>
+					<!--//[S] plf-main-->
+
+					<!--[S] plf-footer-->
+					<div class="plf-footer">
+						<ul>
+							<li>
+								<a href="">��������ó����޹�ħ</a>
+							</li>
+							<li>
+								<a href="">�̸��� �����ź�</a>
+							</li>							
+						</ul>
+						<p class="copy">Copyright(c) 2023 Webcash corp. All Rights reserved.</p>
+						
+					</div>					
+					<!--//[S] plf-footer-->
+
+				</div>
+				<!--//[S] plf-con-->
+
+			</div>
+			<!--//[S] plf-group-aside-con-->
+
+		</div>
+		<!--//[S] plf-root-->
+
+	</body>	
+</html>
