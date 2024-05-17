@@ -460,21 +460,10 @@ background: #fff; min-width: 360px; max-height: calc(100vh - 100px); /* overflow
 .dim{position:fixed;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.7);}
 
 /*toast*/
-.toast { /* display: none; */
- display: block; position: fixed; top: 50%;left: 50%; /* top: 60px; */
-  /* transform: translateX(-11%); */ /* z-index: 10; */opacity: 0; 
- padding: 10px 20px 10px 20px; border-radius: 8px; font-size: 16px; font-weight: 500; color: #fff; overflow: hidden; } 
-.toast>.inner { position: relative; z-index: 2; color: #fff;} 
-.toast:after { z-index: 1; content: ""; position: absolute; display: block; top: 0; left: 0; width: 100%; height: 100%; background: #1E1E1E;} 
-.toast.active { animation-name: toasting; animation-duration: 2s; } 
+.toast {display: block; position: fixed; top: 50%;left: 0;width: 100%; opacity: 0;text-align: center;} 
+.toast .inner {display: inline-block;padding: 10px 20px; border-radius: 8px; font-size: 16px; font-weight: 500; color: #fff;background: #1E1E1E;} 
+.toast.active { animation-name: toasting; animation-duration: 3s; } 
 
-/* @keyframes toasting { 
- 0% { top: -300px; } 
- 1% { top: 0px; } 
- 7% { top: 140px; } 
- 80% { top: 140px; } 
- 100% { top: -300px; } 
- } */
  @keyframes toasting { 
     0%   { opacity: 0; } 
     50%  { opacity: 1; } 
