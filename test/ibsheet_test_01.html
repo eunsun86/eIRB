@@ -11,7 +11,7 @@
 		<!-- <link rel="stylesheet" href="https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/css/default/main.css"/> -->
 		<!-- <link rel="stylesheet" href="https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/css/compatible/light/main.css"/> -->
 
-		<!--  ibsheet ï¿½Ê¼ï¿½ js -->
+		<!--  ibsheet ÇÊ¼ö js -->
 		<!--<script src="https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/ibleaders.js"></script>
 		<script src="https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/ibsheet.js"></script>
 		<script src="https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/locale/ko.js"></script> -->
@@ -20,7 +20,7 @@
 		<script src="../static/js/ibsheet/ibsheet.js"></script>
 		<script src="../static/js/ibsheet/locale/ko.js"></script>
 
-		<!--  ibsheet ï¿½ï¿½ï¿½ï¿½/ï¿½ß°ï¿½ js -->
+		<!--  ibsheet ¼±ÅÃ/Ãß°¡ js -->
 		<script src="../static/js/ibsheet/plugins/ibsheet-common.js"></script>
 		<script src="../static/js/ibsheet/plugins/ibsheet-dialog.js"></script>
 		<script src="../static/js/ibsheet/plugins/ibsheet-excel.js"></script>		
@@ -35,16 +35,16 @@
 	<body>
 
 		<div class="p15">
-			<input type="button" value="ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Button ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²Û´ï¿½." onClick="fn_change_cellClass()">
+			<input type="button" value="Æ÷Ä¿½ºµÈ ÇàÀÇ Button »ö»óÀ» ¹Ù²Û´Ù." onClick="fn_change_cellClass()">
 			<div style='height:calc(100% - 20px)'><div id='sheetDiv' style='width:100%;height:100%'></div></div>
 		</div>
 	
 	<script>
 		var ib = ib||{};
 		ib = {
-		//ï¿½ï¿½Æ® ï¿½Ê±ï¿½È­ ï¿½ï¿½ï¿½ï¿½
+		//½ÃÆ® ÃÊ±âÈ­ ±¸¹®
 		'init':{
-			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îºï¿½
+			//°øÅë±â´É ¼³Á¤ ºÎºÐ
 			"Cfg": {
 				"SearchMode": 2,
 				"HeaderMerge": 3,
@@ -55,46 +55,46 @@
 					"CanFormula": true
 				}
 			},
-			//Æ²ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ ï¿½ï¿½ï¿½ï¿½
+			//Æ²°íÁ¤ ÁÂÃø ÄÃ·³ ¼³Á¤
 			/*
 			"LeftCols": [
 				{"Type": "Int","Width": 50,"Align": "Center","Name": "SEQ"}
 			],
 			*/
-			//ï¿½ß¾ï¿½(ï¿½ï¿½ï¿½ï¿½) ï¿½Ã·ï¿½ ï¿½ï¿½ï¿½ï¿½
+			//Áß¾Ó(¸ÞÀÎ) ÄÃ·³ ¼³Á¤
 			"Cols": [
-				{"Header": "ï¿½ï¿½ï¿½Ú¿ï¿½(Text)","Type": "Text","Name": "TextData","Width": 100,"Align": "Center","CanEdit": 1, Button:"Button", ButtonText:"È®ï¿½ï¿½"},
-				{"Header": "ï¿½Ù³Ñ±è¹®ï¿½Ú¿ï¿½(Lines)","Type": "Lines","Name": "LinesData","MinWidth": 250,"Align": "Center","CanEdit": 1,"RelWidth": 1},
-				{"Header": "ï¿½Þºï¿½(Enum)","Type": "Enum","Name": "ComboData","Width": 100,"Align": "Left","Enum": "|ï¿½ï¿½ï¿½|ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½|ï¿½Ï·ï¿½","EnumKeys": "|01|02|03"},
-				{"Header": "ï¿½ï¿½Æ°(Button)","Type": "Button","Name": "ISO","Width": 80,"Align": "Left","CanEdit": 0,"Button": "Button"},
-				{"Header": "ï¿½ï¿½ï¿½ï¿½(Int)","Type": "Int","Name": "IntData","Width": 80,"Align": "Right","CanEdit": 1},
-				{"Header": "ï¿½Ç¼ï¿½(Float)","Type": "Float","Name": "FloatData","Width": 80,"Align": "Right","CanEdit": 1},
-				{"Header": "ï¿½ï¿½Â¥(Date)","Type": "Date","Name": "DateData","Width": 150,"Align": "Center","CanEdit": 1,"EmptyValue": "ï¿½ï¿½Â¥ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½"},
-				{"Header": "ï¿½ï¿½Ä¿(Link)","Type": "Link","Name": "LinkData","Width": 60,"CanEdit": 0},
-				{"Header": "ï¿½Ì¹ï¿½ï¿½ï¿½(Img)","Type": "Img","Name": "ImageData","Width": 70,"Align": "Center","CanEdit": 1},
-				{"Header": "ï¿½Ð½ï¿½ï¿½ï¿½ï¿½ï¿½(Pass)","Type": "Pass","Name": "PassData","Width": 80,"Align": "Left","CanEdit": 1},
-				{"Header": "ï¿½ï¿½ï¿½ï¿½(Radio)","Type": "Radio","Name": "RadioData","Width": 140,"Align": "Center","CanEdit": 1,"Enum": "|ï¿½ï¿½|ï¿½ï¿½|ï¿½ï¿½","EnumKeys": "|H:1|M:1|L:1"},
-				{"Header": {"Value": "Ã¼Å©ï¿½Ú½ï¿½(Bool)","HeaderCheck": 1},"Type": "Bool","Name": "CheckData","Width": 80,"Align": "Center","CanEdit": 1}
+				{"Header": "¹®ÀÚ¿­(Text)","Type": "Text","Name": "TextData","Width": 100,"Align": "Center","CanEdit": 1, Button:"Button", ButtonText:"È®ÀÎ"},
+				{"Header": "ÁÙ³Ñ±è¹®ÀÚ¿­(Lines)","Type": "Lines","Name": "LinesData","MinWidth": 250,"Align": "Center","CanEdit": 1,"RelWidth": 1},
+				{"Header": "ÄÞº¸(Enum)","Type": "Enum","Name": "ComboData","Width": 100,"Align": "Left","Enum": "|´ë±â|ÁøÇàÁß|¿Ï·á","EnumKeys": "|01|02|03"},
+				{"Header": "¹öÆ°(Button)","Type": "Button","Name": "ISO","Width": 80,"Align": "Left","CanEdit": 0,"Button": "Button"},
+				{"Header": "Á¤¼ö(Int)","Type": "Int","Name": "IntData","Width": 80,"Align": "Right","CanEdit": 1},
+				{"Header": "½Ç¼ö(Float)","Type": "Float","Name": "FloatData","Width": 80,"Align": "Right","CanEdit": 1},
+				{"Header": "³¯Â¥(Date)","Type": "Date","Name": "DateData","Width": 150,"Align": "Center","CanEdit": 1,"EmptyValue": "³¯Â¥¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä"},
+				{"Header": "¾ÞÄ¿(Link)","Type": "Link","Name": "LinkData","Width": 60,"CanEdit": 0},
+				{"Header": "ÀÌ¹ÌÁö(Img)","Type": "Img","Name": "ImageData","Width": 70,"Align": "Center","CanEdit": 1},
+				{"Header": "ÆÐ½º¿öµå(Pass)","Type": "Pass","Name": "PassData","Width": 80,"Align": "Left","CanEdit": 1},
+				{"Header": "¶óµð¿À(Radio)","Type": "Radio","Name": "RadioData","Width": 140,"Align": "Center","CanEdit": 1,"Enum": "|»ó|Áß|ÇÏ","EnumKeys": "|H:1|M:1|L:1"},
+				{"Header": {"Value": "Ã¼Å©¹Ú½º(Bool)","HeaderCheck": 1},"Type": "Bool","Name": "CheckData","Width": 80,"Align": "Center","CanEdit": 1}
 			]
 		},
-		//ï¿½ï¿½Æ® ï¿½Ìºï¿½Æ®
+		//½ÃÆ® ÀÌº¥Æ®
 		'event':{
 				onRenderFirstFinish: function(evtParam) {
 					evtParam.sheet.loadSearchData(loadData);
 				}
 		},
-		//ï¿½ï¿½Æ®ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½
+		//½ÃÆ®°´Ã¼ »ý¼º
 		'create':function () {
 				var options = this.init;
 
 				options.Events = this.event;
 				IBSheet.create({
-					id: 'sheet', // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ id
-					el: 'sheetDiv', // ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Dom ï¿½ï¿½Ã¼ ï¿½ï¿½ id
-					options: options // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ó¼ï¿½
+					id: 'sheet', // »ý¼ºÇÒ ½ÃÆ®ÀÇ id
+					el: 'sheetDiv', // ½ÃÆ®¸¦ »ý¼ºÇÒ Dom °´Ã¼ ¹× id
+					options: options // »ý¼ºµÉ ½ÃÆ®ÀÇ ¼Ó¼º
 				});
 			},
-		//È­ï¿½ï¿½ ï¿½ï¿½ï¿½
+		//È­¸é ±â´É
 		'sampleBtn':function () {
 			}
 		}
@@ -105,7 +105,7 @@
 			sheet.setAttribute(sheet.getFocusedRow(), 'TextData', "Class", "changeBtnColor");
 		}
 
-		var loadData = [{"TextData":"ï¿½ï¿½ï¿½ï¿½ï¿½","ComboData":"01","ISO":"AUD", "ISOButtonColor": "red","Currency":"È£ï¿½ï¿½ ï¿½Þ·ï¿½","IntData":0,"FloatData":15.25,"DateData":"","PhoneNo":"01075116521","IDNO":"7801221384251","LinkData":"|./confirm.do|È®ï¿½ï¿½|_self ","LinesData":"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½å¸®ï¿½Å³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½îµ¥ ï¿½ï¿½ï¿½Ò¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ßºÎ³ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä§ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¶ï¿½, ï¿½ï¿½ï¿½Î³ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¶ï¿½ ï¿½Ò³ï¿½ï¿½â°¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö°Ú½ï¿½ï¿½Ï´ï¿½.","Userformat":"1234567890","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/am.jpg|||||./nt/gripInTran.do|_self","PassData":123456,"RadioData":"H:1","CheckData":1},{"TextData":"ï¿½ï¿½ï¿½ï¿½È£","ComboData":"02","ISO":"ALL","Currency":"ï¿½Ë¹Ù´Ï¾ï¿½ ï¿½ï¿½","IntData":0,"FloatData":234,"DateData":"20100120","PhoneNo":"","IDNO":"6807151852148","LinkData":"|./delayCos.do|ï¿½ï¿½ï¿½|_self ","LinesData":"ï¿½ßºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½å¸¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ°Ú°ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½Ú½ï¿½ï¿½Ï´ï¿½.","Userformat":"1111155555","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/am.jpg|||||","PassData":"75646","RadioData":"M:1","CheckData":0},{"TextData":"ï¿½ï¿½ï¿½ï¿½È£","ComboData":"01","ISO":"DZD","Currency":"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ð³ª¸ï¿½","IntData":65,"FloatData":123,"DateData":"20020815","PhoneNo":"025815421","IDNO":"1138206820","LinesData":"ï¿½ßºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½å¸¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ°Ú°ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½Ú½ï¿½ï¿½Ï´ï¿½.ï¿½ßºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ÏºÏºÎ´ï¿½ ï¿½å¸®ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½îµ¥ ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¶ï¿½ ï¿½ï¿½ï¿½óµµ¿ï¿½ ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ ï¿½ß½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò³ï¿½ï¿½â°¡ ï¿½ï¿½ï¿½Ú½ï¿½ï¿½Ï´ï¿½.","Userformat":"","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/ca.jpg|||||","PassData":"4564","RadioData":"L:1","CheckData":1},{"TextData":"ï¿½È¼ï¿½ï¿½ï¿½","ComboData":"02","ISO":"ARS","Currency":"ï¿½Æ¸ï¿½ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½","IntData":190,"FloatData":0,"DateData":"20110526","PhoneNo":"","IDNO":"6098204963","LinesData":"ï¿½Ïºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø»ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ð°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ´Ù°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½î³ªï¿½Ú½ï¿½ï¿½Ï´ï¿½.","LinkData":"|./acceptCos.do|È®ï¿½ï¿½|_self ","Userformat":"9898554321","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/ca.jpg|||||","PassData":"123456","RadioData":"L:1","CheckData":1},{"TextData":"ï¿½Ú¸ï¿½ï¿½ï¿½","ComboData":"02","ISO":"AWG","Currency":"ï¿½Æ·ï¿½ï¿½ ï¿½Ã·Î¸ï¿½","IntData":1120,"FloatData":115.25,"DateData":"20100922","PhoneNo":"0425741245","IDNO":"","LinesData":"ï¿½ï¿½ï¿½Ø»ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ°Ú½ï¿½ï¿½Ï´ï¿½.","Userformat":"","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/fe.jpg|||||","PassData":"75646","RadioData":"M:1","CheckData":0},{"TextData":"ï¿½ï¿½È£ï¿½ï¿½","ComboData":"01","ISO":"GBP","Currency":"ï¿½ï¿½ï¿½ï¿½ ï¿½Ä¿ï¿½ï¿½","IntData":65,"FloatData":154.36,"DateData":"","PhoneNo":"","IDNO":"6405142384211","LinesData":"","Userformat":"","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/ch.jpg|||||","PassData":"4564","RadioData":"H:1","CheckData":0},{"TextData":"ï¿½Ì¹ï¿½ï¿½ï¿½","ComboData":"01","ISO":"BSD","Currency":"ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½Þ·ï¿½","IntData":0,"FloatData":0,"DateData":"","PhoneNo":"01022116587","IDNO":"7801221384251","LinkData":"|./rejectCos.do|ï¿½Ý·ï¿½|_self ","LinesData":"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½å¸®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ó³²µï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ ï¿½ï¿½Îºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ÏºÏºÎµï¿½ï¿½Ø¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½Ú½ï¿½ï¿½Ï´ï¿½.","Userformat":"5552221230","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/fe.jpg|||||","PassData":"","RadioData":"H:1","CheckData":1},{"TextData":"ï¿½ï¿½È£ï¿½ï¿½","ComboData":"02","ISO":"BHD","Currency":"ï¿½Ù·ï¿½ï¿½ï¿½ ï¿½ð³ª¸ï¿½","IntData":1120,"FloatData":0,"DateData":"20100922","PhoneNo":"0557256541","IDNO":"8506243051223","LinesData":"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½å¸®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ÛµÇ¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ç³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ú½ï¿½ï¿½Ï´ï¿½.","Userformat":"","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/ru.jpg|||||","PassData":"75646","RadioData":"M:1","CheckData":0},{"TextData":"ï¿½ï¿½È£ï¿½ï¿½","ComboData":"01","ISO":"BDT","Currency":"ï¿½ï¿½Û¶óµ¥½ï¿½ Å¸Ä«","IntData":65,"FloatData":154.36,"DateData":"","PhoneNo":"","IDNO":"","LinkData":"|./rejectCos.do|ï¿½Ý·ï¿½|_self ","LinesData":"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½îµ¥, ï¿½ï¿½ï¿½Ò¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½æ³²ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¶ï¿½ ï¿½Ò³ï¿½ï¿½â°¡ ï¿½ï¿½ï¿½Ú½ï¿½ï¿½Ï´ï¿½.","Userformat":"8949598981","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/ru.jpg|||||","PassData":"4564","RadioData":"L:1","CheckData":1},{"TextData":"ï¿½ï¿½ï¿½Ì·ï¿½","ComboData":"01","ISO":"BBD","Currency":"ï¿½Ùºï¿½ï¿½Ìµï¿½ï¿½ï¿½ ï¿½Þ·ï¿½","IntData":190,"FloatData":15.25,"DateData":"20110526","PhoneNo":"0262642080","IDNO":"2118204825","LinesData":"ï¿½ßºÏºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ø»ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½Ú°ï¿½, ï¿½ï¿½Ã»ï¿½Ì³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½å¸¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ´Ù°ï¿½ ï¿½ï¿½ 5È£ ï¿½ï¿½Ç³ ï¿½ï¿½ï¿½Ù³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ°Ú½ï¿½ï¿½Ï´ï¿½.","Userformat":"","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/ru.jpg|||||","PassData":"123456","RadioData":"H:1","CheckData":1},{"TextData":"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","ComboData":"02","ISO":"BYR","Currency":"ï¿½ï¿½ï¿½ï¿½ç½º ï¿½ï¿½ï¿½","IntData":1120,"FloatData":115.25,"DateData":"20100922","PhoneNo":"0261254045","IDNO":"","LinesData":"","Userformat":"","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/ko.jpg|||||","PassData":"75646","RadioData":"L:1","CheckData":0},{"TextData":"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","ComboData":"01","ISO":"BZD","Currency":"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ·ï¿½","IntData":65,"FloatData":154.36,"DateData":"","PhoneNo":"","IDNO":"1298261319","LinesData":"ï¿½ßºÏºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ø»ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Ã»ï¿½Ì³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½å¸¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ°Ú½ï¿½ï¿½Ï´ï¿½.","Userformat":"","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/er.jpg|||||","PassData":"4564","RadioData":"H:1","CheckData":0},{"TextData":"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","ComboData":"01","ISO":"BMD","Currency":"ï¿½ï¿½ï¿½Â´ï¿½ ï¿½Þ·ï¿½","IntData":190,"FloatData":15.25,"DateData":"20110526","PhoneNo":"022222222","IDNO":"7507142063425","LinesData":"ï¿½ßºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ø»ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½å¸¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ°Ú½ï¿½ï¿½Ï´ï¿½.","Userformat":"5415554321","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/fe.jpg|||||","PassData":"123456","RadioData":"M:1","CheckData":1}];		
+		var loadData = [{"TextData":"Àå¼ø¿¬","ComboData":"01","ISO":"AUD", "ISOButtonColor": "red","Currency":"È£ÁÖ ´Þ·¯","IntData":0,"FloatData":15.25,"DateData":"","PhoneNo":"01075116521","IDNO":"7801221384251","LinkData":"|./confirm.do|È®Á¤|_self ","LinesData":"Àü±¹ÀÌ ´ëÃ¼·Î Èå¸®°Å³ª ±¸¸§¸¹Àº °¡¿îµ¥ ´ë±âºÒ¾ÈÁ¤À¸·Î ÁßºÎ³»·úÀº ¾ÆÄ§°ú ¿ÀÈÄ ÇÑ¶§, ³²ºÎ³»·úÀº ¿ÀÈÄ ÇÑ¶§ ¼Ò³ª±â°¡ ¿À´Â °÷ÀÌ ÀÖ°Ú½À´Ï´Ù.","Userformat":"1234567890","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/am.jpg|||||./nt/gripInTran.do|_self","PassData":123456,"RadioData":"H:1","CheckData":1},{"TextData":"±èÁ¤È£","ComboData":"02","ISO":"ALL","Currency":"¾Ë¹Ù´Ï¾Æ ·º","IntData":0,"FloatData":234,"DateData":"20100120","PhoneNo":"","IDNO":"6807151852148","LinkData":"|./delayCos.do|Àç°í|_self ","LinesData":"ÁßºÎÁö¹æÀº Àå¸¶Àü¼±ÀÇ ¿µÇâÀ» ¹Þ°Ú°í, ³²ºÎÁö¹æÀº ºÏÅÂÆò¾ç °í±â¾ÐÀÇ °¡ÀåÀÚ¸®¿¡ µé°Ú½À´Ï´Ù.","Userformat":"1111155555","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/am.jpg|||||","PassData":"75646","RadioData":"M:1","CheckData":0},{"TextData":"Á¤»óÈ£","ComboData":"01","ISO":"DZD","Currency":"¾ËÁ¦¸® µð³ª¸£","IntData":65,"FloatData":123,"DateData":"20020815","PhoneNo":"025815421","IDNO":"1138206820","LinesData":"ÁßºÎÁö¹æÀº Àå¸¶Àü¼±ÀÇ ¿µÇâÀ» ¹Þ°Ú°í, ³²ºÎÁö¹æÀº ºÏÅÂÆò¾ç °í±â¾ÐÀÇ °¡ÀåÀÚ¸®¿¡ µé°Ú½À´Ï´Ù.ÁßºÎÁö¹æ°ú °æºÏºÏºÎ´Â Èå¸®°í ºñ°¡ ¿À°ÚÀ¸¸ç, ±× ¿Ü ³²ºÎÁö¹æÀº ±¸¸§¸¹Àº °¡¿îµ¥ ¿ÀÈÄ ÇÑ¶§ Àü¶óµµ¿Í Á¦ÁÖµµ¸¦ Áß½ÉÀ¸·Î ¼Ò³ª±â°¡ ¿À°Ú½À´Ï´Ù.","Userformat":"","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/ca.jpg|||||","PassData":"4564","RadioData":"L:1","CheckData":1},{"TextData":"¾È¼öÇö","ComboData":"02","ISO":"ARS","Currency":"¾Æ¸£ÇîÆ¼³ª Æä¼Ò","IntData":190,"FloatData":0,"DateData":"20110526","PhoneNo":"","IDNO":"6098204963","LinesData":"ÀÏº» ³²ÂÊÇØ»ó¿¡ À§Ä¡ÇÑ °í±â¾ÐÀÇ °¡ÀåÀÚ¸®¿¡ µé°ÚÀ¸³ª, Á¦ÁÖµµ´Â ¾àÇÑ ±â¾Ð°ñÀÇ ¿µÇâÀ» ¹Þ´Ù°¡ Á¡Â÷ ¹þ¾î³ª°Ú½À´Ï´Ù.","LinkData":"|./acceptCos.do|È®Á¤|_self ","Userformat":"9898554321","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/ca.jpg|||||","PassData":"123456","RadioData":"L:1","CheckData":1},{"TextData":"¹Ú¸¸¿ì","ComboData":"02","ISO":"AWG","Currency":"¾Æ·ç¹Ù ÇÃ·Î¸°","IntData":1120,"FloatData":115.25,"DateData":"20100922","PhoneNo":"0425741245","IDNO":"","LinesData":"¼­ÇØ»ó¿¡ À§Ä¡ÇÑ °í±â¾ÐÀÇ ¿µÇâÀ» ¹Þ°Ú½À´Ï´Ù.","Userformat":"","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/fe.jpg|||||","PassData":"75646","RadioData":"M:1","CheckData":0},{"TextData":"ÃÖÈ£°Ç","ComboData":"01","ISO":"GBP","Currency":"¿µ±¹ ÆÄ¿îµå","IntData":65,"FloatData":154.36,"DateData":"","PhoneNo":"","IDNO":"6405142384211","LinesData":"","Userformat":"","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/ch.jpg|||||","PassData":"4564","RadioData":"H:1","CheckData":0},{"TextData":"ÀÌ¹ÎÈÄ","ComboData":"01","ISO":"BSD","Currency":"¹ÙÇÏ¸¶ ´Þ·¯","IntData":0,"FloatData":0,"DateData":"","PhoneNo":"01022116587","IDNO":"7801221384251","LinkData":"|./rejectCos.do|¹Ý·Á|_self ","LinesData":"Àü±¹ÀÌ Èå¸®°í ¿ÀÀü¿¡ Àü¶ó³²µµ¿Í Á¦ÁÖµµ¿¡ ºñ°¡ ±×Ä¡±â ½ÃÀÛÇØ ´ÊÀº ¿ÀÈÄ¿¡´Â ´ëºÎºÐ Áö¿ª¿¡¼­ ±×Ä¡°ÚÀ¸³ª, °­¿ø¿µµ¿°ú °æºÏºÏºÎµ¿ÇØ¾ÈÀº ´ÊÀº ¹ã±îÁö ÀÌ¾îÁö°Ú½À´Ï´Ù.","Userformat":"5552221230","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/fe.jpg|||||","PassData":"","RadioData":"H:1","CheckData":1},{"TextData":"±èÈ£Á¤","ComboData":"02","ISO":"BHD","Currency":"¹Ù·¹ÀÎ µð³ª¸£","IntData":1120,"FloatData":0,"DateData":"20100922","PhoneNo":"0557256541","IDNO":"8506243051223","LinesData":"Àü±¹ÀÌ Èå¸®°í »õº®¿¡ Á¦ÁÖµµ¿¡ ºñ°¡ ½ÃÀÛµÇ¾î ¿ÀÀü¿¡ ³²ºÎÁö¹æ, ¿ÀÈÄ¿¡´Â Àü±¹À¸·Î È®´ëµÇ°ÚÀ¸³ª, µ¿Ç³ÀÇ ¿µÇâÀ» ¹Þ´Â °­¿ø¿µµ¿Àº »õº®ºÎÅÍ ºñ°¡ ¿À°Ú½À´Ï´Ù.","Userformat":"","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/ru.jpg|||||","PassData":"75646","RadioData":"M:1","CheckData":0},{"TextData":"±èÈ£¼ö","ComboData":"01","ISO":"BDT","Currency":"¹æ±Û¶óµ¥½Ã Å¸Ä«","IntData":65,"FloatData":154.36,"DateData":"","PhoneNo":"","IDNO":"","LinkData":"|./rejectCos.do|¹Ý·Á|_self ","LinesData":"Àü±¹¿¡ ±¸¸§ÀÌ ¸¹Àº °¡¿îµ¥, ´ë±âºÒ¾ÈÁ¤À¸·Î Àü³²°ú °æ³²³»·ú, Á¦ÁÖµµ¿¡´Â ¿ÀÈÄ ÇÑ¶§ ¼Ò³ª±â°¡ ¿À°Ú½À´Ï´Ù.","Userformat":"8949598981","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/ru.jpg|||||","PassData":"4564","RadioData":"L:1","CheckData":1},{"TextData":"¿À¹Ì·Á","ComboData":"01","ISO":"BBD","Currency":"¹Ùº£ÀÌµµ½º ´Þ·¯","IntData":190,"FloatData":15.25,"DateData":"20110526","PhoneNo":"0262642080","IDNO":"2118204825","LinesData":"ÁßºÏºÎÁö¹æÀº µ¿ÇØ»ó¿¡ À§Ä¡ÇÑ °í±â¾ÐÀÇ °¡ÀåÀÚ¸®¿¡ µé°Ú°í, ÃæÃ»ÀÌ³²Áö¹æÀº Àå¸¶Àü¼±ÀÇ ¿µÇâÀ» ¹Þ´Ù°¡ Á¦ 5È£ ÅÂÇ³ ¡®´Ù³ª½º¡®ÀÇ ¿µÇâÀ» Á¡Â÷ ¹Þ°Ú½À´Ï´Ù.","Userformat":"","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/ru.jpg|||||","PassData":"123456","RadioData":"H:1","CheckData":1},{"TextData":"Â÷¼ö½Ä","ComboData":"02","ISO":"BYR","Currency":"º§¶ó·ç½º ·çºí","IntData":1120,"FloatData":115.25,"DateData":"20100922","PhoneNo":"0261254045","IDNO":"","LinesData":"","Userformat":"","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/ko.jpg|||||","PassData":"75646","RadioData":"L:1","CheckData":0},{"TextData":"¸ÍÀÎÁÖ","ComboData":"01","ISO":"BZD","Currency":"º§¸®Áî ´Þ·¯","IntData":65,"FloatData":154.36,"DateData":"","PhoneNo":"","IDNO":"1298261319","LinesData":"ÁßºÏºÎÁö¹æÀº µ¿ÇØ»ó¿¡ À§Ä¡ÇÑ °í±â¾ÐÀÇ °¡ÀåÀÚ¸®¿¡ µé°ÚÀ¸³ª, ÃæÃ»ÀÌ³²Áö¹æÀº Àå¸¶Àü¼±ÀÇ ¿µÇâÀ» Á¡Â÷ ¹Þ°Ú½À´Ï´Ù.","Userformat":"","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/er.jpg|||||","PassData":"4564","RadioData":"H:1","CheckData":0},{"TextData":"Àü¸íÁØ","ComboData":"01","ISO":"BMD","Currency":"¹ö¹Â´Ù ´Þ·¯","IntData":190,"FloatData":15.25,"DateData":"20110526","PhoneNo":"022222222","IDNO":"7507142063425","LinesData":"ÁßºÎÁö¹æÀº µ¿ÇØ»ó¿¡ À§Ä¡ÇÑ °í±â¾ÐÀÇ °¡ÀåÀÚ¸®¿¡ µé°ÚÀ¸³ª, ³²ºÎÁö¹æÀº Àå¸¶Àü¼±ÀÇ ¿µÇâÀ» ¹Þ°Ú½À´Ï´Ù.","Userformat":"5415554321","ImageData":"|https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/imgs/fe.jpg|||||","PassData":"123456","RadioData":"M:1","CheckData":1}];		
 	</script>
 
 	</body>
