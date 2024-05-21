@@ -20,7 +20,7 @@
 .login-form .login-form-left { flex-grow: 0; flex-shrink: 0; flex-basis: 0; } 
 .login-form .login-form-left .ip-txt { height: 46px; border: 1px solid #E3E3E3;border-radius: 4px; font-size: 18px;color: #333;font-weight: 400; padding: 19px 12px; } 
 .login-form .login-form-left .ip-txt:first-of-type { margin-bottom: 12px; } 
-.login-form .btn-login { display: block; font-size: 20px; color: #fff; font-weight: 700; background: #19885D; width: 124px; height: 104px; line-height: 104px; border-radius: 12px; text-decoration: none; text-align: center; } 
+.login-form .btn-login { display: block; font-size: 20px; color: #fff; font-weight: 700; background:  var(--color1); width: 124px; height: 104px; line-height: 104px; border-radius: 12px; text-decoration: none; text-align: center; } 
 
 .plf-login .ip-ch-label{margin-top: 8px;}
 .plf-login .login-btn{margin-top: 24px;}
