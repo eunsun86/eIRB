@@ -112,10 +112,41 @@ $(document).ready(function() {
 });
 
 $(document).ready(function(){
+    selectbox();
+    tooltip();
 	asideMenu();
 	$('.btn-etc').length && layerpopToast();
-    hcLayer.init();
+  hcLayer.init();
 });
+function selectbox(){
+    var thisSelect
+    $(document).on('click', '.fs_selected', function(){
+        thisSelect = $(this).parent();
+        if(thisSelect.hasClass('readonly')){
+            return false;
+        }
+        if($('.form_selectbox.open').not($(this).parent()).length){
+            $('.form_selectbox.open').removeClass('open')
+        }
+        thisSelect.toggleClass('open')
+    })
+    $(document).on('click', '.fs_list li button', function(){
+        console.log(111)
+        thisSelect.find('.fs_selected').text($(this).text()).attr('data-selected-value', $(this).attr('data-value'));
+        thisSelect.removeClass('open')
+    })
+    $('.fs_selected').focusout(function(){
+        var thisBtn = $(this)
+        setTimeout(function(){
+            thisBtn.parent().removeClass('open')
+        },100)
+    })
+}
+function tooltip(){
+	$(".btn-tooltip").click(function(){
+        $(this).next().toggleClass('active') ;
+    });
+}
 function layerpopToast(){
 	$(".btn-etc").click(function(){
         $(this).parent().toggleClass('active') ;
