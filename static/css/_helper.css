@@ -42,6 +42,7 @@ Sub Color
 .fc-ed {color: #ededed;}
 .fc-f9fafc {color: #f9fafc;}
 .fc-1d {color: #1d1d1d;} 
+.fc-1e {color: #1e1e1e;} 
 
 .fw-100 {font-weight: 100;}
 .fw-200 {font-weight: 200;}
@@ -143,6 +144,7 @@ Sub Color
 .w140 {width: 140px !important}
 .w150 {width: 150px !important}
 .w165 {width: 165px !important}
+.w175 {width: 175px !important}
 .w220 {width: 220px !important}
 .w300 {width: 300px !important}
 .w310 {width: 310px !important}
@@ -188,7 +190,15 @@ Sub Color
 .mt31 {margin-top: 31px !important;}
 
 .mr10 {margin-right: 10px !important;}
+.mr12 {margin-right: 12px !important;}
+.mr16 {margin-right: 16px !important;}
+.mr32 {margin-right: 32px !important;}
+
+.ml8 {margin-left: 8px !important;}
 .ml10 {margin-left: 10px !important;}
+.ml16 {margin-left: 16px !important;}
+.ml20 {margin-left: 20px !important;}
+.ml24 {margin-left: 24px !important;}
 .ml32 {margin-left: 32px !important;}
 
 .por {position: relative !important;}
