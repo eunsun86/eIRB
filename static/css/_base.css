@@ -22,7 +22,7 @@ figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
-	padding: 0;color: #1e1e11;
+	padding: 0;color: #666;
 }
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
@@ -32,8 +32,8 @@ body {
 	line-height: 1;
 	min-height: 100vh; /*추가*/
 }
-ol, ul {
-	list-style: none;
+dl, ul, ol {
+    list-style: none;
 }
 blockquote, q {
 	quotes: none;
@@ -46,7 +46,7 @@ q:before, q:after {
 table {
 	border-spacing: 0;
 }
-em {
+em,i {
 	font-style: normal;
 }
 a{color:#1e1e1e;text-decoration:none;cursor:pointer}
