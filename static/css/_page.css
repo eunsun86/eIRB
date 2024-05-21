@@ -8,71 +8,30 @@
  @ 메모 : 앞에서 _component, _layout으로 커버되지 않는 각 페이지마다 유니크한 부분은 이곳에서 따로 정의한다.
 */
 
-/*[1000] 메인화면*/
-/*1000. 진행현황판*/
-.plf-root.startpage { position: relative; top: 0; left: 0; width: 100%; height: 100%; overflow: auto; height: 100vh; min-width: 1180px; } 
-.plf-root.startpage .plf-header { background: rgba(255, 255, 255, 0.2); border-bottom: 0; } 
-.plf-root.startpage .plf-header>.inner { position: relative; width: 1180px; margin: 0 auto; } 
-.plf-root.startpage .plf-header .left-area { width: auto; height: auto; } 
-.plf-root.startpage .plf-header .left-area>.logo { position: absolute; top: 20px; left: auto; display: inline-block; } 
-.plf-root.startpage .plf-header .right-area .plf-gnb { margin: 0 auto; } 
-.plf-root.startpage .plf-header .right-area .plf-gnb>ul>li>a { color: #fff; } 
-.plf-root.startpage .plf-header .right-area .plf-util { position: absolute; top: 0; right: 0; } 
-.plf-root.startpage .plf-con .plf-main .main-visual { position: fixed; z-index: 10; top: 0; left: 0; width: 100%; height: 100%; background-position: 50% 0; background-size: cover; background-color: #111f2a; } 
-
-.plf-root.startpage .plf-con .plf-main .main-visual:after { content: ""; position: absolute; top: 0; left: 0; display: block; width: 100%; height: 100%; background: rgba(0, 0, 0, 0); } 
-.plf-root.startpage .plf-con .plf-main .copy-apply { position: absolute; z-index: 20; top: calc(50% - 40px); left: 50%; transform: translate(-50%, -50%); width: 1180px; } 
-/*
-.plf-root.startpage .plf-con .plf-main .copy { font-size: 58px; color: #fff; text-align: center; } 
-.plf-root.startpage .plf-con .plf-main .copy>span { display: block; margin-bottom: 10px; } 
-.plf-root.startpage .plf-con .plf-main .copy>em { display: block; font-weight: 900; } 
-*/
-.plf-root.startpage .plf-con .plf-main .apply { position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 200px; height: 66px; line-height: 66px; color: #fff; font-weight: 600; font-size: 22px; text-decoration: none; text-align: center; background: #0f90ab; display: flex; justify-content: center; align-items: center; column-gap: 8px; padding-left: 20px; box-sizing: border-box; } 
-.plf-root.startpage .plf-con .plf-main .apply:after { content: ""; display: block; width: 20px; height: 20px; background: url(../img/icon/ic_apply_arrow.svg) no-repeat 0 0; } 
-.plf-root.startpage .plf-con .plf-main .status-board { position: absolute; z-index: 20; left: 0; bottom: 0; width: 100%; height: 146px; background: #fff; } 
-.plf-root.startpage .plf-con .plf-main .status-board>ul { display: flex; width: 1180px; height: 100%; margin: 0 auto; } 
-.plf-root.startpage .plf-con .plf-main .status-board>ul>li { position: relative; flex-grow: 1; height: 100%; text-align: center; } 
-.plf-root.startpage .plf-con .plf-main .status-board>ul>li .tit-data { position: absolute; top: 50%; transform: translateY(-50%); width: 100%; padding: 5px 0; } 
-.plf-root.startpage .plf-con .plf-main .status-board>ul>li .tit-data:after { position: absolute; top: 0; right: 0; content: ""; display: block; width: 1px; height: 100%; background-color: #ededed; } 
-.plf-root.startpage .plf-con .plf-main .status-board>ul>li.tot .tit-data:after,
-.plf-root.startpage .plf-con .plf-main .status-board>ul>li:last-of-type .tit-data:after { display: none; } 
-.plf-root.startpage .plf-con .plf-main .status-board>ul>li .tit { display: block; font-size: 17px; font-weight: 400; color: #666; margin-bottom: 13px; } 
-.plf-root.startpage .plf-con .plf-main .status-board>ul>li .data { font-size: 29px; font-weight: 900; color: #2b2b2b; } 
-.plf-root.startpage .plf-con .plf-main .status-board>ul>li.tot { flex-grow: 0; background: #d1986e; width: 200px; height: 200px; top: -54px; } 
-.plf-root.startpage .plf-con .plf-main .status-board>ul>li.tot .tit { color: #fff; font-weight: 600; font-size: 22px; } 
-.plf-root.startpage .plf-con .plf-main .status-board>ul>li.tot .data { color: #fff; font-weight: 900; font-size: 44px; } 
-
 /*1100. 로그인*/
-.login-wrap { /* border: 1px dashed red; */
- width: 420px; margin: 133px auto 0 auto; } 
-.btn-login1 { display: block; font-size: 17px; color: #fff; font-weight: 600; background: #0f90ab; height: 56px; line-height: 56px; border-radius: 4px; text-decoration: none; text-align: center; } 
-.btn-login2 { display: block; font-size: 17px; color: #fff; font-weight: 600; background: #33628b; width: 104px; height: 120px; line-height: 120px; border-radius: 4px; text-decoration: none; text-align: center; } 
+.plf-root.login{min-width: initial;min-height: 100vh;background: url(../img/bg_login.jpg) no-repeat center bottom/cover;position: relative;}
+.plf-root.login .plf-header{top: 40px;height: initial;border-bottom: none;}
+.plf-root.login footer{position: fixed;bottom:48px;width: 100%;text-align: center;color: #1E1E1E;font-size: 14px;font-weight: 400;}
+
+.plf-login {position: absolute;left:55.5%;top:50%; width: 560px; margin: -225px 0 0 0; border:1px solid #F0F0F0;border-radius: 30px;padding:100px 60px;box-sizing: border-box;} 
+.plf-login .tit{font-size: 60px;color: #666;margin-bottom: 16px;}
 
 .login-form { display: flex; column-gap: 16px; } 
 .login-form .login-form-left { flex-grow: 0; flex-shrink: 0; flex-basis: 0; } 
-.login-form .login-form-left .ip-txt { height: 56px; border: 0; /* background: lightyellow; */
- font-size: 15px; padding: 19px 12px; } 
-.login-form .login-form-left .ip-txt:first-of-type { margin-bottom: 8px; } 
-.login-form .btn-login2 {}
+.login-form .login-form-left .ip-txt { height: 46px; border: 1px solid #E3E3E3;border-radius: 4px; font-size: 18px;color: #333;font-weight: 400; padding: 19px 12px; } 
+.login-form .login-form-left .ip-txt:first-of-type { margin-bottom: 12px; } 
+.login-form .btn-login { display: block; font-size: 20px; color: #fff; font-weight: 700; background: #19885D; width: 124px; height: 104px; line-height: 104px; border-radius: 12px; text-decoration: none; text-align: center; } 
+
+.plf-login .ip-ch-label{margin-top: 8px;}
+.plf-login .login-btn{margin-top: 24px;}
+.plf-login .login-btn a{display: inline-block;padding-right:6px;}
+.plf-login .login-btn a:after{content:'';display: inline-block;width: 1px;height: 10px;background-color: #D9D9D9;margin-left: 8px;}
+.plf-login .login-btn a:last-child:after{display: none;}
 
 /*1200. 약관동의*/
 .agree-wrap { width: 1180px; margin: 0 auto; } 
 .agree-detail { overflow-y: auto; border: 1px solid #e3e3e3; background: #fff; padding: 16px; height: 174px; box-sizing: border-box; font-size: 13px; font-weight: 500; color: #333; line-height: 1.5; margin-bottom: 12px; } 
 
-/*2000. 사업단안내 - 사업단 안내*/
-.contents-2000 { display: flex; column-gap: 80px; width: 880px; } 
-.contents-2000>div { flex-grow: 1; flex-shrink: 0; flex-basis: 0; border: 1px solid #3a6c98; } 
-.contents-2000>div .tit { background: #3a6c98; font-size: 15px; font-weight: 500; color: #fff; height: 52px; line-height: 52px; text-align: center; } 
-.contents-2000>div ul { padding: 20px; } 
-.contents-2000>div ul li { position: relative; font-size: 13px; font-weight: 500; color: #666; margin-bottom: 8px; padding-left: 10px; } 
-.contents-2000>div ul li:last-of-type { margin-bottom: 0; } 
-.contents-2000>div ul li:after { position: absolute; top: 50%; left: 0; transform: translateY(-50%); content: ""; display: block; width: 4px; height: 4px; border-radius: 50%; background: #666; } 
-
-/*2100. 사업단안내 - ILO 안내*/
-.ul-2100 { text-align: center; } 
-.ul-2100 li { display: inline-block; position: relative; font-size: 13px; font-weight: 500; color: #999; margin-right: 10px; padding-left: 5px; } 
-.ul-2100 li:last-of-type { margin-right: 0; } 
-.ul-2100 li:after { position: absolute; top: 50%; left: 0; transform: translateY(-50%); content: ""; display: block; width: 2px; height: 2px; border-radius: 50%; background: #666; } 
 
 /*4000.키워드관리*/
 .nodata-4000 { position: relative; height: 460px; text-align: center; border-top: 1px solid #1d1d1d; } 
@@ -80,9 +39,6 @@
 
 /*6002. 공지사항 - 게시판 상세조회*/
 .board-main { font-size: 13px; font-weight: 500; color: #666; line-height: 1.5; padding-top: 15px; padding-bottom: 20px; } 
-.reply-box { } 
-.reply-box .reply-list {
-}
 .reply-box .reply-list .reply-item { position: relative; padding: 15px 12px; border-bottom: 1px solid #ededed; } 
 .reply-box .reply-info { display: flex; column-gap: 10px; margin-bottom: 12px; } 
 .reply-box .reply-info .reply-name { font-size: 13px; font-weight: 500; color: #999; } 
