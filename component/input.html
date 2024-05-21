@@ -31,11 +31,11 @@
 			<br>			
 
 
-			<h4 class="deco-h4">단위(Unit)</h4>
+			<!-- <h4 class="deco-h4">단위(Unit)</h4>
 			<div class="ip-wrap type-unit ta-right">
 				<input name="" id="" class="ip-txt w100" type="text" value="" placeholder="New">
 				<span class="unit">원</span>
-			</div>
+			</div> -->
 
 			<br>
 			<br>
@@ -43,12 +43,12 @@
 
 
 			<!-- 달력 -->
-			<div class="ip-wrap with-icon ta-left w120">
+			<div class="ip-wrap with-icon ta-left w175">
 				<input name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
 				<i class="ic ic-calendar"></i>
 			</div>
 			<!-- 돋보기 -->
-			<div class="ip-wrap with-icon ta-left w120">
+			<div class="ip-wrap with-icon ta-left w175">
 				<input name="" id="" class="ip-txt" type="text" value="" placeholder="검색">
 				<i class="ic ic-magnify"></i>
 			</div>
@@ -57,21 +57,21 @@
 			<br>
 
 			<h4 class="deco-h4">type</h4>
-			<input name="" id="" class="ip-txt w473" type="number" value="" placeholder="number">
+			<input name="" id="" class="ip-txt" type="number" value="" placeholder="number">
 			<br>
 			<br>
-			<input name="" id="" class="ip-txt w100" type="email" value="" placeholder="email">
+			<input name="" id="" class="ip-txt" type="email" value="" placeholder="email">
 			<br>
 			<br>
-			<input name="" id="" class="ip-txt w100" type="password" value="" placeholder="password">
+			<input name="" id="" class="ip-txt" type="password" value="" placeholder="password">
 			<br>
 			<br>
 
 			<h4 class="deco-h4">불능,리드온리</h4>
-			<input disabled="disabled" name="" id="" class="ip-txt w100" type="text" value="불능" placeholder="text">
+			<input disabled="disabled" name="" id="" class="ip-txt" type="text" value="불능" placeholder="text">
 			<br>
 			<br>
-			<input readonly="readonly" name="" id="" class="ip-txt w100" type="text" value="리드온리" placeholder="text">
+			<input readonly="readonly" name="" id="" class="ip-txt" type="text" value="리드온리" placeholder="text">
 			<br>
 			<br>
 			
@@ -79,7 +79,7 @@
 			<!--
 				https://fengyuanchen.github.io/datepicker/
 			-->
-			<div class="ip-wrap with-icon ta-left w120">
+			<div class="ip-wrap with-icon ta-left w175">
 				<input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
 				<i class="ic ic-calendar"></i>
 			</div>			
@@ -105,31 +105,31 @@
 			</div>	
 			
 			<br><br>
-			<div class="ta-group gray with-counting h200">
+			<!-- <div class="ta-group gray with-counting h200">
 				<textarea class="ta-ip" placeholder="Expose the placeholder. blahblah...">카운팅</textarea>
 				<span class="counting">10/200</span>
-			</div>					
+			</div>					 -->
 			<br>
 			<br>
 			<h3 class="deco-h3">Check</h3>
 			<div class="ip-ch-group">
 				<label for="ch-1-1" class="ip-ch-label">
 					<input name="ch-1" id="ch-1-1" class="ip-ch" type="checkbox" value="">
-					<span class="check"></span> 첵박 </label>
+					<span class="check"></span> <em>첵박</em> </label>
 				<label for="ch-1-2" class="ip-ch-label">
 					<input name="ch-1" id="ch-1-2" class="ip-ch" type="checkbox" value="" checked>
 					<!--checked-->
-					<span class="check"></span> 첵박
+					<span class="check"></span> <em>첵박</em>
 				</label>
 				<label for="ch-1-3" class="ip-ch-label">
 					<input name="ch-1" id="ch-1-3" class="ip-ch" type="checkbox" value="" disabled>
 					<!--disabled-->
-					<span class="check"></span> 첵박
+					<span class="check"></span> <em>첵박</em>
 				</label>
 				<label for="ch-1-4" class="ip-ch-label">
 					<input name="ch-1" id="ch-1-4" class="ip-ch" type="checkbox" value="" checked disabled>
 					<!--checked && disabled-->
-					<span class="check"></span> 첵박
+					<span class="check"></span> <em>첵박</em>
 				</label>
 			</div>
 			<br>
@@ -138,16 +138,16 @@
 			<div class="ip-rd-group">
 				<label for="rd-1-1" class="ip-rd-label">
 					<input name="rd-1" id="rd-1-1" class="ip-rd" type="radio" value="">
-					<span class="check"></span> 라됴 </label>
+					<span class="check"></span> <em>라됴</em> </label>
 				<label for="rd-1-2" class="ip-rd-label">
 					<input name="rd-1" id="rd-1-2" class="ip-rd" type="radio" value="" checked>
-					<span class="check"></span> 라됴 </label>
+					<span class="check"></span> <em>라됴</em> </label>
 				<label for="rd-1-3" class="ip-rd-label">
 					<input name="rd-1" id="rd-1-3" class="ip-rd" type="radio" value="" disabled>
-					<span class="check"></span> 라됴 </label>
+					<span class="check"></span> <em>라됴</em> </label>
 				<label for="rd-1-4" class="ip-rd-label">
 					<input name="rd-1" id="rd-1-4" class="ip-rd" type="radio" value="" checked disabled>
-					<span class="check"></span> 라됴 </label>
+					<span class="check"></span> <em>라됴</em> </label>
 			</div>
 			<br>
 			<br>
@@ -173,21 +173,67 @@
 			<br>
 			<h3 class="deco-h3">가로배치 (TD-ITEM)</h3>
 			
-			<div class="td-item-group left gap4">
-				<input name="" id="" class="td-item ip-txt w100" type="text" value="" placeholder="text">
-				<div class="td-item sel w100">
-					<select name="" id="" class="">
-						<option value="0">선택하세요</option>
-						<option value="1">1번</option>
-						<option value="2">2번</option>
-					</select>
+			<div class="sec">
+				<div class="td-item-group">
+					<div class="item-area">
+						<input name="" id="" class="td-item ip-txt w100" type="text" value="" placeholder="text">
+						<div class="td-item sel">
+							<select name="" id="" class="">
+								<option value="0">선택하세요</option>
+								<option value="1">1번</option>
+								<option value="2">2번</option>
+							</select>
+						</div>
+						<span class="th-item">등록일자</span>
+						<input name="" id="" class="td-item ip-txt w100" type="text" value="" placeholder="text">
+						<span class="td-item">-</span>
+						<input name="" id="" class="td-item ip-txt w100" type="text" value="" placeholder="text">
+					</div>
+					<div class="btn-group">
+						<button class="td-item btn btn-icon-srh" type="button">조회</button>
+					</div>
 				</div>
-				<span class="td-item fs-12 fw-600 pl20 pr10">등록일자</span>
-				<input name="" id="" class="td-item ip-txt w100" type="text" value="" placeholder="text">
-				<span class="td-item">-</span>
-				<input name="" id="" class="td-item ip-txt w100" type="text" value="" placeholder="text">
-				<button class="td-item btn btn-big btn-lb" type="button">검색</button>
 			</div>
+			
+			<div class="sec">
+				<div class="td-item-group">
+					<div class="item-area">
+						<span class="th-item">연구상태</span>
+						<input name="" id="" class="td-item ip-txt w220" type="text" value="" placeholder="접수번호 / IRB No / 과제명">	
+						<div class="td-item sel">
+							<select name="" id="" class="">
+								<option value="0">활동구분</option>
+								<option value="1">-</option>
+								<option value="2">-</option>
+							</select>
+						</div>						
+						<span class="th-item pl36">연구상태</span>
+		
+						<div class="ip-wrap with-icon ta-left w175">
+							<input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+							<i class="ic ic-calendar"></i>
+						</div>			
+						<span class="td-item">-</span>
+						<div class="ip-wrap with-icon ta-left w175">
+							<input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+							<i class="ic ic-calendar"></i>
+						</div>									
+					</div>
+					
+					<div class="btn-group">
+						<button class="td-item btn btn-icon-srh" type="button">조회</button>
+					</div>
+				</div>	
+			</div>	
+
+			<div class="sec">
+				<div class="td-item-group right">
+					<div class="btn-group">
+						<button class="btn btn-cts" type="button">추가</button>
+						<button class="btn btn-cts" type="button">삭제</button>
+					</div>
+				</div>	
+			</div>	
 
 			<br>
 			<br>
