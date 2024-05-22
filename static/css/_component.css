@@ -410,8 +410,8 @@ input, button, textarea { outline: 0; }
 .ic-calendar { width: 16px; height: 16px; background: url(../img/icon2/ic_calendar_gray.svg) no-repeat center; } 
 /*arr icon*/
 /* .ic-arr-down-black-16 { width: 16px; height: 16px; background: url(../img/icon/ic_arrow_down_black_16.svg); } 
-.ic-arr-up-white-16 { width: 16px; height: 16px; background: url(../img/icon/ic_arrow_up_white_16.svg); } 
-.ic-magnify { width: 12px; height: 12px; background: url(../img/icon2/ic_search_black.svg); }  */
+.ic-arr-up-white-16 { width: 16px; height: 16px; background: url(../img/icon/ic_arrow_up_white_16.svg); }   */
+.ic-magnify { width: 12px; height: 12px; background: url(../img/icon2/ic_search_black.svg); }
 
 /* Buttons, Button group */
 .btn-group {font-size: 0; } 
@@ -459,10 +459,11 @@ input, button, textarea { outline: 0; }
 .btn-group.right { text-align: right; } 
 
 /* Tab */
-.tab { font-size: 0; height: 38px; } 
-.tab .item {position: relative; font-size: 16px; color: #929292; font-weight: 500; background: #EFEFEF; border: 0; border: 1px solid #e3e3e3; border-bottom-width: 0; border-right-width: 0; border-top-left-radius: 12px; border-top-right-radius: 12px; cursor: pointer; height: 100%; padding: 0 25px; } 
+.tab { font-size: 0; } 
+/* .tab .item {position: relative; font-size: 16px; color: #929292; font-weight: 500; background: #EFEFEF; border: 0; border: 1px solid #e3e3e3; border-bottom-width: 0; border-right-width: 0; border-top-left-radius: 12px; border-top-right-radius: 12px; cursor: pointer; height: 100%; padding: 0 25px; }  */
+.tab .item {position: relative; font-size: 16px; color: #929292; font-weight: 500; background: #EFEFEF; border: 0; border: 1px solid #EFEFEF; border-top-left-radius: 12px; border-top-right-radius: 12px; cursor: pointer; height: 100%; padding: 0 25px; margin-right: 1px;border-bottom: 1px solid #D9D9D9; } 
 .tab .item:last-of-type { border-right-width: 1px; } 
-.tab .item.active { color: #3a6c98; background: #fff; } 
+.tab .item.active { background: #fff; } 
 .tab .item.active:after { content: ""; display: block; position: absolute; left: 0; bottom: -1px; width: 100%; height: 1px; background: #fff; } 
 
 .tab.type1 {height: 43px;overflow: initial !important;margin-bottom: 0 !important;}
