@@ -9,77 +9,9 @@
     @ 메모 : '헬퍼'는 자잘한 스타일을 클래스로 미리 만들어놓은 것이다. 
 */
 
-/*
-Primary Color
-  한밭다크블루 : #3A6C98 → #769ABA → #EDF6FF
-  한밭라이트블루 : #009AB7 → #4EB9CD → #EBF7FA
-  한밭레드 : #E66564
-  한밭옐로우 : #D7A376
-
-Sub Color
-  한밭네이비 : #1e2446
-  한밭블루 : #056cb9
-*/
-
-/*Primary Color*/
-.fc-db {color: #3A6C98;}
-.fc-lb {color: #009AB7;}
-.fc-r {color: #E66564}
-.fc-y {color: #D7A376;}
-
-/*Sub Color*/
-.fc-n {color: #1e2446;}
-.fc-b {color: #056cb9;}
-
-/*Grayscale*/
-.fc-d1 {color: #d1d1d1;}
-.fc-111 {color: #111;}
-.fc-333 {color: #333;}
-.fc-666 {color: #666;}
-.fc-999 {color: #999;}
-.fc-ccc {color: #ccc;}
-.fc-e3 {color: #e3e3e3;}
-.fc-ed {color: #ededed;}
-.fc-f9fafc {color: #f9fafc;}
-.fc-1d {color: #1d1d1d;} 
-.fc-1e {color: #1e1e1e;} 
-
-.fw-100 {font-weight: 100;}
-.fw-200 {font-weight: 200;}
-.fw-300 {font-weight: 300;}
 .fw-400 {font-weight: 400;}
 .fw-500 {font-weight: 500;}
 .fw-600 {font-weight: 600;}
-.fw-700 {font-weight: 700;}
-.fw-800 {font-weight: 800;}
-.fw-900 {font-weight: 900;}
-
-.fs-0 {font-size: 0px !important;}
-.fs-11 {font-size: 11px !important;}
-.fs-12 {font-size: 12px !important;}
-.fs-13 {font-size: 13px !important;}
-.fs-14 {font-size: 14px !important;}
-.fs-15 {font-size: 15px !important;}
-.fs-16 {font-size: 16px !important;}
-.fs-17 {font-size: 17px !important;}
-.fs-18 {font-size: 18px !important;}
-.fs-19 {font-size: 19px !important;}
-.fs-20 {font-size: 20px !important;}
-.fs-21 {font-size: 21px !important;}
-.fs-22 {font-size: 22px !important;}
-.fs-23 {font-size: 23px !important;}
-.fs-24 {font-size: 24px !important;}
-.fs-25 {font-size: 25px !important;}
-.fs-26 {font-size: 26px !important;}
-.fs-27 {font-size: 27px !important;}
-.fs-28 {font-size: 28px !important;}
-.fs-29 {font-size: 29px !important;}
-.fs-30 {font-size: 30px !important;}
-.fs-31 {font-size: 31px !important;}
-.fs-32 {font-size: 32px !important;}
-
-.underline {text-decoration: underline;}
-.no-underline {text-decoration: none;}
 
 .p10 {padding: 10px !important}
 .p15 {padding: 15px !important}
@@ -125,7 +57,6 @@ Sub Color
 
 .pt8 {padding-top: 8px !important}
 
-
 .w100p {width: 100% !important}
 .w0 {width: 0 !important;}
 .w10 {width: 10px !important}
@@ -154,7 +85,6 @@ Sub Color
 .w620 {width: 620px !important}
 .w820 {width: 820px !important}
 .w880 {width: 880px !important}
-
 
 .h100p {height: 100% !important;}
 .h0 {height: 0 !important;}
@@ -201,36 +131,6 @@ Sub Color
 .ml24 {margin-left: 24px !important;}
 .ml32 {margin-left: 32px !important;}
 
-.por {position: relative !important;}
-.poa {position: absolute !important;}
-
-.top1 {top: 1px !important;}
-  
-.d-block {display: block !important;}
-.d-inline-block {display: inline-block !important;}
-.d-inline {display: inline !important;}
-
-.bt-ed {border-top: 1px solid #ededed;}
-.bb-e3 {border-bottom: 1px solid #e3e3e3;}
-.bb-56 {border-bottom: 1px solid #565656;}
-.bb-2e {border-bottom: 1px solid #2e2e2e;}
-.br-0 {border-right: 0 !important;}
-
-.br0 {border-radius: 0px;}
-.br2 {border-radius: 2px;}
-
-.ddd {
-  max-width: 100%;
-  display: inline-block;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.lh-2-2 {line-height: 2.2 !important;}
-
 .hide {display: none !important;}
 
 .tlf {table-layout:  fixed;}
-
-.mwa {max-width: 100% !important;}
