@@ -344,7 +344,7 @@ input, button, textarea { outline: 0; }
 .ta-group.with-counting .counting { position: absolute; bottom: 8px; right: 8px; font-size: 12px; font-weight: 400; color: #999; } 
 
 /* Input-Check */
-.ip-ch-group { display: flex; flex-wrap: wrap; gap: 20px 16px; padding: 6px 0;} 
+.ip-ch-group { display: flex; flex-wrap: wrap; align-items: center; gap: 11px 16px; padding: 6px 0;} 
 .ip-ch-label { display: inline-block; position: relative; cursor: pointer; font-size: 16px; padding-left: 28px; /* height: 32px; *//* line-height: 32px; */height: 20px; line-height: 20px;color: #666; font-weight: 500; } 
 .ip-ch-label .ip-ch { position: absolute; left: -9999px; } 
 .ip-ch-label .check { position: absolute; /* top: 1px; *//* top: 45%; */top: 50%; transform: translateY(-50%); left: 0; display: block; /* width: 20px; *//* height: 20px; */width: 20px; height: 20px; border: 0; background: url(../img/icon2/ic_checkbox_16_normal.svg); } 
@@ -355,7 +355,7 @@ input, button, textarea { outline: 0; }
 .ip-ch-label.no-txt { padding: 0; width: 16px; height: 16px; } 
 
 /* Input-Radio, (Tab Style) */
-.ip-rd-group { font-size: 0; } 
+.ip-rd-group { display:flex; flex-wrap: wrap; align-items: center; gap: 11px 0; padding: 6px 0; font-size: 0; } 
 .ip-rd-label { display: inline-block; position: relative; cursor: pointer; font-size: 16px; padding-left: 24px; margin-right: 16px; height: 20px; line-height: 20px; color: #666;} 
 .ip-rd-label:last-of-type { margin-right: 0; } 
 .ip-rd-label .ip-rd { position: absolute; left: -9999px; } 
