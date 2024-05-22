@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입 | e-IRB</title>
+    <script src="../static/js/jquery-3.6.0.min.js"></script>
+    <script src="../static/js/datepicker.min.js"></script>		
+    <script src="../static/js/datepicker.ko-KR.js"></script>		
+    <script src="../static/js/plf_pub.js"></script>
+    <link rel="stylesheet" href="../static/css/plf.css" />
+</head>
+<body>
+
+<!--[S] plf-root-->
+<div class="plf-root">
+
+    <!--[S] plf-header-->
+    <div class="plf-header">
+        <div class="left-area">
+            <a class="logo" href=""><img src="../static/img/logo/logo.svg" alt="가천대 길병원 e·IRB"></a>
+        </div>
+    </div>
+    <!--//[S] plf-header-->
+
+    <!--[S] plf-group-aside-con-->
+    <div class="plf-group-aside-con wide">
+        
+        <!--[S] plf-con-->
+        <div class="plf-con">
+
+            <!--[S] plf-join -->
+            <div class="plf-join">
+
+                <h1 class="tit-pagetitle">회원가입</h1>
+                
+                <div class="agree-con">
+                    <h2 class="agree-tit">이용약관</h2>
+                    <div class="agree-detail">
+                        여러분을 환영합니다.서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. <br>
+                        본 약관은 다양한 서비스의 이용과 관련하여  서비스를 제공하는 비회원과의 관계를 설명하며, 아울러 여러분의 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다  <br>
+
+                        제1조 목적  <br>
+                        이 약관은 제공하는 인터넷 관련 서비스를 이용함에 있어 회원과 회사간의 권리, 의무 및 책임사항, 하나의 ID 및 PASSWORD로 통합하여 이용하는데 따른 이용조건 및 절차 등 기본적인 사항을 규정함을 목적으로 합니다.  <br>
+                        <br>
+                        제2조 약관의 효력 및 변경  <br>
+                        (1) 당 홈페이지는 이용자가 본 약관 내용에 동의하는 것을 조건으로 이용자에게 서비스를 제공할 것이며, 이용자가 본 약관의 내용에 동의하는 경우, 당 홈페이지의 서비스 제공 행위 및 이용자의 서비스 이용 행위는 본 약관이 우선적으로 적용될 것입니다.  <br>
+                        (2) 이 약관의 내용은 서비스 화면에 게시하거나 기타의 방법으로 회원에게 공시하고, 이에 동의한 회원이 서비스에 가입함으로써 효력이 발생합니다.v <br>
+                        (3) 회사는 필요하다고 인정되는 경우에는 약관의 규제에 관한 법률 및 기타 관련 법령에 위배되지 않는 범위 내에서 이 약관을 변경할 수 있으며, 변경된 약관은 적용일자 및 개정사유를 명시하여 전항과 같은 방법으로 공지 또는 통보함으로써 효력을 발생합니다.  <br>
+                        (4) 회사가 제3항에 따라 변경 약관을 공지 또는 통지하면서, 회원이 약관 변경 적용일까지 명시적으로 약관 변경에 대한 거부의사를 표시하지 아니하면, 회원이 변경 약관에 동의한 것으로 간주합니다. 회원은 변경된 약관 사항에 동의하지 않으면 서비스 이용을 중단(회원탈퇴)하고 이용계약을 해지할 수 있습니다. <br>
+                        제3조 약관 외 준칙<br>
+                        이 약관에 명시되지 않은 사항에 대해서는 전기통신기본법, 전기통신사업법 등 관계법령 및 회사가 정한 서비스의 세부이용지침 등의 규정에 의합니다.
+                    </div>
+
+                    <div class="ip-ch-group">
+                        <label for="ch-1-1" class="ip-ch-label">
+                            <input name="ch-1" id="ch-1-1" class="ip-ch" type="checkbox" value="">
+                            <span class="check"></span> 이용약관 동의
+                        </label>
+                    </div>
+
+                    <h2 class="agree-tit">개인정보 수집·이용 동의</h2>
+                    <div class="agree-detail">
+                        여러분을 환영합니다.서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. <br>
+                        본 약관은 다양한 서비스의 이용과 관련하여  서비스를 제공하는 비회원과의 관계를 설명하며, 아울러 여러분의 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다  <br>
+                        
+                        제1조 목적  <br>
+                        이 약관은 제공하는 인터넷 관련 서비스를 이용함에 있어 회원과 회사간의 권리, 의무 및 책임사항, 하나의 ID 및 PASSWORD로 통합하여 이용하는데 따른 이용조건 및 절차 등 기본적인 사항을 규정함을 목적으로 합니다.  <br>
+                        <br>
+                        제2조 약관의 효력 및 변경  <br>
+                        (1) 당 홈페이지는 이용자가 본 약관 내용에 동의하는 것을 조건으로 이용자에게 서비스를 제공할 것이며, 이용자가 본 약관의 내용에 동의하는 경우, 당 홈페이지의 서비스 제공 행위 및 이용자의 서비스 이용 행위는 본 약관이 우선적으로 적용될 것입니다.  <br>
+                        (2) 이 약관의 내용은 서비스 화면에 게시하거나 기타의 방법으로 회원에게 공시하고, 이에 동의한 회원이 서비스에 가입함으로써 효력이 발생합니다.v <br>
+                        (3) 회사는 필요하다고 인정되는 경우에는 약관의 규제에 관한 법률 및 기타 관련 법령에 위배되지 않는 범위 내에서 이 약관을 변경할 수 있으며, 변경된 약관은 적용일자 및 개정사유를 명시하여 전항과 같은 방법으로 공지 또는 통보함으로써 효력을 발생합니다.  <br>
+                        (4) 회사가 제3항에 따라 변경 약관을 공지 또는 통지하면서, 회원이 약관 변경 적용일까지 명시적으로 약관 변경에 대한 거부의사를 표시하지 아니하면, 회원이 변경 약관에 동의한 것으로 간주합니다. 회원은 변경된 약관 사항에 동의하지 않으면 서비스 이용을 중단(회원탈퇴)하고 이용계약을 해지할 수 있습니다. <br>
+                        제3조 약관 외 준칙<br>
+                        이 약관에 명시되지 않은 사항에 대해서는 전기통신기본법, 전기통신사업법 등 관계법령 및 회사가 정한 서비스의 세부이용지침 등의 규정에 의합니다.
+                    </div>
+
+                    <div class="ip-ch-group">
+                        <label for="ch-1-2" class="ip-ch-label">
+                            <input name="ch-1" id="ch-1-2" class="ip-ch" type="checkbox" value="">
+                            <span class="check"></span> 개인정보 수집·이용 동의
+                        </label>
+                    </div>
+
+                    							
+                </div>
+
+                <div class="btn-group center">
+                    <button class="btn" type="button">취소</button>
+                    <button class="btn btn-lb" type="button">확인</button>
+                </div>	
+            </div>
+            <!--//[S] plf-join -->
+
+        </div>
+        <!--//[S] plf-con-->
+
+    </div>
+    <!--//[S] plf-group-aside-con-->
+
+</div>
+<!--//[S] plf-root-->
+
+
+
+</body>
+</html>

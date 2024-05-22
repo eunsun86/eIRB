@@ -29,9 +29,14 @@
 .plf-login .login-btn a:last-child:after{display: none;}
 
 /*1200. 약관동의*/
-.agree-wrap { width: 1180px; margin: 0 auto; } 
-.agree-detail { overflow-y: auto; border: 1px solid #e3e3e3; background: #fff; padding: 16px; height: 174px; box-sizing: border-box; font-size: 13px; font-weight: 500; color: #333; line-height: 1.5; margin-bottom: 12px; } 
+.plf-join{ width: 1330px;margin:0 auto; }
+.plf-join .tit-pagetitle{margin:40px 0 20px; }
+.plf-join .agree-con{ background-color: #fff;padding:20px;border-top: 1px solid #1e1e1e; margin-bottom: 32px;}
+.plf-join .agree-con .agree-tit{font-size: 18px;font-weight: 600;color: #1E1E1E;margin-bottom: 12px;}
+.plf-join .agree-con .agree-detail { overflow-y: auto; border: 1px solid #EFEFEF; padding: 20px; height: 210px; box-sizing: border-box; font-size: 14px; font-weight: 500; color: #929292; line-height: 1.5; margin-bottom: 14px; } 
+.plf-join .agree-con .ip-ch-group + .agree-tit{margin-top: 32px;}
 
+.plf-join .join-con{ margin-bottom: 32px;}
 
 /*4000.키워드관리*/
 .nodata-4000 { position: relative; height: 460px; text-align: center; border-top: 1px solid #1d1d1d; } 

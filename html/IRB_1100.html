@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>아이디 찾기 | e-IRB</title>
+    <title>회원가입팝업모음 | e-IRB</title>
     <script src="../static/js/jquery-3.6.0.min.js"></script>
     <script src="../static/js/datepicker.min.js"></script>		
     <script src="../static/js/datepicker.ko-KR.js"></script>		
@@ -13,149 +13,143 @@
 </head>
 <body>
 
-<!--[S] plf-root-->
-<div class="plf-root">
+<div class="test_view">
+<!-- 퍼블 화면 확인용 -->
+<style>
+body{background-color:#444;}
+.test_view{display:flex;flex-wrap:wrap;}
+.view_section{position:relative;border:1px dotted #ddd;}
+.view_section .type_no{padding:5px 0;text-align:center;font-size:12px;font-weight:300;color:#fff;}
+.layer{display:block;position:relative;width:360px;height:100%;margin-bottom:10px;margin-left:0px;}
+.layer-content{overflow:inherit;position:relative;max-height:auto;transform: translate(0, 0);}
+</style>
+<!-- //퍼블 화면 확인용 -->
 
-    <!--[S] plf-header-->
-    <div class="plf-header">
-        <div class="left-area">
-            <a class="logo" href=""><img src="../static/img/logo/logo.svg" alt="가천대 길병원 e·IRB"></a>
-        </div>
-        <div class="right-area">
-            
-            <!--[S] plf-util-->
-            <div class="plf-util">
-                <a href="#" title="내정보관리로 이동">
-                    <span class="user-agency">ooo소속</span>
-                    <span class="user-name">홍길동님</span>
-                </a>
-                <a href="#" role="button" class="btn btn-logout">Log out</a>
-            </div>
-            <!--//[S] plf-util-->
-
-        </div>
-    </div>
-    <!--//[S] plf-header-->
-
-    <!--[S] plf-group-aside-con-->
-    <div class="plf-group-aside-con">
-        
-        <!--[S] plf-aside-->
-        <div class="plf-aside">
-            <ul class="depth1">
-                <li>
-                    <h2 class="dpt1-tit">심의현황관리</h2>
-                    <ul class="depth2">
-                        <li><a href="#">심의신청(PI)</a></li>
-                        <li><a href="#">신규 심의신청</a></li>
-                        <li class="selected"><a href="#">신규 면제신청</a></li>
-                        <li><a href="#">신규외 심의신청</a></li>
-                        <li><a href="#">심의진행 현황</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <h2 class="dpt1-tit">과제관리</h2>
-                    <ul class="depth2">
-                        <li><a href="#">과제현황</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <h2 class="dpt1-tit">My Page</h2>
-                    <ul class="depth2">
-                        <li><a href="#">내정보 관리</a></li>
-                        <li><a href="#">이력 및 교육이수 관리</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <!--//[S] plf-aside-->
-
-        <!--[S] plf-con-->
-        <div class="plf-con">
-
-            <!--[S] plf-sub-->
-            <div class="plf-sub">
-
-                <div class="form_control form_selectbox auth-sel ">
-					<button type="button" class="fs_selected" data-selected-value="val1">권한변경</button>
-					<ul class="fs_list">
-						<li><button type="button" data-value="val1">연구자</button></li>
-						<li><button type="button" data-value="val2">행정간사</button></li>
-						<li><button type="button" data-value="val3">심의위원</button></li>
-					</ul>
-				</div>
-
-                <!--[S] plf-tab-->
-                <div class="plf-tab my-tab-switching">
-                    <div class="tab">
-                        <span class="item active" role="button"><em>타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span> <!--[D]active-->
-                        <span class="item" role="button"><em>타이틀타이틀타이틀타이틀타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span>
-                        <span class="item" role="button"><em>타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span>
-                    </div>
-                    <div class="tab-con-group"> 
-                        <div class="tab-con active"> <!--[D]active-->
-                        </div><!--//[S] tab-con-->
-                        <div class="tab-con">2</div><!--//[S] tab-con-->
-                        <div class="tab-con">3</div><!--//[S] tab-con-->
-                    </div>
-
-                    <!-- [S] item-etc -->
-                    <div class="item-etc">
-                        <button type="button" class="btn-etc"><i class="blind">tab etc</i></button>
-                        <ul class="tab-list">
-                            <li><a href="#">탭이름탭이름탭이름탭이름탭이름</a><button class="list-del" type="button"><i class="blind">삭제</i></button></li>
-                            <li><a href="#">탭이름</a><button class="list-del" type="button"><i class="blind">삭제</i></button></li>
-                        </ul>
-                    </div>
-                    <!--// [S] item-etc -->
-
-                </div>
-                <!--// [S] plf-tab-->
-                
-                <!--[C]Toast-->
-                <div class="toast"> <!--[D]active-->
-                    <div class="inner" style="display: none;">
-                        toast 알림입니다
-                    </div>
-                </div>
-                <!--//[C]Toast-->
-                
-            </div>
-            <!--//[S] plf-sub-->
-
-        </div>
-        <!--//[S] plf-con-->
-
-    </div>
-    <!--//[S] plf-group-aside-con-->
-
-</div>
-<!--//[S] plf-root-->
-
-<!--[S] layer small -->
-<div id="layer_idfind" class="layer type-s">
+<!-- 퍼블확인용 --><div class="view_section"><h3 class="type_no">IRB_1100 아이디 찾기</h3>
+<!--[S] layer 아이디 찾기 -->
+<div id="layer_IRB_1100" class="layer type-s">
 	<div class="layer-content">
 		<div class="layer-header">
 			<strong class="lh-title">아이디 찾기</strong>
 		</div>
 		<div class="layer-body">
-			회원정보에 등록한<br>휴대폰 번호를 입력하세요.
-		</div> 
-        <div class="layer-footer">
-			<div class="btn-group">
-                <button class="btn" type="button">취소</button>
+			<p class="txt-info">회원정보에 등록한<br>휴대폰 번호를 입력하세요.</p>
+            <div class="form_group">
+                <input name="" id="" class="ip-txt w100p" type="text" value="" placeholder="이름">
+                <input name="" id="" class="ip-txt w100p" type="number" value="" placeholder="휴대폰번호">
+            </div>
+            <div class="btn-group">
                 <button class="btn btn-lb" type="button">확인</button>
+            </div>
+		</div> 
+        
+		<button type="button" class="btn-close-layer" data-dismiss="modal"><span class="blind">닫기</span></button>
+	</div>
+</div>
+<!--[S] layer 아이디 찾기 -->
+<!-- 퍼블확인용 --></div>
+
+<!-- 퍼블확인용 --><div class="view_section"><h3 class="type_no">IRB_1101 아이디 찾기 완료</h3>
+<!--[S] layer 아이디 찾기 완료 -->
+<div id="layer_IRB_1101" class="layer type-s">
+	<div class="layer-content">
+		<div class="layer-header">
+			<strong class="lh-title">아이디 찾기</strong>
+		</div>
+		<div class="layer-body">
+			<p class="txt-notice">홍길동 님의 아이디는<br><strong>OOOOOOO</strong> 입니다.</p>
+			<div class="btn-group">
+                <button class="btn" type="button">비밀번호 변경</button>
+                <button class="btn btn-lb" type="button">로그인</button>
             </div>
 		</div>
         
 		<button type="button" class="btn-close-layer" data-dismiss="modal"><span class="blind">닫기</span></button>
 	</div>
 </div>
-<!--//[S] layer small-->
+<!--[S] layer 아이디 찾기 완료 -->
+<!-- 퍼블확인용 --></div>
 
-<script>
-    hcLayer.show('layer_idfind')
-</script>
+<!-- 퍼블확인용 --><div class="view_section"><h3 class="type_no">IRB_1200 비밀번호 변경</h3>
+<!--[S] layer_IRB_1200 비밀번호 변경 -->
+<div id="layer_IRB_1200" class="layer type-s">
+	<div class="layer-content">
+		<div class="layer-header">
+			<strong class="lh-title">비밀번호 변경</strong>
+		</div>
+		<div class="layer-body">
+			<p class="txt-info">로그인 비밀번호를 재설정합니다.</p>
+            <div class="form_group">
+                <input name="" id="" class="ip-txt w100p" type="text" value="" placeholder="이름">
+                <input name="" id="" class="ip-txt w100p" type="number" value="" placeholder="휴대폰번호">
+                <p class="txt-error">등록된 정보가 없습니다.</p>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-lb" type="button">확인</button>
+            </div>
+		</div> 
+        
+		<button type="button" class="btn-close-layer" data-dismiss="modal"><span class="blind">닫기</span></button>
+	</div>
+</div>
+<!--[S] layer_IRB_1200 비밀번호 변경 -->
+<!-- 퍼블확인용 --></div>
+
+<!-- 퍼블확인용 --><div class="view_section"><h3 class="type_no">IRB_1201 비밀번호 변경</h3>
+<!--[S] layer_IRB_1201 비밀번호 변경 -->
+<div id="layer_IRB_1201" class="layer type-s">
+	<div class="layer-content">
+		<div class="layer-header">
+			<strong class="lh-title">비밀번호 변경</strong>
+		</div>
+		<div class="layer-body">
+			<p class="txt-info">새로운 비밀번호를 입력해 주세요.</p>
+            <ul class="type-bar">
+                <li>영문 대.소문자, 숫자, 특수문자중 3가지 이상 포함된 조합으로 8~16자리</li>
+                <li>안전한 사용을 위해 비밀번호는 주기적으로 변경해 주세요.</li>
+            </ul>
+            <div class="form_group">
+                <input name="" id="" class="ip-txt w100p" type="text" value="" placeholder="이름">
+                <input name="" id="" class="ip-txt w100p" type="number" value="" placeholder="휴대폰번호">
+                <p class="txt-error">등록된 정보가 없습니다.</p>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-lb" type="button">확인</button>
+            </div>
+		</div> 
+        
+		<button type="button" class="btn-close-layer" data-dismiss="modal"><span class="blind">닫기</span></button>
+	</div>
+</div>
+<!--[S] layer_IRB_1201 비밀번호 변경 -->
+<!-- 퍼블확인용 --></div>
+
+<!-- 퍼블확인용 --><div class="view_section"><h3 class="type_no">IRB_7001 2차 비밀번호 입력</h3>
+<!--[S] layer_IRB_7001 2차 비밀번호 입력 -->
+<div id="layer_IRB_1201" class="layer type-s">
+	<div class="layer-content">
+		<div class="layer-header">
+			<strong class="lh-title">2차 비밀번호 입력</strong>
+		</div>
+		<div class="layer-body">
+			
+            <div class="form_group">
+                <input name="" id="" class="ip-txt w100p" type="text" value="" placeholder="비밀번호 입력">
+                <p class="txt-tip">* 비밀번호 분실 시 관리자에게 문의하세요.</p>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-lb" type="button">확인</button>
+            </div>
+		</div> 
+        
+		<button type="button" class="btn-close-layer" data-dismiss="modal"><span class="blind">닫기</span></button>
+	</div>
+</div>
+<!--[S] layer_IRB_7001 2차 비밀번호 입력 -->
+<!-- 퍼블확인용 --></div>
+
+
+</div>
 
 </body>
 </html>
