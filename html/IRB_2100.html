@@ -103,52 +103,37 @@
     
                             <p class="tit-pagetitle">심의신청(PI)</p>
 
-                            <div class="sec filter-search">
-                                <table class="data-table">
-                                    <caption>테이블제목</caption>
-                                    <colgroup>
-                                        <col width="80px">
-                                        <col width="auto">
-                                        <col width="102px">
-                                        <col width="auto">
-                                    </colgroup>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">검색어</th>
-                                            <td>
-                                                <input name="" id="" class="ip-txt w100p" type="text" value="" placeholder="접수번호 / IRB NO / 과제명">
-                                            </td>
-                                            <th scope="row">심의유형</th>
-                                            <td>
-                                                <div class="sel w150">
-                                                    <select name="" id="" class="">
-                                                        <option value="">전체</option>
-                                                        <option value="">신규</option>
-                                                        <option value="">면제</option>
-                                                        <option value="">변경</option>
-                                                        <option value="">지속심의</option>
-                                                        <option value="">기타</option>
-                                                        <option value="">중간보고</option>
-                                                        <option value="">종료보고</option>
-                                                        <option value="">결과보고</option>
-                                                        <option value="">미준수</option>
-                                                        <option value="">원내이상</option>
-                                                        <option value="">원외이상</option>
-                                                        <option value="">안전성보고</option>
-                                                        <option value="">중지</option>
-                                                        <option value="">예상치못한 문</option>
-                                                    </select>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div class="btn-group">
-                                    <button class="btn btn-lb" type="button">조회</button>
-                                </div>	
-                            </div>
-
                             <div class="sec">
+                                <div class="td-item-group">
+                                    <div class="item-area">
+                                        <input name="" id="" class="td-item ip-txt w350" type="text" value="" placeholder="접수번호 / IRB No / 과제명">	
+                                        				
+                                        <span class="th-item pl36">심의유형</span>
+                                        <div class="td-item sel">
+                                            <select name="" id="" class="">
+                                                <option value="">전체</option>
+                                                <option value="">신규</option>
+                                                <option value="">면제</option>
+                                                <option value="">변경</option>
+                                                <option value="">지속심의</option>
+                                                <option value="">기타</option>
+                                                <option value="">중간보고</option>
+                                                <option value="">종료보고</option>
+                                                <option value="">결과보고</option>
+                                                <option value="">미준수</option>
+                                                <option value="">원내이상</option>
+                                                <option value="">원외이상</option>
+                                                <option value="">안전성보고</option>
+                                                <option value="">중지</option>
+                                                <option value="">예상치못한 문</option>
+                                            </select>
+                                        </div>										
+                                    </div>
+                                    
+                                    <div class="btn-group">
+                                        <button class="td-item btn btn-icon-srh" type="button">조회</button>
+                                    </div>
+                                </div>		
                                 <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div><!--[D]그리드 영역-->
                             </div>
 
@@ -168,6 +153,14 @@
                 </div>
                 <!--// [S] plf-tab-->
                 
+                <!--[C]Toast-->
+                <div class="toast"> <!--[D]active-->
+                    <div class="inner" style="display: none;">
+                        toast 알림입니다
+                    </div>
+                </div>
+                <!--//[C]Toast-->
+                
             </div>
             <!--//[S] plf-sub-->
 
@@ -179,7 +172,6 @@
 
 </div>
 <!--//[S] plf-root-->
-
 
 
 </body>
