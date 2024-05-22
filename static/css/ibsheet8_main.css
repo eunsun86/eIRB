@@ -1,20 +1,7 @@
 /* IBSheet8 CSS definition, https://www.ibsheet.com */
-
-/*
-    파일 개요
-    ---------------------------------------------------------------------
-    @ 목적 : [가천대 길병원 플랫폼] import base file
-    @ 작성 : GRIDA Publishing Team.
-    @ 최종 : 2024.05.14.00:00
-    @ 메모 :  
-*/
-
-/*[D] 2023.11.28 폰트정의 삭제*/
-/* @font-face{font-family:'Noto Sans KR';src:url('./../../fonts/NotoSansCJKkr-Regular.otf') format('truetype')} */
-/* @font-face{font-family:'Noto Sans KR Bold';src:url('./../../fonts/NotoSansCJKkr-Bold.otf') format('truetype')} */
-/* .IBMain{font-family:'Noto Sans CJK kr','Noto Sans KR','Noto Sans','Verdana','Malgun Gothic','Nanum Gothic',sans-serif;font-style:normal;font-weight:normal;font-variant:normal} */
-/*// [D] 2023.11.28 폰트정의 삭제*/
-
+@font-face{font-family:'Noto Sans KR';src:url('./../../fonts/NotoSansCJKkr-Regular.otf') format('truetype')}
+@font-face{font-family:'Noto Sans KR Bold';src:url('./../../fonts/NotoSansCJKkr-Bold.otf') format('truetype')}
+.IBMain{font-family:'Noto Sans CJK kr','Noto Sans KR','Noto Sans','Verdana','Malgun Gothic','Nanum Gothic',sans-serif;font-style:normal;font-weight:normal;font-variant:normal}
 .IBMain *{font-family:inherit;font-style:inherit;font-weight:inherit;font-variant:inherit;text-overflow:ellipsis;word-wrap:normal;word-break:normal}
 .IBMain table{margin:auto;}
 .IBMain .IBSolidRow table{width:auto;}
@@ -307,28 +294,24 @@
 .IBSection,.IBSectionFF3{table-layout:fixed;width:0px;line-height:0px;contain:paint;border-collapse:separate}
 .IBSectionFF3{border-collapse:collapse}
 .IBSection img{vertical-align:middle}
-.IBSectionScroll{-ms-overflow-style:none}
+.IBSectionScroll{-ms-overflow-style:none;scrollbar-width:none}
 .IBSectionScroll::-webkit-scrollbar{display:none}
 .IBMainTable{border-collapse:separate}
 .IBRtl .IBMainTable{text-align:right}
 .IBSolidRow{line-height:0px;overflow:hidden;white-space:nowrap;padding:0}
-.IBHigh .IBRowSpaceFirst .IBSolidRow{padding-top:8px}
-.IBHigh .IBRowSpaceLast .IBSolidRow{padding-bottom:8px}
-.IBBig .IBRowSpaceFirst .IBSolidRow{padding-top:12px}
-.IBBig .IBRowSpaceLast .IBSolidRow{padding-bottom:12px}
-.IBTiny .IBRowSpaceFirst .IBSolidRow{padding-top:0px}
-.IBTiny .IBRowSpaceLast .IBSolidRow{padding-bottom:0px}
 .IBRowSpaceFirst.IBRowSpace0{padding-top:0px}
 .IBRowSpaceLast.IBRowSpace4{padding-top:0px}
             .IBTabberRow{padding:0px}
  .IBNoDataRow{padding:5px 0px 5px 5px;overflow:hidden;background-color:white}
 .IBNoDataRow div{text-align:center}
+.IBNoDataRow>table{height:100%}
 .IBNoDataIcon{display:inline-block;width:15px;height:15px;margin-right:5px;vertical-align:text-bottom;background-repeat:no-repeat;background-size:contain;background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iaW5mbyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgdmlld0JveD0iMCAwIDQ1Ljk5OSA0NS45OTkiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ1Ljk5OSA0NS45OTk7Ig0KCSB4bWw6c3BhY2U9InByZXNlcnZlIj4NCgk8Zz4NCgkJPHBhdGggZD0iTTM5LjI2NCw2LjczNmMtOC45ODItOC45ODEtMjMuNTQ1LTguOTgyLTMyLjUyOCwwYy04Ljk4Miw4Ljk4Mi04Ljk4MSwyMy41NDUsMCwzMi41MjhjOC45ODIsOC45OCwyMy41NDUsOC45ODEsMzIuNTI4LDANCgkJCUM0OC4yNDUsMzAuMjgxLDQ4LjI0NCwxNS43MTksMzkuMjY0LDYuNzM2eiBNMjUuOTk5LDMzYzAsMS42NTctMS4zNDMsMy0zLDNzLTMtMS4zNDMtMy0zVjIxYzAtMS42NTcsMS4zNDMtMywzLTNzMywxLjM0MywzLDNWMzN6DQoJCQkgTTIyLjk0NiwxNS44NzJjLTEuNzI4LDAtMi44OC0xLjIyNC0yLjg0NC0yLjczNWMtMC4wMzYtMS41ODQsMS4xMTYtMi43NzEsMi44NzktMi43NzFjMS43NjQsMCwyLjg4LDEuMTg4LDIuOTE3LDIuNzcxDQoJCQlDMjUuODk3LDE0LjY0OCwyNC43NDYsMTUuODcyLDIyLjk0NiwxNS44NzJ6Ii8+DQoJPC9nPg0KPC9zdmc+DQo=)}
 .IBRowAbove,.IBRowBelow{margin-left:5px;margin-right:5px;overflow:hidden}
 .IBRowAbove{margin-top:0px}
 .IBRowBelow{margin-bottom:0px}
 .IBTiny .IBRowAbove,.IBTiny .IBRowBelow{margin-left:2px;margin-right:2px}
 .IBCellBase{vertical-align:middle;overflow:hidden;height:auto}
+.IBCellBase>*{font-size:inherit;line-height:inherit}
 .IBCellBase > div{overflow:hidden}
 .IBVAlignTop.IBCellHeader{background-position-y:0px}
 .IBIndexSmall{margin-top:-8px;margin-bottom:-50px}
@@ -355,9 +338,10 @@
 .IBSmall .IBButton{padding-top:0px;padding-bottom:0px}
 .IBInt,.IBFloat,.IBDate{text-align:right}
 .IBLines,.IBRadio,.IBHtml,.IBList{white-space:normal}
- .IBImg,.IBHtml{padding-top:0px;padding-bottom:0px}
+.IBImg,.IBHtml{padding-top:0px;padding-bottom:0px}
 .IBPass{font-size:16px}
 .IBBool{text-align:center;line-height:0px}
+.IBLink{cursor:pointer}
 .IBMain .IBBool{padding:0px 5px 0px 5px}
 .IBLow .IBBool{padding-left:1px;padding-right:1px}
 .IBWide .IBBool{padding-left:7px;padding-right:7px}
@@ -771,8 +755,8 @@ u.IBRightButton{padding:0px 7px 0px 7px;margin:0px 5px 0px 5px;text-decoration:n
 .IBMain .IBTabSepRight,.IBMain .IBTabSepLeft{padding:5px;width:5px}
 .IBTabSepLast{display:none}
 .IBTabSepFirst{display:none}
-.IBMain .IBToolButton{text-align:center;padding:0px 1px 0px 1px;overflow:hidden}
-button.IBToolButtonButton,button.IBToolButtonButton1{margin-top:5px;margin-bottom:4px;padding:1px 2px 1px 2px;line-height:14px;cursor:pointer;white-space:nowrap;display:block;color:inherit}
+.IBMain .IBToolButton{padding:0px 1px 0px 1px;overflow:hidden;text-align:center}
+button.IBToolButtonButton,button.IBToolButtonButton1{margin-top:5px;margin-bottom:4px;padding:1px 2px 1px 2px;line-height:14px;cursor:pointer;white-space:nowrap;color:inherit}
 .IBWide button.IBToolButtonButton,.IBWide button.IBToolButtonButton1{margin-top:2px;margin-bottom:1px;line-height:inherit}
 .IBHigh button.IBToolButtonButton,.IBHigh button.IBToolButtonButton1{margin-top:7px;margin-bottom:6px}
 .IBBig button.IBToolButtonButton,.IBBig button.IBToolButtonButton1{margin-top:12px;margin-bottom:11px}
@@ -786,6 +770,8 @@ u.IBToolButtonButton,u.IBToolButtonButton1,u.IBToolSpaceButton,u.IBToolSpaceButt
 u.IBToolButtonButton,u.IBToolButtonButton1{margin:1px 0px 1px 0px}
 .IBAlignCenter>u.IBToolButtonButton,.IBAlignCenter>u.IBToolButtonButton1{margin:1px auto 1px auto}
 .IBAlignRight>u.IBToolButtonButton,.IBAlignRight>u.IBToolButtonButton1{margin:1px 0px 1px auto}
+.IBAlignRight>button.IBToolButtonUseButton{float:right}
+.IBAlignLeft>button.IBToolButtonUseButton{float:left}
 .IBWide u.IBToolButtonButton,.IBWide u.IBToolButtonButton1{margin-top:4px;margin-bottom:3px}
 .IBHigh u.IBToolButtonButton,.IBHigh u.IBToolButtonButton1{margin-top:9px;margin-bottom:8px}
 .IBBig u.IBToolButtonButton,.IBBig u.IBToolButtonButton1{margin-top:12px;margin-bottom:11px;padding-top:2px;padding-bottom:2px}
@@ -1086,6 +1072,9 @@ u.IBToolSpaceButton,u.IBToolSpaceButton1,.IBMain .IBToolSpaceIconInner{padding:4
 .IBFilter10Left,.IBFilter10Right,.IBFilter10Menu{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgdmlld0JveD0iMCAwIDMyMCAzMjAiPjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzM1MzYzRiIgc3Ryb2tlLXdpZHRoPSIyNSIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIj48cGF0aCBkPSJNODEuNDU0IDE1Mi44NjJoMTE4LjcyNU0xMTEuMTM1IDIwNC4yNzFsNTkuMzYzLTEwMi44MThNMTcwLjQ5OCAyMDQuMjcxbC01OS4zNjItMTAyLjgxNyIvPjwvZz48cGF0aCBmaWxsPSIjMzUzNjNGIiBkPSJNMjkwLjc1OCAyNTkuOTYxVjYwLjAzOWgtMjguNTYzdjE5OS45MjJoMjguNTYzeiIvPjxwYXRoIGZpbGw9IiNGNTM5MTQiIGQ9Ik0yMjEuNTk0IDkyLjI3TDgwLjIzNSAyMzMuNjUyIDYwLjA0IDIxMy40NDEgMjAxLjM5OSA3Mi4wNzRsMjAuMTk1IDIwLjE5NnoiLz48L3N2Zz4=)}
 .IBFilter11Left,.IBFilter11Right,.IBFilter11Menu{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgdmlld0JveD0iMCAwIDMyMCAzMjAiPjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzM1MzYzRiIgc3Ryb2tlLXdpZHRoPSIyNSIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIj48cGF0aCBkPSJNNy44MiAxNTIuODU1aDExOC43MjRNMzcuNSAyMDQuMjY1bDU5LjM2NC0xMDIuODE5TTk2Ljg2NCAyMDQuMjY1TDM3LjUwMSAxMDEuNDQ3Ii8+PC9nPjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzM1MzYzRiIgc3Ryb2tlLXdpZHRoPSIyNSIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIj48cGF0aCBkPSJNMTkzLjQ1NiAxNTIuODU1aDExOC43MjVNMjIzLjEzNyAyMDQuMjY1TDI4Mi41IDEwMS40NDZNMjgyLjUgMjA0LjI2NWwtNTkuMzYyLTEwMi44MTgiLz48L2c+PHBhdGggZmlsbD0iIzM1MzYzRiIgZD0iTTE3NC4yNzkgMjU5Ljk2MVY2MC4wMzloLTI4LjU2M3YxOTkuOTIyaDI4LjU2M3oiLz48L3N2Zz4=)}
 .IBFilter12Left,.IBFilter12Right,.IBFilter12Menu{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgdmlld0JveD0iMCAwIDMyMCAzMjAiPjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzM1MzYzRiIgc3Ryb2tlLXdpZHRoPSIyNSIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIj48cGF0aCBkPSJNNy44MiAxNTIuODU1aDExOC43MjRNMzcuNSAyMDQuMjY1bDU5LjM2NC0xMDIuODE5TTk2Ljg2NCAyMDQuMjY1TDM3LjUwMSAxMDEuNDQ3Ii8+PC9nPjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzM1MzYzRiIgc3Ryb2tlLXdpZHRoPSIyNSIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIj48cGF0aCBkPSJNMTkzLjQ1NiAxNTIuODU1aDExOC43MjVNMjIzLjEzNyAyMDQuMjY1TDI4Mi41IDEwMS40NDZNMjgyLjUgMjA0LjI2NWwtNTkuMzYyLTEwMi44MTgiLz48L2c+PHBhdGggZmlsbD0iIzM1MzYzRiIgZD0iTTE3NC4yNzkgMjU5Ljk2MVY2MC4wMzloLTI4LjU2M3YxOTkuOTIyaDI4LjU2M3oiLz48cGF0aCBmaWxsPSIjRjUzOTE0IiBkPSJNMjQwLjc3OCA5OS40MDZMOTkuNDE4IDI0MC43ODlsLTIwLjE5NS0yMC4yMTFMMjIwLjU4MiA3OS4yMTFsMjAuMTk2IDIwLjE5NXoiLz48L3N2Zz4=)}
+.IBFilter13Left,.IBFilter13Right,.IBFilter13Menu{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMTI4cHgiIGhlaWdodD0iMTI4cHgiIHN0eWxlPSJzaGFwZS1yZW5kZXJpbmc6Z2VvbWV0cmljUHJlY2lzaW9uOyB0ZXh0LXJlbmRlcmluZzpnZW9tZXRyaWNQcmVjaXNpb247IGltYWdlLXJlbmRlcmluZzpvcHRpbWl6ZVF1YWxpdHk7IGZpbGwtcnVsZTpldmVub2RkOyBjbGlwLXJ1bGU6ZXZlbm9kZCIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPg0KPGc+PHBhdGggc3R5bGU9Im9wYWNpdHk6MC45MTIiIGZpbGw9IiMwMDAwMDAiIGQ9Ik0gNzQuNSwzNS41IEMgOTAuMTM0MywzNC42MzM4IDk4Ljk2NzYsNDEuOTY3MiAxMDEsNTcuNUMgMTAyLjk2Nyw2OS4zODIxIDk5LjgwMDgsNzkuNTQ4NyA5MS41LDg4QyA3My40OTU3LDk1LjI0NzkgNjIuMzI5LDg5LjQxNDYgNTgsNzAuNUMgNTcuMDU4NCw2My4wMTM0IDU3LjcyNTEsNTUuNjggNjAsNDguNUMgNjMuMTYyNSw0Mi4xNjQxIDY3Ljk5NTgsMzcuODMwOCA3NC41LDM1LjUgWiBNIDc2LjUsNDguNSBDIDgzLjUyODgsNDguMDIyNiA4Ny4zNjIxLDUxLjM1NTkgODgsNTguNUMgODkuMjUyMiw2NS4wMjAzIDg4LjA4NTUsNzEuMDIwMyA4NC41LDc2LjVDIDc3LjA3NjEsODAuMjAzOCA3Mi41NzYxLDc3Ljg3MDUgNzEsNjkuNUMgNjkuMDY4OCw2MS4zMDgxIDcwLjkwMjEsNTQuMzA4MSA3Ni41LDQ4LjUgWiIvPjwvZz4NCjxnPjxwYXRoIHN0eWxlPSJvcGFjaXR5OjAuOTEyIiBmaWxsPSIjMDAwMDAwIiBkPSJNIDM4LjUsMzYuNSBDIDQyLjUsMzYuNSA0Ni41LDM2LjUgNTAuNSwzNi41QyA1MC41LDU0LjUgNTAuNSw3Mi41IDUwLjUsOTAuNUMgNDYuMTY2Nyw5MC41IDQxLjgzMzMsOTAuNSAzNy41LDkwLjVDIDM3LjY2NjYsNzcuMTYyNSAzNy40OTk5LDYzLjgyOTIgMzcsNTAuNUMgMzQuMjQxNyw1Mi4wNzMyIDMxLjQwODMsNTIuNDA2NSAyOC41LDUxLjVDIDI3LjM0NTYsNDguNTQ4MiAyNi4zNDU2LDQ1LjU0ODIgMjUuNSw0Mi41QyAyOS45MDA5LDQwLjQ4NTMgMzQuMjM0MywzOC40ODUzIDM4LjUsMzYuNSBaIi8+PC9nPg0KPC9zdmc+DQo=)}
+.IBFilter14Left,.IBFilter14Right,.IBFilter14Menu{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxzdmcgaWQ9Il/roIjsnbTslrRfMSIgZGF0YS1uYW1lPSLroIjsnbTslrQgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTYgMTYiPg0KICA8ZGVmcz4NCiAgICA8c3R5bGU+DQogICAgICAuY2xzLTEgew0KICAgICAgICBmaWxsOiBub25lOw0KICAgICAgICBzdHJva2U6ICMzNTM2M2Y7DQogICAgICAgIHN0cm9rZS1taXRlcmxpbWl0OiAxMDsNCiAgICAgICAgc3Ryb2tlLXdpZHRoOiAxLjU0cHg7DQogICAgICB9DQogICAgPC9zdHlsZT4NCiAgPC9kZWZzPg0KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im00LjMxLDguMDRoNy4yOW0tNS40NywzLjE2bDMuNjUtNi4zMW0wLDYuMzFsLTMuNjUtNi4zMSIvPg0KPC9zdmc+)}
+.IBFilter15Left,.IBFilter15Right,.IBFilter15Menu{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxzdmcgaWQ9Il/roIjsnbTslrRfMSIgZGF0YS1uYW1lPSLroIjsnbTslrQgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTYgMTYiPg0KICA8ZGVmcz4NCiAgICA8c3R5bGU+DQogICAgICAuY2xzLTEgew0KICAgICAgICBmaWxsOiBub25lOw0KICAgICAgICBzdHJva2U6ICMzNTM2M2Y7DQogICAgICAgIHN0cm9rZS1taXRlcmxpbWl0OiAxMDsNCiAgICAgICAgc3Ryb2tlLXdpZHRoOiAxLjU0cHg7DQogICAgICB9DQoNCiAgICAgIC5jbHMtMiB7DQogICAgICAgIGZpbGw6ICNmNTM5MTQ7DQogICAgICB9DQogICAgPC9zdHlsZT4NCiAgPC9kZWZzPg0KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im00LjM5LDguMDRoNy4yOW0tNS40NywzLjE2bDMuNjUtNi4zMW0wLDYuMzFsLTMuNjUtNi4zMSIvPg0KICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Im0xMyw0LjMyTDQuMzIsMTNsLTEuMjQtMS4yNEwxMS43NiwzLjA4bDEuMjQsMS4yNFoiLz4NCjwvc3ZnPg==)}
 .IBFilterAllMenu{background-size:16px 16px;width:23px;height:16px;overflow:hidden;background-position-y:center;background-repeat:no-repeat}
 .IBWide .IBFilterAllMenu{background-size:20px 20px;width:29px;height:20px}
 .IBBig .IBFilterAllMenu{background-size:24px 24px;width:35px;height:24px}
@@ -1099,12 +1088,12 @@ u.IBToolSpaceButton,u.IBToolSpaceButton1,.IBMain .IBToolSpaceIconInner{padding:4
 .IBLow .IBSortLeft{background-size:19px 19px}
 .IBLow .IBSortRight{background-size:19px 19px}
 .IBSort0Left,.IBSort0Right{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgdmlld0JveD0iMCAwIDMyMCAzMjAiPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0xNjAgNTkuMjIxbDYxLjEwNiA3NC40NEg5OC44OTV6TTE2MCAyNjAuNzc5bC02MS4xMDUtNzQuNDQxaDEyMi4yMTF6IiBvcGFjaXR5PSIuMyIvPjwvc3ZnPg==)}
-.IBSort1Left,.IBSort1Right{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgdmlld0JveD0iMCAwIDMyMCAzMjAiPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0xNjAgMjYwLjc3OWwtNjEuMTA1LTc0LjQ0aDEyMi4yMTF6Ii8+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTE2MCA1OS4yMjFsNjEuMTA2IDc0LjQ0MUg5OC44OTV6IiBvcGFjaXR5PSIuMyIvPjwvc3ZnPg==)}
-.IBSort2Left,.IBSort2Right{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgdmlld0JveD0iMCAwIDMyMCAzMjAiPjxwYXRoIGZpbGw9IiM1RUREREEiIGQ9Ik0xNjAgMjYwLjc3OWwtNjEuMTA1LTc0LjQ0aDEyMi4yMTF6Ii8+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTE2MCA1OS4yMjFsNjEuMTA2IDc0LjQ0MUg5OC44OTV6IiBvcGFjaXR5PSIuMyIvPjwvc3ZnPg==)}
-.IBSort3Left,.IBSort3Right{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgdmlld0JveD0iMCAwIDMyMCAzMjAiPjxwYXRoIGZpbGw9IiNGQzkwNkIiIGQ9Ik0xNjAgMjYwLjc3OWwtNjEuMTA1LTc0LjQ0aDEyMi4yMTF6Ii8+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTE2MCA1OS4yMjFsNjEuMTA2IDc0LjQ0MUg5OC44OTV6IiBvcGFjaXR5PSIuMyIvPjwvc3ZnPg==)}
-.IBSort4Left,.IBSort4Right{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgdmlld0JveD0iMCAwIDMyMCAzMjAiPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0xNjAgNTkuMjIxbDYxLjEwNiA3NC40NEg5OC44OTV6Ii8+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTE2MCAyNjAuNzc5bC02MS4xMDUtNzQuNDQxaDEyMi4yMTF6IiBvcGFjaXR5PSIuMyIvPjwvc3ZnPg==)}
-.IBSort5Left,.IBSort5Right{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgdmlld0JveD0iMCAwIDMyMCAzMjAiPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0xNjAgMjYwLjc3OWwtNjEuMTA1LTc0LjQ0aDEyMi4yMTF6IiBvcGFjaXR5PSIuMyIvPjxwYXRoIGZpbGw9IiM1RUREREEiIGQ9Ik0xNjAgNTkuMjIxbDYxLjEwNiA3NC40NDFIOTguODk1eiIvPjwvc3ZnPg==)}
-.IBSort6Left,.IBSort6Right{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgdmlld0JveD0iMCAwIDMyMCAzMjAiPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0xNjAgMjYwLjc3OWwtNjEuMTA1LTc0LjQ0aDEyMi4yMTF6IiBvcGFjaXR5PSIuMyIvPjxwYXRoIGZpbGw9IiNGQzkwNkIiIGQ9Ik0xNjAgNTkuMjIxbDYxLjEwNiA3NC40NDFIOTguODk1eiIvPjwvc3ZnPg==)}
+.IBSort1Left,.IBSort1Right{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgdmlld0JveD0iMCAwIDMyMCAzMjAiPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0xNjAgNTkuMjIxbDYxLjEwNiA3NC40NEg5OC44OTV6Ii8+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTE2MCAyNjAuNzc5bC02MS4xMDUtNzQuNDQxaDEyMi4yMTF6IiBvcGFjaXR5PSIuMyIvPjwvc3ZnPg==)}
+.IBSort2Left,.IBSort2Right{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgdmlld0JveD0iMCAwIDMyMCAzMjAiPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0xNjAgMjYwLjc3OWwtNjEuMTA1LTc0LjQ0aDEyMi4yMTF6IiBvcGFjaXR5PSIuMyIvPjxwYXRoIGZpbGw9IiM1RUREREEiIGQ9Ik0xNjAgNTkuMjIxbDYxLjEwNiA3NC40NDFIOTguODk1eiIvPjwvc3ZnPg==)}
+.IBSort3Left,.IBSort3Right{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgdmlld0JveD0iMCAwIDMyMCAzMjAiPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0xNjAgMjYwLjc3OWwtNjEuMTA1LTc0LjQ0aDEyMi4yMTF6IiBvcGFjaXR5PSIuMyIvPjxwYXRoIGZpbGw9IiNGQzkwNkIiIGQ9Ik0xNjAgNTkuMjIxbDYxLjEwNiA3NC40NDFIOTguODk1eiIvPjwvc3ZnPg==)}
+.IBSort4Left,.IBSort4Right{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgdmlld0JveD0iMCAwIDMyMCAzMjAiPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0xNjAgMjYwLjc3OWwtNjEuMTA1LTc0LjQ0aDEyMi4yMTF6Ii8+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTE2MCA1OS4yMjFsNjEuMTA2IDc0LjQ0MUg5OC44OTV6IiBvcGFjaXR5PSIuMyIvPjwvc3ZnPg==)}
+.IBSort5Left,.IBSort5Right{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgdmlld0JveD0iMCAwIDMyMCAzMjAiPjxwYXRoIGZpbGw9IiM1RUREREEiIGQ9Ik0xNjAgMjYwLjc3OWwtNjEuMTA1LTc0LjQ0aDEyMi4yMTF6Ii8+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTE2MCA1OS4yMjFsNjEuMTA2IDc0LjQ0MUg5OC44OTV6IiBvcGFjaXR5PSIuMyIvPjwvc3ZnPg==)}
+.IBSort6Left,.IBSort6Right{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgdmlld0JveD0iMCAwIDMyMCAzMjAiPjxwYXRoIGZpbGw9IiNGQzkwNkIiIGQ9Ik0xNjAgMjYwLjc3OWwtNjEuMTA1LTc0LjQ0aDEyMi4yMTF6Ii8+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTE2MCA1OS4yMjFsNjEuMTA2IDc0LjQ0MUg5OC44OTV6IiBvcGFjaXR5PSIuMyIvPjwvc3ZnPg==)}
 .IBRadioBase{background-size:16px 16px;background-repeat:no-repeat;padding-top:0px;padding-bottom:0px}
 .IBWide .IBRadioBase{background-size:20px 20px}
 .IBHigh .IBRadioBase{padding-top:0px;padding-bottom:0px}
@@ -1124,7 +1113,6 @@ u.IBToolSpaceButton,u.IBToolSpaceButton1,.IBMain .IBToolSpaceIconInner{padding:4
 .IBRadio1Left,.IBRadio1Right{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgdmlld0JveD0iMCAwIDMyMCAzMjAiPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0xNjAgMzAwYy03Ny4xOTYgMC0xNDAtNjIuODA1LTE0MC0xNDBDMjAgODIuODA0IDgyLjgwNCAyMCAxNjAgMjBjNzcuMTk1IDAgMTQwIDYyLjgwNCAxNDAgMTQwIDAgNzcuMTk1LTYyLjgwMyAxNDAtMTQwIDE0MHoiLz48cGF0aCBmaWxsPSIjQzFDMUMxIiBkPSJNMTYwIDMwYzM0LjcyNSAwIDY3LjM3IDEzLjUyMiA5MS45MjQgMzguMDc2QzI3Ni40NzggOTIuNjMgMjkwIDEyNS4yNzYgMjkwIDE2MGMwIDM0LjcyNS0xMy41MjIgNjcuMzctMzguMDc2IDkxLjkyNEMyMjcuMzcgMjc2LjQ3OSAxOTQuNzI1IDI5MCAxNjAgMjkwcy02Ny4zNy0xMy41MjEtOTEuOTI0LTM4LjA3NkM0My41MjIgMjI3LjM3IDMwIDE5NC43MjUgMzAgMTYwYzAtMzQuNzI0IDEzLjUyMS02Ny4zNyAzOC4wNzYtOTEuOTI0QzkyLjYzIDQzLjUyMiAxMjUuMjc2IDMwIDE2MCAzMG0wLTIwQzc3LjE1NyAxMCAxMCA3Ny4xNTcgMTAgMTYwczY3LjE1NyAxNTAgMTUwIDE1MCAxNTAtNjcuMTU3IDE1MC0xNTBTMjQyLjg0MyAxMCAxNjAgMTB6Ii8+PGNpcmNsZSBmaWxsPSIjN0ZDMUM4IiBjeD0iMTYwIiBjeT0iMTYwIiByPSI2MCIvPjwvc3ZnPg==)}
 .IBRadio2Left,.IBRadio2Right{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgdmlld0JveD0iMCAwIDMyMCAzMjAiPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0wIDBoMzIwdjMyMEgweiIvPjxwYXRoIGZpbGw9IiNDMUMxQzEiIGQ9Ik0zMDAgMjB2MjgwSDIwVjIwaDI4MG0yMC0yMEgwdjMyMGgzMjBWMHoiLz48L3N2Zz4=)}
 .IBRadio3Left,.IBRadio3Right{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgdmlld0JveD0iMCAwIDMyMCAzMjAiPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0wIDBoMzIwdjMyMEgweiIvPjxwYXRoIGZpbGw9IiNDMUMxQzEiIGQ9Ik0zMDAgMjB2MjgwSDIwVjIwaDI4MG0yMC0yMEgwdjMyMGgzMjBWMHoiLz48cGF0aCBmaWxsPSIjN0ZDMUM4IiBkPSJNMTM3LjM0IDIzNi43MjFjLTMuMzIgMy4xMzktOC4zOCAzLjEzOS0xMS43IDBMNTIuMjggMTYzLjQ0Yy0zLjAyLTMuMzE5LTMuMDItOC4zNzkgMC0xMS40NzlsMTEuNy0xMS43YzMuMDQtMy4wMiA4LjE2LTMuMDIgMTEuNDggMGw1NS45NzkgNTYuMDYxTDI0NC41OCA4My4yMmMzLjI3OS0zLjAyIDguMzgtMy4wMiAxMS40MiAwbDExLjY0IDExLjdjMy4xMiAzLjEgMy4xMiA4LjE2IDAgMTEuNDhsLTEzMC4zIDEzMC4zMjF6Ii8+PC9zdmc+)}
-.IBRadioNone{background-image:none}
 .IBRadio{padding-top:4px;padding-bottom:4px}
 .IBWide .IBRadio{padding-top:2px;padding-bottom:2px}
 .IBHigh .IBRadio{padding-top:6px;padding-bottom:6px}
@@ -1655,6 +1643,40 @@ input.IBMenuEditInput,textarea.IBMenuEditTextarea{border:0px none;margin:0px 1px
 .IBBig .IBPickButton{padding-top:8px;padding-bottom:8px}
 .IBLow .IBPickButton{padding-top:2px;padding-bottom:1px;width:55px;margin-left:3px;margin-right:3px}
 .IBTiny .IBPickButton{padding-top:1px;padding-bottom:0px}
+.IBPickTimeCell{display:flex;flex-direction:row;justify-content:space-between}
+.IBPickTimeCell > div{display:flex;flex-direction:column;justify-content:space-between}
+.IBPickTimeCell > div > div{display:flex;flex-direction:row;justify-content:center}
+.IBPickTimeCell input[type=text]{padding:0px!important;border:0px none!important;border-radius:0px!important;line-height:unset!important}
+.IBPickUp{width:10px;height:10px;background-image:url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjE2LjAwMDAwMHB0IiBoZWlnaHQ9IjE2LjAwMDAwMHB0IiB2aWV3Qm94PSIwIDAgMTYuMDAwMDAwIDE2LjAwMDAwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCI+DQo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMDAwMCwxNi4wMDAwMDApIHNjYWxlKDAuMTAwMDAwLC0wLjEwMDAwMCkiIGZpbGw9IiMwMDAwMDAiIHN0cm9rZT0ibm9uZSI+PHBhdGggZD0iTTQxIDgxIGMtMTcgLTIxIC0zMSAtNDIgLTMxIC00NSAwIC0zIDMyIC02IDcwIC02IDM5IDAgNzAgMyA3MCA2IDAgMTEgLTYxIDg0IC03MCA4NCAtNSAwIC0yMiAtMTggLTM5IC0zOXoiLz48L2c+PC9zdmc+DQo=);background-size:9px;background-repeat:no-repeat;cursor:pointer}
+.IBPickDown{width:10px;height:10px;background-image:url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjE2LjAwMDAwMHB0IiBoZWlnaHQ9IjE2LjAwMDAwMHB0IiB2aWV3Qm94PSIwIDAgMTYuMDAwMDAwIDE2LjAwMDAwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCI+DQo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMDAwMCwxNi4wMDAwMDApIHNjYWxlKDAuMTAwMDAwLC0wLjEwMDAwMCkiIGZpbGw9IiMwMDAwMDAiIHN0cm9rZT0ibm9uZSI+PHBhdGggZD0iTTEwIDEyMyBjMCAtNSAxNiAtMjYgMzUgLTQ4IGwzNSAtNDAgMzUgNDAgYzE5IDIyIDM1IDQzIDM1IDQ4IDAgNCAtMzEgNyAtNzAgNyAtMzggMCAtNzAgLTMgLTcwIC03eiIvPjwvZz48L3N2Zz4NCg==);background-size:9px;background-repeat:no-repeat;cursor:pointer}
+.IBMain .IBTimePickerLeft,.IBMain .IBDatesLeft,.IBMain .IBTimePickerRight,.IBMain .IBDatesRight,.IBMain .IBDateTop,.IBMain .IBDatesTop,.IBMain .IBDateBottom,.IBMain .IBDatesBottom{background-image:url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjUxMi4wMDAwMDBwdCIgaGVpZ2h0PSI1MTIuMDAwMDAwcHQiIHZpZXdCb3g9IjAgMCA1MTIuMDAwMDAwIDUxMi4wMDAwMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIG1lZXQiPg0KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC4wMDAwMDAsNTEyLjAwMDAwMCkgc2NhbGUoMC4xMDAwMDAsLTAuMTAwMDAwKSIgZmlsbD0iIzJlNGU2NyIgc3Ryb2tlPSJub25lIj4NCjxwYXRoIGQ9Ik0yMzMwIDUxMTAgYy00OTQgLTQ4IC05NTAgLTIzMCAtMTM1MCAtNTM4IC0xOTUgLTE1MCAtNDQ4IC00MzIgLTU5NA0KLTY2MiAtNjMgLTk5IC0xODYgLTM1MSAtMjMwIC00NzEgLTQ5IC0xMzQgLTEwMiAtMzQwIC0xMjggLTQ5OSAtMzEgLTE5NSAtMzENCi01NjUgMCAtNzYwIDQ1IC0yNzYgMTE2IC00OTggMjM3IC03NDUgMTMyIC0yNjkgMjY5IC00NjAgNDg5IC02ODEgMjIxIC0yMjANCjQxMiAtMzU3IDY4MSAtNDg5IDI0NyAtMTIxIDQ2OSAtMTkyIDc0NSAtMjM3IDE5NSAtMzEgNTY1IC0zMSA3NjAgMCAyNzYgNDUNCjQ5OCAxMTYgNzQ1IDIzNyAyNjkgMTMyIDQ2MCAyNjkgNjgxIDQ4OSAyMjAgMjIxIDM1NyA0MTIgNDg5IDY4MSA4OCAxNzkgMTMyDQoyOTYgMTgwIDQ3NiA2MyAyNDAgNzggMzcxIDc4IDY0OSAwIDI3OCAtMTUgNDA5IC03OCA2NDkgLTQ4IDE4MCAtOTIgMjk3IC0xODANCjQ3NiAtMTMyIDI2OSAtMjY5IDQ2MCAtNDg5IDY4MSAtMjIxIDIyMCAtNDEyIDM1NyAtNjgxIDQ4OSAtMjQ2IDEyMSAtNDc0IDE5Mw0KLTc0MCAyMzUgLTE0NyAyMyAtNDc1IDM0IC02MTUgMjB6IG00NjggLTQwMSBjNDg4IC01MyA5MzQgLTI3MCAxMjg4IC02MjMgNDE1DQotNDE1IDYzNCAtOTQzIDYzNCAtMTUyNiAwIC01ODMgLTIxOSAtMTExMSAtNjM0IC0xNTI2IC00MTUgLTQxNSAtOTQzIC02MzQNCi0xNTI2IC02MzQgLTU4MyAwIC0xMTExIDIxOSAtMTUyNiA2MzQgLTQxNSA0MTUgLTYzNCA5NDMgLTYzNCAxNTI2IDAgNTgzIDIxOQ0KMTExMSA2MzQgMTUyNiAzNDkgMzQ5IDgwMCA1NjkgMTI3NiA2MjMgMTEwIDEyIDM3NiAxMyA0ODggMHoiLz4NCjxwYXRoIGQ9Ik0yNDc0IDM5MTEgYy00OCAtMjIgLTg3IC03MCAtMTA0IC0xMjYgLTggLTI5IC0xMCAtMjE1IC04IC02NjUgMw0KLTYwOSA0IC02MjYgMjQgLTY2NSAxNiAtMzIgOTYgLTk4IDQyMCAtMzQzIDIxOSAtMTY3IDQxOSAtMzE1IDQ0NCAtMzMwIDE2Nw0KLTEwMCAzNjQgNzkgMjgwIDI1MyAtMjAgNDIgLTYxIDc1IC0zOTYgMzI3IGwtMzc0IDI4MCAwIDU1OCBjMCAzOTAgLTMgNTY3DQotMTEgNTkxIC0yOSA4NSAtMTAyIDEzOSAtMTg5IDEzOSAtMjUgMCAtNjQgLTkgLTg2IC0xOXoiLz48L2c+PC9zdmc+DQo=)}
+.IBTimePicker{width:161px;height:90px;display:flex;flex-direction:row;justify-content:space-between;}
+.IBTimePicker > div{margin:3px 2px;padding:2px 5px;display:flex;flex-direction:column;justify-content:space-between;flex-grow:5;}
+.IBTimePicker > div > div{display:flex;flex-direction:row;justify-content:center}
+.IBTimePicker input{width:21px;text-align:center;padding:1px 2px;border:1px solid #CDCDCD;border-radius:0px}
+.IBTimePicker .IBButtonHourUp::after{content:"â–²"}
+.IBTimePicker .IBButtonHourUp{border:1px solid #CDCDCD;cursor:pointer;background-color:#ffffff}
+.IBTimePicker .IBButtonHourDown::after{content:"â–¼"}
+.IBTimePicker .IBButtonHourDown{border:1px solid #CDCDCD;cursor:pointer;background-color:#ffffff}
+.IBTimePicker .IBButtonMinUp::after{content:"â–²"}
+.IBTimePicker .IBButtonMinUp{border:1px solid #CDCDCD;cursor:pointer;background-color:#ffffff}
+.IBTimePicker .IBButtonMinDown::after{content:"â–¼"}
+.IBTimePicker .IBButtonMinDown{border:1px solid #CDCDCD;cursor:pointer;background-color:#ffffff}
+.IBTimePicker .IBButtonSecUp::after{content:"â–²"}
+.IBTimePicker .IBButtonSecUp{border:1px solid #CDCDCD;cursor:pointer;background-color:#ffffff}
+.IBTimePicker .IBButtonSecDown::after{content:"â–¼"}
+.IBTimePicker .IBButtonSecDown{border:1px solid #CDCDCD;cursor:pointer;background-color:#ffffff}
+.IBTimePicker+div .IBMenuButton:hover{color:yellow}
+.IBTimePicker+div{text-align:center;background:#ebedf3;height:37px}
+.IBTimePicker+div button{margin:6px}
+.IBTimePicker button:hover{background-color:#DDD}
+.IBTimePicker button:active{background-color:#FCF1DD}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active){.IBTimePicker{width:180px}
+ .IBTimePicker input{width:25px}
+}
+@-moz-document url-prefix(){.IBTimePicker{width:161px}
+ .IBTimePicker input{width:17px}
+}
 .IBEditParent{position:absolute;z-index:258;overflow:hidden}
 .IBEdit,.IBEditInline{padding:2px 4px 2px 4px;border:1px solid #DDD;border-top:1px solid #666;border-left:1px solid #666;background:white;white-space:nowrap;overflow:hidden}
 .IBEditInline{display:inline-block;vertical-align:bottom}
@@ -1763,9 +1785,7 @@ input.IBMenuEditInput,textarea.IBMenuEditTextarea{border:0px none;margin:0px 1px
 @keyframes IBRotateY90From{from{transform:rotateY(90deg)}
  to{transform:rotateY(0deg)}
  }
-@keyframes IBFocus{0%{color:inherit}
- 50%{color:red}
- 100%{color:inherit}
+@keyframes IBFocus{from{background-color:#B8D8E0}
  }
 @keyframes IBCopy{0%{transform:translateX(0px)}
  25%{transform:translateX(1px)}
@@ -1828,6 +1848,8 @@ input.IBMenuEditInput,textarea.IBMenuEditTextarea{border:0px none;margin:0px 1px
  75%{background-color:#FFF}
  100%{background-color:#AAF}
  }
+@keyframes IBEditTo{from{background-color:#FFFFFF}
+}
 .IBBodyPrint,.IBBodyPrintPDF{margin:0px!important;padding:0px!important;border:0px none!important;background:none!important;-webkit-print-color-adjust:exact}
 .IBPrintPage{page-break-inside:avoid;page-break-after:always}
 .IBPrintPage:last-child{page-break-after:auto}
@@ -1848,143 +1870,28 @@ BODY[class*=BodyPrint]>DIV[class*=PrintPage]>DIV>DIV>DIV[class*=PaddingWrapper]{
 .IBFindDlgTop div:first-child{border:1px solid #888;width:210px;padding:1px 2px 2px 1px}
 .IBFindDlgTop button{margin-left:5px;padding:4px 5px 4px 5px;font-size:13px;line-height:18px;text-decoration:none;cursor:pointer}
 .IBFindDlgBottom{padding:6px 5px 10px 5px;box-sizing:border-box;width:100%}
-.IBFindDlgBottom div:first-child{float:left;width:50%}
-.IBFindDlgBottom div:last-child{float:right;width:50%}
 .IBFindDlgBottom button{margin-left:5px;padding:4px 5px 4px 5px;font-size:13px;line-height:18px;text-decoration:none;cursor:pointer}
 .IBMemo.IBHeaderText{position:relative}
-.IBMemo.IBHeaderText:after{position:absolute;content:'';width:0;right:0;top:-10px;border:10px solid transparent;border-right:10px solid red;opacity:1;}
+.IBMemo.IBHeaderText:after{position:absolute;content:'';width:0;right:0;top:-10px;left:0px;border:10px solid transparent;border-left:10px solid red;opacity:1;}
 .IBMemo.IBCellClassInner{position:relative}
-.IBMemo.IBCellClassInner:after{position:absolute;content:'';width:0;right:0;top:-10px;border:10px solid transparent;border-right:10px solid red;opacity:1;}
+.IBMemo.IBCellClassInner:after{position:absolute;content:'';width:0;right:0;top:-10px;left:0px;border:10px solid transparent;border-left:10px solid red;opacity:1;}
 .IBMemoEdit{background-color:#FFFFFF}
 .IBMemoEdit h4{background-color:#AAAAAA;color:#FFFFFF;text-align:center}
 .IBMemoEdit textarea{width:200px;height:150px;padding:2px;font-size:11px}
 .IBMemoEdit+div{height:34px;text-align:center;background:#ebedf3}
 .IBMemoEdit+div .IBMenuButton{margin-top:4px}
 .IBMemoEdit+div .IBMenuButton:hover{color:yellow}
-
-/*
-  ibsheet8_custom.css
-*/
-.IBCellHeader {
-	background-color: rgba(249,250,252,1);
-	border-color: rgba(234,239,243,1);
-}
-.IBHeaderText {
-	color: rgba(51,51,51,1);
-}
-.IBColorHoveredCellHeader {
-	background-color: rgba(249,250,252,1);
-}
-.IBCell, .IBCellIndex {
-	color: rgba(102,102,102,1);
-}
-
-/*
-  직접 커스텀
-*/
-/*테이블 밑 라인 없애기*/
-.IBMainTable {
-	border-bottom: 0;
-}
-
-/*헤더 폰트 굵기*/
-.IBHeaderText {
-	font-weight: 600;
-}
-
-/*인덱스 TD 배경색 변경*/
-.IBIndexText {
-	background: #fff !important;
-}
-
-/*첫번째 칼럼의 왼쪽 라인, 마지막 칼럼의 오른쪽 라인*/
-.IBBodyMid {
-	border-left-color: #ededed;
-	border-right-color: #ededed;
-}
-
-/*Tbody의 기본 TD의 라인색*/
-.IBCellBase {
-	border-right-color: #ededed;
-	border-bottom-color: #ededed;
-}
-
-/*Thead의 라인색*/
-.IBHeadMid {
-	border-bottom-color: #ededed;
-	border-left-color: #ededed;
-	border-right-color: #ededed;
-}
-
-/*체크박스, 라디오 변경*/
-.IBRadio0Left, .IBRadio0Right  {
-    background-image: url(../img/icon/ic_radio_16_normal.svg);
-}
-.IBRadio1Left, .IBRadio1Right {
-    background-image: url(../img/icon/ic_radio_16_active.svg);
-}
-.IBBool0, .IBBool0RO {
-	background-image: url(../img/icon/ic_checkbox_16_normal.svg);
-}
-.IBBool1, .IBBool1RO {
-	background-image: url(../img/icon/ic_checkbox_16_active.svg);
-}
-.IBRadioCheckred {
-  color: purple;
-}
-.IBCheck0Left, .IBCheck0Center, .IBCheck0Right, .IBCheck0Top, .IBCheck0Bottom {
-    background-image: url(../img/icon/ic_checkbox_16_normal.svg);
-}
-.IBCheck1Left, .IBCheck1Center, .IBCheck1Right, .IBCheck1Top, .IBCheck1Bottom {
-    background-image: url(../img/icon/ic_checkbox_16_active.svg);
-}
-.IBRadioChecked {
-  color: rgba(102,102,102,1);
-}
-
-/*버튼 커스텀*/
-.IBDialogButton, u.IBSheetButton {
-    background: #fff;
-    border: 1px solid #ccc;
-    color: #333;
-    display: inline-block;
-    height: 28px;
-    line-height: 10px;
-    font-weight: 600;
-    padding: 8px 6px;
-    box-sizing: border-box !important;
-    margin-top: 5px;
-}
-
-/*헤더 소팅 삼각형*/
-.IBSort1Left, .IBSort1Right {
-  background-image: url(../img/icon/IBSort1.svg);
-}
-.IBSort2Left, .IBSort2Right {
-  background-image: url(../img/icon/IBSort2.svg);
-}
-.IBSort3Left, .IBSort3Right {
-  background-image: url(../img/icon/IBSort3.svg);
-}
-.IBSort4Left, .IBSort4Right {
-  background-image: url(../img/icon/IBSort4.svg);
-}
-.IBSort5Left, .IBSort5Right {
-  background-image: url(../img/icon/IBSort5.svg);
-}
-.IBSort6Left, .IBSort6Right {
-  background-image: url(../img/icon/IBSort6.svg);
-}
-
-/*행 교차 홀짝색 변경 방지*/
-.IBColorAlternate{background-color:#fff;}
-
-/*캘린더 아이콘 변경*/
-.IBMain .IBDateLeft, .IBMain .IBDatesLeft, .IBMain .IBDateRight, .IBMain .IBDatesRight, .IBMain .IBDateTop, .IBMain .IBDatesTop, .IBMain .IBDateBottom, .IBMain .IBDatesBottom {
-  background: url(../img/icon/ic_calendar_black_16.svg) no-repeat 50% 50%;
-}
-
-/*셀렉트(콤보) 화살표 아이콘 변경*/
-.IBDefaultsLeft, .IBDefaultsRight, .IBDefaultsTop, .IBDefaultsBottom {
-  background: url(../img/icon/ic_arrow_down_black_16.svg) no-repeat 50% 50%;
-}
+.IBFilterDiv input{width:72px;height:26px;line-height:24px;border-radius:3px;background-color:#fff;border:solid 1px #c7c7c7;font-size:1em;padding:0 10px;margin:2px 2px 2px 2px;transition:all 0.3s;outline:none}
+.IBFilterDiv input[type=number]{-moz-appearance:textfield}
+.IBFilterDiv input::-webkit-outer-spin-button, .IBFilterDiv input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.IBFilterDiv select{width:72px;height:26px;line-height:24px;border-radius:3px;background-color:#fff;border:solid 1px #c7c7c7;font-size:1em;padding:0 10px;margin:2px 2px 2px 2px;transition:all 0.3s;outline:none}
+.IBFilterDiv button{background-color:#6698cb;color:#fff;margin:2px 2px 2px 2px;padding:2px 8px 2px 8px;border:none;outline:none}
+.IBFilterTopTenHead{background:#3d5575}
+.IBPivotStandards{background-color:#FFFFFF;}
+.IBPivotDragSetItemAllow{background-color:#afd6ff;}
+.IBPivotDragSetItemDisallow{background-color:#fbe1e1;}
+/* .IBPickCell{width:43px;height:34px;font-size:initial;}
+.IBPick2Row{height:33.8px;font-size:initial;}
+.IBPick2CellY{width:65px;}
+.IBPick2CellM{width:83px;}
+ */

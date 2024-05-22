@@ -1,1307 +1,1308 @@
 /**
- * Á¦ Ç°: IBSheet8 - Common Plugin
- * ¹ö Àü: v0.0.6 (20220331-09)
- * È¸ »ç: (ÁÖ)¾ÆÀÌºñ¸®´õ½º
- * ÁÖ ¼Ò: https://www.ibsheet.com
- * Àü È­: 1644-5615
+ * ì œ í’ˆ: IBSheet8 - Common Plugin
+ * ë²„ ì „: v0.0.6 (20220331-09)
+ * íšŒ ì‚¬: (ì£¼)ì•„ì´ë¹„ë¦¬ë”ìŠ¤
+ * ì£¼ ì†Œ: https://www.ibsheet.com
+ * ì „ í™”: 1644-5615
  * 
  * 
- * ÇÑ¹ç´ë ¸ÅÄªÇÃ·§Æû (LINC)¿¡¼­ »ç¿ë
+ * í•œë°­ëŒ€ ë§¤ì¹­í”Œë«í¼ (LINC)ì—ì„œ ì‚¬ìš©
  */
 
 
 (function(window, document) {
-/*CommonOptions ¼³Á¤
- * ¸ğµç ½ÃÆ®¿¡ µ¿ÀÏÇÏ°Ô Àû¿ëÇÏ°íÀÚ ÇÏ´Â ¼³Á¤À» CommonOptions¿¡ µî·ÏÇÕ´Ï´Ù.
- * ÇØ´ç ÆÄÀÏÀº ¹İµå½Ã ibsheet.js ÆÄÀÏº¸´Ù µÚ¿¡ include µÇ¾î¾ß ÇÕ´Ï´Ù.
- */
-var _IBSheet = window['IBSheet'];
-if (_IBSheet == null) {
-  throw new Error('[ibsheet-common] undefined global object: IBSheet');
-}
-
-// IBSheet Plugins Object
-var Fn = _IBSheet['Plugins'];
-
-if (!Fn.PluginVers) Fn.PluginVers = {};
-Fn.PluginVers.ibcommon = {
-  name: 'ibcommon',
-  version: '0.0.6-20220331-09'
-};
-
-// Æ²°íÁ¤ ÇÔ¼ö, 2022-06-17 ¹Ú¹Ì¿Ï
-function freezePanes(obj, opt) {
-  if ((opt ?? "") === "cancel") {
-	  
-	  if(obj.options.Cfg.SearchMode != 0) obj.setFixedTop(0);
-    obj.setFixedCols(0);
-    return;
+  /*CommonOptions ì„¤ì •
+   * ëª¨ë“  ì‹œíŠ¸ì— ë™ì¼í•˜ê²Œ ì ìš©í•˜ê³ ì í•˜ëŠ” ì„¤ì •ì„ CommonOptionsì— ë“±ë¡í•©ë‹ˆë‹¤.
+   * í•´ë‹¹ íŒŒì¼ì€ ë°˜ë“œì‹œ ibsheet.js íŒŒì¼ë³´ë‹¤ ë’¤ì— include ë˜ì–´ì•¼ í•©ë‹ˆë‹¤.
+   */
+  var _IBSheet = window['IBSheet'];
+  if (_IBSheet == null) {
+    throw new Error('[ibsheet-common] undefined global object: IBSheet');
   }
-
-  var rowObj = obj.getFocusedRow();
-  var rowIdx = obj.getRowIndex(rowObj) - 1;
-  var colObj = obj.getFocusedCol();
-  var colIdx = obj.getColIndex(colObj);
-
-  if (obj.options.Cfg.MultiRecord) {
-    obj.showMessageTime({
-      message: "¸ÖÆ¼·¹ÄÚµå ±â´É »ç¿ë ½Ã ¿­°íÁ¤Àº »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.",
-      func: function () {
-        // Çà°íÁ¤
-        obj.setFixedTop(rowIdx);
-      },
-    });
-  } else if(obj.options.Cfg.SearchMode == 0){
-	  obj.setFixedCols(colIdx);
-  } else {
-    // Çà°íÁ¤
-	  obj.setFixedTop(rowIdx);
-	  
-    // ¿­°íÁ¤
-    obj.setFixedCols(colIdx);
-  }
-}
-
-_IBSheet.CommonOptions = {
-  Cfg: {
-      Alternate: 2, // È¦Â¦ Çà¿¡ ´ëÇÑ ¹è°æ»ö ¼³Á¤
-      CanEdit: 0, // Edit ±â´É Disabled
-      Export: {
-        Url: "/ibsheet8/jsp/",
-      }, // ¿¢¼¿´Ù¿î URL
-      FitWidth: true,
-      InfoRowConfig: { // ½ÃÆ® ÇÏ´Ü °Ç ¼ö Ç¥½Ã
-        Visible: 0, // Ç¥½ÃÇÏÁö ¾ÊÀ½ (Default)
-        Layout: ["Count"],
-        Space: "Bottom",
-      }, // °Ç¼ö Á¤º¸ Ç¥½Ã
-      GroupFormat:
-        " <span style='color:red'>{%s}</span> <span style='color:blue'>({%c}°Ç)</span>", // ±×·ìÇÎ ÄÃ·³¸íÀº »¡°­»ö, °Ç¼ö´Â ÆÄ¶õ»öÀ¸·Î Ç¥½Ã
-      HeaderSortMode: 1,
-      HeaderMerge: 1, // Çì´õ¿µ¿ª ÀÚµ¿ º´ÇÕ
-      PrevColumnMerge: 1, // ¾ÕÄÃ·³ ±âÁØ º´ÇÕ »ç¿ë ¿©ºÎ
-
-      SearchCells: 1, // Ã£±â ±â´É ¼¿´ÜÀ§/Çà´ÜÀ§ ¼±ÅÃ
-      //Size: "Small", // ±âº»º¸´Ù ÀÛ°Ô ¼³Á¤
-      Style: "IB",
-      ShowHint: 0, //¸¶¿ì½º hover½Ã hint Ç¥½Ã±â´É
-
-      MaxPages: 6, // SearchMode:2ÀÎ °æ¿ì ÇÑ¹ø¿¡ °®°í ÀÖ´Â ÆäÀÌÁö ¼ö(Å¬¼ö·Ï ºê¶ó¿ìÁ®ÀÇ ºÎ´ãÀÌ Ä¿Áü)
-      MaxSort: 3, // ÃÖ´ë ¼ÒÆÃ °¡´É ÄÃ·³¼ö(4°³ ÀÌ»óÀÎ °æ¿ì ´À·ÁÁú ¼ö ÀÖÀ½)
-
-      StorageSession: 1, // °³ÀÎÈ­ ±â´É(ÄÃ·³Á¤º¸ ÀúÀå) »ç¿ë ¿©ºÎ
-      StorageKeyPrefix: window["rerpIBSheet"]
-        ? window["rerpIBSheet"]
-        : location.href, // ÀúÀå Å° prefix ¼³Á¤
-      //Style: "IBCL", // ½ÃÆ® Å×¸¶ Prefix
-  },
-  Def: {
-    Header: { //Çì´õ ¿µ¿ª Çà¿¡ ´ëÇÑ ¼³Á¤
-      Menu: {
-        Items: [{
-            "Name": "ÄÃ·³ °¨Ãß±â"
-          },
-          {
-            "Name": "ÄÃ·³ °¨Ãß±â Ãë¼Ò"
-          },
-          {
-            "Name": "*-"
-          },
-          {
-            "Name": "ÄÃ·³ Á¤º¸ ÀúÀå"
-          },
-          {
-            "Name": "ÄÃ·³ Á¤º¸ ÀúÀå Ãë¼Ò"
-          },
-          {
-            "Name": "*-"
-          },
-          {
-            "Name": "ÇÊÅÍÇà »ı¼º"
-          },
-          {
-            "Name": "ÇÊÅÍ °¨Ãß±â"
-          }
-        ],
-        "OnSave": function (item, data) {
-          switch (item.Name) {
-            case 'ÄÃ·³ °¨Ãß±â':
-              var col = item.Owner.Col;
-              this.Sheet.hideCol(col, 1);
-              break;
-            case 'ÄÃ·³ °¨Ãß±â Ãë¼Ò':
-              this.Sheet.showCol();
-              break;
-            case 'ÄÃ·³ Á¤º¸ ÀúÀå':
-              this.Sheet.saveCurrentInfo();
-              break;
-            case 'ÄÃ·³ Á¤º¸ ÀúÀå Ãë¼Ò':
-              this.Sheet.clearCurrentInfo();
-              this.Sheet.showMessageTime({
-                message: "ÄÃ·³ Á¤º¸¸¦ »èÁ¦ÇÏ¿´½À´Ï´Ù.<br>»õ·Î°íÄ§ÇÏ½Ã¸é ÃÊ±â ¼³Á¤ÀÇ ½ÃÆ®¸¦ È®ÀÎÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù."
-              });
-              break;
-            case 'ÇÊÅÍÇà »ı¼º':
-              this.Sheet.showFilterRow();
-              break;
-            case 'ÇÊÅÍ °¨Ãß±â':
-              this.Sheet.hideFilterRow();
-              break;
-
-          }
-        }
-      }
-    },
-
-    //µ¥ÀÌÅÍ ¿µ¿ª ¸ğµç Çà¿¡ ´ëÇÑ ¼³Á¤
-    Row: {
-      Menu: {
-        //¸¶¿ì½º ¿ìÃø¹öÆ¯ Å¬¸¯½Ã º¸¿©Áö´Â ¸Ş´º ¼³Á¤ (¸Ş´º¾ó¿¡¼­ Appedix/Menu Âü°í)
-        Items: [{ Name: "Æ² °íÁ¤" }, { Name: "Æ² °íÁ¤ Ãë¼Ò" }],
-        OnSave: function (item, data) {
-          //¸Ş´º ¼±ÅÃ½Ã ¹ß»ı ÀÌº¥Æ®
-          switch (item.Name) {
-            case "Æ² °íÁ¤":
-              this.Sheet.focus(item.Owner.Row, item.Owner.Col);
-              freezePanes(this.Sheet);
-              break;
-            case "Æ² °íÁ¤ Ãë¼Ò":
-              freezePanes(this.Sheet, "cancel");
-              break;
-          }
-        },
-      },
-      // AlternateColor:"#F1F1F1",  //Â¦¼öÇà¿¡ ´ëÇÑ ¹è°æ»ö
-      // Menu:{ //¸¶¿ì½º ¿ìÃø¹öÆ¯ Å¬¸¯½Ã º¸¿©Áö´Â ¸Ş´º ¼³Á¤ (¸Ş´º¾ó¿¡¼­ Appedix/Menu Âü°í)
-      //   "Items":[
-      //     {"Name":"´Ù¿î·Îµå","Caption":1},
-      //     {"Name":"Excel","Value":"xls"},
-      //     {"Name":"text","Value":"txt"},
-      //     {"Name":"pdf","Value":"pdf"},
-      //     // {"Name":"-"},
-      //     {"Name":"µ¥ÀÌÅÍ ¼öÁ¤","Caption":1},
-      //     {"Name":"µ¥ÀÌÅÍ Ãß°¡/Á¦°Å",Menu:1,"Items":[
-      //       {"Name":"À§·Î Çà Ãß°¡","Value":"addAbove"},
-      //       {"Name":"¾Æ·¡·Î Çà Ãß°¡","Value":"addBelow"},
-      //       {"Name":"Çà »èÁ¦","Value":"del"}
-      //     ]},
-      //     {"Name":"µ¥ÀÌÅÍ ÀÌµ¿",Menu:1,"Items":[
-      //       {"Name":"À§·Î·Î ÀÌµ¿","Value":"moveAbove"},
-      //       {"Name":"¾Æ·¡·Î ÀÌµ¿","Value":"moveBelow"},
-      //     ]}
-
-      //   ],
-      //   "OnSave":function(item,data){//¸Ş´º ¼±ÅÃ½Ã ¹ß»ı ÀÌº¥Æ®
-      //     switch(item.Value){
-      //       case 'xls':
-      //         try{
-      //           this.Sheet.down2Excel({FileName:"test.xlsx",SheetDesign:1});
-      //         }catch(e){
-      //           if(e.message.indexOf("down2Excel is not a function")>-1){
-      //               console.log("%c °æ°í","color:#FF0000"," : ibsheet-excel.js ÆÄÀÏÀÌ ÇÊ¿äÇÕ´Ï´Ù.");
-      //           }
-      //         }
-      //         break;
-      //       case 'txt':
-      //         try{
-      //           this.Sheet.down2Text();
-      //         }catch(e){
-      //           if(e.message.indexOf("down2Text is not a function")>-1){
-      //             console.log("%c °æ°í","color:#FF0000"," : ibsheet-excel.js ÆÄÀÏÀÌ ÇÊ¿äÇÕ´Ï´Ù.");
-      //           }
-      //         }
-      //         break;
-      //       case 'pdf':
-      //         try{
-      //           this.Sheet.down2Pdf();
-      //         }catch(e){
-      //           if(e.message.indexOf("down2Pdf is not a function")>-1){
-      //             console.log("%c °æ°í","color:#FF0000"," : ibsheet-excel.js ÆÄÀÏÀÌ ÇÊ¿äÇÕ´Ï´Ù.");
-      //           }
-      //         }
-      //         break;
-      //       case 'addAbove'://À§·Î Ãß°¡
-      //         var nrow = item.Owner.Row;
-      //         this.Sheet.addRow({next:nrow});
-      //         break;
-      //       case 'addBelow'://¾Æ·¡Ãß°¡
-      //         var nrow = this.Sheet.getNextRow(item.Owner.Row);
-      //         this.Sheet.addRow({next:nrow});
-      //         break;
-      //       case 'del'://»èÁ¦
-      //         var row = item.Owner.Row;
-      //         this.Sheet.deleteRow(row);
-      //         break;
-
-      //       case 'moveAbove'://À§·Î ÀÌµ¿
-      //           var row = item.Owner.Row;
-      //           var nrow = this.Sheet.getPrevRow(item.Owner.Row);
-      //           this.Sheet.moveRow({row:row,next:nrow});
-      //         break;
-      //       case 'moveBelow'://¾Æ·¡·Î ÀÌµ¿
-      //           var row = item.Owner.Row;
-      //           var nrow = this.Sheet.getNextRow(this.Sheet.getNextRow(item.Owner.Row));
-      //           this.Sheet.moveRow({row:row,next:nrow});
-      //         break;
-      //     }
-      //   }
-      // }
-    }
-  },
-  Events: {
-    "onKeyDown": function (evtParam) {
-      // Ctrl + Shift + F ÀÔ·Â½Ã Ã£±â Ã¢ ¿ÀÇÂ
-      if (evtParam.prefix == "ShiftCtrl" && evtParam.key == 70) {
-        evtParam.sheet.showFindDialog();
-      }
-      // Ctrl + Alt + T ÀÔ·Â ½Ã ÇÇ¹ş Ã¢ ¿ÀÇÂ
-      else if (evtParam.prefix == "CtrlAlt" && evtParam.key == 84) {
-        evtParam.sheet.createPivotDialog();
-      }
-    },
-    "onRowAdd": function (evtParam) {
-
-        var eSheet    = evtParam.sheet;
-        var eRow      = evtParam.row;
-        
-        if(eSheet.getColIndex("STATUS") > 0) {
-            eSheet.setValue(eRow, "STATUS", "INSERT", 1);
-               
-        }
-        
-    },
-    "onBeforeRowDelete": function (evtParam) {
-
-        var eSheet    = evtParam.sheet;
-        var eRow      = evtParam.row;
-        var eType     = evtParam.type;
-        var eRows     = evtParam.rows;
-        
-        if(eSheet.getColIndex("STATUS") > 0) {
-
-            var status  = "";
-            if(eType == 0) {
-                
-                status = "DELETE";
-            }
-
-            eSheet.setValue(eRow, "STATUS", status, 1);
-            var cRow    = eSheet.getChildRows(eRow);
-            for(var i = 0; i < cRow.length; i++) {
-                eSheet.setValue(cRow[i], "STATUS", status, 1);
-            }
-               
-        }
-        
-    },
-    "onAfterChange": function (evtParam) {
-
-        var eSheet  = evtParam.sheet;
-        var eRow    = evtParam.row;
-    
-        if(eSheet.getColIndex("STATUS") > 0) {
-            if(eRow.Added) {
-                eSheet.setValue(eRow, "STATUS", "INSERT", 1);
-            } else if(eRow.Deleted) {
-                eSheet.setValue(eRow, "STATUS", "DELETE", 1);
-            } else if(eRow.Changed) {
-                eSheet.setValue(eRow, "STATUS", "UPDATE", 1);
-            } else {
-                eSheet.setValue(eRow, "STATUS", "", 1);
-            }
-               
-        }
-    },
-  }
-};
-
-_IBSheet.onBeforeCreate = function(init){
-
-  //optionsÀÇ LeftCols,Cols,RightCols¿¡¼­ EnumEdit Å¸ÀÔÀÌ ÀÖÀ¸¸é º¯°æÇØ ÁØ´Ù.
-  var cols = ["LeftCols", "Cols", "RightCols"];
-  var opt = init.options;
   
-  cols.forEach((item,idx)=>{
-    if(opt[item]){
-      const tempCol = opt[item];
-      tempCol.forEach((colObj,colIdx)=>{
-        if(colObj["Type"] && colObj["Type"] === "EnumEdit"){
-          if(colObj["Enum"] && colObj["EnumKeys"]){
-            
-            var text = colObj["Enum"].substring(1).split(colObj["Enum"].substring(0,1) );
-            var keys = colObj["EnumKeys"].substring(1).split(colObj["EnumKeys"].substring(0,1) );
-            var newFormat = {};
-            for(var x=0;x<keys.length;x++){
-              newFormat[keys[x]] = text[x];
+  // IBSheet Plugins Object
+  var Fn = _IBSheet['Plugins'];
+  
+  if (!Fn.PluginVers) Fn.PluginVers = {};
+  Fn.PluginVers.ibcommon = {
+    name: 'ibcommon',
+    version: '0.0.6-20220331-09'
+  };
+  
+  // í‹€ê³ ì • í•¨ìˆ˜, 2022-06-17 ë°•ë¯¸ì™„
+  function freezePanes(obj, opt) {
+    if ((opt ?? "") === "cancel") {
+      
+      if(obj.options.Cfg.SearchMode != 0) obj.setFixedTop(0);
+      obj.setFixedCols(0);
+      return;
+    }
+  
+    var rowObj = obj.getFocusedRow();
+    var rowIdx = obj.getRowIndex(rowObj) - 1;
+    var colObj = obj.getFocusedCol();
+    var colIdx = obj.getColIndex(colObj);
+  
+    if (obj.options.Cfg.MultiRecord) {
+      obj.showMessageTime({
+        message: "ë©€í‹°ë ˆì½”ë“œ ê¸°ëŠ¥ ì‚¬ìš© ì‹œ ì—´ê³ ì •ì€ ì‚¬ìš©í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.",
+        func: function () {
+          // í–‰ê³ ì •
+          obj.setFixedTop(rowIdx);
+        },
+      });
+    } else if(obj.options.Cfg.SearchMode == 0){
+      obj.setFixedCols(colIdx);
+    } else {
+      // í–‰ê³ ì •
+      obj.setFixedTop(rowIdx);
+      
+      // ì—´ê³ ì •
+      obj.setFixedCols(colIdx);
+    }
+  }
+  
+  _IBSheet.CommonOptions = {
+    Cfg: {
+        Alternate: 2, // í™€ì§ í–‰ì— ëŒ€í•œ ë°°ê²½ìƒ‰ ì„¤ì •
+        CanEdit: 0, // Edit ê¸°ëŠ¥ Disabled
+        Export: {
+          Url: "/ibsheet8/jsp/",
+        }, // ì—‘ì…€ë‹¤ìš´ URL
+        FitWidth: true,
+        InfoRowConfig: { // ì‹œíŠ¸ í•˜ë‹¨ ê±´ ìˆ˜ í‘œì‹œ
+          Visible: 0, // í‘œì‹œí•˜ì§€ ì•ŠìŒ (Default)
+          Layout: ["Count"],
+          Space: "Bottom",
+        }, // ê±´ìˆ˜ ì •ë³´ í‘œì‹œ
+        GroupFormat:
+          " <span style='color:red'>{%s}</span> <span style='color:blue'>({%c}ê±´)</span>", // ê·¸ë£¹í•‘ ì»¬ëŸ¼ëª…ì€ ë¹¨ê°•ìƒ‰, ê±´ìˆ˜ëŠ” íŒŒë€ìƒ‰ìœ¼ë¡œ í‘œì‹œ
+        HeaderSortMode: 1,
+        HeaderMerge: 1, // í—¤ë”ì˜ì—­ ìë™ ë³‘í•©
+        PrevColumnMerge: 1, // ì•ì»¬ëŸ¼ ê¸°ì¤€ ë³‘í•© ì‚¬ìš© ì—¬ë¶€
+  
+        SearchCells: 1, // ì°¾ê¸° ê¸°ëŠ¥ ì…€ë‹¨ìœ„/í–‰ë‹¨ìœ„ ì„ íƒ
+        //Size: "Small", // ê¸°ë³¸ë³´ë‹¤ ì‘ê²Œ ì„¤ì •
+        Style: "IB",
+        ShowHint: 0, //ë§ˆìš°ìŠ¤ hoverì‹œ hint í‘œì‹œê¸°ëŠ¥
+  
+        MaxPages: 6, // SearchMode:2ì¸ ê²½ìš° í•œë²ˆì— ê°–ê³  ìˆëŠ” í˜ì´ì§€ ìˆ˜(í´ìˆ˜ë¡ ë¸Œë¼ìš°ì ¸ì˜ ë¶€ë‹´ì´ ì»¤ì§)
+        MaxSort: 3, // ìµœëŒ€ ì†ŒíŒ… ê°€ëŠ¥ ì»¬ëŸ¼ìˆ˜(4ê°œ ì´ìƒì¸ ê²½ìš° ëŠë ¤ì§ˆ ìˆ˜ ìˆìŒ)
+  
+        StorageSession: 1, // ê°œì¸í™” ê¸°ëŠ¥(ì»¬ëŸ¼ì •ë³´ ì €ì¥) ì‚¬ìš© ì—¬ë¶€
+        StorageKeyPrefix: window["rerpIBSheet"]
+          ? window["rerpIBSheet"]
+          : location.href, // ì €ì¥ í‚¤ prefix ì„¤ì •
+        //Style: "IBCL", // ì‹œíŠ¸ í…Œë§ˆ Prefix
+    },
+    Def: {
+      Header: { //í—¤ë” ì˜ì—­ í–‰ì— ëŒ€í•œ ì„¤ì •
+        Menu: {
+          Items: [{
+              "Name": "ì»¬ëŸ¼ ê°ì¶”ê¸°"
+            },
+            {
+              "Name": "ì»¬ëŸ¼ ê°ì¶”ê¸° ì·¨ì†Œ"
+            },
+            {
+              "Name": "*-"
+            },
+            {
+              "Name": "ì»¬ëŸ¼ ì •ë³´ ì €ì¥"
+            },
+            {
+              "Name": "ì»¬ëŸ¼ ì •ë³´ ì €ì¥ ì·¨ì†Œ"
+            },
+            {
+              "Name": "*-"
+            },
+            {
+              "Name": "í•„í„°í–‰ ìƒì„±"
+            },
+            {
+              "Name": "í•„í„° ê°ì¶”ê¸°"
             }
-            colObj["Type"] = "Text";
-            colObj["SuggestType"] = "Empty,Start,Arrows";
-            colObj["Suggest"] =  colObj["EditEnum"]?colObj["EditEnum"]:colObj["Enum"];
-            
-            colObj["Icon"] = "Defaults";
-            colObj["Defaults"] = colObj["EditEnum"];
-            
-            colObj["Format"] = newFormat;
-            colObj["EditFormat"] = newFormat;
-            colObj["OnChange"] = function(e){
-              console.log("OnChange");
-              var v = e.row[e.col];
-              
-             
-              if(typeof(e.sheet.Cols[e.col].Format[v])!="undefined"){
-                  return;
-              }
-              if(e.sheet.Cols[e.col]["EditEnum"]) {
-                  
-                  if(e.sheet.Cols[e.col].EditEnum.indexOf(v) <= 0) {
-                      e.row[e.col] = "";           
-                      return;
-                  } else  {
-                    //¼±ÅÃ °ªÀÌ EditEnumÀÇ ¸î¹øÂ° °ªÀÎÁö Ã£°í ÇØ´çÇÏ´Â EnumKeys¸¦ ´ë½Å ³Ö´Â´Ù.
-                    var idx = e.sheet.Cols[e.col]["EditEnum"].split("|").indexOf(v)
-                    var key = e.sheet.Cols[e.col]["EnumKeys"].split("|")[idx];
-                    e.row[e.col] = key;    
-                    e.sheet.refreshCell(e.row, e.col);             
-                    return;
-                  } 
-              } 
-              
-              //¾ø´Â °ªÀ» ÀÔ·ÂÇßÀ»¶§¿¡ ´ëÇÑ Ã³¸®
-              //ÀÌÀü°ªÀ¸·Î µÇµ¹¸®°Å³ª °ªÀ» Áö¿ò.
-              if(e.row[e.col+"BeforeVal"]){
-                e.row[e.col] = e.row[e.col+"BeforeVal"];
-              }else if(e.row[e.col+"Orgi"]){
-                e.row[e.col] = e.row[e.col+"Orgi"];
-              }else{
-                e.row[e.col] = "";
-              }
-              e.sheet.refreshCell(e.row, e.col);             
-              
-            }//end OnChange
+          ],
+          "OnSave": function (item, data) {
+            switch (item.Name) {
+              case 'ì»¬ëŸ¼ ê°ì¶”ê¸°':
+                var col = item.Owner.Col;
+                this.Sheet.hideCol(col, 1);
+                break;
+              case 'ì»¬ëŸ¼ ê°ì¶”ê¸° ì·¨ì†Œ':
+                this.Sheet.showCol();
+                break;
+              case 'ì»¬ëŸ¼ ì •ë³´ ì €ì¥':
+                this.Sheet.saveCurrentInfo();
+                break;
+              case 'ì»¬ëŸ¼ ì •ë³´ ì €ì¥ ì·¨ì†Œ':
+                this.Sheet.clearCurrentInfo();
+                this.Sheet.showMessageTime({
+                  message: "ì»¬ëŸ¼ ì •ë³´ë¥¼ ì‚­ì œí•˜ì˜€ìŠµë‹ˆë‹¤.<br>ìƒˆë¡œê³ ì¹¨í•˜ì‹œë©´ ì´ˆê¸° ì„¤ì •ì˜ ì‹œíŠ¸ë¥¼ í™•ì¸í•˜ì‹¤ ìˆ˜ ìˆìŠµë‹ˆë‹¤."
+                });
+                break;
+              case 'í•„í„°í–‰ ìƒì„±':
+                this.Sheet.showFilterRow();
+                break;
+              case 'í•„í„° ê°ì¶”ê¸°':
+                this.Sheet.hideFilterRow();
+                break;
+  
+            }
+          }
+        }
+      },
+  
+      //ë°ì´í„° ì˜ì—­ ëª¨ë“  í–‰ì— ëŒ€í•œ ì„¤ì •
+      Row: {
+        Menu: {
+          //ë§ˆìš°ìŠ¤ ìš°ì¸¡ë²„íŠ¹ í´ë¦­ì‹œ ë³´ì—¬ì§€ëŠ” ë©”ë‰´ ì„¤ì • (ë©”ë‰´ì–¼ì—ì„œ Appedix/Menu ì°¸ê³ )
+          Items: [{ Name: "í‹€ ê³ ì •" }, { Name: "í‹€ ê³ ì • ì·¨ì†Œ" }],
+          OnSave: function (item, data) {
+            //ë©”ë‰´ ì„ íƒì‹œ ë°œìƒ ì´ë²¤íŠ¸
+            switch (item.Name) {
+              case "í‹€ ê³ ì •":
+                this.Sheet.focus(item.Owner.Row, item.Owner.Col);
+                freezePanes(this.Sheet);
+                break;
+              case "í‹€ ê³ ì • ì·¨ì†Œ":
+                freezePanes(this.Sheet, "cancel");
+                break;
+            }
+          },
+        },
+        // AlternateColor:"#F1F1F1",  //ì§ìˆ˜í–‰ì— ëŒ€í•œ ë°°ê²½ìƒ‰
+        // Menu:{ //ë§ˆìš°ìŠ¤ ìš°ì¸¡ë²„íŠ¹ í´ë¦­ì‹œ ë³´ì—¬ì§€ëŠ” ë©”ë‰´ ì„¤ì • (ë©”ë‰´ì–¼ì—ì„œ Appedix/Menu ì°¸ê³ )
+        //   "Items":[
+        //     {"Name":"ë‹¤ìš´ë¡œë“œ","Caption":1},
+        //     {"Name":"Excel","Value":"xls"},
+        //     {"Name":"text","Value":"txt"},
+        //     {"Name":"pdf","Value":"pdf"},
+        //     // {"Name":"-"},
+        //     {"Name":"ë°ì´í„° ìˆ˜ì •","Caption":1},
+        //     {"Name":"ë°ì´í„° ì¶”ê°€/ì œê±°",Menu:1,"Items":[
+        //       {"Name":"ìœ„ë¡œ í–‰ ì¶”ê°€","Value":"addAbove"},
+        //       {"Name":"ì•„ë˜ë¡œ í–‰ ì¶”ê°€","Value":"addBelow"},
+        //       {"Name":"í–‰ ì‚­ì œ","Value":"del"}
+        //     ]},
+        //     {"Name":"ë°ì´í„° ì´ë™",Menu:1,"Items":[
+        //       {"Name":"ìœ„ë¡œë¡œ ì´ë™","Value":"moveAbove"},
+        //       {"Name":"ì•„ë˜ë¡œ ì´ë™","Value":"moveBelow"},
+        //     ]}
+  
+        //   ],
+        //   "OnSave":function(item,data){//ë©”ë‰´ ì„ íƒì‹œ ë°œìƒ ì´ë²¤íŠ¸
+        //     switch(item.Value){
+        //       case 'xls':
+        //         try{
+        //           this.Sheet.down2Excel({FileName:"test.xlsx",SheetDesign:1});
+        //         }catch(e){
+        //           if(e.message.indexOf("down2Excel is not a function")>-1){
+        //               console.log("%c ê²½ê³ ","color:#FF0000"," : ibsheet-excel.js íŒŒì¼ì´ í•„ìš”í•©ë‹ˆë‹¤.");
+        //           }
+        //         }
+        //         break;
+        //       case 'txt':
+        //         try{
+        //           this.Sheet.down2Text();
+        //         }catch(e){
+        //           if(e.message.indexOf("down2Text is not a function")>-1){
+        //             console.log("%c ê²½ê³ ","color:#FF0000"," : ibsheet-excel.js íŒŒì¼ì´ í•„ìš”í•©ë‹ˆë‹¤.");
+        //           }
+        //         }
+        //         break;
+        //       case 'pdf':
+        //         try{
+        //           this.Sheet.down2Pdf();
+        //         }catch(e){
+        //           if(e.message.indexOf("down2Pdf is not a function")>-1){
+        //             console.log("%c ê²½ê³ ","color:#FF0000"," : ibsheet-excel.js íŒŒì¼ì´ í•„ìš”í•©ë‹ˆë‹¤.");
+        //           }
+        //         }
+        //         break;
+        //       case 'addAbove'://ìœ„ë¡œ ì¶”ê°€
+        //         var nrow = item.Owner.Row;
+        //         this.Sheet.addRow({next:nrow});
+        //         break;
+        //       case 'addBelow'://ì•„ë˜ì¶”ê°€
+        //         var nrow = this.Sheet.getNextRow(item.Owner.Row);
+        //         this.Sheet.addRow({next:nrow});
+        //         break;
+        //       case 'del'://ì‚­ì œ
+        //         var row = item.Owner.Row;
+        //         this.Sheet.deleteRow(row);
+        //         break;
+  
+        //       case 'moveAbove'://ìœ„ë¡œ ì´ë™
+        //           var row = item.Owner.Row;
+        //           var nrow = this.Sheet.getPrevRow(item.Owner.Row);
+        //           this.Sheet.moveRow({row:row,next:nrow});
+        //         break;
+        //       case 'moveBelow'://ì•„ë˜ë¡œ ì´ë™
+        //           var row = item.Owner.Row;
+        //           var nrow = this.Sheet.getNextRow(this.Sheet.getNextRow(item.Owner.Row));
+        //           this.Sheet.moveRow({row:row,next:nrow});
+        //         break;
+        //     }
+        //   }
+        // }
+      }
+    },
+    Events: {
+      "onKeyDown": function (evtParam) {
+        // Ctrl + Shift + F ì…ë ¥ì‹œ ì°¾ê¸° ì°½ ì˜¤í”ˆ
+        if (evtParam.prefix == "ShiftCtrl" && evtParam.key == 70) {
+          evtParam.sheet.showFindDialog();
+        }
+        // Ctrl + Alt + T ì…ë ¥ ì‹œ í”¼ë²— ì°½ ì˜¤í”ˆ
+        else if (evtParam.prefix == "CtrlAlt" && evtParam.key == 84) {
+          evtParam.sheet.createPivotDialog();
+        }
+      },
+      "onRowAdd": function (evtParam) {
+  
+          var eSheet    = evtParam.sheet;
+          var eRow      = evtParam.row;
+          
+          if(eSheet.getColIndex("STATUS") > 0) {
+              eSheet.setValue(eRow, "STATUS", "INSERT", 1);
+                 
           }
           
-        }
-      })
-    }
-  });
-
-  //¹İµå½Ã returnµÇ¾î¾ß ÇÔ
-  return init;
-};
-window.IB_Preset = {
-  // ³¯Â¥ ½Ã°£ Æ÷¸ä
-  "YMD"			: {Type: "Date"	, Align: "Center"	, Width: 110	, Format: 'yyyy-MM-dd'			, DataFormat: 'yyyyMMdd'		, EditFormat: 'yyyyMMdd'		, Size: 8	, EmptyValue: ""	},
-  "YM" 			: {Type: "Date"	, Align: "Center"	, Width: 80		, Format: 'yyyy-MM'				, DataFormat: 'yyyyMM'			, EditFormat: 'yyyyMM'			, Size: 6	, EmptyValue: ""	},
-  "MD" 			: {Type: "Date"	, Align: "Center"	, Width: 60		, Format: 'MM-dd'				, EditFormat: 'MMdd'			, DataFormat: 'MMdd'			, Size: 4	, EmptyValue: "" 	},
-  "HMS"			: {Type: "Date"	, Align: "Center"	, Width: 70		, Format: 'HH:mm:ss'			, EditFormat: 'HHmmss'			, DataFormat: 'HHmmss'			, Size: 8	, EmptyValue: ""	},
-  "HM" 			: {Type: "Date"	, Align: "Center"	, Width: 70		, Format: 'HH:mm'				, EditFormat: 'HHmm'			, DataFormat: 'HHmm'			, Size: 6	, EmptyValue: ""	},
-  "YMDHMS"		: {Type: "Date"	, Align: "Center"	, Width: 150	, Format: 'yyyy-MM-dd HH:mm:ss'	, EditFormat: 'yyyyMMddHHmmss'	, DataFormat: 'yyyyMMddHHmmss'	, Size: 14	, EmptyValue: ""	},
-  "YMDHM"		: {Type: "Date"	, Align: "Center"	, Width: 150	, Format: 'yyyy-MM-dd HH:mm'	, EditFormat: 'yyyyMMddHHmm'	, DataFormat: 'yyyyMMddHHmm'	, Size: 12	, EmptyValue: ""	},
-  "MDY"			: {Type: "Date"	, Align: "Center"	, Width: 110	, Format: 'MM-dd-yyyy'			, EditFormat: 'MMddyyyy'		, DataFormat: 'yyyyMMdd'		, Size: 8	, EmptyValue: ""	},
-  "DMY"			: {Type: "Date"	, Align: "Center"	, Width: 110	, Format: 'dd-MM-yyyy'			, EditFormat: 'ddMMyyyy'		, DataFormat: 'yyyyMMdd'		, Size: 8	, EmptyValue: ""	},
-  "YWD100"		: {Type: "Date"	, Align: "Center"	, Width: 100	, Format: 'yyyy-MM-dd'			, DataFormat: 'yyyyMMdd'		, EditFormat: 'yyyyMMdd'		, Size: 8	, EmptyValue: ""	},
+      },
+      "onBeforeRowDelete": function (evtParam) {
   
-  // ¼ıÀÚ Æ÷¸ä
-  "Integer"		: {Type: "Int"	, Align: "Right"	, Width: 120	, Format: "#,##0"			},
-  "NullInteger"	: {Type: "Int"	, Align: "Right"	, Width: 120	, Format: "#,###"			},
-  "Float"		: {Type: "Float", Align: "Right"	, Width: 120	, Format: "#,##0.######"	},
-  "NullFloat"	: {Type: "Float", Align: "Right"	, Width: 120	, Format: "#,###.######"	},
-  "Rate"		: {Type: "Float", Align: "Right"	, Width: 80		, Format: "#,##0.00"		},
-  "Rate120"		: {Type: "Float", Align: "Right"	, Width: 120	, Format: "#,##0.00"		},
-  "Integer100"	: {Type: "Int"	, Align: "Right"	, Width: 100	, Format: "#,##0"			},
-
-  // ±âÅ¸Æ÷¸ä
-  "Ssn"			: {Type: "Text"	, Align: "Center"	, Width: 150	, CustomFormat: "IdNo"		, },
-  "SsnMask"		: {Type: "Text"	, Align: "Center"	, Width: 150	, CustomFormat: "IdNoMask"	, },
-  "BizNo"		: {Type: "Text"	, Align: "Center"	, Width: 150	, CustomFormat: function (v) {
-      if (v.length > 10) return v.substr(0, 6) + "-" + v.substr(6);
-      else return v.substr(0, 5) + "-" + v.substr(5);
+          var eSheet    = evtParam.sheet;
+          var eRow      = evtParam.row;
+          var eType     = evtParam.type;
+          var eRows     = evtParam.rows;
+          
+          if(eSheet.getColIndex("STATUS") > 0) {
+  
+              var status  = "";
+              if(eType == 0) {
+                  
+                  status = "DELETE";
+              }
+  
+              eSheet.setValue(eRow, "STATUS", status, 1);
+              var cRow    = eSheet.getChildRows(eRow);
+              for(var i = 0; i < cRow.length; i++) {
+                  eSheet.setValue(cRow[i], "STATUS", status, 1);
+              }
+                 
+          }
+          
+      },
+      "onAfterChange": function (evtParam) {
+  
+          var eSheet  = evtParam.sheet;
+          var eRow    = evtParam.row;
+      
+          if(eSheet.getColIndex("STATUS") > 0) {
+              if(eRow.Added) {
+                  eSheet.setValue(eRow, "STATUS", "INSERT", 1);
+              } else if(eRow.Deleted) {
+                  eSheet.setValue(eRow, "STATUS", "DELETE", 1);
+              } else if(eRow.Changed) {
+                  eSheet.setValue(eRow, "STATUS", "UPDATE", 1);
+              } else {
+                  eSheet.setValue(eRow, "STATUS", "", 1);
+              }
+                 
+          }
+      },
     }
-  },
-  "PostNo"		: {},
-  "CardNo"		: {},
-  "PhoneNo"		: {},
-  "Number"		: {},
-
-  // ibsheet7 migration
-  // Popup,PopupEdit
-  "Popup"		: {Type: "Text"	, Align: "Center"	, Width: 100	, Button: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBtZWV0IiB2aWV3Qm94PSIwIDAgNjQwIDY0MCIgd2lkdGg9IjE1IiBoZWlnaHQ9IjE1Ij48ZGVmcz48cGF0aCBkPSJNMjc5LjczIDM0LjdMMjg5LjAxIDM1LjY0TDI5OC4xNyAzNi45NUwzMDcuMjIgMzguNjFMMzE2LjEzIDQwLjYyTDMyNC45MiA0Mi45OEwzMzMuNTYgNDUuNjZMMzQyLjA1IDQ4LjY4TDM1MC4zOCA1Mi4wMUwzNTguNTUgNTUuNjZMMzY2LjU1IDU5LjYxTDM3NC4zNyA2My44NkwzODIuMDEgNjguMzlMMzg5LjQ1IDczLjIxTDM5Ni42OCA3OC4zMUw0MDMuNzEgODMuNjdMNDEwLjUzIDg5LjNMNDE3LjEyIDk1LjE3TDQyMy40OCAxMDEuMjlMNDI5LjYgMTA3LjY1TDQzNS40OCAxMTQuMjRMNDQxLjEgMTIxLjA2TDQ0Ni40NiAxMjguMDlMNDUxLjU2IDEzNS4zM0w0NTYuMzggMTQyLjc3TDQ2MC45MiAxNTAuNEw0NjUuMTcgMTU4LjIyTDQ2OS4xMiAxNjYuMjJMNDcyLjc2IDE3NC4zOUw0NzYuMSAxODIuNzJMNDc5LjExIDE5MS4yMkw0ODEuOCAxOTkuODZMNDg0LjE1IDIwOC42NEw0ODYuMTYgMjE3LjU2TDQ4Ny44MiAyMjYuNkw0ODkuMTMgMjM1Ljc2TDQ5MC4wNyAyNDUuMDRMNDkwLjY0IDI1NC40Mkw0OTAuODMgMjYzLjlMNDkwLjY0IDI3My4zOEw0OTAuMDcgMjgyLjc2TDQ4OS4xMyAyOTIuMDRMNDg3LjgyIDMwMS4yTDQ4Ni4xNiAzMTAuMjVMNDg0LjE1IDMxOS4xNkw0ODEuOCAzMjcuOTVMNDc5LjExIDMzNi41OUw0NzYuMSAzNDUuMDhMNDcyLjc2IDM1My40MUw0NjkuMTIgMzYxLjU4TDQ2NS4xNyAzNjkuNThMNDYwLjkyIDM3Ny40TDQ1Ni4zOCAzODUuMDRMNDUxLjczIDM5Mi4yMkw1OTYuOTcgNTM3LjQ2TDUzNC40MyA2MDBMMzg5LjE5IDQ1NC43NkwzODIuMDEgNDU5LjQxTDM3NC4zNyA0NjMuOTVMMzY2LjU1IDQ2OC4yTDM1OC41NSA0NzIuMTVMMzUwLjM4IDQ3NS43OUwzNDIuMDUgNDc5LjEzTDMzMy41NiA0ODIuMTRMMzI0LjkyIDQ4NC44M0wzMTYuMTMgNDg3LjE4TDMwNy4yMiA0ODkuMTlMMjk4LjE3IDQ5MC44NUwyODkuMDEgNDkyLjE2TDI3OS43MyA0OTMuMUwyNzAuMzUgNDkzLjY3TDI2MC44NyA0OTMuODZMMjUxLjM5IDQ5My42N0wyNDIuMDEgNDkzLjFMMjMyLjczIDQ5Mi4xNkwyMjMuNTcgNDkwLjg1TDIxNC41MyA0ODkuMTlMMjA1LjYxIDQ4Ny4xOEwxOTYuODMgNDg0LjgzTDE4OC4xOSA0ODIuMTRMMTc5LjY5IDQ3OS4xM0wxNzEuMzYgNDc1Ljc5TDE2My4xOSA0NzIuMTVMMTU1LjE5IDQ2OC4yTDE0Ny4zNyA0NjMuOTVMMTM5Ljc0IDQ1OS40MUwxMzIuMyA0NTQuNTlMMTI1LjA2IDQ0OS40OUwxMTguMDMgNDQ0LjEzTDExMS4yMSA0MzguNTFMMTA0LjYyIDQzMi42M0w5OC4yNiA0MjYuNTFMOTIuMTQgNDIwLjE1TDg2LjI3IDQxMy41Nkw4MC42NCA0MDYuNzRMNzUuMjggMzk5LjcxTDcwLjE4IDM5Mi40OEw2NS4zNiAzODUuMDRMNjAuODIgMzc3LjRMNTYuNTggMzY5LjU4TDUyLjYzIDM2MS41OEw0OC45OCAzNTMuNDFMNDUuNjUgMzQ1LjA4TDQyLjYzIDMzNi41OUwzOS45NSAzMjcuOTVMMzcuNTkgMzE5LjE2TDM1LjU4IDMxMC4yNUwzMy45MiAzMDEuMkwzMi42MSAyOTIuMDRMMzEuNjcgMjgyLjc2TDMxLjEgMjczLjM4TDMwLjkxIDI2My45TDMxLjEgMjU0LjQyTDMxLjY3IDI0NS4wNEwzMi42MSAyMzUuNzZMMzMuOTIgMjI2LjZMMzUuNTggMjE3LjU2TDM3LjU5IDIwOC42NEwzOS45NSAxOTkuODZMNDIuNjMgMTkxLjIyTDQ1LjY1IDE4Mi43Mkw0OC45OCAxNzQuMzlMNTIuNjMgMTY2LjIyTDU2LjU4IDE1OC4yMkw2MC44MiAxNTAuNEw2NS4zNiAxNDIuNzdMNzAuMTggMTM1LjMzTDc1LjI4IDEyOC4wOUw4MC42NCAxMjEuMDZMODYuMjcgMTE0LjI0TDkyLjE0IDEwNy42NUw5OC4yNiAxMDEuMjlMMTA0LjYyIDk1LjE3TDExMS4yMSA4OS4zTDExOC4wMyA4My42N0wxMjUuMDYgNzguMzFMMTMyLjMgNzMuMjFMMTM5Ljc0IDY4LjM5TDE0Ny4zNyA2My44NkwxNTUuMTkgNTkuNjFMMTYzLjE5IDU1LjY2TDE3MS4zNiA1Mi4wMUwxNzkuNjkgNDguNjhMMTg4LjE5IDQ1LjY2TDE5Ni44MyA0Mi45OEwyMDUuNjEgNDAuNjJMMjE0LjUzIDM4LjYxTDIyMy41NyAzNi45NUwyMzIuNzMgMzUuNjRMMjQyLjAxIDM0LjdMMjUxLjM5IDM0LjEzTDI2MC44NyAzMy45NEwyNzAuMzUgMzQuMTNMMjc5LjczIDM0LjdaTTI0OS4yMyAxMjIuNDhMMjQzLjUxIDEyMy4wNkwyMzcuODYgMTIzLjg3TDIzMi4yOCAxMjQuODlMMjI2Ljc3IDEyNi4xM0wyMjEuMzUgMTI3LjU5TDIxNi4wMiAxMjkuMjRMMjEwLjc4IDEzMS4xTDIwNS42NCAxMzMuMTZMMjAwLjYgMTM1LjQxTDE5NS42NiAxMzcuODVMMTkwLjg0IDE0MC40N0wxODYuMTMgMTQzLjI3TDE4MS41NCAxNDYuMjRMMTc3LjA3IDE0OS4zOUwxNzIuNzMgMTUyLjdMMTY4LjUzIDE1Ni4xN0wxNjQuNDYgMTU5Ljc5TDE2MC41NCAxNjMuNTdMMTU2Ljc2IDE2Ny40OUwxNTMuMTQgMTcxLjU2TDE0OS42NyAxNzUuNzZMMTQ2LjM2IDE4MC4xTDE0My4yMSAxODQuNTdMMTQwLjI0IDE4OS4xNkwxMzcuNDQgMTkzLjg3TDEzNC44MiAxOTguNjlMMTMyLjM4IDIwMy42M0wxMzAuMTMgMjA4LjY3TDEyOC4wNyAyMTMuODFMMTI2LjIxIDIxOS4wNUwxMjQuNTYgMjI0LjM4TDEyMy4xIDIyOS44TDEyMS44NiAyMzUuMzFMMTIwLjg0IDI0MC44OUwxMjAuMDMgMjQ2LjU0TDExOS40NSAyNTIuMjZMMTE5LjEgMjU4LjA1TDExOC45OCAyNjMuOUwxMTkuMSAyNjkuNzVMMTE5LjQ1IDI3NS41NEwxMjAuMDMgMjgxLjI2TDEyMC44NCAyODYuOTJMMTIxLjg2IDI5Mi41TDEyMy4xIDI5OEwxMjQuNTYgMzAzLjQyTDEyNi4yMSAzMDguNzVMMTI4LjA3IDMxMy45OUwxMzAuMTMgMzE5LjEzTDEzMi4zOCAzMjQuMTdMMTM0LjgyIDMyOS4xMUwxMzcuNDQgMzMzLjkzTDE0MC4yNCAzMzguNjRMMTQzLjIxIDM0My4yM0wxNDYuMzYgMzQ3LjdMMTQ5LjY3IDM1Mi4wNEwxNTMuMTQgMzU2LjI0TDE1Ni43NiAzNjAuMzFMMTYwLjU0IDM2NC4yM0wxNjQuNDYgMzY4LjAxTDE2OC41MyAzNzEuNjRMMTcyLjczIDM3NS4xMUwxNzcuMDcgMzc4LjQyTDE4MS41NCAzODEuNTZMMTg2LjEzIDM4NC41M0wxOTAuODQgMzg3LjMzTDE5NS42NiAzODkuOTZMMjAwLjYgMzkyLjM5TDIwNS42NCAzOTQuNjRMMjEwLjc4IDM5Ni43TDIxNi4wMiAzOTguNTZMMjIxLjM1IDQwMC4yMkwyMjYuNzcgNDAxLjY3TDIzMi4yOCA0MDIuOTFMMjM3Ljg2IDQwMy45NEwyNDMuNTEgNDA0Ljc0TDI0OS4yMyA0MDUuMzJMMjU1LjAyIDQwNS42N0wyNjAuODcgNDA1Ljc5TDI2Ni43MiA0MDUuNjdMMjcyLjUxIDQwNS4zMkwyNzguMjMgNDA0Ljc0TDI4My44OSA0MDMuOTRMMjg5LjQ3IDQwMi45MUwyOTQuOTcgNDAxLjY3TDMwMC4zOSA0MDAuMjJMMzA1LjcyIDM5OC41NkwzMTAuOTYgMzk2LjdMMzE2LjEgMzk0LjY0TDMyMS4xNCAzOTIuMzlMMzI2LjA4IDM4OS45NkwzMzAuOSAzODcuMzNMMzM1LjYxIDM4NC41M0wzNDAuMiAzODEuNTZMMzQ0LjY3IDM3OC40MkwzNDkuMDEgMzc1LjExTDM1My4yMSAzNzEuNjRMMzU3LjI4IDM2OC4wMUwzNjEuMiAzNjQuMjNMMzY0Ljk4IDM2MC4zMUwzNjguNjEgMzU2LjI0TDM3Mi4wOCAzNTIuMDRMMzc1LjM5IDM0Ny43TDM3OC41MyAzNDMuMjNMMzgxLjUgMzM4LjY0TDM4NC4zIDMzMy45M0wzODYuOTMgMzI5LjExTDM4OS4zNiAzMjQuMTdMMzkxLjYxIDMxOS4xM0wzOTMuNjcgMzEzLjk5TDM5NS41MyAzMDguNzVMMzk3LjE5IDMwMy40MkwzOTguNjQgMjk4TDM5OS44OCAyOTIuNUw0MDAuOTEgMjg2LjkyTDQwMS43MSAyODEuMjZMNDAyLjI5IDI3NS41NEw0MDIuNjQgMjY5Ljc1TDQwMi43NiAyNjMuOUw0MDIuNjQgMjU4LjA1TDQwMi4yOSAyNTIuMjZMNDAxLjcxIDI0Ni41NEw0MDAuOTEgMjQwLjg5TDM5OS44OCAyMzUuMzFMMzk4LjY0IDIyOS44TDM5Ny4xOSAyMjQuMzhMMzk1LjUzIDIxOS4wNUwzOTMuNjcgMjEzLjgxTDM5MS42MSAyMDguNjdMMzg5LjM2IDIwMy42M0wzODYuOTMgMTk4LjY5TDM4NC4zIDE5My44N0wzODEuNSAxODkuMTZMMzc4LjUzIDE4NC41N0wzNzUuMzkgMTgwLjFMMzcyLjA4IDE3NS43NkwzNjguNjEgMTcxLjU2TDM2NC45OCAxNjcuNDlMMzYxLjIgMTYzLjU3TDM1Ny4yOCAxNTkuNzlMMzUzLjIxIDE1Ni4xN0wzNDkuMDEgMTUyLjdMMzQ0LjY3IDE0OS4zOUwzNDAuMiAxNDYuMjRMMzM1LjYxIDE0My4yN0wzMzAuOSAxNDAuNDdMMzI2LjA4IDEzNy44NUwzMjEuMTQgMTM1LjQxTDMxNi4xIDEzMy4xNkwzMTAuOTYgMTMxLjFMMzA1LjcyIDEyOS4yNEwzMDAuMzkgMTI3LjU5TDI5NC45NyAxMjYuMTNMMjg5LjQ3IDEyNC44OUwyODMuODkgMTIzLjg3TDI3OC4yMyAxMjMuMDZMMjcyLjUxIDEyMi40OEwyNjYuNzIgMTIyLjEzTDI2MC44NyAxMjIuMDFMMjU1LjAyIDEyMi4xM0wyNDkuMjMgMTIyLjQ4WiIgaWQ9ImJpVVlobFRwNiI+PC9wYXRoPjwvZGVmcz48Zz48Zz48Zz48dXNlIHhsaW5rOmhyZWY9IiNiaVVZaGxUcDYiIG9wYWNpdHk9IjEiIGZpbGw9IiM1OTU5NTkiIGZpbGwtb3BhY2l0eT0iMSI+PC91c2U+PC9nPjwvZz48L2c+PC9zdmc+"},
-  // Status Type
-  "STATUS"		: {Type: "Text"	, Align: "Center"	, Width: 50		, Formula: "Row.Deleted ? 'D' : Row.Added ? 'I' : Row.Changed ? 'U' : 'R'", Format: { 'I': 'ÀÔ·Â', 'U': '¼öÁ¤', 'D': '»èÁ¦', 'R': '' }},
-  // DelCheck Type
-  "DelCheck"	: {Type: "Bool"	, Width: 50,
-    OnClick: function(evtParam){
-    	//ºÎ¸ğ°¡ Ã¼Å©µÇ¾î ÀÖ´Â °æ¿ì ´õ ÀÌ»ó ÁøÇàÇÏÁö ¾Ê´Â´Ù.
-    	var chked = !(evtParam.row[evtParam.col]);
-    	var prows = evtParam.sheet.getParentRows( evtParam.row);
-    	if(!chked && prows[0] && prows[0][evtParam.col]) return true;	
+  };
+  
+  _IBSheet.onBeforeCreate = function(init){
+  
+    //optionsì˜ LeftCols,Cols,RightColsì—ì„œ EnumEdit íƒ€ì…ì´ ìˆìœ¼ë©´ ë³€ê²½í•´ ì¤€ë‹¤.
+    var cols = ["LeftCols", "Cols", "RightCols"];
+    var opt = init.options;
+    
+    cols.forEach((item,idx)=>{
+      if(opt[item]){
+        const tempCol = opt[item];
+        tempCol.forEach((colObj,colIdx)=>{
+          if(colObj["Type"] && colObj["Type"] === "EnumEdit"){
+            if(colObj["Enum"] && colObj["EnumKeys"]){
+              
+              var text = colObj["Enum"].substring(1).split(colObj["Enum"].substring(0,1) );
+              var keys = colObj["EnumKeys"].substring(1).split(colObj["EnumKeys"].substring(0,1) );
+              var newFormat = {};
+              for(var x=0;x<keys.length;x++){
+                newFormat[keys[x]] = text[x];
+              }
+              colObj["Type"] = "Text";
+              colObj["SuggestType"] = "Empty,Start,Arrows";
+              colObj["Suggest"] =  colObj["EditEnum"]?colObj["EditEnum"]:colObj["Enum"];
+              
+              colObj["Icon"] = "Defaults";
+              colObj["Defaults"] = colObj["EditEnum"];
+              
+              colObj["Format"] = newFormat;
+              colObj["EditFormat"] = newFormat;
+              colObj["OnChange"] = function(e){
+                console.log("OnChange");
+                var v = e.row[e.col];
+                
+               
+                if(typeof(e.sheet.Cols[e.col].Format[v])!="undefined"){
+                    return;
+                }
+                if(e.sheet.Cols[e.col]["EditEnum"]) {
+                    
+                    if(e.sheet.Cols[e.col].EditEnum.indexOf(v) <= 0) {
+                        e.row[e.col] = "";           
+                        return;
+                    } else  {
+                      //ì„ íƒ ê°’ì´ EditEnumì˜ ëª‡ë²ˆì§¸ ê°’ì¸ì§€ ì°¾ê³  í•´ë‹¹í•˜ëŠ” EnumKeysë¥¼ ëŒ€ì‹  ë„£ëŠ”ë‹¤.
+                      var idx = e.sheet.Cols[e.col]["EditEnum"].split("|").indexOf(v)
+                      var key = e.sheet.Cols[e.col]["EnumKeys"].split("|")[idx];
+                      e.row[e.col] = key;    
+                      e.sheet.refreshCell(e.row, e.col);             
+                      return;
+                    } 
+                } 
+                
+                //ì—†ëŠ” ê°’ì„ ì…ë ¥í–ˆì„ë•Œì— ëŒ€í•œ ì²˜ë¦¬
+                //ì´ì „ê°’ìœ¼ë¡œ ë˜ëŒë¦¬ê±°ë‚˜ ê°’ì„ ì§€ì›€.
+                if(e.row[e.col+"BeforeVal"]){
+                  e.row[e.col] = e.row[e.col+"BeforeVal"];
+                }else if(e.row[e.col+"Orgi"]){
+                  e.row[e.col] = e.row[e.col+"Orgi"];
+                }else{
+                  e.row[e.col] = "";
+                }
+                e.sheet.refreshCell(e.row, e.col);             
+                
+              }//end OnChange
+            }
+            
+          }
+        })
+      }
+    });
+  
+    //ë°˜ë“œì‹œ returnë˜ì–´ì•¼ í•¨
+    return init;
+  };
+  window.IB_Preset = {
+    // ë‚ ì§œ ì‹œê°„ í¬ë©§
+    "YMD"			: {Type: "Date"	, Align: "Center"	, Width: 110	, Format: 'yyyy-MM-dd'			, DataFormat: 'yyyyMMdd'		, EditFormat: 'yyyyMMdd'		, Size: 8	, EmptyValue: ""	},
+    "YM" 			: {Type: "Date"	, Align: "Center"	, Width: 80		, Format: 'yyyy-MM'				, DataFormat: 'yyyyMM'			, EditFormat: 'yyyyMM'			, Size: 6	, EmptyValue: ""	},
+    "MD" 			: {Type: "Date"	, Align: "Center"	, Width: 60		, Format: 'MM-dd'				, EditFormat: 'MMdd'			, DataFormat: 'MMdd'			, Size: 4	, EmptyValue: "" 	},
+    "HMS"			: {Type: "Date"	, Align: "Center"	, Width: 70		, Format: 'HH:mm:ss'			, EditFormat: 'HHmmss'			, DataFormat: 'HHmmss'			, Size: 8	, EmptyValue: ""	},
+    "HM" 			: {Type: "Date"	, Align: "Center"	, Width: 70		, Format: 'HH:mm'				, EditFormat: 'HHmm'			, DataFormat: 'HHmm'			, Size: 6	, EmptyValue: ""	},
+    "YMDHMS"		: {Type: "Date"	, Align: "Center"	, Width: 150	, Format: 'yyyy-MM-dd HH:mm:ss'	, EditFormat: 'yyyyMMddHHmmss'	, DataFormat: 'yyyyMMddHHmmss'	, Size: 14	, EmptyValue: ""	},
+    "YMDHM"		: {Type: "Date"	, Align: "Center"	, Width: 150	, Format: 'yyyy-MM-dd HH:mm'	, EditFormat: 'yyyyMMddHHmm'	, DataFormat: 'yyyyMMddHHmm'	, Size: 12	, EmptyValue: ""	},
+    "MDY"			: {Type: "Date"	, Align: "Center"	, Width: 110	, Format: 'MM-dd-yyyy'			, EditFormat: 'MMddyyyy'		, DataFormat: 'yyyyMMdd'		, Size: 8	, EmptyValue: ""	},
+    "DMY"			: {Type: "Date"	, Align: "Center"	, Width: 110	, Format: 'dd-MM-yyyy'			, EditFormat: 'ddMMyyyy'		, DataFormat: 'yyyyMMdd'		, Size: 8	, EmptyValue: ""	},
+    "YWD100"		: {Type: "Date"	, Align: "Center"	, Width: 100	, Format: 'yyyy-MM-dd'			, DataFormat: 'yyyyMMdd'		, EditFormat: 'yyyyMMdd'		, Size: 8	, EmptyValue: ""	},
+    
+    // ìˆ«ì í¬ë©§
+    "Integer"		: {Type: "Int"	, Align: "Right"	, Width: 120	, Format: "#,##0"			},
+    "NullInteger"	: {Type: "Int"	, Align: "Right"	, Width: 120	, Format: "#,###"			},
+    "Float"		: {Type: "Float", Align: "Right"	, Width: 120	, Format: "#,##0.######"	},
+    "NullFloat"	: {Type: "Float", Align: "Right"	, Width: 120	, Format: "#,###.######"	},
+    "Rate"		: {Type: "Float", Align: "Right"	, Width: 80		, Format: "#,##0.00"		},
+    "Rate120"		: {Type: "Float", Align: "Right"	, Width: 120	, Format: "#,##0.00"		},
+    "Integer100"	: {Type: "Int"	, Align: "Right"	, Width: 100	, Format: "#,##0"			},
+  
+    // ê¸°íƒ€í¬ë©§
+    "Ssn"			: {Type: "Text"	, Align: "Center"	, Width: 150	, CustomFormat: "IdNo"		, },
+    "SsnMask"		: {Type: "Text"	, Align: "Center"	, Width: 150	, CustomFormat: "IdNoMask"	, },
+    "BizNo"		: {Type: "Text"	, Align: "Center"	, Width: 150	, CustomFormat: function (v) {
+        if (v.length > 10) return v.substr(0, 6) + "-" + v.substr(6);
+        else return v.substr(0, 5) + "-" + v.substr(5);
+      }
     },
-    OnChange: function (evtParam) {
-    	var chked = evtParam.row[evtParam.col];
-    	//½Å±ÔÇà¿¡ ´ëÇØ¼­´Â Áï½Ã »èÁ¦ÇÑ´Ù.
-      if (evtParam.row.Added) {
-        setTimeout(function () {
-          evtParam.sheet.removeRow(evtParam.row);
-        }, 30);
-      } else {
-      	//ÇàÀ» »èÁ¦ »óÅÂ·Î º¯°æ
-        evtParam.sheet.deleteRow(evtParam.row, evtParam.row[evtParam.col]);
-        //ÀÚ½ÄÇà ÃßÃâ
-        var rows = evtParam.sheet.getChildRows(evtParam.row);
-        rows.push(evtParam.row);
-
-        //¸ğµÎ Ã¼Å©ÇÏ°í ÆíÁı ºÒ°¡·Î º¯°æ
-        for(var i=0;i<rows.length;i++){
-        	var row = rows[i];
-        	evtParam.sheet.setValue (row ,evtParam.col, chked, 0 );
-         	row.CanEdit = !evtParam.row[evtParam.col];
-         	if (!row[evtParam.col+"CanEdit"]) {
-		        row[evtParam.col+"CanEdit"] = true;
-		      }
-         	evtParam.sheet.refreshRow(row);	
+    "PostNo"		: {},
+    "CardNo"		: {},
+    "PhoneNo"		: {},
+    "Number"		: {},
+  
+    // ibsheet7 migration
+    // Popup,PopupEdit
+    "Popup"		: {Type: "Text"	, Align: "Center"	, Width: 100	, Button: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBtZWV0IiB2aWV3Qm94PSIwIDAgNjQwIDY0MCIgd2lkdGg9IjE1IiBoZWlnaHQ9IjE1Ij48ZGVmcz48cGF0aCBkPSJNMjc5LjczIDM0LjdMMjg5LjAxIDM1LjY0TDI5OC4xNyAzNi45NUwzMDcuMjIgMzguNjFMMzE2LjEzIDQwLjYyTDMyNC45MiA0Mi45OEwzMzMuNTYgNDUuNjZMMzQyLjA1IDQ4LjY4TDM1MC4zOCA1Mi4wMUwzNTguNTUgNTUuNjZMMzY2LjU1IDU5LjYxTDM3NC4zNyA2My44NkwzODIuMDEgNjguMzlMMzg5LjQ1IDczLjIxTDM5Ni42OCA3OC4zMUw0MDMuNzEgODMuNjdMNDEwLjUzIDg5LjNMNDE3LjEyIDk1LjE3TDQyMy40OCAxMDEuMjlMNDI5LjYgMTA3LjY1TDQzNS40OCAxMTQuMjRMNDQxLjEgMTIxLjA2TDQ0Ni40NiAxMjguMDlMNDUxLjU2IDEzNS4zM0w0NTYuMzggMTQyLjc3TDQ2MC45MiAxNTAuNEw0NjUuMTcgMTU4LjIyTDQ2OS4xMiAxNjYuMjJMNDcyLjc2IDE3NC4zOUw0NzYuMSAxODIuNzJMNDc5LjExIDE5MS4yMkw0ODEuOCAxOTkuODZMNDg0LjE1IDIwOC42NEw0ODYuMTYgMjE3LjU2TDQ4Ny44MiAyMjYuNkw0ODkuMTMgMjM1Ljc2TDQ5MC4wNyAyNDUuMDRMNDkwLjY0IDI1NC40Mkw0OTAuODMgMjYzLjlMNDkwLjY0IDI3My4zOEw0OTAuMDcgMjgyLjc2TDQ4OS4xMyAyOTIuMDRMNDg3LjgyIDMwMS4yTDQ4Ni4xNiAzMTAuMjVMNDg0LjE1IDMxOS4xNkw0ODEuOCAzMjcuOTVMNDc5LjExIDMzNi41OUw0NzYuMSAzNDUuMDhMNDcyLjc2IDM1My40MUw0NjkuMTIgMzYxLjU4TDQ2NS4xNyAzNjkuNThMNDYwLjkyIDM3Ny40TDQ1Ni4zOCAzODUuMDRMNDUxLjczIDM5Mi4yMkw1OTYuOTcgNTM3LjQ2TDUzNC40MyA2MDBMMzg5LjE5IDQ1NC43NkwzODIuMDEgNDU5LjQxTDM3NC4zNyA0NjMuOTVMMzY2LjU1IDQ2OC4yTDM1OC41NSA0NzIuMTVMMzUwLjM4IDQ3NS43OUwzNDIuMDUgNDc5LjEzTDMzMy41NiA0ODIuMTRMMzI0LjkyIDQ4NC44M0wzMTYuMTMgNDg3LjE4TDMwNy4yMiA0ODkuMTlMMjk4LjE3IDQ5MC44NUwyODkuMDEgNDkyLjE2TDI3OS43MyA0OTMuMUwyNzAuMzUgNDkzLjY3TDI2MC44NyA0OTMuODZMMjUxLjM5IDQ5My42N0wyNDIuMDEgNDkzLjFMMjMyLjczIDQ5Mi4xNkwyMjMuNTcgNDkwLjg1TDIxNC41MyA0ODkuMTlMMjA1LjYxIDQ4Ny4xOEwxOTYuODMgNDg0LjgzTDE4OC4xOSA0ODIuMTRMMTc5LjY5IDQ3OS4xM0wxNzEuMzYgNDc1Ljc5TDE2My4xOSA0NzIuMTVMMTU1LjE5IDQ2OC4yTDE0Ny4zNyA0NjMuOTVMMTM5Ljc0IDQ1OS40MUwxMzIuMyA0NTQuNTlMMTI1LjA2IDQ0OS40OUwxMTguMDMgNDQ0LjEzTDExMS4yMSA0MzguNTFMMTA0LjYyIDQzMi42M0w5OC4yNiA0MjYuNTFMOTIuMTQgNDIwLjE1TDg2LjI3IDQxMy41Nkw4MC42NCA0MDYuNzRMNzUuMjggMzk5LjcxTDcwLjE4IDM5Mi40OEw2NS4zNiAzODUuMDRMNjAuODIgMzc3LjRMNTYuNTggMzY5LjU4TDUyLjYzIDM2MS41OEw0OC45OCAzNTMuNDFMNDUuNjUgMzQ1LjA4TDQyLjYzIDMzNi41OUwzOS45NSAzMjcuOTVMMzcuNTkgMzE5LjE2TDM1LjU4IDMxMC4yNUwzMy45MiAzMDEuMkwzMi42MSAyOTIuMDRMMzEuNjcgMjgyLjc2TDMxLjEgMjczLjM4TDMwLjkxIDI2My45TDMxLjEgMjU0LjQyTDMxLjY3IDI0NS4wNEwzMi42MSAyMzUuNzZMMzMuOTIgMjI2LjZMMzUuNTggMjE3LjU2TDM3LjU5IDIwOC42NEwzOS45NSAxOTkuODZMNDIuNjMgMTkxLjIyTDQ1LjY1IDE4Mi43Mkw0OC45OCAxNzQuMzlMNTIuNjMgMTY2LjIyTDU2LjU4IDE1OC4yMkw2MC44MiAxNTAuNEw2NS4zNiAxNDIuNzdMNzAuMTggMTM1LjMzTDc1LjI4IDEyOC4wOUw4MC42NCAxMjEuMDZMODYuMjcgMTE0LjI0TDkyLjE0IDEwNy42NUw5OC4yNiAxMDEuMjlMMTA0LjYyIDk1LjE3TDExMS4yMSA4OS4zTDExOC4wMyA4My42N0wxMjUuMDYgNzguMzFMMTMyLjMgNzMuMjFMMTM5Ljc0IDY4LjM5TDE0Ny4zNyA2My44NkwxNTUuMTkgNTkuNjFMMTYzLjE5IDU1LjY2TDE3MS4zNiA1Mi4wMUwxNzkuNjkgNDguNjhMMTg4LjE5IDQ1LjY2TDE5Ni44MyA0Mi45OEwyMDUuNjEgNDAuNjJMMjE0LjUzIDM4LjYxTDIyMy41NyAzNi45NUwyMzIuNzMgMzUuNjRMMjQyLjAxIDM0LjdMMjUxLjM5IDM0LjEzTDI2MC44NyAzMy45NEwyNzAuMzUgMzQuMTNMMjc5LjczIDM0LjdaTTI0OS4yMyAxMjIuNDhMMjQzLjUxIDEyMy4wNkwyMzcuODYgMTIzLjg3TDIzMi4yOCAxMjQuODlMMjI2Ljc3IDEyNi4xM0wyMjEuMzUgMTI3LjU5TDIxNi4wMiAxMjkuMjRMMjEwLjc4IDEzMS4xTDIwNS42NCAxMzMuMTZMMjAwLjYgMTM1LjQxTDE5NS42NiAxMzcuODVMMTkwLjg0IDE0MC40N0wxODYuMTMgMTQzLjI3TDE4MS41NCAxNDYuMjRMMTc3LjA3IDE0OS4zOUwxNzIuNzMgMTUyLjdMMTY4LjUzIDE1Ni4xN0wxNjQuNDYgMTU5Ljc5TDE2MC41NCAxNjMuNTdMMTU2Ljc2IDE2Ny40OUwxNTMuMTQgMTcxLjU2TDE0OS42NyAxNzUuNzZMMTQ2LjM2IDE4MC4xTDE0My4yMSAxODQuNTdMMTQwLjI0IDE4OS4xNkwxMzcuNDQgMTkzLjg3TDEzNC44MiAxOTguNjlMMTMyLjM4IDIwMy42M0wxMzAuMTMgMjA4LjY3TDEyOC4wNyAyMTMuODFMMTI2LjIxIDIxOS4wNUwxMjQuNTYgMjI0LjM4TDEyMy4xIDIyOS44TDEyMS44NiAyMzUuMzFMMTIwLjg0IDI0MC44OUwxMjAuMDMgMjQ2LjU0TDExOS40NSAyNTIuMjZMMTE5LjEgMjU4LjA1TDExOC45OCAyNjMuOUwxMTkuMSAyNjkuNzVMMTE5LjQ1IDI3NS41NEwxMjAuMDMgMjgxLjI2TDEyMC44NCAyODYuOTJMMTIxLjg2IDI5Mi41TDEyMy4xIDI5OEwxMjQuNTYgMzAzLjQyTDEyNi4yMSAzMDguNzVMMTI4LjA3IDMxMy45OUwxMzAuMTMgMzE5LjEzTDEzMi4zOCAzMjQuMTdMMTM0LjgyIDMyOS4xMUwxMzcuNDQgMzMzLjkzTDE0MC4yNCAzMzguNjRMMTQzLjIxIDM0My4yM0wxNDYuMzYgMzQ3LjdMMTQ5LjY3IDM1Mi4wNEwxNTMuMTQgMzU2LjI0TDE1Ni43NiAzNjAuMzFMMTYwLjU0IDM2NC4yM0wxNjQuNDYgMzY4LjAxTDE2OC41MyAzNzEuNjRMMTcyLjczIDM3NS4xMUwxNzcuMDcgMzc4LjQyTDE4MS41NCAzODEuNTZMMTg2LjEzIDM4NC41M0wxOTAuODQgMzg3LjMzTDE5NS42NiAzODkuOTZMMjAwLjYgMzkyLjM5TDIwNS42NCAzOTQuNjRMMjEwLjc4IDM5Ni43TDIxNi4wMiAzOTguNTZMMjIxLjM1IDQwMC4yMkwyMjYuNzcgNDAxLjY3TDIzMi4yOCA0MDIuOTFMMjM3Ljg2IDQwMy45NEwyNDMuNTEgNDA0Ljc0TDI0OS4yMyA0MDUuMzJMMjU1LjAyIDQwNS42N0wyNjAuODcgNDA1Ljc5TDI2Ni43MiA0MDUuNjdMMjcyLjUxIDQwNS4zMkwyNzguMjMgNDA0Ljc0TDI4My44OSA0MDMuOTRMMjg5LjQ3IDQwMi45MUwyOTQuOTcgNDAxLjY3TDMwMC4zOSA0MDAuMjJMMzA1LjcyIDM5OC41NkwzMTAuOTYgMzk2LjdMMzE2LjEgMzk0LjY0TDMyMS4xNCAzOTIuMzlMMzI2LjA4IDM4OS45NkwzMzAuOSAzODcuMzNMMzM1LjYxIDM4NC41M0wzNDAuMiAzODEuNTZMMzQ0LjY3IDM3OC40MkwzNDkuMDEgMzc1LjExTDM1My4yMSAzNzEuNjRMMzU3LjI4IDM2OC4wMUwzNjEuMiAzNjQuMjNMMzY0Ljk4IDM2MC4zMUwzNjguNjEgMzU2LjI0TDM3Mi4wOCAzNTIuMDRMMzc1LjM5IDM0Ny43TDM3OC41MyAzNDMuMjNMMzgxLjUgMzM4LjY0TDM4NC4zIDMzMy45M0wzODYuOTMgMzI5LjExTDM4OS4zNiAzMjQuMTdMMzkxLjYxIDMxOS4xM0wzOTMuNjcgMzEzLjk5TDM5NS41MyAzMDguNzVMMzk3LjE5IDMwMy40MkwzOTguNjQgMjk4TDM5OS44OCAyOTIuNUw0MDAuOTEgMjg2LjkyTDQwMS43MSAyODEuMjZMNDAyLjI5IDI3NS41NEw0MDIuNjQgMjY5Ljc1TDQwMi43NiAyNjMuOUw0MDIuNjQgMjU4LjA1TDQwMi4yOSAyNTIuMjZMNDAxLjcxIDI0Ni41NEw0MDAuOTEgMjQwLjg5TDM5OS44OCAyMzUuMzFMMzk4LjY0IDIyOS44TDM5Ny4xOSAyMjQuMzhMMzk1LjUzIDIxOS4wNUwzOTMuNjcgMjEzLjgxTDM5MS42MSAyMDguNjdMMzg5LjM2IDIwMy42M0wzODYuOTMgMTk4LjY5TDM4NC4zIDE5My44N0wzODEuNSAxODkuMTZMMzc4LjUzIDE4NC41N0wzNzUuMzkgMTgwLjFMMzcyLjA4IDE3NS43NkwzNjguNjEgMTcxLjU2TDM2NC45OCAxNjcuNDlMMzYxLjIgMTYzLjU3TDM1Ny4yOCAxNTkuNzlMMzUzLjIxIDE1Ni4xN0wzNDkuMDEgMTUyLjdMMzQ0LjY3IDE0OS4zOUwzNDAuMiAxNDYuMjRMMzM1LjYxIDE0My4yN0wzMzAuOSAxNDAuNDdMMzI2LjA4IDEzNy44NUwzMjEuMTQgMTM1LjQxTDMxNi4xIDEzMy4xNkwzMTAuOTYgMTMxLjFMMzA1LjcyIDEyOS4yNEwzMDAuMzkgMTI3LjU5TDI5NC45NyAxMjYuMTNMMjg5LjQ3IDEyNC44OUwyODMuODkgMTIzLjg3TDI3OC4yMyAxMjMuMDZMMjcyLjUxIDEyMi40OEwyNjYuNzIgMTIyLjEzTDI2MC44NyAxMjIuMDFMMjU1LjAyIDEyMi4xM0wyNDkuMjMgMTIyLjQ4WiIgaWQ9ImJpVVlobFRwNiI+PC9wYXRoPjwvZGVmcz48Zz48Zz48Zz48dXNlIHhsaW5rOmhyZWY9IiNiaVVZaGxUcDYiIG9wYWNpdHk9IjEiIGZpbGw9IiM1OTU5NTkiIGZpbGwtb3BhY2l0eT0iMSI+PC91c2U+PC9nPjwvZz48L2c+PC9zdmc+"},
+    // Status Type
+    "STATUS"		: {Type: "Text"	, Align: "Center"	, Width: 50		, Formula: "Row.Deleted ? 'D' : Row.Added ? 'I' : Row.Changed ? 'U' : 'R'", Format: { 'I': 'ì…ë ¥', 'U': 'ìˆ˜ì •', 'D': 'ì‚­ì œ', 'R': '' }},
+    // DelCheck Type
+    "DelCheck"	: {Type: "Bool"	, Width: 50,
+      OnClick: function(evtParam){
+        //ë¶€ëª¨ê°€ ì²´í¬ë˜ì–´ ìˆëŠ” ê²½ìš° ë” ì´ìƒ ì§„í–‰í•˜ì§€ ì•ŠëŠ”ë‹¤.
+        var chked = !(evtParam.row[evtParam.col]);
+        var prows = evtParam.sheet.getParentRows( evtParam.row);
+        if(!chked && prows[0] && prows[0][evtParam.col]) return true;	
+      },
+      OnChange: function (evtParam) {
+        var chked = evtParam.row[evtParam.col];
+        //ì‹ ê·œí–‰ì— ëŒ€í•´ì„œëŠ” ì¦‰ì‹œ ì‚­ì œí•œë‹¤.
+        if (evtParam.row.Added) {
+          setTimeout(function () {
+            evtParam.sheet.removeRow(evtParam.row);
+          }, 30);
+        } else {
+          //í–‰ì„ ì‚­ì œ ìƒíƒœë¡œ ë³€ê²½
+          evtParam.sheet.deleteRow(evtParam.row, evtParam.row[evtParam.col]);
+          //ìì‹í–‰ ì¶”ì¶œ
+          var rows = evtParam.sheet.getChildRows(evtParam.row);
+          rows.push(evtParam.row);
+  
+          //ëª¨ë‘ ì²´í¬í•˜ê³  í¸ì§‘ ë¶ˆê°€ë¡œ ë³€ê²½
+          for(var i=0;i<rows.length;i++){
+            var row = rows[i];
+            evtParam.sheet.setValue (row ,evtParam.col, chked, 0 );
+             row.CanEdit = !evtParam.row[evtParam.col];
+             if (!row[evtParam.col+"CanEdit"]) {
+              row[evtParam.col+"CanEdit"] = true;
+            }
+             evtParam.sheet.refreshRow(row);	
+          }
         }
       }
     }
-  }
-};
-
-function clone(obj) {
-  if (obj === null || typeof (obj) !== 'object') return obj;
-  var copy = obj.constructor();
-  for (var attr in obj) {
-    if (obj.hasOwnProperty(attr)) {
-      copy[attr] = clone(obj[attr]);
+  };
+  
+  function clone(obj) {
+    if (obj === null || typeof (obj) !== 'object') return obj;
+    var copy = obj.constructor();
+    for (var attr in obj) {
+      if (obj.hasOwnProperty(attr)) {
+        copy[attr] = clone(obj[attr]);
+      }
     }
+    return copy;
   }
-  return copy;
-}
-
-/*
-ibsheet7 migration functions
-*/
-if (!_IBSheet.v7) _IBSheet.v7 = {};
-
-/*
- * ibsheet7 AcceptKey ¼Ó¼º ´ëÀÀ
- * param list
- * objColumn : ½ÃÆ® »ı¼º½Ã Cols°´Ã¼ÀÇ ÄÃ·³
- * str : ibsheet7 AcceptKeys¿¡ Á¤ÀÇÇß´ø ½ºÆ®¸µ
- */
-_IBSheet.v7.convertAcceptKeys = function (objColumn, str) {
-  // EditMask¸¦ ÅëÇØ AcceptKeys¸¦ À¯»çÇÏ°Ô ±¸Çö
-  var acceptKeyArr = str.split("|");
-  var mask = "";
-
-  for (var i = 0; i < acceptKeyArr.length; i++) {
-    switch (acceptKeyArr[i]) {
-      case "E":
-        mask += "|\\w";
-        break;
-      case "N":
-        mask += "|\\d";
-        break;
-      case "K":
-        mask += "|\\u3131-\\u314e|\\u314f-\\u3163|\\uac00-\\ud7a3"
-        break;
-      default:
-        if (acceptKeyArr[i].substring(0, 1) == "[" && acceptKeyArr[i].substring(acceptKeyArr[i].length - 1) == "]") {
-          var otherKeys = acceptKeyArr[i].substring(1, acceptKeyArr[i].length - 1);
-          for (var x = 0; x < otherKeys.length; x++) {
-            if (otherKeys[x] == "." || otherKeys[x] == "-") {
-              mask += "|\\" + otherKeys[x];
-            } else {
-              mask += "|" + otherKeys[x];
-            }
-          }
-        }
-        break;
-    }
-  }
-  objColumn.EditMask = "^[" + mask.substring(1) + "]*$";
-};
-
-//Date Format migration
-//exam)
-/*
-//µ¥ÀÌÅÍ ·Îµå ÀÌº¥Æ®¿¡¼­ È£ÃâÇÕ´Ï´Ù.
-options.Events.onBeforeDataLoad:function(obj){
-  //³¯Â¥Æ÷¸Ë ÄÃ·³ÀÇ °ªÀ» ibsheet8¿¡ ¸Â°Ô º¯°æÇÏ¿© ·Îµå½ÃÅ´
-  IBSheet.v7.convertDateFormat(obj);
-}
-*/
-_IBSheet.v7.convertDateFormat = function (obj) {
-  var cdata = obj.data;
-  var changeCol = {};
-  //³¯Â¥ ÄÃ·³¿¡ ´ëÇÑ Æ÷¸ËÀ» º°µµ·Î ÀúÀå
-  var cols = obj.sheet.getCols();
-  for (var i = 0; i < cols.length; i++) {
-    var colName = cols[i];
-
-    if (obj.sheet.Cols[colName].Type == "Date") {
-      //DataFormatÀÌ ¾øÀ¸¸é EditFormat ÀÌ³ª Æ÷¸Ë¿¡¼­ ¾ËÆÄºª¸¸ ÃßÃâ
-      var format = (obj.sheet.Cols[colName].DataFormat) ? obj.sheet.Cols[colName].DataFormat : (obj.sheet.Cols[colName].EditFormat) ? obj.sheet.Cols[colName].EditFormat : obj.sheet.Cols[colName].Format.replace(/([^A-Za-z])+/g, "");
-      changeCol[colName] = {
-        format: format,
-        length: format.length
-      };
-    }
-  }
-
-  if (Object.keys(changeCol).length !== 0) {
-    var changeColKeys = Object.keys(changeCol);
-
-    //DataFormatÀÇ ±æÀÌ¸¸Å­ ¹®ÀÚ¿­À» ÀÚ¸§
-    for (var row = 0; row < cdata.length; row++) {
-      for (var colName in cdata[row]) {
-        if (changeColKeys.indexOf(colName) > -1) {
-          // ¹®ÀÚ¿­¸¸ Ã³¸®
-          if (typeof ((cdata[row])[colName]) == "string") {
-            //½ÇÁ¦ °ª
-            var v = (cdata[row])[colName];
-            //MMdd¸¸ °ªÀÌ 8ÀÚ¸® ÀÌ»óÀÌ¸é Áß°£¿¡ 4ÀÚ¸®¸¸ pick
-            if (changeCol[colName].format == "MMdd" && v.length != 4) {
-              if (v.length > 7) {
-                v = v.substr(4, 4);
+  
+  /*
+  ibsheet7 migration functions
+  */
+  if (!_IBSheet.v7) _IBSheet.v7 = {};
+  
+  /*
+   * ibsheet7 AcceptKey ì†ì„± ëŒ€ì‘
+   * param list
+   * objColumn : ì‹œíŠ¸ ìƒì„±ì‹œ Colsê°ì²´ì˜ ì»¬ëŸ¼
+   * str : ibsheet7 AcceptKeysì— ì •ì˜í–ˆë˜ ìŠ¤íŠ¸ë§
+   */
+  _IBSheet.v7.convertAcceptKeys = function (objColumn, str) {
+    // EditMaskë¥¼ í†µí•´ AcceptKeysë¥¼ ìœ ì‚¬í•˜ê²Œ êµ¬í˜„
+    var acceptKeyArr = str.split("|");
+    var mask = "";
+  
+    for (var i = 0; i < acceptKeyArr.length; i++) {
+      switch (acceptKeyArr[i]) {
+        case "E":
+          mask += "|\\w";
+          break;
+        case "N":
+          mask += "|\\d";
+          break;
+        case "K":
+          mask += "|\\u3131-\\u314e|\\u314f-\\u3163|\\uac00-\\ud7a3"
+          break;
+        default:
+          if (acceptKeyArr[i].substring(0, 1) == "[" && acceptKeyArr[i].substring(acceptKeyArr[i].length - 1) == "]") {
+            var otherKeys = acceptKeyArr[i].substring(1, acceptKeyArr[i].length - 1);
+            for (var x = 0; x < otherKeys.length; x++) {
+              if (otherKeys[x] == "." || otherKeys[x] == "-") {
+                mask += "|\\" + otherKeys[x];
+              } else {
+                mask += "|" + otherKeys[x];
               }
-            } else {
-              //ÀÏ¹İÀûÀ¸·Î ¸ğµÎ Æ÷¸ËÀÇ ¹®ÀÚ¿­ ±æÀÌ¸¸Å­ ÀÚ¸§
-              v = v.substr(0, changeCol[colName].length);
             }
-            //¼öÁ¤ÇÑ °ªÀ» ¿ø·¡ À§Ä¡¿¡ ´ëÀÔ
-            (cdata[row])[colName] = v;
+          }
+          break;
+      }
+    }
+    objColumn.EditMask = "^[" + mask.substring(1) + "]*$";
+  };
+  
+  //Date Format migration
+  //exam)
+  /*
+  //ë°ì´í„° ë¡œë“œ ì´ë²¤íŠ¸ì—ì„œ í˜¸ì¶œí•©ë‹ˆë‹¤.
+  options.Events.onBeforeDataLoad:function(obj){
+    //ë‚ ì§œí¬ë§· ì»¬ëŸ¼ì˜ ê°’ì„ ibsheet8ì— ë§ê²Œ ë³€ê²½í•˜ì—¬ ë¡œë“œì‹œí‚´
+    IBSheet.v7.convertDateFormat(obj);
+  }
+  */
+  _IBSheet.v7.convertDateFormat = function (obj) {
+    var cdata = obj.data;
+    var changeCol = {};
+    //ë‚ ì§œ ì»¬ëŸ¼ì— ëŒ€í•œ í¬ë§·ì„ ë³„ë„ë¡œ ì €ì¥
+    var cols = obj.sheet.getCols();
+    for (var i = 0; i < cols.length; i++) {
+      var colName = cols[i];
+  
+      if (obj.sheet.Cols[colName].Type == "Date") {
+        //DataFormatì´ ì—†ìœ¼ë©´ EditFormat ì´ë‚˜ í¬ë§·ì—ì„œ ì•ŒíŒŒë²³ë§Œ ì¶”ì¶œ
+        var format = (obj.sheet.Cols[colName].DataFormat) ? obj.sheet.Cols[colName].DataFormat : (obj.sheet.Cols[colName].EditFormat) ? obj.sheet.Cols[colName].EditFormat : obj.sheet.Cols[colName].Format.replace(/([^A-Za-z])+/g, "");
+        changeCol[colName] = {
+          format: format,
+          length: format.length
+        };
+      }
+    }
+  
+    if (Object.keys(changeCol).length !== 0) {
+      var changeColKeys = Object.keys(changeCol);
+  
+      //DataFormatì˜ ê¸¸ì´ë§Œí¼ ë¬¸ìì—´ì„ ìë¦„
+      for (var row = 0; row < cdata.length; row++) {
+        for (var colName in cdata[row]) {
+          if (changeColKeys.indexOf(colName) > -1) {
+            // ë¬¸ìì—´ë§Œ ì²˜ë¦¬
+            if (typeof ((cdata[row])[colName]) == "string") {
+              //ì‹¤ì œ ê°’
+              var v = (cdata[row])[colName];
+              //MMddë§Œ ê°’ì´ 8ìë¦¬ ì´ìƒì´ë©´ ì¤‘ê°„ì— 4ìë¦¬ë§Œ pick
+              if (changeCol[colName].format == "MMdd" && v.length != 4) {
+                if (v.length > 7) {
+                  v = v.substr(4, 4);
+                }
+              } else {
+                //ì¼ë°˜ì ìœ¼ë¡œ ëª¨ë‘ í¬ë§·ì˜ ë¬¸ìì—´ ê¸¸ì´ë§Œí¼ ìë¦„
+                v = v.substr(0, changeCol[colName].length);
+              }
+              //ìˆ˜ì •í•œ ê°’ì„ ì›ë˜ ìœ„ì¹˜ì— ëŒ€ì…
+              (cdata[row])[colName] = v;
+            }
           }
         }
       }
     }
-  }
-};
-
-/* ibsheet7ÀÇ Tree ±¸Á¶ Json µ¥ÀÌÅÍ¸¦ ibsheet8 Çü½Ä¿¡ ¸Â°Ô ÆÄ½ÌÇØÁÖ´Â ¸Ş¼Òµå */
-_IBSheet.v7.convertTreeData = function (data7) {
-    var targetArr;
-    var toString = Object.prototype.toString;
-    var startLevel = 0;
-    switch (toString.call(data7)) {
-      case "[object Object]":
-        if (!(data7["data"] || data7["Data"]) ||
-          toString.call((data7["data"] || data7["Data"])) !== "[object Array]")
+  };
+  
+  /* ibsheet7ì˜ Tree êµ¬ì¡° Json ë°ì´í„°ë¥¼ ibsheet8 í˜•ì‹ì— ë§ê²Œ íŒŒì‹±í•´ì£¼ëŠ” ë©”ì†Œë“œ */
+  _IBSheet.v7.convertTreeData = function (data7) {
+      var targetArr;
+      var toString = Object.prototype.toString;
+      var startLevel = 0;
+      switch (toString.call(data7)) {
+        case "[object Object]":
+          if (!(data7["data"] || data7["Data"]) ||
+            toString.call((data7["data"] || data7["Data"])) !== "[object Array]")
+            return false;
+          targetArr = (data7["data"] || data7["Data"]);
+          break;
+        case "[object Array]":
+          targetArr = data7;
+          break;
+        default:
           return false;
-        targetArr = (data7["data"] || data7["Data"]);
-        break;
-      case "[object Array]":
-        targetArr = data7;
-        break;
-      default:
-        return false;
-    }
-
-    targetArr = targetArr.reduce(function (accum, currentVal, curretIndex, array) {
-      var cloneObj = clone(currentVal);
-      if (cloneObj["HaveChild"]) {
-        cloneObj["Count"] = true;
-        delete cloneObj["HaveChild"];
       }
-      if (accum.length == 0) {
-        startLevel = parseInt(cloneObj["Level"]);
-        delete cloneObj["Level"];
-        accum.push(cloneObj);
-      } else if (currentVal["Level"] <= startLevel) {
-        startLevel = parseInt(cloneObj["Level"]);
-        delete cloneObj["Level"];
-        accum.push(cloneObj);
-      } else if (currentVal["Level"]) {
-        var parent = accum[accum.length - 1];
-        for (var i = startLevel; i < parseInt(currentVal["Level"]); i++) {
-          if (i === parseInt(currentVal["Level"]) - 1) {
-            if (!parent.Items) {
-              parent.Items = [];
+  
+      targetArr = targetArr.reduce(function (accum, currentVal, curretIndex, array) {
+        var cloneObj = clone(currentVal);
+        if (cloneObj["HaveChild"]) {
+          cloneObj["Count"] = true;
+          delete cloneObj["HaveChild"];
+        }
+        if (accum.length == 0) {
+          startLevel = parseInt(cloneObj["Level"]);
+          delete cloneObj["Level"];
+          accum.push(cloneObj);
+        } else if (currentVal["Level"] <= startLevel) {
+          startLevel = parseInt(cloneObj["Level"]);
+          delete cloneObj["Level"];
+          accum.push(cloneObj);
+        } else if (currentVal["Level"]) {
+          var parent = accum[accum.length - 1];
+          for (var i = startLevel; i < parseInt(currentVal["Level"]); i++) {
+            if (i === parseInt(currentVal["Level"]) - 1) {
+              if (!parent.Items) {
+                parent.Items = [];
+              }
+              delete cloneObj["Level"];
+              parent.Items.push(cloneObj);
+            } else {
+              parent = parent.Items[parent.Items.length - 1];
             }
-            delete cloneObj["Level"];
-            parent.Items.push(cloneObj);
-          } else {
-            parent = parent.Items[parent.Items.length - 1];
           }
         }
-      }
-      return accum;
-    }, []);
-
-    delete data7["Data"];
-    data7["data"] = targetArr;
-
-  return data7;
-};
-
-/*
- * ÀÏ¹İ ´Ş·Â »ç¿ë½Ã »ç¿ë ÇÔ¼ö
- * @param   : id          - fromÈ¤Àº to ³¯Â¥°¡ Ç¥½ÃµÉ input °´Ã¼
- * @param   : format      - ³¯Â¥ ÇüÅÂ YMD
- * @version : 1.0.0.0,
- *
- * @sample1
- * <span>
- * <input  type="text" name="eDate" id="eDate" DATE='YMD'/>
- * <button class='calbtn' onclick='IBSheet.v7.IBS_Calendar("eDate","yyyy-MM-dd")'>´Ş·Â</button>
- * </span>
- */
-_IBSheet.v7.IBS_Calendar = function(id,format) {
-    event.preventDefault();
-    var opt = {
-            Date:$("#"+id).val(),
-            Format:format,
-            OnButtonClick:function(evt){
-                if(evt==2){ //Áö¿ì±â
-                    $("#"+id).val("");
-                }
-                calObj.Close();
-            },
-    };
-    if(format=="yyyy-MM")opt.Buttons = 4;
-    function calPickCallBack(v){
-        $("#"+id).val(IBSheet.dateToString(parseInt(v), format) );
-    }
-    var calObj = IBSheet.showCalendar(opt,{Tag:id},calPickCallBack);
-}
-/**
- * ¿©·¯ °³ÀÇ ÇàÀ» ÇÑ¹ø¿¡ hideRowÇÏ´Â API
- * @method     hideRows
- * @param      {array[row objct]}    rows   µ¥ÀÌÅÍ ·Î¿ì °´Ã¼¸¦ ´ã°íÀÖ´Â ¹è¿­
- * @return     none
-*/
-Fn.hideRows = function(rows) {
-  if (!Array.isArray(rows)) return;
-
-  for (var i = 0; i < rows.length; i++) {
-    this.hideRow(rows[i], 0, 1, 1);
-  }
-  this.renderBody();
-}
-
-/**
- * ½ÃÆ®¿¡¼­ º¸¿©Áö´Â µ¥ÀÌÅÍ ·Î¿ì °´Ã¼¸¸À» ¹İÈ¯ÇÏ´Â API
- * @method     hideRows
- * @param      boolean   noSubTotal   ¼Ò°è/´©°è ÇàÀ» Á¦¿ÜÇÒÁö ¿©ºÎ
- * @return     array[row object]
-*/
-Fn.getDataVisibleRows = function (noSubTotal) {
-  var rows = [], row = this.getFirstVisibleRow();
-
-  while (row) {
-    if (row.Kind === 'Data') {
-      if ((noSubTotal && row.Name !== "SubSum") || !noSubTotal) {
-        rows[rows.length] = row;
-      }
-    }
-    row = this.getNextVisibleRow(row);
-  }
-
-  return rows;
-}
-
-/*------------------------------------------------------------------------------
-method : IBS_CopyForm2Sheet()
-desc  : Form°´Ã¼¿¡ ÀÖ´Â ³»¿ëÀ» ½ÃÆ®¿¡ º¹»ç
-param list
-param : json À¯Çü
-
-param ³»ºÎ ¼³Á¤°ª
-sheet : °ªÀ» ÀÔ·Â ¹ŞÀ» ibsheet °´Ã¼ (ÇÊ¼ö)
-form : copyÇÒ Æû°´Ã¼ (ÇÊ¼ö)
-row : ibsheet °´Ã¼ÀÇ Çà (default : ÇöÀç ¼±ÅÃµÈ Çà)
-sheetPreFiex : ¸ÊÇÎÇÒ ½ÃÆ®ÀÇ SavaName ¾Õ¿¡ PreFix ¹®ÀÚ (default : "")
-formPreFiex : ¸ÊÇÎÇÒ Æû°´Ã¼ÀÇ ÀÌ¸§ È¤Àº id ¾Õ¿¡  PreFix ¹®ÀÚ (default : "")
--------------------------------------------------------------------------------*/
-_IBSheet.v7.IBS_CopyForm2Sheet = function(param) {
-    var sheetobj,
-        formobj,
-        row,
-        sheetPreFix,
-        frmPreFix,
-        col,
-        colName,
-        baseName,
-        frmchild,
-		fType,
-		sType,
-        sValue;
-
-    if ((!param.sheet) || (typeof param.sheet.version != "function")) {
-        _IBSheet.v7.IBS_ShowErrMsg("sheet ÀÎÀÚ°¡ ¾ø°Å³ª ibsheet°´Ã¼°¡ ¾Æ´Õ´Ï´Ù.");
-        return false;
-    }
-    if (param.form == null || typeof param.form != "object" || param.form.tagName != "FORM") {
-        _IBSheet.v7.IBS_ShowErrMsg("form ÀÎÀÚ°¡ ¾ø°Å³ª FORM °´Ã¼°¡ ¾Æ´Õ´Ï´Ù.");
-        return false;
-    }
-
-    sheetobj = param.sheet;
-    formobj = param.form;
-    row = param.row == null ? sheetobj.getFocusedRow() : param.row;
-    sheetPreFix = param.sheetPreFix == null ? "" : param.sheetPreFix;
-    frmPreFix = param.formPreFix == null ? "" : param.formPreFix;
-    if (typeof row == "undefined") {
-        _IBSheet.v7.IBS_ShowErrMsg("row ÀÎÀÚ°¡ ¾ø°í, ¼±ÅÃµÈ ÇàÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
-        return;
-    }
-
-    //SheetÀÇ ÄÃ·³°³¼ö¸¸Å­ Ã£¾Æ¼­ HTMLÀÇ Form °¢ Control¿¡ °ªÀ» ¼³Á¤ÇÑ´Ù.
-    //ÄÃ·³°³¼ö¸¸Å­ ·çÇÁ ½ÇÇà
-    cols = sheetobj.getCols();
-    for (var col = 0; col < cols.length ; col++) {
-        //ÄÃ·³ÀÇ º°¸íÀ» ¹®ÀÚ¿­·Î °¡Á®¿Â´Ù.
-        colName = cols[col];
-
-        //PreFix°¡ ºÙÁö ¾ÊÀº ÇüÅÂÀÇ SaveNameÀ» °¡Á®¿Â´Ù.
-        baseName = colName.substring(sheetPreFix.length);
-
-        frmchild = null;
-        try {
-            //Æû¿¡ ÀÖ´Â ÇØ´ç ÀÌ¸§ÀÇ ÄÁÆ®·ÑÀ» °¡Á®¿Â´Ù.¿¹)"frm_CardNo"
-            frmchild = formobj[frmPreFix + baseName];
-        } catch (e) {
-
-        }
-
-        //Æû¿¡ ÇØ´çÇÏ´Â ÀÌ¸§ÀÇ ÄÁÆ®·ÑÀÌ ¾ø´Â °æ¿ì´Â °è¼Ó ÁøÇàÇÑ´Ù.
-        if (frmchild == null) continue;
-
-        fType = frmchild.type;
-        sValue = "";
-
-        //radioÀÇ °æ¿ì frmchild°¡ ¹è¿­ÇüÅÂ°¡ µÇ¹Ç·Î, frmchild.typeÀ¸·Î´Â Å¸ÀÔÀ» ¾Ë¼ö ¾ø´Ù.
-        if (typeof fType == "undefined" && frmchild.length > 0) {
-            fType = frmchild[0].type;
-        }
-		sType = sheetobj.getType(row,colName);
-		//ÀÏºÎ ÆíÁıÀÌ ºÒ°¡´ÉÇÑ Å¸ÀÔÀÇ ÄÃ·³Àº °Ç³Ê¶ÙÀÚ.
-		if(sType=="Button" || sType == "Link" || sType == "Img") continue;
-
-        //Å¸ÀÔº°·Î °ªÀ» ¼³Á¤ÇÑ´Ù.
-        switch (fType) {
-            case undefined:
-            case "button":
-            case "reset":
-            case "submit":
-                break;
-            case "radio":
-                for (var idx = 0; idx < frmchild.length; idx++) {
-                    if (frmchild[idx].checked) {
-                        sValue = frmchild[idx].value;
-                        break;
-                    }
-                }
-                break;
-            case "checkbox":
-                sValue = (frmchild.checked) ? 1 : 0;
-                break;
-            default:
-                sValue = frmchild.value;
-        } //end of switch
-        sheetobj.setString(row, sheetPreFix + baseName, sValue, 0);
-    } //end of for(col)
-	sheetobj.refreshRow(row);
-    //Á¤»óÀûÀÎ Ã³¸®¿Ï·á
-    return true;
-}
-/*----------------------------------------------------------------------------
-method : IBS_CopySheet2Form()
-desc : ½ÃÆ®ÀÇ ÇÑ ÇàÀ» Æû°´Ã¼¿¡ º¹»ç  (ibsheet7 ibsheetinfo.js ¸¶ÀÌ±×·¹ÀÌ¼Ç)
-
-param list
-param : json À¯Çü
-
-param ³»ºÎ ¼³Á¤°ª
-sheet : °ªÀ» ÀÔ·Â ¹ŞÀ» ibsheet °´Ã¼ (ÇÊ¼ö)
-form : copyÇÒ Æû°´Ã¼ (ÇÊ¼ö)
-row : ibsheet °´Ã¼ÀÇ Çà (default : ÇöÀç ¼±ÅÃµÈ Çà)
-sheetPreFix : ¸ÊÇÎÇÒ ½ÃÆ®ÀÇ SavaName ¾Õ¿¡ PreFix ¹®ÀÚ (default : "")
-formPreFix : ¸ÊÇÎÇÒ Æû°´Ã¼ÀÇ ÀÌ¸§ È¤Àº id ¾Õ¿¡  PreFix ¹®ÀÚ (default : "")
------------------------------------------------------------------------------*/
-_IBSheet.v7.IBS_CopySheet2Form = function(param) {
-    var sheetobj,
-    formobj,
-    row,
-    sheetPreFix,
-    frmPreFix,
-    cols,
-    col,
-    rmax,
-    colName,
-    baseName,
-    sheetvalue,
-    sheetstring,
-    frmchild,
-    sType,
-    fType,
-    sValue;
-
-    if ((!param.sheet) || (typeof param.sheet.version != "function")) {
-        _IBSheet.v7.IBS_ShowErrMsg("sheet ÀÎÀÚ°¡ ¾ø°Å³ª ibsheet°´Ã¼°¡ ¾Æ´Õ´Ï´Ù.");
-        return false;
-    }
-
-    if (param.form == null || typeof param.form != "object" || param.form.tagName != "FORM") {
-        _IBSheet.v7.IBS_ShowErrMsg("form ÀÎÀÚ°¡ ¾ø°Å³ª FORM °´Ã¼°¡ ¾Æ´Õ´Ï´Ù.");
-        return false;
-    }
-    sheetobj = param.sheet;
-    formobj = param.form;
-    row = param.row == null ? sheetobj.getFocusedRow() : param.row;
-    sheetPreFix = param.sheetPreFix == null ? "" : param.sheetPreFix;
-    frmPreFix = param.formPreFix == null ? "" : param.formPreFix;
-
-    if (typeof row == "undefined") {
-        _IBSheet.v7.IBS_ShowErrMsg("row ÀÎÀÚ°¡ ¾ø°í, ¼±ÅÃµÈ ÇàÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
-        return false;
-    }
-
-    //SheetÀÇ ÄÃ·³°³¼ö¸¸Å­ Ã£¾Æ¼­ HTMLÀÇ Form °¢ Control¿¡ °ªÀ» ¼³Á¤ÇÑ´Ù.
-    //ÄÃ·³°³¼ö¸¸Å­ ·çÇÁ ½ÇÇà
-    cols = sheetobj.getCols();
-    for (var col = 0; col < cols.length ; col++) {
-        //ÄÃ·³ÀÇ ÀÌ¸§À» °¡Á®¿Â´Ù.
-        colName = cols[col];
-
-        //PreFix°¡ ºÙÁö ¾ÊÀº ÇüÅÂÀÇ NameÀ» °¡Á®¿Â´Ù.
-        baseName = colName.substring(sheetPreFix.length);
-
-        sheetvalue = sheetobj.getValue(row, colName);
-
-        frmchild = null;
-        try {
-            //Æû¿¡ ÀÖ´Â ÇØ´ç ÀÌ¸§ÀÇ ÄÁÆ®·ÑÀ» °¡Á®¿Â´Ù.¿¹)"frm_CardNo"
-            frmchild = formobj[frmPreFix + baseName];
-        } catch (e) {
-
-        }
-
-        //Æû¿¡ ÇØ´çÇÏ´Â ÀÌ¸§ÀÇ ÄÁÆ®·ÑÀÌ ¾ø´Â °æ¿ì´Â °è¼Ó ÁøÇàÇÑ´Ù.
-        if (frmchild == null) {
-            continue;
-        }
-
-        fType = frmchild.type;
-        sValue = "";
-        //radioÀÇ °æ¿ì frmchild°¡ ¹è¿­ÇüÅÂ°¡ µÇ¹Ç·Î, frmchild.typeÀ¸·Î´Â Å¸ÀÔÀ» ¾Ë¼ö ¾ø´Ù.
-        if (typeof fType == "undefined" && frmchild.length > 0) {
-            fType = frmchild[0].type;
-        }
-        sType = sheetobj.getType(row,colName);
-
-        //ÀÏºÎ ÆíÁıÀÌ ºÒ°¡´ÉÇÑ Å¸ÀÔÀÇ ÄÃ·³Àº °Ç³Ê¶ÙÀÚ.
-        if(sType=="Button" || sType == "Link" || sType == "Img") continue;
-
-        //Å¸ÀÔº°·Î °ªÀ» ¼³Á¤ÇÑ´Ù.
-        switch (fType) {
-            case undefined:
-            case "button":
-            case "reset":
-            case "submit":
-                break;
-            case "select-one":
-                frmchild.value = sheetvalue;
-                break;
-            case "radio":
-                for (var idx = 0, rmax = frmchild.length; idx < rmax; idx++) {
-                    if (frmchild[idx].value == sheetvalue) {
-                        frmchild[idx].checked = true;
-                        break;
-                    }
-                }
-                break;
-            case "checkbox":
-                frmchild.checked = (sheetvalue == 1);
-                break;
-            default:
-                sheetstring = sheetobj.getString(row, colName);
-                //¼¿¿¡ °ªÀÌ ¾ø°í, EmptyValue°¡ ÀÖ´Â °æ¿ì, EmptyValue °ªÀÌ º¹»çµÇ´Â°Å ¹æÁö.
-                if(sheetvalue==="" && sheetstring!==""){
-                    sheetstring = "";
-                }
-                frmchild.value = sheetstring;
-                break;
-        } //end of switch
-    } //end of for(col)
-
-    //Á¤»óÀûÀÎ Ã³¸®¿Ï·á
-    return true;
-}
-//ibsheet7 ¿¡¼­ ¸¶ÀÌ±×·¹ÀÌ¼Ç
-/*
- * Form¿ÀºêÁ§Æ® ¾È¿¡ ÀÖ´Â ÄÁÆ®·ÑÀ» QueryStringÀ¸·Î ±¸¼ºÇÑ´Ù.
- * @param   : form          - form°´Ã¼ È¤Àº form°´Ã¼ id
- * @param   : checkRequired - ¼±ÅÃ,ÇÊ¼öÀÔ·Â Ã¼Å© ¿©ºÎ (boolean(default:true))
- * @param   : encoding      - ¹®ÀÚ¿­ ¿£ÄÚµù ¿©ºÎ (boolean(default:true))
- * @return  : String        - Form¿ÀºêÁ§Æ® ¾È¿¡ elementsÀ» QueryStringÀ¸·Î ±¸¼ºÇÑ ¹®ÀÚ¿­
- *            undefined     - checkRequiredÀÎÀÚ°¡ trueÀÌ°í, ÇÊ¼öÀÔ·Â¿¡ °É¸°°æ¿ì return °ª
- * @version : 1.0.0.0,
- *
- * @sample1
- *  var sCondParam=FormQueryString(document.frmSearch); //°á°ú:"txtname=ÀÌ°æÈñ&rdoYn=1&sltMoney=¿øÈ­";
- * @sample2
- *  <input type="text" name="txtName" required="ÀÌ¸§">        //ÇÊ¼ö ÀÔ·Â Ç×¸ñÀÌ¸é required="ÀÌ¸§" ¸¦ ¼³Á¤ÇÑ´Ù.
- *  var sCondParam = FormQueryString(document.mainForm, true);//ÇÊ¼öÀÔ·Â±îÁö Ã¼Å©ÇÏ¸ç, ÇÊ¼öÀÔ·Â¿¡ °É¸®¸é ¸®ÅÏ°ªÀº undefined
- *  if (sCondParam==null) return;
- */
-_IBSheet.v7.IBS_FormQueryString = function(form, checkRequired, encoding) {
-    if(typeof form == "string") form = document.getElementById(form)||document[form];
-    if (typeof form != "object" || form.tagName != "FORM") {
-        _IBSheet.v7.IBS_ShowErrMsg("FormQueryString ÇÔ¼öÀÇ ÀÎÀÚ´Â FORM ÅÂ±×°¡ ¾Æ´Õ´Ï´Ù.");
-        return;
-    }
-    //default setting
-    if(typeof checkRequired == "undefined") checkRequired = true;
-    if(typeof encoding == "undefined") encoding = true;
-
-    var name = new Array(form.elements.length);
-    var value = new Array(form.elements.length);
-    var j = 0;
-    var plain_text = "";
-
-    //»ç¿ë°¡´ÉÇÑ ÄÁÆ®·ÑÀ» ¹è¿­·Î »ı¼ºÇÑ´Ù.
-    var len = form.elements.length;
-    for (var i = 0; i < len; i++) {
-        var prev_j = j;
-        switch (form.elements[i].type) {
-            case undefined:
-            case "button":
-            case "reset":
-            case "submit":
-                break;
-            case "radio":
-            case "checkbox":
-                if (form.elements[i].checked == true) {
-                    name[j] = _IBSheet.v7.IBS_GetName(form.elements[i]);
-                    value[j] = form.elements[i].value;
-                    j++;
-                }
-                break;
-            case "select-one":
-                name[j] = _IBSheet.v7.IBS_GetName(form.elements[i]);
-                var ind = form.elements[i].selectedIndex;
-                if (ind >= 0) {
-
-                    value[j] = form.elements[i].options[ind].value;
-
-                } else {
-                    value[j] = "";
-                }
-                j++;
-                break;
-            case "select-multiple":
-                name[j] = _IBSheet.v7.IBS_GetName(form.elements[i]);
-                var llen = form.elements[i].length;
-                var increased = 0;
-                for (var k = 0; k < llen; k++) {
-                    if (form.elements[i].options[k].selected) {
-                        name[j] = _IBSheet.v7.IBS_GetName(form.elements[i]);
-                        value[j] = form.elements[i].options[k].value;
-                        j++;
-                        increased++;
-                    }
-                }
-                if (increased > 0) {
-                    j--;
-                } else {
-                    value[j] = "";
-                }
-                j++;
-                break;
-            default:
-                name[j] = _IBSheet.v7.IBS_GetName(form.elements[i]);
-                value[j] = form.elements[i].value;
-                j++;
-        }
-
-        if (checkRequired) {
-            //html ÄÁÆ®·Ñ ÅÂ±×¿¡ required¼Ó¼ºÀ» ¼³Á¤ÇÏ¸é ÇÊ¼öÀÔ·ÂÀ» È®ÀÎÇÒ ¼ö ÀÖ´Ù.
-            //<input type="text" name="txtName" required="ÀÌ¸§">
-
-            if (_IBSheet.v7.IBS_RequiredChk(form.elements[i]) && prev_j != j && value[prev_j] == "") {
-
-                if (form.elements[i].getAttribute("required") == null ||
-                    form.elements[i].getAttribute("required") == ""
-                ) {
-                    alert('"' + _IBSheet.v7.IBS_GetLabel(form.elements[i]) + '" Àº ÇÊ¼ö ÀÔ·Â Ç×¸ñ ÀÔ´Ï´Ù.' );
-                } else {
-
-                    alert('"' + form.elements[i].getAttribute("required") + '" Àº ÇÊ¼ö ÀÔ·Â Ç×¸ñ ÀÔ´Ï´Ù.');
-                }
-                //ÄÁÆ®·ÑÀÌ ¼û°ÜÁ® ÀÖÀ»¼öµµ ÀÖÀ¸¹Ç·Î ¿¡·¯ °¨½Ñ´Ù.
-                try {
-                    form.elements[i].focus();
-                } catch (ee) {;
-                }
-
-                return;
-            }
-        }
-    }
-    //QueryStringÀ» Á¶ÇÕÇÑ´Ù.
-    for (var i = 0; i < j; i++) {
-        if (name[i] != ''){
-            if(encoding){
-                plain_text += encodeURIComponent(name[i]) + "=" + encodeURIComponent(value[i]) + "&";
-            }else{
-                plain_text += name[i] + "=" + value[i] + "&";
-            }
-        }
-    }
-
-    //¸¶Áö¸·¿¡ &¸¦ ¾ø¾Ö±â À§ÇÔ
-    if (plain_text != "") plain_text = plain_text.substr(0, plain_text.length - 1);
-
-    return plain_text;
-}
-//ibsheet7 ¿¡¼­ ¸¶ÀÌ±×·¹ÀÌ¼Ç
-/*
- * Form¿ÀºêÁ§Æ® ¾È¿¡ ÀÖ´Â ÄÁÆ®·ÑÀ» Json ObjectÀ¸·Î ±¸¼ºÇÑ´Ù.
- * @param   : form          - form°´Ã¼ È¤Àº form°´Ã¼ id
- * @param   : checkRequired - ¼±ÅÃ,ÇÊ¼öÀÔ·Â Ã¼Å© ¿©ºÎ (boolean(default:true))
- * @param   : encoding      - ¹®ÀÚ¿­ ¿£ÄÚµù ¿©ºÎ (boolean(default:true))
- * @return  : String        - Form¿ÀºêÁ§Æ® ¾È¿¡ elementsÀ» QueryStringÀ¸·Î ±¸¼ºÇÑ ¹®ÀÚ¿­
- *            undefined     - checkRequiredÀÎÀÚ°¡ trueÀÌ°í, ÇÊ¼öÀÔ·Â¿¡ °É¸°°æ¿ì return °ª
- * @version : 1.0.0.0,
- *
- * @sample1
- *  var sCondParam=FormToJson(document.frmSearch); //°á°ú: {txtname:"ÀÌ°æÈñ" , "rdoYn":"on","sltMoney":"¿øÈ­"};
- * @sample2
- *  <input type="text" name="txtName" required="ÀÌ¸§">        //ÇÊ¼ö ÀÔ·Â Ç×¸ñÀÌ¸é required="ÀÌ¸§" ¸¦ ¼³Á¤ÇÑ´Ù.
- *  var sCondParam = FormToJson(document.mainForm, true);//ÇÊ¼öÀÔ·Â±îÁö Ã¼Å©ÇÏ¸ç, ÇÊ¼öÀÔ·Â¿¡ °É¸®¸é ¸®ÅÏ°ªÀº undefined
- *  if (sCondParam==null) return;
- */
-_IBSheet.v7.IBS_FormToJson = function(form, checkRequired, encoding) {
-    if(typeof form == "string") form = document.getElementById(form)||document[form];
-    if (typeof form != "object" || form.tagName != "FORM") {
-        _IBSheet.v7.IBS_ShowErrMsg("FormToJson ÇÔ¼öÀÇ ÀÎÀÚ´Â FORM ÅÂ±×°¡ ¾Æ´Õ´Ï´Ù.");
-        return;
-    }
-    //default setting
-    if(typeof checkRequired == "undefined") checkRequired = true;
-    if(typeof encoding == "undefined") encoding = true;
-
-    var name = new Array(form.elements.length);
-    var value = new Array(form.elements.length);
-    var j = 0;
-    var plain_obj = {};
-
-    //»ç¿ë°¡´ÉÇÑ ÄÁÆ®·ÑÀ» ¹è¿­·Î »ı¼ºÇÑ´Ù.
-    var len = form.elements.length;
-    for (var i = 0; i < len; i++) {
-        var prev_j = j;
-        switch (form.elements[i].type) {
-            case undefined:
-            case "button":
-            case "reset":
-            case "submit":
-                break;
-            case "radio":
-            case "checkbox":
-                if (form.elements[i].checked == true) {
-                    name[j] = _IBSheet.v7.IBS_GetName(form.elements[i]);
-                    value[j] = form.elements[i].value;
-                    j++;
-                }
-                break;
-            case "select-one":
-                name[j] = _IBSheet.v7.IBS_GetName(form.elements[i]);
-                var ind = form.elements[i].selectedIndex;
-                if (ind >= 0) {
-                    value[j] = form.elements[i].options[ind].value;
-                } else {
-                    value[j] = "";
-                }
-                j++;
-                break;
-            case "select-multiple":
-                name[j] = _IBSheet.v7.IBS_GetName(form.elements[i]);
-                var llen = form.elements[i].length;
-                var increased = 0;
-                for (var k = 0; k < llen; k++) {
-                    if (form.elements[i].options[k].selected) {
-                        name[j] = _IBSheet.v7.IBS_GetName(form.elements[i]);
-                        value[j] = form.elements[i].options[k].value;
-                        j++;
-                        increased++;
-                    }
-                }
-                if (increased > 0) {
-                    j--;
-                } else {
-                    value[j] = "";
-                }
-                j++;
-                break;
-            default:
-                name[j] = _IBSheet.v7.IBS_GetName(form.elements[i]);
-                value[j] = form.elements[i].value;
-                j++;
-        }
-
-        if (checkRequired) {
-            //html ÄÁÆ®·Ñ ÅÂ±×¿¡ required¼Ó¼ºÀ» ¼³Á¤ÇÏ¸é ÇÊ¼öÀÔ·ÂÀ» È®ÀÎÇÒ ¼ö ÀÖ´Ù.
-            //<input type="text" name="txtName" required="ÀÌ¸§">
-
-            if (_IBSheet.v7.IBS_RequiredChk(form.elements[i]) && prev_j != j && value[prev_j] == "") {
-
-                if (form.elements[i].getAttribute("required") == null ||
-                    form.elements[i].getAttribute("required") == ""
-                ) {
-                    alert('"' + _IBSheet.v7.IBS_GetLabel(form.elements[i]) + '" Àº ÇÊ¼ö ÀÔ·Â Ç×¸ñ ÀÔ´Ï´Ù.' );
-                } else {
-
-                    alert('"' + form.elements[i].getAttribute("required") + '" Àº ÇÊ¼ö ÀÔ·Â Ç×¸ñ ÀÔ´Ï´Ù.');
-                }
-                //ÄÁÆ®·ÑÀÌ ¼û°ÜÁ® ÀÖÀ»¼öµµ ÀÖÀ¸¹Ç·Î ¿¡·¯ °¨½Ñ´Ù.
-                try {
-                    form.elements[i].focus();
-                } catch (ee) {;
-                }
-
-                return;
-            }
-        }
-    }
-
-    //JSONÀ» Á¶ÇÕÇÑ´Ù.
-    var tname = "";
-    var tvalue = "";
-    for (var i = 0; i < j; i++) {
-        if(encoding){
-            tname = encodeURIComponent(name[i]);
-            tvalue = encodeURIComponent(value[i])
-        }else{
-            tname = name[i];
-            tvalue = value[i];
-        }
-        if (name[i] != ''){
-                //ÀÌ¹Ì ÀÖ´Ù¸é ¹è¿­·Î º¯°æ
-                if(plain_obj[tname]){
-                    //ÀÌ¹Ì ¹è¿­ÀÎ °æ¿ì
-                    if( Array.isArray(plain_obj[tname]) ){
-                        plain_obj[tname].push(tvalue);
-                    }else{
-                        plain_obj[tname] = [plain_obj[tname] , tvalue ];
-                    }
-                }else{
-                    plain_obj[tname] = tvalue;
-                }
-        }
-    }
-
-    return plain_obj;
-}
-/*
- * FromToCalendar »ç¿ë½Ã »ç¿ë ÇÔ¼ö
- * @param   : id          - fromÈ¤Àº to ³¯Â¥°¡ Ç¥½ÃµÉ input °´Ã¼
- * @param   : format      - ³¯Â¥ ÇüÅÂ YMD
- * @version : 1.0.0.0,
- *
- * @sample1
- *  <span>
- *  <input type='text' name="fromID" id="fromID" DATE='FromYMD' DATE_REF="toID"/>
- *  <button class='calbtn' onclick='IBSheet.v7.IBS_FromToCalendar("fromID","yyyy-MM-dd")'>´Ş·Â</button>
- *  ~ <input type='text' name="toID" id="toID" DATE='ToYMD' DATE_REF="fromID"/>
- *  <button class='calbtn' onclick='IBSheet.v7.IBS_FromToCalendar("toID","yyyy-MM-dd")'>´Ş·Â</button>
- *  </span>
- */
-_IBSheet.v7.IBS_FromToCalendar = function(id,format) {
-    if(event!=null){
-	    event.preventDefault();
-    }
-    var ele = document.getElementById(id);
-    var isFrom = ele.getAttribute("DATE")=="FromYMD";
-    var oppoID = ele.getAttribute("DATE_REF");
-    var oppoValue = document.getElementById(oppoID).value;
-    var oppoValueTimeStamp = oppoValue!=""?IBSheet.stringToDate(oppoValue,format):null;
-    var opt = {
-            Format:format,
-            RowsPrev:2,
-            RowsNext:2,
-            Buttons:6,
-            Texts:{Ok:"´İ±â",Clear:"Áö¿ì±â"},
-            OnCanEditDate:function(d){
-              if(oppoValue!=""){
-                  if(isFrom){
-                      if(d>oppoValueTimeStamp) return false;
-                  }else{
-                      if(d<oppoValueTimeStamp) return false;
+        return accum;
+      }, []);
+  
+      delete data7["Data"];
+      data7["data"] = targetArr;
+  
+    return data7;
+  };
+  
+  /*
+   * ì¼ë°˜ ë‹¬ë ¥ ì‚¬ìš©ì‹œ ì‚¬ìš© í•¨ìˆ˜
+   * @param   : id          - fromí˜¹ì€ to ë‚ ì§œê°€ í‘œì‹œë  input ê°ì²´
+   * @param   : format      - ë‚ ì§œ í˜•íƒœ YMD
+   * @version : 1.0.0.0,
+   *
+   * @sample1
+   * <span>
+   * <input  type="text" name="eDate" id="eDate" DATE='YMD'/>
+   * <button class='calbtn' onclick='IBSheet.v7.IBS_Calendar("eDate","yyyy-MM-dd")'>ë‹¬ë ¥</button>
+   * </span>
+   */
+  _IBSheet.v7.IBS_Calendar = function(id,format) {
+      event.preventDefault();
+      var opt = {
+              Date:$("#"+id).val(),
+              Format:format,
+              OnButtonClick:function(evt){
+                  if(evt==2){ //ì§€ìš°ê¸°
+                      $("#"+id).val("");
                   }
-              }
-            },
-            OnGetCalendarDate:function(d,dt,cls,r){
-                var targetValue = document.getElementById(id).value;
-                if(oppoValue=="" || targetValue =="") return;
-                var targetValueTimeStamp = IBSheet.stringToDate(targetValue,format);
-                if(isFrom){
-                    if(d>=targetValueTimeStamp && d<=oppoValueTimeStamp)  return "<span style='color:orange'>"+dt+"</span>";
-                }else{
-                    if(d<=targetValueTimeStamp && d>=oppoValueTimeStamp)  return "<span style='color:orange'>"+dt+"</span>";
-                }
-            },
-            OnButtonClick:function(evt){
-                if(evt==2){ //Áö¿ì±â
-                    $("#"+id).val("");
-                }
-                fromtoCal.Close();
-            }
-    };
-    //´Ş·Â¿¡¼­ ÀÏÀÚ ¼±ÅÃ½Ã callback(¹İ´ëÆí ´Ş·ÂÀ» ¶ç¿î´Ù.)
-    function calPickCallBack(v){
-        $("#"+id).val(IBSheet.dateToString(parseInt(v), format) );
-        var ele = document.getElementById(id);
-        var oppoID = ele.getAttribute("DATE_REF");
-        var oppoValue = document.getElementById(oppoID).value;
-        if(oppoValue==""){
-			if(event!=null){
-                event.preventDefault();
-            }
-            _IBSheet.v7.IBS_FromToCalendar(oppoID,format);
+                  calObj.Close();
+              },
+      };
+      if(format=="yyyy-MM")opt.Buttons = 4;
+      function calPickCallBack(v){
+          $("#"+id).val(IBSheet.dateToString(parseInt(v), format) );
+      }
+      var calObj = IBSheet.showCalendar(opt,{Tag:id},calPickCallBack);
+  }
+  /**
+   * ì—¬ëŸ¬ ê°œì˜ í–‰ì„ í•œë²ˆì— hideRowí•˜ëŠ” API
+   * @method     hideRows
+   * @param      {array[row objct]}    rows   ë°ì´í„° ë¡œìš° ê°ì²´ë¥¼ ë‹´ê³ ìˆëŠ” ë°°ì—´
+   * @return     none
+  */
+  Fn.hideRows = function(rows) {
+    if (!Array.isArray(rows)) return;
+  
+    for (var i = 0; i < rows.length; i++) {
+      this.hideRow(rows[i], 0, 1, 1);
+    }
+    this.renderBody();
+  }
+  
+  /**
+   * ì‹œíŠ¸ì—ì„œ ë³´ì—¬ì§€ëŠ” ë°ì´í„° ë¡œìš° ê°ì²´ë§Œì„ ë°˜í™˜í•˜ëŠ” API
+   * @method     hideRows
+   * @param      boolean   noSubTotal   ì†Œê³„/ëˆ„ê³„ í–‰ì„ ì œì™¸í• ì§€ ì—¬ë¶€
+   * @return     array[row object]
+  */
+  Fn.getDataVisibleRows = function (noSubTotal) {
+    var rows = [], row = this.getFirstVisibleRow();
+  
+    while (row) {
+      if (row.Kind === 'Data') {
+        if ((noSubTotal && row.Name !== "SubSum") || !noSubTotal) {
+          rows[rows.length] = row;
         }
+      }
+      row = this.getNextVisibleRow(row);
     }
-    var fromtoCal = IBSheet.showCalendar(opt,{Tag:id},calPickCallBack.bind(id));
-}
-//ibsheet7 ¿¡¼­ ¸¶ÀÌ±×·¹ÀÌ¼Ç
-//½ÃÆ®ÀÇ °¢ ÄÃ·³ NameÀ» ±¸ºĞÀÚ "|"¿¬°áÇÑ stringÀ¸·Î ¸®ÅÏ
-//param : ibsheet °´Ã¼
-_IBSheet.v7.IBS_ConcatSaveName = function(sheet) {
-    return sheet.getCols().join("|");
-}
-
-/**
- * ¿¡·¯¸Ş½ÃÁö¸¦ Ç¥½ÃÇÑ´Ù. IBS_ShowErrMsg ´ë½Å ÀÌ ÇÔ¼ö¸¦ »ç¿ëÇØ¾ß ÇÑ´Ù.
- * @param   : sMsg      - ¸Ş½ÃÁö
- * @return  : ¾øÀ½
- * @version : 3.4.0.50
- * @sample
- *  IBS_ShowErrMsg("¿¡·¯°¡ ¹ß»ıÇß½À´Ï´Ù.");
- */
-_IBSheet.v7.IBS_ShowErrMsg = function(sMsg) {
-    return alert("[ibsheet-common]\n" + sMsg);
-}
-
-//required ¿©ºÎ È®ÀÎ
-_IBSheet.v7.IBS_RequiredChk = function(obj) {
-    return (obj.getAttribute("required") != null);
-}
-//°´Ã¼ÀÇ id È¤Àº nameÀ» ¸®ÅÏ
-_IBSheet.v7.IBS_GetName = function(obj) {
-    if (obj.name != "") {
-        return obj.name;
-    } else if (obj.id != "") {
-        return obj.id;
-    } else {
-        return "";
-    }
-}
-
-//°´Ã¼ÀÇ label È¤Àº id È¤Àº nameÀ» ¸®ÅÏ
-_IBSheet.v7.IBS_GetLabel = function(obj){
-    if(obj.labels && obj.labels.length>0){
-        return obj.labels[0].textContent;
-    } else{
-        return _IBSheet.v7.IBS_GetName(obj);
-    }
-}
-}(window, document));
-
+  
+    return rows;
+  }
+  
+  /*------------------------------------------------------------------------------
+  method : IBS_CopyForm2Sheet()
+  desc  : Formê°ì²´ì— ìˆëŠ” ë‚´ìš©ì„ ì‹œíŠ¸ì— ë³µì‚¬
+  param list
+  param : json ìœ í˜•
+  
+  param ë‚´ë¶€ ì„¤ì •ê°’
+  sheet : ê°’ì„ ì…ë ¥ ë°›ì„ ibsheet ê°ì²´ (í•„ìˆ˜)
+  form : copyí•  í¼ê°ì²´ (í•„ìˆ˜)
+  row : ibsheet ê°ì²´ì˜ í–‰ (default : í˜„ì¬ ì„ íƒëœ í–‰)
+  sheetPreFiex : ë§µí•‘í•  ì‹œíŠ¸ì˜ SavaName ì•ì— PreFix ë¬¸ì (default : "")
+  formPreFiex : ë§µí•‘í•  í¼ê°ì²´ì˜ ì´ë¦„ í˜¹ì€ id ì•ì—  PreFix ë¬¸ì (default : "")
+  -------------------------------------------------------------------------------*/
+  _IBSheet.v7.IBS_CopyForm2Sheet = function(param) {
+      var sheetobj,
+          formobj,
+          row,
+          sheetPreFix,
+          frmPreFix,
+          col,
+          colName,
+          baseName,
+          frmchild,
+      fType,
+      sType,
+          sValue;
+  
+      if ((!param.sheet) || (typeof param.sheet.version != "function")) {
+          _IBSheet.v7.IBS_ShowErrMsg("sheet ì¸ìê°€ ì—†ê±°ë‚˜ ibsheetê°ì²´ê°€ ì•„ë‹™ë‹ˆë‹¤.");
+          return false;
+      }
+      if (param.form == null || typeof param.form != "object" || param.form.tagName != "FORM") {
+          _IBSheet.v7.IBS_ShowErrMsg("form ì¸ìê°€ ì—†ê±°ë‚˜ FORM ê°ì²´ê°€ ì•„ë‹™ë‹ˆë‹¤.");
+          return false;
+      }
+  
+      sheetobj = param.sheet;
+      formobj = param.form;
+      row = param.row == null ? sheetobj.getFocusedRow() : param.row;
+      sheetPreFix = param.sheetPreFix == null ? "" : param.sheetPreFix;
+      frmPreFix = param.formPreFix == null ? "" : param.formPreFix;
+      if (typeof row == "undefined") {
+          _IBSheet.v7.IBS_ShowErrMsg("row ì¸ìê°€ ì—†ê³ , ì„ íƒëœ í–‰ì´ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
+          return;
+      }
+  
+      //Sheetì˜ ì»¬ëŸ¼ê°œìˆ˜ë§Œí¼ ì°¾ì•„ì„œ HTMLì˜ Form ê° Controlì— ê°’ì„ ì„¤ì •í•œë‹¤.
+      //ì»¬ëŸ¼ê°œìˆ˜ë§Œí¼ ë£¨í”„ ì‹¤í–‰
+      cols = sheetobj.getCols();
+      for (var col = 0; col < cols.length ; col++) {
+          //ì»¬ëŸ¼ì˜ ë³„ëª…ì„ ë¬¸ìì—´ë¡œ ê°€ì ¸ì˜¨ë‹¤.
+          colName = cols[col];
+  
+          //PreFixê°€ ë¶™ì§€ ì•Šì€ í˜•íƒœì˜ SaveNameì„ ê°€ì ¸ì˜¨ë‹¤.
+          baseName = colName.substring(sheetPreFix.length);
+  
+          frmchild = null;
+          try {
+              //í¼ì— ìˆëŠ” í•´ë‹¹ ì´ë¦„ì˜ ì»¨íŠ¸ë¡¤ì„ ê°€ì ¸ì˜¨ë‹¤.ì˜ˆ)"frm_CardNo"
+              frmchild = formobj[frmPreFix + baseName];
+          } catch (e) {
+  
+          }
+  
+          //í¼ì— í•´ë‹¹í•˜ëŠ” ì´ë¦„ì˜ ì»¨íŠ¸ë¡¤ì´ ì—†ëŠ” ê²½ìš°ëŠ” ê³„ì† ì§„í–‰í•œë‹¤.
+          if (frmchild == null) continue;
+  
+          fType = frmchild.type;
+          sValue = "";
+  
+          //radioì˜ ê²½ìš° frmchildê°€ ë°°ì—´í˜•íƒœê°€ ë˜ë¯€ë¡œ, frmchild.typeìœ¼ë¡œëŠ” íƒ€ì…ì„ ì•Œìˆ˜ ì—†ë‹¤.
+          if (typeof fType == "undefined" && frmchild.length > 0) {
+              fType = frmchild[0].type;
+          }
+      sType = sheetobj.getType(row,colName);
+      //ì¼ë¶€ í¸ì§‘ì´ ë¶ˆê°€ëŠ¥í•œ íƒ€ì…ì˜ ì»¬ëŸ¼ì€ ê±´ë„ˆë›°ì.
+      if(sType=="Button" || sType == "Link" || sType == "Img") continue;
+  
+          //íƒ€ì…ë³„ë¡œ ê°’ì„ ì„¤ì •í•œë‹¤.
+          switch (fType) {
+              case undefined:
+              case "button":
+              case "reset":
+              case "submit":
+                  break;
+              case "radio":
+                  for (var idx = 0; idx < frmchild.length; idx++) {
+                      if (frmchild[idx].checked) {
+                          sValue = frmchild[idx].value;
+                          break;
+                      }
+                  }
+                  break;
+              case "checkbox":
+                  sValue = (frmchild.checked) ? 1 : 0;
+                  break;
+              default:
+                  sValue = frmchild.value;
+          } //end of switch
+          sheetobj.setString(row, sheetPreFix + baseName, sValue, 0);
+      } //end of for(col)
+    sheetobj.refreshRow(row);
+      //ì •ìƒì ì¸ ì²˜ë¦¬ì™„ë£Œ
+      return true;
+  }
+  /*----------------------------------------------------------------------------
+  method : IBS_CopySheet2Form()
+  desc : ì‹œíŠ¸ì˜ í•œ í–‰ì„ í¼ê°ì²´ì— ë³µì‚¬  (ibsheet7 ibsheetinfo.js ë§ˆì´ê·¸ë ˆì´ì…˜)
+  
+  param list
+  param : json ìœ í˜•
+  
+  param ë‚´ë¶€ ì„¤ì •ê°’
+  sheet : ê°’ì„ ì…ë ¥ ë°›ì„ ibsheet ê°ì²´ (í•„ìˆ˜)
+  form : copyí•  í¼ê°ì²´ (í•„ìˆ˜)
+  row : ibsheet ê°ì²´ì˜ í–‰ (default : í˜„ì¬ ì„ íƒëœ í–‰)
+  sheetPreFix : ë§µí•‘í•  ì‹œíŠ¸ì˜ SavaName ì•ì— PreFix ë¬¸ì (default : "")
+  formPreFix : ë§µí•‘í•  í¼ê°ì²´ì˜ ì´ë¦„ í˜¹ì€ id ì•ì—  PreFix ë¬¸ì (default : "")
+  -----------------------------------------------------------------------------*/
+  _IBSheet.v7.IBS_CopySheet2Form = function(param) {
+      var sheetobj,
+      formobj,
+      row,
+      sheetPreFix,
+      frmPreFix,
+      cols,
+      col,
+      rmax,
+      colName,
+      baseName,
+      sheetvalue,
+      sheetstring,
+      frmchild,
+      sType,
+      fType,
+      sValue;
+  
+      if ((!param.sheet) || (typeof param.sheet.version != "function")) {
+          _IBSheet.v7.IBS_ShowErrMsg("sheet ì¸ìê°€ ì—†ê±°ë‚˜ ibsheetê°ì²´ê°€ ì•„ë‹™ë‹ˆë‹¤.");
+          return false;
+      }
+  
+      if (param.form == null || typeof param.form != "object" || param.form.tagName != "FORM") {
+          _IBSheet.v7.IBS_ShowErrMsg("form ì¸ìê°€ ì—†ê±°ë‚˜ FORM ê°ì²´ê°€ ì•„ë‹™ë‹ˆë‹¤.");
+          return false;
+      }
+      sheetobj = param.sheet;
+      formobj = param.form;
+      row = param.row == null ? sheetobj.getFocusedRow() : param.row;
+      sheetPreFix = param.sheetPreFix == null ? "" : param.sheetPreFix;
+      frmPreFix = param.formPreFix == null ? "" : param.formPreFix;
+  
+      if (typeof row == "undefined") {
+          _IBSheet.v7.IBS_ShowErrMsg("row ì¸ìê°€ ì—†ê³ , ì„ íƒëœ í–‰ì´ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
+          return false;
+      }
+  
+      //Sheetì˜ ì»¬ëŸ¼ê°œìˆ˜ë§Œí¼ ì°¾ì•„ì„œ HTMLì˜ Form ê° Controlì— ê°’ì„ ì„¤ì •í•œë‹¤.
+      //ì»¬ëŸ¼ê°œìˆ˜ë§Œí¼ ë£¨í”„ ì‹¤í–‰
+      cols = sheetobj.getCols();
+      for (var col = 0; col < cols.length ; col++) {
+          //ì»¬ëŸ¼ì˜ ì´ë¦„ì„ ê°€ì ¸ì˜¨ë‹¤.
+          colName = cols[col];
+  
+          //PreFixê°€ ë¶™ì§€ ì•Šì€ í˜•íƒœì˜ Nameì„ ê°€ì ¸ì˜¨ë‹¤.
+          baseName = colName.substring(sheetPreFix.length);
+  
+          sheetvalue = sheetobj.getValue(row, colName);
+  
+          frmchild = null;
+          try {
+              //í¼ì— ìˆëŠ” í•´ë‹¹ ì´ë¦„ì˜ ì»¨íŠ¸ë¡¤ì„ ê°€ì ¸ì˜¨ë‹¤.ì˜ˆ)"frm_CardNo"
+              frmchild = formobj[frmPreFix + baseName];
+          } catch (e) {
+  
+          }
+  
+          //í¼ì— í•´ë‹¹í•˜ëŠ” ì´ë¦„ì˜ ì»¨íŠ¸ë¡¤ì´ ì—†ëŠ” ê²½ìš°ëŠ” ê³„ì† ì§„í–‰í•œë‹¤.
+          if (frmchild == null) {
+              continue;
+          }
+  
+          fType = frmchild.type;
+          sValue = "";
+          //radioì˜ ê²½ìš° frmchildê°€ ë°°ì—´í˜•íƒœê°€ ë˜ë¯€ë¡œ, frmchild.typeìœ¼ë¡œëŠ” íƒ€ì…ì„ ì•Œìˆ˜ ì—†ë‹¤.
+          if (typeof fType == "undefined" && frmchild.length > 0) {
+              fType = frmchild[0].type;
+          }
+          sType = sheetobj.getType(row,colName);
+  
+          //ì¼ë¶€ í¸ì§‘ì´ ë¶ˆê°€ëŠ¥í•œ íƒ€ì…ì˜ ì»¬ëŸ¼ì€ ê±´ë„ˆë›°ì.
+          if(sType=="Button" || sType == "Link" || sType == "Img") continue;
+  
+          //íƒ€ì…ë³„ë¡œ ê°’ì„ ì„¤ì •í•œë‹¤.
+          switch (fType) {
+              case undefined:
+              case "button":
+              case "reset":
+              case "submit":
+                  break;
+              case "select-one":
+                  frmchild.value = sheetvalue;
+                  break;
+              case "radio":
+                  for (var idx = 0, rmax = frmchild.length; idx < rmax; idx++) {
+                      if (frmchild[idx].value == sheetvalue) {
+                          frmchild[idx].checked = true;
+                          break;
+                      }
+                  }
+                  break;
+              case "checkbox":
+                  frmchild.checked = (sheetvalue == 1);
+                  break;
+              default:
+                  sheetstring = sheetobj.getString(row, colName);
+                  //ì…€ì— ê°’ì´ ì—†ê³ , EmptyValueê°€ ìˆëŠ” ê²½ìš°, EmptyValue ê°’ì´ ë³µì‚¬ë˜ëŠ”ê±° ë°©ì§€.
+                  if(sheetvalue==="" && sheetstring!==""){
+                      sheetstring = "";
+                  }
+                  frmchild.value = sheetstring;
+                  break;
+          } //end of switch
+      } //end of for(col)
+  
+      //ì •ìƒì ì¸ ì²˜ë¦¬ì™„ë£Œ
+      return true;
+  }
+  //ibsheet7 ì—ì„œ ë§ˆì´ê·¸ë ˆì´ì…˜
+  /*
+   * Formì˜¤ë¸Œì íŠ¸ ì•ˆì— ìˆëŠ” ì»¨íŠ¸ë¡¤ì„ QueryStringìœ¼ë¡œ êµ¬ì„±í•œë‹¤.
+   * @param   : form          - formê°ì²´ í˜¹ì€ formê°ì²´ id
+   * @param   : checkRequired - ì„ íƒ,í•„ìˆ˜ì…ë ¥ ì²´í¬ ì—¬ë¶€ (boolean(default:true))
+   * @param   : encoding      - ë¬¸ìì—´ ì—”ì½”ë”© ì—¬ë¶€ (boolean(default:true))
+   * @return  : String        - Formì˜¤ë¸Œì íŠ¸ ì•ˆì— elementsì„ QueryStringìœ¼ë¡œ êµ¬ì„±í•œ ë¬¸ìì—´
+   *            undefined     - checkRequiredì¸ìê°€ trueì´ê³ , í•„ìˆ˜ì…ë ¥ì— ê±¸ë¦°ê²½ìš° return ê°’
+   * @version : 1.0.0.0,
+   *
+   * @sample1
+   *  var sCondParam=FormQueryString(document.frmSearch); //ê²°ê³¼:"txtname=ì´ê²½í¬&rdoYn=1&sltMoney=ì›í™”";
+   * @sample2
+   *  <input type="text" name="txtName" required="ì´ë¦„">        //í•„ìˆ˜ ì…ë ¥ í•­ëª©ì´ë©´ required="ì´ë¦„" ë¥¼ ì„¤ì •í•œë‹¤.
+   *  var sCondParam = FormQueryString(document.mainForm, true);//í•„ìˆ˜ì…ë ¥ê¹Œì§€ ì²´í¬í•˜ë©°, í•„ìˆ˜ì…ë ¥ì— ê±¸ë¦¬ë©´ ë¦¬í„´ê°’ì€ undefined
+   *  if (sCondParam==null) return;
+   */
+  _IBSheet.v7.IBS_FormQueryString = function(form, checkRequired, encoding) {
+      if(typeof form == "string") form = document.getElementById(form)||document[form];
+      if (typeof form != "object" || form.tagName != "FORM") {
+          _IBSheet.v7.IBS_ShowErrMsg("FormQueryString í•¨ìˆ˜ì˜ ì¸ìëŠ” FORM íƒœê·¸ê°€ ì•„ë‹™ë‹ˆë‹¤.");
+          return;
+      }
+      //default setting
+      if(typeof checkRequired == "undefined") checkRequired = true;
+      if(typeof encoding == "undefined") encoding = true;
+  
+      var name = new Array(form.elements.length);
+      var value = new Array(form.elements.length);
+      var j = 0;
+      var plain_text = "";
+  
+      //ì‚¬ìš©ê°€ëŠ¥í•œ ì»¨íŠ¸ë¡¤ì„ ë°°ì—´ë¡œ ìƒì„±í•œë‹¤.
+      var len = form.elements.length;
+      for (var i = 0; i < len; i++) {
+          var prev_j = j;
+          switch (form.elements[i].type) {
+              case undefined:
+              case "button":
+              case "reset":
+              case "submit":
+                  break;
+              case "radio":
+              case "checkbox":
+                  if (form.elements[i].checked == true) {
+                      name[j] = _IBSheet.v7.IBS_GetName(form.elements[i]);
+                      value[j] = form.elements[i].value;
+                      j++;
+                  }
+                  break;
+              case "select-one":
+                  name[j] = _IBSheet.v7.IBS_GetName(form.elements[i]);
+                  var ind = form.elements[i].selectedIndex;
+                  if (ind >= 0) {
+  
+                      value[j] = form.elements[i].options[ind].value;
+  
+                  } else {
+                      value[j] = "";
+                  }
+                  j++;
+                  break;
+              case "select-multiple":
+                  name[j] = _IBSheet.v7.IBS_GetName(form.elements[i]);
+                  var llen = form.elements[i].length;
+                  var increased = 0;
+                  for (var k = 0; k < llen; k++) {
+                      if (form.elements[i].options[k].selected) {
+                          name[j] = _IBSheet.v7.IBS_GetName(form.elements[i]);
+                          value[j] = form.elements[i].options[k].value;
+                          j++;
+                          increased++;
+                      }
+                  }
+                  if (increased > 0) {
+                      j--;
+                  } else {
+                      value[j] = "";
+                  }
+                  j++;
+                  break;
+              default:
+                  name[j] = _IBSheet.v7.IBS_GetName(form.elements[i]);
+                  value[j] = form.elements[i].value;
+                  j++;
+          }
+  
+          if (checkRequired) {
+              //html ì»¨íŠ¸ë¡¤ íƒœê·¸ì— requiredì†ì„±ì„ ì„¤ì •í•˜ë©´ í•„ìˆ˜ì…ë ¥ì„ í™•ì¸í•  ìˆ˜ ìˆë‹¤.
+              //<input type="text" name="txtName" required="ì´ë¦„">
+  
+              if (_IBSheet.v7.IBS_RequiredChk(form.elements[i]) && prev_j != j && value[prev_j] == "") {
+  
+                  if (form.elements[i].getAttribute("required") == null ||
+                      form.elements[i].getAttribute("required") == ""
+                  ) {
+                      alert('"' + _IBSheet.v7.IBS_GetLabel(form.elements[i]) + '" ì€ í•„ìˆ˜ ì…ë ¥ í•­ëª© ì…ë‹ˆë‹¤.' );
+                  } else {
+  
+                      alert('"' + form.elements[i].getAttribute("required") + '" ì€ í•„ìˆ˜ ì…ë ¥ í•­ëª© ì…ë‹ˆë‹¤.');
+                  }
+                  //ì»¨íŠ¸ë¡¤ì´ ìˆ¨ê²¨ì ¸ ìˆì„ìˆ˜ë„ ìˆìœ¼ë¯€ë¡œ ì—ëŸ¬ ê°ì‹¼ë‹¤.
+                  try {
+                      form.elements[i].focus();
+                  } catch (ee) {;
+                  }
+  
+                  return;
+              }
+          }
+      }
+      //QueryStringì„ ì¡°í•©í•œë‹¤.
+      for (var i = 0; i < j; i++) {
+          if (name[i] != ''){
+              if(encoding){
+                  plain_text += encodeURIComponent(name[i]) + "=" + encodeURIComponent(value[i]) + "&";
+              }else{
+                  plain_text += name[i] + "=" + value[i] + "&";
+              }
+          }
+      }
+  
+      //ë§ˆì§€ë§‰ì— &ë¥¼ ì—†ì• ê¸° ìœ„í•¨
+      if (plain_text != "") plain_text = plain_text.substr(0, plain_text.length - 1);
+  
+      return plain_text;
+  }
+  //ibsheet7 ì—ì„œ ë§ˆì´ê·¸ë ˆì´ì…˜
+  /*
+   * Formì˜¤ë¸Œì íŠ¸ ì•ˆì— ìˆëŠ” ì»¨íŠ¸ë¡¤ì„ Json Objectìœ¼ë¡œ êµ¬ì„±í•œë‹¤.
+   * @param   : form          - formê°ì²´ í˜¹ì€ formê°ì²´ id
+   * @param   : checkRequired - ì„ íƒ,í•„ìˆ˜ì…ë ¥ ì²´í¬ ì—¬ë¶€ (boolean(default:true))
+   * @param   : encoding      - ë¬¸ìì—´ ì—”ì½”ë”© ì—¬ë¶€ (boolean(default:true))
+   * @return  : String        - Formì˜¤ë¸Œì íŠ¸ ì•ˆì— elementsì„ QueryStringìœ¼ë¡œ êµ¬ì„±í•œ ë¬¸ìì—´
+   *            undefined     - checkRequiredì¸ìê°€ trueì´ê³ , í•„ìˆ˜ì…ë ¥ì— ê±¸ë¦°ê²½ìš° return ê°’
+   * @version : 1.0.0.0,
+   *
+   * @sample1
+   *  var sCondParam=FormToJson(document.frmSearch); //ê²°ê³¼: {txtname:"ì´ê²½í¬" , "rdoYn":"on","sltMoney":"ì›í™”"};
+   * @sample2
+   *  <input type="text" name="txtName" required="ì´ë¦„">        //í•„ìˆ˜ ì…ë ¥ í•­ëª©ì´ë©´ required="ì´ë¦„" ë¥¼ ì„¤ì •í•œë‹¤.
+   *  var sCondParam = FormToJson(document.mainForm, true);//í•„ìˆ˜ì…ë ¥ê¹Œì§€ ì²´í¬í•˜ë©°, í•„ìˆ˜ì…ë ¥ì— ê±¸ë¦¬ë©´ ë¦¬í„´ê°’ì€ undefined
+   *  if (sCondParam==null) return;
+   */
+  _IBSheet.v7.IBS_FormToJson = function(form, checkRequired, encoding) {
+      if(typeof form == "string") form = document.getElementById(form)||document[form];
+      if (typeof form != "object" || form.tagName != "FORM") {
+          _IBSheet.v7.IBS_ShowErrMsg("FormToJson í•¨ìˆ˜ì˜ ì¸ìëŠ” FORM íƒœê·¸ê°€ ì•„ë‹™ë‹ˆë‹¤.");
+          return;
+      }
+      //default setting
+      if(typeof checkRequired == "undefined") checkRequired = true;
+      if(typeof encoding == "undefined") encoding = true;
+  
+      var name = new Array(form.elements.length);
+      var value = new Array(form.elements.length);
+      var j = 0;
+      var plain_obj = {};
+  
+      //ì‚¬ìš©ê°€ëŠ¥í•œ ì»¨íŠ¸ë¡¤ì„ ë°°ì—´ë¡œ ìƒì„±í•œë‹¤.
+      var len = form.elements.length;
+      for (var i = 0; i < len; i++) {
+          var prev_j = j;
+          switch (form.elements[i].type) {
+              case undefined:
+              case "button":
+              case "reset":
+              case "submit":
+                  break;
+              case "radio":
+              case "checkbox":
+                  if (form.elements[i].checked == true) {
+                      name[j] = _IBSheet.v7.IBS_GetName(form.elements[i]);
+                      value[j] = form.elements[i].value;
+                      j++;
+                  }
+                  break;
+              case "select-one":
+                  name[j] = _IBSheet.v7.IBS_GetName(form.elements[i]);
+                  var ind = form.elements[i].selectedIndex;
+                  if (ind >= 0) {
+                      value[j] = form.elements[i].options[ind].value;
+                  } else {
+                      value[j] = "";
+                  }
+                  j++;
+                  break;
+              case "select-multiple":
+                  name[j] = _IBSheet.v7.IBS_GetName(form.elements[i]);
+                  var llen = form.elements[i].length;
+                  var increased = 0;
+                  for (var k = 0; k < llen; k++) {
+                      if (form.elements[i].options[k].selected) {
+                          name[j] = _IBSheet.v7.IBS_GetName(form.elements[i]);
+                          value[j] = form.elements[i].options[k].value;
+                          j++;
+                          increased++;
+                      }
+                  }
+                  if (increased > 0) {
+                      j--;
+                  } else {
+                      value[j] = "";
+                  }
+                  j++;
+                  break;
+              default:
+                  name[j] = _IBSheet.v7.IBS_GetName(form.elements[i]);
+                  value[j] = form.elements[i].value;
+                  j++;
+          }
+  
+          if (checkRequired) {
+              //html ì»¨íŠ¸ë¡¤ íƒœê·¸ì— requiredì†ì„±ì„ ì„¤ì •í•˜ë©´ í•„ìˆ˜ì…ë ¥ì„ í™•ì¸í•  ìˆ˜ ìˆë‹¤.
+              //<input type="text" name="txtName" required="ì´ë¦„">
+  
+              if (_IBSheet.v7.IBS_RequiredChk(form.elements[i]) && prev_j != j && value[prev_j] == "") {
+  
+                  if (form.elements[i].getAttribute("required") == null ||
+                      form.elements[i].getAttribute("required") == ""
+                  ) {
+                      alert('"' + _IBSheet.v7.IBS_GetLabel(form.elements[i]) + '" ì€ í•„ìˆ˜ ì…ë ¥ í•­ëª© ì…ë‹ˆë‹¤.' );
+                  } else {
+  
+                      alert('"' + form.elements[i].getAttribute("required") + '" ì€ í•„ìˆ˜ ì…ë ¥ í•­ëª© ì…ë‹ˆë‹¤.');
+                  }
+                  //ì»¨íŠ¸ë¡¤ì´ ìˆ¨ê²¨ì ¸ ìˆì„ìˆ˜ë„ ìˆìœ¼ë¯€ë¡œ ì—ëŸ¬ ê°ì‹¼ë‹¤.
+                  try {
+                      form.elements[i].focus();
+                  } catch (ee) {;
+                  }
+  
+                  return;
+              }
+          }
+      }
+  
+      //JSONì„ ì¡°í•©í•œë‹¤.
+      var tname = "";
+      var tvalue = "";
+      for (var i = 0; i < j; i++) {
+          if(encoding){
+              tname = encodeURIComponent(name[i]);
+              tvalue = encodeURIComponent(value[i])
+          }else{
+              tname = name[i];
+              tvalue = value[i];
+          }
+          if (name[i] != ''){
+                  //ì´ë¯¸ ìˆë‹¤ë©´ ë°°ì—´ë¡œ ë³€ê²½
+                  if(plain_obj[tname]){
+                      //ì´ë¯¸ ë°°ì—´ì¸ ê²½ìš°
+                      if( Array.isArray(plain_obj[tname]) ){
+                          plain_obj[tname].push(tvalue);
+                      }else{
+                          plain_obj[tname] = [plain_obj[tname] , tvalue ];
+                      }
+                  }else{
+                      plain_obj[tname] = tvalue;
+                  }
+          }
+      }
+  
+      return plain_obj;
+  }
+  /*
+   * FromToCalendar ì‚¬ìš©ì‹œ ì‚¬ìš© í•¨ìˆ˜
+   * @param   : id          - fromí˜¹ì€ to ë‚ ì§œê°€ í‘œì‹œë  input ê°ì²´
+   * @param   : format      - ë‚ ì§œ í˜•íƒœ YMD
+   * @version : 1.0.0.0,
+   *
+   * @sample1
+   *  <span>
+   *  <input type='text' name="fromID" id="fromID" DATE='FromYMD' DATE_REF="toID"/>
+   *  <button class='calbtn' onclick='IBSheet.v7.IBS_FromToCalendar("fromID","yyyy-MM-dd")'>ë‹¬ë ¥</button>
+   *  ~ <input type='text' name="toID" id="toID" DATE='ToYMD' DATE_REF="fromID"/>
+   *  <button class='calbtn' onclick='IBSheet.v7.IBS_FromToCalendar("toID","yyyy-MM-dd")'>ë‹¬ë ¥</button>
+   *  </span>
+   */
+  _IBSheet.v7.IBS_FromToCalendar = function(id,format) {
+      if(event!=null){
+        event.preventDefault();
+      }
+      var ele = document.getElementById(id);
+      var isFrom = ele.getAttribute("DATE")=="FromYMD";
+      var oppoID = ele.getAttribute("DATE_REF");
+      var oppoValue = document.getElementById(oppoID).value;
+      var oppoValueTimeStamp = oppoValue!=""?IBSheet.stringToDate(oppoValue,format):null;
+      var opt = {
+              Format:format,
+              RowsPrev:2,
+              RowsNext:2,
+              Buttons:6,
+              Texts:{Ok:"ë‹«ê¸°",Clear:"ì§€ìš°ê¸°"},
+              OnCanEditDate:function(d){
+                if(oppoValue!=""){
+                    if(isFrom){
+                        if(d>oppoValueTimeStamp) return false;
+                    }else{
+                        if(d<oppoValueTimeStamp) return false;
+                    }
+                }
+              },
+              OnGetCalendarDate:function(d,dt,cls,r){
+                  var targetValue = document.getElementById(id).value;
+                  if(oppoValue=="" || targetValue =="") return;
+                  var targetValueTimeStamp = IBSheet.stringToDate(targetValue,format);
+                  if(isFrom){
+                      if(d>=targetValueTimeStamp && d<=oppoValueTimeStamp)  return "<span style='color:orange'>"+dt+"</span>";
+                  }else{
+                      if(d<=targetValueTimeStamp && d>=oppoValueTimeStamp)  return "<span style='color:orange'>"+dt+"</span>";
+                  }
+              },
+              OnButtonClick:function(evt){
+                  if(evt==2){ //ì§€ìš°ê¸°
+                      $("#"+id).val("");
+                  }
+                  fromtoCal.Close();
+              }
+      };
+      //ë‹¬ë ¥ì—ì„œ ì¼ì ì„ íƒì‹œ callback(ë°˜ëŒ€í¸ ë‹¬ë ¥ì„ ë„ìš´ë‹¤.)
+      function calPickCallBack(v){
+          $("#"+id).val(IBSheet.dateToString(parseInt(v), format) );
+          var ele = document.getElementById(id);
+          var oppoID = ele.getAttribute("DATE_REF");
+          var oppoValue = document.getElementById(oppoID).value;
+          if(oppoValue==""){
+        if(event!=null){
+                  event.preventDefault();
+              }
+              _IBSheet.v7.IBS_FromToCalendar(oppoID,format);
+          }
+      }
+      var fromtoCal = IBSheet.showCalendar(opt,{Tag:id},calPickCallBack.bind(id));
+  }
+  //ibsheet7 ì—ì„œ ë§ˆì´ê·¸ë ˆì´ì…˜
+  //ì‹œíŠ¸ì˜ ê° ì»¬ëŸ¼ Nameì„ êµ¬ë¶„ì "|"ì—°ê²°í•œ stringìœ¼ë¡œ ë¦¬í„´
+  //param : ibsheet ê°ì²´
+  _IBSheet.v7.IBS_ConcatSaveName = function(sheet) {
+      return sheet.getCols().join("|");
+  }
+  
+  /**
+   * ì—ëŸ¬ë©”ì‹œì§€ë¥¼ í‘œì‹œí•œë‹¤. IBS_ShowErrMsg ëŒ€ì‹  ì´ í•¨ìˆ˜ë¥¼ ì‚¬ìš©í•´ì•¼ í•œë‹¤.
+   * @param   : sMsg      - ë©”ì‹œì§€
+   * @return  : ì—†ìŒ
+   * @version : 3.4.0.50
+   * @sample
+   *  IBS_ShowErrMsg("ì—ëŸ¬ê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤.");
+   */
+  _IBSheet.v7.IBS_ShowErrMsg = function(sMsg) {
+      return alert("[ibsheet-common]\n" + sMsg);
+  }
+  
+  //required ì—¬ë¶€ í™•ì¸
+  _IBSheet.v7.IBS_RequiredChk = function(obj) {
+      return (obj.getAttribute("required") != null);
+  }
+  //ê°ì²´ì˜ id í˜¹ì€ nameì„ ë¦¬í„´
+  _IBSheet.v7.IBS_GetName = function(obj) {
+      if (obj.name != "") {
+          return obj.name;
+      } else if (obj.id != "") {
+          return obj.id;
+      } else {
+          return "";
+      }
+  }
+  
+  //ê°ì²´ì˜ label í˜¹ì€ id í˜¹ì€ nameì„ ë¦¬í„´
+  _IBSheet.v7.IBS_GetLabel = function(obj){
+      if(obj.labels && obj.labels.length>0){
+          return obj.labels[0].textContent;
+      } else{
+          return _IBSheet.v7.IBS_GetName(obj);
+      }
+  }
+  }(window, document));
+  
+  

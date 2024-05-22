@@ -7,6 +7,8 @@
 		<title>plf</title>
 		<link rel="stylesheet" href="../static/css/plf.css" />
 
+		<link rel="stylesheet" href="../static/css/ibsheet8_main.css" />
+		<link rel="stylesheet" href="../static/css/ibsheet_custom.css" />
 		<!-- ibsheet css -->
 		<!-- <link rel="stylesheet" href="https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/css/default/main.css"/> -->
 		<!-- <link rel="stylesheet" href="https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/css/compatible/light/main.css"/> -->
@@ -48,7 +50,8 @@
 			"Cfg": {
 				"SearchMode": 2,
 				"HeaderMerge": 3,
-				"MessageWidth": 300
+				"MessageWidth": 300,
+				"Style": "GIL"
 			},
 			"Def": {
 				"Row": {
@@ -63,7 +66,7 @@
 			*/
 			//중앙(메인) 컬럼 설정
 			"Cols": [
-				{"Header": "문자열(Text)","Type": "Text","Name": "TextData","Width": 100,"Align": "Center","CanEdit": 1, Button:"Button", ButtonText:"확인"},
+				{"Header": "문자열(Text)","Type": "Text","Name": "TextData","Width": 100,"Align": "Center","CanEdit": 1},
 				{"Header": "줄넘김문자열(Lines)","Type": "Lines","Name": "LinesData","MinWidth": 250,"Align": "Center","CanEdit": 1,"RelWidth": 1},
 				{"Header": "콤보(Enum)","Type": "Enum","Name": "ComboData","Width": 100,"Align": "Left","Enum": "|대기|진행중|완료","EnumKeys": "|01|02|03"},
 				{"Header": "버튼(Button)","Type": "Button","Name": "ISO","Width": 80,"Align": "Left","CanEdit": 0,"Button": "Button"},

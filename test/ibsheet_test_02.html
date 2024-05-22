@@ -11,6 +11,9 @@
 		<script src="../static/js/plf_pub.js"></script>
 		<link rel="stylesheet" href="../static/css/plf.css" />
 
+		<link rel="stylesheet" href="../static/css/ibsheet8_main.css" />
+		<link rel="stylesheet" href="../static/css/ibsheet_custom.css" />
+
 		<!-- ibsheet css -->
 		<!-- <link rel="stylesheet" href="https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/css/default/main.css"/> -->
 		<!-- <link rel="stylesheet" href="https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/css/compatible/light/main.css"/> -->
@@ -35,424 +38,267 @@
 	<body>
 
 		<!--[S] plf-root-->
-		<div class="plf-root">
-
-			<!--[S] plf-header-->
-			<div class="plf-header">
-				<div class="left-area">
-					<a class="logo" href=""><img src="../static/img/logo/hanbat_logo.png" alt="한밭대학교 LINC 사업단 산학협력매칭플랫폼"></a>
-				</div>
-				<div class="right-area">
-					
-					<!--[S] plf-gnb-->
-					<div class="plf-gnb">
-						<ul>
-							<li class="d1 active"> <!--[D]active-->
-								<a href="">사업단안내</a>
-								<ul class="d2">
-									<li><a href="">사업단 안내</a></li>
-									<li class="active"><a href="">ILO 안내</a></li> <!--[D]active-->
-								</ul>
-							</li>
-							<li class="d1">
-								<a href="">기업관리</a>
-								<ul class="d2">
-									<li><a href="">기업정보관리	</a></li>
-									<li><a href="">기업정보현황</a></li>
-									<li><a href="">가족회사현황</a></li>
-									<li><a href="">기업실적현황</a></li>
-								</ul>
-							</li>
-							<li class="d1">
-								<a href="">기업수요</a>
-								<ul class="d2">
-									<li><a href="">키워드관리</a></li>
-									<li><a href="">MY PAGE</a></li>
-									<li><a href="">	기업산학협력신청</a></li>
-									<li><a href="">기업산학협력접수</a></li>
-									<li><a href="">기업수요등록</a></li>
-									<li><a href="">기업수요접수</a></li>
-									<li><a href="">기업수요매칭</a></li>
-									<li><a href="">매칭현황</a></li>
-									<li><a href="">산학협력통계</a></li>
-								</ul>								
-							</li>
-							<li class="d1">
-								<a href="">교원정보</a>
-								<ul class="d2">
-									<li><a href="">교원정보등록</a></li>
-									<li><a href="">컨설팅정보등록</a></li>
-									<li><a href="">캡스톤디자인정보등록</a></li>
-									<li><a href="">창업정보등록</a></li>
-									<li><a href="">네트워크정보등록</a></li>
-									<li><a href="">교원정보조회</a></li>
-								</ul>								
-							</li>
-							<li class="d1">
-								<a href="">알림게시판</a>
-								<ul class="d2">
-									<li><a href="">공지사항</a></li>
-									<li><a href="">FAQ</a></li>
-								</ul>								
-							</li>
-							<li class="d1">
-								<a href="">홈페이지관리</a>
-								<ul class="d2">
-									<li><a href="">사용자관리</a></li>
-									<li><a href="">기초정보관리</a></li>
-									<li><a href="">사용자 로그인 인증 이력 관리</a></li>
-									<li><a href="">사용자 시스템 접속 이력 관리</a></li>
-									<li><a href="">개인정보 조회 이력 관리</a></li>
-									<li><a href="">사용자 개인정보 활용 동의 이력 관리</a></li>
-								</ul>								
-							</li>																												
-						</ul>						
-					</div>
-					<!--//[S] plf-gnb-->
-
-					<!--[S] plf-util-->
-					<div class="plf-util">
-						<ul>
-							<!--[D]로그인/로그아웃 택1-->
-							<li class="util-login">
-								<a href="">로그인</a>
-							</li>
-							<li class="util-logout">
-								<a href="">로그아웃</a>
-							</li>							
-							<li class="util-search">
-								<a href="">검색</a>
-							</li>							
-						</ul>
-					</div>
-					<!--//[S] plf-util-->					
-
-				</div>
-			</div>
-			<!--//[S] plf-header-->
-
-			<!--[S] plf-group-aside-con-->
-			<div class="plf-group-aside-con">
-				
-				<!--[S] plf-aside-->
-				<div class="plf-aside">
-					<p class="tit-d1">기업수요</p>
-					<ul class="d1">
-						<li>
-							<button type="button">서브있음</button>
-							<ul class="d2">
-								<li><a href="">서브1</a></li>
-								<li><a href="">서브2</a></li>
-							</ul>
-						</li>
-						<li class="active"> <!--[D]active-->
-							<button type="button">서브있음</button>
-							<ul class="d2">
-								<li><a href="">서브1</a></li>
-								<li><a href="">서브2</a></li>
-							</ul>
-						</li>
-						<li>
-							<!--[D]서브없을시, class="no-sub", onClick="..." -->
-							<button class="no-sub" type="button" onClick="location.href='https://www.naver.com'">서브없음(링크이동)</button>
-						</li>
-					</ul>
-				</div>
-				<!--//[S] plf-aside-->
-
-				<!--[S] plf-con-->
-				<div class="plf-con">
-
-					<!--[S] plf-main-->
-					<div class="plf-main">
-
-						<!-- <div id='sheetDiv' style='width:100%;height:100%'></div> -->
-						
-						<div class="layout w100p">
-							<div class="row">
-								<div class="col col-5 pr10">
-									<div class="pn type-tit2">
-										<div class="pn-tit">그룹코드관리</div>
-										<div class="pn-con my-acco-con mb24">
-											<div class="td-item-group left gap4 mb12">
-												<input name="" id="" class="td-item ip-txt w220" type="text" value="" placeholder="그룹코드/그룹명코드">
-												<button class="td-item btn btn-big btn-db w68" type="button">검색</button>
-											</div>									
-											<!-- <img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt="">  -->
-											<!--[D]그리드 영역-->							
-											<div id='sheetDiv' style='width:100%;height:100%'></div>
-											<div class="mt8">
-												<div class="btn-group right">
-													<button class="btn btn-big btn-g-outline" type="button">행추가</button>
-													<button class="btn btn-big btn-g-outline" type="button">행삭제</button>
-													<button class="btn btn-big btn-g-outline" type="button">수정/삭제취소</button>
-													<button class="btn btn-big btn-g-outline" type="button">저장</button>
-												</div>							
-											</div>								
-										</div>
-									</div>
-								</div>
-								<div class="col col-5 pl10">
-									<div class="pn type-tit2">
-										<div class="pn-tit">그룹코드관리</div>
-										<div class="pn-con my-acco-con mb24">
-											<div class="td-item-group left gap4 mb12">
-												<input name="" id="" class="td-item ip-txt w220" type="text" value="" placeholder="그룹코드/그룹명코드">
-												<button class="td-item btn btn-big btn-db w68" type="button">검색</button>
-											</div>									
-											<!-- <img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt="">  -->
-											<!--[D]그리드 영역-->							
-											<div id='sheetDiv2' style='width:100%;height:100%'></div>
-											<div class="mt8">
-												<div class="btn-group right">
-													<button class="btn btn-big btn-g-outline" type="button">행추가</button>
-													<button class="btn btn-big btn-g-outline" type="button">행삭제</button>
-													<button class="btn btn-big btn-g-outline" type="button">수정/삭제취소</button>
-													<button class="btn btn-big btn-g-outline" type="button">저장</button>
-												</div>							
-											</div>								
-										</div>
-									</div>
-								</div>
+		<div class="plf-root p15">
+			
+			<div class="layout w100p">
+				<div class="row">
+					<div class="col col-5 pr10">
+						<div class="pn type-tit2">
+							<div class="pn-tit">그룹코드관리</div>
+							<div class="pn-con my-acco-con mb24">
+								<div class="td-item-group left gap4 mb12">
+									<input name="" id="" class="td-item ip-txt w220" type="text" value="" placeholder="그룹코드/그룹명코드">
+									<button class="td-item btn btn-big btn-db w68" type="button">검색</button>
+								</div>									
+								<!-- <img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt="">  -->
+								<!--[D]그리드 영역-->							
+								<div id='sheetDiv' style='width:100%;height:100%'></div>
+								<div class="mt8">
+									<div class="btn-group right">
+										<button class="btn btn-big btn-g-outline" type="button">행추가</button>
+										<button class="btn btn-big btn-g-outline" type="button">행삭제</button>
+										<button class="btn btn-big btn-g-outline" type="button">수정/삭제취소</button>
+										<button class="btn btn-big btn-g-outline" type="button">저장</button>
+									</div>							
+								</div>								
 							</div>
-						</div>						
-
-					
-					<script>
-						var ib = ib||{};
-						ib = {
-						//시트 초기화 구문
-						'init':{
-							//공통기능 설정 부분
-							"Cfg": {
-								"SearchMode": 2,
-								"HeaderMerge": 3,
-								"MessageWidth": 300
-							},
-							"Def": {
-								"Row": {
-									"CanFormula": true
-								}
-							},
-							//틀고정 좌측 컬럼 설정
-							/*
-							"LeftCols": [
-								{"Type": "Int","Width": 50,"Align": "Center","Name": "SEQ"}
-							],
-							*/
-							//중앙(메인) 컬럼 설정
-							"Cols": [
-								{"Header": "1행", 
-									"Type": "Text",
-									"Name": "d1",
-									"Width": 100,
-									"Align": "Center",
-									"CanEdit": 1
-								},
-								{"Header": "2행", 
-									"Type": "Text",
-									"Name": "d2",
-									"Width": 100,
-									"Align": "Center",
-									"CanEdit": 1
-								},
-								{"Header": "3행", 
-									"Type": "Text",
-									"Name": "d3",
-									"Width": 100,
-									"Align": "Center",
-									"CanEdit": 1
-								},
-								{"Header": "4행", 
-									"Type": "Text",
-									"Name": "d4",
-									"Width": 100,
-									"Align": "Center",
-									"CanEdit": 1
-								},	
-								{"Header": "5행", 
-									"Type": "Text",
-									"Name": "d5",
-									"Width": 100,
-									"Align": "Center",
-									"CanEdit": 1
-								},	
-								{"Header": "6행", 
-									"Type": "Text",
-									"Name": "d6",
-									"Width": 100,
-									"Align": "Center",
-									"CanEdit": 1
-								},	
-								{"Header": "7행", 
-									"Type": "Text",
-									"Name": "d7",
-									"Width": 100,
-									"Align": "Center",
-									"CanEdit": 1
-								},	
-								{"Header": "8행", 
-									"Type": "Text",
-									"Name": "d8",
-									"Width": 100,
-									"Align": "Center",
-									"CanEdit": 1
-								},	
-								{"Header": "9행", 
-									"Type": "Text",
-									"Name": "d9",
-									"Width": 100,
-									"Align": "Center",
-									"CanEdit": 1
-								},	
-								{"Header": "10행", 
-									"Type": "Text",
-									"Name": "d10",
-									"Width": 100,
-									"Align": "Center",
-									"CanEdit": 1
-								},	
-								{"Header": "11행", 
-									"Type": "Text",
-									"Name": "d11",
-									"Width": 100,
-									"Align": "Center",
-									"CanEdit": 1
-								},	
-								{"Header": "12행", 
-									"Type": "Text",
-									"Name": "d12",
-									"Width": 100,
-									"Align": "Center",
-									"CanEdit": 1
-								},	
-								{"Header": "13행", 
-									"Type": "Text",
-									"Name": "d13",
-									"Width": 100,
-									"Align": "Center",
-									"CanEdit": 1
-								},	
-								{"Header": "14행", 
-									"Type": "Text",
-									"Name": "d14",
-									"Width": 100,
-									"Align": "Center",
-									"CanEdit": 1
-								},	
-								{"Header": "15행", 
-									"Type": "Text",
-									"Name": "d15",
-									"Width": 100,
-									"Align": "Center",
-									"CanEdit": 1
-								},
-								{"Header": "16행", 
-									"Type": "Text",
-									"Name": "d16",
-									"Width": 100,
-									"Align": "Center",
-									"CanEdit": 1
-								},
-								{"Header": "17행", 
-									"Type": "Text",
-									"Name": "d17",
-									"Width": 100,
-									"Align": "Center",
-									"CanEdit": 1
-								},
-								{"Header": "18행", 
-									"Type": "Text",
-									"Name": "d18",
-									"Width": 100,
-									"Align": "Center",
-									"CanEdit": 1
-								},																																																																																																																																																																			
-							]
-						},
-						//시트 이벤트
-						'event':{
-								onRenderFirstFinish: function(evtParam) {
-									evtParam.sheet.loadSearchData(loadData);
-								}
-						},
-						//시트객체 생성
-						'create':function () {
-								var options = this.init;
-
-								options.Events = this.event;
-								IBSheet.create({
-									id: 'sheet', // 생성할 시트의 id
-									el: 'sheetDiv', // 시트를 생성할 Dom 객체 및 id
-									options: options // 생성될 시트의 속성
-								});
-								IBSheet.create({
-									id: 'sheet2', // 생성할 시트의 id
-									el: 'sheetDiv2', // 시트를 생성할 Dom 객체 및 id
-									options: options // 생성될 시트의 속성
-								});								
-							},
-						//화면 기능
-						'sampleBtn':function () {
-							}
-						}
-						ib.create();
-
-						var loadData = [
-							{
-								"d1":"김김김",
-								"d2":"김김김",
-								"d3":"김김김",
-								"d4":"김김김",
-							},
-							{
-								"d1":"이이이",
-								"d2":"이이이",
-								"d3":"이이이",
-								"d4":"이이이",
-							},
-							{
-								"d1":"박박박",
-								"d2":"박박박",
-								"d3":"박박박",
-								"d4":"박박박",
-							},
-							{
-								"d1":"강강강",
-								"d2":"강강강",
-								"d3":"강강강",
-								"d4":"강강강",
-							},						
-								
-						];		
-					</script>						
-
-
-
-
+						</div>
 					</div>
-					<!--//[S] plf-main-->
-
-					<!--[S] plf-footer-->
-					<div class="plf-footer">
-						<ul>
-							<li>
-								<a href="">개인정보처리취급방침</a>
-							</li>
-							<li>
-								<a href="">이메일 수집거부</a>
-							</li>							
-						</ul>
-						<p class="copy">Copyright(c) 2023 Webcash corp. All Rights reserved.</p>
-						
-					</div>					
-					<!--//[S] plf-footer-->
-
+					<div class="col col-5 pl10">
+						<div class="pn type-tit2">
+							<div class="pn-tit">그룹코드관리</div>
+							<div class="pn-con my-acco-con mb24">
+								<div class="td-item-group left gap4 mb12">
+									<input name="" id="" class="td-item ip-txt w220" type="text" value="" placeholder="그룹코드/그룹명코드">
+									<button class="td-item btn btn-big btn-db w68" type="button">검색</button>
+								</div>									
+								<!-- <img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt="">  -->
+								<!--[D]그리드 영역-->							
+								<div id='sheetDiv2' style='width:100%;height:100%'></div>
+								<div class="mt8">
+									<div class="btn-group right">
+										<button class="btn btn-big btn-g-outline" type="button">행추가</button>
+										<button class="btn btn-big btn-g-outline" type="button">행삭제</button>
+										<button class="btn btn-big btn-g-outline" type="button">수정/삭제취소</button>
+										<button class="btn btn-big btn-g-outline" type="button">저장</button>
+									</div>							
+								</div>								
+							</div>
+						</div>
+					</div>
 				</div>
-				<!--//[S] plf-con-->
+			</div>						
+					
+			<script>
+				var ib = ib||{};
+				ib = {
+				//시트 초기화 구문
+				'init':{
+					//공통기능 설정 부분
+					"Cfg": {
+						"SearchMode": 2,
+						"HeaderMerge": 3,
+						"MessageWidth": 300,
+						"Style": "GIL"
+					},
+					"Def": {
+						"Row": {
+							"CanFormula": true
+						}
+					},
+					//틀고정 좌측 컬럼 설정
+					/*
+					"LeftCols": [
+						{"Type": "Int","Width": 50,"Align": "Center","Name": "SEQ"}
+					],
+					*/
+					//중앙(메인) 컬럼 설정
+					"Cols": [
+						{"Header": "1행", 
+							"Type": "Text",
+							"Name": "d1",
+							"Width": 100,
+							"Align": "Center",
+							"CanEdit": 1
+						},
+						{"Header": "2행", 
+							"Type": "Text",
+							"Name": "d2",
+							"Width": 100,
+							"Align": "Center",
+							"CanEdit": 1
+						},
+						{"Header": "3행", 
+							"Type": "Text",
+							"Name": "d3",
+							"Width": 100,
+							"Align": "Center",
+							"CanEdit": 1
+						},
+						{"Header": "4행", 
+							"Type": "Text",
+							"Name": "d4",
+							"Width": 100,
+							"Align": "Center",
+							"CanEdit": 1
+						},	
+						{"Header": "5행", 
+							"Type": "Text",
+							"Name": "d5",
+							"Width": 100,
+							"Align": "Center",
+							"CanEdit": 1
+						},	
+						{"Header": "6행", 
+							"Type": "Text",
+							"Name": "d6",
+							"Width": 100,
+							"Align": "Center",
+							"CanEdit": 1
+						},	
+						{"Header": "7행", 
+							"Type": "Text",
+							"Name": "d7",
+							"Width": 100,
+							"Align": "Center",
+							"CanEdit": 1
+						},	
+						{"Header": "8행", 
+							"Type": "Text",
+							"Name": "d8",
+							"Width": 100,
+							"Align": "Center",
+							"CanEdit": 1
+						},	
+						{"Header": "9행", 
+							"Type": "Text",
+							"Name": "d9",
+							"Width": 100,
+							"Align": "Center",
+							"CanEdit": 1
+						},	
+						{"Header": "10행", 
+							"Type": "Text",
+							"Name": "d10",
+							"Width": 100,
+							"Align": "Center",
+							"CanEdit": 1
+						},	
+						{"Header": "11행", 
+							"Type": "Text",
+							"Name": "d11",
+							"Width": 100,
+							"Align": "Center",
+							"CanEdit": 1
+						},	
+						{"Header": "12행", 
+							"Type": "Text",
+							"Name": "d12",
+							"Width": 100,
+							"Align": "Center",
+							"CanEdit": 1
+						},	
+						{"Header": "13행", 
+							"Type": "Text",
+							"Name": "d13",
+							"Width": 100,
+							"Align": "Center",
+							"CanEdit": 1
+						},	
+						{"Header": "14행", 
+							"Type": "Text",
+							"Name": "d14",
+							"Width": 100,
+							"Align": "Center",
+							"CanEdit": 1
+						},	
+						{"Header": "15행", 
+							"Type": "Text",
+							"Name": "d15",
+							"Width": 100,
+							"Align": "Center",
+							"CanEdit": 1
+						},
+						{"Header": "16행", 
+							"Type": "Text",
+							"Name": "d16",
+							"Width": 100,
+							"Align": "Center",
+							"CanEdit": 1
+						},
+						{"Header": "17행", 
+							"Type": "Text",
+							"Name": "d17",
+							"Width": 100,
+							"Align": "Center",
+							"CanEdit": 1
+						},
+						{"Header": "18행", 
+							"Type": "Text",
+							"Name": "d18",
+							"Width": 100,
+							"Align": "Center",
+							"CanEdit": 1
+						},																																																																																																																																																																			
+					]
+				},
+				//시트 이벤트
+				'event':{
+						onRenderFirstFinish: function(evtParam) {
+							evtParam.sheet.loadSearchData(loadData);
+						}
+				},
+				//시트객체 생성
+				'create':function () {
+						var options = this.init;
 
-			</div>
-			<!--//[S] plf-group-aside-con-->
+						options.Events = this.event;
+						IBSheet.create({
+							id: 'sheet', // 생성할 시트의 id
+							el: 'sheetDiv', // 시트를 생성할 Dom 객체 및 id
+							options: options // 생성될 시트의 속성
+						});
+
+						IBSheet.create({
+							id: 'sheet2', // 생성할 시트의 id
+							el: 'sheetDiv2', // 시트를 생성할 Dom 객체 및 id
+							options: options // 생성될 시트의 속성
+						});		
+					},
+				//화면 기능
+				'sampleBtn':function () {
+					}
+				}
+				ib.create();
+
+				var loadData = [
+					{
+						"d1":"김김김",
+						"d2":"김김김",
+						"d3":"김김김",
+						"d4":"김김김",
+					},
+					{
+						"d1":"이이이",
+						"d2":"이이이",
+						"d3":"이이이",
+						"d4":"이이이",
+					},
+					{
+						"d1":"박박박",
+						"d2":"박박박",
+						"d3":"박박박",
+						"d4":"박박박",
+					},
+					{
+						"d1":"강강강",
+						"d2":"강강강",
+						"d3":"강강강",
+						"d4":"강강강",
+					},						
+						
+				];		
+			</script>						
 
 		</div>
 		<!--//[S] plf-root-->

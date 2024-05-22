@@ -1,98 +1,104 @@
 <!DOCTYPE html>
 <html lang="ko">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>plf</title>
-		<script src="../static/js/jquery-3.6.0.min.js"></script>
-		<script src="../static/js/datepicker.min.js"></script>		
-		<script src="../static/js/datepicker.ko-KR.js"></script>		
-		<script src="../static/js/plf_pub.js"></script>
-		<link rel="stylesheet" href="../static/css/plf.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>plf</title>
+  <script src="../static/js/jquery-3.6.0.min.js"></script>
+  <script src="../static/js/datepicker.min.js"></script>		
+  <script src="../static/js/datepicker.ko-KR.js"></script>		
+  <script src="../static/js/plf_pub.js"></script>
+  <link rel="stylesheet" href="../static/css/plf.css" />
 
-		<!-- ibsheet css -->
-		<!-- <link rel="stylesheet" href="https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/css/default/main.css"/> -->
-		<!-- <link rel="stylesheet" href="https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/css/compatible/light/main.css"/> -->
+  <link rel="stylesheet" href="../static/css/ibsheet8_main.css" />
+  <link rel="stylesheet" href="../static/css/ibsheet_custom.css" />
 
-		<!--  ibsheet 필수 js -->
-		<script src="../static/js/ibsheet/ibleaders.js"></script>
-		<script src="../static/js/ibsheet/ibsheet.js"></script>
-		<script src="../static/js/ibsheet/locale/ko.js"></script>
+  <!-- ibsheet css -->
+  <!-- <link rel="stylesheet" href="https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/css/default/main.css"/> -->
+  <!-- <link rel="stylesheet" href="https://demo.ibleaders.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/css/compatible/light/main.css"/> -->
 
-		<!--  ibsheet 선택/추가 js -->
-		<script src="../static/js/ibsheet/plugins/ibsheet-common.js"></script>
-		<script src="../static/js/ibsheet/plugins/ibsheet-dialog.js"></script>
-		<script src="../static/js/ibsheet/plugins/ibsheet-excel.js"></script>		
+  <!--  ibsheet 필수 js -->
+  <script src="../static/js/ibsheet/ibleaders.js"></script>
+  <script src="../static/js/ibsheet/ibsheet.js"></script>
+  <script src="../static/js/ibsheet/locale/ko.js"></script>
 
-		<style>
-			td.changeBtnColor u{
-				background-color: red;
-			}
-		</style>
+  <!--  ibsheet 선택/추가 js -->
+  <script src="../static/js/ibsheet/plugins/ibsheet-common.js"></script>
+  <script src="../static/js/ibsheet/plugins/ibsheet-dialog.js"></script>
+  <script src="../static/js/ibsheet/plugins/ibsheet-excel.js"></script>		
 
-<div style='height:calc(100% - 20px)'><div id='sheetDiv' style='width:100%;height:100%'></div></div>
-
-<script>
-var ib = ib||{};
-ib = {
-//시트 초기화 구문
-'init':{
-  //공통기능 설정 부분
-  "Cfg": {
-    "CanEdit":1,
-    "SeachMode": 0,
-    "Alternate": 2
-  },
-  "Def": {
-    "Col": {}
-  },
-  //틀고정 좌측 컬럼 설정
-  "LeftCols": [
-    {"Header": "No.","Name": "SEQ","RelWidth": 0,"Type": "Int","Width": 80,"Align": "Center"}
-  ],
-  //중앙(메인) 컬럼 설정
-  "Cols": [
-    {"Header": "아이디","Name": "sId","Type": "Text","Width": 120,"EditMask": "^[a-z|0-9]*$","ResultMask": "^[a-z](([0-9|a-z]){5,9})$","ResultText": "아이디는 6~10글자 이내의 영소문자,숫자로 작성해주세요.(첫글자는 영문자로 시작)","Tip": "아이디는 6~10글자 이내의 영소문자나 숫자로 작성해주세요.(첫글자는 영문자로 시작)"},
-    {"Header": "근무지","Name": "sZone","Type": "Text","Width": 80,"Button": "Defaults","Format": {"AA": "서울","BB": "울산","CC": "평택","DD": "제주","EE": "대전","FF": "전주"},"EditFormat": {"AA": "서울","BB": "울산","CC": "평택","DD": "제주","EE": "대전","FF": "전주"},"Defaults": "|AA|BB|CC|DD|EE|FF","ResultMask": "^(AA|BB|CC|DD|EE|FF|서울|울산|평택|제주|대전|전주)$","ResultText": "입력된 근무지를 확인해주세요.","Tip": "서울,울산,평택,제주,대전,전주 중에 하나를 입력해 주세요."},
-    {"Header": "년월일","Name": "sDate_Ymd","Type": "Date","Width": 120,"Format": "yyyy/MM/dd","Size": 8,"DataFormat": "yyyyMMdd","EditMask": "^\\d*$","ResultMask": "^[0-9][0-9][0-9][0-9][01][0-9][0-3][0-9]$","ResultMessage": "입력된 날짜를 확인해주세요.","ResultMessageTime": 0,"Tip": "8개의 숫자를 구분자 없이 입력해 주세요."},
-    {"Header": "E-Mail","Type": "Text","Name": "sEmail","RelWidth": 1,"ResultMask": "^[\\w\\.\\+%-]+@[A-Za-z0-9\\.-]+\\.[A-Za-z]{2,6}$","ResultMessage": "이메일 주소를 확인해 주세요.","ResultMessageTime": 800,"Tip": "이메일 주소를 형식에 맞게 입력해 주세요."},
-    {"Header": "등급","Type": "Int","Name": "sGrade","Align": "Center","Width": 80,"ResultMask": "^[1-9]$","ResultMessage": "등급은 1부터 9까지만 입력이 가능합니다.","ResultMessageTime": 1000,"Tip": "등급은 1부터 9까지만 입력이 가능합니다."}
-  ]
-},
-//시트 이벤트
-'event':{
-    onResultMask:function (evtParam) {
-      console.log(evtParam.eventName + ' 발생');
-      if (evtParam.col === 'sId') {
-        // sId 컬럼의 ResultMask 설정에 의한 유효성 검사를 통과하지 못한 경우
-        // alert 메시지 창을 띄우지 않고 편집모드를 계속 진행
-        // return 1 인 경우 ResultText나 ResultMessage가 동작하지 않는다.
-        return 0;
-      }
+  <style>
+    td.changeBtnColor u{
+      background-color: red;
     }
-},
-//시트객체 생성
-'create':function () {
-    var options = this.init;
+  </style>
+</head>
+<body>
 
-    options.Events = this.event;
-    IBSheet.create({
-      id: 'sheet', // 생성할 시트의 id
-      el: 'sheetDiv', // 시트를 생성할 Dom 객체 및 id
-      options: options, // 생성될 시트의 속성
-      data: this.data // 생성될 시트의 속성
-    });
-  },
-//화면 기능
-'sampleBtn':function () {
-  },
-//조회 데이터
-'data':[{"sId":"sagittis","sZone":"서울","sDate_Ymd":"20150526","sEmail":"In.ornare.sagittis@sapien.co.uk","sGrade":2},{"sId":"fairytale","sZone":"전주","sDate_Ymd":"20110126","sEmail":"quam.quis.diam@justonec.ca","sGrade":3},{"sId":"willsmith","sZone":"전주","sDate_Ymd":"20160715","sEmail":"id@massalobortisultrices.com","sGrade":2},{"sId":"princess","sZone":"서울","sDate_Ymd":"20160701","sEmail":"non@Integerid.com","sGrade":1},{"sId":"libero","sZone":"대전","sDate_Ymd":"20130423","sEmail":"libero@ipsumprimisin.ca","sGrade":1},{"sId":"joseph","sZone":"울산","sDate_Ymd":"20150526","sEmail":"et.malesuada@imperdietullamcorperDuis.net","sGrade":8},{"sId":"senectus","sZone":"제주","sDate_Ymd":"20110126","sEmail":"senectus@utquamvel.ca","sGrade":9},{"sId":"tellus","sZone":"서울","sDate_Ymd":"20160715","sEmail":"tellus.non.magna@ut.ca","sGrade":7},{"sId":"bktech","sZone":"제주","sDate_Ymd":"20160701","sEmail":"nec.malesuada@Aliquam.ca","sGrade":1},{"sId":"jackson","sZone":"서울","sDate_Ymd":"20130423","sEmail":"tincidunt.pede.ac@adipiscingelit.ca","sGrade":1},{"sId":"susanboyle","sZone":"서울","sDate_Ymd":"20150526","sEmail":"porta.elit.a@at.org","sGrade":1},{"sId":"aenean","sZone":"서울","sDate_Ymd":"20110126","sEmail":"Aenean.eget@montes.net","sGrade":1},{"sId":"ericmaire","sZone":"평택","sDate_Ymd":"20160715","sEmail":"rutrum.lorem.ac@Cumsociisnatoque.com","sGrade":1},{"sId":"booster","sZone":"서울","sDate_Ymd":"20160701","sEmail":"amet@Aeneangravidanunc.com","sGrade":1},{"sId":"guillaume","sZone":"평택","sDate_Ymd":"20130423","sEmail":"Proin@Donecconsectetuermauris.com","sGrade":1},{"sId":"fantastic","sZone":"제주","sDate_Ymd":"20150526","sEmail":"penatibus.et@elitpede.com","sGrade":1},{"sId":"donald","sZone":"서울","sDate_Ymd":"20110126","sEmail":"lorem.Donec.elementum@Donecdignissimmagna.edu","sGrade":1},{"sId":"attwitch","sZone":"울산","sDate_Ymd":"20160715","sEmail":"neque.non@vellectus.co.uk","sGrade":1},{"sId":"algolia","sZone":"서울","sDate_Ymd":"20160701","sEmail":"neque.Morbi@Nullamscelerisqueneque.org","sGrade":1},{"sId":"stripe","sZone":"제주","sDate_Ymd":"20130423","sEmail":"Nam@arcuMorbisit.org","sGrade":1}]
-}
-ib.create();
+  <div class="p15" style='height:calc(100% - 20px)'><div id='sheetDiv' style='width:100%;height:100%'></div></div>
 
-</script>
+  <script>
+  var ib = ib||{};
+  ib = {
+  //시트 초기화 구문
+  'init':{
+    //공통기능 설정 부분
+    "Cfg": {
+      "CanEdit":1,
+      "SeachMode": 0,
+      "Alternate": 2,
+      "Style": "GIL"
+    },
+    "Def": {
+      "Col": {}
+    },
+    //틀고정 좌측 컬럼 설정
+    "LeftCols": [
+      {"Header": "No.","Name": "SEQ","RelWidth": 0,"Type": "Int","Width": 80,"Align": "Center"}
+    ],
+    //중앙(메인) 컬럼 설정
+    "Cols": [
+      {"Header": "아이디","Name": "sId","Type": "Text","Width": 120,"EditMask": "^[a-z|0-9]*$","ResultMask": "^[a-z](([0-9|a-z]){5,9})$","ResultText": "아이디는 6~10글자 이내의 영소문자,숫자로 작성해주세요.(첫글자는 영문자로 시작)","Tip": "아이디는 6~10글자 이내의 영소문자나 숫자로 작성해주세요.(첫글자는 영문자로 시작)"},
+      {"Header": "근무지","Name": "sZone","Type": "Text","Width": 80,"Button": "Defaults","Format": {"AA": "서울","BB": "울산","CC": "평택","DD": "제주","EE": "대전","FF": "전주"},"EditFormat": {"AA": "서울","BB": "울산","CC": "평택","DD": "제주","EE": "대전","FF": "전주"},"Defaults": "|AA|BB|CC|DD|EE|FF","ResultMask": "^(AA|BB|CC|DD|EE|FF|서울|울산|평택|제주|대전|전주)$","ResultText": "입력된 근무지를 확인해주세요.","Tip": "서울,울산,평택,제주,대전,전주 중에 하나를 입력해 주세요."},
+      {"Header": "년월일","Name": "sDate_Ymd","Type": "Date","Width": 120,"Format": "yyyy/MM/dd","Size": 8,"DataFormat": "yyyyMMdd","EditMask": "^\\d*$","ResultMask": "^[0-9][0-9][0-9][0-9][01][0-9][0-3][0-9]$","ResultMessage": "입력된 날짜를 확인해주세요.","ResultMessageTime": 0,"Tip": "8개의 숫자를 구분자 없이 입력해 주세요."},
+      {"Header": "E-Mail","Type": "Text","Name": "sEmail","RelWidth": 1,"ResultMask": "^[\\w\\.\\+%-]+@[A-Za-z0-9\\.-]+\\.[A-Za-z]{2,6}$","ResultMessage": "이메일 주소를 확인해 주세요.","ResultMessageTime": 800,"Tip": "이메일 주소를 형식에 맞게 입력해 주세요."},
+      {"Header": "등급","Type": "Int","Name": "sGrade","Align": "Center","Width": 80,"ResultMask": "^[1-9]$","ResultMessage": "등급은 1부터 9까지만 입력이 가능합니다.","ResultMessageTime": 1000,"Tip": "등급은 1부터 9까지만 입력이 가능합니다."}
+    ]
+  },
+  //시트 이벤트
+  'event':{
+      onResultMask:function (evtParam) {
+        console.log(evtParam.eventName + ' 발생');
+        if (evtParam.col === 'sId') {
+          // sId 컬럼의 ResultMask 설정에 의한 유효성 검사를 통과하지 못한 경우
+          // alert 메시지 창을 띄우지 않고 편집모드를 계속 진행
+          // return 1 인 경우 ResultText나 ResultMessage가 동작하지 않는다.
+          return 0;
+        }
+      }
+  },
+  //시트객체 생성
+  'create':function () {
+      var options = this.init;
+
+      options.Events = this.event;
+      IBSheet.create({
+        id: 'sheet', // 생성할 시트의 id
+        el: 'sheetDiv', // 시트를 생성할 Dom 객체 및 id
+        options: options, // 생성될 시트의 속성
+        data: this.data // 생성될 시트의 속성
+      });
+    },
+  //화면 기능
+  'sampleBtn':function () {
+    },
+  //조회 데이터
+  'data':[{"sId":"sagittis","sZone":"서울","sDate_Ymd":"20150526","sEmail":"In.ornare.sagittis@sapien.co.uk","sGrade":2},{"sId":"fairytale","sZone":"전주","sDate_Ymd":"20110126","sEmail":"quam.quis.diam@justonec.ca","sGrade":3},{"sId":"willsmith","sZone":"전주","sDate_Ymd":"20160715","sEmail":"id@massalobortisultrices.com","sGrade":2},{"sId":"princess","sZone":"서울","sDate_Ymd":"20160701","sEmail":"non@Integerid.com","sGrade":1},{"sId":"libero","sZone":"대전","sDate_Ymd":"20130423","sEmail":"libero@ipsumprimisin.ca","sGrade":1},{"sId":"joseph","sZone":"울산","sDate_Ymd":"20150526","sEmail":"et.malesuada@imperdietullamcorperDuis.net","sGrade":8},{"sId":"senectus","sZone":"제주","sDate_Ymd":"20110126","sEmail":"senectus@utquamvel.ca","sGrade":9},{"sId":"tellus","sZone":"서울","sDate_Ymd":"20160715","sEmail":"tellus.non.magna@ut.ca","sGrade":7},{"sId":"bktech","sZone":"제주","sDate_Ymd":"20160701","sEmail":"nec.malesuada@Aliquam.ca","sGrade":1},{"sId":"jackson","sZone":"서울","sDate_Ymd":"20130423","sEmail":"tincidunt.pede.ac@adipiscingelit.ca","sGrade":1},{"sId":"susanboyle","sZone":"서울","sDate_Ymd":"20150526","sEmail":"porta.elit.a@at.org","sGrade":1},{"sId":"aenean","sZone":"서울","sDate_Ymd":"20110126","sEmail":"Aenean.eget@montes.net","sGrade":1},{"sId":"ericmaire","sZone":"평택","sDate_Ymd":"20160715","sEmail":"rutrum.lorem.ac@Cumsociisnatoque.com","sGrade":1},{"sId":"booster","sZone":"서울","sDate_Ymd":"20160701","sEmail":"amet@Aeneangravidanunc.com","sGrade":1},{"sId":"guillaume","sZone":"평택","sDate_Ymd":"20130423","sEmail":"Proin@Donecconsectetuermauris.com","sGrade":1},{"sId":"fantastic","sZone":"제주","sDate_Ymd":"20150526","sEmail":"penatibus.et@elitpede.com","sGrade":1},{"sId":"donald","sZone":"서울","sDate_Ymd":"20110126","sEmail":"lorem.Donec.elementum@Donecdignissimmagna.edu","sGrade":1},{"sId":"attwitch","sZone":"울산","sDate_Ymd":"20160715","sEmail":"neque.non@vellectus.co.uk","sGrade":1},{"sId":"algolia","sZone":"서울","sDate_Ymd":"20160701","sEmail":"neque.Morbi@Nullamscelerisqueneque.org","sGrade":1},{"sId":"stripe","sZone":"제주","sDate_Ymd":"20130423","sEmail":"Nam@arcuMorbisit.org","sGrade":1}]
+  }
+  ib.create();
+
+  </script>
 
 	</body>	
 </html>
