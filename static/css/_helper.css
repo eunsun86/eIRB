@@ -135,3 +135,5 @@
 .hide {display: none !important;}
 
 .tlf {table-layout:  fixed;}
+
+.ellipsis{display: inline-block;width: 100%; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
