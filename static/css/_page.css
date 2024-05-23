@@ -8,7 +8,7 @@
  @ 메모 : 앞에서 _component, _layout으로 커버되지 않는 각 페이지마다 유니크한 부분은 이곳에서 따로 정의한다.
 */
 
-/*1100. 로그인*/
+/* 로그인 */
 .plf-root.login{min-width: initial;min-height: 100vh;background: url(../img/bg_login.jpg) no-repeat center bottom/cover;position: relative;}
 .plf-root.login .plf-header{top: 40px;height: initial;border-bottom: none;}
 .plf-root.login footer{position: fixed;bottom:48px;width: 100%;text-align: center;color: #1E1E1E;font-size: 14px;font-weight: 400;}
@@ -28,16 +28,19 @@
 .plf-login .login-btn a:after{content:'';display: inline-block;width: 1px;height: 10px;background-color: #D9D9D9;margin-left: 8px;}
 .plf-login .login-btn a:last-child:after{display: none;}
 
-/*1200. 약관동의*/
+/* 회원가입 */
 .plf-join{ width: 1330px;margin:0 auto; }
 .plf-join .tit-pagetitle{margin:40px 0 20px; }
+.plf-join .tit-subtitle{margin:40px 0 20px; }
 .plf-join .agree-con{ background-color: #fff;padding:20px;border-top: 1px solid #1e1e1e; margin-bottom: 32px;}
 .plf-join .agree-con .agree-tit{font-size: 18px;font-weight: 600;color: #1E1E1E;margin-bottom: 12px;}
 .plf-join .agree-con .agree-detail { overflow-y: auto; border: 1px solid #EFEFEF; padding: 20px; height: 210px; box-sizing: border-box; font-size: 14px; font-weight: 500; color: #929292; line-height: 1.5; margin-bottom: 14px; } 
 .plf-join .agree-con .ip-ch-group + .agree-tit{margin-top: 32px;}
-
 .plf-join .join-con{ margin-bottom: 32px;}
-
+.plf-join .join-complete-con{ display: flex;flex-direction: column;align-items: center;justify-content: center; background-color: #fff;border-top: 1px solid #1e1e1e;min-height: 543px;}
+.plf-join .join-complete-con p{font-size: 26px;font-weight: 600;color: #1E1E1E;margin-bottom: 32px;}
+.plf-join .join-complete-con .info-box{font-size: 18px;font-weight: 600;margin-bottom: 32px;background: #f7f7f7;border-radius: 30px;padding:32px;text-align: center;width: 308px;line-height: 1.5;}
+.plf-join .join-complete-con .info-box span{display: block;color: #1E1E1E;}
 /*4000.키워드관리*/
 .nodata-4000 { position: relative; height: 460px; text-align: center; border-top: 1px solid #1d1d1d; } 
 .nodata-4000>.inner { position: absolute; top: 50%; left: 0; width: 100%; } 

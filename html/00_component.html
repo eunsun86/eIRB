@@ -850,7 +850,7 @@
                                     </colgroup>
                                     <tbody>
                                         <tr>
-                                            <th scope="row">연구구분</th>
+                                            <th scope="row">라디오 모음</th>
                                             <td>
                                                 <div class="td-item-group">
                                                     <div class="ip-rd-group">
@@ -870,6 +870,26 @@
                                                 </div>
                                             </td>
                                         </tr>
+                                        <tr>
+                                            <th scope="row">체크박스 모음</th>
+                                            <td>
+                                                <div class="ip-ch-group">
+                                                    <label class="ip-ch-label">
+                                                        <input class="ip-ch" type="checkbox" value="">
+                                                        <span class="check"></span> <em>취업</em> 
+                                                    </label>
+                                                    <label class="ip-ch-label">
+                                                        <input class="ip-ch" type="checkbox" value="" checked="">
+                                                        <span class="check"></span> <em>현장실습</em>
+                                                    </label>
+                                                    <label class="ip-ch-label">
+                                                        <input class="ip-ch" type="checkbox">
+                                                        <span class="check"></span> <em>캠스톤디자인</em>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        
                                         <tr>
                                             <th scope="row" rowspan="2">연구특성</th>
                                             <td>
@@ -920,9 +940,9 @@
                                         <tr>
                                             <th scope="row">연구기간</th>
                                             <td>
-                                                <div class="td-item-group left">
+                                                <div class="td-item-group left gap8">
                                                     <span class="fw-400">IRB 승인일 ~</span>
-                                                    <div class="ip-wrap with-icon ta-left w165 ml8">
+                                                    <div class="ip-wrap with-icon ta-left w165">
                                                         <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
                                                         <i class="ic ic-calendar"></i>
                                                     </div>
@@ -930,9 +950,9 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">수요제목</th>
+                                            <th scope="row">기간설정</th>
                                             <td>
-                                                <div class="td-item-group left gap4">
+                                                <div class="td-item-group left gap8">
                                                     <div class="ip-wrap with-icon ta-left w165">
                                                         <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
                                                         <i class="ic ic-calendar"></i>
@@ -952,19 +972,19 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">제목</th>
+                                            <th scope="row">전화번호</th>
                                             <td>
-                                                <div class="td-item-group left gap5">
-                                                    <input readonly="" name="" id="" class="td-item-group ip-txt w70" type="text" value="401" placeholder="">
+                                                <div class="td-item-group left gap8">
+                                                    <input readonly="" name="" id="" class="ip-txt w70" type="text" value="401" placeholder="">
                                                     <span>-</span>
-                                                    <input readonly="" name="" id="" class="td-item-group ip-txt w70" type="text" value="82" placeholder="">
+                                                    <input name="" id="" class="ip-txt w70" type="text" value="82" placeholder="">
                                                     <span>-</span>
-                                                    <input readonly="" name="" id="" class="td-item-group ip-txt w70" type="text" value="526339" placeholder="">
+                                                    <input name="" id="" class="ip-txt w70" type="text" value="5339" placeholder="">
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">제목</th>
+                                            <th scope="row">검색</th>
                                             <td>
                                                 <div class="ip-wrap with-icon ta-left w120">
                                                     <input name="" id="" class="ip-txt" type="text" value="" placeholder="검색">
@@ -995,11 +1015,24 @@
                                         <tr>
                                             <th scope="row">아이디 (사번)</th>
                                             <td>
-                                                <input name="" id="" class="ip-txt w175" type="text" value="">
-                                                <button class="btn btn-line ml8" type="button">중복체크</button>
-                                                <span class="tip-txt ml8">※ 아이디는 영문자, 숫자만 가능</span>
+                                                <div class="td-item-group left gap8">
+                                                    <input name="" id="" class="ip-txt w175" type="text" value="">
+                                                    <button class="btn btn-line" type="button">중복체크</button>
+                                                    <span class="tip-txt">※ 아이디는 영문자, 숫자만 가능</span>
+                                                </div>
                                             </td>
                                         </tr>
+                                        <tr>
+                                            <th scope="row">이메일</th>
+                                            <td>
+                                                <div class="td-item-group left gap8">
+                                                    <input name="" id="" class="ip-txt w175" type="text" value="" placeholder="">
+                                                    <span>@</span>
+                                                    <input name="" id="" class="ip-txt w175" type="text" value="" placeholder="">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        
                                     </tbody>
                                 </table>	
 
