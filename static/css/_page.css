@@ -46,15 +46,15 @@
 .progress-status{display: flex;gap:27px;margin-bottom: 32px;}
 .progress-status .item{flex: 1 auto;}
 .progress-status .item .tit-status{font-size: 20px;font-weight: 600;color: #1E1E1E;margin-bottom: 8px; }
-.progress-status .item .status-box{display: flex; padding:10px 22px;border-radius: 12px;}
+.progress-status .item .status-box{display: flex; padding:10px 12px;border-radius: 12px;}
 .progress-status .item .status-box button{flex: 1 auto;font-size: 16px;font-weight: 700;color: #fff;padding-bottom: 8px; position: relative;}
 .progress-status .item .status-box button strong{display: block; font-size: 50px;font-weight: 700;color: #fff;margin-bottom: 8px;}
 .progress-status .item .status-box button:nth-child(n + 2):before{content: '';display: block;width: 1px;height: 12px;background: #fff;opacity: 0.5; position: absolute;left:-2px;bottom:5px;}
 
-.progress-status .item:nth-child(1) .status-box{background: linear-gradient(45deg, #3062AD, #0CAEAE);}
-.progress-status .item:nth-child(2) .status-box{background: linear-gradient(45deg, #43B7BE, #2A8CC3);}
-.progress-status .item:nth-child(3) .status-box{background: linear-gradient(45deg, #63A4E0, #6554A8);}
-.progress-status .item:nth-child(4) .status-box{background: linear-gradient(45deg, #9392E0, #A650A8);}
+.progress-status .item:nth-child(1) .status-box{background: linear-gradient(95deg, var(--main-color1) 19.7%, var(--main-color2) 87.8%);}
+.progress-status .item:nth-child(2) .status-box{background: linear-gradient(113deg, var(--main-color3) 35.2%, var(--main-color4) 100%);}
+.progress-status .item:nth-child(3) .status-box{background: linear-gradient(113deg, var(--main-color5) 18.43%, var(--main-color6) 89.13%);}
+.progress-status .item:nth-child(4) .status-box{background: linear-gradient(113deg, var(--main-color7) 17.29%, var(--main-color8) 85.09%);}
 
 .work-status{display: flex;gap: 26px;}
 .work-status .alarm{border:1px solid #F0F0F0;border-radius: 8px;background: #fff;width: 253px; height: 271px;padding:12px 7px 12px 17px;box-sizing: border-box;overflow: hidden;}
@@ -65,6 +65,10 @@
 .work-status .alarm .scr_cont .scr_list li{border-bottom:1px solid #F0F0F0}
 .work-status .alarm .scr_cont .scr_list li a{display: block;padding:13px 0 14px 28px;position: relative;}
 .work-status .alarm .scr_cont .scr_list li a:before{content: ''; display: inline-block; background: #DCDCDC;width: 16px;height:16px;border-radius: 100%;position: absolute;left:0;top:15px;}
+.work-status .alarm .scr_cont .scr_list li.step1 a:before{background: var(--main-color1);}
+.work-status .alarm .scr_cont .scr_list li.step2 a:before{background: var(--main-color3);}
+.work-status .alarm .scr_cont .scr_list li.step3 a:before{background: var(--main-color5);}
+.work-status .alarm .scr_cont .scr_list li.step4 a:before{background: var(--main-color7);}
 .work-status .alarm .scr_cont .scr_list li a strong{display:block;font-size: 13px; font-weight: 500; color: #666;width: 100%; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
 .work-status .alarm .scr_cont .scr_list li a span{display:block;font-size: 12px; font-weight: 500; color: #BCBCBC;margin-top: 8px;}
 .work-status .scr_list > .scroll-element.scroll-x.scroll-scrollx_visible, 
@@ -73,8 +77,25 @@
 .work-status .scr_list > .scroll-element div{position:absolute;right:0;top:0;width:100%;height:100%;}
 .work-status .scr_list > .scroll-element .scroll-element_track{background:#F7F7F7;border-radius: 8px;}
 .work-status .scr_list > .scroll-element .scroll-bar{background:#666;border-radius: 8px;}
+.work-status .data-table[data-code="step1"]{border-top: 1px solid var(--main-color1);}
+.work-status .data-table[data-code="step1"] th{color: var(--main-color1);}
+.work-status .data-table[data-code="step2"]{border-top: 1px solid var(--main-color3);}
+.work-status .data-table[data-code="step2"] th{color: var(--main-color3);}
+.work-status .data-table[data-code="step3"]{border-top: 1px solid var(--main-color5);}
+.work-status .data-table[data-code="step3"] th{color: var(--main-color5);}
+.work-status .data-table[data-code="step4"]{border-top: 1px solid var(--main-color7);}
+.work-status .data-table[data-code="step4"] th{color: var(--main-color7);}
 
-.plf-main .data-table.type-list td{padding: 6px 0;}
+.plf-main .data-table.type-list td{padding: 12px 0;}
+
+.inner-board{display: flex;gap: 20px;padding-top: 30px;}
+.inner-board .sec{width: 60%;}
+.inner-board .sec:last-child{width: 40%;}
+.inner-board .sec + .sec{margin-top: 0;}
+.inner-board .tit-area{display: flex;justify-content: space-between;align-items: center; margin-bottom: 20px}
+.inner-board .tit-area .tit-board{font-size: 26px;font-weight: 600;color: #1E1E1E;}
+.inner-board .tit-area .tit-board span{font-size: 18px;font-weight: 400;color: #666;margin-left: 10px;}
+.inner-board .tit-area .btn-more{display: inline-block;width: 20px;height: 20px;background: url(../img/icon2/ic_add_black.svg) no-repeat center;}
 
 /*4000.키워드관리*/
 .nodata-4000 { position: relative; height: 460px; text-align: center; border-top: 1px solid #1d1d1d; } 

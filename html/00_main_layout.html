@@ -1,15 +1,21 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>e-IRB</title>
+<html lang="ko"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인 | e-IRB</title>
+    <link rel="stylesheet" type="text/css" href="../static/plugins/jquery.scrollbar-gh-pages/jquery.scrollbar.css">
+    <link rel="stylesheet" href="../static/css/plf.css">
     <script src="../static/js/jquery-3.6.0.min.js"></script>
     <script src="../static/js/datepicker.min.js"></script>		
-    <script src="../static/js/datepicker.ko-KR.js"></script>		
+    <script src="../static/js/datepicker.ko-KR.js"></script>	
+    <script src="../static/plugins/jquery.scrollbar-gh-pages/jquery.scrollbar.min.js"></script>	
     <script src="../static/js/plf_pub.js"></script>
-    <link rel="stylesheet" href="../static/css/plf.css" />
+
+    <script>
+        window.onload = function(){
+            $('.scr_list').scrollbar();
+        }
+    </script>
 </head>
 <body>
 
@@ -40,13 +46,13 @@
     <!--[S] plf-gnb -->
     <div class="plf-gnb">
         <button type="button" class="btn-menu"><em class="blind">메뉴</em></button>
-        <div class="sel auth-sel">
-            <select name="" id="" class="">
-                <option value="0">권한변경</option>
-                <option value="1">연구자</option>
-                <option value="2">행정간사</option>
-                <option value="3">심의위원</option>
-            </select>
+        <div class="form_control form_selectbox auth-sel ">
+            <button type="button" class="fs_selected" data-selected-value="val1">권한변경</button>
+            <ul class="fs_list">
+                <li><button type="button" data-value="val1">연구자</button></li>
+                <li><button type="button" data-value="val2">행정간사</button></li>
+                <li><button type="button" data-value="val3">심의위원</button></li>
+            </ul>
         </div>
     </div>
     <!--//[S] plf-gnb -->
@@ -89,22 +95,259 @@
 
             <!--[S] plf-main -->
             <div class="plf-main">
+                <h1 class="blind">메인</h1>
                 <div class="inner">
                     <div class="inner-con">
-                        내용
+                        <h2 class="blind">나의 업무 진행상황</h2>
+
+                        <!--[S] progress-status -->
+                        <div class="progress-status">
+                            <div class="item">
+                                <h3 class="tit-status">심의신청</h3>
+                                <div class="status-box">
+                                    <button type="button"><strong>3</strong>임시저장</button>
+                                    <button type="button"><strong>0</strong>수정요청</button>
+                                    <button type="button"><strong>0</strong>심의신청 요청</button>
+                                    <button type="button"><strong>100</strong>심의신청 완료</button>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <h3 class="tit-status">심의 중</h3>
+                                <div class="status-box">
+                                    <button type="button"><strong>3</strong>임시저장</button>
+                                    <button type="button"><strong>0</strong>수정요청</button>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <h3 class="tit-status">결과통보</h3>
+                                <div class="status-box">
+                                    <button type="button"><strong>3</strong>임시저장</button>
+                                    <button type="button"><strong>0</strong>수정요청</button>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <h3 class="tit-status">연구중</h3>
+                                <div class="status-box">
+                                    <button type="button"><strong>3</strong>임시저장</button>
+                                    <button type="button"><strong>0</strong>수정요청</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//[S] progress-status -->
+
+                        <!--[S] work-status -->
+                        <div class="work-status">
+                            <table class="data-table type-list" data-code="step1">
+                                <caption>테이블제목</caption>
+                                <colgroup>
+                                    <col width="160px">
+                                    <col width="auto">
+                                    <col width="120px">
+                                    <col width="120px">
+                                    <col width="120px">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">IRB NO.</th>
+                                        <th scope="col">과제명</th>
+                                        <th scope="col">연구책임자</th>
+                                        <th scope="col">심의유형</th>
+                                        <th scope="col">진행상태</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>123456789</td>
+                                        <td><p class="ellipsis ta-left">[바이오] 현대인의 심각한 질병 알츠하이머 치료제</p></td>
+                                        <td>김하나 책임</td>
+                                        <td>유형1</td>
+                                        <td>심의중</td>
+                                    </tr>
+                                    <tr>
+                                        <td>123456789</td>
+                                        <td><p class="ellipsis ta-left">[바이오] 현대인의 심각한 질병 알츠하이머 치료제</p></td>
+                                        <td>김하나 책임</td>
+                                        <td>유형1</td>
+                                        <td>심의중</td>
+                                    </tr>
+                                    <tr>
+                                        <td>123456789</td>
+                                        <td><p class="ellipsis ta-left">[바이오] 현대인의 심각한 질병 알츠하이머 치료제</p></td>
+                                        <td>김하나 책임</td>
+                                        <td>유형1</td>
+                                        <td>심의중</td>
+                                    </tr>
+                                    <tr>
+                                        <td>123456789</td>
+                                        <td><p class="ellipsis ta-left">[바이오] 현대인의 심각한 질병 알츠하이머 치료제</p></td>
+                                        <td>김하나 책임</td>
+                                        <td>유형1</td>
+                                        <td>심의중</td>
+                                    </tr>
+                                    <tr>
+                                        <td>123456789</td>
+                                        <td><p class="ellipsis ta-left">[바이오] 현대인의 심각한 질병 알츠하이머 치료제</p></td>
+                                        <td>김하나 책임</td>
+                                        <td>유형1</td>
+                                        <td>심의중</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="alarm">
+                                <h4 class="tit">알림</h4>
+                                <div class="scr_cont">
+                                    <div class="scroll-wrapper scr_list" style="position: relative;"><ul class="scr_list scroll-content scroll-scrolly_visible" style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 218px;">
+                                        <li class="step1"><!-- 심의신청 -->
+                                            <a href="#">
+                                                <strong>12456번 심의중으로 변경변경변경변경변경변경</strong>
+                                                <span>23.02.23 09:52</span>
+                                            </a>
+                                        </li>
+                                        <li class="step2"><!-- 심의중 -->
+                                            <a href="#">
+                                                <i class="dot-status"></i>
+                                                <strong>12456번 심의중으로 변경</strong>
+                                                <span>23.02.23 09:52</span>
+                                            </a>
+                                        </li>
+                                        <li class="step3"><!-- 결과통보 -->
+                                            <a href="#">
+                                                <strong>12456번 심의중으로 변경</strong>
+                                                <span>23.02.23 09:52</span>
+                                            </a>
+                                        </li>
+                                        <li class="step4"><!-- 연구중 -->
+                                            <a href="#">
+                                                <i class="dot-status"></i>
+                                                <strong>12456번 심의중으로 변경</strong>
+                                                <span>23.02.23 09:52</span>
+                                            </a>
+                                        </li>
+                                        <li class="step1"><!-- 심의신청 -->
+                                            <a href="#">
+                                                <strong>12456번 심의중으로 변경</strong>
+                                                <span>23.02.23 09:52</span>
+                                            </a>
+                                        </li>
+                                        <li class="step2"><!-- 심의중 -->
+                                            <a href="#">
+                                                <i class="dot-status"></i>
+                                                <strong>12456번 심의중으로 변경</strong>
+                                                <span>23.02.23 09:52</span>
+                                            </a>
+                                        </li>
+                                    </ul><div class="scroll-element scroll-x scroll-scrolly_visible"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar" style="width: 0px;"></div></div></div><div class="scroll-element scroll-y scroll-scrolly_visible"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar" style="height: 129px; top: 0px;"></div></div></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//[S] work-status -->
+                        
                     </div>
                 </div>
-                <div class="inner-con">
-                    <div class="notice-board">
-                        게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판
-                        게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판
-                        게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판
-                        게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판
-                        게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판
-                        게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판
-                        게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판
-                        게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판
-                        게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판게시판
+                <div class="inner-board">
+                    <div class="sec">
+                        <div class="tit-area">
+                            <h3 class="tit-board">공지사항<span>자료실</span></h3>
+                            <a href="#" title="공지사항 이동" class="btn-more"></a>
+                        </div>
+                        <table class="data-table type-list">
+                            <caption>테이블제목</caption>
+                            <colgroup>
+                                <col width="100px">
+                                <col width="auto">
+                                <col width="120px">
+                                <col width="120px">
+                                <col width="120px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">구분</th>
+                                    <th scope="col">제목</th>
+                                    <th scope="col">게시자</th>
+                                    <th scope="col">등록일</th>
+                                    <th scope="col">첨부</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>IRB위원</td>
+                                    <td><p class="ellipsis ta-left">[바이오] 현대인의 심각한 질병 알츠하이머 치료제</p></td>
+                                    <td>김하나 책임</td>
+                                    <td>유형1</td>
+                                    <td>심의중</td>
+                                </tr>
+                                <tr>
+                                    <td>IRB위원</td>
+                                    <td><p class="ellipsis ta-left">[바이오] 현대인의 심각한 질병 알츠하이머 치료제</p></td>
+                                    <td>김하나 책임</td>
+                                    <td>유형1</td>
+                                    <td>심의중</td>
+                                </tr>
+                                <tr>
+                                    <td>IRB위원</td>
+                                    <td><p class="ellipsis ta-left">[바이오] 현대인의 심각한 질병 알츠하이머 치료제</p></td>
+                                    <td>김하나 책임</td>
+                                    <td>유형1</td>
+                                    <td>심의중</td>
+                                </tr>
+                                <tr>
+                                    <td>IRB위원</td>
+                                    <td><p class="ellipsis ta-left">[바이오] 현대인의 심각한 질병 알츠하이머 치료제</p></td>
+                                    <td>김하나 책임</td>
+                                    <td>유형1</td>
+                                    <td>심의중</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="sec">
+                        <div class="tit-area">
+                            <h3 class="tit-board">심의일정안내</h3>
+                            <a href="#" title="심의일정안내 이동" class="btn-more"></a>
+                        </div>
+                        <table class="data-table type-list">
+                            <caption>테이블제목</caption>
+                            <colgroup>
+                                <col width="160px">
+                                <col width="auto">
+                                <col width="120px">
+                                <col width="120px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">회차</th>
+                                    <th scope="col">제목</th>
+                                    <th scope="col">게시자</th>
+                                    <th scope="col">등록일</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>IRB위원</td>
+                                    <td><p class="ellipsis ta-left">[바이오] 현대인의 심각한 질병 알츠하이머 치료제</p></td>
+                                    <td>김하나 책임</td>
+                                    <td>유형1</td>
+                                </tr>
+                                <tr>
+                                    <td>IRB위원</td>
+                                    <td><p class="ellipsis ta-left">[바이오] 현대인의 심각한 질병 알츠하이머 치료제</p></td>
+                                    <td>김하나 책임</td>
+                                    <td>유형1</td>
+                                </tr>
+                                <tr>
+                                    <td>IRB위원</td>
+                                    <td><p class="ellipsis ta-left">[바이오] 현대인의 심각한 질병 알츠하이머 치료제</p></td>
+                                    <td>김하나 책임</td>
+                                    <td>유형1</td>
+                                </tr>
+                                <tr>
+                                    <td>IRB위원</td>
+                                    <td><p class="ellipsis ta-left">[바이오] 현대인의 심각한 질병 알츠하이머 치료제</p></td>
+                                    <td>김하나 책임</td>
+                                    <td>유형1</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -119,49 +362,5 @@
 </div>
 <!--//[S] plf-root-->
 
-<!--[S] layer -->
-<div id="layer1" class="layer">
-	<div class="layer-content">
-		<div class="layer-header">
-			<strong class="lh-title">layer 타이틀</strong>
-		</div>
-		<div class="layer-body">
-			layer 내용
-		</div> 
-        <div class="layer-footer">
-			<div class="btn-group">
-                <button class="btn" type="button">취소</button>
-                <button class="btn btn-lb" type="button">확인</button>
-            </div>
-		</div>
-        
-		<button type="button" class="btn-close-layer" data-dismiss="modal"><span class="blind">닫기</span></button>
-	</div>
-</div>
-<!--//[S] layer -->
 
-<!--[S] layer small -->
-<div id="layer2" class="layer type-s">
-	<div class="layer-content">
-		<div class="layer-header">
-			<strong class="lh-title">layer 타이틀</strong>
-		</div>
-		<div class="layer-body">
-			layer 내용
-		</div> 
-        <div class="layer-footer">
-			<div class="btn-group">
-                <button class="btn" type="button">취소</button>
-                <button class="btn btn-lb" type="button">확인</button>
-            </div>
-		</div>
-        
-		<button type="button" class="btn-close-layer" data-dismiss="modal"><span class="blind">닫기</span></button>
-	</div>
-</div>
-<!--//[S] layer small-->
-
-
-
-</body>
-</html>
+<div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"><div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div></div></body></html>
