@@ -67,9 +67,9 @@
 .data-table td .tooltip .tooltip-con ul li:first-child em{color:  var(--color1);}
 .data-table td .tooltip .tooltip-con ul li em{width: 34px;text-indent: -34px;}
 
-.data-table thead th { border-bottom: 1px solid #EFEFEF; background:  #F7f7f7;}
+.data-table thead th { padding: 14px 18px; text-align: center; border-bottom: 1px solid #EFEFEF; background:  #F7f7f7;}
 
-.data-table th { background:  #F7f7f7;font-weight: 600; font-size: 16px; color: #1E1E1E; height: auto; padding: 14px 18px 0 18px;vertical-align: top; } 
+.data-table th { background: #F7f7f7; font-weight: 600; font-size: 16px; color: #1E1E1E; height: auto; padding: 14px 18px 0 18px;vertical-align: top; } 
 .data-table th:nth-child(n+2){border-left:1px solid #fff;}
 
 /* .data-table th.merged { vertical-align: top; padding-top: 16px; } 
