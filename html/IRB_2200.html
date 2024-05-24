@@ -146,7 +146,7 @@
                                             <table class="data-table">
                                                 <caption>연구구분 및 과제명</caption>
                                                 <colgroup>
-                                                    <col width="142px">
+                                                    <col width="250px">
                                                     <col width="auto">
                                                 </colgroup>
                                                 <tbody>
@@ -830,15 +830,15 @@
 
                                         <div class="sec">
                                             <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div><!--[D]그리드 영역-->						
+                                        </div>
                                         
-                                            <div class="sec-btm">
-                                                <p>위와 같이 초기심의 신청서를(을) 제출합니다.</p>
-                                                <div class="btn-group">
-                                                    <button class="btn btn-lb" type="button">임시저장</button>
-                                                    <button class="btn" type="button">심의신청 요청</button>
-                                                    <button class="btn" type="button">심의 신청</button>
-                                                </div>							
-                                            </div>
+                                        <div class="sec-btm">
+                                            <p>위와 같이 초기심의 신청서를(을) 제출합니다.</p>
+                                            <div class="btn-group">
+                                                <button class="btn btn-lb" type="button">임시저장</button>
+                                                <button class="btn" type="button">심의신청 요청</button>
+                                                <button class="btn" type="button">심의 신청</button>
+                                            </div>							
                                         </div>
                                     </div>
 
@@ -1032,9 +1032,9 @@
                                                 <caption>첨부파일 목록</caption>
                                                 <colgroup>
                                                     <col width="auto">
-                                                    <col width="150px">
+                                                    <col width="100px">
                                                     <col width="330px">
-                                                    <col width="250px">
+                                                    <col width="150px">
                                                 </colgroup>
                                                 <thead>
                                                     <tr>
@@ -1050,23 +1050,39 @@
                                                         <td class="ta-center">Y</td>
                                                         <td></td>
                                                         <td>
-                                                            <input name="" id="" class="ip-txt w220" type="text" value="">
+                                                            <input name="" id="" class="ip-txt w100p" type="text" value="">
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>연구계획서 (국문)</td>
                                                         <td class="ta-center">Y</td>
-                                                        <td><button class="btn btn-txt" type="button">(영문)연구계획서_20240101.pdf</button></td>
                                                         <td>
-                                                            <input name="" id="" class="ip-txt w220" type="text" value="">
+                                                            <div class="td-item-group3">
+                                                                <button class="btn btn-txt" type="button">(영문)연구계획서_20240101.pdf</button>
+                                                                <div class="btn-group">
+                                                                    <button class="btn-ic btn-addfile" type="button" title="첨부파일"></button>
+                                                                    <button class="btn-ic btn-trash" type="button" title="삭제"></button>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <input name="" id="" class="ip-txt w100p" type="text" value="">
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>연구대상자 설명문 및 동의서 (국문)</td>
                                                         <td class="ta-center">Y</td>
-                                                        <td></td>
                                                         <td>
-                                                            <input name="" id="" class="ip-txt w220" type="text" value="">
+                                                            <div class="td-item-group3">
+                                                                <button class="btn btn-txt" type="button">(영문)연구계획서_텍스트길어짐테스트_20240101.pdf</button>
+                                                                <div class="btn-group">
+                                                                    <button class="btn-ic btn-addfile" type="button" title="첨부파일"></button>
+                                                                    <button class="btn-ic btn-trash" type="button" title="삭제"></button>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <input name="" id="" class="ip-txt w100p" type="text" value="">
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -1136,12 +1152,12 @@
                                                 </tbody>
                                             </table>
                                             <div class="ip-ch-group type-desc">
-                                                <label class="ip-ch-label">
-                                                    <input name="ch-16" class="ip-ch" type="checkbox" value="">
+                                                <label for="ch-16-1" class="ip-ch-label">
+                                                    <input name="ch-16" class="ip-ch" id="ch-16-1" type="checkbox" value="">
                                                     <span class="check"></span> 연구 결과에 영향을 미칠 수 있는 정도의 경제적 보상을 받았습니다.
                                                 </label>
-                                                <label class="ip-ch-label">
-                                                    <input name="ch-16" class="ip-ch" type="checkbox" value="">
+                                                <label for="ch-16-2" class="ip-ch-label">
+                                                    <input name="ch-16" class="ip-ch" id="ch-16-2" type="checkbox" value="">
                                                     <span class="check"></span> 제한 없이 사용할 수 있는 연구비나 교육비, 기구나 장비, 자문비 또는 사례금 등의 형태로 지원기관(sponsor)으로부터 1,000만원이 넘는 비용을 제공 받았습니다.
                                                 </label>
                                             </div>
@@ -1153,7 +1169,7 @@
                                                 <div class="btn-group">
                                                     <button class="btn btn-lb" type="button">임시저장</button>
                                                     <button class="btn" type="button">심의 신청</button>
-                                                </div>							
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

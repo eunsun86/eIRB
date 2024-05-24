@@ -69,7 +69,7 @@
 
 .data-table thead th { padding: 14px 18px; text-align: center; border-bottom: 1px solid #EFEFEF; background:  #F7f7f7;}
 
-.data-table th { background: #F7f7f7; font-weight: 600; font-size: 16px; color: #1E1E1E; height: auto; padding: 14px 18px 0 18px;vertical-align: top; } 
+.data-table th { background: #F7f7f7; font-weight: 600; font-size: 16px; color: #1E1E1E; height: auto; padding: 14px 18px;vertical-align: top; } 
 .data-table th:nth-child(n+2){border-left:1px solid #fff;}
 
 /* .data-table th.merged { vertical-align: top; padding-top: 16px; } 
@@ -141,7 +141,12 @@
 .td-item-group .th-item{font-size: 16px;line-height: 20px;color: #1e1e1e;font-weight: 600;padding:0 20px 0 0;}
 .td-item-group .th-item.pl36{padding:0 20px 0 36px;}
 
-
+/* 2024-05-24 추가 */
+.td-item-group2 { display: flex; align-items: center; gap: 8px; }
+.td-item-group2 span { white-space: nowrap; }
+.td-item-group3 { display: flex; justify-content: space-between; }
+.td-item-group3 .btn-txt { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.td-item-group3 .btn-group { display: flex; align-items: center; gap: 0 8px; }
 
 .data-table-wrap { /* max-width: 1035px; */
  overflow-x: auto; overflow-y: hidden; } 
@@ -213,8 +218,11 @@
 .sec.type-switching .sec-con { display: none; border-top:2px solid  var(--color1);} 
 .sec.type-switching .sec-con.active { display: block; } 
 
-.sec .sec-btm{display: flex;justify-content: space-between;align-items: center;margin-top: 32px;}
+.sec .sec-btm {display: flex;justify-content: space-between;align-items: center;margin-top: 32px;}
 .sec .sec-btm p{font-size: 24px;font-weight: 500;color: #333;}
+.sec .sec-btm .btn-group:only-child { margin-left:auto; }
+.sec .sec-btm .btn-group { display: flex; align-items: center; gap: 0 6px; }
+.sec .sec-btm .btn-group .btn + .btn { margin: 0;}
 
 .sec .grid-wrap{margin-top: 12px;}
 

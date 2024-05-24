@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IRB_2405</title>
+    <script src="../static/js/jquery-3.6.0.min.js"></script>
+    <script src="../static/js/datepicker.min.js"></script>		
+    <script src="../static/js/datepicker.ko-KR.js"></script>		
+    <script src="../static/js/plf_pub.js"></script>
+    <link rel="stylesheet" href="../static/css/plf.css" />
+</head>
+<body>
+
+<!--[S] plf-root-->
+<div class="plf-root">
+
+    <!--[S] plf-header-->
+    <div class="plf-header">
+        <div class="left-area">
+            <a class="logo" href=""><img src="../static/img/logo/logo.svg" alt="가천대 길병원 e·IRB"></a>
+        </div>
+        <div class="right-area">
+            
+            <!--[S] plf-util-->
+            <div class="plf-util">
+                <a href="#" title="내정보관리로 이동">
+                    <span class="user-agency">ooo소속</span>
+                    <span class="user-name">홍길동님</span>
+                </a>
+                <a href="#" role="button" class="btn btn-logout">Log out</a>
+            </div>
+            <!--//[S] plf-util-->
+
+        </div>
+    </div>
+    <!--//[S] plf-header-->
+
+    <!--[S] plf-group-aside-con-->
+    <div class="plf-group-aside-con">
+        
+        <!--[S] plf-aside-->
+        <div class="plf-aside">
+            <ul class="depth1">
+                <li>
+                    <h2 class="dpt1-tit">심의현황관리</h2>
+                    <ul class="depth2">
+                        <li><a href="#">심의신청(PI)</a></li>
+                        <li class="selected"><a href="#">신규 심의신청</a></li>
+                        <li><a href="#">신규 면제신청</a></li>
+                        <li><a href="#">신규외 심의신청</a></li>
+                        <li><a href="#">심의진행 현황</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h2 class="dpt1-tit">과제관리</h2>
+                    <ul class="depth2">
+                        <li><a href="#">과제현황</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h2 class="dpt1-tit">My Page</h2>
+                    <ul class="depth2">
+                        <li><a href="#">내정보 관리</a></li>
+                        <li><a href="#">이력 및 교육이수 관리</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--//[S] plf-aside-->
+
+        <!--[S] plf-con-->
+        <div class="plf-con">
+
+            <!--[S] plf-sub-->
+            <div class="plf-sub">
+
+                <div class="form_control form_selectbox auth-sel ">
+					<button type="button" class="fs_selected" data-selected-value="val1">권한변경</button>
+					<ul class="fs_list">
+						<li><button type="button" data-value="val1">연구자</button></li>
+						<li><button type="button" data-value="val2">행정간사</button></li>
+						<li><button type="button" data-value="val3">심의위원</button></li>
+					</ul>
+				</div>
+
+                <!--[S] plf-tab-->
+                <div class="plf-tab my-tab-switching">
+                    <div class="tab">
+                        <span class="item active" role="button"><em>타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span> <!--[D]active-->
+                        <span class="item" role="button"><em>타이틀타이틀타이틀타이틀타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span>
+                        <span class="item" role="button"><em>타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span>
+                    </div>
+                    <div class="tab-con-group"> 
+                        <div class="tab-con active"> <!--[D]active-->
+
+                            <div class="breadcrumb">
+                                <button type="button" class="layer_open" title="업무단 팝업" onclick="hcLayer.show('layer1')"></button>
+                                <span class="item">심의현황관리</span>
+                                <span class="item">신규 외 심의신청</span>
+                            </div>
+    
+                            <p class="tit-pagetitle">신규 외 심의신청</p>
+
+                            <div class="sec">
+                                <table class="data-table data-table-top">
+                                    <caption>신규 심의신청 정보</caption>
+                                    <colgroup>
+                                        <col width="142px">
+                                        <col width="auto">
+                                        <col width="142px">
+                                        <col width="auto">
+                                        <col width="142px">
+                                        <col width="auto">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">IRB No.</th>
+                                            <td>135846543</td>
+                                            <th scope="row">접수번호</th>
+                                            <td>내용</td>
+                                            <th scope="row">연구책임자</th>
+                                            <td>내용</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">과제명</th>
+                                            <td colspan="5">내용</td>
+                                        </tr>
+                                    </tbody>
+                                </table>	
+                            </div>
+                            
+                            <div class="sec type-switching my-tab-switching">
+                                <div class="tab type1">
+                                    <button class="item" type="button">연구정보</button>
+                                    <button class="item active" type="button">조기종료보고</button> <!--[D]active-->
+                                    <button class="item" type="button">첨부</button>
+                                </div>			
+                                <div class="sec-con-group"> 
+                                    <!-- 연구정보 -->
+                                    <div class="sec-con"> <!--[D]active-->
+                                        기획안에 해당화면 내용 없음
+                                    </div>
+
+                                    <!-- 조기종료보고 -->
+                                    <div class="sec-con active">
+                                        <div class="sec">
+                                            <table class="data-table type-line">
+                                                <caption>조기종료보고</caption>
+                                                <colgroup>
+                                                    <col width="250px">
+                                                    <col width="auto">
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row" rowspan="2">연구대상자 참여현황</th>
+                                                        <td>
+                                                            <span class="fw-500">1. IRB에서 승인한 최대 연구대상자 수</span>
+                                                            <input name="" id="" class="ip-txt w60" type="text" value="">
+                                                            <span>명</span>
+
+                                                            <span class="fw-400 ml10 mr10">*경쟁적 모집여부</span>
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>예</em> 
+                                                            </label>
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>아니오</em> 
+                                                            </label>
+                                                            
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="fw-500">2. 연구 개시 후 전체 연구대상자 참여 상황 (본 기관 현황)</span>
+                                                            <ol>
+                                                                <li>
+                                                                    <span class="fw-400">① 동의 취득 연구대상자 수:</span>
+                                                                    <input name="" id="" class="ip-txt w60" type="text" value="">
+                                                                    <span>명</span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="fw-400">② 스크리닝(Screened) 연구대상자 수:</span>
+                                                                    <input name="" id="" class="ip-txt w60" type="text" value="">
+                                                                    <span>명</span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="fw-400">③ 등록(enrolled) 연구대상자 수:</span>
+                                                                    <input name="" id="" class="ip-txt w60" type="text" value="">
+                                                                    <span>명</span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="fw-400">④ 등록(enrolled)이후 중도(Dropped)탈락 연구대상자 수 :</span>
+                                                                    <input name="" id="" class="ip-txt w60" type="text" value="">
+                                                                    <span>명</span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="fw-400">⑤ 완료 연구대상자 수:</span>
+                                                                    <input name="" id="" class="ip-txt w60" type="text" value="">
+                                                                    <span>명</span>
+                                                                </li>
+                                                                <li>
+                                                                    <span class="fw-400">⑥ 진행 연구대상자 수:</span>
+                                                                    <input name="" id="" class="ip-txt w60" type="text" value="">
+                                                                    <span>명</span>
+                                                                </li>
+                                                            </ol>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="col" colspan="2">이 연구 계획과 관련된 연구대상자에 대한 위험/이익 평가에 영향을 줄 수 있는 정보가 문헌에 발표 되거나 이 연구나 유사한 연구를 통해 도출 되었는가?</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2">
+                                                            <div class="ip-rd-group">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-2" class="ip-rd" type="radio" value="">
+                                                                    <span class="check"></span> <em>아니오</em> 
+                                                                </label>
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-2" class="ip-rd" type="radio" value="">
+                                                                    <span class="check"></span> <em>예 ( 간략히 첨부 서류에 기록)</em> 
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">조기종료 사유</th>
+                                                        <td>
+                                                            <input name="" id="" class="ip-txt w100p" type="text" value="">
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    
+                                        <div class="sec-btm">
+                                            <p>위와 같이 조기종료 신청서를(을) 제출합니다.</p>
+                                            <div class="btn-group">
+                                                <button class="btn btn-lb" type="button">임시저장</button>
+                                                <button class="btn" type="button">심의 신청</button>
+                                            </div>							
+                                        </div>
+                                    </div>
+
+                                    <!-- 첨부 -->
+                                    <div class="sec-con">
+                                        기획안에 해당화면 내용 없음
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div><!--//[S] tab-con-->
+                    </div>
+
+                    <!-- [S] item-etc -->
+                    <div class="item-etc">
+                        <button type="button" class="btn-etc"><i class="blind">tab etc</i>···</button>
+                        <ul class="tab-list">
+                            <li><a href="#">탭이름탭이름탭이름탭이름탭이름</a><button class="list-del" type="button"><i class="blind">삭제</i></button></li>
+                            <li><a href="#">탭이름</a><button class="list-del" type="button"><i class="blind">삭제</i></button></li>
+                        </ul>
+                    </div>
+                    <!--// [S] item-etc -->
+
+                </div>
+                <!--// [S] plf-tab-->
+                
+                <!--[C]Toast-->
+                <div class="toast"> <!--[D]active-->
+                    <div class="inner" style="display: none;">
+                        toast 알림입니다
+                    </div>
+                </div>
+                <!--//[C]Toast-->
+                
+            </div>
+            <!--//[S] plf-sub-->
+
+        </div>
+        <!--//[S] plf-con-->
+
+    </div>
+    <!--//[S] plf-group-aside-con-->
+
+</div>
+<!--//[S] plf-root-->
+
+
+</body>
+</html>

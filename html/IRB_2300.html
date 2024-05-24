@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IRB_2300</title>
+    <script src="../static/js/jquery-3.6.0.min.js"></script>
+    <script src="../static/js/datepicker.min.js"></script>		
+    <script src="../static/js/datepicker.ko-KR.js"></script>		
+    <script src="../static/js/plf_pub.js"></script>
+    <link rel="stylesheet" href="../static/css/plf.css" />
+</head>
+<body>
+
+<!--[S] plf-root-->
+<div class="plf-root">
+
+    <!--[S] plf-header-->
+    <div class="plf-header">
+        <div class="left-area">
+            <a class="logo" href=""><img src="../static/img/logo/logo.svg" alt="가천대 길병원 e·IRB"></a>
+        </div>
+        <div class="right-area">
+            
+            <!--[S] plf-util-->
+            <div class="plf-util">
+                <a href="#" title="내정보관리로 이동">
+                    <span class="user-agency">ooo소속</span>
+                    <span class="user-name">홍길동님</span>
+                </a>
+                <a href="#" role="button" class="btn btn-logout">Log out</a>
+            </div>
+            <!--//[S] plf-util-->
+
+        </div>
+    </div>
+    <!--//[S] plf-header-->
+
+    <!--[S] plf-group-aside-con-->
+    <div class="plf-group-aside-con">
+        
+        <!--[S] plf-aside-->
+        <div class="plf-aside">
+            <ul class="depth1">
+                <li>
+                    <h2 class="dpt1-tit">심의현황관리</h2>
+                    <ul class="depth2">
+                        <li><a href="#">심의신청(PI)</a></li>
+                        <li class="selected"><a href="#">신규 심의신청</a></li>
+                        <li><a href="#">신규 면제신청</a></li>
+                        <li><a href="#">신규외 심의신청</a></li>
+                        <li><a href="#">심의진행 현황</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h2 class="dpt1-tit">과제관리</h2>
+                    <ul class="depth2">
+                        <li><a href="#">과제현황</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h2 class="dpt1-tit">My Page</h2>
+                    <ul class="depth2">
+                        <li><a href="#">내정보 관리</a></li>
+                        <li><a href="#">이력 및 교육이수 관리</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--//[S] plf-aside-->
+
+        <!--[S] plf-con-->
+        <div class="plf-con">
+
+            <!--[S] plf-sub-->
+            <div class="plf-sub">
+
+                <div class="form_control form_selectbox auth-sel ">
+					<button type="button" class="fs_selected" data-selected-value="val1">권한변경</button>
+					<ul class="fs_list">
+						<li><button type="button" data-value="val1">연구자</button></li>
+						<li><button type="button" data-value="val2">행정간사</button></li>
+						<li><button type="button" data-value="val3">심의위원</button></li>
+					</ul>
+				</div>
+
+                <!--[S] plf-tab-->
+                <div class="plf-tab my-tab-switching">
+                    <div class="tab">
+                        <span class="item active" role="button"><em>타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span> <!--[D]active-->
+                        <span class="item" role="button"><em>타이틀타이틀타이틀타이틀타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span>
+                        <span class="item" role="button"><em>타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span>
+                    </div>
+                    <div class="tab-con-group"> 
+                        <div class="tab-con active"> <!--[D]active-->
+
+                            <div class="breadcrumb">
+                                <button type="button" class="layer_open" title="업무단 팝업" onclick="hcLayer.show('layer1')"></button>
+                                <span class="item">심의현황관리</span>
+                                <span class="item">신규 면제심의 신청</span>
+                            </div>
+    
+                            <p class="tit-pagetitle">신규 면제심의 신청</p>
+
+                            <div class="sec">
+                                <table class="data-table data-table-top">
+                                    <caption>신규 면제심의 신청 정보</caption>
+                                    <colgroup>
+                                        <col width="142px">
+                                        <col width="auto">
+                                        <col width="142px">
+                                        <col width="auto">
+                                        <col width="142px">
+                                        <col width="auto">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">IRB No.</th>
+                                            <td>135846543</td>
+                                            <th scope="row">접수번호</th>
+                                            <td>내용</td>
+                                            <th scope="row">연구책임자</th>
+                                            <td>내용</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">과제명</th>
+                                            <td colspan="5">내용</td>
+                                        </tr>
+                                    </tbody>
+                                </table>	
+                            </div>
+                            
+                            <div class="sec type-switching my-tab-switching">
+                                <div class="tab type1">
+                                    <button class="item active" type="button">연구정보</button> <!--[D]active-->
+                                    <button class="item" type="button">심의면제</button>
+                                    <button class="item" type="button">첨부</button>
+                                </div>			
+                                <div class="sec-con-group"> 
+                                    <!-- 연구정보 -->
+                                    <div class="sec-con active"> <!--[D]active-->
+                                        <div class="sec">
+                                            <table class="data-table">
+                                                <caption>연구 과제명</caption>
+                                                <colgroup>
+                                                    <col width="250px">
+                                                    <col width="auto">
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">과제명 (국문)</th>
+                                                        <td>
+                                                            <input name="" id="" class="ip-txt w100p" type="text" value="" placeholder="과제명 (국문)">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">과제명 (영문)</th>
+                                                        <td>
+                                                            <input name="" id="" class="ip-txt w100p" type="text" value="" placeholder="과제명 (영문)">
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="sec">
+                                            <div class="td-item-group">
+                                                <h3 class="sec-tit">연구자</h3>
+                                                <div class="btn-group">
+                                                    <button class="btn btn-cts" type="button">추가</button>
+                                                    <button class="btn btn-cts" type="button">삭제</button>
+                                                </div>
+                                            </div>	
+                                            <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div><!--[D]그리드 영역-->						
+                                        </div>
+
+                                        <div class="sec">
+                                            <table class="data-table type-line">
+                                                <caption>연구정보입력</caption>
+                                                <colgroup>
+                                                    <col width="250px">
+                                                    <col width="auto">
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">연구기관</th>
+                                                        <td>
+                                                            <div class="td-item-group left">
+                                                                <div class="ip-rd-group">
+                                                                    <label class="ip-rd-label">
+                                                                        <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                        <span class="check"></span> <em>단일기관</em> 
+                                                                    </label>
+                                                                    <label class="ip-rd-label">
+                                                                        <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                        <span class="check"></span> <em>국내다기관연구</em> 
+                                                                    </label>
+                                                                    <label class="ip-rd-label">
+                                                                        <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                        <span class="check"></span> <em>다국가 다기관연구</em> 
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row" rowspan="2">연구특성</th>
+                                                        <td>
+                                                            <div class="td-item-group left gap6">
+                                                                <span class="fw-400 mr12">1) 연구 대상 수 : </span>
+                                                                전체
+                                                                <input name="" id="" class="ip-txt w100 ml8" type="text" value="">
+                                                                명(건) 
+                                                                <span class="ml8 mr10">/</span>
+                                                                본원
+                                                                <input name="" id="" class="ip-txt w100 ml8" type="text" value="">
+                                                                명(건)
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="td-item-group left gap6">
+                                                                <span class="fw-400 mr12">2) 연구비 지원기관</span>
+                                                                <div class="ip-rd-group">
+                                                                    <label class="ip-rd-label">
+                                                                        <input name="fd-2" class="ip-rd" type="radio" value="">
+                                                                        <span class="check"></span> <em>정부기관</em> 
+                                                                    </label>
+                                                                    <label class="ip-rd-label">
+                                                                        <input name="fd-2" class="ip-rd" type="radio" value="">
+                                                                        <span class="check"></span> <em>기업체</em> 
+                                                                    </label>
+                                                                    <label class="ip-rd-label">
+                                                                        <input name="fd-2" class="ip-rd" type="radio" value="">
+                                                                        <span class="check"></span> <em>없음</em> 
+                                                                    </label>
+                                                                    <label class="ip-rd-label">
+                                                                        <input name="fd-2" class="ip-rd" type="radio" value="">
+                                                                        <span class="check"></span> <em>기타</em> 
+                                                                    </label>
+                                                                    <input name="" id="" class="ip-txt w175" type="text" value="">
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">IRB 심의비</th>
+                                                        <td>
+                                                            <div class="td-item-group left fw-500">
+                                                                <input name="" id="" class="ip-txt w175" type="text" value="">
+                                                                <span class="fw-600 ml8 mr12">원</span>
+                                                                &#40;
+                                                                <span class="fw-500 mr12 ">입금예정일 : </span>
+                                                                <div class="ip-wrap with-icon ta-left w165 ml8">
+                                                                    <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                                                    <i class="ic ic-calendar"></i>
+                                                                </div>
+                                                                &#41;
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">연구기간</th>
+                                                        <td>
+                                                            <div class="td-item-group left fw-500">
+                                                                <span class="fw-500 mr12 ">IRB 승인일 ~ </span>
+                                                                <div class="ip-wrap with-icon ta-left w165 ml8">
+                                                                    <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                                                    <i class="ic ic-calendar"></i>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="sec">
+                                            <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div><!--[D]그리드 영역-->						
+                                        
+                                            <div class="sec-btm">
+                                                <p>위와 같이 심의면제 신청서를(을) 제출합니다.</p>
+                                                <div class="btn-group">
+                                                    <button class="btn btn-lb" type="button">임시저장</button>
+                                                    <button class="btn" type="button">심의 신청</button>
+                                                </div>							
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 심의면제 -->
+                                    <div class="sec-con">
+                                        <div class="sec">
+                                            <table class="data-table type-research">
+                                                <caption>연구계약서 정보</caption>
+                                                <colgroup>
+                                                    <col width="auto">
+                                                    <col width="90px">
+                                                    <col width="90px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">면제대상 확인 (모두 ‘예’ 인경우 면제대상)</th>
+                                                        <th>예</th>
+                                                        <th>아니오</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>기존에 존재하는 자료/샘플만을 사용하는 연구인가?</td>
+                                                        <td class="ta-center">
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-4" class="ip-rd" type="radio" value="" title="아니오">
+                                                                <span class="check"></span> 
+                                                            </label>
+                                                        </td>
+                                                        <td class="ta-center">
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-4" class="ip-rd" type="radio" value="" title="아니오">
+                                                                <span class="check"></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>사용하는 자료/샘플을 공개적으로 얻을 수 있는가?</td>
+                                                        <td class="ta-center">
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-5" class="ip-rd" type="radio" value="" title="아니오">
+                                                                <span class="check"></span> 
+                                                            </label>
+                                                        </td>
+                                                        <td class="ta-center">
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-5" class="ip-rd" type="radio" value="" title="아니오">
+                                                                <span class="check"></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>정보가 연구자에 의해 기록되지 않는가?</td>
+                                                        <td class="ta-center">
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-6" class="ip-rd" type="radio" value="" title="아니오">
+                                                                <span class="check"></span> 
+                                                            </label>
+                                                        </td>
+                                                        <td class="ta-center">
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-6" class="ip-rd" type="radio" value="" title="아니오">
+                                                                <span class="check"></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="col">면제사유확인. (다음의 면제사유중 하나에 해당된다.)</th>
+                                                        <th class="ta-center">예</th>
+                                                        <th class="ta-center">아니오</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>연구대상자를 직접 조작하거나 그 환경을 조작하는 연구 중 약물투여, 혈액채취 등 침습적 행위를 하지 않는 연구 (취약한 연구대상자를 포함하지 않음)</td>
+                                                        <td class="ta-center">
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-7" class="ip-rd" type="radio" value="" title="예">
+                                                                <span class="check"></span> 
+                                                            </label>
+                                                        </td>
+                                                        <td class="ta-center">
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-7" class="ip-rd" type="radio" value="" title="아니오">
+                                                                <span class="check"></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>연구대상자를 직접 조작하거나 그 환경을 조작하는 연구 중 신체적 변화가 따르지 않는 단순 접촉 측정장비 또는 관찰장비만을 사용하는 연구 (취약한 연구대상자를 포함하지 않음)</td>
+                                                        <td class="ta-center">
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-8" class="ip-rd" type="radio" value="" title="예">
+                                                                <span class="check"></span> 
+                                                            </label>
+                                                        </td>
+                                                        <td class="ta-center">
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-8" class="ip-rd" type="radio" value="" title="아니오">
+                                                                <span class="check"></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>화장품법에 따른 안전기준에 맞는 화장품을 이용하여 사용감 또는 만족도 등을 조사하는 연구 (취약한 연구대상자를 포함하지 않음)</td>
+                                                        <td class="ta-center">
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-9" class="ip-rd" type="radio" value="" title="예">
+                                                                <span class="check"></span> 
+                                                            </label>
+                                                        </td>
+                                                        <td class="ta-center">
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-9" class="ip-rd" type="radio" value="" title="아니오">
+                                                                <span class="check"></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>연구대상자 등을 직접 대면하더라도 연구대상자 등이 특정되지 않고 「개인정보보호법」에 따른 민감정보를 수집하거나 기록하지 않는 연구 (취약한 연구대상자를 포함하지 않음)</td>
+                                                        <td class="ta-center">
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-10" class="ip-rd" type="radio" value="" title="예">
+                                                                <span class="check"></span> 
+                                                            </label>
+                                                        </td>
+                                                        <td class="ta-center">
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-10" class="ip-rd" type="radio" value="" title="아니오">
+                                                                <span class="check"></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>연구대상자 등에 대한 기존의 자료나 문서를 이용하는 연구</td>
+                                                        <td class="ta-center">
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-11" class="ip-rd" type="radio" value="" title="예">
+                                                                <span class="check"></span> 
+                                                            </label>
+                                                        </td>
+                                                        <td class="ta-center">
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-11" class="ip-rd" type="radio" value="" title="아니오">
+                                                                <span class="check"></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>식품위생법 시행규칙에 따라 판매 등이 허용되는 식품 또는 식품 첨가물을 이용하여 맛이나 질을 평가하는 연구</td>
+                                                        <td class="ta-center">
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-12" class="ip-rd" type="radio" value="" title="예">
+                                                                <span class="check"></span> 
+                                                            </label>
+                                                        </td>
+                                                        <td class="ta-center">
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-12" class="ip-rd" type="radio" value="" title="아니오">
+                                                                <span class="check"></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="col">면제사유확인. (아래 사항에 해당하지 않는다.)</th>
+                                                        <th class="ta-center">예</th>
+                                                        <th class="ta-center">아니오</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <ol>
+                                                                <li>
+                                                                    1.획득된 정보가 직접적으로 또는 연구대상자와 연결된 식별자(Subject Identification Code)를 통해서 연구대상자를 식별할 수 있는 방법으로 기록된 경우로서 연구대상자의 반응이 발표되었을 때 연구대상자가 민사, 형사상의 책임을 지게 되거나 연구대상자의 경제적 상태, 구직가능성, 및 평판에 손상을 끼칠 위험이 존재하는 경우 
+                                                                </li>
+                                                                <li>
+                                                                    2.교육적 검사(인지, 진단, 적성, 성취검사), 설문조사, 면접조사, 대중 행동 관찰 등이 포함된 연구 중에서 법률이 개인적으로 식별 가능한 정보에 대해 예외 없이 비밀 보장을 요구하는 경우
+                                                                </li>
+                                                            </ol>
+                                                        </td>
+                                                        <td class="ta-center">
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-12" class="ip-rd" type="radio" value="" title="예">
+                                                                <span class="check"></span> 
+                                                            </label>
+                                                        </td>
+                                                        <td class="ta-center">
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-12" class="ip-rd" type="radio" value="" title="아니오">
+                                                                <span class="check"></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td colspan="3">
+                                                            <ol class="list-ol">
+                                                                <li>
+                                                                    <i>1.</i>본 서식에 기입된 모든 정보는 본인이 수행하고자 하는 연구과제와 일치함에 따라 본 연구과제에 대한 IRB의 심사면제를 요청합니다.
+                                                                </li>
+                                                                <li>
+                                                                    <i>2.</i>본 연구과제의 윤리적 시행과 연구대상자의 권리와 복지의 보호에 대한 모든 궁극적 책임을 가진 연구책임자로서 다음과 같이 약속합니다.
+                                                                    <ol>
+                                                                        <li>
+                                                                            <i>2.1</i>본 연구과제의 윤리적 시행과 연구대상자의 권리와 복지의 보호에 대한 모든 궁극적 책임을 가진 연구책임자로서 다음과 같이 약속합니다.
+                                                                        </li>
+                                                                        <li>
+                                                                            <i>2.2</i>본 연구과제의 윤리적 시행과 연구대상자의 권리와 복지의 보호에 대한 모든 궁극적 책임을 가진 연구책임자로서 다음과 같이 약속합니다.
+                                                                        </li>
+                                                                    </ol>
+                                                                </li>
+                                                            </ol>
+                                                        </td>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    
+                                        <div class="sec-btm">
+                                            <p>위와 같이 심의면제 신청서를(을) 제출합니다.</p>
+                                            <div class="btn-group">
+                                                <button class="btn btn-lb" type="button">임시저장</button>
+                                                <button class="btn" type="button">심의 신청</button>
+                                            </div>							
+                                        </div>
+                                    </div>
+
+                                    <!-- 첨부 -->
+                                    <div class="sec-con">
+                                        <div class="sec">
+                                            <table class="data-table type-line">
+                                                <caption>첨부파일 목록</caption>
+                                                <colgroup>
+                                                    <col width="auto">
+                                                    <col width="100px">
+                                                    <col width="330px">
+                                                    <col width="150px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">제출자료 목록</th>
+                                                        <th scope="col">필수여부</th>
+                                                        <th scope="col">파일첨부</th>
+                                                        <th scope="col">버전</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>연구계획서 (국문)</td>
+                                                        <td class="ta-center">Y</td>
+                                                        <td></td>
+                                                        <td>
+                                                            <input name="" id="" class="ip-txt w100p" type="text" value="">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>연구계획서 (국문)</td>
+                                                        <td class="ta-center">Y</td>
+                                                        <td>
+                                                            <div class="td-item-group3">
+                                                                <button class="btn btn-txt" type="button">(영문)연구계획서_20240101.pdf</button>
+                                                                <div class="btn-group">
+                                                                    <button class="btn-ic btn-addfile" type="button" title="첨부파일"></button>
+                                                                    <button class="btn-ic btn-trash" type="button" title="삭제"></button>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <input name="" id="" class="ip-txt w100p" type="text" value="">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>연구대상자 설명문 및 동의서 (국문)</td>
+                                                        <td class="ta-center">Y</td>
+                                                        <td>
+                                                            <div class="td-item-group3">
+                                                                <button class="btn btn-txt" type="button">(영문)연구계획서_텍스트길어짐테스트_20240101.pdf</button>
+                                                                <div class="btn-group">
+                                                                    <button class="btn-ic btn-addfile" type="button" title="첨부파일"></button>
+                                                                    <button class="btn-ic btn-trash" type="button" title="삭제"></button>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <input name="" id="" class="ip-txt w100p" type="text" value="">
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="sec">
+                                            <div class="td-item-group">
+                                                <h3 class="sec-tit">기타 파일 첨부</h3>
+                                                <div class="btn-group">
+                                                    <button class="btn btn-cts" type="button">첨부</button>
+                                                </div>
+                                            </div>	
+                                            <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div><!--[D]그리드 영역-->						
+                                        </div>
+                                    
+                                        <div class="sec-btm">
+                                            <p>위와 같이 심의면제 신청서를(을) 제출합니다.</p>
+                                            <div class="btn-group">
+                                                <button class="btn btn-lb" type="button">임시저장</button>
+                                                <button class="btn" type="button">심의 신청</button>
+                                            </div>							
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div><!--//[S] tab-con-->
+                    </div>
+
+                    <!-- [S] item-etc -->
+                    <div class="item-etc">
+                        <button type="button" class="btn-etc"><i class="blind">tab etc</i>···</button>
+                        <ul class="tab-list">
+                            <li><a href="#">탭이름탭이름탭이름탭이름탭이름</a><button class="list-del" type="button"><i class="blind">삭제</i></button></li>
+                            <li><a href="#">탭이름</a><button class="list-del" type="button"><i class="blind">삭제</i></button></li>
+                        </ul>
+                    </div>
+                    <!--// [S] item-etc -->
+
+                </div>
+                <!--// [S] plf-tab-->
+                
+                <!--[C]Toast-->
+                <div class="toast"> <!--[D]active-->
+                    <div class="inner" style="display: none;">
+                        toast 알림입니다
+                    </div>
+                </div>
+                <!--//[C]Toast-->
+                
+            </div>
+            <!--//[S] plf-sub-->
+
+        </div>
+        <!--//[S] plf-con-->
+
+    </div>
+    <!--//[S] plf-group-aside-con-->
+
+</div>
+<!--//[S] plf-root-->
+
+
+</body>
+</html>
