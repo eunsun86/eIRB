@@ -46,22 +46,34 @@
 .progress-status{display: flex;gap:27px;margin-bottom: 32px;}
 .progress-status .item{flex: 1 auto;}
 .progress-status .item .tit-status{font-size: 20px;font-weight: 600;color: #1E1E1E;margin-bottom: 8px; }
-.progress-status .item .status-box{display: flex; padding:10px 12px;border-radius: 12px;}
-.progress-status .item .status-box button{flex: 1 auto;font-size: 16px;font-weight: 700;color: #fff;padding-bottom: 8px; position: relative;}
-.progress-status .item .status-box button strong{display: block; font-size: 50px;font-weight: 700;color: #fff;margin-bottom: 8px;}
-.progress-status .item .status-box button:nth-child(n + 2):before{content: '';display: block;width: 1px;height: 12px;background: #fff;opacity: 0.5; position: absolute;left:-2px;bottom:5px;}
+.progress-status .item .status-box{display: flex; padding:0 12px;border-radius: 12px;height: 116px;}
+.progress-status .item .status-box button{flex: 1;}
+.progress-status .item .status-box button strong{display: block; font-size: 50px;font-weight: 600;color: #fff;}
+.progress-status .item .status-box button i{display: flex;justify-content: center;align-items: center;height: 38px; font-size: 16px;font-weight: 600;color: #fff;position: relative;}
+.progress-status .item .status-box button:nth-child(n + 2)  i:before{content: '';display: block;width: 1px;height: 12px;background: #fff;opacity: 0.5; position: absolute;left:-6px;top:50%;margin-top:-6px;}
 
 .progress-status .item:nth-child(1) .status-box{background: linear-gradient(95deg, var(--main-color1) 19.7%, var(--main-color2) 87.8%);}
 .progress-status .item:nth-child(2) .status-box{background: linear-gradient(113deg, var(--main-color3) 35.2%, var(--main-color4) 100%);}
 .progress-status .item:nth-child(3) .status-box{background: linear-gradient(113deg, var(--main-color5) 18.43%, var(--main-color6) 89.13%);}
 .progress-status .item:nth-child(4) .status-box{background: linear-gradient(113deg, var(--main-color7) 17.29%, var(--main-color8) 85.09%);}
 
+.progress-status.type1 .item{flex: 1 auto;}
+.progress-status.type1 .item:nth-child(n + 2){flex: 1 120px;}
+
+.progress-status.type2,.progress-status.type3{display: inline-flex;}
+.progress-status.type2 .item:nth-child(1){width: 253px;}
+.progress-status.type2 .item:nth-child(1) .status-box{background: linear-gradient(95deg, var(--main-color1) 19.7%, var(--main-color2) 87.8%);}
+.progress-status.type2 .item:nth-child(2){width: 848px;}
+.progress-status.type2 .item:nth-child(2) .status-box{background: linear-gradient(113deg, var(--main-color5) 18.43%, var(--main-color6) 89.13%);}
+
+.progress-status.type3 .item:nth-child(1){width: 730px;}
+
 .work-status{display: flex;gap: 26px;}
 .work-status .alarm{border:1px solid #F0F0F0;border-radius: 8px;background: #fff;width: 253px; height: 271px;padding:12px 7px 12px 17px;box-sizing: border-box;overflow: hidden;}
-.work-status .alarm .tit{font-size: 16px;font-weight: 600;color: #1E1E1E;margin-bottom: 10px;background: url(../img/icon2/ic_ex.svg) no-repeat center left/12px auto; padding-left:20px;}
+.work-status .alarm .tit{font-size: 16px;font-weight: 600;color: #1E1E1E;border-bottom:1px solid #F0F0F0;margin-right: 13px;padding:0 0 10px 20px;position: relative;}
+.work-status .alarm .tit::before{content: '';display: block;position: absolute;left:0;top:0; width: 13px;height: 13px; background: url(../img/icon2/ic_ex.svg) no-repeat center/contain;}
 .work-status .alarm .scr_cont {height: 218px;}
 .work-status .alarm .scr_cont .scr_list{height:100%;padding-right: 13px;}
-.work-status .alarm .scr_cont .scr_list li:first-child{border-top:1px solid #F0F0F0;}
 .work-status .alarm .scr_cont .scr_list li{border-bottom:1px solid #F0F0F0}
 .work-status .alarm .scr_cont .scr_list li a{display: block;padding:13px 0 14px 28px;position: relative;}
 .work-status .alarm .scr_cont .scr_list li a:before{content: ''; display: inline-block; background: #DCDCDC;width: 16px;height:16px;border-radius: 100%;position: absolute;left:0;top:15px;}
@@ -96,22 +108,3 @@
 .inner-board .tit-area .tit-board{font-size: 26px;font-weight: 600;color: #1E1E1E;}
 .inner-board .tit-area .tit-board span{font-size: 18px;font-weight: 400;color: #666;margin-left: 10px;}
 .inner-board .tit-area .btn-more{display: inline-block;width: 20px;height: 20px;background: url(../img/icon2/ic_add_black.svg) no-repeat center;}
-
-/*4000.키워드관리*/
-.nodata-4000 { position: relative; height: 460px; text-align: center; border-top: 1px solid #1d1d1d; } 
-.nodata-4000>.inner { position: absolute; top: 50%; left: 0; width: 100%; } 
-
-/*6002. 공지사항 - 게시판 상세조회*/
-.board-main { font-size: 13px; font-weight: 500; color: #666; line-height: 1.5; padding-top: 15px; padding-bottom: 20px; } 
-.reply-box .reply-list .reply-item { position: relative; padding: 15px 12px; border-bottom: 1px solid #ededed; } 
-.reply-box .reply-info { display: flex; column-gap: 10px; margin-bottom: 12px; } 
-.reply-box .reply-info .reply-name { font-size: 13px; font-weight: 500; color: #999; } 
-.reply-box .reply-info .reply-dpt { font-size: 13px; font-weight: 500; color: #ccc; } 
-.reply-box .reply-info .reply-date { font-size: 13px; font-weight: 500; color: #ccc; } 
-.reply-box .reply-txt { font-size: 13px; font-weight: 500; color: #333; } 
-.reply-box .reply-func { position: absolute; top: 15px; right: 12px; } 
-.reply-box .reply-func>.btn-group { display: flex; column-gap: 12px; } 
-.reply-box .reply-write { margin-top: 16px; margin-bottom: 8px; } 
-.reply-box .reply-write .ta-group { border-color: #ededed; } 
-.reply-box .reply-write .ta-group .ta-ip { font-size: 13px; height: 60px; } 
-.reply-box .btn-big+.btn-big { margin-left: 0; } 

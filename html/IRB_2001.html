@@ -1,0 +1,550 @@
+<html lang="ko"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>심의일정 팝업 | e-IRB</title>
+    <link rel="stylesheet" type="text/css" href="../static/plugins/jquery.scrollbar-gh-pages/jquery.scrollbar.css">
+    <link rel="stylesheet" href="../static/css/plf.css">
+    <script src="../static/js/jquery-3.6.0.min.js"></script>
+    <script src="../static/js/datepicker.min.js"></script>		
+    <script src="../static/js/datepicker.ko-KR.js"></script>	
+    <script src="../static/plugins/jquery.scrollbar-gh-pages/jquery.scrollbar.min.js"></script>	
+    <script src="../static/js/plf_pub.js"></script>
+<style>
+.sub_calendar{}
+.sub_calendar_top_area:after{ clear: both; content: "."; display: block; height: 0; visibility: hidden; font-size: 0;}
+.sub_calendar_top_area{position: relative;;padding:20px;}
+.sub_calendar_top_area .month_select_wrap{float:left; }
+.sub_calendar_top_area .btn_prev{float:left; margin-right:10px; width:20px; height:20px; text-indent:-9999px;}
+.sub_calendar_top_area .btn_next{float:left; margin-left:10px; width:20px; height:20px; text-indent:-9999px;}
+.sub_calendar_top_area .btn_today{float: left;width: 48px;height: 32px;margin-top: -7px;margin-left: 13px;border: 1px solid #e0e0e0;border-radius: 4px;font-size: 14px;font-weight: 400;color: #000;line-height: 32px}
+
+.sub_calendar_top_area .number{float:left; position:relative; margin-left:10px; padding-left:10px;  color:#999;}
+.sub_calendar_top_area .number:before{position:absolute; left:0; top:4px; width:1px; height:10px; background-color:#ddd; display:block; content:"";}
+.sub_calendar_top_area .number strong{color:#000; font-weight:300;}
+.sub_calendar_top_area .btn_more{float:left; margin-left:10px; padding-left:16px; background:url(../images/main/icon_more.png) no-repeat 0 center;}
+.sub_calendar_cont table{width: 100%;}
+.sub_calendar_cont thead th{padding:14px 5px; text-align:center; border-top:1px solid #dedede; border-bottom:1px solid #f0f0f0; font-size:14px; color:#999; font-weight:300;}
+.sub_calendar_cont tbody td{vertical-align:top; text-align:center; border-bottom:1px solid #f0f0f0;}
+.sub_calendar_cont tbody td a{position: relative;padding:3px 5px 0; width:100%; height:82px; box-sizing:border-box; display:block;}
+.sub_calendar_cont tbody td .day{position: absolute;left: 0;top: 0;width:24px; height:24px; line-height:24px; color:#999;}
+/* .sub_calendar_cont tbody td.on a{background: #fae4e5;} */
+.sub_calendar_cont tbody td .number{display:block; font-size:14px; color:#000; font-weight:500;}
+.sub_calendar_cont tbody td ul{padding-left: 25px;text-align: left}
+   
+</style>
+</head>
+<body>
+
+<!--[S] plf-root-->
+<div class="plf-root main">
+
+    <!--[S] plf-header-->
+    <div class="plf-header">
+        <div class="left-area">
+            <a class="logo" href=""><img src="../static/img/logo/logo.svg" alt="가천대 길병원 e·IRB"></a>
+        </div>
+        <div class="right-area">
+            
+            <!--[S] plf-util-->
+            <div class="plf-util">
+                <a href="#" title="내정보관리로 이동">
+                    <span class="user-agency">ooo소속</span>
+                    <span class="user-name">홍길동님</span>
+                </a>
+                <a href="#" role="button" class="btn btn-logout">Log out</a>
+            </div>
+            <!--//[S] plf-util-->
+
+        </div>
+    </div>
+    <!--//[S] plf-header-->
+
+    <!--[S] plf-gnb -->
+    <div class="plf-gnb">
+        <button type="button" class="btn-menu"><em class="blind">메뉴</em></button>
+        <div class="form_control form_selectbox auth-sel ">
+            <button type="button" class="fs_selected" data-selected-value="val1">권한변경</button>
+            <ul class="fs_list">
+                <li><button type="button" data-value="val1">연구자</button></li>
+                <li><button type="button" data-value="val2">행정간사</button></li>
+                <li><button type="button" data-value="val3">심의위원</button></li>
+            </ul>
+        </div>
+    </div>
+    <!--//[S] plf-gnb -->
+
+    <!--[S] plf-group-aside-con-->
+    <div class="plf-group-aside-con">
+
+        <!--[S] plf-aside-->
+        <div class="plf-aside">
+            <ul class="depth1">
+                <li>
+                    <h2 class="dpt1-tit">심의현황관리</h2>
+                    <ul class="depth2">
+                        <li><a href="#">심의신청(PI)</a></li>
+                        <li><a href="#">신규 심의신청</a></li>
+                        <li class="selected"><a href="#">신규 면제신청</a></li>
+                        <li><a href="#">신규외 심의신청</a></li>
+                        <li><a href="#">심의진행 현황</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h2 class="dpt1-tit">과제관리</h2>
+                    <ul class="depth2">
+                        <li><a href="#">과제현황</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h2 class="dpt1-tit">My Page</h2>
+                    <ul class="depth2">
+                        <li><a href="#">내정보 관리</a></li>
+                        <li><a href="#">이력 및 교육이수 관리</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--//[S] plf-aside-->
+
+        <!--[S] plf-con-->
+        <div class="plf-con">
+            
+        </div>
+        <!--//[S] plf-con -->
+
+    </div>
+    <!--//[S] plf-group-aside-con -->
+
+</div>
+<!--//[S] plf-root -->
+
+<!--[S] layer -->
+<div id="layer_IRB_2001" class="layer">
+	<div class="layer-content">
+		<div class="layer-header">
+			<strong class="lh-title">심의일정</strong>
+		</div>
+		<div class="layer-body">
+            <!--[S] lasub_calendaryer -->
+            <div class="sub_calendar">
+                <div class="sub_calendar_top_area">
+                        <button type="button" class="btn_prev">이전달</button>
+                        <div class="month_select_wrap">
+                            <button type="button" class="today"> 2021년 3월</button>
+                            <div class="month_select_popup">
+                                <div class="year_area">
+                                    <span class="year">2021년</span>
+                                    <button type="button" class="year_prev">전년도 선택</button>
+                                    <button type="button" class="year_next">다음년도 선택</button>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="sub_calendar_cont">
+                    <table>
+                        <colgroup>
+                            <col span="7" width="auto">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">일</th>
+                                <th scope="col">월</th>
+                                <th scope="col">화</th>
+                                <th scope="col">수</th>
+                                <th scope="col">목</th>
+                                <th scope="col">금</th>
+                                <th scope="col">토</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">1</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">2</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>대상차량:2</li>
+                                            <li>(확정1200)</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">3</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>대상차량:1095</li>
+                                            <li>(확정411)</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">4</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">5</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">6</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">7</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">8</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">9</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">10</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">11</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">12</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">13</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">14</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">15</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">16</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">17</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">18</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">19</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">20</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">21</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">22</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">23</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">24</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">25</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">26</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">27</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">28</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">29</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">30</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">31</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">28</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">29</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">30</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#">
+                                        <span class="day">31</span>
+                                        <ul>
+                                            <li>방문자:6</li>
+                                            <li>점검차량:15</li>
+                                            <li>유선처리:2</li>
+                                        </ul>
+                                    </a>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--//[S] lasub_calendaryer -->
+		</div> 
+        
+		<button type="button" class="btn-close-layer" data-dismiss="modal"><span class="blind">닫기</span></button>
+	</div>
+</div>
+<!--//[S] layer -->
+
+<script>
+$(document).ready(function(){
+    hcLayer.show('layer_IRB_2001');
+});
+</script>
+</body>
+</html>
