@@ -6,6 +6,7 @@
       asideMenu();
       $('.btn-etc').length && layerpopToast();
       tabSwitcher('my-tab-switching .tab .item');
+      subCalendar();
       hcLayer.init();
 
       $('[data-toggle="datepicker"]').datepicker({
@@ -97,6 +98,13 @@
         })
     });
   };
+
+  function subCalendar(){
+    $(".sub_calendar_cont .day .btn-more").click(function(){
+        $(this).parent().next().toggleClass('active');
+    });
+    $('.sub_calendar_cont').length && $('.sub_calendar_cont .scr_list').scrollbar();
+  }
   
   window.hcLayer = {
       init:function(){
@@ -109,7 +117,7 @@
               hcLayer.hideEvent(thisLayer);
           })
       },
-      show:function(target){console.log(11)
+      show:function(target){
           var showLayer = $('#' + target),
           showLayerLeft = ($(window).width() - showLayer.outerWidth(true)) / 2,
           showLayerTop = ($(window).height() - showLayer.outerHeight(true)) / 2;

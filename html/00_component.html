@@ -89,47 +89,36 @@
                     <div class="tab-con-group"> 
                         <div class="tab-con active"> <!--[D]active-->
                             <h2 class="deco-h2">icon</h2>
-                            <img src="../static/img/icon2/ic_arrow_down_gray.svg">
-                            <img src="../static/img/icon2/ic_arrow_down_black.svg">
-                            <img src="../static/img/icon2/ic_arrow_down_active.svg">
-                            <img src="../static/img/icon2/ic_arrow_gray.svg">
-                            <img src="../static/img/icon2/ic_calendar_gray.svg">
-                            <img src="../static/img/icon2/ic_calendar_black.svg">
-                            <img src="../static/img/icon2/ic_calendar_active.svg">
-                            <img src="../static/img/icon2/ic_search_gray.svg">
-                            <img src="../static/img/icon2/ic_search_black.svg">
-                            <img src="../static/img/icon2/ic_search_active.svg">
-                            <img src="../static/img/icon2/ic_note_gray.svg">
-                            <img src="../static/img/icon2/ic_add_black.svg">
-                            <img src="../static/img/icon2/ic_trash_gray.svg">
-                            <img src="../static/img/icon2/ic_addfile_gray.svg">
+                            <img src="../static/img/icon/ic_arrow_down_gray.svg">
+                            <img src="../static/img/icon/ic_arrow_down_black.svg">
+                            <img src="../static/img/icon/ic_arrow_down_active.svg">
+                            <img src="../static/img/icon/ic_arrow_gray.svg">
+                            <img src="../static/img/icon/ic_calendar_gray.svg">
+                            <img src="../static/img/icon/ic_calendar_black.svg">
+                            <img src="../static/img/icon/ic_calendar_active.svg">
+                            <img src="../static/img/icon/ic_search_gray.svg">
+                            <img src="../static/img/icon/ic_search_black.svg">
+                            <img src="../static/img/icon/ic_search_active.svg">
+                            <img src="../static/img/icon/ic_note_gray.svg">
+                            <img src="../static/img/icon/ic_add_black.svg">
+                            <img src="../static/img/icon/ic_trash_gray.svg">
+                            <img src="../static/img/icon/ic_addfile_gray.svg">
 
                             <h3 class="deco-h3">tab icon</h3>
-                            <img src="../static/img/icon2/ic_tab_del.svg">
-                            <img src="../static/img/icon2/ic_tab_del_active.svg">
+                            <img src="../static/img/icon/ic_tab_del.svg">
+                            <img src="../static/img/icon/ic_tab_del_active.svg">
                             
                             <h3 class="deco-h3">Checkbox</h3>
-                            <img src="../static/img/icon2/ic_checkbox_16_normal.svg">
-                            <img src="../static/img/icon2/ic_checkbox_16_active.svg">
-                            <img src="../static/img/icon2/ic_checkbox_16_normal_disabled.svg">
-                            <img src="../static/img/icon2/ic_checkbox_16_active_disabled.svg">
+                            <img src="../static/img/icon/ic_checkbox_normal.svg">
+                            <img src="../static/img/icon/ic_checkbox_active.svg">
+                            <img src="../static/img/icon/ic_checkbox_normal_disabled.svg">
+                            <img src="../static/img/icon/ic_checkbox_active_disabled.svg">
                             
                             <h3 class="deco-h3">Radio</h3>
-                            <img src="../static/img/icon2/ic_radio_16_normal.svg">
-                            <img src="../static/img/icon2/ic_radio_16_active.svg">
-                            <img src="../static/img/icon2/ic_radio_16_normal_disabled.svg">
-                            <img src="../static/img/icon2/ic_radio_16_active_disabled.svg">
-                            
-                            <h3 class="deco-h3">Pagi Icon</h3>
-                            <img src="../static/img/icon/ic_arrow_back_gray_12.svg" alt="">
-                            <img src="../static/img/icon/ic_arrow_left_gray_12.svg" alt="">
-                            <img src="../static/img/icon/ic_arrow_right_gray_12.svg" alt="">
-                            <img src="../static/img/icon/ic_arrow_forward_gray_12.svg" alt="">
-                            <br>
-                            <img src="../static/img/icon/ic_arrow_back_blue_12.svg" alt="">
-                            <img src="../static/img/icon/ic_arrow_left_blue_12.svg" alt="">
-                            <img src="../static/img/icon/ic_arrow_right_blue_12.svg" alt="">
-                            <img src="../static/img/icon/ic_arrow_forward_blue_12.svg" alt="">	
+                            <img src="../static/img/icon/ic_radio_normal.svg">
+                            <img src="../static/img/icon/ic_radio_active.svg">
+                            <img src="../static/img/icon/ic_radio_normal_disabled.svg">
+                            <img src="../static/img/icon/ic_radio_active_disabled.svg">
 
                             <br><br>
                             
@@ -144,10 +133,11 @@
                             <input name="" id="" class="ip-txt w100p is-positive" type="text" value="가이드문구-긍정" placeholder="text"> <!--[D]is-positive-->
                             <span class="txt-guide-positive">인증 완료 되었습니다.</span>
                             <br>
+                            <br>
 
                             <input name="" id="" class="ip-txt w100p is-negative" type="text" value="가이드문구-부정" placeholder="text"> <!--[D]is-negative-->
                             <span class="txt-guide-negative">필수 입력값입니다.</span>
-                            <br>
+                            <br><br>
 
                             <h4 class="deco-h4">with Icon</h4>
 
@@ -407,7 +397,7 @@
                             
                             <h2 class="deco-h2">breadcrumb</h2>
                             <div class="breadcrumb">
-                                <button type="button" class="layer_open" title="업무단 팝업" onclick="hcLayer.show('layer1')"></button>
+                                <a href="#" onclick="window.open('./00_iframe.html', 'popup', 'top=10, left=10, width=1400, height=900, location=no, directories=no, status=no, menubar=no, toolbar=no, resizable=no'); return false" class="layer_open" target="업무단 새창"></a>
                                 <span class="item">과제관리</span>
                                 <span class="item">과제현황</span>
                             </div>
@@ -417,7 +407,6 @@
                             <h2 class="deco-h2">pagi</h2>
                             <div class="pagi">
                                 <div class="group">
-                                    <button type="button" class="item first">처음</button>
                                     <button type="button" class="item prev">이전</button>
                                 </div>
                                 <div class="group">
@@ -431,7 +420,25 @@
                                     <button type="button" class="item">9999</button>
                                 </div>
                                 <div class="group">
-                                    <button type="button" class="item last">끝</button>
+                                    <button type="button" class="item next">다음</button>
+                                </div>
+                            </div>
+                            <br><br>
+                            <div class="pagi type-s">
+                                <div class="group">
+                                    <button type="button" class="item prev">이전</button>
+                                </div>
+                                <div class="group">
+                                    <button type="button" class="item">1</button>
+                                    <button type="button" class="item active">2</button>
+                                    <button type="button" class="item">3</button>
+                                    <button type="button" class="item">4</button>
+                                    <button type="button" class="item">5</button>
+                                    <button type="button" class="item">99</button>
+                                    <button type="button" class="item">999</button>
+                                    <button type="button" class="item">9999</button>
+                                </div>
+                                <div class="group">
                                     <button type="button" class="item next">다음</button>
                                 </div>
                             </div>
@@ -602,20 +609,110 @@
                                         <tr>
                                             <th scope="row" colspan="2">연구대상</th>
                                             <td  colspan="2">
-                                                
+                                                <div class="ip-ch-group">
+                                                    <label for="ch-2-1" class="ip-ch-label">
+                                                        <input name="ch-2" id="ch-2-1" class="ip-ch" type="checkbox" value="">
+                                                        <span class="check"></span> <em>취업</em> 
+                                                    </label>
+                                                    <label for="ch-2-2" class="ip-ch-label">
+                                                        <input name="ch-2" id="ch-2-2" class="ip-ch" type="checkbox" value="" checked="">
+                                                        <!--checked-->
+                                                        <span class="check"></span> <em>현장실습</em>
+                                                    </label>
+                                                    <label for="ch-2-3" class="ip-ch-label">
+                                                        <input name="ch-2" id="ch-2-3" class="ip-ch" type="checkbox">
+                                                        <!--disabled-->
+                                                        <span class="check"></span> <em>캠스톤디자인</em>
+                                                    </label>
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <th scope="rowgroup" rowspan="3">연구특성</th>
-                                            <th scope="row" rowspan="3">연구특성</th>
-                                            <th scope="row" rowspan="3">연구특성</th>
-                                            <td></td>
+                                            <th scope="row" rowspan="3">
+                                                <label for="ch-4-1" class="ip-ch-label">
+                                                    <input name="ch-4" id="ch-4-1" class="ip-ch" type="checkbox" value="">
+                                                    <span class="check"></span> <em>중재연구</em> 
+                                                </label>
+                                            </th>
+                                            <th scope="row" rowspan="3">
+                                                <label for="ch-5-1" class="ip-ch-label">
+                                                    <input name="ch-5" id="ch-5-1" class="ip-ch" type="checkbox" value="">
+                                                    <span class="check"></span> <em>약물</em> 
+                                                </label>
+                                            </th>
+                                            <td>
+                                                <div class="ip-ch-group">
+                                                    <label for="ch-3-1" class="ip-ch-label">
+                                                        <input name="ch-3" id="ch-3-1" class="ip-ch" type="checkbox" value="">
+                                                        <span class="check"></span> <em>취업</em> 
+                                                    </label>
+                                                    <label for="ch-3-2" class="ip-ch-label">
+                                                        <input name="ch-3" id="ch-3-2" class="ip-ch" type="checkbox" value="" checked="">
+                                                        <span class="check"></span> <em>현장실습</em>
+                                                    </label>
+                                                    <label for="ch-3-3" class="ip-ch-label">
+                                                        <input name="ch-3" id="ch-3-3" class="ip-ch" type="checkbox" value="">
+                                                        <span class="check"></span> <em>캠스톤디자인</em>
+                                                    </label>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr>
-                                            <td></td>
+                                            <td>
+                                                <div class="td-item-group left">
+                                                    <span class="fw-500 mr16 fc-1e">일반명</span>
+                                                    <input name="" id="" class="ip-txt w175" type="text" value="">
+                                                    <span class="fw-500 mr16 ml24 fc-1e">상품명</span>
+                                                    <input name="" id="" class="ip-txt w175" type="text" value="">
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr>
-                                            <td></td>
+                                            <td>
+                                                <div class="td-item-group left">
+                                                    <span class="fw-500 mr32 fc-1e">관리약사</span>
+                                                    <div class="item-area">
+                                                        <div class="ip-rd-group complex">
+                                                            <label class="ip-rd-label d-block">
+                                                                <input name="fd-5" class="ip-rd" type="radio" value="" checked="">
+                                                                <span class="check"></span> <em>있음</em> 
+                                                            </label>
+                                                            <div class="rd-label-group">
+                                                                <label class="ip-rd-label d-block">
+                                                                    <input name="fd-5" class="ip-rd" type="radio" value="">
+                                                                    <span class="check"></span> <em>없음</em> 
+                                                                </label>
+                                                                <div class="ip-rd-group">
+                                                                    <label class="ip-rd-label">
+                                                                        <input name="fd-6" class="ip-rd" type="radio" value="" checked="">
+                                                                        <span class="check"></span> <em>정부기관</em> 
+                                                                    </label>
+                                                                    <label class="ip-rd-label">
+                                                                        <input name="fd-6" class="ip-rd" type="radio" value="">
+                                                                        <span class="check"></span> <em>기업체</em> 
+                                                                    </label>
+                                                                    <label class="ip-rd-label">
+                                                                        <input name="fd-6" class="ip-rd" type="radio" value="">
+                                                                        <span class="check"></span> <em>없음</em> 
+                                                                    </label>
+                                                                    <label class="ip-rd-label">
+                                                                        <input name="fd-6" class="ip-rd" type="radio" value="">
+                                                                        <span class="check"></span> <em>기타</em> 
+                                                                    </label>
+                                                                    <input name="" id="" class="ip-txt w175 ml8" type="text" value="">
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <label class="ip-rd-label d-block">
+                                                                <input name="fd-5" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>해당없음</em> 
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -803,9 +900,13 @@
                                             <td>텍스트</td>
                                             <td>텍스트</td>
                                             <td>
-                                                <button class="btn-ic btn-addfile" type="button" title="첨부파일"></button>
-                                                <button class="btn-ic btn-trash" type="button" title="삭제"></button>
-                                                <button class="btn btn-txt" type="button">텍스트 버튼.pdf</button>
+                                                <div class="td-item-group3">
+                                                    <button class="btn btn-txt" type="button">(영문)연구계획서_20240101.pdf</button>
+                                                    <div class="btn-group">
+                                                        <button class="btn-ic btn-addfile" type="button" title="첨부파일"></button>
+                                                        <button class="btn-ic btn-trash" type="button" title="삭제"></button>
+                                                    </div>
+                                                </div>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -1155,11 +1256,12 @@
 			<strong class="lh-title">layer 타이틀</strong>
 		</div>
 		<div class="layer-body">
-			layer 내용
-		</div> 
-        <div class="layer-footer">
-			<div class="btn-group">
-                <button class="btn" type="button">취소</button>
+			<p class="txt-info">회원정보에 등록한<br>휴대폰 번호를 입력하세요.</p>
+            <div class="form_group">
+                <input name="" id="" class="ip-txt w100p" type="text" value="" placeholder="이름">
+                <input name="" id="" class="ip-txt w100p" type="number" value="" placeholder="휴대폰번호">
+            </div>
+            <div class="btn-group">
                 <button class="btn btn-lb" type="button">확인</button>
             </div>
 		</div>

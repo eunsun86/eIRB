@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>소속학과조회 popup | e-IRB</title>
+    <script src="../static/js/jquery-3.6.0.min.js"></script>
+    <script src="../static/js/datepicker.min.js"></script>		
+    <script src="../static/js/datepicker.ko-KR.js"></script>		
+    <script src="../static/js/plf_pub.js"></script>
+    <link rel="stylesheet" href="../static/css/plf.css" />
+</head>
+<body>
+
+<!--[S] plf-root-->
+<div class="plf-root">
+
+</div>
+<!--//[S] plf-root-->
+
+<!--[S] layer -->
+<div id="layer1" class="layer">
+	<div class="layer-content">
+		<div class="layer-header">
+			<strong class="lh-title">소속학과조회</strong>
+		</div>
+		<div class="layer-body">
+			<div class="sec">
+                <div class="td-item-group">
+                    <div class="item-area">
+                        <input name="" id="" class="td-item ip-txt w350" type="text" value="" placeholder="소속학과">									
+                    </div>
+                    
+                    <div class="btn-group">
+                        <button class="td-item btn btn-icon-srh" type="button">조회</button>
+                    </div>
+                </div>		
+                <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div><!--[D]그리드 영역-->
+            </div>
+		</div> 
+        <div class="layer-footer">
+			<div class="btn-group">
+                <button class="btn btn-lb" type="button">선택</button>
+            </div>
+		</div>
+        
+		<button type="button" class="btn-close-layer" data-dismiss="modal"><span class="blind">닫기</span></button>
+	</div>
+</div>
+<!--//[S] layer -->
+
+<script>
+    window.hcLayer.show('layer1');
+</script>
+</body>
+</html>
