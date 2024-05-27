@@ -99,10 +99,17 @@
                                 <a href="#" onclick="window.open('./00_iframe.html', 'popup', 'top=10, left=10, width=1400, height=900, location=no, directories=no, status=no, menubar=no, toolbar=no, resizable=no'); return false" class="layer_open" target="업무단 새창"></a>
                                 <span class="item">과제관리</span>
                                 <span class="item">과제현황</span>
+                                <input type="button" value="자식창 열기" onclick="PopupExplain('pop-inner')" class="layer_open" >
                             </div>
+                            <script>
+                            function PopupExplain(param){
+                                var html = document.getElementById(param).outerHTML;
+                                var w = window.open('./00_iframe.html?data='+html, 'popup', 'top=10, left=10, width=1400, height=900, location=no, directories=no, status=no, menubar=no, toolbar=no, resizable=no');
+                            }
+                            </script>
 
                             <!--[S] pop-inner -->
-                            <div class="pop-inner">
+                            <div id="pop-inner">
                                 <p class="tit-pagetitle">과제현황</p>
 
                                 <div class="sec filter-search">

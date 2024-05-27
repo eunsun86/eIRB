@@ -86,9 +86,13 @@ body{min-width: 1244px;}
             <div class="plf-sub">
 
                 <!--[S] 팝업 내용 영역 -->
-                <p class="tit-pagetitle">과제현황</p>
+                <div id="iframe-area">1</div>
+                <script>
+                    var data = new URLSearchParams(window.location.search).get("data");
+                    document.getElementById('iframe-area').innerHTML = data;
+                </script>
 
-                <div class="sec filter-search">
+                <!-- <div class="sec filter-search">
                     <table class="data-table">
                         <caption>테이블제목</caption>
                         <colgroup>
@@ -324,7 +328,7 @@ body{min-width: 1244px;}
                             <button class="btn" type="button">심의신청</button>
                         </div>							
                     </div>
-                </div>
+                </div> -->
                 <!--//[S] 팝업 내용 영역 -->
                 
             </div>
