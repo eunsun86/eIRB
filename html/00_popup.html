@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>공통 팝업 | e-IRB</title>
+    <script src="../static/js/jquery-3.6.0.min.js"></script>
+    <script src="../static/js/datepicker.min.js"></script>		
+    <script src="../static/js/datepicker.ko-KR.js"></script>		
+    <script src="../static/js/plf_pub.js"></script>
+    <link rel="stylesheet" href="../static/css/plf.css" />
+</head>
+<body>
+
+<div class="test_view">
+<!-- 퍼블 화면 확인용 -->
+<style>
+body{background-color:#444;}
+.test_view{display:flex;flex-wrap:wrap;}
+.view_section{position:relative;border:1px dotted #ddd;}
+.view_section .type_no{padding:5px 0;text-align:center;font-size:12px;font-weight:300;color:#fff;}
+.layer{display:block;position:relative;width:360px;height:100%;margin-bottom:10px;margin-left:0px;}
+.layer-content{overflow:inherit;position:relative;}
+</style>
+<!-- //퍼블 화면 확인용 -->
+
+<!-- 퍼블확인용 --><div class="view_section"><h3 class="type_no">IRB_0109 우편번호 검색</h3>
+<!--[S] layer 우편번호 검색 -->
+<div id="layer_IRB_0109" class="layer type-s post">
+	<div class="layer-content">
+		<div class="layer-header">
+			<strong class="lh-title">우편번호 검색</strong>
+		</div>
+		<div class="layer-body">
+			<p class="txt-info">주소를 검색해주세요.</p>
+            <div class="form_group">
+                <input name="" id="" class="ip-txt w100p" type="text" value="" placeholder="도로명, 지번, 건물명 검색">
+                <button class="btn btn-lb auto" type="button">검색</button>
+            </div>
+            <ul class="adress-list">
+                <li>
+                    <strong>경기도 평택시 영신로 44(지제동)</strong>
+                    <span>지번 : 경기도 평택시 지제동 625-1</span>
+                    <em>우편번호 : 17844</em>
+                    <button class="btn btn-line" type="button">선택</button>
+                </li>
+                <li>
+                    <strong>경기도 평택시 영신로 44(지제동)</strong>
+                    <span>지번 : 경기도 평택시 지제동 625-1</span>
+                    <em>우편번호 : 17844</em>
+                    <button class="btn btn-line" type="button">선택</button>
+                </li>
+                <li>
+                    <strong>경기도 평택시 영신로 44(지제동)</strong>
+                    <span>지번 : 경기도 평택시 지제동 625-1</span>
+                    <em>우편번호 : 17844</em>
+                    <button class="btn btn-line" type="button">선택</button>
+                </li>
+                <li>
+                    <strong>경기도 평택시 영신로 44(지제동)</strong>
+                    <span>지번 : 경기도 평택시 지제동 625-1</span>
+                    <em>우편번호 : 17844</em>
+                    <button class="btn btn-line" type="button">선택</button>
+                </li>
+            </ul>
+
+            <!--[S] pagi -->
+            <div class="pagi type-s">
+                <div class="group">
+                    <button type="button" class="item prev">이전</button>
+                </div>
+                <div class="group">
+                    <button type="button" class="item">1</button>
+                    <button type="button" class="item active">2</button>
+                    <button type="button" class="item">3</button>
+                    <button type="button" class="item">4</button>
+                    <button type="button" class="item">5</button>
+                    <button type="button" class="item">99</button>
+                    <button type="button" class="item">999</button>
+                    <button type="button" class="item">9999</button>
+                </div>
+                <div class="group">
+                    <button type="button" class="item next">다음</button>
+                </div>
+            </div>
+            <!--//[S] pagi -->
+		</div> 
+        
+		<button type="button" class="btn-close-layer" data-dismiss="modal"><span class="blind">닫기</span></button>
+	</div>
+</div>
+<!--[S] layer 우편번호 검색 -->
+<!-- 퍼블확인용 --></div>
+
+<!-- 퍼블확인용 --><div class="view_section"><h3 class="type_no">IRB_0110 파일 업로드</h3>
+<!--[S] layer 파일 업로드 -->
+<div id="layer_IRB_0110" class="layer type-m file-upload">
+	<div class="layer-content">
+		<div class="layer-header">
+			<strong class="lh-title">파일 업로드</strong>
+		</div>
+		<div class="layer-body">
+			<div class="td-item-group">
+                <button class="btn btn-line size-s" type="button">파일첨부</button>
+                <button class="btn btn-line size-s" type="button">삭제</button>
+            </div>
+            <div class="file-area">
+                <!--Thead-->
+                <table class="file-thead data-table">
+                    <colgroup>
+                        <col width="39px">
+                        <col width="">
+                        <col width="116px">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">
+                                <div class="ip-ch-group">
+                                    <label for="ch-all" class="ip-ch-label no-txt">
+                                        <input name="ch-all" id="ch-all" class="ip-ch" type="checkbox" value="">
+                                        <span class="check"></span>
+                                    </label>
+                                </div>
+                            
+                            </th>
+                            <th scope="col">파일이름</th>
+                            <th scope="col">용량</th>
+                        </tr>
+                    </thead>
+                </table>
+                <!--//Thead-->
+                <!--Tbody-->
+
+                <!--[D] 파일 0 일때-->
+                <div class="file-tbody no-data"></div>
+
+                <!--[D] 파일 1이상 일때-->
+                <div class="file-tbody data-table-wrap-y">
+                    <table class="data-table">
+                        <colgroup>
+                            <col width="39px">
+                            <col width="">
+                            <col width="116px">
+                        </colgroup>
+                        <tbody>
+                            <tr class="">
+                                <td>
+                                    <div class="ip-ch-group">
+                                        <label for="ch-1-1" class="ip-ch-label no-txt">
+                                            <input name="ch-1" id="ch-1-1" class="ip-ch" type="checkbox" value="">
+                                            <span class="check"></span>
+                                        </label>
+                                    </div>
+                                
+                                </td>
+                                <td>영수증1.jpeg</td>
+                                <td>98.76 KB</td>
+                            </tr>
+                            <tr class="">
+                                <td>
+                                    <div class="ip-ch-group">
+                                        <label for="ch-1-2" class="ip-ch-label no-txt">
+                                            <input name="ch-1" id="ch-1-2" class="ip-ch" type="checkbox" value="">
+                                            <span class="check"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>영수증2.jpeg</td>
+                                <td>289.76 KB</td>
+                            </tr>
+                            <tr class="">
+                                <td>
+                                    <div class="ip-ch-group">
+                                        <label for="ch-1-3" class="ip-ch-label no-txt">
+                                            <input name="ch-1" id="ch-1-3" class="ip-ch" type="checkbox" value="">
+                                            <span class="check"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>영수증3.jpeg</td>
+                                <td>289.76 KB</td>
+                            </tr>
+                            <tr class="">
+                                <td>
+                                    <div class="ip-ch-group">
+                                        <label for="ch-1-4" class="ip-ch-label no-txt">
+                                            <input name="ch-1" id="ch-1-4" class="ip-ch" type="checkbox" value="">
+                                            <span class="check"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>영수증4.jpeg</td>
+                                <td>289.76 KB</td>
+                            </tr>
+                            <tr class="">
+                                <td>
+                                    <div class="ip-ch-group">
+                                        <label for="ch-1-5" class="ip-ch-label no-txt">
+                                            <input name="ch-1" id="ch-1-5" class="ip-ch" type="checkbox" value="">
+                                            <span class="check"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>영수증5.jpeg</td>
+                                <td>289.76 KB</td>
+                            </tr>
+                            <tr class="">
+                                <td>
+                                    <div class="ip-ch-group">
+                                        <label for="ch-1-6" class="ip-ch-label no-txt">
+                                            <input name="ch-1" id="ch-1-6" class="ip-ch" type="checkbox" value="">
+                                            <span class="check"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>영수증6.jpeg</td>
+                                <td>289.76 KB</td>
+                            </tr>
+                            <tr class="">
+                                <td>
+                                    <div class="ip-ch-group">
+                                        <label for="ch-1-7" class="ip-ch-label no-txt">
+                                            <input name="ch-1" id="ch-1-7" class="ip-ch" type="checkbox" value="">
+                                            <span class="check"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>영수증7.jpeg</td>
+                                <td>289.76 KB</td>
+                            </tr>
+                            <tr class="">
+                                <td>
+                                    <div class="ip-ch-group">
+                                        <label for="ch-1-8" class="ip-ch-label no-txt">
+                                            <input name="ch-1" id="ch-1-8" class="ip-ch" type="checkbox" value="">
+                                            <span class="check"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>영수증8.jpeg</td>
+                                <td>289.76 KB</td>
+                            </tr>
+                            <tr class="">
+                                <td>
+                                    <div class="ip-ch-group">
+                                        <label for="ch-1-9" class="ip-ch-label no-txt">
+                                            <input name="ch-1" id="ch-1-9" class="ip-ch" type="checkbox" value="">
+                                            <span class="check"></span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>영수증9.jpeg</td>
+                                <td>289.76 KB</td>
+                            </tr>																																								
+                        </tbody>
+                    </table>						
+                </div>
+                <!--//Tbody-->
+                <!--Tfoot-->
+                <div class="file-tfoot">
+                    <p>1개체, 286,76 KB 첨부됨</p>
+                    <p>최대 20개, 100.00MB</p>
+                </div>
+                <!--//Tfoot-->
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-lb size-h32" type="button">업로드</button>
+                <button class="btn size-h32" type="button">닫기</button>
+            </div>
+		</div> 
+        
+		<button type="button" class="btn-close-layer" data-dismiss="modal"><span class="blind">닫기</span></button>
+	</div>
+</div>
+<!--[S] layer 파일 업로드 -->
+<!-- 퍼블확인용 --></div>
+
+
+</div>
+
+</body>
+</html>

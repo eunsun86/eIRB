@@ -1,12 +1,13 @@
   $(document).ready(function(){
       mainBoard();
-      $('.scr_list').length && $('.scr_list').scrollbar();
+      $('.scr_list').length && scrollFc();
       selectbox();
       tooltip();
       asideMenu();
       $('.btn-etc').length && layerpopToast();
       tabSwitcher('my-tab-switching .tab .item');
       subCalendar();
+     // $('.layer_open').length && popupExplain();
       hcLayer.init();
 
       $('[data-toggle="datepicker"]').datepicker({
@@ -14,16 +15,25 @@
         format: 'yyyy-mm-dd'
       });
   });
+
   function mainBoard(){
       $(".progress-status button").click(function(){
           var idx = 0;
-          if($(this).parents('.progress-status').hasClass('type2')){
+          if($(this).parents('.progress-status').hasClass('type3')){
+            idx = $(this).parents('.item').index() + 4;
+          }else if($(this).parents('.progress-status').hasClass('type2')){
             idx = $(this).parents('.item').index() + 2;
           }else{
             idx = $(this).parents('.item').index() + 1;
           }
-          $('.work-status .data-table').attr('data-code', 'step' + idx);
+          $('.work-status .srl-table-head').attr('data-code', 'step' + idx);
       });
+  }
+
+  function scrollFc(){
+    $('.scr_list').each(function(){
+        $(this).scrollbar();
+    });
   }
   function selectbox(){
       var thisSelect
@@ -48,11 +58,13 @@
           },100)
       })
   }
+
   function tooltip(){
       $(".btn-tooltip").click(function(){
           $(this).next().toggleClass('active') ;
       });
   }
+
   function layerpopToast(){
       $(".btn-etc").click(function(){
           $(this).parent().toggleClass('active') ;
@@ -102,10 +114,16 @@
   function subCalendar(){
     $(".sub_calendar_cont .day .btn-more").click(function(){
         $(this).parent().next().toggleClass('active');
+        $(this).hide();
     });
-    $('.sub_calendar_cont').length && $('.sub_calendar_cont .scr_list').scrollbar();
+    // $('.sub_calendar_cont').length && $('.sub_calendar_cont .scr_list').scrollbar();
   }
   
+  function popupExplain(param){
+    var html = document.getElementById(param).innerHTML;
+    var w = window.open('./00_iframe.html?data='+html, 'popup', 'top=10, left=10, width=1400, height=900, location=no, directories=no, status=no, menubar=no, toolbar=no, resizable=no');
+  }
+
   window.hcLayer = {
       init:function(){
           this.closeBtnEvent();

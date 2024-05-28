@@ -14,14 +14,14 @@
 */
 /*var*/
 :root {
-	--color1: #19885D; /* #19885D 포인트 색상 */
-	--color2: #02B574; /* #02B574 defalut 버튼 hover 색상 */
-	--color3: #E6F8F1; /* #E6F8F1 추가 삭제 버튼 배경 색상 */
-	--color4: #F6F9F8; /* #F6F9F8 배경 색상 */
+	--color1: #2072D6; /* #19885D -> #2072D6 포인트 색상 */
+	--color2: #1279F6; /* #02B574 -> #1279F6 defalut 버튼 hover 색상 */
+	--color3: #E7F1FE; /* #E6F8F1 -> #E7F1FE 추가 삭제 버튼 배경 색상 */
+	--color4: #F6F7F9; /* #F6F9F8 -> #F6F7F9 배경 색상 */
 
-    --main-color1 : #23ACAD;
-    --main-color2 : #0CAE6A;
-    --main-color3 : #43BE7C;
+    --main-color1 : #3062AD;
+    --main-color2 : #0CAEAE;
+    --main-color3 : #43B7BE;
     --main-color4 : #2A8CC3;
     --main-color5 : #63A4E0;
     --main-color6 : #6554A8;
@@ -87,7 +87,7 @@ body { min-width: 1600px; max-width: 100vw; }
 .plf-tab .tab-con {padding: 24px 32px 40px; border: 1px solid #E0E0E0;background: #fff;border-radius: 0 12px 12px 12px;box-shadow: rgba(149, 157, 165, 0.2) 8px 8px 8px;min-height: calc(100vh - 250px);}
 .plf-tab .tab-con { display: none; } 
 .plf-tab .tab-con.active { display: block; } 
-.plf-tab .tab{position: relative;overflow: hidden;padding-right: 50px;margin-bottom: -1px;}
+.plf-tab >.tab{position: relative;overflow: hidden;margin-bottom: -1px;padding-right: 50px;}
 .plf-tab .tab .item {display: inline-block;vertical-align: top; width: 166px; line-height: 38px;padding: 0 33px 0 20px;position: relative;}
 .plf-tab .tab .item em{display:block;max-width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color: #929292;font-weight: 500;}
 .plf-tab .tab .item .btn-del {position: absolute;right:12px;top:15px; display: inline-block;vertical-align: middle;margin: -2px 0 0 10px; width: 12px; height: 12px; background: url(../img/icon/ic_tab_del.svg) no-repeat center/8px;}
