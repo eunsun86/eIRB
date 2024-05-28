@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IRB_2410</title>
+    <script src="../static/js/jquery-3.6.0.min.js"></script>
+    <script src="../static/js/datepicker.min.js"></script>		
+    <script src="../static/js/datepicker.ko-KR.js"></script>		
+    <script src="../static/js/plf_pub.js"></script>
+    <link rel="stylesheet" href="../static/css/plf.css" />
+</head>
+<body>
+
+<!--[S] plf-root-->
+<div class="plf-root">
+
+    <!--[S] plf-header-->
+    <div class="plf-header">
+        <div class="left-area">
+            <a class="logo" href=""><img src="../static/img/logo/logo.svg" alt="가천대 길병원 e·IRB"></a>
+        </div>
+        <div class="right-area">
+            
+            <!--[S] plf-util-->
+            <div class="plf-util">
+                <a href="#" title="내정보관리로 이동">
+                    <span class="user-agency">ooo소속</span>
+                    <span class="user-name">홍길동님</span>
+                </a>
+                <a href="#" role="button" class="btn btn-logout">Log out</a>
+            </div>
+            <!--//[S] plf-util-->
+
+        </div>
+    </div>
+    <!--//[S] plf-header-->
+
+    <!--[S] plf-group-aside-con-->
+    <div class="plf-group-aside-con">
+        
+        <!--[S] plf-aside-->
+        <div class="plf-aside">
+            <ul class="depth1">
+                <li>
+                    <h2 class="dpt1-tit">심의현황관리</h2>
+                    <ul class="depth2">
+                        <li><a href="#">심의신청(PI)</a></li>
+                        <li class="selected"><a href="#">신규 심의신청</a></li>
+                        <li><a href="#">신규 면제신청</a></li>
+                        <li><a href="#">신규외 심의신청</a></li>
+                        <li><a href="#">심의진행 현황</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h2 class="dpt1-tit">과제관리</h2>
+                    <ul class="depth2">
+                        <li><a href="#">과제현황</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h2 class="dpt1-tit">My Page</h2>
+                    <ul class="depth2">
+                        <li><a href="#">내정보 관리</a></li>
+                        <li><a href="#">이력 및 교육이수 관리</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--//[S] plf-aside-->
+
+        <!--[S] plf-con-->
+        <div class="plf-con">
+
+            <!--[S] plf-sub-->
+            <div class="plf-sub">
+
+                <div class="form_control form_selectbox auth-sel ">
+					<button type="button" class="fs_selected" data-selected-value="val1">권한변경</button>
+					<ul class="fs_list">
+						<li><button type="button" data-value="val1">연구자</button></li>
+						<li><button type="button" data-value="val2">행정간사</button></li>
+						<li><button type="button" data-value="val3">심의위원</button></li>
+					</ul>
+				</div>
+
+                <!--[S] plf-tab-->
+                <div class="plf-tab my-tab-switching">
+                    <div class="tab">
+                        <span class="item active" role="button"><em>타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span> <!--[D]active-->
+                        <span class="item" role="button"><em>타이틀타이틀타이틀타이틀타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span>
+                        <span class="item" role="button"><em>타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span>
+                    </div>
+                    <div class="tab-con-group"> 
+                        <div class="tab-con active"> <!--[D]active-->
+
+                            <div class="breadcrumb">
+                                <button type="button" class="layer_open" title="업무단 팝업" onclick="hcLayer.show('layer1')"></button>
+                                <span class="item">심의현황관리</span>
+                                <span class="item">신규 외 심의신청</span>
+                            </div>
+    
+                            <p class="tit-pagetitle">신규 외 심의신청</p>
+
+                            <div class="sec">
+                                <table class="data-table data-table-top">
+                                    <caption>신규 외 심의신청 정보</caption>
+                                    <colgroup>
+                                        <col width="142px">
+                                        <col width="auto">
+                                        <col width="142px">
+                                        <col width="auto">
+                                        <col width="142px">
+                                        <col width="auto">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">IRB No.</th>
+                                            <td>135846543</td>
+                                            <th scope="row">접수번호</th>
+                                            <td>내용</td>
+                                            <th scope="row">연구책임자</th>
+                                            <td>내용</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">과제명</th>
+                                            <td colspan="5">내용</td>
+                                        </tr>
+                                    </tbody>
+                                </table>	
+                            </div>
+                            
+                            <div class="sec type-switching my-tab-switching">
+                                <div class="tab type1">
+                                    <button class="item" type="button">연구정보</button>
+                                    <button class="item active" type="button">SAE 본원</button> <!--[D]active-->
+                                    <button class="item" type="button">첨부</button>
+                                </div>			
+                                <div class="sec-con-group"> 
+                                    <!-- 연구정보 -->
+                                    <div class="sec-con"> <!--[D]active-->
+                                        기획안에 해당화면 내용 없음
+                                    </div>
+
+                                    <!-- SAE 본원 -->
+                                    <div class="sec-con active">
+                                        <div class="sec">
+                                            <table class="data-table type-line">
+                                                <caption>SAE 본원 정보</caption>
+                                                <colgroup>
+                                                    <col width="250px">
+                                                    <col width="auto">
+                                                    <col width="150px">
+                                                    <col width="auto">
+                                                    <col width="150px">
+                                                    <col width="auto">
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row" rowspan="2">연구대상</th>
+                                                        <td colspan="5">
+                                                            <div class="ip-ch-group">
+                                                                <label for="ch-1-1" class="ip-ch-label">
+                                                                    <input name="ch-1" class="ip-ch" id="ch-1-1" type="checkbox" value="">
+                                                                    <span class="check"></span> <em>의약품</em>
+                                                                </label>
+                                                                <label for="ch-1-2" class="ip-ch-label">
+                                                                    <input name="ch-1" class="ip-ch" id="ch-1-2" type="checkbox" value="">
+                                                                    <span class="check"></span> <em>의료기기</em>
+                                                                </label>
+                                                                <label for="ch-1-3" class="ip-ch-label">
+                                                                    <input name="ch-1" class="ip-ch" id="ch-1-3" type="checkbox" value="">
+                                                                    <span class="check"></span> <em>생물학적제제</em>
+                                                                </label>
+                                                                <label for="ch-1-4" class="ip-ch-label">
+                                                                    <input name="ch-1" class="ip-ch" id="ch-1-4" type="checkbox" value="">
+                                                                    <span class="check"></span> <em>건강기능식품</em>
+                                                                </label>
+                                                                <label for="ch-1-5" class="ip-ch-label">
+                                                                    <input name="ch-1" class="ip-ch" id="ch-1-5" type="checkbox" value="">
+                                                                    <span class="check"></span> <em>화장품</em>
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="5">
+                                                            <div class="td-item-group left gap16">
+                                                                <span class="fw-500">일반명 : </span>
+                                                                <input name="" id="" class="ip-txt w125" type="text" value="">
+                                                                <span class="fw-500 ml8">상품명 : </span>
+                                                                <input name="" id="" class="ip-txt w125" type="text" value="">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">연구대상자</th>
+                                                        <td colspan="5">
+                                                            <div class="td-item-group left gap16">
+                                                                <span class="fw-500">ID : </span>
+                                                                <input name="" id="" class="ip-txt w125" type="text" value="">
+                                                                <span class="fw-500 ml8">나이 : 만 </span>
+                                                                <input name="" id="" class="ip-txt w125" type="text" value="">
+                                                                <span class="fw-500">세</span>
+                                                                
+                                                                <span class="fw-500 ml8">성별 : </span>
+                                                                <div class="ip-rd-group">
+                                                                    <label class="ip-rd-label">
+                                                                        <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                        <span class="check"></span> <em>남</em> 
+                                                                    </label>
+                                                                    <label class="ip-rd-label">
+                                                                        <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                        <span class="check"></span> <em>여</em> 
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">이상반응 발생일</th>
+                                                        <td>
+                                                            <div class="ip-wrap with-icon w165">
+                                                                <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                                                <i class="ic ic-calendar"></i>
+                                                            </div>
+                                                        </td>
+                                                        <th scope="row">투약시작일</th>
+                                                        <td>
+                                                            <div class="ip-wrap with-icon w165">
+                                                                <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                                                <i class="ic ic-calendar"></i>
+                                                            </div>
+                                                        </td>
+                                                        <th scope="row">연구자 인지일</th>
+                                                        <td>
+                                                            <div class="ip-wrap with-icon w165">
+                                                                <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                                                <i class="ic ic-calendar"></i>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="col">이상반응 명</th>
+                                                        <td colspan="5">
+                                                            <input name="" id="" class="ip-txt w100p" type="text" value="">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">중대성 여부</th>
+                                                        <td colspan="5">
+                                                            <div class="ip-ch-group">
+                                                                <label for="ch-2-1" class="ip-ch-label">
+                                                                    <input name="ch-2" class="ip-ch" id="ch-2-1" type="checkbox" value="">
+                                                                    <span class="check"></span> <em>사망</em>
+                                                                </label>
+                                                                <label for="ch-2-2" class="ip-ch-label">
+                                                                    <input name="ch-2" class="ip-ch" id="ch-2-2" type="checkbox" value="">
+                                                                    <span class="check"></span> <em>생명에의 위험</em>
+                                                                </label>
+                                                                <label for="ch-2-3" class="ip-ch-label">
+                                                                    <input name="ch-2" class="ip-ch" id="ch-2-3" type="checkbox" value="">
+                                                                    <span class="check"></span> <em>입원</em>
+                                                                </label>
+                                                                &#40;
+                                                                <div class="ip-rd-group">
+                                                                    <label class="ip-rd-label">
+                                                                        <input name="fd-2" class="ip-rd" type="radio" value="">
+                                                                        <span class="check"></span> <em>처음</em> 
+                                                                    </label>
+                                                                    <label class="ip-rd-label">
+                                                                        <input name="fd-2" class="ip-rd" type="radio" value="">
+                                                                        <span class="check"></span> <em>입원연장</em> 
+                                                                    </label>
+                                                                </div>
+                                                                &#41;
+
+                                                                <label for="ch-2-4" class="ip-ch-label">
+                                                                    <input name="ch-2" class="ip-ch" id="ch-2-4" type="checkbox" value="">
+                                                                    <span class="check"></span> <em>장애/불구</em>
+                                                                </label>
+                                                                <label for="ch-2-5" class="ip-ch-label">
+                                                                    <input name="ch-2" class="ip-ch" id="ch-2-5" type="checkbox" value="">
+                                                                    <span class="check"></span> <em>선천성 기형 / 이상초래</em>
+                                                                </label>
+                                                                <label for="ch-2-6" class="ip-ch-label">
+                                                                    <input name="ch-2" class="ip-ch" id="ch-2-6" type="checkbox" value="">
+                                                                    <span class="check"></span> <em>기타</em>
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">예상 여부</th>
+                                                        <td colspan="5">
+                                                            <div class="ip-rd-group">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-3" class="ip-rd" type="radio" value="">
+                                                                    <span class="check"></span> <em>예 (연구계획서, 설명서, 임상시험자자료집등에 명시되어 있음) </em> 
+                                                                </label>
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-3" class="ip-rd" type="radio" value="">
+                                                                    <span class="check"></span> <em>아니오</em> 
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">약물/기기/생물학적 <br>제제와의 인과관계</th>
+                                                        <td colspan="5">
+                                                            <div class="ip-rd-group">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-4" class="ip-rd" type="radio" value="">
+                                                                    <span class="check"></span> <em>확실함(certain)</em> 
+                                                                </label>
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-4" class="ip-rd" type="radio" value="">
+                                                                    <span class="check"></span> <em>거의 확실함(probable/likely)</em> 
+                                                                </label>
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-4" class="ip-rd" type="radio" value="">
+                                                                    <span class="check"></span> <em>가능함(possible)</em> 
+                                                                </label>
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-4" class="ip-rd" type="radio" value="">
+                                                                    <span class="check"></span> <em>가능성 적음(unlikely)</em> 
+                                                                </label>
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-4" class="ip-rd" type="radio" value="">
+                                                                    <span class="check"></span> <em>평가 곤란(conditional/unclassified)</em> 
+                                                                </label>
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-4" class="ip-rd" type="radio" value="">
+                                                                    <span class="check"></span> <em>평가 불가(unassessible/unclassifiable)</em> 
+                                                                </label>
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-4" class="ip-rd" type="radio" value="">
+                                                                    <span class="check"></span> <em>관련 없음(unrelated)</em> 
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="col">인과관계에 대한 이유</th>
+                                                        <td colspan="5">
+                                                            <div class="ta-group">
+                                                                <textarea class="ta-ip" placeholder=""></textarea>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="col">임상반응 양상 및 임상 경과</th>
+                                                        <td colspan="5">
+                                                            <div class="ta-group">
+                                                                <textarea class="ta-ip" placeholder=""></textarea>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="col">대상자를 위한 조치사항</th>
+                                                        <td colspan="5">
+                                                            <div class="ta-group">
+                                                                <textarea class="ta-ip" placeholder=""></textarea>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">결과</th>
+                                                        <td colspan="5">
+                                                            <div class="ip-rd-group">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-5" class="ip-rd" type="radio" value="">
+                                                                    <span class="check"></span> <em>해결</em> 
+                                                                </label>
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-5" class="ip-rd" type="radio" value="">
+                                                                    <span class="check"></span> <em>미해결</em> 
+                                                                </label>
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-5" class="ip-rd" type="radio" value="">
+                                                                    <span class="check"></span> <em>사망</em> 
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="fw-500">연구대상자가 탈락하였습니까? </span>
+                                                        </td>
+                                                        <td colspan="5">
+                                                            <div class="td-item-group left gap16">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-6" class="ip-rd" type="radio" value="">
+                                                                    <span class="check"></span> <em>아니오</em> 
+                                                                </label>
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-6" class="ip-rd" type="radio" value="">
+                                                                    <span class="check"></span> <em>예</em> 
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="fw-500">연구계획서 변경이 필요한가?</span>
+                                                        </td>
+                                                        <td colspan="5">
+                                                            <div class="ip-rd-group">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-7" class="ip-rd" type="radio" value="">
+                                                                    <span class="check"></span> <em>아니오</em> 
+                                                                </label>
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-7" class="ip-rd" type="radio" value="">
+                                                                    <span class="check"></span> <em>예 (연구계획 변경 신청서와 함께 제출)</em> 
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="fw-500">동의서 변경이 필요한가?</span>
+                                                        </td>
+                                                        <td colspan="5">
+                                                            <div class="ip-rd-group">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-8" class="ip-rd" type="radio" value="">
+                                                                    <span class="check"></span> <em>아니오</em> 
+                                                                </label>
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-8" class="ip-rd" type="radio" value="">
+                                                                    <span class="check"></span> <em>예 (연구계획 변경 신청서와 함께 제출)</em> 
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td colspan="6">
+                                                            * 원내 중대한 이상반응(SAE/SUSAR)의 보고 기한은 다음과 같습니다.<br>
+                                                            - 사망/생명위협 : 연구자 인지일로부터 근무일 기준 7일 이내 보고/추적보고는 최초 보고일로부터 15일 이내 보고<br>
+                                                            - 그 외 : 연구자 인지일로부터 근무일 기준 15일 이내 보고<br><br>
+                                                            
+                                                            * 원내 중대한 이상반응 보고 시에는 해당 약물이상반응에 대한 상세한 정보를 포함한 'SAE report' 를 별첨으로 제출하시기 바랍니다.
+                                                        </td>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    
+                                        <div class="sec-btm">
+                                            <p>위와 같이 중대한 이상반응 보고서(원내)를 제출합니다.</p>
+                                            <div class="btn-group">
+                                                <button class="btn btn-lb" type="button">임시저장</button>
+                                                <button class="btn" type="button">심의 신청</button>
+                                            </div>							
+                                        </div>
+                                    </div>
+
+                                    <!-- 첨부 -->
+                                    <div class="sec-con">
+                                        기획안에 해당화면 내용 없음
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div><!--//[S] tab-con-->
+                    </div>
+
+                    <!-- [S] item-etc -->
+                    <div class="item-etc">
+                        <button type="button" class="btn-etc"><i class="blind">tab etc</i>···</button>
+                        <ul class="tab-list">
+                            <li><a href="#">탭이름탭이름탭이름탭이름탭이름</a><button class="list-del" type="button"><i class="blind">삭제</i></button></li>
+                            <li><a href="#">탭이름</a><button class="list-del" type="button"><i class="blind">삭제</i></button></li>
+                        </ul>
+                    </div>
+                    <!--// [S] item-etc -->
+
+                </div>
+                <!--// [S] plf-tab-->
+                
+                <!--[C]Toast-->
+                <div class="toast"> <!--[D]active-->
+                    <div class="inner" style="display: none;">
+                        toast 알림입니다
+                    </div>
+                </div>
+                <!--//[C]Toast-->
+                
+            </div>
+            <!--//[S] plf-sub-->
+
+        </div>
+        <!--//[S] plf-con-->
+
+    </div>
+    <!--//[S] plf-group-aside-con-->
+
+</div>
+<!--//[S] plf-root-->
+
+
+</body>
+</html>
