@@ -133,8 +133,7 @@
                             
                             <div class="sec type-switching my-tab-switching">
                                 <div class="tab type1">
-                                    <button class="item active" type="button">심의결과답변</button> <!--[D]active-->
-                                    <button class="item" type="button">변경대비표</button>
+                                    <button class="item active" type="button">심의결과이의신청</button> <!--[D]active-->
                                     <button class="item" type="button">연구정보</button>
                                     <button class="item" type="button">연구계획서 요약</button>
                                     <button class="item" type="button">첨부</button>
@@ -145,7 +144,7 @@
                                     <div class="sec-con active"> <!--[D]active-->
                                         <div class="sec">
                                             <table class="data-table type-line">
-                                                <caption>연구계획변경</caption>
+                                                <caption>심의결과이의신청 정보</caption>
                                                 <colgroup>
                                                     <col width="250px">
                                                     <col width="auto">
@@ -161,7 +160,10 @@
                                                         <th scope="row">이전심의 분류</th>
                                                         <td>신규</td>
                                                         <th scope="row">심의결과</th>
-                                                        <td>보완</td>
+                                                        <td>
+                                                            보완
+                                                            <button class="btn btn-txt" type="button">[심사결과 보기]</button>
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">심의결과 의견</th>
@@ -190,6 +192,17 @@
                                                 </tbody>
                                             </table>
                                         </div>
+
+                                        <div class="sec">
+                                            <div class="td-item-group">
+                                                <h3 class="sec-tit">기타 파일 첨부</h3>
+                                                <div class="btn-group">
+                                                    <button class="btn btn-cts" type="button">첨부</button>
+                                                    <button class="btn btn-cts" type="button">삭제</button>
+                                                </div>
+                                            </div>	
+                                            <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div><!--[D]그리드 영역-->						
+                                        </div>
                                     
                                         <div class="sec-btm">
                                             <p>위와 같이 이의 신청서를 제출합니다.</p>
@@ -198,11 +211,6 @@
                                                 <button class="btn" type="button">심의 신청</button>
                                             </div>							
                                         </div>
-                                    </div>
-
-                                    <!-- 변경대비표 -->
-                                    <div class="sec-con">
-                                        기획안에 해당화면 내용 없음
                                     </div>
 
                                     <!-- 연구정보 -->

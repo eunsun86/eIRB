@@ -99,7 +99,7 @@
 .GILSpaceSelectInner,.GILSpaceSelectInnerIcon,.GILSpaceEditInner,.GILSpaceEditInnerIcon{border:1px solid #F0F0F0;background-color:white;}
 .GILSpaceEditReadOnly{border:1px solid #F0F0F0;background-color:#d8d8d8;min-height:18px;}
 .GILTabHtmlBase{background:#fff;text-align:center;color:white;}
-.GILTabHtml1,.GILTabHtmlIcon1{background:#19885D;}
+.GILTabHtml1,.GILTabHtmlIcon1{background:var(--color1);}
 .GILTabFocus{background:red;}
 .GILTabDrag{background:#0F8;display:table-cell;text-align:center;vertical-align:middle;color:white;}
 .GILToolHtml,.GILToolHtml1,.GILToolHtmlIcon,.GILToolHtmlIcon1{text-align:center;}
@@ -118,9 +118,9 @@
 .GILHeaderFocus{background:#85CDC7;}
 .GILHeaderDrag{background:#85CDC7;border-right:1px solid white;}
 .GILLevelButton{color:black;}
-.GILCellFilter{color:#19885D;}
+.GILCellFilter{color:var(--color1);}
 .GILFilter0Value{color:silver;}
-.GILRadioChecked{color:#19885D;}
+.GILRadioChecked{color:var(--color1);}
 .GILCellUser{background-color:#E0F0F2;}
 .GILColorDefault{background-color:#FFFFFF;}
 .GILClassNoFocus{color:#E34A4A;}
@@ -137,12 +137,12 @@
 .GILColorDetail{background-color:#FFF0FF;}
 .GILColorDetailSelected{background-color:#FFF0E0;}
 .GILColorDragged{background-color:#E0E0C0;}
-.GILColorCellMenu{background-color:#E6F8F1;}
-.GILColorHoveredCell{background-color:#E6F8F1;}
-.GILColorHoveredCellReadOnly{background-color:#E6F8F1;}
+.GILColorCellMenu{background-color:#E7F1FE;}
+.GILColorHoveredCell{background-color:#E7F1FE;}
+.GILColorHoveredCellReadOnly{background-color:#E7F1FE;}
 .GILColorHoveredCellNoFocus{background-color:#F8F8F8;}
-.GILColorHoveredCellHeader{background-color:#E6F8F1;}
-.GILColorHoveredCellIndex{background-color:#E6F8F1;}
+.GILColorHoveredCellHeader{background-color:#E7F1FE;}
+.GILColorHoveredCellIndex{background-color:#E7F1FE;}
 .GILColorHoveredCellSpace{background-color:#FFFFFF;}
 .GILColorHoveredCellTab{background-color:#5AB5F5;}
 .GILColorHoveredCellTab1{background-color:#485970;}
@@ -156,14 +156,14 @@
 .GILColorFocusedCellHeader{background-color:#384960;}
 .GILColorDefaultCol{background-color:#1a364e;}
 .GILColorDefaultRow{background-color:#FFFFFE;}
-.GILHoverRowBackground{background:rgba(230, 248, 241, 0.1);}
-.GILFocusRowBackground{background:rgba(230, 248, 241, 0.2);}
-.GILHoverRowBorder{border-top:1px solid #19885D;border-bottom:1px solid #19885D;}
-.GILFocusRowBorder{border:1px solid #19885D;}
-.GILCursorBorderLeft {border-left: 1px solid #19885D !important;}
-.GILCursorBorderRight {border-right: 1px solid #19885D !important;}
-.GILHoverCellBorder{border:1px solid #19885D;background:white;}
-.GILFocusCellBorder{border:1px solid #19885D;}
+.GILHoverRowBackground{background:rgba(231 241 254, 0.1);}
+.GILFocusRowBackground{background:rgba(231 241 254, 0.2);}
+.GILHoverRowBorder{border-top:1px solid var(--color1);border-bottom:1px solid var(--color1);}
+.GILFocusRowBorder{border:1px solid var(--color1);}
+.GILCursorBorderLeft {border-left: 1px solid var(--color1); !important;}
+.GILCursorBorderRight {border-right: 1px solid var(--color1); !important;}
+.GILHoverCellBorder{border:1px solid var(--color1);background:white;}
+.GILFocusCellBorder{border:1px solid var(--color1);}
 .GILEditCellBorder{border:1px solid rgb(46, 78, 172);}
 .GILFocusCellCorner{border:1px solid white;background:#1a92ec;}
 .GILEditCellCorner{border:1px solid white;background:#D37C89;}
@@ -171,21 +171,22 @@
 .GILEditHeaderInput,.GILEditHeaderTextarea{color:white !important;}
 .GILEditReadOnly,.GILEditTextarea.GILEditReadOnly{background-color:#EEE !important;}
 .GILEditHeaderInput.GILEditReadOnly,.GILEditHeaderTextarea.GILEditReadOnly{background-color:#1a364e !important;}
-.GILDialogButton,u.GILSheetButton{ border-bottom:solid 1px #19885D; color:#19885D;}
+.GILDialogButton{ border:solid 1px var(--color1); color:var(--color1);}
+u.GILSheetButton{ border-bottom:solid 1px var(--color1); color:var(--color1);}
 .GILDialogButton:active,u.GILToolButtonButton1,u.GILToolSpaceButton1,u.GILToolButtonButton1:active,u.GILToolSpaceButton1:active{background:#1a364e;}
 .GILDialogButtonHover{border:solid 1px #1a364e;color:#1a364e;cursor:pointer;}
 .GILMenuHead{color:white;background:#1a364e;}
-.GILMenuOuter{background:white;border:1px solid #19885D;}
+.GILMenuOuter{background:white;border:1px solid var(--color1);}
 .GILMenuFoot{background:#ebedf3;border-top:1px solid #F0F0F0;}
 .GILMenuEdit,.GILMenuEditEdit,.GILMenuEnum{border:1px solid #F0F0F0;background-color:white;color:black;}
-.GILMenuCaption,.GILMenuLevel{color:#19885D;background:#ebedf3;text-align:center;border-top:1px solid #F0F0F0;border-bottom:1px solid #F0F0F0;}
+.GILMenuCaption,.GILMenuLevel{color:var(--color1);background:#ebedf3;text-align:center;border-top:1px solid #F0F0F0;border-bottom:1px solid #F0F0F0;}
 .GILMenuSeparator{border-top:1px solid #F0F0F0;}
 .GILMenuVSeparator{border-right:1px solid #F0F0F0;}
-.GILMenuHover{background:#E6F8F1;}
-.GILMenuFocus{background:#E6F8F1;}
+.GILMenuHover{background:#E7F1FE;}
+.GILMenuFocus{background:#E7F1FE;}
 .GILMenuFocus.GILMenuHover{background:#E4F0F8;}
-.GILMenuHeader{border:1px solid #19885D;background:white;}
-.GILEnumMenuHeader{border:1px solid #19885D;}
+.GILMenuHeader{border:1px solid var(--color1);background:white;}
+.GILEnumMenuHeader{border:1px solid var(--color1);}
 .GILPickMY{color:white;background:#565d72;}
 .GILPickTableParent,.GILPick2TableParent{border:1px solid #1a364e;border-top:0px none;}
 .GILPickFooter,.GILPick2Footer,.GILPickTimeCell{background:#ebedf3;border:1px solid #1a364e;border-top:1px solid #cfd1d6;}
@@ -194,7 +195,7 @@
 .GILPickWN,.GILPickWNE{background:#f1f3fa;border-right:1px solid #f1f3fa;}
 .GILPickOM,.GILPickOMNE{background-color:white;color:#aaaaaa;font-weight:normal;}
 .GILPickOM,.GILPickOMNE,.GILPickOM button{background-color:white;color:#aaaaaa;font-weight:normal;}
-.GILPickSel,.GILPick2MSel,.GILPick2YSel{background-color:#19885D;color:#fff;border-radius:4px;}
+.GILPickSel,.GILPick2MSel,.GILPick2YSel{background-color:var(--color1);color:#fff;border-radius:4px;}
 .GILPickSel button,.GILPick2MSel button,.GILPick2YSel button{color:white;}
 .GILPickNow{background-color:#a1b8ff;border-radius:4px;}
 .GILPickNE{text-decoration:line-through;}
@@ -222,7 +223,7 @@
 .GILHeadLeft,.GILBodyLeft,.GILFootLeft{border-left:1px solid #F0F0F0;}
 .GILHeadMid,.GILBodyMid,.GILFootMid{border-left: 0;border-right:0;}
 .GILHeadRight,.GILBodyRight,.GILFootRight{border-right:1px solid #F0F0F0;}
-.GILHeadLeft,.GILHeadMid,.GILHeadRight{border-bottom:1px solid #F0F0F0;border-top:1px solid #1E1E1E;}
+.GILHeadLeft,.GILHeadMid,.GILHeadRight{border-bottom:1px solid #F0F0F0;border-top:1px solid var(--main-color1);}
 .GILHasHead .GILHeadLeft,.GILHasHead .GILHeadMid,.GILHasHead .GILHeadRight{border-top:1px solid #F0F0F0;}
 .GILFootLeft,.GILFootMid,.GILFootRight{border-top:1px solid #F0F0F0;}
 .GILLeftSplitter,.GILRightSplitter{width:5px;overflow:hidden;cursor:e-resize;font-size:0px;}
@@ -1087,7 +1088,7 @@ u.GILToolSpaceButton,u.GILToolSpaceButton1,.GILMain .GILToolSpaceIconInner{paddi
 	width: 20px;
 	height: 20px;
 	margin: 0 10px 0 -30px;
-    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='1' width='18' height='18' rx='1' fill='%2319885D' stroke='%2319885D' stroke-width='2'/%3E%3Cpath d='M5 10L9 14L16 7' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='1' width='18' height='18' rx='1' fill='%232072D6' stroke='%232072D6' stroke-width='2'/%3E%3Cpath d='M5 10L9 14L16 7' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 	background-size: 20px auto;
 	/* background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%234676fb' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 11l3 3l8-8'/%3e%3c/svg%3e");
 	border: 2px solid var(--checkbox-border-color-focused); */
@@ -1173,7 +1174,7 @@ u.GILToolSpaceButton,u.GILToolSpaceButton1,.GILMain .GILToolSpaceIconInner{paddi
 }
 /* .GILRadio0Left,.GILRadio0Right{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgdmlld0JveD0iMCAwIDMyMCAzMjAiPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xNjAgMzAwYy03Ny4xOTYgMC0xNDAtNjIuODA1LTE0MC0xNDAgMC03Ny4xOTYgNjIuODA0LTE0MCAxNDAtMTQwIDc3LjE5NSAwIDE0MCA2Mi44MDQgMTQwIDE0MCAwIDc3LjE5NS02Mi44MDMgMTQwLTE0MCAxNDB6Ii8+PHBhdGggZmlsbD0iI0MxQzFDMSIgZD0iTTE2MCAzMGMzNC43MjUgMCA2Ny4zNyAxMy41MjIgOTEuOTI0IDM4LjA3NiAyNC41NTQgMjQuNTU0IDM4LjA3NiA1Ny4yIDM4LjA3NiA5MS45MjQgMCAzNC43MjUtMTMuNTIyIDY3LjM3LTM4LjA3NiA5MS45MjQtMjQuNTU0IDI0LjU1NS01Ny4xOTkgMzguMDc2LTkxLjkyNCAzOC4wNzZzLTY3LjM3LTEzLjUyMS05MS45MjQtMzguMDc2Yy0yNC41NTQtMjQuNTU0LTM4LjA3Ni01Ny4xOTktMzguMDc2LTkxLjkyNCAwLTM0LjcyNCAxMy41MjEtNjcuMzcgMzguMDc2LTkxLjkyNCAyNC41NTQtMjQuNTU0IDU3LjItMzguMDc2IDkxLjkyNC0zOC4wNzZtMC0yMGMtODIuODQzIDAtMTUwIDY3LjE1Ny0xNTAgMTUwczY3LjE1NyAxNTAgMTUwIDE1MCAxNTAtNjcuMTU3IDE1MC0xNTAtNjcuMTU3LTE1MC0xNTAtMTUweiIvPjwvc3ZnPg==);} */
 .GILRadio1Left,.GILRadio1Right{
-	background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='19' height='19' rx='9.5' fill='white' stroke='%2319885D'/%3E%3Ccircle cx='10' cy='10' r='5' fill='%2319885D'/%3E%3C/svg%3E");
+	background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='19' height='19' rx='9.5' fill='white' stroke='%232072D6'/%3E%3Ccircle cx='10' cy='10' r='5' fill='%232072D6'/%3E%3C/svg%3E");
 	background-size: 20px auto;
 }
 /* .GILRadio1Left,.GILRadio1Right{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgdmlld0JveD0iMCAwIDMyMCAzMjAiPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xNjAgMzAwYy03Ny4xOTYgMC0xNDAtNjIuODA1LTE0MC0xNDAgMC03Ny4xOTYgNjIuODA0LTE0MCAxNDAtMTQwIDc3LjE5NCAwIDE0MCA2Mi44MDQgMTQwIDE0MCAwIDc3LjE5NS02Mi44MDMgMTQwLTE0MCAxNDB6Ii8+PHBhdGggZmlsbD0iI0MxQzFDMSIgZD0iTTE2MCAzMGMzNC43MjUgMCA2Ny4zNyAxMy41MjIgOTEuOTI0IDM4LjA3NiAyNC41NTQgMjQuNTU0IDM4LjA3NiA1Ny4yIDM4LjA3NiA5MS45MjQgMCAzNC43MjUtMTMuNTIyIDY3LjM3LTM4LjA3NiA5MS45MjQtMjQuNTU0IDI0LjU1NS01Ny4xOTkgMzguMDc2LTkxLjkyNCAzOC4wNzYtMzQuNzI2IDAtNjcuMzctMTMuNTIxLTkxLjkyNC0zOC4wNzYtMjQuNTU0LTI0LjU1NC0zOC4wNzYtNTcuMTk5LTM4LjA3Ni05MS45MjQgMC0zNC43MjQgMTMuNTIxLTY3LjM3IDM4LjA3Ni05MS45MjQgMjQuNTU0LTI0LjU1NCA1Ny4yLTM4LjA3NiA5MS45MjQtMzguMDc2bTAtMjBjLTgyLjg0MyAwLTE1MCA2Ny4xNTctMTUwIDE1MHM2Ny4xNTcgMTUwIDE1MCAxNTAgMTUwLTY3LjE1NyAxNTAtMTUwLTY3LjE1Ny0xNTAtMTUwLTE1MHoiLz48Y2lyY2xlIGZpbGw9IiM2MDgyRTYiIGN4PSIxNjAiIGN5PSIxNjAiIHI9IjYwIi8+PC9zdmc+);} */
@@ -1227,11 +1228,11 @@ td.GILBool0, td.GILBool0RO{
 /* checkbox 선택됨 */
 u.GILBool1, u.GILBool1RO{
 	border-radius: 0 !important;
-    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='1' width='18' height='18' rx='1' fill='%2319885D' stroke='%2319885D' stroke-width='2'/%3E%3Cpath d='M5 10L9 14L16 7' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='1' width='18' height='18' rx='1' fill='%232072D6' stroke='%232072D6' stroke-width='2'/%3E%3Cpath d='M5 10L9 14L16 7' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 	background-size: 20px auto;
 }
 td.GILBool1, td.GILBool1RO{
-    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='1' width='18' height='18' rx='1' fill='%2319885D' stroke='%2319885D' stroke-width='2'/%3E%3Cpath d='M5 10L9 14L16 7' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='1' width='18' height='18' rx='1' fill='%232072D6' stroke='%232072D6' stroke-width='2'/%3E%3Cpath d='M5 10L9 14L16 7' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 	background-size: 20px auto;
 }
 /* .GILBool1, .GILBool1RO{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgdmlld0JveD0iMCAwIDMyMCAzMjAiPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0wIDBoMzIwdjMyMGgtMzIweiIvPjxwYXRoIGZpbGw9IiNDMUMxQzEiIGQ9Ik0zMDAgMjB2MjgwaC0yODB2LTI4MGgyODBtMjAtMjBoLTMyMHYzMjBoMzIwdi0zMjB6Ii8+PHBhdGggc3Ryb2tlPSIjNjA4MkU2IiBzdHJva2Utd2lkdGg9IjQwIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIGZpbGw9Im5vbmUiIGQ9Ik0yMzUuOTI0IDEyMi4wMzhsLTc1LjkyNCA3NS45MjQtNzUuOTI0LTc1LjkyNCIvPjwvc3ZnPg==);} */
@@ -1247,7 +1248,7 @@ td.GILBool1, td.GILBool1RO{
 
 /* radio 선택됨 */
 .GILBool3,.GILBool3RO{
-    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='19' height='19' rx='9.5' fill='white' stroke='%2319885D'/%3E%3Ccircle cx='10' cy='10' r='5' fill='%2319885D'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='19' height='19' rx='9.5' fill='white' stroke='%232072D6'/%3E%3Ccircle cx='10' cy='10' r='5' fill='%232072D6'/%3E%3C/svg%3E");
 	background-size: 22px auto;
 }
 /* .GILBool3,.GILBool3RO{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSIgdmlld0JveD0iMCAwIDMyMCAzMjAiPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xNjAgMzAwYy03Ny4xOTYgMC0xNDAtNjIuODA1LTE0MC0xNDAgMC03Ny4xOTYgNjIuODA0LTE0MCAxNDAtMTQwIDc3LjE5NCAwIDE0MCA2Mi44MDQgMTQwIDE0MCAwIDc3LjE5NS02Mi44MDMgMTQwLTE0MCAxNDB6Ii8+PHBhdGggZmlsbD0iI0MxQzFDMSIgZD0iTTE2MCAzMGMzNC43MjUgMCA2Ny4zNyAxMy41MjIgOTEuOTI0IDM4LjA3NiAyNC41NTQgMjQuNTU0IDM4LjA3NiA1Ny4yIDM4LjA3NiA5MS45MjQgMCAzNC43MjUtMTMuNTIyIDY3LjM3LTM4LjA3NiA5MS45MjQtMjQuNTU0IDI0LjU1NS01Ny4xOTkgMzguMDc2LTkxLjkyNCAzOC4wNzYtMzQuNzI2IDAtNjcuMzctMTMuNTIxLTkxLjkyNC0zOC4wNzYtMjQuNTU0LTI0LjU1NC0zOC4wNzYtNTcuMTk5LTM4LjA3Ni05MS45MjQgMC0zNC43MjQgMTMuNTIxLTY3LjM3IDM4LjA3Ni05MS45MjQgMjQuNTU0LTI0LjU1NCA1Ny4yLTM4LjA3NiA5MS45MjQtMzguMDc2bTAtMjBjLTgyLjg0MyAwLTE1MCA2Ny4xNTctMTUwIDE1MHM2Ny4xNTcgMTUwIDE1MCAxNTAgMTUwLTY3LjE1NyAxNTAtMTUwLTY3LjE1Ny0xNTAtMTUwLTE1MHoiLz48Y2lyY2xlIGZpbGw9IiM2MDgyRTYiIGN4PSIxNjAiIGN5PSIxNjAiIHI9IjYwIi8+PC9zdmc+);} */
@@ -1632,7 +1633,7 @@ input.GILMenuEditInput,textarea.GILMenuEditTextarea{border:0px none;margin:0px 1
 .GILMenuItemBorderO8{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHZpZXdCb3g9IjAgMCAyMCAyMCI+DQogICA8ZyBzdHJva2U9IiM3QTg4OTkiIHN0cm9rZS13aWR0aD0iMnB4IiBzdHJva2UtZGFzaGFycmF5PSIyLDIiPg0KICAgICAgPGxpbmUgeDE9IjAiIHkxPSIxIiB4Mj0iMTgiIHkyPSIxIi8+DQogICAgICA8bGluZSB4MT0iMCIgeTE9IjkiIHgyPSIxOCIgeTI9IjkiLz4NCiAgICAgIDxsaW5lIHgxPSIwIiB5MT0iMTciIHgyPSIxOCIgeTI9IjE3Ii8+DQogICAgICA8bGluZSB4MT0iMSIgeTE9IjAiIHgyPSIxIiB5Mj0iMTgiIHN0cm9rZS1kYXNoYXJyYXk9IjAiLz4NCiAgICAgIDxsaW5lIHgxPSI5IiB5MT0iMCIgeDI9IjkiIHkyPSIxOCIvPg0KICAgICAgPGxpbmUgeDE9IjE3IiB5MT0iMCIgeDI9IjE3IiB5Mj0iMTgiLz4NCiAgIDwvZz4NCjwvc3ZnPg0K);}
 .GILMenuItemBorderO5{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHZpZXdCb3g9IjAgMCAyMCAyMCI+DQo8ZyBzdHJva2U9IiM3QTg4OTkiIHN0cm9rZS13aWR0aD0iMnB4IiBzdHJva2UtZGFzaGFycmF5PSIyLDIiPg0KICAgPGxpbmUgeDE9IjAiIHkxPSIxIiB4Mj0iMTgiIHkyPSIxIiBzdHJva2UtZGFzaGFycmF5PSIwIi8+DQogICA8bGluZSB4MT0iMCIgeTE9IjkiIHgyPSIxOCIgeTI9IjkiLz4NCiAgIDxsaW5lIHgxPSIwIiB5MT0iMTciIHgyPSIxOCIgeTI9IjE3IiBzdHJva2UtZGFzaGFycmF5PSIwIi8+DQogICA8bGluZSB4MT0iMSIgeTE9IjAiIHgyPSIxIiB5Mj0iMTgiLz4NCiAgIDxsaW5lIHgxPSI5IiB5MT0iMCIgeDI9IjkiIHkyPSIxOCIvPg0KICAgPGxpbmUgeDE9IjE3IiB5MT0iMCIgeDI9IjE3IiB5Mj0iMTgiLz4NCjwvZz4NCjwvc3ZnPg0K);}
 .GILMenuItemBorderO10{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHZpZXdCb3g9IjAgMCAyMCAyMCI+DQogICA8ZyBzdHJva2U9IiM3QTg4OTkiIHN0cm9rZS13aWR0aD0iMnB4IiBzdHJva2UtZGFzaGFycmF5PSIyLDIiPg0KICAgICAgPGxpbmUgeDE9IjAiIHkxPSIxIiB4Mj0iMTgiIHkyPSIxIi8+DQogICAgICA8bGluZSB4MT0iMCIgeTE9IjkiIHgyPSIxOCIgeTI9IjkiLz4NCiAgICAgIDxsaW5lIHgxPSIwIiB5MT0iMTciIHgyPSIxOCIgeTI9IjE3Ii8+DQogICAgICA8bGluZSB4MT0iMSIgeTE9IjAiIHgyPSIxIiB5Mj0iMTgiIHN0cm9rZS1kYXNoYXJyYXk9IjAiLz4NCiAgICAgIDxsaW5lIHgxPSI5IiB5MT0iMCIgeDI9IjkiIHkyPSIxOCIvPg0KICAgICAgPGxpbmUgeDE9IjE3IiB5MT0iMCIgeDI9IjE3IiB5Mj0iMTgiIHN0cm9rZS1kYXNoYXJyYXk9IjAiLz4NCiAgIDwvZz4NCjwvc3ZnPg0K);}
-.GILPickMain{position:absolute;left:0px;top:0px;z-index:258;}
+.GILPickMain{position:absolute;left:0px;top:0px;z-index:261;}
 .GILPickShadow{position:absolute;display:none;}
 .GILPickOuter{border:0px none;padding:0px;overflow:hidden;}
 .GILPickBody{cursor:default;padding:0px;margin:0px;width:100%;}
@@ -1948,7 +1949,7 @@ BODY[class*=BodyPrint]>DIV[class*=PrintPage]>DIV>DIV>DIV[class*=PaddingWrapper]{
 .GILMemoEdit h4{background-color:#AAAAAA;color:#FFFFFF;text-align:center;}
 .GILMemoEdit textarea{width:200px;height:150px;padding:2px;font-size:11px;}
 .GILMemoEdit+div{height:34px;text-align:center;background:#ebedf3;}
-.GILMemoEdit+div .GILMenuButton{border:solid 1px #19885D;margin-top:4px;}
+.GILMemoEdit+div .GILMenuButton{border:solid 1px var(--color1);margin-top:4px;}
 .GILMemoEdit+div .GILMenuButton:hover{border:solid 1px #1a364e;color:#1a364e;cursor:pointer ;}
 
 /* 추가css */
@@ -1968,6 +1969,6 @@ BODY[class*=BodyPrint]>DIV[class*=PrintPage]>DIV>DIV>DIV[class*=PaddingWrapper]{
 	vertical-align: middle;
 }
 .GILMain .GILHeaderRow td {
-	color: #1E1E1E; 
+	color: var(--main-color1); 
 	font-weight: 600;
 }
