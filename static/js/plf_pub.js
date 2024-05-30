@@ -7,7 +7,6 @@
       $('.btn-etc').length && layerpopToast();
       tabSwitcher('my-tab-switching .tab .item');
       subCalendar();
-     // $('.layer_open').length && popupExplain();
       hcLayer.init();
 
       $('[data-toggle="datepicker"]').datepicker({
@@ -82,10 +81,14 @@
           $(this).addClass('selected') ;
       });
   
-      $(".plf-gnb .btn-menu").on('click hover', function(){
+      $(".plf-gnb .btn-menu").on('mouseover', function(){
           $(".plf-aside").toggleClass('active');
       });
-  }
+
+      $(".plf-aside").on('mouseleave', function(){
+        $(".plf-aside").removeClass('active');
+      });
+    }
 
   var tabSwitcher = function(tabSwitcherRoot) {
     var E = {};

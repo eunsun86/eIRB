@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>e-IRB</title>
+    <title>심의신청 | e-IRB</title>
     <script src="../static/js/jquery-3.6.0.min.js"></script>
     <script src="../static/js/datepicker.min.js"></script>		
     <script src="../static/js/datepicker.ko-KR.js"></script>		
@@ -96,46 +96,50 @@
                         <div class="tab-con active"> <!--[D]active-->
 
                             <div class="breadcrumb">
-                                <button type="button" class="layer_open" title="업무단 팝업" onclick="hcLayer.show('layer1')"></button>
+                                <input type="button" title="업무영역 팝업 열기" onclick="popupExplain('new-window');" class="layer_open" >
                                 <span class="item">과제관리</span>
                                 <span class="item">심의신청(PI)</span>
                             </div>
     
-                            <p class="tit-pagetitle">심의신청(PI)</p>
+                            <!--[S] new-window : 새창띄우기 팝업 영역 -->
+                            <div id="new-window">
+                                <p class="tit-pagetitle">심의신청(PI)</p>
 
-                            <div class="sec">
-                                <div class="td-item-group">
-                                    <div class="item-area">
-                                        <input name="" id="" class="td-item ip-txt w350" type="text" value="" placeholder="접수번호 / IRB No / 과제명">	
-                                        				
-                                        <span class="th-item pl36">심의유형</span>
-                                        <div class="td-item sel">
-                                            <select name="" id="" class="">
-                                                <option value="">전체</option>
-                                                <option value="">신규</option>
-                                                <option value="">면제</option>
-                                                <option value="">변경</option>
-                                                <option value="">지속심의</option>
-                                                <option value="">기타</option>
-                                                <option value="">중간보고</option>
-                                                <option value="">종료보고</option>
-                                                <option value="">결과보고</option>
-                                                <option value="">미준수</option>
-                                                <option value="">원내이상</option>
-                                                <option value="">원외이상</option>
-                                                <option value="">안전성보고</option>
-                                                <option value="">중지</option>
-                                                <option value="">예상치못한 문제</option>
-                                            </select>
-                                        </div>										
-                                    </div>
-                                    
-                                    <div class="btn-group">
-                                        <button class="td-item btn btn-icon-srh" type="button">조회</button>
-                                    </div>
-                                </div>		
-                                <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div><!--[D]그리드 영역-->
+                                <div class="sec">
+                                    <div class="td-item-group">
+                                        <div class="item-area">
+                                            <input name="" id="" class="td-item ip-txt w350" type="text" value="" placeholder="접수번호 / IRB No / 과제명">	
+                                                            
+                                            <span class="th-item pl36">심의유형</span>
+                                            <div class="td-item sel">
+                                                <select name="" id="" class="">
+                                                    <option value="">전체</option>
+                                                    <option value="">신규</option>
+                                                    <option value="">면제</option>
+                                                    <option value="">변경</option>
+                                                    <option value="">지속심의</option>
+                                                    <option value="">기타</option>
+                                                    <option value="">중간보고</option>
+                                                    <option value="">종료보고</option>
+                                                    <option value="">결과보고</option>
+                                                    <option value="">미준수</option>
+                                                    <option value="">원내이상</option>
+                                                    <option value="">원외이상</option>
+                                                    <option value="">안전성보고</option>
+                                                    <option value="">중지</option>
+                                                    <option value="">예상치못한 문제</option>
+                                                </select>
+                                            </div>										
+                                        </div>
+                                        
+                                        <div class="btn-group">
+                                            <button class="td-item btn btn-icon-srh" type="button">조회</button>
+                                        </div>
+                                    </div>		
+                                    <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div><!--[D]그리드 영역-->
+                                </div>
                             </div>
+                            <!--//[S] new-window -->   
 
                         </div><!--//[S] tab-con-->
                     </div>

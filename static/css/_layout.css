@@ -8,16 +8,30 @@
  @ 메모 : - (거의)모든 페이지에 등장하는 '공통 영역'을 정의한다. 예를들면 상단 헤더, 왼쪽 어사이드, 중앙 메인컨텐트 영역. 
 */
 
-/*
-    사용법
-    var(--color1)
-*/
 /*var*/
+/* 기본 green color 변수 */
+/*:root {
+/*	--color1: #19885D; /* #19885D 포인트 색상 */
+/*	--color2: #02B574; /* #02B574 defalut 버튼 hover 색상 */
+/*	--color3: #E6F8F1; /* #E6F8F1 추가 삭제 버튼 배경 색상 */
+/*	--color4: #F6F9F8; /* #F6F9F8 배경 색상 */
+/*
+/*    --main-color1 : #23ACAD;
+/*    --main-color2 : #0CAE6A;
+/*    --main-color3 : #43BE7C;
+/*    --main-color4 : #2A8CC3;
+/*    --main-color5 : #63A4E0;
+/*    --main-color6 : #6554A8;
+/*    --main-color7 : #9392E0;
+/*    --main-color8 : #A650A8;
+/*}*/
+
+/* 기본 blue color 변수 */
 :root {
-	--color1: #2072D6; /* #19885D -> #2072D6 포인트 색상 */
-	--color2: #1279F6; /* #02B574 -> #1279F6 defalut 버튼 hover 색상 */
-	--color3: #E7F1FE; /* #E6F8F1 -> #E7F1FE 추가 삭제 버튼 배경 색상 */
-	--color4: #F6F7F9; /* #F6F9F8 -> #F6F7F9 배경 색상 */
+	--color1: #2072D6; /* #2072D6 포인트 색상 */
+	--color2: #1279F6; /* #1279F6 defalut 버튼 hover 색상 */
+	--color3: #E7F1FE; /* #E7F1FE 추가 삭제 버튼 배경 색상 */
+	--color4: #F6F7F9; /* #F6F7F9 배경 색상 */
 
     --main-color1 : #3062AD;
     --main-color2 : #0CAEAE;
@@ -38,7 +52,7 @@
 .plf-header { z-index: 500; } 
 
 /**/
-body { min-width: 1600px; max-width: 100vw; } 
+/* body { min-width: 1600px; max-width: 100vw; }  */
 .plf-root { min-width: 1600px;}
 .plf-root .plf-header { position: fixed; top: 0; left: 0; display: flex;align-items: center; width: 100%; height: 56px;border-bottom: 1px solid #E5E5E5; background: #fff; min-width: 1180px; } 
 .plf-root .plf-header .left-area {padding-left: 32px;} 
@@ -84,15 +98,15 @@ body { min-width: 1600px; max-width: 100vw; }
 
 /* plf-tab */
 .plf-tab { position: relative; border: 0;} 
-.plf-tab .tab-con {padding: 24px 32px 40px; border: 1px solid #E0E0E0;background: #fff;border-radius: 0 12px 12px 12px;box-shadow: rgba(149, 157, 165, 0.2) 8px 8px 8px;min-height: calc(100vh - 250px);}
+.plf-tab .tab-con {padding: 24px 32px 40px; border: 1px solid #E0E0E0;background: #fff;border-radius: 0 12px 12px 12px;box-shadow: rgba(149, 157, 165, 0.2) 8px 8px 8px;min-height: calc(100vh - 250px);overflow: hidden;}
 .plf-tab .tab-con { display: none; } 
 .plf-tab .tab-con.active { display: block; } 
 .plf-tab >.tab{position: relative;overflow: hidden;margin-bottom: -1px;padding-right: 50px;}
 .plf-tab .tab .item {display: inline-block;vertical-align: top; width: 166px; line-height: 38px;padding: 0 33px 0 20px;position: relative;}
 .plf-tab .tab .item em{display:block;max-width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color: #929292;font-weight: 500;}
-.plf-tab .tab .item .btn-del {position: absolute;right:12px;top:15px; display: inline-block;vertical-align: middle;margin: -2px 0 0 10px; width: 12px; height: 12px; background: url(../img/icon/ic_tab_del.svg) no-repeat center/8px;}
-.plf-tab .tab .item.active em{color:  var(--color1);font-weight: 700;}
-.plf-tab .tab .item.active .btn-del {background:url(../img/icon/ic_tab_del_active.svg) no-repeat center/8px;}
+.plf-tab .tab .item .btn-del {position: absolute;right:12px;top:15px; display: inline-block;vertical-align: middle;margin: -2px 0 0 10px; width: 12px; height: 12px; background: url(../img/icon/ic_tab_del.svg) no-repeat center;}
+.plf-tab .tab .item.active em{color:  var(--color1);font-weight: 600;}
+.plf-tab .tab .item.active .btn-del {background:url(../img/icon/ic_tab_del_active.svg) no-repeat center}
 .plf-tab .item-etc {position: absolute;right:224px;top:6px; width: 190px;text-align: right;}
 .plf-tab .item-etc .btn-etc{width: 48px;height: 32px;font-size: 20px;line-height: 0;font-size: 32px;border-radius: 12px 12px 0px 0px;background: var(--color3);color: var(--color1);}
 .plf-tab .item-etc .tab-list{display: none; border:1px solid  var(--color1);border-radius: 8px 0 8px 8px;padding:4px 20px;background-color: var(--color3);text-align: left;}

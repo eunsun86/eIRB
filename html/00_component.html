@@ -129,15 +129,15 @@
                             <br>
                             <br>
 
-                            <h4 class="deco-h4">검사</h4>
-                            <input name="" id="" class="ip-txt w100p is-positive" type="text" value="가이드문구-긍정" placeholder="text"> <!--[D]is-positive-->
+                            <!-- <h4 class="deco-h4">검사</h4>
+                            <input name="" id="" class="ip-txt w100p is-positive" type="text" value="가이드문구-긍정" placeholder="text"> D]is-positive
                             <span class="txt-guide-positive">인증 완료 되었습니다.</span>
                             <br>
                             <br>
 
-                            <input name="" id="" class="ip-txt w100p is-negative" type="text" value="가이드문구-부정" placeholder="text"> <!--[D]is-negative-->
+                            <input name="" id="" class="ip-txt w100p is-negative" type="text" value="가이드문구-부정" placeholder="text"> [D]is-negative
                             <span class="txt-guide-negative">필수 입력값입니다.</span>
-                            <br><br>
+                            <br><br> -->
 
                             <h4 class="deco-h4">with Icon</h4>
 
@@ -688,7 +688,7 @@
                                         <tr>
                                             <td>
                                                 <div class="td-item-group left">
-                                                    <span class="fw-500 mr32 fc-1e">관리약사</span>
+                                                    <span class="fw-500 mr16 fc-1e">관리약사</span>
                                                     <div class="item-area">
                                                         <div class="ip-rd-group complex">
                                                             <label class="ip-rd-label d-block">
@@ -701,26 +701,23 @@
                                                                     <span class="check"></span> <em>없음</em> 
                                                                 </label>
                                                                 <div class="ip-rd-group">
+                                                                    &#40;
                                                                     <label class="ip-rd-label">
-                                                                        <input name="fd-6" class="ip-rd" type="radio" value="" checked="">
-                                                                        <span class="check"></span> <em>정부기관</em> 
+                                                                        <input name="fd-5-1" class="ip-rd" type="radio" value="" checked="">
+                                                                        <span class="check"></span> <em>원외약국</em> 
                                                                     </label>
                                                                     <label class="ip-rd-label">
-                                                                        <input name="fd-6" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>기업체</em> 
+                                                                        <input name="fd-5-1" class="ip-rd" type="radio" value="">
+                                                                        <span class="check"></span> <em>연구자</em> 
                                                                     </label>
                                                                     <label class="ip-rd-label">
-                                                                        <input name="fd-6" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>없음</em> 
-                                                                    </label>
-                                                                    <label class="ip-rd-label">
-                                                                        <input name="fd-6" class="ip-rd" type="radio" value="">
+                                                                        <input name="fd-5-1" class="ip-rd" type="radio" value="">
                                                                         <span class="check"></span> <em>기타</em> 
                                                                     </label>
                                                                     <input name="" id="" class="ip-txt w175 ml8" type="text" value="">
+                                                                    &#41;
                                                                 </div>
                                                             </div>
-                                                            
                                                             <label class="ip-rd-label d-block">
                                                                 <input name="fd-5" class="ip-rd" type="radio" value="">
                                                                 <span class="check"></span> <em>해당없음</em> 
@@ -785,8 +782,8 @@
                                 <div class="sec-btm">
                                     <p>위와 같이 심의면제 신청서를 제출합니다.</p>
                                     <div class="btn-group">
-                                        <button class="btn btn-lb" type="button">임의저장</button>
-                                        <button class="btn" type="button">심의신청</button>
+                                        <button class="btn" type="button">임의저장</button>
+                                        <button class="btn btn-lb" type="button">심의신청</button>
                                     </div>							
                                 </div>
                             </div>
@@ -808,8 +805,8 @@
                                 <div class="sec-btm">
                                     <p>위와 같이 심의면제 신청서를 제출합니다.</p>
                                     <div class="btn-group">
-                                        <button class="btn btn-lb" type="button">임의저장</button>
-                                        <button class="btn" type="button">심의신청</button>
+                                        <button class="btn" type="button">임의저장</button>
+                                        <button class="btn btn-lb" type="button">심의신청</button>
                                     </div>							
                                 </div>
                             </div>
@@ -1075,21 +1072,98 @@
                                         <tr>
                                             <th scope="row">라디오 모음</th>
                                             <td>
-                                                <div class="td-item-group">
-                                                    <div class="ip-rd-group">
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-2" class="ip-rd" type="radio" value="" checked="">
-                                                            <span class="check"></span> <em>단일기관</em> 
-                                                        </label>
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-2" class="ip-rd" type="radio" value="">
-                                                            <span class="check"></span> <em>국내다기관연구</em> 
-                                                        </label>
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-2" class="ip-rd" type="radio" value="">
-                                                            <span class="check"></span> <em>다국가 다기관연구</em> 
-                                                        </label>
-                                                    </div>
+                                                <div class="ip-rd-group">
+                                                    <label class="ip-rd-label">
+                                                        <input name="fd-2" class="ip-rd" type="radio" value="" checked="">
+                                                        <span class="check"></span> <em>단일기관</em> 
+                                                    </label>
+                                                    <label class="ip-rd-label">
+                                                        <input name="fd-2" class="ip-rd" type="radio" value="">
+                                                        <span class="check"></span> <em>국내다기관연구</em> 
+                                                    </label>
+                                                    <label class="ip-rd-label">
+                                                        <input name="fd-2" class="ip-rd" type="radio" value="">
+                                                        <span class="check"></span> <em>다국가 다기관연구</em> 
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">라디오 모음</th>
+                                            <td>
+                                                <div class="ip-rd-group">
+                                                    <label class="ip-rd-label">
+                                                        <input name="fd-21" class="ip-rd" type="radio" value="" checked="">
+                                                        <span class="check"></span> <em>단일기관</em> 
+                                                    </label>
+                                                    <label class="ip-rd-label">
+                                                        <input name="fd-21" class="ip-rd" type="radio" value="">
+                                                        <span class="check"></span> <em>국내다기관연구</em> 
+                                                    </label>
+                                                    <label class="ip-rd-label">
+                                                        <input name="fd-21" class="ip-rd" type="radio" value="">
+                                                        <span class="check"></span> <em>다국가 다기관연구</em> 
+                                                    </label>
+                                                    <label class="ip-rd-label">
+                                                        <input name="fd-21" class="ip-rd" type="radio" value="" checked="">
+                                                        <span class="check"></span> <em>단일기관</em> 
+                                                    </label>
+                                                    <label class="ip-rd-label">
+                                                        <input name="fd-21" class="ip-rd" type="radio" value="">
+                                                        <span class="check"></span> <em>국내다기관연구</em> 
+                                                    </label>
+                                                    <label class="ip-rd-label">
+                                                        <input name="fd-21" class="ip-rd" type="radio" value="">
+                                                        <span class="check"></span> <em>다국가 다기관연구</em> 
+                                                    </label>
+                                                    <label class="ip-rd-label">
+                                                        <input name="fd-21" class="ip-rd" type="radio" value="" checked="">
+                                                        <span class="check"></span> <em>단일기관</em> 
+                                                    </label>
+                                                    <label class="ip-rd-label">
+                                                        <input name="fd-21" class="ip-rd" type="radio" value="">
+                                                        <span class="check"></span> <em>국내다기관연구</em> 
+                                                    </label>
+                                                    <label class="ip-rd-label">
+                                                        <input name="fd-21" class="ip-rd" type="radio" value="">
+                                                        <span class="check"></span> <em>다국가 다기관연구</em> 
+                                                    </label>
+                                                    <label class="ip-rd-label">
+                                                        <input name="fd-21" class="ip-rd" type="radio" value="" checked="">
+                                                        <span class="check"></span> <em>단일기관</em> 
+                                                    </label>
+                                                    <label class="ip-rd-label">
+                                                        <input name="fd-21" class="ip-rd" type="radio" value="">
+                                                        <span class="check"></span> <em>국내다기관연구</em> 
+                                                    </label>
+                                                    <label class="ip-rd-label">
+                                                        <input name="fd-21" class="ip-rd" type="radio" value="">
+                                                        <span class="check"></span> <em>다국가 다기관연구</em> 
+                                                    </label>
+                                                    <label class="ip-rd-label">
+                                                        <input name="fd-21" class="ip-rd" type="radio" value="" checked="">
+                                                        <span class="check"></span> <em>단일기관</em> 
+                                                    </label>
+                                                    <label class="ip-rd-label">
+                                                        <input name="fd-21" class="ip-rd" type="radio" value="">
+                                                        <span class="check"></span> <em>국내다기관연구</em> 
+                                                    </label>
+                                                    <label class="ip-rd-label">
+                                                        <input name="fd-21" class="ip-rd" type="radio" value="">
+                                                        <span class="check"></span> <em>다국가 다기관연구</em> 
+                                                    </label>
+                                                    <label class="ip-rd-label">
+                                                        <input name="fd-21" class="ip-rd" type="radio" value="" checked="">
+                                                        <span class="check"></span> <em>단일기관</em> 
+                                                    </label>
+                                                    <label class="ip-rd-label">
+                                                        <input name="fd-21" class="ip-rd" type="radio" value="">
+                                                        <span class="check"></span> <em>국내다기관연구</em> 
+                                                    </label>
+                                                    <label class="ip-rd-label">
+                                                        <input name="fd-21" class="ip-rd" type="radio" value="">
+                                                        <span class="check"></span> <em>다국가 다기관연구</em> 
+                                                    </label>
                                                 </div>
                                             </td>
                                         </tr>
@@ -1097,6 +1171,85 @@
                                             <th scope="row">체크박스 모음</th>
                                             <td>
                                                 <div class="ip-ch-group">
+                                                    <label class="ip-ch-label">
+                                                        <input class="ip-ch" type="checkbox" value="">
+                                                        <span class="check"></span> <em>취업</em> 
+                                                    </label>
+                                                    <label class="ip-ch-label">
+                                                        <input class="ip-ch" type="checkbox" value="" checked="">
+                                                        <span class="check"></span> <em>현장실습</em>
+                                                    </label>
+                                                    <label class="ip-ch-label">
+                                                        <input class="ip-ch" type="checkbox">
+                                                        <span class="check"></span> <em>캠스톤디자인</em>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">체크박스 모음</th>
+                                            <td>
+                                                <div class="ip-ch-group">
+                                                    <label class="ip-ch-label">
+                                                        <input class="ip-ch" type="checkbox" value="">
+                                                        <span class="check"></span> <em>취업</em> 
+                                                    </label>
+                                                    <label class="ip-ch-label">
+                                                        <input class="ip-ch" type="checkbox" value="" checked="">
+                                                        <span class="check"></span> <em>현장실습</em>
+                                                    </label>
+                                                    <label class="ip-ch-label">
+                                                        <input class="ip-ch" type="checkbox">
+                                                        <span class="check"></span> <em>캠스톤디자인</em>
+                                                    </label>
+                                                    <label class="ip-ch-label">
+                                                        <input class="ip-ch" type="checkbox" value="">
+                                                        <span class="check"></span> <em>취업</em> 
+                                                    </label>
+                                                    <label class="ip-ch-label">
+                                                        <input class="ip-ch" type="checkbox" value="" checked="">
+                                                        <span class="check"></span> <em>현장실습</em>
+                                                    </label>
+                                                    <label class="ip-ch-label">
+                                                        <input class="ip-ch" type="checkbox">
+                                                        <span class="check"></span> <em>캠스톤디자인</em>
+                                                    </label>
+                                                    <label class="ip-ch-label">
+                                                        <input class="ip-ch" type="checkbox" value="">
+                                                        <span class="check"></span> <em>취업</em> 
+                                                    </label>
+                                                    <label class="ip-ch-label">
+                                                        <input class="ip-ch" type="checkbox" value="" checked="">
+                                                        <span class="check"></span> <em>현장실습</em>
+                                                    </label>
+                                                    <label class="ip-ch-label">
+                                                        <input class="ip-ch" type="checkbox">
+                                                        <span class="check"></span> <em>캠스톤디자인</em>
+                                                    </label>
+                                                    <label class="ip-ch-label">
+                                                        <input class="ip-ch" type="checkbox" value="">
+                                                        <span class="check"></span> <em>취업</em> 
+                                                    </label>
+                                                    <label class="ip-ch-label">
+                                                        <input class="ip-ch" type="checkbox" value="" checked="">
+                                                        <span class="check"></span> <em>현장실습</em>
+                                                    </label>
+                                                    <label class="ip-ch-label">
+                                                        <input class="ip-ch" type="checkbox">
+                                                        <span class="check"></span> <em>캠스톤디자인</em>
+                                                    </label>
+                                                    <label class="ip-ch-label">
+                                                        <input class="ip-ch" type="checkbox" value="">
+                                                        <span class="check"></span> <em>취업</em> 
+                                                    </label>
+                                                    <label class="ip-ch-label">
+                                                        <input class="ip-ch" type="checkbox" value="" checked="">
+                                                        <span class="check"></span> <em>현장실습</em>
+                                                    </label>
+                                                    <label class="ip-ch-label">
+                                                        <input class="ip-ch" type="checkbox">
+                                                        <span class="check"></span> <em>캠스톤디자인</em>
+                                                    </label>
                                                     <label class="ip-ch-label">
                                                         <input class="ip-ch" type="checkbox" value="">
                                                         <span class="check"></span> <em>취업</em> 
@@ -1262,8 +1415,8 @@
                                 <div class="sec-btm">
                                     <p>위와 같이 심의면제 신청서를 제출합니다.</p>
                                     <div class="btn-group">
-                                        <button class="btn btn-lb" type="button">임의저장</button>
-                                        <button class="btn" type="button">심의신청</button>
+                                        <button class="btn" type="button">임의저장</button>
+                                        <button class="btn btn-lb" type="button">심의신청</button>
                                     </div>							
                                 </div>
                             </div>
