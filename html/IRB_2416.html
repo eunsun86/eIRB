@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IRB_2416</title>
+    <title>심의결과 답변서 제출 | e-IRB</title>
     <script src="../static/js/jquery-3.6.0.min.js"></script>
     <script src="../static/js/datepicker.min.js"></script>		
     <script src="../static/js/datepicker.ko-KR.js"></script>		
@@ -89,240 +89,244 @@
                 <div class="plf-tab my-tab-switching">
                     <div class="tab">
                         <span class="item active" role="button"><em>타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span> <!--[D]active-->
-                        <span class="item" role="button"><em>타이틀타이틀타이틀타이틀타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span>
-                        <span class="item" role="button"><em>타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span>
                     </div>
                     <div class="tab-con-group"> 
                         <div class="tab-con active"> <!--[D]active-->
 
                             <div class="breadcrumb">
-                                <button type="button" class="layer_open" title="업무단 팝업" onclick="hcLayer.show('layer1')"></button>
+                                <input type="button" title="업무영역 팝업 열기" onclick="popupExplain('new-window');" class="layer_open" >
                                 <span class="item">심의현황관리</span>
                                 <span class="item">신규 외 심의신청</span>
                             </div>
+
+                            <!--[S] new-window : 새창띄우기 팝업 영역 -->
+                            <div id="new-window">
     
-                            <p class="tit-pagetitle">신규 외 심의신청</p>
+                                <p class="tit-pagetitle">신규 외 심의신청</p>
 
-                            <div class="sec">
-                                <table class="data-table data-table-top">
-                                    <caption>신규 외 심의신청 정보</caption>
-                                    <colgroup>
-                                        <col width="142px">
-                                        <col width="auto">
-                                        <col width="142px">
-                                        <col width="auto">
-                                        <col width="142px">
-                                        <col width="auto">
-                                    </colgroup>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">IRB No.</th>
-                                            <td>135846543</td>
-                                            <th scope="row">접수번호</th>
-                                            <td>내용</td>
-                                            <th scope="row">연구책임자</th>
-                                            <td>내용</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">과제명</th>
-                                            <td colspan="5">내용</td>
-                                        </tr>
-                                    </tbody>
-                                </table>	
-                            </div>
-                            
-                            <div class="sec type-switching my-tab-switching">
-                                <div class="tab type1">
-                                    <button class="item active" type="button">심의결과답변</button> <!--[D]active-->
-                                    <button class="item" type="button">변경대비표</button>
-                                    <button class="item" type="button">연구정보</button>
-                                    <button class="item" type="button">연구계획서 요약</button>
-                                    <button class="item" type="button">첨부</button>
-                                </div>			
-                                <div class="sec-con-group"> 
+                                <div class="sec">
+                                    <table class="data-table data-table-top">
+                                        <caption>신규 외 심의신청 정보</caption>
+                                        <colgroup>
+                                            <col width="142px">
+                                            <col width="auto">
+                                            <col width="142px">
+                                            <col width="auto">
+                                            <col width="142px">
+                                            <col width="auto">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">IRB No.</th>
+                                                <td>135846543</td>
+                                                <th scope="row">접수번호</th>
+                                                <td>내용</td>
+                                                <th scope="row">연구책임자</th>
+                                                <td>내용</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">과제명</th>
+                                                <td colspan="5">내용</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>	
+                                </div>
+                                
+                                <div class="sec type-switching my-tab-switching">
+                                    <div class="tab type1">
+                                        <button class="item active" type="button">심의결과답변</button> <!--[D]active-->
+                                        <button class="item" type="button">변경대비표</button>
+                                        <button class="item" type="button">연구정보</button>
+                                        <button class="item" type="button">연구계획서 요약</button>
+                                        <button class="item" type="button">첨부</button>
+                                    </div>			
+                                    <div class="sec-con-group"> 
 
-                                    <!-- 심의결과답변 -->
-                                    <div class="sec-con active"> <!--[D]active-->
-                                        <div class="sec">
-                                            <table class="data-table type-line">
-                                                <caption>연구계획변경</caption>
-                                                <colgroup>
-                                                    <col width="250px">
-                                                    <col width="auto">
-                                                    <col width="250px">
-                                                    <col width="auto">
-                                                </colgroup>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">이전심의 접수번호</th>
-                                                        <td colspan="3">20240001-001</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">이전심의 분류</th>
-                                                        <td>신규</td>
-                                                        <th scope="row">심의결과</th>
-                                                        <td>
-                                                            보완
-                                                            <button class="btn btn-txt" type="button">[심사결과 보기]</button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">심의결과 의견</th>
-                                                        <td colspan="3"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                            
-                                        <div class="sec">
-                                            <table class="data-table type-line">
-                                                <caption>연구계획변경</caption>
-                                                <colgroup>
-                                                    <col width="250px">
-                                                    <col width="auto">
-                                                </colgroup>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">변경내역</th>
-                                                        <td>
-                                                            <div class="ip-ch-group">
-                                                                <label for="ch-1-1" class="ip-ch-label">
-                                                                    <input name="ch-1" class="ip-ch" id="ch-1-1" type="checkbox" value="">
-                                                                    <span class="check"></span> <em>과제명</em>
-                                                                </label>
-                                                                <label for="ch-1-2" class="ip-ch-label">
-                                                                    <input name="ch-1" class="ip-ch" id="ch-1-2" type="checkbox" value="">
-                                                                    <span class="check"></span> <em>연구계획서</em>
-                                                                </label>
-                                                                <label for="ch-1-3" class="ip-ch-label">
-                                                                    <input name="ch-1" class="ip-ch" id="ch-1-3" type="checkbox" value="">
-                                                                    <span class="check"></span> <em>연구대상자 설명문 및 동의서</em>
-                                                                </label>
-                                                                <label for="ch-1-4" class="ip-ch-label">
-                                                                    <input name="ch-1" class="ip-ch" id="ch-1-4" type="checkbox" value="">
-                                                                    <span class="check"></span> <em>증례기록서</em>
-                                                                </label>
-                                                                <label for="ch-1-5" class="ip-ch-label">
-                                                                    <input name="ch-1" class="ip-ch" id="ch-1-5" type="checkbox" value="">
-                                                                    <span class="check"></span> <em>연구책임자</em>
-                                                                </label>
-                                                                <label for="ch-1-6" class="ip-ch-label">
-                                                                    <input name="ch-1" class="ip-ch" id="ch-1-6" type="checkbox" value="">
-                                                                    <span class="check"></span> <em>공동연구자</em>
-                                                                </label>
-                                                                <label for="ch-1-7" class="ip-ch-label">
-                                                                    <input name="ch-1" class="ip-ch" id="ch-1-7" type="checkbox" value="">
-                                                                    <span class="check"></span> <em>연구코디네이터</em>
-                                                                </label>
-                                                                <label for="ch-1-8" class="ip-ch-label">
-                                                                    <input name="ch-1" class="ip-ch" id="ch-1-8" type="checkbox" value="">
-                                                                    <span class="check"></span> <em>관리약사</em>
-                                                                </label>
-                                                                <label for="ch-1-9" class="ip-ch-label">
-                                                                    <input name="ch-1" class="ip-ch" id="ch-1-9" type="checkbox" value="">
-                                                                    <span class="check"></span> <em>의료기기관리자</em>
-                                                                </label>
-                                                                <label for="ch-1-11" class="ip-ch-label">
-                                                                    <input name="ch-1" class="ip-ch" id="ch-1-11" type="checkbox" value="">
-                                                                    <span class="check"></span> <em>업무담당자</em>
-                                                                </label>
-                                                                <label for="ch-1-12" class="ip-ch-label">
-                                                                    <input name="ch-1" class="ip-ch" id="ch-1-12" type="checkbox" value="">
-                                                                    <span class="check"></span> <em>연구기간</em>
-                                                                </label>
-                                                                <label for="ch-1-13" class="ip-ch-label">
-                                                                    <input name="ch-1" class="ip-ch" id="ch-1-13" type="checkbox" value="">
-                                                                    <span class="check"></span> <em>연구대상수</em>
-                                                                </label>
-                                                                <label for="ch-1-14" class="ip-ch-label">
-                                                                    <input name="ch-1" class="ip-ch" id="ch-1-14" type="checkbox" value="">
-                                                                    <span class="check"></span> <em>의뢰기관</em>
-                                                                </label>
-                                                                <label for="ch-1-15" class="ip-ch-label">
-                                                                    <input name="ch-1" class="ip-ch" id="ch-1-15" type="checkbox" value="">
-                                                                    <span class="check"></span> <em>CRO</em>
-                                                                </label>
-                                                                <label for="ch-1-16" class="ip-ch-label">
-                                                                    <input name="ch-1" class="ip-ch" id="ch-1-16" type="checkbox" value="">
-                                                                    <span class="check"></span> <em>연구구분</em>
-                                                                </label>
-                                                            </div>
-                                                            <div class="mt8">
-                                                                <label for="ch-1-17" class="ip-ch-label">
-                                                                    <input name="ch-1" class="ip-ch" id="ch-1-17" type="checkbox" value="">
-                                                                    <span class="check"></span> <em>기타</em>
-                                                                </label>
-                                                                <input name="" id="" class="ip-txt w350 ml8" type="text" value="">
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row" rowspan="2">변경내용</th>
-                                                        <td>
-                                                            <div class="td-item-group2">
-                                                                <span class="fw-400 mr12">과제명 (국문) :</span>
-                                                                <input name="" id="" class="ip-txt w100p" type="text" value="" placeholder="과제명 (국문)">
-                                                            </div>
-                                                            <div class="td-item-group2 mt8">
-                                                                <span class="fw-400 mr12">과제명 (영문) :</span>
-                                                                <input name="" id="" class="ip-txt w100p" type="text" value="" placeholder="과제명 (영문)">
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="td-item-group2">
-                                                                <span class="fw-400 mr12">연구책임자</span>
-                                                                <div class="ip-wrap with-icon ta-left w120">
-                                                                    <input name="" id="" class="ip-txt" type="text" value="" placeholder="성명">
-                                                                    <i class="ic ic-magnify"></i>
+                                        <!-- 심의결과답변 -->
+                                        <div class="sec-con active"> <!--[D]active-->
+                                            <div class="sec">
+                                                <table class="data-table type-line">
+                                                    <caption>연구계획변경</caption>
+                                                    <colgroup>
+                                                        <col width="250px">
+                                                        <col width="auto">
+                                                        <col width="250px">
+                                                        <col width="auto">
+                                                    </colgroup>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th scope="row">이전심의 접수번호</th>
+                                                            <td colspan="3">20240001-001</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">이전심의 분류</th>
+                                                            <td>신규</td>
+                                                            <th scope="row">심의결과</th>
+                                                            <td>
+                                                                보완
+                                                                <button class="btn btn-txt" type="button">[심사결과 보기]</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">심의결과 의견</th>
+                                                            <td colspan="3"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                                
+                                            <div class="sec">
+                                                <table class="data-table type-line">
+                                                    <caption>연구계획변경</caption>
+                                                    <colgroup>
+                                                        <col width="250px">
+                                                        <col width="auto">
+                                                    </colgroup>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th scope="row">변경내역</th>
+                                                            <td>
+                                                                <div class="ip-ch-group">
+                                                                    <label for="ch-1-1" class="ip-ch-label">
+                                                                        <input name="ch-1" class="ip-ch" id="ch-1-1" type="checkbox" value="">
+                                                                        <span class="check"></span> <em>과제명</em>
+                                                                    </label>
+                                                                    <label for="ch-1-2" class="ip-ch-label">
+                                                                        <input name="ch-1" class="ip-ch" id="ch-1-2" type="checkbox" value="">
+                                                                        <span class="check"></span> <em>연구계획서</em>
+                                                                    </label>
+                                                                    <label for="ch-1-3" class="ip-ch-label">
+                                                                        <input name="ch-1" class="ip-ch" id="ch-1-3" type="checkbox" value="">
+                                                                        <span class="check"></span> <em>연구대상자 설명문 및 동의서</em>
+                                                                    </label>
+                                                                    <label for="ch-1-4" class="ip-ch-label">
+                                                                        <input name="ch-1" class="ip-ch" id="ch-1-4" type="checkbox" value="">
+                                                                        <span class="check"></span> <em>증례기록서</em>
+                                                                    </label>
+                                                                    <label for="ch-1-5" class="ip-ch-label">
+                                                                        <input name="ch-1" class="ip-ch" id="ch-1-5" type="checkbox" value="">
+                                                                        <span class="check"></span> <em>연구책임자</em>
+                                                                    </label>
+                                                                    <label for="ch-1-6" class="ip-ch-label">
+                                                                        <input name="ch-1" class="ip-ch" id="ch-1-6" type="checkbox" value="">
+                                                                        <span class="check"></span> <em>공동연구자</em>
+                                                                    </label>
+                                                                    <label for="ch-1-7" class="ip-ch-label">
+                                                                        <input name="ch-1" class="ip-ch" id="ch-1-7" type="checkbox" value="">
+                                                                        <span class="check"></span> <em>연구코디네이터</em>
+                                                                    </label>
+                                                                    <label for="ch-1-8" class="ip-ch-label">
+                                                                        <input name="ch-1" class="ip-ch" id="ch-1-8" type="checkbox" value="">
+                                                                        <span class="check"></span> <em>관리약사</em>
+                                                                    </label>
+                                                                    <label for="ch-1-9" class="ip-ch-label">
+                                                                        <input name="ch-1" class="ip-ch" id="ch-1-9" type="checkbox" value="">
+                                                                        <span class="check"></span> <em>의료기기관리자</em>
+                                                                    </label>
+                                                                    <label for="ch-1-11" class="ip-ch-label">
+                                                                        <input name="ch-1" class="ip-ch" id="ch-1-11" type="checkbox" value="">
+                                                                        <span class="check"></span> <em>업무담당자</em>
+                                                                    </label>
+                                                                    <label for="ch-1-12" class="ip-ch-label">
+                                                                        <input name="ch-1" class="ip-ch" id="ch-1-12" type="checkbox" value="">
+                                                                        <span class="check"></span> <em>연구기간</em>
+                                                                    </label>
+                                                                    <label for="ch-1-13" class="ip-ch-label">
+                                                                        <input name="ch-1" class="ip-ch" id="ch-1-13" type="checkbox" value="">
+                                                                        <span class="check"></span> <em>연구대상수</em>
+                                                                    </label>
+                                                                    <label for="ch-1-14" class="ip-ch-label">
+                                                                        <input name="ch-1" class="ip-ch" id="ch-1-14" type="checkbox" value="">
+                                                                        <span class="check"></span> <em>의뢰기관</em>
+                                                                    </label>
+                                                                    <label for="ch-1-15" class="ip-ch-label">
+                                                                        <input name="ch-1" class="ip-ch" id="ch-1-15" type="checkbox" value="">
+                                                                        <span class="check"></span> <em>CRO</em>
+                                                                    </label>
+                                                                    <label for="ch-1-16" class="ip-ch-label">
+                                                                        <input name="ch-1" class="ip-ch" id="ch-1-16" type="checkbox" value="">
+                                                                        <span class="check"></span> <em>연구구분</em>
+                                                                    </label>
                                                                 </div>
-                                                                <input name="" id="" class="ip-txt w175" type="text" value="" placeholder="소속">
-                                                                <input name="" id="" class="ip-txt w175" type="text" value="" placeholder="직위">
-                                                                <input name="" id="" class="ip-txt w175" type="text" value="" placeholder="연락처">
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">연구자 답변</th>
-                                                        <td>
-                                                            <input name="" id="" class="ip-txt w100p" type="text" value="">
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                                                <div class="mt8">
+                                                                    <label for="ch-1-17" class="ip-ch-label">
+                                                                        <input name="ch-1" class="ip-ch" id="ch-1-17" type="checkbox" value="">
+                                                                        <span class="check"></span> <em>기타</em>
+                                                                    </label>
+                                                                    <input name="" id="" class="ip-txt w350 ml8" type="text" value="">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row" rowspan="2">변경내용</th>
+                                                            <td>
+                                                                <div class="td-item-group2">
+                                                                    <span class="fw-400 mr12">과제명 (국문) :</span>
+                                                                    <input name="" id="" class="ip-txt w100p" type="text" value="" placeholder="과제명 (국문)">
+                                                                </div>
+                                                                <div class="td-item-group2 mt8">
+                                                                    <span class="fw-400 mr12">과제명 (영문) :</span>
+                                                                    <input name="" id="" class="ip-txt w100p" type="text" value="" placeholder="과제명 (영문)">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="td-item-group2">
+                                                                    <span class="fw-400 mr12">연구책임자</span>
+                                                                    <div class="ip-wrap with-icon ta-left w120">
+                                                                        <input name="" id="" class="ip-txt" type="text" value="" placeholder="성명">
+                                                                        <i class="ic ic-magnify"></i>
+                                                                    </div>
+                                                                    <input name="" id="" class="ip-txt w175" type="text" value="" placeholder="소속">
+                                                                    <input name="" id="" class="ip-txt w175" type="text" value="" placeholder="직위">
+                                                                    <input name="" id="" class="ip-txt w175" type="text" value="" placeholder="연락처">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">연구자 답변</th>
+                                                            <td>
+                                                                <input name="" id="" class="ip-txt w100p" type="text" value="">
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        
+                                            <div class="sec-btm">
+                                                <p>위와 같이 검토의견에 대한 답변서를 제출합니다.</p>
+                                                <div class="btn-group">
+                                                    <button class="btn" type="button">임시저장</button>
+                                                    <button class="btn btn-lb" type="button">심의 신청</button>
+                                                </div>							
+                                            </div>
                                         </div>
-                                    
-                                        <div class="sec-btm">
-                                            <p>위와 같이 검토의견에 대한 답변서를 제출합니다.</p>
-                                            <div class="btn-group">
-                                                <button class="btn btn-lb" type="button">임시저장</button>
-                                                <button class="btn" type="button">심의 신청</button>
-                                            </div>							
+
+                                        <!-- 변경대비표 -->
+                                        <div class="sec-con">
+                                            기획안에 해당화면 내용 없음
                                         </div>
-                                    </div>
 
-                                    <!-- 변경대비표 -->
-                                    <div class="sec-con">
-                                        기획안에 해당화면 내용 없음
-                                    </div>
+                                        <!-- 연구정보 -->
+                                        <div class="sec-con">
+                                            기획안에 해당화면 내용 없음
+                                        </div>
 
-                                    <!-- 연구정보 -->
-                                    <div class="sec-con">
-                                        기획안에 해당화면 내용 없음
-                                    </div>
+                                        <!-- 연구계획서 요약 -->
+                                        <div class="sec-con">
+                                            기획안에 해당화면 내용 없음
+                                        </div>
 
-                                    <!-- 연구계획서 요약 -->
-                                    <div class="sec-con">
-                                        기획안에 해당화면 내용 없음
-                                    </div>
-
-                                    <!-- 첨부 -->
-                                    <div class="sec-con">
-                                        기획안에 해당화면 내용 없음
+                                        <!-- 첨부 -->
+                                        <div class="sec-con">
+                                            기획안에 해당화면 내용 없음
+                                        </div>
                                     </div>
                                 </div>
+
                             </div>
+                            <!--//[S] new-window --> 
 
                         </div><!--//[S] tab-con-->
                     </div>
@@ -339,14 +343,6 @@
 
                 </div>
                 <!--// [S] plf-tab-->
-                
-                <!--[C]Toast-->
-                <div class="toast"> <!--[D]active-->
-                    <div class="inner" style="display: none;">
-                        toast 알림입니다
-                    </div>
-                </div>
-                <!--//[C]Toast-->
                 
             </div>
             <!--//[S] plf-sub-->

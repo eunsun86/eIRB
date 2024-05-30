@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IRB_2500</title>
+    <title>심의 진행 현황 | e-IRB</title>
     <script src="../static/js/jquery-3.6.0.min.js"></script>
     <script src="../static/js/datepicker.min.js"></script>		
     <script src="../static/js/datepicker.ko-KR.js"></script>		
@@ -89,406 +89,410 @@
                 <div class="plf-tab my-tab-switching">
                     <div class="tab">
                         <span class="item active" role="button"><em>타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span> <!--[D]active-->
-                        <span class="item" role="button"><em>타이틀타이틀타이틀타이틀타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span>
-                        <span class="item" role="button"><em>타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span>
                     </div>
                     <div class="tab-con-group"> 
                         <div class="tab-con active"> <!--[D]active-->
 
                             <div class="breadcrumb">
-                                <button type="button" class="layer_open" title="업무단 팝업" onclick="hcLayer.show('layer1')"></button>
+                                <input type="button" title="업무영역 팝업 열기" onclick="popupExplain('new-window');" class="layer_open" >
                                 <span class="item">심의현황관리</span>
                                 <span class="item">심의 진행 현황</span>
                             </div>
+
+                            <!--[S] new-window : 새창띄우기 팝업 영역 -->
+                            <div id="new-window">
     
-                            <p class="tit-pagetitle">심의 진행 현황</p>
-                            
-                            <div class="sec type-switching my-tab-switching">
-                                <div class="tab type1">
-                                    <button class="item active" type="button">작성중</button> <!--[D]active-->
-                                    <button class="item" type="button">수정요청</button>
-                                    <button class="item" type="button">신청대기</button>
-                                    <button class="item" type="button">접수대기</button>
-                                    <button class="item" type="button">심의중</button>
-                                    <button class="item" type="button">심의완료</button>
-                                </div>			
-                                <div class="sec-con-group"> 
-                                    <!-- 작성중-->
-                                    <div class="sec-con active"> <!--[D]active-->
-                                        <div class="sec">
-                                            <div class="td-item-group">
-                                                <div class="td-item-group left gap4">
-                                                    <span class="th-item">작성일</span>
-                                                    <div class="ip-rd-group">
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="" checked="">
-                                                            <span class="check"></span> <em>전체</em> 
-                                                        </label>
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                            <span class="check"></span> <em>1Y</em> 
-                                                        </label>
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                            <span class="check"></span> <em>3M</em> 
-                                                        </label>
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                            <span class="check"></span> <em>1M</em> 
-                                                        </label>
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                            <span class="check"></span> <em>7D</em> 
-                                                        </label>
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                            <span class="check"></span> <em>당일</em> 
-                                                        </label>
+                                <p class="tit-pagetitle">심의 진행 현황</p>
+                                
+                                <div class="sec type-switching my-tab-switching">
+                                    <div class="tab type1">
+                                        <button class="item active" type="button">작성중</button> <!--[D]active-->
+                                        <button class="item" type="button">수정요청</button>
+                                        <button class="item" type="button">신청대기</button>
+                                        <button class="item" type="button">접수대기</button>
+                                        <button class="item" type="button">심의중</button>
+                                        <button class="item" type="button">심의완료</button>
+                                    </div>			
+                                    <div class="sec-con-group"> 
+                                        <!-- 작성중-->
+                                        <div class="sec-con active"> <!--[D]active-->
+                                            <div class="sec">
+                                                <div class="td-item-group">
+                                                    <div class="td-item-group left gap4">
+                                                        <span class="th-item">작성일</span>
+                                                        <div class="ip-rd-group">
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="" checked="">
+                                                                <span class="check"></span> <em>전체</em> 
+                                                            </label>
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>1Y</em> 
+                                                            </label>
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>3M</em> 
+                                                            </label>
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>1M</em> 
+                                                            </label>
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>7D</em> 
+                                                            </label>
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>당일</em> 
+                                                            </label>
+                                                        </div>
+                                                        <div class="ip-wrap with-icon ta-left w165 ml16">
+                                                            <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                                            <i class="ic ic-calendar"></i>
+                                                        </div>
+                                                        <span class="td-item">-</span>
+                                                        <div class="ip-wrap with-icon ta-left w165">
+                                                            <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                                            <i class="ic ic-calendar"></i>
+                                                        </div>
+                                                        <div class="td-item sel">							
+                                                            <input name="" id="" class="td-item ip-txt w350" type="text" value="" placeholder="접수번호 / 과제명">
+                                                        </div>
                                                     </div>
-                                                    <div class="ip-wrap with-icon ta-left w165 ml16">
-                                                        <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
-                                                        <i class="ic ic-calendar"></i>
+                                                    
+                                                    <div class="btn-group">
+                                                        <button class="td-item btn btn-icon-srh" type="button">조회</button>
                                                     </div>
-                                                    <span class="td-item">-</span>
-                                                    <div class="ip-wrap with-icon ta-left w165">
-                                                        <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
-                                                        <i class="ic ic-calendar"></i>
-                                                    </div>
-                                                    <div class="td-item sel">							
-                                                        <input name="" id="" class="td-item ip-txt w350" type="text" value="" placeholder="접수번호 / 과제명">
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="btn-group">
-                                                    <button class="td-item btn btn-icon-srh" type="button">조회</button>
-                                                </div>
-                                            </div>		
-                                            <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div><!--[D]그리드 영역-->						
-                                        </div>
+                                                </div>		
+                                                <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div><!--[D]그리드 영역-->						
+                                            </div>
 
-                                        <div class="sec">
-                                            <div class="sec-btm">
-                                                <div class="btn-group">	
-                                                    <button class="btn" type="button">신청취소</button>
-                                                </div>							
+                                            <div class="sec">
+                                                <div class="sec-btm">
+                                                    <div class="btn-group">	
+                                                        <button class="btn" type="button">신청취소</button>
+                                                    </div>							
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <!-- 수정요청-->
-                                    <div class="sec-con">
-                                        <div class="sec">
-                                            <div class="td-item-group">
-                                                <div class="td-item-group left gap4">
-                                                    <span class="th-item">작성일</span>
-                                                    <div class="ip-rd-group">
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="" checked="">
-                                                            <span class="check"></span> <em>전체</em> 
-                                                        </label>
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                            <span class="check"></span> <em>1Y</em> 
-                                                        </label>
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                            <span class="check"></span> <em>3M</em> 
-                                                        </label>
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                            <span class="check"></span> <em>1M</em> 
-                                                        </label>
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                            <span class="check"></span> <em>7D</em> 
-                                                        </label>
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                            <span class="check"></span> <em>당일</em> 
-                                                        </label>
+                                        <!-- 수정요청-->
+                                        <div class="sec-con">
+                                            <div class="sec">
+                                                <div class="td-item-group">
+                                                    <div class="td-item-group left gap4">
+                                                        <span class="th-item">작성일</span>
+                                                        <div class="ip-rd-group">
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="" checked="">
+                                                                <span class="check"></span> <em>전체</em> 
+                                                            </label>
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>1Y</em> 
+                                                            </label>
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>3M</em> 
+                                                            </label>
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>1M</em> 
+                                                            </label>
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>7D</em> 
+                                                            </label>
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>당일</em> 
+                                                            </label>
+                                                        </div>
+                                                        <div class="ip-wrap with-icon ta-left w165 ml16">
+                                                            <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                                            <i class="ic ic-calendar"></i>
+                                                        </div>
+                                                        <span class="td-item">-</span>
+                                                        <div class="ip-wrap with-icon ta-left w165">
+                                                            <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                                            <i class="ic ic-calendar"></i>
+                                                        </div>
+                                                        <div class="td-item sel">							
+                                                            <input name="" id="" class="td-item ip-txt w350" type="text" value="" placeholder="접수번호 / 과제명">
+                                                        </div>
                                                     </div>
-                                                    <div class="ip-wrap with-icon ta-left w165 ml16">
-                                                        <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
-                                                        <i class="ic ic-calendar"></i>
+                                                    
+                                                    <div class="btn-group">
+                                                        <button class="td-item btn btn-icon-srh" type="button">조회</button>
                                                     </div>
-                                                    <span class="td-item">-</span>
-                                                    <div class="ip-wrap with-icon ta-left w165">
-                                                        <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
-                                                        <i class="ic ic-calendar"></i>
-                                                    </div>
-                                                    <div class="td-item sel">							
-                                                        <input name="" id="" class="td-item ip-txt w350" type="text" value="" placeholder="접수번호 / 과제명">
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="btn-group">
-                                                    <button class="td-item btn btn-icon-srh" type="button">조회</button>
-                                                </div>
-                                            </div>		
-                                            <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div><!--[D]그리드 영역-->						
-                                        </div>
-                                    </div>
-
-                                    <!-- 신청대기-->
-                                    <div class="sec-con">
-                                        <div class="sec">
-                                            <div class="td-item-group">
-                                                <div class="td-item-group left gap4">
-                                                    <span class="th-item">작성일</span>
-                                                    <div class="ip-rd-group">
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="" checked="">
-                                                            <span class="check"></span> <em>전체</em> 
-                                                        </label>
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                            <span class="check"></span> <em>1Y</em> 
-                                                        </label>
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                            <span class="check"></span> <em>3M</em> 
-                                                        </label>
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                            <span class="check"></span> <em>1M</em> 
-                                                        </label>
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                            <span class="check"></span> <em>7D</em> 
-                                                        </label>
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                            <span class="check"></span> <em>당일</em> 
-                                                        </label>
-                                                    </div>
-                                                    <div class="ip-wrap with-icon ta-left w165 ml16">
-                                                        <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
-                                                        <i class="ic ic-calendar"></i>
-                                                    </div>
-                                                    <span class="td-item">-</span>
-                                                    <div class="ip-wrap with-icon ta-left w165">
-                                                        <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
-                                                        <i class="ic ic-calendar"></i>
-                                                    </div>
-                                                    <div class="td-item sel">							
-                                                        <input name="" id="" class="td-item ip-txt w350" type="text" value="" placeholder="접수번호 / 과제명">
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="btn-group">
-                                                    <button class="td-item btn btn-icon-srh" type="button">조회</button>
-                                                </div>
-                                            </div>		
-                                            <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div><!--[D]그리드 영역-->						
-                                        </div>
-
-                                        <div class="sec">
-                                            <div class="sec-btm">
-                                                <div class="btn-group">
-                                                    <button class="btn" type="button">신청</button>
-                                                </div>							
+                                                </div>		
+                                                <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div><!--[D]그리드 영역-->						
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <!-- 접수대기-->
-                                    <div class="sec-con">
-                                        <div class="sec">
-                                            <div class="td-item-group">
-                                                <div class="td-item-group left gap4">
-                                                    <span class="th-item">작성일</span>
-                                                    <div class="ip-rd-group">
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="" checked="">
-                                                            <span class="check"></span> <em>전체</em> 
-                                                        </label>
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                            <span class="check"></span> <em>1Y</em> 
-                                                        </label>
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                            <span class="check"></span> <em>3M</em> 
-                                                        </label>
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                            <span class="check"></span> <em>1M</em> 
-                                                        </label>
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                            <span class="check"></span> <em>7D</em> 
-                                                        </label>
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                            <span class="check"></span> <em>당일</em> 
-                                                        </label>
+                                        <!-- 신청대기-->
+                                        <div class="sec-con">
+                                            <div class="sec">
+                                                <div class="td-item-group">
+                                                    <div class="td-item-group left gap4">
+                                                        <span class="th-item">작성일</span>
+                                                        <div class="ip-rd-group">
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="" checked="">
+                                                                <span class="check"></span> <em>전체</em> 
+                                                            </label>
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>1Y</em> 
+                                                            </label>
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>3M</em> 
+                                                            </label>
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>1M</em> 
+                                                            </label>
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>7D</em> 
+                                                            </label>
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>당일</em> 
+                                                            </label>
+                                                        </div>
+                                                        <div class="ip-wrap with-icon ta-left w165 ml16">
+                                                            <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                                            <i class="ic ic-calendar"></i>
+                                                        </div>
+                                                        <span class="td-item">-</span>
+                                                        <div class="ip-wrap with-icon ta-left w165">
+                                                            <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                                            <i class="ic ic-calendar"></i>
+                                                        </div>
+                                                        <div class="td-item sel">							
+                                                            <input name="" id="" class="td-item ip-txt w350" type="text" value="" placeholder="접수번호 / 과제명">
+                                                        </div>
                                                     </div>
-                                                    <div class="ip-wrap with-icon ta-left w165 ml16">
-                                                        <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
-                                                        <i class="ic ic-calendar"></i>
+                                                    
+                                                    <div class="btn-group">
+                                                        <button class="td-item btn btn-icon-srh" type="button">조회</button>
                                                     </div>
-                                                    <span class="td-item">-</span>
-                                                    <div class="ip-wrap with-icon ta-left w165">
-                                                        <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
-                                                        <i class="ic ic-calendar"></i>
-                                                    </div>
-                                                    <div class="td-item sel">							
-                                                        <input name="" id="" class="td-item ip-txt w350" type="text" value="" placeholder="접수번호 / 과제명">
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="btn-group">
-                                                    <button class="td-item btn btn-icon-srh" type="button">조회</button>
-                                                </div>
-                                            </div>		
-                                            <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div><!--[D]그리드 영역-->						
-                                        </div>
+                                                </div>		
+                                                <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div><!--[D]그리드 영역-->						
+                                            </div>
 
-                                        <div class="sec">
-                                            <div class="sec-btm">
-                                                <div class="btn-group">	
-                                                    <button class="btn" type="button">신청취소</button>
-                                                </div>							
+                                            <div class="sec">
+                                                <div class="sec-btm">
+                                                    <div class="btn-group">
+                                                        <button class="btn" type="button">신청</button>
+                                                    </div>							
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <!-- 심의중-->
-                                    <div class="sec-con">
-                                        <div class="sec">
-                                            <div class="td-item-group">
-                                                <div class="td-item-group left gap4">
-                                                    <span class="th-item">작성일</span>
-                                                    <div class="ip-rd-group">
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="" checked="">
-                                                            <span class="check"></span> <em>전체</em> 
-                                                        </label>
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                            <span class="check"></span> <em>1Y</em> 
-                                                        </label>
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                            <span class="check"></span> <em>3M</em> 
-                                                        </label>
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                            <span class="check"></span> <em>1M</em> 
-                                                        </label>
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                            <span class="check"></span> <em>7D</em> 
-                                                        </label>
-                                                        <label class="ip-rd-label">
-                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                            <span class="check"></span> <em>당일</em> 
-                                                        </label>
+                                        <!-- 접수대기-->
+                                        <div class="sec-con">
+                                            <div class="sec">
+                                                <div class="td-item-group">
+                                                    <div class="td-item-group left gap4">
+                                                        <span class="th-item">작성일</span>
+                                                        <div class="ip-rd-group">
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="" checked="">
+                                                                <span class="check"></span> <em>전체</em> 
+                                                            </label>
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>1Y</em> 
+                                                            </label>
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>3M</em> 
+                                                            </label>
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>1M</em> 
+                                                            </label>
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>7D</em> 
+                                                            </label>
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>당일</em> 
+                                                            </label>
+                                                        </div>
+                                                        <div class="ip-wrap with-icon ta-left w165 ml16">
+                                                            <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                                            <i class="ic ic-calendar"></i>
+                                                        </div>
+                                                        <span class="td-item">-</span>
+                                                        <div class="ip-wrap with-icon ta-left w165">
+                                                            <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                                            <i class="ic ic-calendar"></i>
+                                                        </div>
+                                                        <div class="td-item sel">							
+                                                            <input name="" id="" class="td-item ip-txt w350" type="text" value="" placeholder="접수번호 / 과제명">
+                                                        </div>
                                                     </div>
-                                                    <div class="ip-wrap with-icon ta-left w165 ml16">
-                                                        <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
-                                                        <i class="ic ic-calendar"></i>
+                                                    
+                                                    <div class="btn-group">
+                                                        <button class="td-item btn btn-icon-srh" type="button">조회</button>
                                                     </div>
-                                                    <span class="td-item">-</span>
-                                                    <div class="ip-wrap with-icon ta-left w165">
-                                                        <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
-                                                        <i class="ic ic-calendar"></i>
-                                                    </div>
-                                                    <div class="td-item sel">							
-                                                        <input name="" id="" class="td-item ip-txt w350" type="text" value="" placeholder="접수번호 / 과제명">
-                                                    </div>
+                                                </div>		
+                                                <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div><!--[D]그리드 영역-->						
+                                            </div>
+
+                                            <div class="sec">
+                                                <div class="sec-btm">
+                                                    <div class="btn-group">	
+                                                        <button class="btn" type="button">신청취소</button>
+                                                    </div>							
                                                 </div>
-                                                
+                                            </div>
+                                        </div>
+
+                                        <!-- 심의중-->
+                                        <div class="sec-con">
+                                            <div class="sec">
+                                                <div class="td-item-group">
+                                                    <div class="td-item-group left gap4">
+                                                        <span class="th-item">작성일</span>
+                                                        <div class="ip-rd-group">
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="" checked="">
+                                                                <span class="check"></span> <em>전체</em> 
+                                                            </label>
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>1Y</em> 
+                                                            </label>
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>3M</em> 
+                                                            </label>
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>1M</em> 
+                                                            </label>
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>7D</em> 
+                                                            </label>
+                                                            <label class="ip-rd-label">
+                                                                <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                <span class="check"></span> <em>당일</em> 
+                                                            </label>
+                                                        </div>
+                                                        <div class="ip-wrap with-icon ta-left w165 ml16">
+                                                            <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                                            <i class="ic ic-calendar"></i>
+                                                        </div>
+                                                        <span class="td-item">-</span>
+                                                        <div class="ip-wrap with-icon ta-left w165">
+                                                            <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                                            <i class="ic ic-calendar"></i>
+                                                        </div>
+                                                        <div class="td-item sel">							
+                                                            <input name="" id="" class="td-item ip-txt w350" type="text" value="" placeholder="접수번호 / 과제명">
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="btn-group">
+                                                        <button class="td-item btn btn-icon-srh" type="button">조회</button>
+                                                    </div>
+                                                </div>		
+                                                <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div><!--[D]그리드 영역-->						
+                                            </div>
+                                        </div>
+
+                                        <!-- 심의완료-->
+                                        <div class="sec-con">
+                                            <div class="sec filter-search">
+                                                <table class="data-table">
+                                                    <caption>테이블제목</caption>
+                                                    <colgroup>
+                                                        <col width="80px">
+                                                        <col width="160px">
+                                                        <col width="102px">
+                                                        <col width="auto">
+                                                    </colgroup>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th scope="row">작성일</th>
+                                                            <td colspan="3">
+                                                                <div class="td-item-group left gap4">
+                                                                    <div class="ip-rd-group">
+                                                                        <label class="ip-rd-label">
+                                                                            <input name="fd-1" class="ip-rd" type="radio" value="" checked="">
+                                                                            <span class="check"></span> <em>전체</em> 
+                                                                        </label>
+                                                                        <label class="ip-rd-label">
+                                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                            <span class="check"></span> <em>1Y</em> 
+                                                                        </label>
+                                                                        <label class="ip-rd-label">
+                                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                            <span class="check"></span> <em>3M</em> 
+                                                                        </label>
+                                                                        <label class="ip-rd-label">
+                                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                            <span class="check"></span> <em>1M</em> 
+                                                                        </label>
+                                                                        <label class="ip-rd-label">
+                                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                            <span class="check"></span> <em>7D</em> 
+                                                                        </label>
+                                                                        <label class="ip-rd-label">
+                                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                            <span class="check"></span> <em>당일</em> 
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="ip-wrap with-icon ta-left w165 ml16">
+                                                                        <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                                                        <i class="ic ic-calendar"></i>
+                                                                    </div>
+                                                                    <span class="td-item">-</span>
+                                                                    <div class="ip-wrap with-icon ta-left w165">
+                                                                        <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                                                        <i class="ic ic-calendar"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">심의유형</th>
+                                                            <td>
+                                                                <div class="sel w150">
+                                                                    <select name="" id="" class="">
+                                                                        <option value="0">전체</option>
+                                                                        <option value="1">1번</option>
+                                                                        <option value="2">2번</option>
+                                                                    </select>
+                                                                </div>
+                                                            </td>
+                                                            <th scope="row">검색어</th>
+                                                            <td>
+                                                                <input name="" id="" class="ip-txt w350" type="text" value="" placeholder="접수번호, IRB NO,? 과제명, 연구책임자">
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                                 <div class="btn-group">
-                                                    <button class="td-item btn btn-icon-srh" type="button">조회</button>
-                                                </div>
-                                            </div>		
-                                            <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div><!--[D]그리드 영역-->						
-                                        </div>
-                                    </div>
-
-                                    <!-- 심의완료-->
-                                    <div class="sec-con">
-                                        <div class="sec filter-search">
-                                            <table class="data-table">
-                                                <caption>테이블제목</caption>
-                                                <colgroup>
-                                                    <col width="80px">
-                                                    <col width="160px">
-                                                    <col width="102px">
-                                                    <col width="auto">
-                                                </colgroup>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">작성일</th>
-                                                        <td colspan="3">
-                                                            <div class="td-item-group left gap4">
-                                                                <div class="ip-rd-group">
-                                                                    <label class="ip-rd-label">
-                                                                        <input name="fd-1" class="ip-rd" type="radio" value="" checked="">
-                                                                        <span class="check"></span> <em>전체</em> 
-                                                                    </label>
-                                                                    <label class="ip-rd-label">
-                                                                        <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>1Y</em> 
-                                                                    </label>
-                                                                    <label class="ip-rd-label">
-                                                                        <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>3M</em> 
-                                                                    </label>
-                                                                    <label class="ip-rd-label">
-                                                                        <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>1M</em> 
-                                                                    </label>
-                                                                    <label class="ip-rd-label">
-                                                                        <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>7D</em> 
-                                                                    </label>
-                                                                    <label class="ip-rd-label">
-                                                                        <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>당일</em> 
-                                                                    </label>
-                                                                </div>
-                                                                <div class="ip-wrap with-icon ta-left w165 ml16">
-                                                                    <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
-                                                                    <i class="ic ic-calendar"></i>
-                                                                </div>
-                                                                <span class="td-item">-</span>
-                                                                <div class="ip-wrap with-icon ta-left w165">
-                                                                    <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
-                                                                    <i class="ic ic-calendar"></i>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">심의유형</th>
-                                                        <td>
-                                                            <div class="sel w150">
-                                                                <select name="" id="" class="">
-                                                                    <option value="0">전체</option>
-                                                                    <option value="1">1번</option>
-                                                                    <option value="2">2번</option>
-                                                                </select>
-                                                            </div>
-                                                        </td>
-                                                        <th scope="row">검색어</th>
-                                                        <td>
-                                                            <input name="" id="" class="ip-txt w350" type="text" value="" placeholder="접수번호, IRB NO,? 과제명, 연구책임자">
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <div class="btn-group">
-                                                <button class="btn btn-lb" type="button">조회</button>
-                                            </div>	
-                                        </div>
-                                        <div class="sec">
-                                            <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div><!--[D]그리드 영역-->						
+                                                    <button class="btn btn-lb" type="button">조회</button>
+                                                </div>	
+                                            </div>
+                                            <div class="sec">
+                                                <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div><!--[D]그리드 영역-->						
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
+                            <!--//[S] new-window --> 
 
                         </div><!--//[S] tab-con-->
                     </div>
@@ -505,14 +509,6 @@
 
                 </div>
                 <!--// [S] plf-tab-->
-                
-                <!--[C]Toast-->
-                <div class="toast"> <!--[D]active-->
-                    <div class="inner" style="display: none;">
-                        toast 알림입니다
-                    </div>
-                </div>
-                <!--//[C]Toast-->
                 
             </div>
             <!--//[S] plf-sub-->

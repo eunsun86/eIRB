@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>신규 심의신청 (신청서 타입 A) | IRB_2200</title>
+    <title>신규 심의신청 (신청서 타입 A) | e-IRB</title>
     <script src="../static/js/jquery-3.6.0.min.js"></script>
     <script src="../static/js/datepicker.min.js"></script>		
     <script src="../static/js/datepicker.ko-KR.js"></script>		
@@ -89,8 +89,6 @@
                 <div class="plf-tab my-tab-switching">
                     <div class="tab">
                         <span class="item active" role="button"><em>타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span> <!--[D]active-->
-                        <span class="item" role="button"><em>타이틀타이틀타이틀타이틀타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span>
-                        <span class="item" role="button"><em>타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span>
                     </div>
                     <div class="tab-con-group"> 
                         <div class="tab-con active"> <!--[D]active-->
@@ -100,11 +98,12 @@
                                 <span class="item">심의현황관리</span>
                                 <span class="item">신규 심의신청</span>
                             </div>
-    
-                            <p class="tit-pagetitle">신규 심의신청</p>
 
                             <!--[S] new-window : 새창띄우기 팝업 영역 -->
                             <div id="new-window">
+
+                                <p class="tit-pagetitle">신규 심의신청</p>
+
                                 <div class="sec">
                                     <table class="data-table data-table-top">
                                         <caption>신규 심의신청 정보</caption>
@@ -148,7 +147,7 @@
                                                 <table class="data-table">
                                                     <caption>연구구분 및 과제명</caption>
                                                     <colgroup>
-                                                        <col width="250px">
+                                                        <col width="190px">
                                                         <col width="auto">
                                                     </colgroup>
                                                     <tbody>
@@ -755,10 +754,10 @@
                                                         <tr>
                                                             <td colspan="2">
                                                                 <div class="td-item-group left gap6">
-                                                                    <span class="fw-500">총액</span>
+                                                                    <span >총액</span>
                                                                     <input name="" id="" class="ip-txt w175" type="text" value="">
                                                                     <span>원</span>
-                                                                    <span class="fw-500">(간접비 포함)</span>
+                                                                    <span>(간접비 포함)</span>
                                                                 </div>
                                                             </td>
                                                         </tr>
@@ -800,7 +799,7 @@
                                                             <td colspan="2">
                                                                 <div class="td-item-group left fw-500">
                                                                     <input name="" id="" class="ip-txt w175" type="text" value="">
-                                                                    <span class="fw-600 ml8 mr12">원</span>
+                                                                    <span class="ml8 mr12">원</span>
                                                                     &#40;
                                                                     <span class="fw-500 mr12 ">입금예정일 : </span>
                                                                     <div class="ip-wrap with-icon ta-left w165 ml8">
@@ -814,8 +813,8 @@
                                                         <tr>
                                                             <th scope="row" colspan="2">연구기간</th>
                                                             <td colspan="2">
-                                                                <div class="td-item-group left fw-500">
-                                                                    <span class="fw-500 mr12 ">IRB 승인일 ~ </span>
+                                                                <div class="td-item-group left">
+                                                                    <span class="mr12 ">IRB 승인일 ~ </span>
                                                                     <div class="ip-wrap with-icon ta-left w165 ml8">
                                                                         <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
                                                                         <i class="ic ic-calendar"></i>
@@ -1131,7 +1130,7 @@
                                                 <table class="data-table ">
                                                     <caption>이해상충서약서</caption>
                                                     <colgroup>
-                                                        <col width="250px">
+                                                        <col width="190px">
                                                         <col width="auto">
                                                     </colgroup>
                                                     <tbody>
@@ -1202,6 +1201,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                
                             </div>
                             <!--//[S] new-window -->  
 

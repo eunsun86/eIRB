@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IRB_2407</title>
+    <title>	연구종료보고 | e-IRB</title>
     <script src="../static/js/jquery-3.6.0.min.js"></script>
     <script src="../static/js/datepicker.min.js"></script>		
     <script src="../static/js/datepicker.ko-KR.js"></script>		
@@ -89,160 +89,164 @@
                 <div class="plf-tab my-tab-switching">
                     <div class="tab">
                         <span class="item active" role="button"><em>타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span> <!--[D]active-->
-                        <span class="item" role="button"><em>타이틀타이틀타이틀타이틀타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span>
-                        <span class="item" role="button"><em>타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span>
                     </div>
                     <div class="tab-con-group"> 
                         <div class="tab-con active"> <!--[D]active-->
 
                             <div class="breadcrumb">
-                                <button type="button" class="layer_open" title="업무단 팝업" onclick="hcLayer.show('layer1')"></button>
+                                <input type="button" title="업무영역 팝업 열기" onclick="popupExplain('new-window');" class="layer_open" >
                                 <span class="item">심의현황관리</span>
                                 <span class="item">신규 외 심의신청</span>
                             </div>
+
+                            <!--[S] new-window : 새창띄우기 팝업 영역 -->
+                            <div id="new-window">
     
-                            <p class="tit-pagetitle">신규 외 심의신청</p>
+                                <p class="tit-pagetitle">신규 외 심의신청</p>
 
-                            <div class="sec">
-                                <table class="data-table data-table-top">
-                                    <caption>신규 외 심의신청 정보</caption>
-                                    <colgroup>
-                                        <col width="142px">
-                                        <col width="auto">
-                                        <col width="142px">
-                                        <col width="auto">
-                                        <col width="142px">
-                                        <col width="auto">
-                                    </colgroup>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">IRB No.</th>
-                                            <td>135846543</td>
-                                            <th scope="row">접수번호</th>
-                                            <td>내용</td>
-                                            <th scope="row">연구책임자</th>
-                                            <td>내용</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">과제명</th>
-                                            <td colspan="5">내용</td>
-                                        </tr>
-                                    </tbody>
-                                </table>	
-                            </div>
-                            
-                            <div class="sec type-switching my-tab-switching">
-                                <div class="tab type1">
-                                    <button class="item" type="button">연구정보</button>
-                                    <button class="item active" type="button">조기종료보고</button> <!--[D]active-->
-                                    <button class="item" type="button">첨부</button>
-                                </div>			
-                                <div class="sec-con-group"> 
-                                    <!-- 연구정보 -->
-                                    <div class="sec-con"> <!--[D]active-->
-                                        기획안에 해당화면 내용 없음
-                                    </div>
+                                <div class="sec">
+                                    <table class="data-table data-table-top">
+                                        <caption>신규 외 심의신청 정보</caption>
+                                        <colgroup>
+                                            <col width="142px">
+                                            <col width="auto">
+                                            <col width="142px">
+                                            <col width="auto">
+                                            <col width="142px">
+                                            <col width="auto">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">IRB No.</th>
+                                                <td>135846543</td>
+                                                <th scope="row">접수번호</th>
+                                                <td>내용</td>
+                                                <th scope="row">연구책임자</th>
+                                                <td>내용</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">과제명</th>
+                                                <td colspan="5">내용</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>	
+                                </div>
+                                
+                                <div class="sec type-switching my-tab-switching">
+                                    <div class="tab type1">
+                                        <button class="item" type="button">연구정보</button>
+                                        <button class="item active" type="button">조기종료보고</button> <!--[D]active-->
+                                        <button class="item" type="button">첨부</button>
+                                    </div>			
+                                    <div class="sec-con-group"> 
+                                        <!-- 연구정보 -->
+                                        <div class="sec-con"> <!--[D]active-->
+                                            기획안에 해당화면 내용 없음
+                                        </div>
 
-                                    <!-- 조기종료보고 -->
-                                    <div class="sec-con active">
-                                        <div class="sec">
-                                            <table class="data-table type-research">
-                                                <caption>조기종료보고 정보</caption>
-                                                <colgroup>
-                                                    <col width="250px">
-                                                    <col width="auto">
-                                                </colgroup>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row" rowspan="2">연구대상자 참여현황</th>
-                                                        <td>
-                                                            <div class="td-item-group left gap6">
-                                                                <span class="fw-500">1. IRB에서 승인한 최대 연구대상자 수</span>
-                                                                <input name="" id="" class="ip-txt w60" type="text" value="">
-                                                                <span>명</span>
+                                        <!-- 조기종료보고 -->
+                                        <div class="sec-con active">
+                                            <div class="sec">
+                                                <table class="data-table type-research">
+                                                    <caption>조기종료보고 정보</caption>
+                                                    <colgroup>
+                                                        <col width="250px">
+                                                        <col width="auto">
+                                                    </colgroup>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th scope="row" rowspan="2">연구대상자 참여현황</th>
+                                                            <td>
+                                                                <div class="td-item-group left gap6">
+                                                                    <span class="fw-500">1. IRB에서 승인한 최대 연구대상자 수</span>
+                                                                    <input name="" id="" class="ip-txt w60" type="text" value="">
+                                                                    <span>명</span>
 
-                                                                <span class="fw-400 ml10 mr10">*경쟁적 모집여부</span>
-                                                                <div class="ip-rd-group">
-                                                                    <label class="ip-rd-label">
-                                                                        <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>예</em> 
-                                                                    </label>
-                                                                    <label class="ip-rd-label">
-                                                                        <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>아니오</em> 
-                                                                    </label>
+                                                                    <span class="fw-400 ml10 mr10">*경쟁적 모집여부</span>
+                                                                    <div class="ip-rd-group">
+                                                                        <label class="ip-rd-label">
+                                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                            <span class="check"></span> <em>예</em> 
+                                                                        </label>
+                                                                        <label class="ip-rd-label">
+                                                                            <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                            <span class="check"></span> <em>아니오</em> 
+                                                                        </label>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <span class="fw-500">2. 연구 개시 후 전체 연구대상자 참여 상황 (본 기관 현황)</span>
-                                                            <ol>
-                                                                <li>
-                                                                    <span class="fw-400">① 동의 취득 연구대상자 수:</span>
-                                                                    <input name="" id="" class="ip-txt w60" type="text" value="">
-                                                                    <span>명</span>
-                                                                </li>
-                                                                <li>
-                                                                    <span class="fw-400">② 스크리닝(Screened) 연구대상자 수:</span>
-                                                                    <input name="" id="" class="ip-txt w60" type="text" value="">
-                                                                    <span>명</span>
-                                                                </li>
-                                                                <li>
-                                                                    <span class="fw-400">③ 등록(enrolled) 연구대상자 수:</span>
-                                                                    <input name="" id="" class="ip-txt w60" type="text" value="">
-                                                                    <span>명</span>
-                                                                </li>
-                                                                <li>
-                                                                    <span class="fw-400">④ 등록(enrolled)이후 중도(Dropped)탈락 연구대상자 수 :</span>
-                                                                    <input name="" id="" class="ip-txt w60" type="text" value="">
-                                                                    <span>명</span>
-                                                                </li>
-                                                                <li>
-                                                                    <span class="fw-400">⑤ 완료 연구대상자 수:</span>
-                                                                    <input name="" id="" class="ip-txt w60" type="text" value="">
-                                                                    <span>명</span>
-                                                                </li>
-                                                            </ol>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">연구종료 요약</th>
-                                                        <td>
-                                                            <input name="" id="" class="ip-txt w100p" type="text" value="">
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                                <tfoot>
-                                                    <tr>
-                                                        <td colspan="2">
-                                                            * 다음과 같은 경우 연구종료보고서를 제출하시기 바랍니다.<br>
-                                                            - 연구대상자로부터 자료 수집이 완료되어 더 이상 접촉하지 않을 경우 (예: 방문 완료, 장기간 추적 조사 완료, 전화 및 설문조사 완료 등)<br>
-                                                            - 익명화된 자료의 분석만이 남아 있는 경우<br><br>
-                                                            * 종료보고서에는 현재까지의 연구대상자 참여상황, 종료보고 상황 요약 및 결과 보고 여부를 기술하시기 바랍니다.<br>
-                                                            * 연구종료 보고 후 1년 이내에 결과보고서를 제출하시기 바랍니다.
-                                                        </td>
-                                                    </tr>
-                                                </tfoot>
-                                            </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <span class="fw-500">2. 연구 개시 후 전체 연구대상자 참여 상황 (본 기관 현황)</span>
+                                                                <ol>
+                                                                    <li>
+                                                                        <span class="fw-400">① 동의 취득 연구대상자 수:</span>
+                                                                        <input name="" id="" class="ip-txt w60" type="text" value="">
+                                                                        <span>명</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span class="fw-400">② 스크리닝(Screened) 연구대상자 수:</span>
+                                                                        <input name="" id="" class="ip-txt w60" type="text" value="">
+                                                                        <span>명</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span class="fw-400">③ 등록(enrolled) 연구대상자 수:</span>
+                                                                        <input name="" id="" class="ip-txt w60" type="text" value="">
+                                                                        <span>명</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span class="fw-400">④ 등록(enrolled)이후 중도(Dropped)탈락 연구대상자 수 :</span>
+                                                                        <input name="" id="" class="ip-txt w60" type="text" value="">
+                                                                        <span>명</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span class="fw-400">⑤ 완료 연구대상자 수:</span>
+                                                                        <input name="" id="" class="ip-txt w60" type="text" value="">
+                                                                        <span>명</span>
+                                                                    </li>
+                                                                </ol>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">연구종료 요약</th>
+                                                            <td>
+                                                                <input name="" id="" class="ip-txt w100p" type="text" value="">
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td colspan="2">
+                                                                * 다음과 같은 경우 연구종료보고서를 제출하시기 바랍니다.<br>
+                                                                - 연구대상자로부터 자료 수집이 완료되어 더 이상 접촉하지 않을 경우 (예: 방문 완료, 장기간 추적 조사 완료, 전화 및 설문조사 완료 등)<br>
+                                                                - 익명화된 자료의 분석만이 남아 있는 경우<br><br>
+                                                                * 종료보고서에는 현재까지의 연구대상자 참여상황, 종료보고 상황 요약 및 결과 보고 여부를 기술하시기 바랍니다.<br>
+                                                                * 연구종료 보고 후 1년 이내에 결과보고서를 제출하시기 바랍니다.
+                                                            </td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        
+                                            <div class="sec-btm">
+                                                <p>위와 같이 연구종료 보고서를 제출합니다.</p>
+                                                <div class="btn-group">
+                                                    <button class="btn" type="button">임시저장</button>
+                                                    <button class="btn btn-lb" type="button">심의 신청</button>
+                                                </div>							
+                                            </div>
                                         </div>
-                                    
-                                        <div class="sec-btm">
-                                            <p>위와 같이 연구종료 보고서를 제출합니다.</p>
-                                            <div class="btn-group">
-                                                <button class="btn btn-lb" type="button">임시저장</button>
-                                                <button class="btn" type="button">심의 신청</button>
-                                            </div>							
-                                        </div>
-                                    </div>
 
-                                    <!-- 첨부 -->
-                                    <div class="sec-con">
-                                        기획안에 해당화면 내용 없음
+                                        <!-- 첨부 -->
+                                        <div class="sec-con">
+                                            기획안에 해당화면 내용 없음
+                                        </div>
                                     </div>
                                 </div>
+
                             </div>
+                            <!--//[S] new-window --> 
 
                         </div><!--//[S] tab-con-->
                     </div>
@@ -259,14 +263,6 @@
 
                 </div>
                 <!--// [S] plf-tab-->
-                
-                <!--[C]Toast-->
-                <div class="toast"> <!--[D]active-->
-                    <div class="inner" style="display: none;">
-                        toast 알림입니다
-                    </div>
-                </div>
-                <!--//[C]Toast-->
                 
             </div>
             <!--//[S] plf-sub-->

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IRB_2411</title>
+    <title>중대한 이상반응보고(타기관) | e-IRB</title>
     <script src="../static/js/jquery-3.6.0.min.js"></script>
     <script src="../static/js/datepicker.min.js"></script>		
     <script src="../static/js/datepicker.ko-KR.js"></script>		
@@ -89,103 +89,107 @@
                 <div class="plf-tab my-tab-switching">
                     <div class="tab">
                         <span class="item active" role="button"><em>타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span> <!--[D]active-->
-                        <span class="item" role="button"><em>타이틀타이틀타이틀타이틀타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span>
-                        <span class="item" role="button"><em>타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span>
                     </div>
                     <div class="tab-con-group"> 
                         <div class="tab-con active"> <!--[D]active-->
 
                             <div class="breadcrumb">
-                                <button type="button" class="layer_open" title="업무단 팝업" onclick="hcLayer.show('layer1')"></button>
+                                <input type="button" title="업무영역 팝업 열기" onclick="popupExplain('new-window');" class="layer_open" >
                                 <span class="item">심의현황관리</span>
                                 <span class="item">신규 외 심의신청</span>
                             </div>
+
+                            <!--[S] new-window : 새창띄우기 팝업 영역 -->
+                            <div id="new-window">
     
-                            <p class="tit-pagetitle">신규 외 심의신청</p>
+                                <p class="tit-pagetitle">신규 외 심의신청</p>
 
-                            <div class="sec">
-                                <table class="data-table data-table-top">
-                                    <caption>신규 외 심의신청 정보</caption>
-                                    <colgroup>
-                                        <col width="142px">
-                                        <col width="auto">
-                                        <col width="142px">
-                                        <col width="auto">
-                                        <col width="142px">
-                                        <col width="auto">
-                                    </colgroup>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">IRB No.</th>
-                                            <td>135846543</td>
-                                            <th scope="row">접수번호</th>
-                                            <td>내용</td>
-                                            <th scope="row">연구책임자</th>
-                                            <td>내용</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">과제명</th>
-                                            <td colspan="5">내용</td>
-                                        </tr>
-                                    </tbody>
-                                </table>	
-                            </div>
-                            
-                            <div class="sec type-switching my-tab-switching">
-                                <div class="tab type1">
-                                    <button class="item" type="button">연구정보</button>
-                                    <button class="item active" type="button">SAE 타기관</button> <!--[D]active-->
-                                    <button class="item" type="button">첨부</button>
-                                </div>			
-                                <div class="sec-con-group"> 
-                                    <!-- 연구정보 -->
-                                    <div class="sec-con"> <!--[D]active-->
-                                        기획안에 해당화면 내용 없음
-                                    </div>
-
-                                    <!-- SAE 타기관 -->
-                                    <div class="sec-con active">
-                                        <div class="sec">
-                                            <table class="data-table type-research">
-                                                <caption>SAE 타기관 정보</caption>
-                                                <colgroup>
-                                                    <col width="250px">
-                                                    <col width="auto">
-                                                </colgroup>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="col">보고내용</th>
-                                                        <td>
-                                                            <input name="" id="" class="ip-txt w100p" type="text" value="">
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                                <tfoot>
-                                                    <tr>
-                                                        <td colspan="2">
-                                                            ■ 본 기관에서 승인된 임상시험과 동일한 계획서로 실시되는 국내 타 기관 및 해외 임상시험에서 발생한 중대한 이상반응/중대한 이상약물반응(Serious Adverse Event/Serious Adverse Drug Reaction) 및 중대하고 예상하지 못한 이상약물반응(Suspected/Unexpected Serious Adverse Reaction)을 보고하시기 바랍니다.<br>
-                                                            ■ CIOMS 양식 등 상세한 내용은 첨부서류로 제출 바랍니다.
-                                                        </td>
-                                                    </tr>
-                                                </tfoot>
-                                            </table>
+                                <div class="sec">
+                                    <table class="data-table data-table-top">
+                                        <caption>신규 외 심의신청 정보</caption>
+                                        <colgroup>
+                                            <col width="142px">
+                                            <col width="auto">
+                                            <col width="142px">
+                                            <col width="auto">
+                                            <col width="142px">
+                                            <col width="auto">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">IRB No.</th>
+                                                <td>135846543</td>
+                                                <th scope="row">접수번호</th>
+                                                <td>내용</td>
+                                                <th scope="row">연구책임자</th>
+                                                <td>내용</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">과제명</th>
+                                                <td colspan="5">내용</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>	
+                                </div>
+                                
+                                <div class="sec type-switching my-tab-switching">
+                                    <div class="tab type1">
+                                        <button class="item" type="button">연구정보</button>
+                                        <button class="item active" type="button">SAE 타기관</button> <!--[D]active-->
+                                        <button class="item" type="button">첨부</button>
+                                    </div>			
+                                    <div class="sec-con-group"> 
+                                        <!-- 연구정보 -->
+                                        <div class="sec-con"> <!--[D]active-->
+                                            기획안에 해당화면 내용 없음
                                         </div>
-                                    
-                                        <div class="sec-btm">
-                                            <p>위와 같이 중대한 이상반응 보고서(타기관, 해외)를 제출합니다.</p>
-                                            <div class="btn-group">
-                                                <button class="btn btn-lb" type="button">임시저장</button>
-                                                <button class="btn" type="button">심의 신청</button>
-                                            </div>							
-                                        </div>
-                                    </div>
 
-                                    <!-- 첨부 -->
-                                    <div class="sec-con">
-                                        기획안에 해당화면 내용 없음
+                                        <!-- SAE 타기관 -->
+                                        <div class="sec-con active">
+                                            <div class="sec">
+                                                <table class="data-table type-research">
+                                                    <caption>SAE 타기관 정보</caption>
+                                                    <colgroup>
+                                                        <col width="250px">
+                                                        <col width="auto">
+                                                    </colgroup>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th scope="col">보고내용</th>
+                                                            <td>
+                                                                <input name="" id="" class="ip-txt w100p" type="text" value="">
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td colspan="2">
+                                                                ■ 본 기관에서 승인된 임상시험과 동일한 계획서로 실시되는 국내 타 기관 및 해외 임상시험에서 발생한 중대한 이상반응/중대한 이상약물반응(Serious Adverse Event/Serious Adverse Drug Reaction) 및 중대하고 예상하지 못한 이상약물반응(Suspected/Unexpected Serious Adverse Reaction)을 보고하시기 바랍니다.<br>
+                                                                ■ CIOMS 양식 등 상세한 내용은 첨부서류로 제출 바랍니다.
+                                                            </td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        
+                                            <div class="sec-btm">
+                                                <p>위와 같이 중대한 이상반응 보고서(타기관, 해외)를 제출합니다.</p>
+                                                <div class="btn-group">
+                                                    <button class="btn" type="button">임시저장</button>
+                                                    <button class="btn btn-lb" type="button">심의 신청</button>
+                                                </div>							
+                                            </div>
+                                        </div>
+
+                                        <!-- 첨부 -->
+                                        <div class="sec-con">
+                                            기획안에 해당화면 내용 없음
+                                        </div>
                                     </div>
                                 </div>
+
                             </div>
+                            <!--//[S] new-window --> 
 
                         </div><!--//[S] tab-con-->
                     </div>
@@ -202,14 +206,6 @@
 
                 </div>
                 <!--// [S] plf-tab-->
-                
-                <!--[C]Toast-->
-                <div class="toast"> <!--[D]active-->
-                    <div class="inner" style="display: none;">
-                        toast 알림입니다
-                    </div>
-                </div>
-                <!--//[C]Toast-->
                 
             </div>
             <!--//[S] plf-sub-->

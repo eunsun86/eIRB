@@ -71,7 +71,7 @@
 .plf-root .plf-group-aside-con .plf-aside .depth1 li .dpt1-tit.active:after{transform: rotate(180deg);}
 .plf-root .plf-group-aside-con .plf-aside .depth1 .depth2{padding-left:0;margin:0}
 .plf-root .plf-group-aside-con .plf-aside .depth1 .depth2 li + li{margin-top: 8px;}
-.plf-root .plf-group-aside-con .plf-aside .depth1 .depth2 li a{display: flex;align-items: center;font-size: 16px;line-height: 20px;font-weight: 600;padding:10px 10px 10px 16px;}
+.plf-root .plf-group-aside-con .plf-aside .depth1 .depth2 li a{display: flex;align-items: center;font-size: 16px;line-height: 20px;font-weight: 500;color: #666; padding:10px 10px 10px 16px;}
 .plf-root .plf-group-aside-con .plf-aside .depth1 .depth2 li.selected a{background-color:  var(--color1);border-radius: 8px;color: #fff;}
 .plf-root .plf-group-aside-con .plf-aside .depth1 .depth2 li.selected a::before{content: '';display: inline-block; width: 6px;height: 6px;background-color: #fff;border-radius: 100%;margin-right: 12px;}
 
@@ -107,15 +107,20 @@
 .plf-tab .tab .item .btn-del {position: absolute;right:12px;top:15px; display: inline-block;vertical-align: middle;margin: -2px 0 0 10px; width: 12px; height: 12px; background: url(../img/icon/ic_tab_del.svg) no-repeat center;}
 .plf-tab .tab .item.active em{color:  var(--color1);font-weight: 600;}
 .plf-tab .tab .item.active .btn-del {background:url(../img/icon/ic_tab_del_active.svg) no-repeat center}
-.plf-tab .item-etc {position: absolute;right:224px;top:6px; width: 190px;text-align: right;}
+.plf-tab .item-etc {position: absolute;right:40px;top:7px; width: 230px;text-align: left;}
 .plf-tab .item-etc .btn-etc{width: 48px;height: 32px;font-size: 20px;line-height: 0;font-size: 32px;border-radius: 12px 12px 0px 0px;background: var(--color3);color: var(--color1);}
-.plf-tab .item-etc .tab-list{display: none; border:1px solid  var(--color1);border-radius: 8px 0 8px 8px;padding:4px 20px;background-color: var(--color3);text-align: left;}
-.plf-tab .item-etc .tab-list li{display: flex;padding:6px 0;justify-content: space-between;align-items: center;}
-.plf-tab .item-etc .tab-list li a{display: block;font-size: 16px;font-weight: 500; line-height: 20px;color:  var(--color1);overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
-.plf-tab .item-etc .tab-list li .list-del {display: inline-block; width: 12px; height: 12px; background: url(../img/icon/ic_tab_del_active.svg) no-repeat center/8px;}
+.plf-tab .item-etc .tab-list{display: none; border:1px solid  #F0F0F0;border-radius: 0 8px 8px 8px;padding:12px;background-color: #fff;text-align: left;}
+.plf-tab .item-etc .tab-list li{display: flex;justify-content: space-between;align-items: center;padding:4px 8px;border-radius: 4px;}
+.plf-tab .item-etc .tab-list li a{display: block;font-size: 16px;font-weight: 500; line-height: 20px;color:  #666;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.plf-tab .item-etc .tab-list li .list-del {display: inline-block; width: 12px; height: 12px; background: url(../img/icon/ic_tab_del.svg) no-repeat center/8px;}
+.plf-tab .item-etc .tab-list li:hover{background: var(--color3);}
+.plf-tab .item-etc .tab-list li:hover a{color:  var(--color1);}
+.plf-tab .item-etc .tab-list li:hover .list-del{background: url(../img/icon/ic_tab_del_active.svg) no-repeat center/8px;}
 .plf-tab .item-etc.active .tab-list{display: block;}
-.plf-tab .item-etc.active .btn-etc{position: relative;color: #fff;border:1px solid var(--color1);border-bottom: none;}
-.plf-tab .item-etc.active .btn-etc:after { content: ""; display: block; position: absolute; left: 0; bottom: -1px; width: 46px; height: 1px; background: var(--color3); } 
+/* .plf-tab .item-etc.active .btn-etc{position: relative;color: #fff;border:1px solid var(--color1);border-bottom: none;}
+.plf-tab .item-etc.active .btn-etc:after { content: ""; display: block; position: absolute; left: 0; bottom: -1px; width: 46px; height: 1px; background: var(--color3); }  */
 
 .plf-root .plf-group-aside-con.wide .plf-aside { display: none; }
 .plf-root .plf-group-aside-con.wide .plf-con{width: 100%;}
+
+.plf-root .plf-group-aside-con.login-con{background-color: #fff;} 

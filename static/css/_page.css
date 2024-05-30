@@ -9,9 +9,10 @@
 */
 
 /* 로그인 */
-.plf-root.login{min-width: initial;min-height: 100vh;background: url(../img/bg_login.jpg) no-repeat left bottom/cover;position: relative;}
-.plf-root.login .plf-header{top: 40px;height: initial;border-bottom: none;}
-.plf-root.login footer{display: flex;align-items:  flex-end;padding:0 32px;box-sizing: border-box; position: fixed;bottom:48px;width: 100%;text-align: center;color: #1E1E1E;font-size: 14px;font-weight: 400;}
+.plf-root.login{height: 958px;background: var(--color1) url(../img/bg_login_left.png) repeat-x left bottom;}
+.plf-root.login .plf-con{width: 1600px; height: 958px;margin:0 auto; background: url(../img/bg_login.jpg) no-repeat left bottom;position: relative;}
+.plf-root.login .plf-header{top: 40px;height: initial;border-bottom: none;background: transparent;}
+.plf-root.login footer{display: flex;align-items:  flex-end;padding:0 32px;box-sizing: border-box; position: absolute;bottom:48px;width: 100%;text-align: center;color: #1E1E1E;font-size: 14px;font-weight: 400;}
 .plf-root.login footer .logo-webcash{margin-right: 32px;width: 164px;height: 32px; background: url(../img/logo/webcash.svg) no-repeat center; }
 .plf-root.login footer p{color: rgba(30, 30, 30, 0.8);}
 .plf-root.login footer .tel-num{margin-left: auto; text-align: right;}
@@ -24,12 +25,13 @@
 .login-form { display: flex; column-gap: 16px; } 
 .login-form .login-form-left { flex-grow: 0; flex-shrink: 0; flex-basis: 0; } 
 .login-form .login-form-left .ip-txt { height: 46px; border: 1px solid #E3E3E3;border-radius: 4px; font-size: 18px;color: #333;font-weight: 400; padding: 19px 12px; } 
-.login-form .login-form-left .ip-txt:first-of-type { margin-bottom: 12px; } 
-.login-form .btn-login { display: block; font-size: 20px; color: #fff; font-weight: 600; background:  var(--color1); width: 124px; height: 104px; line-height: 104px; border-radius: 12px; text-decoration: none; text-align: center; } 
+.login-form .login-form-left .ip-txt:first-of-type { margin-bottom: 8px; } 
+.login-form .ip-ch-label{font-size: 14px;}
+.login-form .btn-login { display: block; font-size: 20px; color: #fff; font-weight: 600; background:  var(--color1); width: 124px; height: 100px; line-height: 100px; border-radius: 12px; text-decoration: none; text-align: center; } 
 
-.plf-login .ip-ch-label{margin-top: 8px;}
+.plf-login .ip-ch-label{margin-top: 8px;font-size: 14px;}
 .plf-login .login-btn{margin-top: 24px;}
-.plf-login .login-btn a{display: inline-block;padding-right:6px;}
+.plf-login .login-btn a{display: inline-block;padding-right:6px;color: #666;font-size: 14px;}
 .plf-login .login-btn a:after{content:'';display: inline-block;width: 1px;height: 10px;background-color: #D9D9D9;margin-left: 8px;}
 .plf-login .login-btn a:last-child:after{display: none;}
 
@@ -37,14 +39,14 @@
 .plf-join{ width: 1330px;margin:0 auto; }
 .plf-join .tit-pagetitle{margin:40px 0 20px; }
 .plf-join .tit-subtitle{margin:40px 0 20px; }
-.plf-join .agree-con{ background-color: #fff;padding:20px;border-top: 1px solid #1e1e1e; margin-bottom: 32px;}
+.plf-join .agree-con{ background-color: #fff;padding:20px;border:1px solid #F0F0F0; border-top: 1px solid #1e1e1e; margin-bottom: 32px;}
 .plf-join .agree-con .agree-tit{font-size: 18px;font-weight: 600;color: #1E1E1E;margin-bottom: 12px;}
-.plf-join .agree-con .agree-detail { overflow-y: auto; border: 1px solid #EFEFEF; padding: 20px; height: 210px; box-sizing: border-box; font-size: 14px; font-weight: 500; color: #929292; line-height: 1.5; margin-bottom: 14px; } 
+.plf-join .agree-con .agree-detail { overflow-y: auto; border: 1px solid #EFEFEF;border-radius: 4px; padding: 20px; height: 210px; box-sizing: border-box; font-size: 14px; font-weight: 400; color: #929292; line-height: 1.5; margin-bottom: 14px; } 
 .plf-join .agree-con .ip-ch-group + .agree-tit{margin-top: 32px;}
 .plf-join .join-con{ margin-bottom: 32px;}
-.plf-join .join-complete-con{ display: flex;flex-direction: column;align-items: center;justify-content: center; background-color: #fff;border-top: 1px solid #1e1e1e;min-height: 543px;}
-.plf-join .join-complete-con p{font-size: 26px;font-weight: 600;color: #1E1E1E;margin-bottom: 32px;}
-.plf-join .join-complete-con .info-box{font-size: 18px;font-weight: 600;margin-bottom: 32px;background: #f7f7f7;border-radius: 30px;padding:32px;text-align: center;width: 308px;line-height: 1.5;}
+.plf-join .join-complete-con{ display: flex;flex-direction: column;align-items: center;justify-content: center;border: 1px solid #F0F0F0; background-color: #fff;border-top: 1px solid #1e1e1e;min-height: 543px;}
+.plf-join .join-complete-con p{font-size: 26px;font-weight: 500;color: #1E1E1E;margin-bottom: 32px;}
+.plf-join .join-complete-con .info-box{font-size: 18px;font-weight: 500;margin-bottom: 32px;background: #f7f7f7;border-radius: 30px;padding:32px;text-align: center;width: 308px;line-height: 1.5;}
 .plf-join .join-complete-con .info-box span{display: block;color: #1E1E1E;}
 
 /* 메인 */
@@ -54,7 +56,7 @@
 .progress-status .item .status-box{display: flex; padding:0 12px;border-radius: 12px;height: 116px;}
 .progress-status .item .status-box button{flex: 1;}
 .progress-status .item .status-box button strong{display: block; font-size: 50px;font-weight: 600;color: #fff;}
-.progress-status .item .status-box button i{display: flex;justify-content: center;align-items: center;height: 38px; font-size: 16px;font-weight: 600;color: #fff;position: relative;}
+.progress-status .item .status-box button i{display: flex;justify-content: center;align-items: center;height: 38px; font-size: 16px;font-weight: 500;color: #fff;position: relative;}
 .progress-status .item .status-box button:nth-child(n + 2)  i:before{content: '';display: block;width: 1px;height: 12px;background: #fff;opacity: 0.5; position: absolute;left:-6px;top:50%;margin-top:-6px;}
 
 .progress-status .item:nth-child(1) .status-box{background: linear-gradient(95deg, var(--main-color1) 19.7%, var(--main-color2) 87.8%);}
@@ -110,7 +112,7 @@
 .work-status .alarm .scr_cont .scr_list li.step3 a:before{background: var(--main-color5);}
 .work-status .alarm .scr_cont .scr_list li.step4 a:before{background: var(--main-color7);}
 .work-status .alarm .scr_cont .scr_list li a strong{display:block;font-size: 13px; font-weight: 500; color: #666;width: 100%; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
-.work-status .alarm .scr_cont .scr_list li a span{display:block;font-size: 12px; font-weight: 500; color: #BCBCBC;margin-top: 8px;}
+.work-status .alarm .scr_cont .scr_list li a span{display:block;font-size: 12px; font-weight: 400; color: #BCBCBC;margin-top: 8px;}
 .scr_list .scroll-element.scroll-x.scroll-scrollx_visible, 
 .scr_list .scroll-element.scroll-y.scroll-scrolly_visible{position:absolute;right:0;top:0;width:4px;height:100%;z-index:1;}
 .scr_list .scroll-element, 
