@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>기타보고 | e-IRB</title>
+    <title>신규 심의신청 (신청서 타입 A) | e-IRB</title>
     <script src="../static/js/jquery-3.6.0.min.js"></script>
     <script src="../static/js/datepicker.min.js"></script>		
     <script src="../static/js/datepicker.ko-KR.js"></script>		
@@ -96,17 +96,17 @@
                             <div class="breadcrumb">
                                 <input type="button" title="업무영역 팝업 열기" onclick="popupExplain('new-window');" class="layer_open" >
                                 <span class="item">심의현황관리</span>
-                                <span class="item">신규 외 심의신청</span>
+                                <span class="item">신규 심의신청</span>
                             </div>
 
                             <!--[S] new-window : 새창띄우기 팝업 영역 -->
                             <div id="new-window">
-    
-                                <p class="tit-pagetitle">신규 외 심의신청</p>
+
+                                <p class="tit-pagetitle">신규 심의신청</p>
 
                                 <div class="sec">
                                     <table class="data-table data-table-top">
-                                        <caption>신규 외 심의신청 정보</caption>
+                                        <caption>신규 심의신청 정보</caption>
                                         <colgroup>
                                             <col width="142px">
                                             <col width="auto">
@@ -128,62 +128,63 @@
                                                 <th scope="row">과제명</th>
                                                 <td colspan="5">내용</td>
                                             </tr>
+                                            <tr>
+                                                <th scope="row">심의신청일</th>
+                                                <td>2024-01-01 / 홍길동</td>
+                                                <th scope="row">접수일</th>
+                                                <td>김행정</td>
+                                                <th scope="row">심의완료일</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">진행상태</th>
+                                                <td colspan="3">
+                                                    수정요청
+                                                    <div class="tooltip">
+                                                        <button type="button" class="btn-tooltip" title="수정요청 툴팁">수정요청 내용 보여집니다.</button>
+                                                        <div class="tooltip-con">
+                                                            <ul>
+                                                                <li><em>2차</em>2차 수정요청사항 보여줌보여줌보여줌보여줌보여줌보여줌보여줌보여줌보여줌보여줌보여줌보여줌보여줌보여줌보여줌</li>
+                                                                <li><em>1차</em>1차 수정요청사항 보여줌</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <th scope="row">심의결과</th>
+                                                <td></td>
+                                            </tr>
                                         </tbody>
                                     </table>	
                                 </div>
                                 
                                 <div class="sec type-switching my-tab-switching">
                                     <div class="tab type1">
-                                        <button class="item active" type="button">기타보고</button> <!--[D]active-->
-                                        <button class="item" type="button">연구정보</button>
+                                        <button class="item active" type="button">연구정보</button> <!--[D]active-->
+                                        <button class="item" type="button">연구계획서 요약</button>
                                         <button class="item" type="button">첨부</button>
+                                        <button class="item" type="button">이해상충서약서</button>
+                                        <button class="item" type="button">연구자준수서약서</button>
                                     </div>			
                                     <div class="sec-con-group"> 
-                                        <!-- 기타보고 -->
-                                        <div class="sec-con active"> <!--[D]active-->
-                                            <div class="sec">
-                                                <table class="data-table type-research">
-                                                    <caption>기타보고 정보</caption>
-                                                    <colgroup>
-                                                        <col width="250px">
-                                                        <col width="auto">
-                                                    </colgroup>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th scope="col">보고내용</th>
-                                                            <td>
-                                                                <div class="ta-group">
-                                                                    <textarea class="ta-ip" placeholder=""></textarea>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        
-                                            <div class="sec-btm">
-                                                <p>위와 같이 기타 보고서를 제출합니다.</p>
-                                                <div class="btn-group">
-                                                    <button class="btn" type="button">임시저장</button>
-                                                    <button class="btn btn-lb" type="button">심의 신청</button>
-                                                </div>							
-                                            </div>
-                                        </div>
-
                                         <!-- 연구정보 -->
-                                        <div class="sec-con">
-                                            기획안에 해당화면 내용 없음
-                                        </div>
+                                        <div class="sec-con active">연구정보</div>
+
+                                        <!-- 연구계약서 요약 -->
+                                        <div class="sec-con">연구계약서 요약</div>
 
                                         <!-- 첨부 -->
-                                        <div class="sec-con">
-                                            기획안에 해당화면 내용 없음
-                                        </div>
+                                        <div class="sec-con">첨부</div>
+                                        
+                                        <!-- 이해상충서약서 -->
+                                        <div class="sec-con">이해상충서약서</div>
+                                        
+                                        <!-- 연구자준수서약서 -->
+                                        <div class="sec-con">연구자준수서약서</div>
                                     </div>
                                 </div>
-
+                                
                             </div>
-                            <!--//[S] new-window --> 
+                            <!--//[S] new-window -->  
 
                         </div><!--//[S] tab-con-->
                     </div>
@@ -200,6 +201,14 @@
 
                 </div>
                 <!--// [S] plf-tab-->
+                
+                <!--[C]Toast-->
+                <div class="toast"> <!--[D]active-->
+                    <div class="inner" style="display: none;">
+                        toast 알림입니다
+                    </div>
+                </div>
+                <!--//[C]Toast-->
                 
             </div>
             <!--//[S] plf-sub-->

@@ -12,12 +12,12 @@
 .plf-root.login{height: 958px;background: var(--color1) url(../img/bg_login_left.png) repeat-x left bottom;}
 .plf-root.login .plf-con{width: 1600px; height: 958px;margin:0 auto; background: url(../img/bg_login.jpg) no-repeat left bottom;position: relative;}
 .plf-root.login .plf-header{top: 40px;height: initial;border-bottom: none;background: transparent;}
-.plf-root.login footer{display: flex;align-items:  flex-end;padding:0 32px;box-sizing: border-box; position: absolute;bottom:48px;width: 100%;text-align: center;color: #1E1E1E;font-size: 14px;font-weight: 400;}
-.plf-root.login footer .logo-webcash{margin-right: 32px;width: 164px;height: 32px; background: url(../img/logo/webcash.svg) no-repeat center; }
-.plf-root.login footer p{color: rgba(30, 30, 30, 0.8);}
-.plf-root.login footer .tel-num{margin-left: auto; text-align: right;}
-.plf-root.login footer .tel-num em{display: block; font-size: 14px;font-weight: 600;color: #1E1E1E;margin-bottom: 8px;}
-.plf-root.login footer .tel-num strong{display: block;font-size: 26px;color: #1E1E1E}
+.plf-root footer{display: flex;align-items:  flex-end;padding:0 32px;box-sizing: border-box; position: absolute;bottom:48px;width: 100%;text-align: center;color: #1E1E1E;font-size: 14px;font-weight: 400;}
+.plf-root footer .logo-webcash{margin-right: 32px;width: 164px;height: 32px; background: url(../img/logo/webcash.svg) no-repeat center;opacity: 0.7;}
+.plf-root footer p{color: rgba(30, 30, 30, 0.7);}
+.plf-root footer .tel-num{margin-left: auto; text-align: right;opacity: 0.8;}
+.plf-root footer .tel-num em{display: block; font-size: 14px;font-weight: 600;color: #1E1E1E;margin-bottom: 8px;}
+.plf-root footer .tel-num strong{display: block;font-size: 26px;color: #1E1E1E}
 
 .plf-login {position: absolute;left:55.5%;top:50%; width: 560px; margin: -225px 0 0 0; border:1px solid #F0F0F0;border-radius: 30px;padding:100px 60px;box-sizing: border-box;} 
 .plf-login .tit{font-size: 60px;color: #666;margin-bottom: 16px;}

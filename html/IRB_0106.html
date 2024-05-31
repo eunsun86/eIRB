@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>심의정보 popup | e-IRB</title>
+    <script src="../static/js/jquery-3.6.0.min.js"></script>
+    <script src="../static/js/datepicker.min.js"></script>		
+    <script src="../static/js/datepicker.ko-KR.js"></script>		
+    <script src="../static/js/plf_pub.js"></script>
+    <link rel="stylesheet" href="../static/css/plf.css" />
+</head>
+<body>
+
+<!--[S] plf-root-->
+<div class="plf-root">
+
+    <!--[S] layer -->
+    <div id="layer1" class="layer type-l newpop">
+        <div class="layer-content">
+            <div class="layer-header">
+                <strong class="lh-title">과제정보</strong>
+            </div>
+            <div class="layer-body">
+                
+                <div class="sec">
+                    <table class="data-table data-table-top">
+                        <caption>과제정보</caption>
+                        <colgroup>
+                            <col width="142px">
+                            <col width="auto">
+                            <col width="142px">
+                            <col width="auto">
+                            <col width="142px">
+                            <col width="auto">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">IRB No.</th>
+                                <td></td>
+                                <th scope="row">소속학과</th>
+                                <td></td>
+                                <th scope="row">연구책임자</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">과제명</th>
+                                <td colspan="5">
+                                    국문 : OOOOOOOOOOOOOOOOOOOOOOOOOOO<br>
+                                    영문 : 
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">심의분류</th>
+                                <td>신속심의</td>
+                                <th scope="row">심의유형</th>
+                                <td>답변심의</td>
+                                <th scope="row">진행상태</th>
+                                <td>결과통보</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">심의신청일</th>
+                                <td>2024-01-01 / 홍길동</td>
+                                <th scope="row">접수일</th>
+                                <td>2024-01-02 / 김행정</td>
+                                <th scope="row">심의일</th>
+                                <td>2024-01-02</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">심의결과</th>
+                                <td>승인</td>
+                                <th scope="row">심의위원회</th>
+                                <td colspan="3">제4위원회</td>
+                            </tr>
+                        </tbody>
+                    </table>	
+                </div>
+
+                <div class="sec">
+                    <div class="sec type-switching my-tab-switching">
+                        <div class="tab type1">
+                            <button class="item active" type="button">연구정보</button> <!--[D]active-->
+                            <button class="item" type="button">연구계획서 요약</button>
+                            <button class="item" type="button">첨부</button>
+                            <button class="item" type="button">이해상충서약서</button>
+                            <button class="item" type="button">연구자준수서약서</button>
+                        </div>			
+                        <div class="sec-con-group"> 
+                            <!-- 연구정보 -->
+                            <div class="sec-con active">연구정보</div>
+
+                            <!-- 연구계약서 요약 -->
+                            <div class="sec-con">연구계약서 요약</div>
+
+                            <!-- 첨부 -->
+                            <div class="sec-con">첨부</div>
+                            
+                            <!-- 이해상충서약서 -->
+                            <div class="sec-con">이해상충서약서</div>
+                            
+                            <!-- 연구자준수서약서 -->
+                            <div class="sec-con">연구자준수서약서</div>
+                        </div>
+                    </div>				
+                </div>
+            </div> 
+            
+        </div>
+    </div>
+    <!--//[S] layer -->
+
+    
+
+</div>
+<!--//[S] plf-root-->
+
+
+
+</body>
+</html>

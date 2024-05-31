@@ -90,9 +90,9 @@
 .data-table.data-table-top th{padding-top: 15px;} 
 .data-table.data-table-top td{height: 36px;} 
 
-.data-table.type-line { border-top: 1px solid #1E1E1E; } 
+/* .data-table.type-line { border-top: 1px solid #1E1E1E; }  */
 .data-table.type-research { border-top: 1px solid #1E1E1E; } 
-.data-table.type-research th { height: 32px;padding:4px 20px;text-align: center; vertical-align: middle;} 
+.data-table.type-research th { height: 32px;padding:4px 20px;text-align: center; vertical-align: middle;border-right:none;} 
 .data-table.type-research th:first-child { text-align: left; } 
 .data-table.type-research th:nth-child(n+1) {border-left: none;}
 .data-table.type-research td{text-align: center;border-left: 1px solid #F0F0F0;}
@@ -105,8 +105,7 @@
 .data-table.type-list tr:hover { background: var(--color3);} 
 .data-table.type-list tr:hover td { color: var(--color1);} 
 .data-table.type-list tr:hover td a, .data-table.type-list tr:hover td p{ color: var(--color1);} 
-.data-table.type-list th{padding:12px 0;text-align: center;}
-.data-table.type-list th:nth-child(n+2){border-left: none;}
+.data-table.type-list th{padding:12px 0;text-align: center;border-right:none;}
 .data-table.type-list td{padding: 4px 0;text-align: center;line-height: initial;font-weight: 400;}
 
 .filter-search{display: flex;justify-content: space-between;align-items: flex-end;border: 1px solid #F0F0F0;border-radius: 8px;padding: 18px 24px;}
@@ -121,7 +120,7 @@
 .td-item-group div.td-item-group { padding: 0; }
 .td-item-group.left { justify-content: start; } 
 .td-item-group.center { justify-content: center; } 
-.td-item-group.right { justify-content: end; } 
+.td-item-group.right { justify-content: end !important; } 
 .td-item-group.top { align-items: flex-start; } 
 .td-item-group.gap0 { gap: 0px; } 
 .td-item-group.gap1 { gap: 1px; } 
@@ -143,6 +142,7 @@
 
 .td-item-group .th-item{font-size: 16px;line-height: 20px;color: #1e1e1e;font-weight: 600;padding:0 20px 0 0;}
 .td-item-group .th-item.pl36{padding:0 20px 0 36px;}
+.td-item-group + .data-table{margin-top: 12px;}
 
 /* 2024-05-24 추가 */
 .td-item-group2 { display: flex; align-items: center; gap: 8px; }
@@ -230,6 +230,7 @@
 
 .sec .list-ul li{padding-left:20px;text-indent:-5px;line-height: 1.5;font-weight: 500;}
 .sec .list-ul li ol li{padding-left:20px;}
+.sec .list-ul li .type-bar{padding-left:0;}
 .type-bar{padding-left:10px;}
 .type-bar li:before {content:'-';display:inline-block;margin-right:3px;}
 /* ol {padding:5px 0 5px 10px;}
@@ -303,6 +304,8 @@ input, button, textarea { outline: 0; }
 .ip-rd-group.complex { display:initial;margin:-2px 0; } 
 .ip-rd-group.complex> .ip-rd-label{margin:8px 0;}
 .ip-rd-group.complex .rd-label-group{display: flex;align-items: center;gap: 0 16px;}
+
+.ip-rd-group.portrait{flex-direction: column;align-items: flex-start;width: 100%;}
 
 /* Select */
 .sel { position: relative; } 
@@ -413,7 +416,7 @@ input, button, textarea { outline: 0; }
 .layer.type-m{width:600px;}
 .layer.type-l{width:900px;}
 .layer .btn-close-layer{position:absolute;right:24px;top:20px;width:15px;height:15px;background:url(../img/icon/ic_close_black.svg) no-repeat center;}
-.layer.newpop{display: block;width: 100%;}
+.layer.newpop{display: block;width: 100%;position: relative;}
 .layer.newpop .btn-close-layer{display: hidden;}
 
 .layer .layer-content{position:relative;box-sizing:border-box;background:#fff;border-radius: 12px;}
@@ -427,7 +430,7 @@ input, button, textarea { outline: 0; }
 
 .layer.type-l .layer-header{padding:24px 24px 0;border-bottom:none;}
 .layer.type-l .layer-header .lh-title{font-size:26px;}
-.layer.type-l .layer-body{display: block;padding:20px 24px 0;}
+.layer.type-l .layer-body{display: block;padding:20px 24px 20px;}
 
 .layer .layer-footer{padding:20px 0 32px;text-align: center;}
 .layer .layer-body .btn-group{margin-top:24px;text-align: center;}
@@ -448,6 +451,8 @@ input, button, textarea { outline: 0; }
 .layer .layer-body .txt-notice{font-size: 20px;font-weight: 500;color:#666;line-height: 1.3;text-align: center;}
 .layer .layer-body .txt-notice strong{color: var(--color1);font-weight: 500;}
 .layer .layer-body .txt-tip{font-size: 14px;font-weight: 400;color:#929292;line-height: 1.3;margin-top: 8px;}
+
+.layer .layer-body .ip-rd-group.portrait .ip-rd-label + .ip-rd-label{margin-top: 10px;}
 
 /* layer - 우편번호검색 */
 .layer.post .layer-body{display: block;}

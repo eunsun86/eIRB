@@ -163,7 +163,7 @@
                                                             <th scope="row">심의결과</th>
                                                             <td>
                                                                 보완
-                                                                <button class="btn btn-txt" type="button">[심사결과 보기]</button>
+                                                                <button type="button" class="btn btn-txt layer_open" title="팝업" onclick="hcLayer.show('layer1')">[심사결과 보기]</button>
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -253,6 +253,17 @@
             </div>
             <!--//[S] plf-sub-->
 
+            <!--[S] plf-footer -->
+            <div class="plf-footer">
+                <ul>
+                    <li><a href="">이용약관</a></li>
+                    <li><a href="">개인정보처리방침</a></li>	
+                    <li><a href="">담당자 연락처</a></li>							
+                </ul>
+                <p class="copy">Copyright © 2024 Your Company. All rights reserved.</p>
+            </div>
+            <!--//[S] plf-footer -->
+
         </div>
         <!--//[S] plf-con-->
 
@@ -262,6 +273,26 @@
 </div>
 <!--//[S] plf-root-->
 
+<!--[S] layer -->
+<div id="layer1" class="layer type-l">
+	<div class="layer-content">
+		<div class="layer-header">
+			<strong class="lh-title">심사결과의견</strong>
+		</div>
+		<div class="layer-body">
+			layer 내용
+		</div> 
+        <div class="layer-footer">
+			<div class="btn-group">
+                <button class="btn" type="button">취소</button>
+                <button class="btn btn-lb" type="button">확인</button>
+            </div>
+		</div>
+        
+		<button type="button" class="btn-close-layer" data-dismiss="modal"><span class="blind">닫기</span></button>
+	</div>
+</div>
+<!--//[S] layer -->
 
 </body>
 </html>

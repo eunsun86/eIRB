@@ -202,7 +202,10 @@
                                             </div>
 
                                             <div class="sec">
-                                                <table class="data-table type-line">
+                                                <div class="td-item-group">
+                                                    <h3 class="sec-tit">연구분류</h3>
+                                                </div>
+                                                <table class="data-table">
                                                     <caption>연구분류</caption>
                                                     <colgroup>
                                                         <col width="190px">
@@ -327,7 +330,7 @@
                                                                     </label>
                                                                     <label class="ip-rd-label">
                                                                         <input name="fd-24" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>전향적&후향적 병행연구</em> 
+                                                                        <span class="check"></span> <em>전향적 · 후향적 병행연구</em> 
                                                                     </label>
                                                                 </div>
                                                             </td>
@@ -394,7 +397,7 @@
                                             </div>
 
                                             <div class="sec">
-                                                <table class="data-table type-line">
+                                                <table class="data-table">
                                                     <caption>연구정보입력</caption>
                                                     <colgroup>
                                                         <col width="190px">
@@ -677,6 +680,7 @@
                                                                             <input name="fd-8-1" class="ip-rd" type="radio" value="">
                                                                             <span class="check"></span> <em>기타</em> 
                                                                         </label>
+                                                                        <input name="" id="" class="ip-txt w175 ml8" type="text" value="">
                                                                         &#41;
                                                                     </div>
                                                                 </div>
@@ -685,7 +689,7 @@
                                                         <tr>
                                                             <th scope="row">IRB 심의비</th>
                                                             <td>
-                                                                <div class="td-item-group left fw-500">
+                                                                <div class="td-item-group left">
                                                                     <input name="" id="" class="ip-txt w175" type="text" value="">
                                                                     <span class="ml8 mr12">원</span>
                                                                     &#40;
@@ -718,7 +722,7 @@
                                                 <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div><!--[D]그리드 영역-->						
                                             
                                                 <div class="sec-btm">
-                                                    <p>위와 같이 초기심의 신청서를(을) 제출합니다.</p>
+                                                    <p>위와 같이 초기심의 신청서를 제출합니다.</p>
                                                     <div class="btn-group">
                                                         <button class="btn" type="button">임시저장</button>
                                                         <button class="btn btn-lb" type="button">심의신청 요청</button>
@@ -729,348 +733,16 @@
                                         </div>
 
                                         <!-- 연구계약서 요약 -->
-                                        <div class="sec-con">
-                                            <div class="sec">
-                                                <table class="data-table type-line">
-                                                    <caption>연구계약서 정보</caption>
-                                                    <colgroup>
-                                                        <col width="250px">
-                                                        <col width="auto">
-                                                    </colgroup>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th scope="row">공동연구기관</th>
-                                                            <td>
-                                                                <div class="ta-group">
-                                                                    <textarea class="ta-ip" placeholder=""></textarea>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">연구목적</th>
-                                                            <td>
-                                                                <div class="ta-group">
-                                                                    <textarea class="ta-ip" placeholder=""></textarea>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">연구배경</th>
-                                                            <td>
-                                                                <div class="ta-group">
-                                                                    <textarea class="ta-ip" placeholder=""></textarea>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">연구설계 및 방법</th>
-                                                            <td>
-                                                                <div class="ta-group">
-                                                                    <textarea class="ta-ip" placeholder=""></textarea>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">연구대상자 수 산출근거</th>
-                                                            <td>
-                                                                <div class="ta-group">
-                                                                    <textarea class="ta-ip" placeholder=""></textarea>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">연구대상자 선정기준</th>
-                                                            <td>
-                                                                <div class="ta-group">
-                                                                    <textarea class="ta-ip" placeholder=""></textarea>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">연구대상자 제외기준</th>
-                                                            <td>
-                                                                <div class="ta-group">
-                                                                    <textarea class="ta-ip" placeholder=""></textarea>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">모집방법</th>
-                                                            <td>
-                                                                <div class="td-item-group left gap6">
-                                                                    <span class="mr10">모집공고문 사용</span>
-                                                                    <label class="ip-rd-label">
-                                                                        <input name="fd-9" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>예</em> 
-                                                                    </label>
-                                                                    <label class="ip-rd-label">
-                                                                        <input name="fd-9" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>아니오</em> 
-                                                                    </label>
-                                                                </div>
-                                                                <div class="td-item-group left gap16 mt8">
-                                                                    <label for="ch-14-1" class="ip-ch-label">
-                                                                        <input name="ch-14" id="ch-14-1" class="ip-ch" type="checkbox" value="">
-                                                                        <span class="check"></span> <em>원내광고</em> 
-                                                                    </label>
-                                                                    <label for="ch-14-2" class="ip-ch-label">
-                                                                        <input name="ch-14" id="ch-14-2" class="ip-ch" type="checkbox" value="">
-                                                                        <span class="check"></span> <em>원외광고</em> 
-                                                                    </label>
-                                                                    <label for="ch-14-3" class="ip-ch-label">
-                                                                        <input name="ch-14" id="ch-14-3" class="ip-ch" type="checkbox" value="">
-                                                                        <span class="check"></span> <em>인터넷</em> 
-                                                                    </label>
-                                                                    <input name="" id="" class="ip-txt w175" type="text" value="">
-                                                                    <label for="ch-14-4" class="ip-ch-label">
-                                                                        <input name="ch-14" id="ch-14-4" class="ip-ch" type="checkbox" value="">
-                                                                        <span class="check"></span> <em>기타</em> 
-                                                                    </label>
-                                                                    <input name="" id="" class="ip-txt w175" type="text" value="">
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">취약한 환경의 연구대상자</th>
-                                                            <td>
-                                                                <div class="td-item-group left gap16">
-                                                                    <label for="ch-15-1" class="ip-ch-label">
-                                                                        <input name="ch-15" id="ch-15-1" class="ip-ch" type="checkbox" value="">
-                                                                        <span class="check"></span> <em>임신부</em> 
-                                                                    </label>
-                                                                    <label for="ch-15-2" class="ip-ch-label">
-                                                                        <input name="ch-15" id="ch-15-2" class="ip-ch" type="checkbox" value="">
-                                                                        <span class="check"></span> <em>소아/미성년자</em> 
-                                                                    </label>
-                                                                    <label for="ch-15-3" class="ip-ch-label">
-                                                                        <input name="ch-15" id="ch-15-3" class="ip-ch" type="checkbox" value="">
-                                                                        <span class="check"></span> <em>태아</em> 
-                                                                    </label>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">연구대상자에 대한 위험 평가</th>
-                                                            <td>
-                                                                <div class="ta-group">
-                                                                    <textarea class="ta-ip" placeholder=""></textarea>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row" rowspan="3">연구대상자에 대한 이익 평가</th>
-                                                            <td>
-                                                                <span>직접적 이익</span>
-                                                                <div class="ta-group">
-                                                                    <textarea class="ta-ip" placeholder=""></textarea>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <span>간접적 이익</span>
-                                                                <div class="ta-group">
-                                                                    <textarea class="ta-ip" placeholder=""></textarea>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <span>사회적 이익</span>
-                                                                <div class="ta-group">
-                                                                    <textarea class="ta-ip" placeholder=""></textarea>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">유효성 평가항목 및 평가방법</th>
-                                                            <td>
-                                                                <div class="ta-group">
-                                                                    <textarea class="ta-ip" placeholder=""></textarea>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">통계분석방법</th>
-                                                            <td>내용</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">개인정보 보호 대책 방안</th>
-                                                            <td>내용</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        
-                                            <div class="sec-btm">
-                                                <p>위와 같이 초기심의 신청서를(을) 제출합니다.</p>
-                                                <div class="btn-group">
-                                                    <button class="btn" type="button">임시저장</button>
-                                                    <button class="btn btn-lb" type="button">심의 신청</button>
-                                                </div>							
-                                            </div>
-                                        </div>
+                                        <div class="sec-con">연구계약서 요약</div>
 
                                         <!-- 첨부 -->
-                                        <div class="sec-con">
-                                            <div class="sec">
-                                                <table class="data-table type-line">
-                                                    <caption>첨부파일 목록</caption>
-                                                    <colgroup>
-                                                        <col width="auto">
-                                                        <col width="150px">
-                                                        <col width="330px">
-                                                        <col width="250px">
-                                                    </colgroup>
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col">제출자료 목록</th>
-                                                            <th scope="col">필수여부</th>
-                                                            <th scope="col">파일첨부</th>
-                                                            <th scope="col">버전</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>연구계획서 (국문)</td>
-                                                            <td class="ta-center">Y</td>
-                                                            <td></td>
-                                                            <td>
-                                                                <input name="" id="" class="ip-txt w220" type="text" value="">
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>연구계획서 (국문)</td>
-                                                            <td class="ta-center">Y</td>
-                                                            <td><button class="btn btn-txt" type="button">(영문)연구계획서_20240101.pdf</button></td>
-                                                            <td>
-                                                                <input name="" id="" class="ip-txt w220" type="text" value="">
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>연구대상자 설명문 및 동의서 (국문)</td>
-                                                            <td class="ta-center">Y</td>
-                                                            <td></td>
-                                                            <td>
-                                                                <input name="" id="" class="ip-txt w220" type="text" value="">
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-
-                                            <div class="sec">
-                                                <div class="td-item-group">
-                                                    <h3 class="sec-tit">동의서 첨부</h3>
-                                                    <div class="btn-group">
-                                                        <button class="btn btn-cts" type="button">첨부</button>
-                                                        <button class="btn btn-cts" type="button">삭제</button>
-                                                    </div>
-                                                </div>	
-                                                <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div><!--[D]그리드 영역-->						
-                                            </div>
-
-                                            <div class="sec">
-                                                <div class="td-item-group">
-                                                    <h3 class="sec-tit">기타 파일 첨부</h3>
-                                                    <div class="btn-group">
-                                                        <button class="btn btn-cts" type="button">첨부</button>
-                                                        <button class="btn btn-cts" type="button">삭제</button>
-                                                    </div>
-                                                </div>	
-                                                <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div><!--[D]그리드 영역-->						
-                                            </div>
-                                        
-                                            <div class="sec-btm">
-                                                <p>위와 같이 초기심의 신청서를(을) 제출합니다.</p>
-                                                <div class="btn-group">
-                                                    <button class="btn" type="button">임시저장</button>
-                                                    <button class="btn btn-lb" type="button">심의 신청</button>
-                                                </div>							
-                                            </div>
-                                        </div>
+                                        <div class="sec-con">첨부</div>
                                         
                                         <!-- 이해상충서약서 -->
-                                        <div class="sec-con">
-                                            <div class="sec">
-                                                <div class="desc">
-                                                    <ul>
-                                                        <li>■ 연구와 관련된 경제적 이해 (Financial Interest Related to the Research)연구의 설계, 수행, 또는 보고에 직접적으로 그리고 중대하게 영향을 줄 수 있는 의뢰자나 실험대상이 되는 제품이나 서비스에 대한 중대한 경제적 이해를 말한다.</li>
-                                                        <li>■ 보고해야 할 중대한 경제적 이해(Significant Financial Interest)연구와 관련된 경제적 이해 중 아래 기준에 해당하는 사항은 임상연구윤리심의위원회에 보고해야 한다.직계 가족을 포함해 연구와 관련된 보상으로서 1,000만원 이상의 자문료 또는 강연료를 받은 경우 직계 가족을 포함해 어떤 단일 기관에 5% 이상의 지분을 보유한 경우 직계 가족을 포함해 1,000만원 이상의 이제 소득 또는 1,000만원 이상의 주식 소유권을 가진 경우</li>
-                                                    </ul>
-                                                </div>
-                                                <table class="data-table ">
-                                                    <caption>이해상충서약서</caption>
-                                                    <colgroup>
-                                                        <col width="250px">
-                                                        <col width="auto">
-                                                    </colgroup>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th scope="row">이해상충 발생여부</th>
-                                                            <td>
-                                                                <div class="ip-rd-group">
-                                                                    <label class="ip-rd-label">
-                                                                        <input name="fd-10" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>아래 사항 중 한 항목 이상 해당됩니다.</em> 
-                                                                    </label>
-                                                                    <label class="ip-rd-label">
-                                                                        <input name="fd-10" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>아래 사항 모두 해당되지 않음.</em> 
-                                                                    </label>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                                <div class="ip-ch-group type-desc">
-                                                    <label class="ip-ch-label">
-                                                        <input name="ch-16" class="ip-ch" type="checkbox" value="">
-                                                        <span class="check"></span> 연구 결과에 영향을 미칠 수 있는 정도의 경제적 보상을 받았습니다.
-                                                    </label>
-                                                    <label class="ip-ch-label">
-                                                        <input name="ch-16" class="ip-ch" type="checkbox" value="">
-                                                        <span class="check"></span> 제한 없이 사용할 수 있는 연구비나 교육비, 기구나 장비, 자문비 또는 사례금 등의 형태로 지원기관(sponsor)으로부터 1,000만원이 넘는 비용을 제공 받았습니다.
-                                                    </label>
-                                                </div>
-                                                <p class="txt">
-                                                    본인(연구책임자)은 상기 항목에 대해 모든 내용은 정확히 기술하였으며 본인, 본인의 직계가족, 공동연구자나 연구담당자, 관리약사 등과 같이 본 연구과제의 연구관련자, 연구관련자의 가까운 가족이 본 연구와 관련하여 해당되는 항목이 있거나, 연구 진행 중에도 재정적인 이해관계가 변동되어 상기 항목에 해당하는 경우, 이를 인지한 날로부터 30일 이내에 이해상충신고서(Conflict of Interest Disclosure)를 작성하여 가천대길병원 IRB에 보고하겠습니다.
-                                                </p>
-                                                <div class="sec-btm">
-                                                    <p>위와 같이 심의면제 신청서를 제출합니다.</p>
-                                                    <div class="btn-group">
-                                                        <button class="btn" type="button">임시저장</button>
-                                                        <button class="btn btn-lb" type="button">심의 신청</button>
-                                                    </div>							
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <div class="sec-con">이해상충서약서</div>
                                         
                                         <!-- 연구자준수서약서 -->
-                                        <div class="sec-con">
-                                            <div class="sec">
-                                                <p class="txt">
-                                                    연구책임자 준수사항 및 서명 : 준수사항을 반드시 확인한 후 심사를 신청하여 주시기 바랍니다.
-                                                </p>
-                                                <div class="desc">
-                                                    <div class="ip-ch-group type-desc">
-                                                        <label class="ip-ch-label">
-                                                            <input name="ch-2" class="ip-ch" type="checkbox" value="">
-                                                            <span class="check"></span> 
-                                                            본인 및 공동연구자는 헬싱키 선언, ICH-GCP, 생명윤리 및 안전에 관한 법률 등 임상시험 관련 법령과 기관에서 정해진 절차를 준수하면서, 연구대상자의 안전을 최우선으로 하여 임상시험을 윤리적이고 과학적으로 시행하겠습니다.
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="sec-btm">
-                                                    <p>위와 같이 심의면제 신청서를 제출합니다.</p>
-                                                    <div class="btn-group">
-                                                        <button class="btn" type="button">임시저장</button>
-                                                        <button class="btn btn-lb" type="button">심의 신청</button>
-                                                    </div>							
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <div class="sec-con">연구자준수서약서</div>
                                     </div>
                                 </div>
                                 
@@ -1095,6 +767,17 @@
                 
             </div>
             <!--//[S] plf-sub-->
+
+            <!--[S] plf-footer -->
+            <div class="plf-footer">
+                <ul>
+                    <li><a href="">이용약관</a></li>
+                    <li><a href="">개인정보처리방침</a></li>	
+                    <li><a href="">담당자 연락처</a></li>							
+                </ul>
+                <p class="copy">Copyright © 2024 Your Company. All rights reserved.</p>
+            </div>
+            <!--//[S] plf-footer -->
 
         </div>
         <!--//[S] plf-con-->
