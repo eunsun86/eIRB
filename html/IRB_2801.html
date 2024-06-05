@@ -13,48 +13,184 @@
 </head>
 <body>
 
-<!--[S] plf-root-->
-<div class="plf-root">
-
-    <!--[S] layer -->
-    <div id="layer1" class="layer type-l newpop">
-        <div class="layer-content">
-            <div class="layer-header">
-                <strong class="lh-title">교육이수정보</strong>
-            </div>
-            <div class="layer-body">
-                
-                <div class="sec">
-                    <div class="td-item-group">
-                        <h3 class="sec-tit">교육이수 기본정보</h3>
-                    </div>
-                    <table class="data-table">
-                        <caption>교육이수정보</caption>
-                        <colgroup>
-                            <col width="142px">
-                            <col width="auto">
-                            <col width="142px">
-                            <col width="auto">
-                        </colgroup>
-                        <tbody>
-                            <tr>
-                                <th scope="row">IRB No.</th>
-                                <td></td>
-                                <th scope="row">소속학과</th>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>	
-                </div>
-
-            </div> 
-            
+<!--[S] layer -->
+<div id="layer1" class="layer type-l newpop">
+    <div class="layer-content">
+        <div class="layer-header">
+            <strong class="lh-title">교육이수정보</strong>
         </div>
+        <div class="layer-body">
+            
+            <div class="sec">
+                <div class="td-item-group">
+                    <h3 class="sec-tit">교육이수 기본정보</h3>
+                </div>
+                <table class="data-table">
+                    <caption>교육이수정보</caption>
+                    <colgroup>
+                        <col width="142px">
+                        <col width="auto">
+                        <col width="142px">
+                        <col width="auto">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">교육구분</th>
+                            <td>
+                                <div class="sel w150">
+                                    <select name="" id="" class="">
+                                        <option value="0">일반</option>
+                                        <option value="1">종사자</option>
+                                    </select>
+                                </div>
+                            </td>
+                            <th scope="row">교육과정</th>
+                            <td>
+                                <div class="ip-rd-group">
+                                    <label class="ip-rd-label">
+                                        <input name="fd-2" class="ip-rd" type="radio" value="" checked="">
+                                        <span class="check"></span> <em>신규</em> 
+                                    </label>
+                                    <label class="ip-rd-label">
+                                        <input name="fd-2" class="ip-rd" type="radio" value="">
+                                        <span class="check"></span> <em>보수</em> 
+                                    </label>
+                                    <label class="ip-rd-label">
+                                        <input name="fd-2" class="ip-rd" type="radio" value="">
+                                        <span class="check"></span> <em>심화</em> 
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">직군</th>
+                            <td colspan="3">
+                                <div class="sel w150">
+                                    <select name="" id="" class="">
+                                        <option value="0">선택</option>
+                                        <option value="1">1번</option>
+                                        <option value="2">2번</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">교육명</th>
+                            <td colspan="3"><input name="" id="" class="ip-txt w100p" type="text" value=""></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">내용</th>
+                            <td colspan="3">
+                                <div class="ta-group">
+                                    <textarea class="ta-ip" placeholder="내용을 입력할 수 있습니다."></textarea>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">교육기간</th>
+                            <td>
+                                <div class="td-item-group left gap8">
+                                    <div class="ip-wrap with-icon ta-left w165">
+                                        <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                        <i class="ic ic-calendar"></i>
+                                    </div>
+                                    <span class="td-item">-</span>
+                                    <div class="ip-wrap with-icon ta-left w165">
+                                        <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                        <i class="ic ic-calendar"></i>
+                                    </div>
+                                </div>
+                            </td>
+                            <th scope="row">이수시간</th>
+                            <td>
+                                <div class="td-item-group left gap8">
+                                    <input name="" id="" class="ip-txt w175" type="text" value="">시간
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">교육주관</th>
+                            <td><input name="" id="" class="ip-txt w100p" type="text" value=""></td>
+                            <th scope="row">교육주최</th>
+                            <td><input name="" id="" class="ip-txt w100p" type="text" value=""></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">이수일</th>
+                            <td colspan="3">
+                                <div class="ip-wrap with-icon ta-left w165">
+                                    <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                    <i class="ic ic-calendar"></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">이수증</th>
+                            <td colspan="3">
+                                <div class="filelist-wrap">
+                                    <div class="file-list">
+                                        <span class="btn-file">
+                                            <a href="#" ass="btn btn-txt" role="button">교육이수증.pdf</a>
+                                            <button class="btn-ic btn-del" type="button"><em class="blind">닫기</em></button>
+                                        </span>
+                                        <span class="btn-file">
+                                            <a href="#" ass="btn btn-txt" role="button">교육이수증교육이수증교육이수증교육이수증.pdf</a>
+                                            <button class="btn-ic btn-del" type="button"><em class="blind">닫기</em></button>
+                                        </span>
+                                    </div>
+                                    <button class="btn btn-line" type="button">첨부</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">작성일</th>
+                            <td>2024.01.01</td>
+                            <th scope="row">작성자</th>
+                            <td>홍길동 (987210)</td>
+                        </tr>
+                    </tbody>
+                </table>	
+            </div>
+            <div class="sec">
+                <div class="td-item-group">
+                    <h3 class="sec-tit">승인정보</h3>
+                </div>
+                <table class="data-table">
+                    <caption>교육이수정보</caption>
+                    <colgroup>
+                        <col width="142px">
+                        <col width="auto">
+                        <col width="142px">
+                        <col width="auto">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">승인여부</th>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">유효기간</th>
+                            <td></td>
+                            <th scope="row">유효년수</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">검토의견</th>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">검토일</th>
+                            <td></td>
+                            <th scope="row">검토자</th>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>	
+            </div>
+        </div> 
+        
     </div>
-    <!--//[S] layer -->
-
 </div>
-<!--//[S] plf-root-->
+<!--//[S] layer -->
 
 </body>
 </html>

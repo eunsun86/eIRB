@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>신규심의 서식 선택 - popup | e-IRB</title>
+    <script src="../static/js/jquery-3.6.0.min.js"></script>
+    <script src="../static/js/datepicker.min.js"></script>		
+    <script src="../static/js/datepicker.ko-KR.js"></script>		
+    <script src="../static/js/plf_pub.js"></script>
+    <link rel="stylesheet" href="../static/css/plf.css" />
+</head>
+<body>
+
+<div class="test_view">
+<!-- 퍼블 화면 확인용 -->
+<style>
+body{background-color:#444;}
+.test_view{display:flex;flex-wrap:wrap;}
+.view_section{position:relative;border:1px dotted #ddd;}
+.view_section .type_no{padding:5px 0;text-align:center;font-size:12px;font-weight:300;color:#fff;}
+.layer{display:block;position:relative;width:360px;height:100%;margin-bottom:10px;margin-left:0px;}
+.layer-content{overflow:inherit;position:relative;max-height:auto;transform: translate(0, 0);}
+</style>
+<!-- //퍼블 화면 확인용 -->
+
+<!-- 퍼블확인용 --><div class="view_section"><h3 class="type_no">IRB_0107 신규심의 서식 선택</h3>
+<!--[S] layer 신규심의 서식 선택 -->
+<div id="layer_IRB_0107" class="layer type-s">
+	<div class="layer-content">
+		<div class="layer-header">
+			<strong class="lh-title">신규심의 서식 선택</strong>
+		</div>
+		<div class="layer-body">
+            <div class="ip-rd-group portrait">
+                <label class="ip-rd-label">
+                    <input name="fd-7" class="ip-rd" type="radio" value="">
+                    <span class="check"></span> <em>신규심의</em> 
+                </label>
+                <label class="ip-rd-label">
+                    <input name="fd-7" class="ip-rd" type="radio" value="">
+                    <span class="check"></span> <em>허가초과</em> 
+                </label>
+                <label class="ip-rd-label">
+                    <input name="fd-7" class="ip-rd" type="radio" value="">
+                    <span class="check"></span> <em>기관생명</em> 
+                </label>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-lb" type="button">신청서작성</button>
+            </div>
+		</div> 
+        
+		<button type="button" class="btn-close-layer" data-dismiss="modal"><span class="blind">닫기</span></button>
+	</div>
+</div>
+<!--[S] layer 신규심의 서식 선택 -->
+<!-- 퍼블확인용 --></div>
+
+</div>
+
+</body>
+</html>

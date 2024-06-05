@@ -13,6 +13,9 @@
         language: 'ko-KR',
         format: 'yyyy-mm-dd'
       });
+      $(".folder_tree .submenu_open").on("click",function(){
+        $(this).toggleClass("on");
+    });
   });
 
   function mainBoard(){

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회의록작성 popup | e-IRB</title>
+    <script src="../static/js/jquery-3.6.0.min.js"></script>
+    <script src="../static/js/datepicker.min.js"></script>		
+    <script src="../static/js/datepicker.ko-KR.js"></script>		
+    <script src="../static/js/plf_pub.js"></script>
+    <link rel="stylesheet" href="../static/css/plf.css" />
+</head>
+<body>
+
+<!--[S] layer -->
+<div class="layer type-l newpop">
+    <div class="layer-content">
+        <div class="layer-header">
+            <strong class="lh-title">회의록 작성</strong>
+        </div>
+        <div class="layer-body">
+            <div class="sec">
+                <div class="td-item-group">
+                    <h3 class="sec-tit">초기심의</h3>
+                </div>	
+                <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div><!--[D]그리드 영역-->
+            </div>
+
+            <div class="sec">
+                <table class="data-table">
+                    <caption>회의록작성</caption>
+                    <colgroup>
+                        <col width="140px">
+                        <col width="160px">
+                        <col width="auto">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row" colspan="2">연구비</th>
+                            <td>
+                                10,000,000 원
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" colspan="2">보고내용</th>
+                            <td>
+                                대상자 수 전체 100명, 본 기관 10명
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="rowgroup" rowspan="3">제출내용<button class="btn btn-line size-h28 mt8" type="button">전체파일받기</button></th>
+                            <th scope="row">연구계획서 (국문)</th>
+                            <td>
+                                <div class="filelist-wrap">
+                                    <div class="file-list">
+                                        <span class="btn-file">
+                                            <a href="#" ass="btn btn-txt" role="button">교육이수증.pdf</a>
+                                            <button class="btn-ic btn-del" type="button"><em class="blind">닫기</em></button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">연구계획서 (영문)</th>
+                            <td>
+                                <div class="filelist-wrap">
+                                    <div class="file-list">
+                                        <span class="btn-file">
+                                            <a href="#" ass="btn btn-txt" role="button">교육이수증.pdf</a>
+                                            <button class="btn-ic btn-del" type="button"><em class="blind">닫기</em></button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">기타</th>
+                            <td>
+                                <div class="filelist-wrap">
+                                    <div class="file-list">
+                                        <span class="btn-file">
+                                            <a href="#" ass="btn btn-txt" role="button">교육이수증.pdf</a>
+                                            <button class="btn-ic btn-del" type="button"><em class="blind">닫기</em></button>
+                                        </span>
+                                        <span class="btn-file">
+                                            <a href="#" ass="btn btn-txt" role="button">교육이수증.pdf</a>
+                                            <button class="btn-ic btn-del" type="button"><em class="blind">닫기</em></button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" colspan="2">위원 COI</th>
+                            <td>
+                                김위원
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" colspan="2">배정위원</th>
+                            <td>
+                                이사전, 홍길동
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" colspan="2">심의의견<button class="btn btn-line size-h28 mt8 d-block" type="button">자주쓰는문구</button></th>
+                            <td>
+                                <div class="editor-area">editor 영역</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" colspan="2">논의내용</th>
+                            <td>
+                                <div class="editor-area">editor 영역</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="rowgroup" rowspan="3">심사결과</th>
+                            <th scope="row">심사결과</th>
+                            <td>
+                                <div class="ip-rd-group">
+                                    <label class="ip-rd-label">
+                                        <input name="fd-1" class="ip-rd" type="radio" value="" checked="">
+                                        <span class="check"></span> <em>승인</em> 
+                                    </label>
+                                    <label class="ip-rd-label">
+                                        <input name="fd-1" class="ip-rd" type="radio" value="">
+                                        <span class="check"></span> <em>시정승인</em> 
+                                    </label>
+                                    <label class="ip-rd-label">
+                                        <input name="fd-1" class="ip-rd" type="radio" value="" checked="">
+                                        <span class="check"></span> <em>보완</em> 
+                                    </label>
+                                    <label class="ip-rd-label">
+                                        <input name="fd-1" class="ip-rd" type="radio" value="">
+                                        <span class="check"></span> <em>반려</em> 
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">비고</th>
+                            <td>
+                                <input name="" id="" class="ip-txt w100p" type="text" value="" placeholder="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">지속심사 빈도</th>
+                            <td>
+                                <div class="ip-rd-group">
+                                    <label class="ip-rd-label">
+                                        <input name="fd-2" class="ip-rd" type="radio" value="" checked="">
+                                        <span class="check"></span> <em>1년</em> 
+                                    </label>
+                                    <label class="ip-rd-label">
+                                        <input name="fd-2" class="ip-rd" type="radio" value="">
+                                        <span class="check"></span> <em>6개월</em> 
+                                    </label>
+                                    <label class="ip-rd-label">
+                                        <input name="fd-2" class="ip-rd" type="radio" value="" checked="">
+                                        <span class="check"></span> <em>3개월</em> 
+                                    </label>
+                                    <label class="ip-rd-label">
+                                        <input name="fd-2" class="ip-rd" type="radio" value="">
+                                        <span class="check"></span> <em>기타</em> 
+                                    </label>
+                                    <input name="" id="" class="ip-txt w175 ml8" type="text" value="" placeholder="">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div> 
+        <div class="layer-footer">
+            <div class="btn-group">
+                <button class="btn" type="button">임시저장</button>
+                <button class="btn btn-lb" type="button">작성완료</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--//[S] layer -->
+
+</body>
+</html>

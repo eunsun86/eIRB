@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>신규심의 서식 선택 - popup | e-IRB</title>
+    <title>심사위원 배정 popup | e-IRB</title>
     <script src="../static/js/jquery-3.6.0.min.js"></script>
     <script src="../static/js/datepicker.min.js"></script>		
     <script src="../static/js/datepicker.ko-KR.js"></script>		
@@ -13,52 +13,77 @@
 </head>
 <body>
 
-<div class="test_view">
-<!-- 퍼블 화면 확인용 -->
-<style>
-body{background-color:#444;}
-.test_view{display:flex;flex-wrap:wrap;}
-.view_section{position:relative;border:1px dotted #ddd;}
-.view_section .type_no{padding:5px 0;text-align:center;font-size:12px;font-weight:300;color:#fff;}
-.layer{display:block;position:relative;width:360px;height:100%;margin-bottom:10px;margin-left:0px;}
-.layer-content{overflow:inherit;position:relative;max-height:auto;transform: translate(0, 0);}
-</style>
-<!-- //퍼블 화면 확인용 -->
-
-<!-- 퍼블확인용 --><div class="view_section"><h3 class="type_no">IRB_0107 신규심의 서식 선택</h3>
-<!--[S] layer 신규심의 서식 선택 -->
-<div id="layer_IRB_0107" class="layer type-s">
-	<div class="layer-content">
-		<div class="layer-header">
-			<strong class="lh-title">신규심의 서식 선택</strong>
-		</div>
-		<div class="layer-body">
-            <div class="ip-rd-group portrait">
-                <label class="ip-rd-label">
-                    <input name="fd-7" class="ip-rd" type="radio" value="">
-                    <span class="check"></span> <em>신규심의</em> 
-                </label>
-                <label class="ip-rd-label">
-                    <input name="fd-7" class="ip-rd" type="radio" value="">
-                    <span class="check"></span> <em>허가초과</em> 
-                </label>
-                <label class="ip-rd-label">
-                    <input name="fd-7" class="ip-rd" type="radio" value="">
-                    <span class="check"></span> <em>기관생명</em> 
-                </label>
+<!--[S] layer -->
+<div id="layer1" class="layer type-l newpop">
+    <div class="layer-content">
+        <div class="layer-header">
+            <strong class="lh-title">심사위원 배정</strong>
+        </div>
+        <div class="layer-body">
+            
+            <div class="sec">
+                <table class="data-table">
+                    <caption>교육이수정보</caption>
+                    <colgroup>
+                        <col width="100px">
+                        <col width="30%">
+                        <col width="100px">
+                        <col width="auto">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">접수번호</th>
+                            <td>
+                                
+                            </td>
+                            <th scope="row">IRB NO.</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">과제명</th>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">심의유형</th>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">심의방법</th>
+                            <td></td>
+                            <th scope="row">패널</th>
+                            <td>
+                                <div class="td-item-group gap8">
+                                    <div class="sel w150">
+                                        <select name="" id="" class="">
+                                            <option value="0">제1위원회</option>
+                                        </select>
+                                    </div>
+                                    <div class="sel">
+                                        <select name="" id="" class="">
+                                            <option value="0">480회차/정규/ 2024-01-05 18:00-20:00</option>
+                                        </select>
+                                    </div>
+                                    <button class="btn btn-line size-h32" type="button">변경</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>	
             </div>
+            <div class="sec">
+                <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div>
+            </div>
+        </div> 
+        <div class="layer-footer">
             <div class="btn-group">
-                <button class="btn btn-lb" type="button">신청서작성</button>
+                <button class="btn" type="button">임시저장</button>
+                <button class="btn btn-lb" type="button">배정완료</button>
             </div>
-		</div> 
+        </div>
         
-		<button type="button" class="btn-close-layer" data-dismiss="modal"><span class="blind">닫기</span></button>
-	</div>
+    </div>
 </div>
-<!--[S] layer 신규심의 서식 선택 -->
-<!-- 퍼블확인용 --></div>
-
-</div>
+<!--//[S] layer -->
 
 </body>
 </html>

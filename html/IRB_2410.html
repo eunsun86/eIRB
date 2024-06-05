@@ -145,7 +145,7 @@
                                                 <table class="data-table type-line">
                                                     <caption>SAE 본원 정보</caption>
                                                     <colgroup>
-                                                        <col width="250px">
+                                                        <col width="190px">
                                                         <col width="auto">
                                                         <col width="150px">
                                                         <col width="auto">
@@ -244,6 +244,28 @@
                                                             </td>
                                                         </tr>
                                                         <tr>
+                                                            <th scope="col">보고시기</th>
+                                                            <td colspan="5">
+                                                                <div class="ip-ch-group">
+                                                                    <label for="ch-2-1" class="ip-ch-label">
+                                                                        <input name="ch-2" class="ip-ch" id="ch-2-1" type="checkbox" value="">
+                                                                        <span class="check"></span> <em>초기</em>
+                                                                    </label>
+                                                                    <label for="ch-2-2" class="ip-ch-label mr8">
+                                                                        <input name="ch-2" class="ip-ch" id="ch-2-2" type="checkbox" value="">
+                                                                        <span class="check"></span> <em>추적</em>
+                                                                    </label>
+                                                                    &#40;
+                                                                    <input name="" id="" class="ip-txt w60" type="text" value=""> 차
+                                                                    &#41;
+                                                                    <label for="ch-2-3" class="ip-ch-label ml16">
+                                                                        <input name="ch-2" class="ip-ch" id="ch-2-3" type="checkbox" value="">
+                                                                        <span class="check"></span> <em>최종</em>
+                                                                    </label>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
                                                             <th scope="row">중대성 여부</th>
                                                             <td colspan="5">
                                                                 <div class="ip-ch-group">
@@ -255,12 +277,12 @@
                                                                         <input name="ch-2" class="ip-ch" id="ch-2-2" type="checkbox" value="">
                                                                         <span class="check"></span> <em>생명에의 위험</em>
                                                                     </label>
-                                                                    <label for="ch-2-3" class="ip-ch-label">
+                                                                    <label for="ch-2-3" class="ip-ch-label mr8">
                                                                         <input name="ch-2" class="ip-ch" id="ch-2-3" type="checkbox" value="">
                                                                         <span class="check"></span> <em>입원</em>
                                                                     </label>
-                                                                    &#40;
-                                                                    <div class="ip-rd-group">
+                                                                    <div class="ip-rd-group mr16">
+                                                                        &#40;
                                                                         <label class="ip-rd-label">
                                                                             <input name="fd-2" class="ip-rd" type="radio" value="">
                                                                             <span class="check"></span> <em>처음</em> 
@@ -269,8 +291,8 @@
                                                                             <input name="fd-2" class="ip-rd" type="radio" value="">
                                                                             <span class="check"></span> <em>입원연장</em> 
                                                                         </label>
+                                                                        &#41;
                                                                     </div>
-                                                                    &#41;
 
                                                                     <label for="ch-2-4" class="ip-ch-label">
                                                                         <input name="ch-2" class="ip-ch" id="ch-2-4" type="checkbox" value="">
@@ -380,70 +402,72 @@
                                                                 </div>
                                                             </td>
                                                         </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table class="data-table type-research noline">
+                                                    <caption>SAE 본원 정보</caption>
+                                                    <colgroup>
+                                                        <col width="auto">
+                                                        <col width="120px">
+                                                        <col width="350px">
+                                                    </colgroup>
+                                                    <tbody>
                                                         <tr>
+                                                            <td>연구대상자가 탈락하였습니까?</td>
                                                             <td>
-                                                                <span class="fw-500">연구대상자가 탈락하였습니까? </span>
+                                                                <label class="ip-rd-label d-block">
+                                                                    <input name="fd-yesno3" class="ip-rd" type="radio" value="">
+                                                                    <span class="check"></span> 아니오
+                                                                </label>
                                                             </td>
-                                                            <td colspan="5">
-                                                                <div class="td-item-group left gap16">
-                                                                    <label class="ip-rd-label">
-                                                                        <input name="fd-6" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>아니오</em> 
-                                                                    </label>
-                                                                    <label class="ip-rd-label">
-                                                                        <input name="fd-6" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>예</em> 
-                                                                    </label>
-                                                                </div>
+                                                            <td class="ta-left">
+                                                                <label class="ip-rd-label d-block">
+                                                                    <input name="fd-yesno3" class="ip-rd" type="radio" value="">
+                                                                    <span class="check"></span> 예
+                                                                </label>
                                                             </td>
                                                         </tr>
                                                         <tr>
+                                                            <td>연구계획서 변경이 필요한가?</td>
                                                             <td>
-                                                                <span class="fw-500">연구계획서 변경이 필요한가?</span>
+                                                                <label class="ip-rd-label d-block">
+                                                                    <input name="fd-yesno4" class="ip-rd" type="radio" value="">
+                                                                    <span class="check"></span> 아니오
+                                                                </label>
                                                             </td>
-                                                            <td colspan="5">
-                                                                <div class="ip-rd-group">
-                                                                    <label class="ip-rd-label">
-                                                                        <input name="fd-7" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>아니오</em> 
-                                                                    </label>
-                                                                    <label class="ip-rd-label">
-                                                                        <input name="fd-7" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>예 (연구계획 변경 신청서와 함께 제출)</em> 
-                                                                    </label>
-                                                                </div>
+                                                            <td class="ta-left">
+                                                                <label class="ip-rd-label d-block">
+                                                                    <input name="fd-yesno4" class="ip-rd" type="radio" value="">
+                                                                    <span class="check"></span> 예 (연구계획 변경 신청서와 함께 제출) 
+                                                                </label>
                                                             </td>
                                                         </tr>
                                                         <tr>
+                                                            <td>동의서 변경이 필요한가?</td>
                                                             <td>
-                                                                <span class="fw-500">동의서 변경이 필요한가?</span>
+                                                                <label class="ip-rd-label d-block">
+                                                                    <input name="fd-yesno5" class="ip-rd" type="radio" value="">
+                                                                    <span class="check"></span> 아니오
+                                                                </label>
                                                             </td>
-                                                            <td colspan="5">
-                                                                <div class="ip-rd-group">
-                                                                    <label class="ip-rd-label">
-                                                                        <input name="fd-8" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>아니오</em> 
-                                                                    </label>
-                                                                    <label class="ip-rd-label">
-                                                                        <input name="fd-8" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>예 (연구계획 변경 신청서와 함께 제출)</em> 
-                                                                    </label>
-                                                                </div>
+                                                            <td class="ta-left">
+                                                                <label class="ip-rd-label d-block">
+                                                                    <input name="fd-yesno5" class="ip-rd" type="radio" value="">
+                                                                    <span class="check"></span> 예 (연구계획 변경 신청서와 함께 제출) 
+                                                                </label>
                                                             </td>
                                                         </tr>
                                                     </tbody>
-                                                    <tfoot>
-                                                        <tr>
-                                                            <td colspan="6">
-                                                                * 원내 중대한 이상반응(SAE/SUSAR)의 보고 기한은 다음과 같습니다.<br>
-                                                                - 사망/생명위협 : 연구자 인지일로부터 근무일 기준 7일 이내 보고/추적보고는 최초 보고일로부터 15일 이내 보고<br>
-                                                                - 그 외 : 연구자 인지일로부터 근무일 기준 15일 이내 보고<br><br>
-                                                                
-                                                                * 원내 중대한 이상반응 보고 시에는 해당 약물이상반응에 대한 상세한 정보를 포함한 'SAE report' 를 별첨으로 제출하시기 바랍니다.
-                                                            </td>
-                                                        </tr>
-                                                    </tfoot>
                                                 </table>
+                                                <ul class="list-ul">
+                                                    <li>* 원내 중대한 이상반응(SAE/SUSAR)의 보고 기한은 다음과 같습니다.
+                                                        <ul class="type-bar">
+                                                            <li>사망/생명위협 : 연구자 인지일로부터 근무일 기준 7일 이내 보고/추적보고는 최초 보고일로부터 15일 이내 보고</li>
+                                                            <li>그 외 : 연구자 인지일로부터 근무일 기준 15일 이내 보고</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>* 원내 중대한 이상반응 보고 시에는 해당 약물이상반응에 대한 상세한 정보를 포함한 'SAE report' 를 별첨으로 제출하시기 바랍니다.</li>
+                                                </ul>
                                             </div>
                                         
                                             <div class="sec-btm">

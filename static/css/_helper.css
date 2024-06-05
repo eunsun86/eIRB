@@ -118,8 +118,10 @@
 .mt0 {margin-top: 0px !important;}
 .mt1 {margin-top: 1px !important;}
 .mt8 {margin-top: 8px !important;}
+.mt12 {margin-top: 12px !important;}
 .mt31 {margin-top: 31px !important;}
 
+.mr8 {margin-right: 8px !important;}
 .mr10 {margin-right: 10px !important;}
 .mr12 {margin-right: 12px !important;}
 .mr16 {margin-right: 16px !important;}
@@ -137,3 +139,5 @@
 .tlf {table-layout:  fixed;}
 
 .ellipsis{display: inline-block;width: 100%; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
+
+.d-block {display: block !important;}

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>plf</title>
+<!-- ibsheet css -->
+<link rel="stylesheet" href="https://demo.ibsheet.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/css/default/main.css"/>
+<!--  ibsheet 필수 js -->
+<script src="https://demo.ibsheet.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/ibleaders.js"></script>
+<script src="https://demo.ibsheet.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/ibsheet.js"></script>
+<script src="https://demo.ibsheet.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/locale/ko.js"></script>
+
+<!--  ibsheet 선택/추가 js -->
+<script src="https://demo.ibsheet.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/plugins/ibsheet-common.js"></script>
+<script src="https://demo.ibsheet.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/plugins/ibsheet-dialog.js"></script>
+<script src="https://demo.ibsheet.com/ibsheet/v8/samples/customer-sample/assets/ibsheet/plugins/ibsheet-excel.js"></script>
+
+<!--  외부 라이브러리 추가 -->
+<script src="https://demo.ibsheet.com/ibsheet/v8/samples/customer-sample/assets/vendors/fontawesome.min.js"></script>
+
+<script src="https://demo.ibsheet.com/ibsheet/v8/samples/customer-sample/assets/vendors/jquery.min.js"></script>
+
+<script src="https://www.ibsheet.com/v7/libs/pagination/jquery.twbsPagination.min.js"></script>	
+
+		<style>
+.pagination { display: inline-block; padding-left: 0; margin: 20px 0; border-radius: 4px;}.pagination>li { display: inline-block;}.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover { z-index: 2; color: #23527c; background-color: #eee; border-color: #ddd;}.pagination-sm>li>a, .pagination-sm>li>span { padding: 5px 10px; font-size: 12px; line-height: 1.5;}.pagination>li>a, .pagination>li>span { position: relative; float: left; padding: 6px 12px; margin-left: -1px; line-height: 1.42857143; color: #337ab7; text-decoration: none;background-color: #fff; border: 1px solid #ddd;} .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover { z-index: 3; color: #fff; cursor: default; background-color: #337ab7; border-color: #337ab7;}
+		</style>
+
+	</head>
+	<body>
+
+		<div class='ibsheet-wrap' id='descFunc'><div><input type='checkbox' id='chk1' onclick='ib.sampleBtn(this)'> <label class='mgr10'>페이지네비게이션 표시</label><hr><input type='checkbox' id='chk2' onclick='ib.sampleBtn(this)'> <label class='mgr10'>JQuery 네비게이션 표시</label><hr><button class='mgr10' onclick='ib.sampleBtn(this, 1)'>클라이언트페이징</button><hr><button class='mgr10' onclick='ib.sampleBtn(this, 4)'>서버페이징</button><hr><button class='mgr10' onclick='ib.sampleBtn(this, 3)'>서버스크롤페이징</button></div></div>
+
+
+<div style='height:calc(100% - 128px)'><div id='sheetDiv' style='width:100%;height:90%'></div><input type='hidden' name='pagenum' id='pagenum' value='1'><div id='pageNavi' style='width:100%;height:100px;align:center;display:none;'></div></div>
+	
+	<script>
+var ib = ib||{};
+ib = {
+//시트 초기화 구문
+'init':{
+  //공통기능 설정 부분
+  "Cfg": {
+    "SearchMode": 1,
+    "PageLength": 50,
+    "Alternate": 2,
+    "InfoRowConfig": ""
+  },
+  //틀고정 좌측 컬럼 설정
+  "LeftCols": [
+    {"Header": "No","Name": "SEQ","Width": "90"}
+  ],
+  //중앙(메인) 컬럼 설정
+  "Cols": [
+    {"Header": "확인","Type": "Bool","Name": "sCheck","Width": "60"},
+    {"Header": "회사","Type": "Text","Name": "sCompany","Width": "150"},
+    {"Header": "판매 국가","Type": "Text","Name": "sCountry"},
+    {"Header": "판매 수량","Type": "Int","Name": "sSaleQuantity"},
+    {"Header": "판매 증가량","Type": "Int","Name": "sSaleIncrease"},
+    {"Header": "가격","Type": "Int","Name": "sPrice","Format": "#,### \\원","Width": "180"},
+    {"Header": "만족도","Type": "Int","Name": "sSatisfaction","Format": "# \\%"},
+    {"Header": "코멘트","Type": "Text","Name": "sComment","Width": "300","RelWidth": 1}
+  ]
+},
+//시트 이벤트
+'event':{
+    onRenderFirstFinish:function (evtParam) {
+      console.log(evtParam.eventName + ' 발생');
+      var URL = '/samples/customer/paging.jsp';
+      var param = {};
+
+      if (location.href.indexOf('localhost') > -1) {
+        URL = '../jsp' + URL;
+      } else {
+        URL = 'https://api.ibsheet.com/ibsheet/v8' + URL;
+      }
+
+      // 시트 최초 생성시 발생 이벤트
+      if (evtParam.sheet.SearchMode > 1) { // 서버모듈 조회
+        param = {
+          url: URL,
+          param: 'data=50&total=15000&searchMode=' + evtParam.sheet.SearchMode,
+          method: 'POST',
+          callback: function (rtn) {
+            var rtnData = JSON.parse(rtn.data);
+
+            evtParam.sheet.showMessageTime('<span style=\'color:black\'>조회가 완료되었습니다.<br> 서버모듈 전체 데이터 건수 : ' + rtnData.Total + '</span>', 1000);
+          }
+        };
+
+        evtParam.sheet.doSearchPaging(param);
+      } else { // 클라이언트 조회
+        param = {
+          url: URL,
+          method: 'POST',
+          callback: function (rtn) {
+            var rtnData = JSON.parse(rtn.data);
+
+            evtParam.sheet.showMessageTime('<span style=\'color:black\'>조회가 완료되었습니다.<br> 클라이언트 전체 데이터 건수 : ' + rtnData.Total + '</span>', 1000);
+          }
+        };
+
+        evtParam.sheet.doSearch(param);
+      }
+    },
+    onBeforeDataLoad:function (evtParam) {
+      // 조회 후 로딩 전 발생 이벤트
+      var d = evtParam.data;
+      var _data;
+
+      try {
+        // 서버에서 가져온 데이터를 "데이터" 텝에 넣어준다.
+        if (d.length > 20) { // 최대 20개 행만 텝에 넣어 주자(많아지면 화면이 엄청 느려질 수 있음)
+          _data = JSON.stringify(d.slice(0, 20), null, 2);
+          _data += _data.substring(0, _data.length - 1) + '...\n]';
+        } else {
+          _data = JSON.stringify(d, null, 2);
+        }
+        myTabs.contents.items(1).setContents('<pre><code class=\'language-json\'>' + _data + '</code></pre>');
+        hljs.initHighlighting.called = false;
+        hljs.initHighlighting();
+      } catch (e) {
+        console.log('IBTab 이 존재하지 않습니다.');
+      }
+    },
+    onAfterGotoPage:function (evtParam) {
+      var sheet = evtParam.sheet;
+      var page = sheet.getPageIndex(sheet.getFocusedPage()) + 1;
+
+      if (document.getElementById('chk1').checked && currentPage != -1 && currentPage != page) {
+        makePageIndex(page);
+      }
+    }
+},
+//시트객체 생성
+'create':function () {
+    var options = this.init;
+
+    options.Events = this.event;
+    IBSheet.create({
+      id: 'sheet', // 생성할 시트의 id
+      el: 'sheetDiv', // 시트를 생성할 Dom 객체 및 id
+      options: options, // 생성될 시트의 속성
+      data: this.data // 생성될 시트의 정적데이터
+    });
+    // global 변수 선언
+    window.currentPage = -1;
+  },
+//화면 기능
+'sampleBtn':function () {
+    if (arguments[0].type === 'checkbox') { // 페이지 네비게이션 표시 선택
+      if (ib.init.Cfg.SearchMode == 1 || ib.init.Cfg.SearchMode == 4) { // 페이징 조회에서만 페이지네비게이션 표시
+        if (arguments[0].checked) { // 페이징 조회에서만 페이지네비게이션 표시
+          sheet.InfoRow.Visible = 0; // 페이지네비게이션 표시 안함
+          sheet.rerender();
+
+          if (arguments[0].id == 'chk1') {
+            document.getElementById('chk2').checked = 0;
+            makePageIndex(sheet.getPageIndex(sheet.getFocusedPage()) + 1); // 페이지 초기화
+          } else {
+            jqueryPagination(sheet.getPageIndex(sheet.getFocusedPage()) + 1);
+            document.getElementById('chk1').checked = 0;
+          }
+          document.getElementById('pageNavi').style.display = 'block';
+        } else {
+          sheet.InfoRow.Visible = 1; // 페이지네비게이션 표시
+          sheet.rerender();
+
+          document.getElementById('pageNavi').style.display = 'none';
+        }
+      }
+    } else {
+      document.getElementById('pageNavi').style.display = 'none';
+      document.getElementById('chk1').checked = 0;
+      document.getElementById('chk2').checked = 0;
+      sheet.dispose(); //  시트 삭제
+      var sMode = arguments[1]; // 1:클라이언트페이징 , 2:서버페이징 , 3:서버스크롤페이징
+
+      ib.init.Cfg = {
+        SearchMode: sMode,
+        Alternate: 2,
+        InfoRowConfig: ''
+      };
+      if (sMode === 1) {
+        ib.init.Cfg.PageLength = 50;
+      } else if (sMode === 4) {
+        ib.init.Cfg.SortCurrentPage = 1;
+        ib.init.Cfg.PageLength = 50;
+      }
+      ib.create(); // 시트 생성
+    }
+  },
+//조회 데이터
+'data':[]
+}
+ib.create();
+var makePageIndex = function (tp) {
+      try {
+        if (tp == null) {
+          currentPage = -1;
+
+          return;
+        }
+
+        if (document.getElementById('pageNavi').firstChild) {
+          document.getElementById('pageNavi').removeChild(document.getElementById('pageNavi').firstChild);
+        }
+
+        currentPage = tp;
+        // 디비전체 데이터 건수를 알아야 한다. 조회 데이터구성 할때 etc 데이터에 TotalRow로 전체 데이터 건수를 가져 온다.
+        var sr = sheet.getTotalRowCount(); // 전체 조회 건수
+        var page = sheet.PageLength; // 페이지당 레코드 수
+        var thispage = tp; // 현재 페이지
+        var pagecnt = 5; // 한번에 표시할 페이지 개수
+        var lastpage = Math.ceil(sr / page); // 마지막 페이지 인덱스
+
+        var li = null;
+        var tt = null;
+        var a = null;
+        var ul = document.createElement('DIV');
+
+        ul.style.width = sheet.MainTable.clientWidth + 'px';
+        ul.style.textAlign = 'center';
+
+        var k = 1;
+
+        if (thispage != 1) {
+          li = document.createElement('span');
+          li.style.padding = '1px 4px 1px 4px';
+          a = document.createElement('a');
+          a.style.cursor = 'pointer';
+          tt = document.createTextNode('<<');
+          addEventHandler(li, 'click', pageMove, 1);
+          a.appendChild(tt);
+          li.appendChild(a);
+          ul.appendChild(li);
+          li = document.createElement('span');
+          li.style.padding = '1px 4px 1px 4px';
+
+          a = document.createElement('a');
+          a.style.cursor = 'pointer';
+          addEventHandler(li, 'click', pageMove, tp - 1);
+          tt = document.createTextNode('<');
+          a.appendChild(tt);
+          li.appendChild(a);
+          ul.appendChild(li);
+        }
+
+        var sr = (Math.ceil(tp / pagecnt) * pagecnt) - (pagecnt - 1);
+
+        for (var i = sr; i < (sr + pagecnt); i++) {
+          if (i <= lastpage) {
+            li = document.createElement('span');
+            li.style.padding = '1px 4px 1px 4px';
+            a = document.createElement('a');
+
+            a.style.cursor = 'pointer';
+            tt = document.createTextNode(i);
+            addEventHandler(li, 'click', pageMove, i);
+            if (i == tp) {
+              li.style.fontWeight = 'bold';
+              li.style.textDecoration = 'underline';
+            }
+            a.appendChild(tt);
+            li.appendChild(a);
+            ul.appendChild(li);
+          }
+        }
+
+        if (thispage < lastpage) {
+          a = document.createElement('a');
+          a.style.cursor = 'pointer';
+          li = document.createElement('span');
+          li.style.padding = '1px 4px 1px 4px';
+          tt = document.createTextNode('>');
+          addEventHandler(li, 'click', pageMove, tp + 1);
+          a.appendChild(tt);
+          li.appendChild(a);
+          ul.appendChild(li);
+          li = document.createElement('span');
+          li.style.padding = '1px 4px 1px 4px';
+          tt = document.createTextNode('>>');
+          a = document.createElement('a');
+          a.style.cursor = 'pointer';
+          addEventHandler(li, 'click', pageMove, lastpage);
+          a.appendChild(tt);
+          li.appendChild(a);
+          ul.appendChild(li);
+        }
+
+        ul.className = 'pageindex';
+
+        document.getElementById('pageNavi').appendChild(ul);
+      } catch (ex) {
+        alert(ex.message);
+      }
+    }
+
+var jqueryPagination = function (move) {
+      $('#pageNavi').html('');
+      $('#pageNavi').removeData('twbs-pagination');
+
+      // set pagination
+      $('#pageNavi').twbsPagination({
+        totalPages: Math.ceil(sheet.getTotalRowCount() / sheet.PageLength) || 1,
+        visiblePages: 5,
+        startPage: move || 1,
+        initiateStartPageClick: false,
+        first: '«',
+        prev: '‹',
+        next: '›',
+        last: '»',
+        paginationClass: 'pagination pagination-sm',
+        onPageClick: function (event, page) {
+          sheet.goToPageByIndex(page);
+        }
+      });
+
+      $('#pageNavi > ul').css('width', sheet.MainTable.clientWidth);
+      $('#pageNavi > ul').css('text-align', 'center');
+    }
+
+var pageMove = function (cPage) {
+      sheet.goToPageByIndex(cPage);
+    }
+
+var addEventHandler = function (obj, evtName, func, param) {
+      if (obj.addEventListener) { // all browsers except IE before version 9
+        obj.addEventListener(evtName, function () { func(param); }, false);
+      } else if (obj.attachEvent) { // IE before version 9
+        obj.attachEvent('on' + evtName, function () { func(param); });
+      }
+    }
+
+</script>
+
+	</body>
+</html>

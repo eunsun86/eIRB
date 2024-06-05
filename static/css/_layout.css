@@ -68,7 +68,7 @@
 
 .plf-root .plf-group-aside-con .plf-con .plf-main { /* min-height: 736px; *//* min-height: calc(100vh - 145px); */position: relative; } 
 .plf-root .plf-group-aside-con .plf-con .plf-main .inner { background-color: var(--color4); padding: 10px 0 30px; } 
-.plf-root .plf-group-aside-con .plf-con .plf-main .inner-con { width: 1330px; margin:0 auto; } 
+.plf-root .plf-group-aside-con .plf-con .plf-main .inner-con { width: 1330px; margin:0 auto;} 
 .plf-root .plf-group-aside-con .plf-con .plf-main .inner-board { width: 1330px; margin:0 auto; } 
 
 .plf-root .plf-group-aside-con .plf-con .plf-sub { /* min-height: 736px; */min-height: calc(100vh - 181px); min-width: 1180px; padding: 40px 32px 0 0; background-color: var(--color4); position: relative; } 

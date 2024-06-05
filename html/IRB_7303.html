@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>평가서 조회 popup | e-IRB</title>
+    <script src="../static/js/jquery-3.6.0.min.js"></script>
+    <script src="../static/js/datepicker.min.js"></script>		
+    <script src="../static/js/datepicker.ko-KR.js"></script>		
+    <script src="../static/js/plf_pub.js"></script>
+    <link rel="stylesheet" href="../static/css/plf.css" />
+</head>
+<body>
+
+<!--[S] layer -->
+<div id="layer1" class="layer type-l newpop">
+    <div class="layer-content">
+        <div class="layer-header">
+            <strong class="lh-title">평가서 조회</strong>
+        </div>
+        <div class="layer-body">
+            
+            <div class="sec">
+                <table class="data-table">
+                    <caption>평가서 조회</caption>
+                    <colgroup>
+                        <col width="150px">
+                        <col width="auto">
+                        <col width="150px">
+                        <col width="auto">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">심사자</th>
+                            <td>위원회  / 홍길동</td>
+                            <th scope="row">평가완료일</th>
+                            <td>2024.01.10</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">심사평가표</th>
+                            <td colspan="3"><button type="button" class="btn btn-txt" title="팝업">사전심의 심사평가표</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">위험수준</th>
+                            <td>중증도 위험 Moderate risk</td>
+                            <th scope="row">지속심의주기</th>
+                            <td>1년</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">심의의견</th>
+                            <td colspan="3">심의의견입니다.</td>
+                        </tr>
+                    </tbody>
+                </table>	
+            </div>
+        </div> 
+        
+    </div>
+</div>
+<!--//[S] layer -->
+
+</body>
+</html>

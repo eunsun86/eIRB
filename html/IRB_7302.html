@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>연구계획서 초기심의 위원 점검표 popup | e-IRB</title>
+    <script src="../static/js/jquery-3.6.0.min.js"></script>
+    <script src="../static/js/datepicker.min.js"></script>		
+    <script src="../static/js/datepicker.ko-KR.js"></script>		
+    <script src="../static/js/plf_pub.js"></script>
+    <link rel="stylesheet" href="../static/css/plf.css" />
+</head>
+<body>
+
+<!--[S] layer -->
+<div id="layer1" class="layer type-l newpop">
+    <div class="layer-content">
+        <div class="layer-header">
+            <strong class="lh-title">연구계획서 초기심의 위원 점검표</strong>
+        </div>
+        <div class="layer-body">
+            <div class="sec">
+                <div class="td-item-group">
+                    <h3 class="sec-tit">Part A: 연구계획서의 배경 정보</h3>
+                </div>
+                <table class="data-table type-research">
+                    <caption>테이블제목</caption>
+                    <colgroup>
+                        <col width="auto">
+                        <col width="90px">
+                        <col width="100px">
+                        <col width="100px">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">
+                                1. 제출된 연구에 대해서 연구자가 충분한 배경정보를 제공했는지 확인해 주세요.<br>
+                                <span class="fw-400">(아래의 요소들이 충분히 고려되었는지를 검토해 주세요.)</span>
+                            </th>
+                            <th scope="col">예</th>
+                            <th scope="col">보완필요</th>
+                            <th scope="col">해당없음</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>a. 연구목적이 명확히 기술되어 있다.</td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno1" class="ip-rd" type="radio" value="" title="예">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno1" class="ip-rd" type="radio" value="" title="보완필요">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno1" class="ip-rd" type="radio" value="" title="해당없음">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>b. 연구의 타당성 및 연구의 안전성에 대해 선행 연구에서 충분히 검토되어 있으며, 관련 내용이 명확히 기술되어 있다.</td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno2" class="ip-rd" type="radio" value="" title="예">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno2" class="ip-rd" type="radio" value="" title="보완필요">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno2" class="ip-rd" type="radio" value="" title="해당없음">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>c. 임상시험용 의약품 및 의료기기에 대한 임상 및 비임상 관련정보는 실시하려는 임상시험에 적합한 것이어야 한다.</td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno3" class="ip-rd" type="radio" value="" title="예">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno3" class="ip-rd" type="radio" value="" title="보완필요">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno3" class="ip-rd" type="radio" value="" title="해당없음">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>d. 식약처 승인 대상 임상시험인 경우, 식약처 승인여부 또는 승인 신청계획이 명확히 기술되어 있다.</td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno4" class="ip-rd" type="radio" value="" title="예">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno4" class="ip-rd" type="radio" value="" title="보완필요">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno4" class="ip-rd" type="radio" value="" title="해당없음">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>e. 연구의 의뢰기관이나 연구비 지원기관에 대하여 명확히 기술되어 있다.</td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno5" class="ip-rd" type="radio" value="" title="예">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno5" class="ip-rd" type="radio" value="" title="보완필요">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno5" class="ip-rd" type="radio" value="" title="해당없음">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>f. 단일기관연구인지, 다기관 연구인지에 대하여 명확히 기술되어 있다.</td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno6" class="ip-rd" type="radio" value="" title="예">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno6" class="ip-rd" type="radio" value="" title="보완필요">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno6" class="ip-rd" type="radio" value="" title="해당없음">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <div class="td-item-group2">
+                                    <span class="w70">보완의견</span><input name="" id="" class="td-item ip-txt w100p" type="text" value="" placeholder="">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="sec">
+                <div class="td-item-group">
+                    <h3 class="sec-tit">Part B: 연구계획서 승인 기준</h3>
+                </div>
+                <table class="data-table type-research">
+                    <caption>연구계획서 승인 기준</caption>
+                    <colgroup>
+                        <col width="auto">
+                        <col width="90px">
+                        <col width="100px">
+                        <col width="100px">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">
+                                1. 연구책임자는 연구를 수행할만한 충분한 자격요건을 갖추었다.<br>
+                                <span class="fw-400">(아래의 요소들이 충분히 고려되었는지를 검토해 주세요.)</span>
+                            </th>
+                            <th scope="col">예</th>
+                            <th scope="col">보완필요</th>
+                            <th scope="col">해당없음</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>a. 연구책임자는 해당 분야의 연구를 수행하기에 적절한 전공분야와 충분한 경험을 가지고 있다.</td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno11" class="ip-rd" type="radio" value="" title="예">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno11" class="ip-rd" type="radio" value="" title="보완필요">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno11" class="ip-rd" type="radio" value="" title="해당없음">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>b. 연구책임자를 포함한 모든 공동연구자는 연구 수행에 적절한 교육을 모두 이수하였다. 약사법 관할 하의 임상시험은 약사법에 따른 교육 이수 (매년 1회), 약사법 관할 이외의 임상연구는 임상연구 윤리관련 교육 이수 (2년 1회) 체외진단의료기기법 관할 하의 임상적 성능시험은 체외진단의료기기법에 따른 교육 이수(매년 1회)</td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno12" class="ip-rd" type="radio" value="" title="예">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno12" class="ip-rd" type="radio" value="" title="보완필요">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno12" class="ip-rd" type="radio" value="" title="해당없음">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>c. 연구책임자는 연구대상자에게 적절한 안전과 보호를 제공하기 위해 필요한 자원(예, 자격을 각춘 적정 인원, 적정한 장비와 시설, 그리고 연구과정에서 필요한 의료적 혹은 정신적 자원)을 확보하고 있다.</td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno13" class="ip-rd" type="radio" value="" title="예">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno13" class="ip-rd" type="radio" value="" title="보완필요">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno13" class="ip-rd" type="radio" value="" title="해당없음">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>d. 다기관 연구의 경우, 공동연구기관 및 공동연구자의 명단을 확보하고 있다.</td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno14" class="ip-rd" type="radio" value="" title="예">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno14" class="ip-rd" type="radio" value="" title="보완필요">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                            <td>
+                                <label class="ip-rd-label">
+                                    <input name="fd-yesno14" class="ip-rd" type="radio" value="" title="해당없음">
+                                    <span class="check"></span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <div class="td-item-group2">
+                                    <span class="w70">보완의견</span><input name="" id="" class="td-item ip-txt w100p" type="text" value="" placeholder="">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!--//[S] layer -->
+
+</body>
+</html>
