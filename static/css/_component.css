@@ -164,6 +164,9 @@
 .filelist-wrap .file-list .btn-file{display: inline-flex; align-items: center;gap: 8px;background: #E0E0E0;border-radius: 4px;padding:6px 12px;}
 .filelist-wrap .btn-file a{display: inline-block;font-size: 14px;color: #666; width: 175px;line-height: 1;text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
 
+.file-volume{margin-right: 16px;}
+.file-volume em{color:#929292;margin-left: 8px;font-size: 14px;}
+
 .input-list li + li{margin-top: 4px;}
 .editor-area{padding:10px 0;}
 
@@ -266,6 +269,7 @@ ol li:before {content:'-';display:inline-block;margin-right:4px;} */
 .group-manage .control-btn .btn:first-child::before{content: '';position: absolute;left:12px;top:7px; display: block;width: 12px;height: 12px;background: url(../img/icon/ic_arrow_gray2.svg) no-repeat center;transform: rotate(180deg);}
 .group-manage .control-btn .btn:last-child{padding-right:28px;}
 .group-manage .control-btn .btn:last-child::after{content: '';position: absolute;right:12px;top:8px; display: block;width: 12px;height: 12px;background: url(../img/icon/ic_arrow_gray2.svg) no-repeat center;}
+.group-manage .btn.btn-icon-srh{background-color: #fff;}
 
 .evaluate-wrap{display: flex;margin-top: 32px;gap:20px;}
 .evaluate-wrap>div{flex:1 auto;}
@@ -294,6 +298,19 @@ ol li:before {content:'-';display:inline-block;margin-right:4px;} */
 .folder_tree .folder_tree_list li.depth1:before{display: none;}
 .folder_tree .folder_tree_list li.depth1>.submenu_open:after{display:none;}
 .folder_tree .btn-group{display: flex;justify-content: space-between;margin-top: 12px !important;}
+
+.acco-area .acco-item .acco-ctr{display: flex;width: 100%; padding: 7px 12px;background: #F7f7f7;font-size: 14px;font-weight: 500;color: #1E1E1E;border-top: 1px solid #1E1E1E;position: relative;}
+.acco-area .acco-item .acco-ctr::after{content: '';display: block;position: absolute;right:12px;top:9px; width: 12px;height: 12px;background: url(../img/icon/ic_arrow_down_black.svg) no-repeat center;}
+.acco-area .acco-item .acco-con{display: none;}
+.acco-area .acco-item .acco-con .ip-ch-label{display: block;width:100%;height:auto;min-height: 32px;padding:5px 15px 5px 40px;margin:0; font-size: 14px;font-weight: 500;color: #666;border-bottom: 1px solid #F0F0F0;box-sizing: border-box;}
+.acco-area .acco-item .acco-con .ip-ch-label.dpt1{position: relative;}
+.acco-area .acco-item .acco-con .ip-ch-label.dpt1:after{content: '';display: block;position: absolute;right:12px;top:9px; width: 12px;height: 12px;background: url(../img/icon/ic_arrow_down_gray.svg) no-repeat center;}
+.acco-area .acco-item .acco-con .ip-ch-label .check{left: 12px;}
+/* .acco-area .acco-item .acco-con .ip-ch-label.dpt1.open + .ip-ch-group{display: block;} */
+.acco-area .acco-item .acco-con .ip-ch-group .ip-ch-label{padding-left: 68px;}
+.acco-area .acco-item .acco-con .ip-ch-group .ip-ch-label .check{left: 40px;}
+.acco-area .acco-item.open .acco-ctr::after{background: url(../img/icon/ic_arrow_down_black.svg) no-repeat center;transform: rotate(180deg);}
+
 
 /* Form */
 /* Input-Text, Email, Passworld */
@@ -533,6 +550,8 @@ input, button, textarea { outline: 0; }
 .layer.file-upload .file-area .file-tbody.no-data { background: url(../img/bg_upload.png) no-repeat center; } 
 .layer.file-upload .file-area .file-tfoot { display: flex;justify-content: space-between;align-items: center;font-size: 12px;font-weight: 500;color: #666; border-top: 1px solid #F0F0F0; background: #F7F7F7; height: 24px; padding: 4px 12px; box-sizing: border-box; } 
 .layer.file-upload .btn-group{text-align: right;margin-top: 20px;}
+
+.layer .layer-body .acco-area .btn-group{text-align: right;}
 
 /* layer - 심의일정 */
 .layer.calendar{width: 1052px;}
