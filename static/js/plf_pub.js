@@ -165,7 +165,6 @@ function subCalendar() {
         $(this).parent().next().toggleClass('active');
         $(this).hide();
     });
-    // $('.sub_calendar_cont').length && $('.sub_calendar_cont .scr_list').scrollbar();
 }
 
 function popupExplain(param) {
