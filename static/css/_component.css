@@ -35,12 +35,25 @@
 .data-table td { text-align: left; font-size: 16px; padding: 4px 20px; border-bottom: 1px solid #F0F0F0; height: 32px; word-break: break-all} 
 .data-table td .tooltip{display: inline-block;position: relative;}
 .data-table td .tooltip .btn-tooltip{display: inline-block;vertical-align: middle;font-weight: 500; color:  var(--color1);text-decoration: underline;font-size: 14px;width: 140px;text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
-.data-table td .tooltip .tooltip-con{display: none;position: absolute;left:0;top: 27px;z-index: 1;width: 500px;padding:8px 20px; background-color: #fff;border:1px solid #F0F0F0;background:  #F7f7f7;border-radius: 4px;}
+.data-table td .tooltip .tooltip-con{display: none;position: absolute;left:0;top: 27px;z-index: 1;width: 500px;padding:7px 20px; background-color: #fff;border:1px solid #929292;border-radius: 4px;}
 .data-table td .tooltip .tooltip-con.active{display: block;}
-.data-table td .tooltip .tooltip-con ul li{display: flex;justify-content: flex-start;align-items: flex-start; padding:6px 0 6px 34px;}
-.data-table td .tooltip .tooltip-con ul li:first-child{color:  var(--color1);}
-.data-table td .tooltip .tooltip-con ul li:first-child em{color:  var(--color1);}
-.data-table td .tooltip .tooltip-con ul li em{width: 34px;text-indent: -34px;}
+.data-table td .tooltip .tooltip-con ul li{display: flex;justify-content: flex-start;align-items: flex-start; padding:4px 0 4px 44px;position: relative;}
+.data-table td .tooltip .tooltip-con ul li:hover{color:  var(--color1);font-weight: 500;}
+.data-table td .tooltip .tooltip-con ul li:hover em{color:  var(--color1);font-weight: 500;}
+.data-table td .tooltip .tooltip-con ul li em{width: 34px;position: absolute;left:0;top:4px;}
+
+.data-table td .filedownload{display: inline-block;position: relative;}
+.data-table td .filedownload .downfile-list{display: none;position: absolute;right:0;top: 27px;z-index: 1;width: 200px; background-color: #fff;border:1px solid var(--color1);border-radius: 4px;}
+.data-table td .filedownload .downfile-list.active{display: block;}
+.data-table td .filedownload .downfile-list ul{padding:10px 12px 18px;}
+.data-table td .filedownload .downfile-list ul li{position: relative;text-align: left;}
+.data-table td .filedownload .downfile-list ul li + li{margin-top: 14px;}
+.data-table td .filedownload .downfile-list ul li a{display: block;width: 100%;color: #666;font-weight: 500;}
+.data-table td .filedownload .downfile-list ul li a span{display: inline-block;max-width: calc(100% - 40px); text-overflow: ellipsis; white-space: nowrap; overflow: hidden;vertical-align: middle;}
+.data-table.type-list tr:hover .filedownload .downfile-list ul li a{ color: #666;} 
+.data-table.type-list tr:hover .filedownload .downfile-list ul li:hover a{ color: var(--color1);} 
+.data-table.type-list tr:hover .filedownload .downfile-list ul li:hover a span{ color: var(--color1);} 
+.data-table td .filedownload .btn{width: 100%; background-color: #fff;border-radius: 0 0 4px 4px;border-top: 1px solid var(--color1);color: var(--color1);font-weight: 500;}
 
 .data-table thead th { padding: 14px 18px; text-align: center; border-bottom: 1px solid #F0F0F0; background:  #F7f7f7;}
 .data-table th { background: #F7f7f7; font-weight: 500; font-size: 16px; color: #1E1E1E; height: auto; padding: 8px 18px;vertical-align: top;border-right:1px solid #fff;line-height: 1.4;} 
@@ -76,8 +89,12 @@
 .data-table.type-list tr:hover td { color: var(--color1);} 
 .data-table.type-list tr:hover td a, .data-table.type-list tr:hover td p{ color: var(--color1);} 
 .data-table.type-list th{padding:12px 0;text-align: center;border-right:none;}
-.data-table.type-list td{padding: 4px 0;text-align: center;line-height: initial;font-weight: 400;}
+.data-table.type-list td{padding: 4px 20px;text-align: center;line-height: initial;font-weight: 400;}
 .data-table.type-list tbody th{text-align: left;padding: 8px 18px;}
+
+.data-table.type-list.type-write tr:hover { background: initial;} 
+.data-table.type-list.type-write tr:hover td { color: #666;} 
+.data-table.type-list.type-write tr:hover td a, .data-table.type-list tr:hover td p{ color:#666;} 
 
 .filter-search{display: flex;justify-content: space-between;align-items: flex-end;border: 1px solid #F0F0F0;border-radius: 8px;padding: 18px 24px;}
 .filter-search .data-table{border:none;}
@@ -132,8 +149,8 @@
 
 .filelist-wrap{display: flex;justify-content: space-between;align-items: center;}
 .filelist-wrap .file-list{display: flex;flex-wrap: wrap;gap: 4px;}
-.filelist-wrap .file-list .btn-file{display: inline-flex; align-items: center;gap: 8px;background: #E0E0E0;border-radius: 4px;padding:6px 12px;}
-.filelist-wrap .btn-file a{display: inline-block;font-size: 14px;color: #666; width: 175px;line-height: 1;text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
+.filelist-wrap .file-list .btn-file{display: inline-flex; align-items: center;gap: 8px;background: #E0E0E0;border-radius: 4px;padding:3px 12px;}
+.filelist-wrap .btn-file a{display: inline-block;font-size: 14px;color: #666; max-width: 175px;line-height: 1;text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
 
 .file-volume{margin-right: 16px;}
 .file-volume em{color:#929292;margin-left: 8px;font-size: 14px;}
@@ -217,10 +234,13 @@
 
 .sec .list-ul + .dl-table{margin-top: 32px;}
 
-.group-manage-wrap{background: #F7f7f7;padding:24px 32px;}
+.group-manage-wrap{background: #F7f7f7;padding:20px;}
 .group-manage{display: flex;}
 .group-manage>div{flex:1 auto;}
-.group-manage .control-btn{display: flex;flex-direction: column;justify-content: center;align-items: center;gap:8px;min-width: 216px;}
+.group-manage .sec{background: #fff;padding:24px;border-radius: 12px;}
+.group-manage .sec table tr.on { background: var(--color3);} 
+.group-manage .sec table tr.on td { color: var(--color1);} 
+.group-manage .control-btn{display: flex;flex-direction: column;justify-content: center;align-items: center;gap:8px;min-width: 144px;}
 .group-manage .control-btn .btn{margin:0;width: 65px;padding: 0 12px; position: relative;}
 .group-manage .control-btn .btn:first-child{padding-left:28px;}
 .group-manage .control-btn .btn:first-child::before{content: '';position: absolute;left:12px;top:7px; display: block;width: 12px;height: 12px;background: url(../img/icon/ic_arrow_gray2.svg) no-repeat center;transform: rotate(180deg);}
@@ -245,9 +265,11 @@
 .folder_tree ul li .submenu_open.on:before{background: url(../img/icon/ic_folder_open.svg) no-repeat center;}
 .folder_tree ul li button{display: block;width: 100%;text-align: left;margin-bottom:10px; line-height:1; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;box-sizing: border-box;}
 .folder_tree ul li button span{display: block;}
+.folder_tree ul li.on > button{color: var(--color1);font-weight: 500;}
 .folder_tree ul li.depth1 > button{font-size: 16px;font-weight: 600;}
 .folder_tree ul li.last{padding: 0;}
 .folder_tree ul li.last button:after{left: -14px;}
+.folder_tree ul li.depth1.last{padding-left: 20px;}
 .folder_tree .table_area{float:right; width:73.79%; height:604px; box-sizing:border-box; }
 .folder_tree .btn_area{padding-top:10px;}
 .folder_tree .submenu_open+ul{display:none;}

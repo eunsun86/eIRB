@@ -10,6 +10,7 @@ $(document).ready(function(){
     subCalendar(); //심의일정
     datepickerKr();
     foldertree(); //평가표관리
+    groupmanage() //그룹관리
     hcLayer.init(); //레이어팝업
 });
 
@@ -110,6 +111,13 @@ function tooltip(){
     $(".btn-tooltip").click(function(){
         $(this).next().toggleClass('active') ;
     });
+
+    $(document).mouseup(function (e){
+        var LayerPopup = $(".tooltip");
+        if(LayerPopup.has(e.target).length === 0){
+            $(this).find('.tooltip-con').removeClass('active') ;
+        }
+    });
 }
 
 function layerpopToast() {
@@ -181,7 +189,22 @@ function datepickerKr() {
 
 function foldertree() {
     $(".folder_tree .submenu_open").on("click", function () {
-        $(this).toggleClass("on");
+        
+        if(!$(this).parent().hasClass('last')){
+            $(this).toggleClass("on");
+        }
+        
+    });
+    $(".folder_tree li button").on("click", function () {
+        $(".folder_tree li").removeClass("on");
+        $(this).parent().addClass("on");
+    });
+}
+
+function groupmanage() {
+    $(".group-manage .data-table tr").on("click", function () {
+        $(".group-manage .data-table tr").removeClass("on");
+        $(this).addClass("on");
     });
 }
 

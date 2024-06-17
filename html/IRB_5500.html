@@ -138,7 +138,7 @@
                                                                 <option value="2">신속</option>
                                                             </select>
                                                         </div>
-                                                        <input name="" id="" class="ip-txt w500 ml8" type="text" value="" placeholder="">
+                                                        <input name="" id="" class="ip-txt w300 ml8" type="text" value="" placeholder="">
                                                     </div>
                                                 </td>
                                             </tr>
@@ -150,7 +150,40 @@
                                 </div>
 
                                 <div class="sec">
-                                    <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div><!--[D]그리드 영역-->			
+                                    <table class="data-table type-list">
+                                        <caption>테이블제목</caption>
+                                        <colgroup>
+                                            <col width="90px">
+                                            <col width="90px">
+                                            <col width="auto">
+                                        </colgroup>
+                                        <thead>
+                                            <tr><th scope="col">예시</th>
+                                            <th scope="col">예시</th>
+                                            <th scope="col">전체파일 다운로드 예시</th>
+                                        </tr></thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <div class="filedownload">
+                                                        <button class="btn-ic btn-addfile btn-tooltip" type="button" title="첨부파일"></button>
+                                                        <div class="downfile-list active"><!-- [D] active 전체파일다운로드 활성화 -->
+                                                            <ul>
+                                                                <li><a href="#"><span>첨부파일첨부파일첨부파일첨부파일첨부파일</span>.pdf</a></li>
+                                                                <li><a href="#"><span>첨부파일</span>.xls</a></li>
+                                                                <li><a href="#"><span>첨부파일</span>.jepg</a></li>
+                                                            </ul>
+                                                            <button class="btn" type="button">전체파일 다운로드</button>
+                                                        </div>
+                                                    </div>	
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="grid-wrap"><img class="w100p h100p" src="../static/img/dummy/dummy_grid.jpg" alt=""></div><!--[D]그리드 영역-->		
+                                    
                                     <div class="sec-btm">
                                         <div class="btn-group">
                                             <button class="btn btn-lb" type="button">글쓰기</button>

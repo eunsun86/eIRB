@@ -159,3 +159,10 @@
 .comment .comment-list li em{font-size: 14px;color: #929292;}
 .comment .comment-list li i{font-size: 14px;color: #BCBCBC;margin-left: 8px;}
 .comment .comment-list li span{display: block;color: #1E1E1E;}
+
+/* 시스템화면 */
+.plf-error{display: flex;height: 100vh;justify-content: center;align-content: center;flex-wrap: wrap;flex-direction: column;align-items: center;font-size: 16px;color:#666;text-align: center;line-height: 1.4;}
+.plf-error strong{font-size: 30px;font-weight: 500;color: #1E1E1E; margin-bottom: 16px;}
+.plf-error strong::before{content: '';display: block;margin:0 auto 20px;width: 36px;height: 36px;background: url(../img/icon/ic_error.svg) no-repeat center;}
+.plf-error strong.notfile::before{background: url(../img/icon/ic_404.svg) no-repeat center;}
+.plf-error .btn{margin-top: 32px;}
