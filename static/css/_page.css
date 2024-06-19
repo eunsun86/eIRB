@@ -90,26 +90,26 @@
 .work-status .srl-table .scr_cont{height: 225px;overflow: hidden;}
 .work-status .srl-table .scr_cont .scr_list{height:100%;}
 
-.calendar{border:1px solid #F0F0F0;border-radius: 8px;background: #fff;width: 253px;padding:12px 12px 11px;box-sizing: border-box;overflow: hidden;}
-.calendar .sub_calendar_top_area{margin-bottom: 10px;}
-.calendar .sub_calendar_top_area strong{margin:0 10px;font-size: 16px;line-height: 16px;}
-.calendar .sub_calendar_top_area button{width: 16px;height: 16px;border-radius: 0;}
-.calendar .sub_calendar_top_area button.btn_prev{background: url(../img/icon/ic_pagi.svg) no-repeat center/4px auto;transform: rotate(0deg);}
-.calendar .sub_calendar_top_area button.btn_next{background: url(../img/icon/ic_pagi.svg) no-repeat center/4px auto;transform: rotate(-180deg);}
+.calendar-wrap{border:1px solid #F0F0F0;border-radius: 8px;background: #fff;width: 253px;padding:12px 12px 11px;box-sizing: border-box;overflow: hidden;}
+.calendar-wrap .sub_calendar_top_area{margin-bottom: 10px;}
+.calendar-wrap .sub_calendar_top_area strong{margin:0 10px;font-size: 16px;line-height: 16px;}
+.calendar-wrap .sub_calendar_top_area button{width: 16px;height: 16px;border-radius: 0;}
+.calendar-wrap .sub_calendar_top_area button.btn_prev{background: url(../img/icon/ic_pagi.svg) no-repeat center/4px auto;transform: rotate(0deg);}
+.calendar-wrap .sub_calendar_top_area button.btn_next{background: url(../img/icon/ic_pagi.svg) no-repeat center/4px auto;transform: rotate(-180deg);}
 
-.calendar .sub_calendar table{width: 100%; border:1px solid #F0F0F0;cursor: pointer;}
-.calendar .sub_calendar thead th{padding:0;height: 32px; text-align:center;font-size:14px; color:#1E1E1E; font-weight:600;background: #F4F6F6;}
-.calendar .sub_calendar thead th:first-child {color: #EA3333;}
-.calendar .sub_calendar tbody td{font-size: 0;text-align:center;height: 32px;vertical-align: top;}
-.calendar .sub_calendar tbody td .day{display: block; font-size: 14px;font-weight: 500; color: #666;padding:4px 0 4px;}
-.calendar .sub_calendar tbody td:first-child .day{color: #EA3333;}
-.calendar .sub_calendar tbody td i{display: inline-block;width: 6px;height: 6px;border-radius: 100%;margin:0 1px;}
-.calendar .sub_calendar tbody td .reqular{background-color: #0C77FA;}
-.calendar .sub_calendar tbody td .fast{background-color: #EA3333;}
-.calendar .sub_calendar .cal-dot{margin-top: 8px;padding-left: 3px;}
-.calendar .sub_calendar .cal-dot span{font-size: 13px;font-weight: 500;line-height: 18px; color: #666;margin-right: 10px;}
-.calendar .sub_calendar .cal-dot span::before{content: '';display: inline-block;width: 6px;height: 6px;border-radius: 100%;background-color: #0C77FA;vertical-align: middle;margin-right: 4px;}
-.calendar .sub_calendar .cal-dot span:last-child:before{background-color: #EA3333;}
+.calendar-wrap .sub_calendar table{width: 100%; border:1px solid #F0F0F0;cursor: pointer;}
+.calendar-wrap .sub_calendar thead th{padding:0;height: 32px; text-align:center;font-size:14px; color:#1E1E1E; font-weight:600;background: #F4F6F6;}
+.calendar-wrap .sub_calendar thead th:first-child {color: #EA3333;}
+.calendar-wrap .sub_calendar tbody td{font-size: 0;text-align:center;height: 32px;vertical-align: top;}
+.calendar-wrap .sub_calendar tbody td .day{display: block; font-size: 14px;font-weight: 500; color: #666;padding:4px 0 4px;}
+.calendar-wrap .sub_calendar tbody td:first-child .day{color: #EA3333;}
+.calendar-wrap .sub_calendar tbody td i{display: inline-block;width: 6px;height: 6px;border-radius: 100%;margin:0 1px;}
+.calendar-wrap .sub_calendar tbody td .reqular{background-color: #0C77FA;}
+.calendar-wrap .sub_calendar tbody td .fast{background-color: #EA3333;}
+.calendar-wrap .sub_calendar .cal-dot{margin-top: 8px;padding-left: 3px;}
+.calendar-wrap .sub_calendar .cal-dot span{font-size: 13px;font-weight: 500;line-height: 18px; color: #666;margin-right: 10px;}
+.calendar-wrap .sub_calendar .cal-dot span::before{content: '';display: inline-block;width: 6px;height: 6px;border-radius: 100%;background-color: #0C77FA;vertical-align: middle;margin-right: 4px;}
+.calendar-wrap .sub_calendar .cal-dot span:last-child:before{background-color: #EA3333;}
 
 .scr_list .scroll-element.scroll-x.scroll-scrollx_visible, 
 .scr_list .scroll-element.scroll-y.scroll-scrolly_visible{position:absolute;right:0;top:0;width:4px;height:100%;z-index:1;}

@@ -142,15 +142,40 @@
                                         <!-- 변동/위반/미준수 -->
                                         <div class="sec-con active"> <!--[D]active-->
                                             <div class="sec">
+                                                <div class="td-item-group right">
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-cts" type="button">추가</button>
+                                                        <button class="btn btn-cts" type="button">삭제</button>
+                                                    </div>
+                                                </div>
                                                 <table class="data-table type-line">
                                                     <caption>변동/위반/미준수 정보</caption>
                                                     <colgroup>
+                                                        <col width="39px">
                                                         <col width="190px">
                                                         <col width="auto">
                                                     </colgroup>
                                                     <tbody>
                                                         <tr>
-                                                            <th scope="row" rowspan="2">구분</th>
+                                                            <th scope="rowgroup" rowspan="8">
+                                                                <label for="ch-all" class="ip-ch-label no-txt">
+                                                                    <input name="ch-all" id="ch-all" class="ip-ch" type="checkbox" value="">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </th>
+                                                            <th scope="row" rowspan="2" class="required helptip-area">
+                                                                구분
+                                                                <div class="tooltip">
+                                                                    <button class="btn-ic btn-question btn-tooltip" type="button" title="도움말"></button>
+                                                                    <div class="tooltip-con helptip"><!-- [D] active 추가시 활성화 -->
+                                                                        <ul class="type-dot">
+                                                                            <li>연구계획 변동(deviation): 연구계획서의 내용 또는 절차로부터 벗어난 변화 또는 변경으로서 IRB의 변경 승인을 받기 전에 발생한 것으로서, 연구대상자의 권리, 안전, 복지 또는 연구의 정확도 및 신뢰도에 영향을 주지 않는 것</li>
+                                                                            <li>연구계획 위반(violation): 연구계획서의 내용 또는 절차로부터 벗어난 변화, 이탈, 변경으로서 IRB의 변경 승인을 받기 전에 발생한 것으로서,  연구대상자의 권리, 안전, 복지 또는 연구의 정확도 및 신뢰도에 영향을 주는 경우</li>
+                                                                            <li>미준수(Non-compliance): 연구 수행 및 감독 중 연구계획서, 기관의 정책, 관련 규정, IRB의 요구 및 결정사항 등을 따르지 않는 것</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </th>
                                                             <td>
                                                                 <div class="ip-rd-group">
                                                                     <label class="ip-rd-label">

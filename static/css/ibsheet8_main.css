@@ -1,7 +1,8 @@
 /* IBSheet8 CSS definition, https://www.ibsheet.com */
-@font-face{font-family:'Noto Sans KR';src:url('./../../fonts/NotoSansCJKkr-Regular.otf') format('truetype')}
-@font-face{font-family:'Noto Sans KR Bold';src:url('./../../fonts/NotoSansCJKkr-Bold.otf') format('truetype')}
-.IBMain{font-family:'Noto Sans CJK kr','Noto Sans KR','Noto Sans','Verdana','Malgun Gothic','Nanum Gothic',sans-serif;font-style:normal;font-weight:normal;font-variant:normal}
+/* @font-face{font-family:'Noto Sans KR';src:url('./../../fonts/NotoSansCJKkr-Regular.otf') format('truetype')}
+@font-face{font-family:'Noto Sans KR Bold';src:url('./../../fonts/NotoSansCJKkr-Bold.otf') format('truetype')} */
+
+.IBMain{font-family:'Pretendard','Malgun Gothic','Nanum Gothic',sans-serif;font-style:normal;font-weight:normal;font-variant:normal}
 .IBMain *{font-family:inherit;font-style:inherit;font-weight:inherit;font-variant:inherit;text-overflow:ellipsis;word-wrap:normal;word-break:normal}
 .IBMain table{margin:auto;}
 .IBMain .IBSolidRow table{width:auto;}

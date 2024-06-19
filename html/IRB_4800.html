@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>그룹관리 | e-IRB</title>
+    <link rel="stylesheet" type="text/css" href="../static/plugins/jquery.scrollbar-gh-pages/jquery.scrollbar.css">
+    <link rel="stylesheet" href="../static/css/plf.css">
     <script src="../static/js/jquery-3.6.0.min.js"></script>
     <script src="../static/js/datepicker.min.js"></script>		
-    <script src="../static/js/datepicker.ko-KR.js"></script>		
+    <script src="../static/js/datepicker.ko-KR.js"></script>	
+    <script src="../static/plugins/jquery.scrollbar-gh-pages/jquery.scrollbar.min.js"></script>	
     <script src="../static/js/plf_pub.js"></script>
-    <link rel="stylesheet" href="../static/css/plf.css" />
 </head>
 <body>
 
@@ -179,41 +181,85 @@
                                                         <button class="td-item btn btn-icon-srh" type="button">검색</button>
                                                     </div>
                                                 </div>
-                                                <table class="data-table type-list">
-                                                    <caption>전체사용자</caption>
-                                                    <colgroup>
-                                                        <col width="20%">
-                                                        <col width="20%">
-                                                        <col width="auto">
-                                                    </colgroup>
-                                                    <thead>
-                                                        <tr><th scope="col">ID</th>
-                                                        <th scope="col">성명</th>
-                                                        <th scope="col">소속</th>
-                                                    </tr></thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>ID</td>
-                                                            <td>홍길동</td>
-                                                            <td>소속</td>
-                                                        </tr>
-                                                        <tr class="on">
-                                                            <td>ID</td>
-                                                            <td>홍길동</td>
-                                                            <td>소속</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>ID</td>
-                                                            <td>홍길동</td>
-                                                            <td>소속</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>ID</td>
-                                                            <td>홍길동</td>
-                                                            <td>소속</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
+                                                <div class="srl-table-head">
+                                                    <span>ID</span>
+                                                    <span>성명</span>
+                                                    <span>소속</span>                       
+                                                </div>
+                                                <div class="scr_cont">
+                                                    <div class="scr_list">
+                                                        <table class="data-table type-list">
+                                                            <caption>전체사용자</caption>
+                                                            <colgroup>
+                                                                <col width="20%">
+                                                                <col width="20%">
+                                                                <col width="auto">
+                                                            </colgroup>
+                                                            <thead>
+                                                                <tr><th scope="col">ID</th>
+                                                                <th scope="col">성명</th>
+                                                                <th scope="col">소속</th>
+                                                            </tr></thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>ID1</td>
+                                                                    <td>홍길동</td>
+                                                                    <td>소속소속소속소속소속소속소속소속소속소속소속소속소속소속소속소속</td>
+                                                                </tr>
+                                                                <tr class="on">
+                                                                    <td>ID2</td>
+                                                                    <td>홍길동</td>
+                                                                    <td>소속</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>ID3</td>
+                                                                    <td>홍길동</td>
+                                                                    <td>소속</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>ID4</td>
+                                                                    <td>홍길동</td>
+                                                                    <td>소속</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>ID5</td>
+                                                                    <td>홍길동</td>
+                                                                    <td>소속</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>ID6</td>
+                                                                    <td>홍길동</td>
+                                                                    <td>소속</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>ID7</td>
+                                                                    <td>홍길동</td>
+                                                                    <td>소속</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>ID8</td>
+                                                                    <td>홍길동</td>
+                                                                    <td>소속</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>ID9</td>
+                                                                    <td>홍길동</td>
+                                                                    <td>소속</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>ID10</td>
+                                                                    <td>홍길동</td>
+                                                                    <td>소속</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>ID11</td>
+                                                                    <td>홍길동</td>
+                                                                    <td>소속</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="control-btn btn-group">
                                                 <button class="btn btn-line size-h28" type="button">추가</button>
@@ -229,36 +275,45 @@
                                                         <button class="td-item btn btn-icon-srh" type="button">검색</button>
                                                     </div>
                                                 </div>
-                                                <table class="data-table type-list">
-                                                    <caption>선택사용자</caption>
-                                                    <colgroup>
-                                                        <col width="20%">
-                                                        <col width="20%">
-                                                        <col width="auto">
-                                                    </colgroup>
-                                                    <thead>
-                                                        <tr><th scope="col">ID</th>
-                                                        <th scope="col">성명</th>
-                                                        <th scope="col">소속</th>
-                                                    </tr></thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>ID</td>
-                                                            <td>홍길동</td>
-                                                            <td>소속</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>ID</td>
-                                                            <td>홍길동</td>
-                                                            <td>소속</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>ID</td>
-                                                            <td>홍길동</td>
-                                                            <td>소속</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
+                                                <div class="srl-table-head">
+                                                    <span>ID</span>
+                                                    <span>성명</span>
+                                                    <span>소속</span>                       
+                                                </div>
+                                                <div class="scr_cont">
+                                                    <div class="scr_list">
+                                                        <table class="data-table type-list">
+                                                            <caption>선택사용자</caption>
+                                                            <colgroup>
+                                                                <col width="20%">
+                                                                <col width="20%">
+                                                                <col width="auto">
+                                                            </colgroup>
+                                                            <thead>
+                                                                <tr><th scope="col">ID</th>
+                                                                <th scope="col">성명</th>
+                                                                <th scope="col">소속</th>
+                                                            </tr></thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>ID</td>
+                                                                    <td>홍길동</td>
+                                                                    <td>소속</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>ID</td>
+                                                                    <td>홍길동</td>
+                                                                    <td>소속</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>ID</td>
+                                                                    <td>홍길동</td>
+                                                                    <td>소속</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="sec-btm mt12">
@@ -287,14 +342,6 @@
 
                 </div>
                 <!--// [S] plf-tab-->
-                
-                <!--[C]Toast-->
-                <div class="toast"> <!--[D]active-->
-                    <div class="inner" style="display: none;">
-                        toast 알림입니다
-                    </div>
-                </div>
-                <!--//[C]Toast-->
                 
             </div>
             <!--//[S] plf-sub-->

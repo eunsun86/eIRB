@@ -5,11 +5,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>component | e-IRB</title>
+<link rel="stylesheet" type="text/css" href="../static/plugins/jquery.scrollbar-gh-pages/jquery.scrollbar.css">
+<link rel="stylesheet" href="../static/css/plf.css">
 <script src="../static/js/jquery-3.6.0.min.js"></script>
 <script src="../static/js/datepicker.min.js"></script>		
-<script src="../static/js/datepicker.ko-KR.js"></script>		
+<script src="../static/js/datepicker.ko-KR.js"></script>	
+<script src="../static/plugins/jquery.scrollbar-gh-pages/jquery.scrollbar.min.js"></script>	
 <script src="../static/js/plf_pub.js"></script>
-<link rel="stylesheet" href="../static/css/plf.css" />
 <style>
 .deco-h2 {font-size: 35px;font-weight: 600;color: hotpink;margin-bottom: 20px;border-bottom: 1px solid hotpink; } 
 .deco-h3 {font-size: 20px;font-weight: 600;color: hotpink;margin-bottom: 10px; } 
@@ -103,6 +105,7 @@
                             <img src="../static/img/icon/ic_add_black.svg">
                             <img src="../static/img/icon/ic_trash_gray.svg">
                             <img src="../static/img/icon/ic_addfile_gray.svg">
+                            <img src="../static/img/icon/ic_question.svg">
 
                             <h3 class="deco-h3">tab icon</h3>
                             <img src="../static/img/icon/ic_tab_del.svg">
@@ -600,11 +603,17 @@
                                                 수정요청
                                                 <div class="tooltip">
                                                     <button type="button" class="btn-tooltip" title="수정요청 툴팁">수정요청 내용 보여집니다.</button>
-                                                    <div class="tooltip-con">
-                                                        <ul>
-                                                            <li><em>2차</em>2차 수정요청사항 보여줌보여줌보여줌보여줌보여줌보여줌보여줌보여줌보여줌보여줌보여줌보여줌보여줌보여줌보여줌</li>
-                                                            <li><em>1차</em>1차 수정요청사항 보여줌</li>
-                                                        </ul>
+                                                    <div class="tooltip-con"><!-- [D] active 추가시 활성화 -->
+                                                        <div class="scr_cont">
+                                                            <ul class="scr_list">
+                                                                <li><em>6차</em>3차 수정요청사항</li>
+                                                                <li><em>5차</em>3차 수정요청사항</li>
+                                                                <li><em>4차</em>3차 수정요청사항</li>
+                                                                <li><em>3차</em>3차 수정요청사항</li>
+                                                                <li><em>2차</em>2차 수정요청사항 보여줌보여줌보여줌보여줌보여줌보여줌보여줌보여줌보여줌보여줌</li>
+                                                                <li><em>1차</em>1차 수정요청사항</li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </td>
@@ -1011,15 +1020,20 @@
                                             <td>
                                                 <div class="filedownload">
                                                     <button class="btn-ic btn-addfile btn-tooltip" type="button" title="첨부파일"></button>
-                                                    <div class="downfile-list active"><!-- [D] active 전체파일다운로드 활성화 -->
-                                                        <ul>
-                                                            <li><a href="#"><span>첨부파일첨부파일첨부파일첨부파일첨부파일</span>.pdf</a></li>
-                                                            <li><a href="#"><span>첨부파일</span>.xls</a></li>
-                                                            <li><a href="#"><span>첨부파일</span>.jepg</a></li>
-                                                        </ul>
+                                                    <div class="downfile-list"><!-- [D] active 전체파일다운로드 활성화 -->
+                                                        <div class="scr_cont">
+                                                            <ul class="scr_list">
+                                                                <li><a href="#"><span>첨부파일첨부파일첨부파일첨부파일첨부파일</span>.pdf</a></li>
+                                                                <li><a href="#"><span>첨부파일</span>.xls</a></li>
+                                                                <li><a href="#"><span>첨부파일</span>.jepg</a></li>
+                                                                <li><a href="#"><span>첨부파일</span>.jepg</a></li>
+                                                                <li><a href="#"><span>첨부파일</span>.jepg</a></li>
+                                                                <li><a href="#"><span>첨부파일</span>.jepg</a></li>
+                                                            </ul>
+                                                        </div>
                                                         <button class="btn" type="button">전체파일 다운로드</button>
                                                     </div>
-                                                </div>	
+                                                </div>
                                             </td>
                                         </tr>
                                     </tbody>
