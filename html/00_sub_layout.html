@@ -6,108 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>sub_layout | e-IRB</title>
     <script src="../static/js/jquery-3.6.0.min.js"></script>
-    <!-- <script src="../static/js/datepicker.min.js"></script>		
-    <script src="../static/js/datepicker.ko-KR.js"></script>		 -->
+    <script src="../static/js/datepicker.min.js"></script>		
+    <script src="../static/js/datepicker.ko-KR.js"></script>		
     <script src="../static/js/plf_pub.js"></script>
     <link rel="stylesheet" href="../static/css/plf.css" />
-
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
-<style>
-    .aaa a{color: red !important;}
-    .ui-datepicker table tbody td{}
-</style>
-<script>
-
-	// 선택가능 날짜
-	var availableDates = ["2024-06-17", "2021-10-29", "2021-11-03"];
-
-	// 특정제한 날짜
-	var disabledDays = ["2024-06-18", "2021-10-29", "2021-11-3", "2021-11-13"];
-
-	function available(date) {
-
-		var thismonth = date.getMonth()+1;
-		var thisday = date.getDate();
-
-		if(thismonth<10){
-			thismonth = "0"+thismonth;
-		}
-
-		if(thisday<10){
-			thisday = "0"+thisday;
-		}
-
-		ymd = date.getFullYear() + "-" + thismonth + "-" + thisday;
-		if ($.inArray(ymd, availableDates) >= 0) {
-			return [true,"aaa"];
-		} else {
-			return [false,""];
-		}
-	}
-
-	// 특정일 선택막기
-	function disableAllTheseDays(date) {
-		var m = date.getMonth(), d = date.getDate(), y = date.getFullYear();
-		for (i = 0; i < disabledDays.length; i++) {
-			if($.inArray(y + '-' +(m+1) + '-' + d,disabledDays) != -1) {
-				return [false];
-			}
-		}
-		return [true];
-	}
-
-
-	$.datepicker.setDefaults({
-		dateFormat: 'yy-mm-dd',
-		//	minDate: '-7',	// 일주일 이전 날짜 선택 못하게
-		//	maxDate: '1',	// 하루 이후 날짜 선택 못하게
-
-		// beforeShowDay: available,	// 선택가능
-		beforeShowDay: disableAllTheseDays, // 선택제한	( 날짜 선택시 주의 )
-
-		prevText: '이전 달',
-		nextText: '다음 달',
-		monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-		monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-		dayNames: ['일', '월', '화', '수', '목', '금', '토'],
-		dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
-		dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
-		showMonthAfterYear: true,
-		yearSuffix: '년',
-
-		showOn: 'both', //	button,both : "button" ->button 클릭 시 날짜 위젯을 보여준다. "both" => button이나 text상자 클릭 시 날짜 위젯을 보여준다.
-		buttonImage: 'images/calendar_ico.png',  // 우측 달력 icon 의 이미지 패스
-		buttonImageOnly: true, // true이면 입력 필드 옆에 이미지만 표시됩니다. false이면 버튼 안에 이미지가 표시됩니다. inputbox 뒤에 달력icon만 표시한다. ('...' 표시생략)
-
-		// 년 또는 월이 변경시 이벤트 발생
-		onChangeMonthYear: function (year, month, inst) {
-			// alert('년 또는 월이 변경시 이벤트 발생');
-		},
-
-		// 일자 선택되기전 이벤트 발생
-		beforeShow: function (input, inst) {
-			// alert('일자 선택되기전 이벤트 발생');
-		},
-
-		// 일자 선택된 후 이벤트 발생
-		onSelect: function (dateText, inst) {
-			// alert('일자 선택된 후 이벤트 발생');
-
-			alert(dateText);
-		}
-
-	});
-
-	$(function() {
-		$("#datepicker1").datepicker();
-	});
-
-
-
-
-</script>
 </head>
 <body>
 
@@ -186,9 +88,12 @@
                 <!--[S] plf-tab-->
                 <div class="plf-tab my-tab-switching">
                     <div class="tab">
-                        <span class="item active" role="button"><em>타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span> <!--[D]active-->
+                        <span class="item active" role="button"><em>타이틀1</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span> <!--[D]active-->
                         <span class="item" role="button"><em>타이틀타이틀타이틀타이틀타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span>
-                        <span class="item" role="button"><em>타이틀</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span>
+                        <span class="item" role="button"><em>타이틀2</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span>
+                        <span class="item" role="button"><em>타이틀3</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span>
+                        <span class="item" role="button"><em>타이틀4</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span>
+                        <span class="item" role="button"><em>타이틀5</em> <button class="btn-del" type="button"><i class="blind">삭제</i></button></span>
                     </div>
                     <div class="tab-con-group"> 
                         <div class="tab-con active"> <!--[D]active-->
@@ -198,7 +103,7 @@
                                 <span class="item">과제관리</span>
                                 <span class="item">과제현황</span>
                             </div>
-                            <div id="datepicker1"></div>
+
                             <!--[S] new-window : 새창띄우기 팝업 영역 -->
                             <div id="new-window">
                                 컨텐츠 영역1<br>컨텐츠 영역1<br>컨텐츠 영역1<br>컨텐츠 영역1<br>컨텐츠 영역1<br>컨텐츠 영역1<br>컨텐츠 영역1<br>컨텐츠 영역1<br>컨텐츠 영역1<br>컨텐츠 영역1<br>컨텐츠 영역1<br>컨텐츠 영역1<br>컨텐츠 영역1<br>컨텐츠 영역1<br>컨텐츠 영역1<br>컨텐츠 영역1<br>

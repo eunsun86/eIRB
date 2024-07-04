@@ -134,14 +134,14 @@
                                 
                                 <div class="sec type-switching my-tab-switching">
                                     <div class="tab type1">
-                                        <button class="item active" type="button">지속심의</button> <!--[D]active-->
-                                        <button class="item" type="button">과제점검표</button>
+                                        <button class="item" type="button">지속심의</button> <!--[D]active-->
+                                        <button class="item active" type="button">과제점검표</button>
                                         <button class="item" type="button">연구정보</button>
                                         <button class="item" type="button">첨부</button>
                                     </div>			
                                     <div class="sec-con-group"> 
                                         <!-- 지속심의 -->
-                                        <div class="sec-con active"><!--[D]active-->
+                                        <div class="sec-con">
                                             <div class="sec">
                                                 <table class="data-table type-line">
                                                     <caption>지속심의 정보</caption>
@@ -273,8 +273,925 @@
                                         </div>
 
                                         <!-- 과제점검표 -->
-                                        <div class="sec-con">
-                                            기획안에 해당화면 내용 없음
+                                        <div class="sec-con active"><!--[D]active-->
+                                            <div class="sec">
+                                                <table class="data-table">
+                                                    <caption>과제점검표</caption>
+                                                    <colgroup>
+                                                        <col width="190px">
+                                                        <col width="auto">
+                                                    </colgroup>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th scope="row">식약처 승인여부</th>
+                                                            <td>
+                                                                <div class="td-item-group left">
+                                                                    <div class="ip-rd-group">
+                                                                        <label class="ip-rd-label">
+                                                                            <input name="fd-2" class="ip-rd" type="radio" value="">
+                                                                            <span class="check"></span> <em>식약처 승인대상 :</em> 
+                                                                        </label>
+                                                                    </div>
+                                                                    
+                                                                    <div class="td-item-group ml8 fw-500">
+                                                                        &#40;
+                                                                        <span class="fw-500 ml8">승인일</span>
+                                                                        <div class="ip-wrap with-icon ta-left w165 ml8">
+                                                                            <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                                                            <i class="ic ic-calendar"></i>
+                                                                        </div>
+                                                                        &#41;
+                                                                    </div>
+
+                                                                    <label class="ip-rd-label ml10">
+                                                                        <input name="fd-2" class="ip-rd" type="radio" value="">
+                                                                        <span class="check"></span> <em>승인 제외 대상</em> 
+                                                                    </label>
+                                                                </div>
+                                                                <div class="mt8">
+                                                                    <span class="tip-txt">* 약사법, 의료기기법에서 정하고 있는 임상시험의 경우, IRB 승인 외에도 반드시 식약처의 승인을 받은 후 실시하여야 하며, 연구자 임상시험도 동일함.</span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">임상연구등록 시스템</th>
+                                                            <td>
+                                                                <div class="td-item-group left">
+                                                                    <div class="item-area">
+                                                                        <div class="ip-rd-group complex">
+                                                                            <label class="ip-rd-label d-block">
+                                                                                <input name="fd-5" class="ip-rd" type="radio" value="" checked="">
+                                                                                <span class="check"></span> <em>해당사항 없음</em> 
+                                                                            </label>
+                                                                            <div class="rd-label-group">
+                                                                                <label class="ip-rd-label d-block">
+                                                                                    <input name="fd-5" class="ip-rd" type="radio" value="">
+                                                                                    <span class="check"></span> <em>NIH (http://register.clinicaltrials.gov)</em> 
+                                                                                </label>
+                                                                                <div class="td-item-group fw-400">
+                                                                                    &#40;
+                                                                                    <span>DB 등록번호 :</span>
+                                                                                    <input name="" id="" class="ip-txt w175 ml8" type="text" value="">
+                                                                                    &#41;
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="rd-label-group mt8">
+                                                                                <label class="ip-rd-label d-block">
+                                                                                    <input name="fd-5" class="ip-rd" type="radio" value="">
+                                                                                    <span class="check"></span> <em>CRIS (http://cris.cdc.go.kr)</em> 
+                                                                                </label>
+                                                                                <div class="td-item-group fw-400">
+                                                                                    &#40;
+                                                                                    <span>DB 등록번호 :</span>
+                                                                                    <input name="" id="" class="ip-txt w175 ml8" type="text" value="">
+                                                                                    &#41;
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mt8">
+                                                                    <span class="tip-txt">* 헬싱키선언에 따라 모든 임상시험은 첫 연구대상자 모지바기 전 공개적으로 접근이 가능한 임상연구 등록시스템(primary registry)에 등록하여 연구정보를 공개해야 함.</span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                            <div class="sec">
+                                                <p class="txt">* 직전 지속심의 이후 진행된 사항에 대하여 기술하여주시기 바랍니다.<br>본 서식을 처음 작성하신다면 승인 이후의 진행 사항을 기술하시면 됩니다.</p>
+                                                <table class="data-table type-research">
+                                                    <caption>연구계약서 정보</caption>
+                                                    <colgroup>
+                                                        <col width="auto">
+                                                        <col width="90px">
+                                                        <col width="100px">
+                                                        <col width="100px">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">A. 연구의 위험/이익 평가</th>
+                                                            <th scope="col">예</th>
+                                                            <th scope="col">아니오</th>
+                                                            <th scope="col">해당없음</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                1. 당초에 예상했던 위험-이익 평가에 비추어 최근 1년간 본 연구의 위험-이익 평가에 변경을 줄 만한 내용이나 문헌발표가 있었습니까? 있다면 내용을 요약하여 기술하시고 해당 문헌은 첨부하시기 바랍니다.
+                                                                <span class="d-block mt8"><input name="" id="" class="ip-txt w100p" type="text" value=""></span>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-3" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-3" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-3" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2. 연구대상자에 대한 위험은 최소화 되었습니까?</td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-4" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-4" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-4" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                3. 본 연구에서 발생한 이상반응 중 빈도와 심각성이 점차 증가하는 사례가 있었습니까? 해당 사례가 있다면 내용을 요약하여 기술하시기 바랍니다.
+                                                                <span class="d-block mt8"><input name="" id="" class="ip-txt w100p" type="text" value=""></span>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-5" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-5" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-5" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                4. 직전 지속심의 이후 예상하지 못하고, 연구와 관련성이 있으며, 중대한 이상반응의 사례가 있었습니까? 해당 사례가 있다면 내용을 요약하여 기술하시기 바랍니다.
+                                                                <span class="d-block mt8"><input name="" id="" class="ip-txt w100p" type="text" value=""></span>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-6" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-6" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-6" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                5. 직전 지속심의 이후 예상하지 못하고, 연구와 관련성이 있으며, 연구대상자에게 추가적으로 위험을 주는 문제(unanticipated problems)의 발생 사례가 있었습니까? 해당 사례가 있다면 내용을 요약하여 기술하시기 바랍니다.
+                                                                <span class="d-block mt8"><input name="" id="" class="ip-txt w100p" type="text" value=""></span>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-7" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-7" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-7" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                6. 최근 Update된 임상시험자자료집(Investigator`s Brochure)이 있습니까?
+                                                                <span class="d-block mt8">
+                                                                    Version<input name="" id="" class="ip-txt w175 ml8" type="text" value="">
+                                                                    <span class="ml16">Version Date</span> 
+                                                                    <div class="ip-wrap with-icon ta-left w165 ml8 d-inblock">
+                                                                        <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                                                        <i class="ic ic-calendar"></i>
+                                                                    </div>
+                                                                </span>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-8" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-8" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-8" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="col">B. 자료 안전성 모니터링(Data and Safety Monitoring Plan)</th>
+                                                            <th scope="col" class="ta-center">예</th>
+                                                            <th scope="col" class="ta-center">아니오</th>
+                                                            <th scope="col" class="ta-center">해당없음</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>7. 연구계획서의 자료 안전성 모니터링 계획(DSMP)에 따라 주기적으로 연구대상자의 안전과 자료의 신뢰성을 보증하기 위한 자료 안전성 모니터링이 있었습니까?</td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-10" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-10" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-10" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>8. 모니터링 결과에 따라 발견된 이상반응, 예상하지 못한 문제, 계획서 미준수 등이 IRB, 의뢰자, 규제기관 등에 적절히 보고되었습니까?</td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-11" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-11" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-11" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                9. 데이터 안전성 평가를 위한 모니터링 위원회(DSMB/DMC 등)에서 연구와 관련된 이상반응, 중간분석, 유사연구의 최신문헌 등을 평가한 보고서가 있습니까? 해당 보고서가 있다면, 그 내용을 요약하시고, 자료를 첨부하시기 바랍니다.
+                                                                <span class="d-block mt8"><input name="" id="" class="ip-txt w100p" type="text" value=""></span>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-12" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-12" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-12" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="col">C. 개인정보호의 적절성</th>
+                                                            <th scope="col" class="ta-center">예</th>
+                                                            <th scope="col" class="ta-center">아니오</th>
+                                                            <th scope="col" class="ta-center">해당없음</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>10. 연구 진행 과정에서 연구대상자의 사생활 침해 가능성이 최소화되고, 사적 정보가 적절하게 보호 되었습니까?</td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-13" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-13" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-13" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>11. 연구에 의해 수집되는 자료 및 기록 등이 잠금장치나 비밀번호, 암호화 방안 등의 접근 제한 방법을 통해 적절하게 보관되었습니까?</td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-14" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-14" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-14" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="col">D. 연구대상자 모집의 공정성 및 연구대상자 동의 과정의 적절성</th>
+                                                            <th scope="col" class="ta-center">예</th>
+                                                            <th scope="col" class="ta-center">아니오</th>
+                                                            <th scope="col" class="ta-center">해당없음</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12. 연구계획서에 기술된 연구 대상 집단(나이, 성별, 인종 등), 예상 연구대상자 수 및 선정/제외 기준 등에 따라 연구대상자가 공정하게 선정 되었습니까?</td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-15" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-15" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-15" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>13. 연구대상자에게 연구참여에 대한 보상이 임상시험에 끝까지 참여하는 것을 조건으로 하지 않음과 보상의 지급 방법, 금액, 지급 시기 등 보상에 관한 정보가 적절히 제공되었습니까?</td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-16" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-16" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-16" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>14. 연구대상자에게 동의를 얻는 과정에서 적절한 정보가 제공되었습니까?</td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-17" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-17" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-17" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                15. 직전 지속심의 이후 동의서의 변경이 있었습니까? 있었다면, 변경된 동의서의 IRB 승인일과 해당 version을 기록하시기 바랍니다. 변경 내용이 있다면, 내용을 요약하여 기술하시기 바랍니다.
+                                                                <span class="d-block mt8"><input name="" id="" class="ip-txt w100p" type="text" value=""></span>
+                                                                <span class="d-block mt8">
+                                                                    Version<input name="" id="" class="ip-txt w175 ml8" type="text" value="">
+                                                                    <span class="ml16">IRB승인일</span> 
+                                                                    <div class="ip-wrap with-icon ta-left w165 ml8 d-inblock">
+                                                                        <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                                                        <i class="ic ic-calendar"></i>
+                                                                    </div>
+                                                                    <button class="btn btn-line ml8" type="button">추가</button>
+                                                                </span>
+                                                                <span class="d-block mt8">
+                                                                    Version<input name="" id="" class="ip-txt w175 ml8" type="text" value="">
+                                                                    <span class="ml16">IRB승인일</span> 
+                                                                    <div class="ip-wrap with-icon ta-left w165 ml8 d-inblock">
+                                                                        <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                                                        <i class="ic ic-calendar"></i>
+                                                                    </div>
+                                                                    <button class="btn btn-line ml8" type="button">삭제</button>
+                                                                </span>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-18" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-18" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-18" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>16. 직전 지속심의 이후 연구대상자의 지속적인 참여 의지에 영향을 줄 수 있는 새로운 정보가 수집되었습니까?</td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-19" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-19" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-19" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>17. 새로운 정보가 있었다면, 연구에 참여한 연구대상자에게 적절하게 제공되었습니까?</td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-20" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-20" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-20" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>18. 연구대상자가 설명 및 제공된 자료에 포함된 내용을 충분히 이해하였는지 확인하였습니까?</td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-21" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-21" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-21" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>19. 연구대상자에게 연구참여 여부를 결정할 수 있는 충분한 시간과 기회가 주어졌습니까?</td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-22" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-22" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-22" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>20. 연구대상자 동의 취득 시 연구대상자의 대리인 동의 취득이 반드시 필요한 연구입니까?</td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-23" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-23" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-23" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>21. 미성년자 또는 인지장애가 있는 성인의 경우, 관련 규정에 따라 한 명(또는 이상)의 법정 대리인으로부터 서명을 받았습니까?</td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-24" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-24" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-24" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                22. 취약한 연구대상자를 포함하는 연구의 경우, 연구대상자를 위한 추가적인 보호수단이 고려되었습니까? 추가적인 보호수단이 있었다면 내용을 요약하여 기술하시기 바랍니다
+                                                                <span class="d-block mt8"><input name="" id="" class="ip-txt w100p" type="text" value=""></span>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-25" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-25" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-25" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="col">E. 임상연구 실시 기관 및 연구진 현황</th>
+                                                            <th scope="col" class="ta-center">예</th>
+                                                            <th scope="col" class="ta-center">아니오</th>
+                                                            <th scope="col" class="ta-center">해당없음</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                23. 연구에 참여하는 모든 연구진이 임상시험 종사자 교육 / GCP 교육을 이수하셨습니까?<br>
+                                                                → 임상시험(Trial)을 수행하는 연구자는 임상시험 종사자교육을 1년 마다 이수하셔야 합니다.<br>
+                                                                → 임상연구(research)를 수행하는 연구자는 4시간 이상의 GCP 교육을 2년 마다 이수하여야 합니다.<br>
+                                                                (※ 현재 연구 참여 명단 기준으로 작성)
+                                                                <span class="d-block mt8">
+                                                                    연구자명<input name="" id="" class="ip-txt w60 ml8" type="text" value="">
+                                                                    <span class="ml16">소속(과)</span><input name="" id="" class="ip-txt w60 ml8" type="text" value="">
+                                                                    <span class="ml16">역할</span><input name="" id="" class="ip-txt w60 ml8" type="text" value="">
+                                                                    <span class="ml16">교육내용</span><input name="" id="" class="ip-txt w60 ml8" type="text" value="">
+                                                                    <span class="ml16">이수일</span>
+                                                                    <div class="ip-wrap with-icon ta-left w165 ml8 d-inblock">
+                                                                        <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                                                        <i class="ic ic-calendar"></i>
+                                                                    </div>
+                                                                    <button class="btn btn-line ml8" type="button">추가</button>
+                                                                </span>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-26" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-26" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-26" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                24. 최근 1년간 책임 연구자의 상황이나 자격의 변경(예를 들어, 의사면허 자격정지, 책임연구자 자격정지, 지나치게 많은 임상연구에의 참여 등)이 있었습니까? 있다면, 내용을 요약하여 기술하시기 바랍니다.
+                                                                <span class="d-block mt8"><input name="" id="" class="ip-txt w100p" type="text" value=""></span>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-27" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-27" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-27" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                25. 최근 1년간 공동 연구자 또는 연구기관의 변경이 있었습니까? 변경 내용이 있다면, 내용을 요약하여 기술하시기 바랍니다.
+                                                                <span class="d-block mt8"><input name="" id="" class="ip-txt w100p" type="text" value=""></span>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-28" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-28" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-28" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                26. 최근 1년간 연구자의 이해상충(conflict of interest) 상황에 변화가 있었습니까?
+                                                                <span class="d-block mt8"><input name="" id="" class="ip-txt w100p" type="text" value=""></span>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-29" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-29" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-29" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                27. 최근 1년간 이 연구와 관련된 연구대상자의 불만(Complaints) 사례가 있었습니까? 있다면 사례의 평가, 조사, 관련 조치에 대해 요약하여 기술하시기 바랍니다.
+                                                                <span class="d-block mt8"><input name="" id="" class="ip-txt w100p" type="text" value=""></span>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-30" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-30" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-30" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="col">F. 임상연구 경과</th>
+                                                            <th scope="col" class="ta-center">예</th>
+                                                            <th scope="col" class="ta-center">아니오</th>
+                                                            <th scope="col" class="ta-center">해당없음</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                28. 최근 1년간 연구계획서의 변경이 있었습니까? 있었다면, 변경 계획서의 IRB 승인일과 해당 version 을 기록하시기 바랍니다. 변경 내용이 있다면, 내용을 요약하여 기술하시기 바랍니다.
+                                                                <span class="d-block mt8">
+                                                                    Version<input name="" id="" class="ip-txt w175 ml8" type="text" value="">
+                                                                    <span class="ml16">IRB승인일</span> 
+                                                                    <div class="ip-wrap with-icon ta-left w165 ml8 d-inblock">
+                                                                        <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                                                        <i class="ic ic-calendar"></i>
+                                                                    </div>
+                                                                    <button class="btn btn-line ml8" type="button">추가</button>
+                                                                </span>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-31" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-31" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-31" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                29. 최근 1년간 연구대상자 선정/제외 기준에 변경이 있었습니까? 있다면 해당 내용을 기술하시기 바랍니다.
+                                                                <span class="d-block mt8"><input name="" id="" class="ip-txt w100p" type="text" value=""></span>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-32" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-32" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-32" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                30. 최근 1년간 연구계획서의 위반 또는 관련 규정(생명윤리 및 안전에 관한 법률, 약사법, 의료기기법 등)의 위반 사례가 있었습니까? 있다면 요약하여 기술하시기 바랍니다.
+                                                                <span class="d-block mt8"><input name="" id="" class="ip-txt w100p" type="text" value=""></span>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-33" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-33" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-33" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                31. 최근 1년간 모니터링을 받은 적이 있습니까? 있다면 마지막으로 모니터링을 받은 날짜를 기재하시기 바랍니다
+                                                                <span class="d-block mt8"><input name="" id="" class="ip-txt w100p" type="text" value=""></span>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-34" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-34" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-34" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                32. 최근 1년간 식약처 또는 정부기관으로부터 실사(inspection)를 받은 적이 있었습니까? 있다면 실사 결과를 요약하시고, 관련 내용을 포함하는 서류를 제출하시기 바랍니다.
+                                                                <span class="d-block mt8"><input name="" id="" class="ip-txt w100p" type="text" value=""></span>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-35" class="ip-rd" type="radio" value="" title="예">
+                                                                    <span class="check"></span> 
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-35" class="ip-rd" type="radio" value="" title="아니오">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td class="ta-center">
+                                                                <label class="ip-rd-label">
+                                                                    <input name="fd-35" class="ip-rd" type="radio" value="" title="해당없음">
+                                                                    <span class="check"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                                <div class="sec-btm">
+                                                    <p>위와 같이 지속심의 신청서를 제출합니다.</p>
+                                                    <div class="btn-group">
+                                                        <button class="btn" type="button">임시저장</button>
+                                                        <button class="btn btn-lb" type="button">다음</button>
+                                                    </div>							
+                                                </div>
+                                            </div>
                                         </div>
 
                                         <!-- 연구정보 -->

@@ -142,141 +142,304 @@
                                         <!-- 변동/위반/미준수 -->
                                         <div class="sec-con active"> <!--[D]active-->
                                             <div class="sec">
-                                                <div class="td-item-group right">
+                                                <div class="td-item-group">
+                                                    <h3 class="sec-tit">
+                                                        변동/위반/미준수 형태
+                                                        <div class="tooltip">
+                                                            <button class="btn-ic btn-question btn-tooltip" type="button" title="도움말"></button>
+                                                            <div class="tooltip-con helptip"><!-- [D] active 추가시 활성화 -->
+                                                                <ul class="type-dot">
+                                                                    <li>연구계획 변동(deviation): 연구계획서의 내용 또는 절차로부터 벗어난 변화 또는 변경으로서 IRB의 변경 승인을 받기 전에 발생한 것으로서, 연구대상자의 권리, 안전, 복지 또는 연구의 정확도 및 신뢰도에 영향을 주지 않는 것</li>
+                                                                    <li>연구계획 위반(violation): 연구계획서의 내용 또는 절차로부터 벗어난 변화, 이탈, 변경으로서 IRB의 변경 승인을 받기 전에 발생한 것으로서,  연구대상자의 권리, 안전, 복지 또는 연구의 정확도 및 신뢰도에 영향을 주는 경우</li>
+                                                                    <li>미준수(Non-compliance): 연구 수행 및 감독 중 연구계획서, 기관의 정책, 관련 규정, IRB의 요구 및 결정사항 등을 따르지 않는 것</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </h3>
                                                     <div class="btn-group">
                                                         <button class="btn btn-cts" type="button">추가</button>
                                                         <button class="btn btn-cts" type="button">삭제</button>
                                                     </div>
                                                 </div>
-                                                <table class="data-table type-line">
-                                                    <caption>변동/위반/미준수 정보</caption>
-                                                    <colgroup>
-                                                        <col width="39px">
-                                                        <col width="190px">
-                                                        <col width="auto">
-                                                    </colgroup>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th scope="rowgroup" rowspan="8">
-                                                                <label for="ch-all" class="ip-ch-label no-txt">
-                                                                    <input name="ch-all" id="ch-all" class="ip-ch" type="checkbox" value="">
-                                                                    <span class="check"></span>
-                                                                </label>
-                                                            </th>
-                                                            <th scope="row" rowspan="2" class="required helptip-area">
-                                                                구분
-                                                                <div class="tooltip">
-                                                                    <button class="btn-ic btn-question btn-tooltip" type="button" title="도움말"></button>
-                                                                    <div class="tooltip-con helptip"><!-- [D] active 추가시 활성화 -->
-                                                                        <ul class="type-dot">
-                                                                            <li>연구계획 변동(deviation): 연구계획서의 내용 또는 절차로부터 벗어난 변화 또는 변경으로서 IRB의 변경 승인을 받기 전에 발생한 것으로서, 연구대상자의 권리, 안전, 복지 또는 연구의 정확도 및 신뢰도에 영향을 주지 않는 것</li>
-                                                                            <li>연구계획 위반(violation): 연구계획서의 내용 또는 절차로부터 벗어난 변화, 이탈, 변경으로서 IRB의 변경 승인을 받기 전에 발생한 것으로서,  연구대상자의 권리, 안전, 복지 또는 연구의 정확도 및 신뢰도에 영향을 주는 경우</li>
-                                                                            <li>미준수(Non-compliance): 연구 수행 및 감독 중 연구계획서, 기관의 정책, 관련 규정, IRB의 요구 및 결정사항 등을 따르지 않는 것</li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </th>
-                                                            <td>
-                                                                <div class="ip-rd-group">
-                                                                    <label class="ip-rd-label">
-                                                                        <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>연구계획 변동</em> 
-                                                                    </label>
-                                                                    <label class="ip-rd-label">
-                                                                        <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>연구계획 위반</em> 
-                                                                    </label>
-                                                                    <label class="ip-rd-label">
-                                                                        <input name="fd-1" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>관련규정 및 기관정책 미준수</em> 
-                                                                    </label>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="ip-rd-group">
-                                                                    <label class="ip-rd-label">
-                                                                        <input name="fd-2" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>중대한</em> 
-                                                                    </label>
-                                                                    <label class="ip-rd-label">
-                                                                        <input name="fd-2" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>사소한</em> 
-                                                                    </label>
-                                                                    <label class="ip-rd-label">
-                                                                        <input name="fd-2" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>지속적</em> 
-                                                                    </label>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">연구자 인지일</th>
-                                                            <td>
-                                                                <div class="ip-wrap with-icon ta-left w165">
-                                                                    <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
-                                                                    <i class="ic ic-calendar"></i>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">연구대상자 탈락 여부</th>
-                                                            <td>
-                                                                <div class="ip-rd-group">
-                                                                    <label class="ip-rd-label">
-                                                                        <input name="fd-3" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>예</em> 
-                                                                    </label>
-                                                                    <label class="ip-rd-label">
-                                                                        <input name="fd-3" class="ip-rd" type="radio" value="">
-                                                                        <span class="check"></span> <em>아니오</em> 
-                                                                    </label>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="col">변동/위반/미준수 내용</th>
-                                                            <td>
-                                                                <div class="ta-group">
-                                                                    <textarea class="ta-ip" placeholder=""></textarea>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="col">변동/위반/미준수 발생<br>배경 및 이유</th>
-                                                            <td>
-                                                                <div class="ta-group">
-                                                                    <textarea class="ta-ip" placeholder=""></textarea>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="col">해당 사례에 대한<br>연구자 조치 사항</th>
-                                                            <td>
-                                                                <div class="ta-group">
-                                                                    <textarea class="ta-ip" placeholder=""></textarea>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="col">유사한 위반/미준수의<br>재발 방지를 위한 조치</th>
-                                                            <td>
-                                                                <div class="ta-group">
-                                                                    <textarea class="ta-ip" placeholder=""></textarea>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        
-                                            <div class="sec-btm">
-                                                <p>위와 같이 변동, 위반, 미준수 보고서를 제출합니다.</p>
-                                                <div class="btn-group">
-                                                    <button class="btn" type="button">임시저장</button>
-                                                    <button class="btn btn-lb" type="button">심의 신청</button>
-                                                </div>							
+
+                                                <div class="acco-area">
+                                                    <div class="acco-item open"><!-- [D] open 추가시 열림 -->
+                                                        <div class="td-item-group left acco-top">
+                                                            <label class="ip-ch-label">
+                                                                <input name="" class="ip-ch" type="checkbox" value="">
+                                                                <span class="check"></span>
+                                                            </label>
+                                                            <div class="sel w150">
+                                                                <select name="" id="" class="">
+                                                                    <option value="0">연구계획 위반</option>
+                                                                    <option value="1">1번</option>
+                                                                    <option value="2">2번</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="sel w150">
+                                                                <select name="" id="" class="">
+                                                                    <option value="0">계획서 위반</option>
+                                                                    <option value="1">1번</option>
+                                                                    <option value="2">2번</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="sel w150">
+                                                                <select name="" id="" class="">
+                                                                    <option value="0">중대한 위반</option>
+                                                                    <option value="1">1번</option>
+                                                                    <option value="2">2번</option>
+                                                                </select>
+                                                            </div>
+                                                            <button type="button" class="btn-acco"></button>  
+                                                        </div>
+                                                        <div class="acco-con">
+                                                            <table class="data-table">
+                                                                <caption>변동/위반/미준수 정보</caption>
+                                                                <colgroup>
+                                                                    <col width="190px">
+                                                                    <col width="auto">
+                                                                    <col width="150px">
+                                                                    <col width="auto">
+                                                                    <col width="150px">
+                                                                    <col width="auto">
+                                                                </colgroup>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <th scope="row">대상자 번호</th>
+                                                                        <td><input name="" id="" class="td-item ip-txt w100p" type="text" value="" placeholder=""></td>
+                                                                        <th scope="row">연구자 인지일</th>
+                                                                        <td>
+                                                                            <div class="ip-wrap with-icon ta-left w165">
+                                                                                <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                                                                <i class="ic ic-calendar"></i>
+                                                                            </div>
+                                                                        </td>
+                                                                        <th scope="row">대상자 탈락 여부</th>
+                                                                        <td>
+                                                                            <div class="ip-rd-group">
+                                                                                <label class="ip-rd-label">
+                                                                                    <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                                    <span class="check"></span> <em>예</em> 
+                                                                                </label>
+                                                                                <label class="ip-rd-label">
+                                                                                    <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                                    <span class="check"></span> <em>아니오</em> 
+                                                                                </label>
+                                                                                <label class="ip-rd-label">
+                                                                                    <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                                    <span class="check"></span> <em>해당없음</em> 
+                                                                                </label>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="col">변동/위반/미준수 내용</th>
+                                                                        <td colspan="5">
+                                                                            <div class="ta-group">
+                                                                                <textarea class="ta-ip" placeholder=""></textarea>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="col">변동/위반/미준수 발생<br>배경 및 이유</th>
+                                                                        <td colspan="5">
+                                                                            <div class="ta-group">
+                                                                                <textarea class="ta-ip" placeholder=""></textarea>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="col">해당 사례에 대한<br>연구자 조치 사항</th>
+                                                                        <td colspan="5">
+                                                                            <div class="ta-group">
+                                                                                <textarea class="ta-ip" placeholder=""></textarea>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="col">유사한 위반/미준수의<br>재발 방지를 위한 조치</th>
+                                                                        <td colspan="5">
+                                                                            <div class="ta-group">
+                                                                                <textarea class="ta-ip" placeholder=""></textarea>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="col">연구 진행 및 완전성에 영향을 미치는가</th>
+                                                                        <td>
+                                                                            <div class="ip-rd-group">
+                                                                                <label class="ip-rd-label">
+                                                                                    <input name="fd-2" class="ip-rd" type="radio" value="">
+                                                                                    <span class="check"></span> <em>예</em> 
+                                                                                </label>
+                                                                                <label class="ip-rd-label">
+                                                                                    <input name="fd-2" class="ip-rd" type="radio" value="">
+                                                                                    <span class="check"></span> <em>아니오</em> 
+                                                                                </label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <th scope="col">대상자 안전성에 영향을 미치는가</th>
+                                                                        <td colspan="3">
+                                                                            <div class="ip-rd-group">
+                                                                                <label class="ip-rd-label">
+                                                                                    <input name="fd-3" class="ip-rd" type="radio" value="">
+                                                                                    <span class="check"></span> <em>예</em> 
+                                                                                </label>
+                                                                                <label class="ip-rd-label">
+                                                                                    <input name="fd-3" class="ip-rd" type="radio" value="">
+                                                                                    <span class="check"></span> <em>아니오</em> 
+                                                                                </label>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>  
+                                                    </div>    
+                                                </div>
+                                                <div class="acco-area">
+                                                    <div class="acco-item"><!-- [D] open 추가시 열림 -->
+                                                        <div class="td-item-group left acco-top">
+                                                            <label class="ip-ch-label">
+                                                                <input name="" class="ip-ch" type="checkbox" value="">
+                                                                <span class="check"></span>
+                                                            </label>
+                                                            <div class="sel w150">
+                                                                <select name="" id="" class="">
+                                                                    <option value="0">연구계획 위반</option>
+                                                                    <option value="1">1번</option>
+                                                                    <option value="2">2번</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="sel w150">
+                                                                <select name="" id="" class="">
+                                                                    <option value="0">계획서 위반</option>
+                                                                    <option value="1">1번</option>
+                                                                    <option value="2">2번</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="sel w150">
+                                                                <select name="" id="" class="">
+                                                                    <option value="0">중대한 위반</option>
+                                                                    <option value="1">1번</option>
+                                                                    <option value="2">2번</option>
+                                                                </select>
+                                                            </div>
+                                                            <button type="button" class="btn-acco"></button>  
+                                                        </div>
+                                                        <div class="acco-con">
+                                                            <table class="data-table">
+                                                                <caption>변동/위반/미준수 정보</caption>
+                                                                <colgroup>
+                                                                    <col width="190px">
+                                                                    <col width="auto">
+                                                                    <col width="150px">
+                                                                    <col width="auto">
+                                                                    <col width="150px">
+                                                                    <col width="auto">
+                                                                </colgroup>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <th scope="row">대상자 번호</th>
+                                                                        <td><input name="" id="" class="td-item ip-txt w100p" type="text" value="" placeholder=""></td>
+                                                                        <th scope="row">연구자 인지일</th>
+                                                                        <td>
+                                                                            <div class="ip-wrap with-icon ta-left w165">
+                                                                                <input data-toggle="datepicker" name="" id="" class="ip-txt" type="text" value="2022-11-11" placeholder="">
+                                                                                <i class="ic ic-calendar"></i>
+                                                                            </div>
+                                                                        </td>
+                                                                        <th scope="row">대상자 탈락 여부</th>
+                                                                        <td>
+                                                                            <div class="ip-rd-group">
+                                                                                <label class="ip-rd-label">
+                                                                                    <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                                    <span class="check"></span> <em>예</em> 
+                                                                                </label>
+                                                                                <label class="ip-rd-label">
+                                                                                    <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                                    <span class="check"></span> <em>아니오</em> 
+                                                                                </label>
+                                                                                <label class="ip-rd-label">
+                                                                                    <input name="fd-1" class="ip-rd" type="radio" value="">
+                                                                                    <span class="check"></span> <em>해당없음</em> 
+                                                                                </label>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="col">변동/위반/미준수 내용</th>
+                                                                        <td colspan="5">
+                                                                            <div class="ta-group">
+                                                                                <textarea class="ta-ip" placeholder=""></textarea>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="col">변동/위반/미준수 발생<br>배경 및 이유</th>
+                                                                        <td colspan="5">
+                                                                            <div class="ta-group">
+                                                                                <textarea class="ta-ip" placeholder=""></textarea>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="col">해당 사례에 대한<br>연구자 조치 사항</th>
+                                                                        <td colspan="5">
+                                                                            <div class="ta-group">
+                                                                                <textarea class="ta-ip" placeholder=""></textarea>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="col">유사한 위반/미준수의<br>재발 방지를 위한 조치</th>
+                                                                        <td colspan="5">
+                                                                            <div class="ta-group">
+                                                                                <textarea class="ta-ip" placeholder=""></textarea>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="col">연구 진행 및 완전성에 영향을 미치는가</th>
+                                                                        <td>
+                                                                            <div class="ip-rd-group">
+                                                                                <label class="ip-rd-label">
+                                                                                    <input name="fd-2" class="ip-rd" type="radio" value="">
+                                                                                    <span class="check"></span> <em>예</em> 
+                                                                                </label>
+                                                                                <label class="ip-rd-label">
+                                                                                    <input name="fd-2" class="ip-rd" type="radio" value="">
+                                                                                    <span class="check"></span> <em>아니오</em> 
+                                                                                </label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <th scope="col">대상자 안전성에 영향을 미치는가</th>
+                                                                        <td colspan="3">
+                                                                            <div class="ip-rd-group">
+                                                                                <label class="ip-rd-label">
+                                                                                    <input name="fd-3" class="ip-rd" type="radio" value="">
+                                                                                    <span class="check"></span> <em>예</em> 
+                                                                                </label>
+                                                                                <label class="ip-rd-label">
+                                                                                    <input name="fd-3" class="ip-rd" type="radio" value="">
+                                                                                    <span class="check"></span> <em>아니오</em> 
+                                                                                </label>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>  
+                                                    </div>    
+                                                </div>      
+                                            
+                                                <div class="sec-btm">
+                                                    <p>위와 같이 변동, 위반, 미준수 보고서를 제출합니다.</p>
+                                                    <div class="btn-group">
+                                                        <button class="btn" type="button">임시저장</button>
+                                                        <button class="btn btn-lb" type="button">심의 신청</button>
+                                                    </div>							
+                                                </div>
                                             </div>
                                         </div>
 

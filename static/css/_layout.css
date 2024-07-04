@@ -71,7 +71,7 @@
 .plf-root .plf-group-aside-con .plf-con .plf-main .inner-board { width: 1330px; margin:0 auto; } 
 
 .plf-root .plf-group-aside-con .plf-con .plf-sub { min-height: calc(100vh - 181px); min-width: 1180px; padding: 40px 32px 0 0; background-color: var(--color4); position: relative; } 
-.plf-root .plf-group-aside-con .plf-con .tit-pagetitle { font-size: 30px; font-weight: 600; color: #1E1E1E; margin-bottom: 32px; } 
+.tit-pagetitle { font-size: 30px; font-weight: 600; color: #1E1E1E; margin-bottom: 32px; } 
 .plf-root .plf-group-aside-con .plf-con .tit-subtitle { font-size: 20px; font-weight: 600; color: #1E1E1E; margin-bottom: 24px; } 
 
 .plf-root .plf-group-aside-con .plf-con .auth-sel { position: absolute; right:32px; top:16px; z-index: 1; } 
@@ -81,13 +81,19 @@
 .plf-tab .tab-con { padding: 24px 32px 40px; border: 1px solid #E0E0E0; background: #fff; border-radius: 0 12px 12px 12px; box-shadow: rgba(149, 157, 165, 0.2) 8px 8px 8px; min-height: calc(100vh - 286px); overflow: hidden; } 
 .plf-tab .tab-con { display: none; } 
 .plf-tab .tab-con.active { display: block; } 
-.plf-tab >.tab { position: relative; overflow: hidden; margin-bottom: -1px; padding-right: 50px; } 
+
+/* .plf-tab >.tab { position: relative; overflow: hidden; margin-bottom: -1px; padding-right: 50px; } 
+.plf-tab .tab .item { display: inline-block; vertical-align: top; width: 166px; line-height: 38px; padding: 0 33px 0 20px; position: relative; }  */
+
+
+.plf-tab >.tab { position: relative; overflow: hidden; margin-bottom: -1px;min-width: 987px;width: calc(100% - 270px);height: 38px;} 
 .plf-tab .tab .item { display: inline-block; vertical-align: top; width: 166px; line-height: 38px; padding: 0 33px 0 20px; position: relative; } 
+.plf-tab >.tab .item { line-height: 37px;height: 36px; } 
 .plf-tab .tab .item em { display:block; max-width:100%; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; color: #929292; font-weight: 500; } 
 .plf-tab .tab .item .btn-del { position: absolute; right:12px; top:15px; display: inline-block; vertical-align: middle; margin: -2px 0 0 10px; width: 12px; height: 12px; background: url(../img/icon/ic_tab_del.svg) no-repeat center; } 
 .plf-tab .tab .item.active em { color: var(--color1); font-weight: 600; } 
 .plf-tab .tab .item.active .btn-del { background:url(../img/icon/ic_tab_del_active.svg) no-repeat center } 
-.plf-tab .item-etc { position: absolute; right:40px; top:7px; width: 230px; text-align: left; } 
+.plf-tab .item-etc { position: absolute; right:40px; top:5px; width: 230px; text-align: left; } 
 .plf-tab .item-etc .btn-etc { width: 48px; height: 32px; font-size: 20px; line-height: 0; font-size: 32px; border-radius: 12px 12px 0px 0px; background: var(--color3); color: var(--color1); } 
 .plf-tab .item-etc .tab-list { display: none; border:1px solid #F0F0F0; border-radius: 0 8px 8px 8px; padding:12px; background-color: #fff; text-align: left; } 
 .plf-tab .item-etc .tab-list li { display: flex; justify-content: space-between; align-items: center; padding:4px 8px; border-radius: 4px; } 

@@ -62,3 +62,4 @@
 .ellipsis{display: inline-block;width: 100%; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
 
 .d-block {display: block !important;}
+.d-inblock {display: inline-block !important;}

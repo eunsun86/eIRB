@@ -87,7 +87,7 @@
 .GILMain{color:#1a364e;}
 .GILMainTable{background:white;border-bottom:0;}
 .GILHasSpace4{border-bottom:1px solid transparent;}
-.GILSolidRow{background:#ebeaee;}
+.GILSolidRow{background:#F7F7F7;}
 .GILSearchRow{border-bottom:1px solid #F0F0F0;}
 .GILFillRow{background:#F7F7F7;}
 .GILNoDataRow{border-top:1px solid #fff !important;}
@@ -173,6 +173,7 @@
 .GILEditHeaderInput.GILEditReadOnly,.GILEditHeaderTextarea.GILEditReadOnly{background-color:#1a364e !important;}
 .GILDialogButton{ border:solid 1px var(--color1); color:var(--color1);}
 u.GILSheetButton{ border-bottom:solid 1px var(--color1); color:var(--color1);}
+.GILToolHtmlBase .btn-txt{text-decoration: none; border-bottom: solid 1px var(--color1);border-radius: 0;vertical-align: super;}
 .GILDialogButton:active,u.GILToolButtonButton1,u.GILToolSpaceButton1,u.GILToolButtonButton1:active,u.GILToolSpaceButton1:active{background:#1a364e;}
 .GILDialogButtonHover{border:solid 1px #1a364e;color:#1a364e;cursor:pointer;}
 .GILMenuHead{color:white;background:#1a364e;}
@@ -1070,11 +1071,12 @@ u.GILToolSpaceButton,u.GILToolSpaceButton1,.GILMain .GILToolSpaceIconInner{paddi
 	width: 20px;
 	height: 20px;
 	margin: 0 10px 0 -30px;
-	border: 1px solid var(--checkbox-border-color);
+	background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='19' height='19' rx='1.5' fill='white' stroke='%23BCBCBC'/%3E%3C/svg%3E%0A");
+	background-size: 20px auto;
 	box-sizing: border-box;
-	border-radius: 5px;
 	vertical-align: middle;
 }
+.GILCheck0Center::before{margin: 0 0px 0 -11px;}
 
 /* checkbox 선택됨 */
 .GILCheck1Left, .GILCheck1Center, .GILCheck1Right, .GILCheck1Top, .GILCheck1Bottom { background-image: none; }
@@ -1095,6 +1097,7 @@ u.GILToolSpaceButton,u.GILToolSpaceButton1,.GILMain .GILToolSpaceIconInner{paddi
 	box-sizing: border-box;
 	vertical-align: middle;
 }
+.GILCheck1Center::before{margin: 0 0px 0 -11px;}
 
 .GILMain .GILButtonImage{height:25px;display:inline-block;padding-left:0px;padding-right:0px;}
 .GILHigh .GILButtonImage{height:35px;}
@@ -1218,7 +1221,11 @@ nobr.GILRadioCell,span.GILRadioCell{display:inline-block;}
 .GILSmall .GILBoolImage{height:19px;width:12px;}
 .GILMini .GILDataRow .GILBoolImage{height:17px;width:16px;}
 /* checkbox 디폴트 */
-u.GILBool0, u.GILBool0RO{ border: 1px solid var(--checkbox-border-color); }
+u.GILBool0, u.GILBool0RO{ 
+	border-radius: 0 !important;
+	background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='19' height='19' rx='1.5' fill='white' stroke='%23BCBCBC'/%3E%3C/svg%3E");
+	background-size: 20px auto;
+}
 td.GILBool0, td.GILBool0RO{
 	background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='19' height='19' rx='1.5' fill='white' stroke='%23BCBCBC'/%3E%3C/svg%3E");
 	background-size: 20px auto;

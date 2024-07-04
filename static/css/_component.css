@@ -33,19 +33,19 @@
 .data-table caption { position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); } 
 .data-table th,
 .data-table td { text-align: left; font-size: 16px; padding: 4px 20px; border-bottom: 1px solid #F0F0F0; height: 32px; word-break: break-all} 
-.data-table .tooltip{display: inline-block;position: relative;}
-.data-table .tooltip .btn-tooltip{display: inline-block;vertical-align: middle;font-weight: 500; color:  var(--color1);text-decoration: underline;font-size: 14px;width: 140px;text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
-.data-table .tooltip .tooltip-con{display: none;position: absolute;left:0;top: 27px;z-index: 1;min-width: 500px;padding:7px 10px 7px 20px; background-color: #fff;border:1px solid #929292;border-radius: 4px;}
-.data-table .tooltip .tooltip-con.active{display: block;}
-.data-table .tooltip .tooltip-con ul li{display: flex;justify-content: flex-start;align-items: flex-start; padding:4px 0 4px 44px;position: relative;}
-.data-table .tooltip .tooltip-con ul li:hover{color:  var(--color1);font-weight: 500;}
-.data-table .tooltip .tooltip-con ul li:hover em{color:  var(--color1);font-weight: 500;}
-.data-table .tooltip .tooltip-con ul li em{width: 34px;position: absolute;left:0;top:4px;}
-.data-table .tooltip .tooltip-con ul.type-dot li{padding:4px 0}
-.data-table .tooltip .scr_cont{height: 150px;overflow: hidden;}
-.data-table .tooltip .scr_cont .scr_list{height:100%;}
-.data-table .tooltip .tooltip-con.helptip {width: 940px;padding:7px 10px;}
-.data-table .tooltip .tooltip-con.helptip li:hover{color: inherit;font-weight: inherit;}
+.tooltip{display: inline-block;position: relative;}
+.tooltip .btn-tooltip{display: inline-block;vertical-align: middle;font-weight: 500; color:  var(--color1);text-decoration: underline;font-size: 14px;width: 140px;text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
+.tooltip .tooltip-con{display: none;position: absolute;left:0;top: 27px;z-index: 1;min-width: 500px;padding:7px 10px 7px 20px; background-color: #fff;border:1px solid #929292;border-radius: 4px;}
+.tooltip .tooltip-con.active{display: block;}
+.tooltip .tooltip-con ul li{display: flex;justify-content: flex-start;align-items: flex-start; padding:4px 0 4px 44px;position: relative;}
+.tooltip .tooltip-con ul li:hover{color:  var(--color1);font-weight: 500;}
+.tooltip .tooltip-con ul li:hover em{color:  var(--color1);font-weight: 500;}
+.tooltip .tooltip-con ul li em{width: 34px;position: absolute;left:0;top:4px;}
+.tooltip .tooltip-con ul.type-dot li{padding:4px 0}
+.tooltip .scr_cont{height: 150px;overflow: hidden;}
+.tooltip .scr_cont .scr_list{height:100%;}
+.tooltip .tooltip-con.helptip {width: 890px;padding:7px 10px;}
+.tooltip .tooltip-con.helptip li:hover{color: inherit;font-weight: inherit;}
 
 .data-table td .filedownload{display: inline-block;position: relative;line-height: initial;}
 .data-table td .filedownload .downfile-list{display: none;position: absolute;right:0;top: 27px;z-index: 1;width: 200px; background-color: #fff;border:1px solid var(--color1);border-radius: 4px;}
@@ -145,6 +145,7 @@
 .td-item-group .th-item{font-size: 16px;line-height: 20px;color: #1e1e1e;font-weight: 600;padding:0 20px 0 0;}
 .td-item-group .th-item.pl36{padding:0 20px 0 36px;}
 .td-item-group + .data-table{margin-top: 12px;}
+.td-item-group + .acco-area{margin-top: 12px;}
 
 .td-item-group2 { display: flex; align-items: center; gap: 8px; }
 .td-item-group2 span { white-space: nowrap; }
@@ -199,6 +200,12 @@
 .sec.type-tit .sec-con { border-bottom: 1px solid #efeff5; border-top-left-radius: 0; border-top-right-radius: 0; } 
 .sec.type-tit .sec-btn { position: absolute; top: 0px; right: 0px; width: 48px; height: 48px; border: 0; text-indent: -9999px; cursor: pointer; background: none; } 
 
+.sec .sec-tit { position: relative; } 
+.sec .sec-tit .tooltip{position: relative;} 
+.sec .sec-tit .tooltip .btn-tooltip{ width: 15px;} 
+.sec .sec-tit .tooltip .tooltip-con.helptip{left:-20px;} 
+.sec .sec-tit .tooltip .tooltip-con ul.type-dot li{font-size: 16px;font-weight: 500;line-height: 1.4;}
+
 .sec.type-switching .sec-con { display: none; border-top:2px solid  var(--color1);} 
 .sec.type-switching .sec-con.active { display: block; } 
 
@@ -219,13 +226,18 @@
 .sec .desc .ip-ch-group.type-desc .ip-ch-label .check {top: 0;transform: initial;}
 .sec .desc + .data-table {border-top: 1px solid #F0F0F0;}
 
+.sec .ip-ch-group.type-desc.ip-ch-group-input .ip-ch-label {width: 100%; height: auto;}
+.sec .ip-ch-group.type-desc.ip-ch-group-input .ip-ch-label .check{top:0;transform: none;}
+
 .sec .data-table + .ip-ch-group.type-desc{margin-top: 14px;}
 .sec .ip-ch-group.type-desc{background-color: #fff;gap: 4px;padding: 0;}
 .sec .ip-ch-group.type-desc + .txt{margin-top: 26px;}
+
 .sec .txt{line-height: 1.5;font-weight: 500;}
 .sec .txt.warning{color: #E34A4A;}
 .sec .txt + .ip-ch-group.type-desc{margin-top: 26px;}
 .sec .txt + .desc{margin-top: 10px;}
+.sec .txt + .data-table.type-research{margin-top: 10px;}
 
 .sec .list-ol li{padding-left:10px;text-indent:-4px;}
 .sec .list-ol li i {display:inline-block;margin-right:4px;}
@@ -314,6 +326,11 @@
 .acco-area .acco-item .acco-con .ip-ch-group .ip-ch-label .check{left: 40px;}
 .acco-area .acco-item.open .acco-ctr::after{background: url(../img/icon/ic_arrow_down_black.svg) no-repeat center;transform: rotate(180deg);}
 
+.acco-area .acco-item .acco-top{display: flex;padding: 7px 12px;background: #F7f7f7;font-size: 14px;font-weight: 500;color: #1E1E1E;border-top: 1px solid #1E1E1E;position: relative;}
+.acco-area .acco-item .acco-top .btn-acco{display: block;position: absolute;right:12px;top:9px; width: 30px;height: 30px;background: url(../img/icon/ic_arrow_down_black.svg) no-repeat center/12px auto;}
+.acco-area .acco-item .acco-top .sel{background: #fff;margin-right: 8px;}
+.acco-area .acco-item .acco-con .data-table{border-top: 1px solid #F0F0F0;}
+.acco-area .acco-item.open .acco-top .btn-acco{background: url(../img/icon/ic_arrow_down_black.svg) no-repeat center;transform: rotate(180deg);}
 /* Form */
 /* Input-Text, Email, Passworld */
 input, button, textarea { outline: 0; } 

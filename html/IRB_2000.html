@@ -6,8 +6,9 @@
     <link rel="stylesheet" type="text/css" href="../static/plugins/jquery.scrollbar-gh-pages/jquery.scrollbar.css">
     <link rel="stylesheet" href="../static/css/plf.css">
     <script src="../static/js/jquery-3.6.0.min.js"></script>
-    <script src="../static/js/datepicker.min.js"></script>		
-    <script src="../static/js/datepicker.ko-KR.js"></script>	
+    <script src="../static/js/jquery-ui.min.js"></script>
+    <!--[D] main에서만 삭제 <script src="../static/js/datepicker.min.js"></script>		
+    <script src="../static/js/datepicker.ko-KR.js"></script>	 -->
     <script src="../static/plugins/jquery.scrollbar-gh-pages/jquery.scrollbar.min.js"></script>	
     <script src="../static/js/plf_pub.js"></script>
 </head>
@@ -248,149 +249,10 @@
                                 </div>
                             </div>
                             <div class="calendar-wrap">
-                                <div class="sub_calendar">
-                                    <div class="sub_calendar_top_area">
-                                        <button type="button" class="btn_prev"><em class="blind">이전달</em></button>
-                                        <strong>2024.04</strong>
-                                        <button type="button" class="btn_next"><em class="blind">다음달</em></button>
-                                    </div>
-                    
-                                    <table onclick="">
-                                        <colgroup>
-                                            <col span="7" width="auto">
-                                        </colgroup>
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">일</th>
-                                                <th scope="col">월</th>
-                                                <th scope="col">화</th>
-                                                <th scope="col">수</th>
-                                                <th scope="col">목</th>
-                                                <th scope="col">금</th>
-                                                <th scope="col">토</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td></td>
-                                                <td>
-                                                    <span class="day">1</span>
-                                                    
-                                                </td>
-                                                <td>
-                                                    <span class="day">2</span>
-                                                </td>
-                                                <td>
-                                                    <span class="day">3</span>
-                                                </td>
-                                                <td>
-                                                    <span class="day">4</span>
-                                                </td>
-                                                <td>
-                                                    <span class="day">5</span>
-                                                </td>
-                                                <td>
-                                                    <span class="day">6</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <span class="day">7</span>
-                                                </td>
-                                                <td>
-                                                    <span class="day">8</span>
-                                                    <i class="reqular"><em class="blind">정규심의</em></i>
-                                                    <i class="fast"><em class="blind">신속심의</em></i>
-                                                </td>
-                                                <td>
-                                                    <span class="day">9</span>
-                                                    <i class="reqular"><em class="blind">정규심의</em></i>
-                                                    <i class="fast"><em class="blind">신속심의</em></i>
-                                                </td>
-                                                <td>
-                                                    <span class="day">10</span>
-                                                    <i class="reqular"><em class="blind">정규심의</em></i>
-                                                </td>
-                                                <td>
-                                                    <span class="day">11</span>
-                                                </td>
-                                                <td>
-                                                    <span class="day">12</span>
-                                                </td>
-                                                <td>
-                                                    <span class="day">13</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <span class="day">14</span>
-                                                </td>
-                                                <td>
-                                                    <span class="day">15</span>
-                                                </td>
-                                                <td>
-                                                    <span class="day">16</span>
-                                                </td>
-                                                <td>
-                                                    <span class="day">17</span>
-                                                </td>
-                                                <td>
-                                                    <span class="day">18</span>
-                                                </td>
-                                                <td>
-                                                    <span class="day">19</span>
-                                                </td>
-                                                <td>
-                                                    <span class="day">20</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <span class="day">21</span>
-                                                </td>
-                                                <td>
-                                                    <span class="day">22</span>
-                                                </td>
-                                                <td>
-                                                    <span class="day">23</span>
-                                                </td>
-                                                <td>
-                                                    <span class="day">24</span>
-                                                </td>
-                                                <td>
-                                                    <span class="day">25</span>
-                                                </td>
-                                                <td>
-                                                    <span class="day">26</span>
-                                                    <i class="fast"><em class="blind">신속심의</em></i>
-                                                </td>
-                                                <td>
-                                                    <span class="day">27</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <span class="day">28</span>
-                                                </td>
-                                                <td>
-                                                    <span class="day">29</span>
-                                                </td>
-                                                <td>
-                                                    <span class="day">30</span>
-                                                </td>
-                                                <td>
-                                                    <span class="day">31</span>
-                                                </td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <div class="cal-dot">
-                                        <span>정규심의</span>
-                                        <span>신속심의</span>
-                                    </div>
+                                <div class="datepicker1"></div>
+                                <div class="cal-dot">
+                                    <span>정규심의</span>
+                                    <span>신속심의</span>
                                 </div>
                             </div>
                         </div>
