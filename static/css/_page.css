@@ -132,7 +132,7 @@ html .datepicker1 .ui-button.ui-state-disabled:active{border:none;padding:0; bac
 .scr_list .scroll-element .scroll-element_track{background:#F7F7F7;border-radius: 8px;}
 .scr_list .scroll-element .scroll-bar{background:#666;border-radius: 8px;}
 
-.plf-main .data-table.type-list td{padding: 13px 5px 12px;}
+.plf-main .data-table.type-list td{padding: 6px 5px 6px;}
 
 .inner-board{display: flex;gap: 20px;padding-top: 30px;}
 .inner-board .sec{width: 60%;}
@@ -147,7 +147,7 @@ html .datepicker1 .ui-button.ui-state-disabled:active{border:none;padding:0; bac
 
 .inner-board .data-table{border-top:none}
 .inner-board .data-table thead{display: none;}
-.inner-board .scr_cont{height: 176px;overflow: hidden;}
+.inner-board .scr_cont{height: 180px;overflow: hidden;}
 .inner-board .scr_cont .scr_list{height:100%;}
 
 .inner-board .srl-table-head{display: table;width: 100%;border-top: 1px solid #1E1E1E;}
