@@ -1,4 +1,5 @@
-@charset "UTF-8";/*
+@charset "UTF-8";
+/*
  파일 개요
  ---------------------------------------------------------------------
  @ 목적 : [가천대 길병원 플랫폼] 공통 레이아웃 정의
@@ -6,23 +7,6 @@
  @ 최종 : 2023.05.14.00:00
  @ 메모 : - (거의)모든 페이지에 등장하는 '공통 영역'을 정의한다. 예를들면 상단 헤더, 왼쪽 어사이드, 중앙 메인컨텐트 영역. 
 */
-
-/*var*/
-/* 기본 green color 변수 */
-/*:root {/*--color1: #19885D; /* #19885D 포인트 색상 */
-/*--color2: #02B574; /* #02B574 defalut 버튼 hover 색상 */
-/*--color3: #E6F8F1; /* #E6F8F1 추가 삭제 버튼 배경 색상 */
-/*--color4: #F6F9F8; /* #F6F9F8 배경 색상 */
-/*
-/* --main-color1 : #23ACAD;/* --main-color2 : #0CAE6A;/* --main-color3 : #43BE7C;/* --main-color4 : #2A8CC3;/* --main-color5 : #63A4E0;/* --main-color6 : #6554A8;/* --main-color7 : #9392E0;/* --main-color8 : #A650A8;/* } */
-
-/* 기본 blue color 변수 */
-:root {--color1: #2072D6; /* #2072D6 포인트 색상 */
---color2: #1279F6; /* #1279F6 defalut 버튼 hover 색상 */
---color3: #E7F1FE; /* #E7F1FE 추가 삭제 버튼 배경 색상 */
---color4: #F6F7F9; /* #F6F7F9 배경 색상 */
-
- --main-color1 : #3062AD; --main-color2 : #0CAEAE; --main-color3 : #43B7BE; --main-color4 : #2A8CC3; --main-color5 : #63A4E0; --main-color6 : #6554A8; --main-color7 : #9392E0; --main-color8 : #A650A8; } 
 
 /*z-index*/
 .toast { z-index: 1100; } 
@@ -94,7 +78,7 @@
 .plf-tab .tab .item em { display:block; max-width:100%; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; color: #929292; font-weight: 500; } 
 .plf-tab .tab .item .btn-del { position: absolute; right:12px; top:15px; display: inline-block; vertical-align: middle; margin: -2px 0 0 10px; width: 12px; height: 12px; background: url(../img/icon/ic_tab_del.svg) no-repeat center; } 
 .plf-tab .tab .item.active em { color: var(--color1); font-weight: 600; } 
-.plf-tab .tab .item.active .btn-del { background:url(../img/icon/ic_tab_del_active.svg) no-repeat center } 
+/* 테마변경 .plf-tab .tab .item.active .btn-del { background:url(../img/icon/ic_tab_del_active.svg) no-repeat center }  */
 .plf-tab .item-etc { position: absolute; right:40px; top:5px; width: 230px; text-align: left; } 
 .plf-tab .item-etc .btn-etc { width: 48px; height: 32px; font-size: 20px; line-height: 0; font-size: 32px; border-radius: 12px 12px 0px 0px; background: var(--color3); color: var(--color1); } 
 .plf-tab .item-etc .tab-list { display: none; border:1px solid #F0F0F0; border-radius: 0 8px 8px 8px; padding:12px; background-color: #fff; text-align: left; } 
@@ -103,7 +87,7 @@
 .plf-tab .item-etc .tab-list li .list-del { display: inline-block; width: 12px; height: 12px; background: url(../img/icon/ic_tab_del.svg) no-repeat center/8px; } 
 .plf-tab .item-etc .tab-list li:hover { background: var(--color3); } 
 .plf-tab .item-etc .tab-list li:hover a { color: var(--color1); } 
-.plf-tab .item-etc .tab-list li:hover .list-del { background: url(../img/icon/ic_tab_del_active.svg) no-repeat center/8px; } 
+/* 테마변경 .plf-tab .item-etc .tab-list li:hover .list-del { background: url(../img/icon/ic_tab_del_active.svg) no-repeat center/8px; }  */
 .plf-tab .item-etc.active .tab-list { display: block; } 
 
 .plf-root .plf-group-aside-con.wide .plf-aside { display: none; } 

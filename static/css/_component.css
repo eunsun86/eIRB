@@ -336,7 +336,7 @@
 input, button, textarea { outline: 0; } 
 .ip-txt { border: 1px solid #E0E0E0; box-sizing: border-box; height: 32px; padding: 0 12px; color: #666; font-size: 16px;font-weight: 400;border-radius: 4px;} 
 .ip-txt:focus { border: 1px solid  var(--color1);color:  var(--color1); font-weight: 500;} 
-.ip-txt:focus + .ic-calendar{ background: url(../img/icon/ic_calendar_active.svg) no-repeat center; } 
+/* 테마변경 .ip-txt:focus + .ic-calendar{ background: url(../img/icon/ic_calendar_active.svg) no-repeat center; }  */
 .ip-txt.is-positive { border-color: #0d84ff; } 
 .ip-txt.is-negative { border-color: #ff404e; } 
 .ip-txt::-ms-clear,
@@ -365,7 +365,7 @@ input, button, textarea { outline: 0; }
 .ip-ch-group >.ip-ch-label{margin: 6px 16px 6px 0;}
 .ip-ch-label .ip-ch { position: absolute; left: -9999px; } 
 .ip-ch-label .check { position: absolute; top: 50%; transform: translateY(-50%); left: 0; display: block; width: 20px; height: 20px; border: 0; background: url(../img/icon/ic_checkbox_normal.svg); } 
-.ip-ch-label .ip-ch:checked+.check { background: url(../img/icon/ic_checkbox_active.svg);} 
+/* 테마변경 .ip-ch-label .ip-ch:checked+.check { background: url(../img/icon/ic_checkbox_active.svg);}  */
 .ip-ch-label .ip-ch:checked+.check + em { color: var(--color1)} 
 .ip-ch-label .ip-ch:disabled+.check { background: url(../img/icon/ic_checkbox_normal_disabled.svg); } 
 .ip-ch-label .ip-ch:disabled:checked+.check { background: url(../img/icon/ic_checkbox_active_disabled.svg); } 
@@ -380,7 +380,7 @@ input, button, textarea { outline: 0; }
 .ip-rd-label .ip-rd { position: absolute; left: -9999px; } 
 .ip-rd-label .ip-rd:checked + .check + em { color: var(--color1)} 
 .ip-rd-label .check { position: absolute; top: 0; left: 0; display: block; width: 20px; height: 20px; border: 0; background: url(../img/icon/ic_radio_normal.svg) no-repeat center/contain; } 
-.ip-rd-label .ip-rd:checked+.check { background: url(../img/icon/ic_radio_active.svg) no-repeat center/contain; } 
+/* 테마변경 .ip-rd-label .ip-rd:checked+.check { background: url(../img/icon/ic_radio_active.svg) no-repeat center/contain; }  */
 .ip-rd-label .ip-rd:disabled+.check { background: url(../img/icon/ic_radio_normal_disabled.svg) no-repeat center/contain; } 
 .ip-rd-label .ip-rd:checked:disabled+.check { background: url(../img/icon/ic_radio_active_disabled.svg) no-repeat center/contain; } 
 .ip-rd-label .ip-rd:checked:disabled+.check + em { color: #666} 
@@ -395,9 +395,10 @@ input, button, textarea { outline: 0; }
 .sel { position: relative; } 
 .sel>select { border: 1px solid #E5E5E5; height: 32px; appearance: none; padding: 0 27px 0 7px; width: 100%; cursor: pointer; font-size: 16px; color: #666; font-weight: 500; border-radius: 4px; background: url(../img/icon/ic_arrow_down_black.svg) no-repeat calc(100% - 12px) center;} 
 .sel>select::-ms-expand { display:none } 
-.sel>select:focus{border: 1px solid var(--color1);outline: none;background: url(../img/icon/ic_arrow_down_active.svg) no-repeat calc(100% - 12px) center;}
+/* 테마변경 .sel>select:focus{border: 1px solid var(--color1);outline: none;background: url(../img/icon/ic_arrow_down_active.svg) no-repeat calc(100% - 12px) center;} */
 .sel.disabled { background: url(../img/icon/ic_arrow_down_gray.svg) no-repeat calc(100% - 12px) center; }
 .sel>select:disabled { border: 1px solid #E0E0E0; color: #929292; background:#F7F7F7 url(../img/icon/ic_arrow_down_gray.svg) no-repeat calc(100% - 12px) center;} 
+.sel>select option{font-size: 15px;}
 
 .auth-sel{width: 200px;}
 .auth-sel:after { height: 40px; } 
@@ -413,7 +414,7 @@ input, button, textarea { outline: 0; }
 .form_selectbox .fs_list li button{display:block;box-sizing:border-box;width:100%;padding:7px 0;font-size:16px;font-weight:500;color:#666;text-align:left;}
 .form_selectbox .fs_list li a:hover, 
 .form_selectbox .fs_list li button:hover{color: var(--color1);}
-.form_selectbox.open .fs_selected{border-radius: 4px 4px 0 0;color: var(--color1);background:#fff url(../img/icon/ic_arrow_down_active.svg) no-repeat calc(100% - 12px) center;}
+/* 테마변경 .form_selectbox.open .fs_selected{border-radius: 4px 4px 0 0;color: var(--color1);background:#fff url(../img/icon/ic_arrow_down_active.svg) no-repeat calc(100% - 12px) center;} */
 .form_selectbox.open .fs_list{display:block;z-index:10;border-radius: 0 0 4px 4px;}
 .form_selectbox.disabled .fs_selected, .form_selectbox.readonly .fs_selected{background:#f4f4f4;}
 

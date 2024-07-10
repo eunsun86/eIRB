@@ -1,0 +1,38 @@
+@import url("ibsheet_custom_green.css"); /*ibsheet custom*/
+
+/*
+ 파일 개요
+ ---------------------------------------------------------------------
+ @ 목적 : [가천대 길병원 플랫폼] 공통 레이아웃 정의
+ @ 작성 : GRIDA Publishing Team.
+ @ 최종 : 2023.05.14.00:00
+ @ 메모 : - (거의)모든 페이지에 등장하는 '공통 영역'을 정의한다. 예를들면 상단 헤더, 왼쪽 어사이드, 중앙 메인컨텐트 영역. 
+*/
+
+/*var*/
+/* 기본 green color 변수 */
+:root {
+    --color1: #19885D; /* #19885D 포인트 색상 */
+    --color2: #02B574; /* #02B574 defalut 버튼 hover 색상 */
+    --color3: #E6F8F1; /* #E6F8F1 추가 삭제 버튼 배경 색상 */
+    --color4: #F6F9F8; /* #F6F9F8 배경 색상 */
+    
+    --main-color1 : #23ACAD;
+    --main-color2 : #0CAE6A;
+    --main-color3 : #43BE7C;
+    --main-color4 : #2A8CC3;
+    --main-color5 : #63A4E0;
+    --main-color6 : #6554A8;
+    --main-color7 : #9392E0;
+    --main-color8 : #A650A8;
+}
+
+.ip-ch-label .ip-ch:checked+.check { background: url(../img/green-img/ic_checkbox_active.svg);} 
+.ip-rd-label .ip-rd:checked+.check { background: url(../img/green-img/ic_radio_active.svg) no-repeat center/contain; } 
+.sel>select:focus{border: 1px solid var(--color1);outline: none;background: url(../img/green-img/ic_arrow_down_active.svg) no-repeat calc(100% - 12px) center;}
+.form_selectbox.open .fs_selected{border-radius: 4px 4px 0 0;color: var(--color1);background:#fff url(../img/green-img/ic_arrow_down_active.svg) no-repeat calc(100% - 12px) center;}
+.ip-txt:focus + .ic-calendar{ background: url(../img/green-img/ic_calendar_active.svg) no-repeat center; } 
+.plf-tab .tab .item.active .btn-del { background:url(../img/green-img/ic_tab_del_active.svg) no-repeat center } 
+.plf-tab .item-etc .tab-list li:hover .list-del { background: url(../img/green-img/ic_tab_del_active.svg) no-repeat center/8px; } 
+.plf-root.login{height: 959px;background: var(--color1) url(../img/green-img/bg_login_left.png) repeat-x left bottom;}
+.plf-root.login .plf-con{width: 1600px; height: 959px;margin:0 auto; background: url(../img/green-img/bg_login.jpg) no-repeat left bottom;position: relative;}

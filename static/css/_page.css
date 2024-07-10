@@ -9,8 +9,8 @@
 */
 
 /* 로그인 */
-.plf-root.login{height: 959px;background: var(--color1) url(../img/bg_login_left.png) repeat-x left bottom;}
-.plf-root.login .plf-con{width: 1600px; height: 959px;margin:0 auto; background: url(../img/bg_login.jpg) no-repeat left bottom;position: relative;}
+/* 테마변경 .plf-root.login{height: 959px;background: var(--color1) url(../img/bg_login_left.png) repeat-x left bottom;} */
+/* 테마변경 .plf-root.login .plf-con{width: 1600px; height: 959px;margin:0 auto; background: url(../img/bg_login.jpg) no-repeat left bottom;position: relative;} */
 .plf-root.login .plf-header{top: 40px;height: initial;border-bottom: none;background: transparent;}
 .plf-root footer{display: flex;align-items:  flex-end;padding:0 32px;box-sizing: border-box; position: absolute;bottom:48px;width: 100%;text-align: center;color: #1E1E1E;font-size: 14px;font-weight: 400;}
 .plf-root footer .logo-webcash{margin-right: 32px;width: 164px;height: 32px; background: url(../img/logo/webcash.svg) no-repeat center;opacity: 0.7;}
