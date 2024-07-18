@@ -1980,3 +1980,18 @@ BODY[class*=BodyPrint]>DIV[class*=PrintPage]>DIV>DIV>DIV[class*=PaddingWrapper]{
 	color: var(--main-color1); 
 	font-weight: 600;
 }
+
+/*20240718*/
+/*행*/
+/*행 - HOVER*/
+.GILHoverRowBackground{
+  background: rgba(77, 169, 255, 0.1);
+}
+/*행 - SELECTED (FOCUS)*/
+ .GILFocusRowBackground{
+  background: rgba(77, 169, 255, 0.1);
+}
+/*셀 - HOVER*/
+.GILColorHoveredCell{
+  background-color: #E7F1FE;
+}

@@ -6,8 +6,8 @@
 @import url("_font.css"); /*폰트 정의*/
 
 /*테마 선택*/
- /* @import url("_var_green.css"); */
-@import url("_var_blue.css");
+ @import url("_var_green.css");
+/* @import url("_var_blue.css"); */
 
 @import url("_layout.css"); /*공통 영역 CSS*/
 @import url("_component.css"); /*UI 컴포넌트*/
