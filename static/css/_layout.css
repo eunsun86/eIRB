@@ -12,7 +12,7 @@
 .toast { z-index: 1100; } 
 .alert { z-index: 1000; } 
 .modal { z-index: 900; } 
-.layer { z-index: 900; } 
+/* .layer { z-index: 900; }  */ /*20240714 ibsheet 셀렉트 안보이는 현상 해결*/
 .dim { z-index: 800; } 
 .plf-header { z-index: 500; } 
 
